@@ -34,7 +34,7 @@ class AgendaItem {
   final String key;
   final AgendaKind kind;
 
-  /// Titolo dell'evento («Esame · Analisi I · Scritto»).
+  /// Titolo dell'evento («Esame: Analisi I · Scritto»).
   final String title;
 
   /// Insegnamento o nome della sessione («Analisi I», «Sessione invernale»).
@@ -136,7 +136,7 @@ List<AgendaItem> buildAgenda({
       AgendaItem(
         key: examAgendaKey(id),
         kind: kind,
-        title: '${kind.label} · $course$extra',
+        title: '${kind.label}: $course$extra',
         subject: course,
         date: day,
         time: _validTime(e.time),
@@ -157,7 +157,7 @@ List<AgendaItem> buildAgenda({
       AgendaItem(
         key: sessionAgendaKey(s),
         kind: AgendaKind.session,
-        title: 'Inizio sessione d\'esame · ${s.nome}',
+        title: 'Inizio sessione d\'esame: ${s.nome}',
         subject: s.nome,
         date: day,
         notes: [
@@ -192,29 +192,45 @@ String? _validTime(String? t) {
 
 /// Istanti (locali) degli avvisi di [item] con gli anticipi [offsetDays]:
 /// alle 9:00 del giorno N giorni prima; per il giorno prima di una prova con
-/// l'orario, 24 ore prima. Le sessioni hanno un solo avviso, il giorno prima
-/// alle 9:00. Ordinati dal più lontano, senza doppioni.
-List<({int days, DateTime at})> reminderTimes(
+/// l'orario, 24 ore prima. Con [offsetHours] anche N ore prima (solo per le
+/// prove con l'orario: `days` 0, `hours` N). Le sessioni hanno un solo
+/// avviso, il giorno prima alle 9:00. Ordinati dal più lontano, senza
+/// doppioni.
+List<({int days, int hours, DateTime at})> reminderTimes(
   AgendaItem item,
-  List<int> offsetDays,
-) {
-  final days = item.kind == AgendaKind.session
+  List<int> offsetDays, [
+  List<int> offsetHours = const [],
+]) {
+  final session = item.kind == AgendaKind.session;
+  final days = session
       ? const [1]
       : ({...offsetDays.where((d) => d > 0)}.toList()..sort((a, b) => b - a));
-  final out = <({int days, DateTime at})>[];
+  final hours = session || item.time == null
+      ? const <int>[]
+      : ({...offsetHours.where((h) => h > 0 && h < 24)}.toList()
+          ..sort((a, b) => b - a));
+  final out = <({int days, int hours, DateTime at})>[];
   final seen = <DateTime>{};
   for (final d in days) {
     final at = d == 1 && item.time != null
         ? item.start.subtract(const Duration(hours: 24))
         : DateTime(item.date.year, item.date.month, item.date.day - d, 9);
-    if (seen.add(at)) out.add((days: d, at: at));
+    if (seen.add(at)) out.add((days: d, hours: 0, at: at));
+  }
+  for (final h in hours) {
+    final at = item.start.subtract(Duration(hours: h));
+    if (seen.add(at)) out.add((days: 0, hours: h, at: at));
   }
   return out;
 }
 
 /// Promemoria dell'evento nel calendario (minuti prima dell'inizio), agli
 /// stessi istanti delle notifiche dell'app.
-List<int> calendarReminderMinutes(AgendaItem item, List<int> offsetDays) => [
-  for (final r in reminderTimes(item, offsetDays))
+List<int> calendarReminderMinutes(
+  AgendaItem item,
+  List<int> offsetDays, [
+  List<int> offsetHours = const [],
+]) => [
+  for (final r in reminderTimes(item, offsetDays, offsetHours))
     item.start.difference(r.at).inMinutes,
 ];

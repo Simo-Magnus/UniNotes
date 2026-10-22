@@ -136,7 +136,19 @@ Sul telefono il ritorno dall'accesso e dal Picker usa lo schema
 - *Restrizioni delle API*: solo **Google Picker API**.
 
 La chiave finisce nella build e nella pagina: con queste restrizioni non serve
-ad altro. Il Picker usa il token dell'app (scope `drive.file`) e il numero del
+ad altro.
+
+**Nella build.** Due secret del repository GitHub (Settings → Secrets and
+variables → Actions): `GOOGLE_PICKER_API_KEY` (la chiave) e
+`GOOGLE_CLOUD_PROJECT_NUMBER` (il «Numero progetto» della Dashboard, solo
+cifre); `.github/workflows/app.yml` li passa con `--dart-define`. Nelle build
+locali: `--dart-define=GOOGLE_PICKER_API_KEY=… --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=…`.
+Senza, «Importa da Drive» spiega che il selettore non è disponibile in questa
+versione e propone di scegliere i file dal dispositivo. Con una chiave
+rifiutata da Google (Picker API non abilitata, referrer diverso da quello
+della pagina) la pagina se ne accorge entro 25 secondi e l'app mostra la
+causa; l'attesa nell'app ha sempre «Annulla» e si ferma da sola dopo 5
+minuti. Il Picker usa il token dell'app (scope `drive.file`) e il numero del
 progetto (`setAppId`): i file scelti diventano accessibili a tutti i client del
 progetto.
 

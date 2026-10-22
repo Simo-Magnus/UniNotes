@@ -66,6 +66,8 @@ class FakeParakeet extends ParakeetService {
     File audio, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    String language = 'it',
+    Future<List<WhisperSegment>> Function(File wav16k)? rescue,
   }) async {
     transcribed.add(audio.path);
     return const [WhisperSegment(Duration.zero, 'Buongiorno da Parakeet')];

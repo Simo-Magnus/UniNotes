@@ -20,6 +20,19 @@ bool isSaved(Book b) => b.catalogChoice == CatalogChoice.kept;
 bool isUnsaved(Book b) =>
     b.awaitingChoice && b.required != true && !isDownloaded(b);
 
+/// Libri di un insegnamento mostrati in Studio (pulsante «Libri»): tutti
+/// quelli dell'elenco di «Libri» tranne i rimossi (che stanno in «Libri
+/// rimossi»). Il numero non dipende dai file: togliere la copia di un libro
+/// dall'app non lo fa sparire dal conteggio.
+List<Book> studyBooks(Iterable<Book> books) => [
+  for (final b in books)
+    if (!b.isRemoved) b,
+];
+
+/// Testo del pulsante «Libri» di Studio per [books] (già senza i rimossi).
+String studyBooksLabel(List<Book> books) =>
+    books.isEmpty ? 'Nessun libro' : 'Libri (${books.length})';
+
 /// Avanzamento di lettura ("p. 45/300"), se il libro è stato aperto.
 String? readingProgress(Book b) {
   final page = b.lastPage;

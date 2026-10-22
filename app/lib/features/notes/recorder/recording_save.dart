@@ -194,15 +194,15 @@ Future<void> _cleanup(RecordingSession session, bool compressed) async {
 
 /// «Elimina» la registrazione in corso: si ferma e va in «Eliminati di
 /// recente» (30 giorni per ripensarci).
-Future<void> discardRecording(AppServices s) async {
+Future<TrashEntry?> discardRecording(AppServices s) async {
   final rec = s.recorder;
-  if (!rec.active || rec.saving) return;
+  if (!rec.active || rec.saving) return null;
   rec.saving = true;
   try {
     final take = await rec.stop();
-    if (take == null) return;
+    if (take == null) return null;
     unawaited(take.live?.close());
-    await trashSession(
+    return await trashSession(
       s,
       take.session,
       peaks: take.peaks,
@@ -214,8 +214,9 @@ Future<void> discardRecording(AppServices s) async {
 }
 
 /// Sposta l'audio di lavoro nel cestino come registrazione WAV (con i suoi
-/// dati), poi cancella i file di lavoro.
-Future<void> trashSession(
+/// dati), poi cancella i file di lavoro. Restituisce la voce del cestino
+/// (per «Annulla»), null se non c'era niente da conservare.
+Future<TrashEntry?> trashSession(
   AppServices s,
   RecordingSession session, {
   List<int>? peaks,
@@ -223,12 +224,13 @@ Future<void> trashSession(
 }) async {
   if (session.savedAs != null) {
     await session.delete();
-    return;
+    return null;
   }
   if (!await session.wav.exists()) {
     await session.delete();
-    return;
+    return null;
   }
+  TrashEntry? entry;
   final tmpDir = await Directory.systemTemp.createTemp('uninotes_cestino_');
   try {
     final wav = await moveFile(
@@ -245,7 +247,7 @@ Future<void> trashSession(
     );
     await meta.save(wav.path);
     // il ripristino la rimette nella cartella Registrazioni del corso
-    await s.trash.trash(
+    entry = await s.trash.trash(
       [wav, RecordingMeta.sidecarOf(wav.path)],
       title: session.baseName,
       course: session.course,
@@ -258,6 +260,7 @@ Future<void> trashSession(
   }
   await session.delete();
   s.revision.bump();
+  return entry;
 }
 
 /// Recupera una registrazione rimasta dopo una chiusura improvvisa.

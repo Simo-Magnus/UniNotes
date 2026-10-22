@@ -102,11 +102,12 @@ class DataSync {
   Future<String> _currentSignature() async {
     final db = _db.db;
     final parts = <String>[];
-    final settings = SyncSchema.syncedSettings.map((k) => "'$k'").join(', ');
     for (final s in SyncSchema.tables) {
       // impostazioni: solo quelle sincronizzate (le altre cambiano spesso,
       // es. l'esito dell'ultima sincronizzazione)
-      final where = s.table == 'app_settings' ? ' WHERE key IN ($settings)' : '';
+      final where = s.table == 'app_settings'
+          ? ' WHERE ${SyncSchema.syncedSettingSql('key')}'
+          : '';
       try {
         final r = await db.rawQuery(
           'SELECT COUNT(*) AS n, MAX(ABS(sync_mtime)) AS m FROM ${s.table}'
@@ -334,7 +335,7 @@ class DataSync {
   }
 
   static bool _wanted(SyncTableSpec s, String id) =>
-      s.table != 'app_settings' || SyncSchema.syncedSettings.contains(id);
+      s.table != 'app_settings' || SyncSchema.isSyncedSetting(id);
 
   /// Colonne della riga che vanno nel registro.
   static List<String> _syncedColumns(SyncTableSpec s, List<String> cols) => [

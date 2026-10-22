@@ -14,6 +14,7 @@ import '../../models/book.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../academic/year_widgets.dart';
 import '../settings/logic/file_transfer.dart';
 import '../study/course_catalog.dart';
@@ -120,9 +121,20 @@ class _BooksScreenState extends State<BooksScreen> {
     );
     if (!ok || !mounted) return;
     final s = context.read<AppServices>();
-    await s.library.remove(b.storedFile);
     await s.books.update(b.withFile(storedFile: () => null));
     s.revision.bump();
+    if (!mounted) return;
+    // la copia si cancella alla chiusura dell'avviso, così «Annulla» la
+    // rimette com'era
+    showUndoSnackBar(
+      context,
+      'Copia di «${b.title}» tolta dall\'app.',
+      onUndo: () async {
+        await s.books.update(b);
+        s.revision.bump();
+      },
+      onCommit: () => s.library.remove(b.storedFile),
+    );
   }
 
   Future<void> _delete(Book b) async {
@@ -135,8 +147,17 @@ class _BooksScreenState extends State<BooksScreen> {
     if (!ok || !mounted) return;
     final s = context.read<AppServices>();
     await s.books.delete(b.id!);
-    await s.library.remove(b.storedFile);
     s.revision.bump();
+    if (!mounted) return;
+    showUndoSnackBar(
+      context,
+      'Libro eliminato: «${b.title}».',
+      onUndo: () async {
+        await s.books.insert(b);
+        s.revision.bump();
+      },
+      onCommit: () => s.library.remove(b.storedFile),
+    );
   }
 
   /// Tieni / Rimuovi / Ripristina un libro proposto dal catalogo. La scelta
@@ -146,13 +167,23 @@ class _BooksScreenState extends State<BooksScreen> {
     await s.books.update(b.withChoice(catalogChoice: () => choice));
     s.revision.bump();
     if (!mounted) return;
-    if (choice == CatalogChoice.removed) {
-      showSnack(context, 'Libro rimosso: lo ritrovi in "Libri rimossi".');
-    } else if (b.isRemoved) {
-      showSnack(context, 'Libro ripristinato.');
-    } else if (choice == CatalogChoice.kept) {
-      showSnack(context, 'Libro salvato.');
-    }
+    final message = choice == CatalogChoice.removed
+        ? 'Libro rimosso: lo ritrovi in "Libri rimossi".'
+        : b.isRemoved
+        ? 'Libro ripristinato.'
+        : choice == CatalogChoice.kept
+        ? 'Libro salvato.'
+        : null;
+    if (message == null) return;
+    // «Annulla»: la scelta di prima (anche la spunta verde)
+    showUndoSnackBar(
+      context,
+      message,
+      onUndo: () async {
+        await s.books.update(b);
+        s.revision.bump();
+      },
+    );
   }
 
   /// «Elimina libri non salvati» di un insegnamento: toglie i libri proposti
@@ -176,12 +207,18 @@ class _BooksScreenState extends State<BooksScreen> {
     }
     s.revision.bump();
     if (!mounted) return;
-    showSnack(
+    showUndoSnackBar(
       context,
       unsaved.length == 1
           ? 'Libro non salvato eliminato: lo ritrovi in "Libri rimossi".'
           : '${unsaved.length} libri non salvati eliminati: li ritrovi in '
                 '"Libri rimossi".',
+      onUndo: () async {
+        for (final b in unsaved) {
+          await s.books.update(b);
+        }
+        s.revision.bump();
+      },
     );
   }
 

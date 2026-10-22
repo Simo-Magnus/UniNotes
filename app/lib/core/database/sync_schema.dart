@@ -107,7 +107,43 @@ abstract final class SyncSchema {
     'links_reference_ai',
     'removed_catalog_courses',
     'prefilled_modules',
+    // ordine degli insegnamenti in Studio
+    'study_course_order',
+    // scelte delle notifiche (tipi e anticipi; il consenso e il permesso
+    // restano del dispositivo)
+    'notif_exams',
+    'notif_exam_offsets',
+    'notif_exam_hours',
+    'notif_sessions',
+    'notif_outcome',
+    'notif_links',
+    'notif_review',
+    'notif_donation',
+    'notif_previous_years',
+    // formule dette a voce nella trascrizione istantanea
+    'live_formulas',
+    // dispositivo che scrive nel calendario di ogni account (un solo
+    // dispositivo per account, gli altri leggono: niente doppioni)
+    'syscal_writers',
   };
+
+  /// Famiglie di impostazioni sincronizzate (per prefisso): posizione e
+  /// segnalibri del lettore di ogni file dell'app (`reader:<chiave>`, chiave
+  /// uguale su tutti i dispositivi per i file in libri/materiali/allegati) e
+  /// risposte «Non chiedere più» (`dont_ask_…`).
+  static const syncedSettingPrefixes = {'reader:', 'dont_ask_'};
+
+  /// L'impostazione [key] si sincronizza fra i dispositivi.
+  static bool isSyncedSetting(String key) =>
+      syncedSettings.contains(key) ||
+      syncedSettingPrefixes.any((p) => key.startsWith(p));
+
+  /// Condizione SQL «impostazione sincronizzata» sulla colonna [column].
+  static String syncedSettingSql(String column) => [
+    '$column IN (${syncedSettings.map((k) => "'$k'").join(', ')})',
+    for (final p in syncedSettingPrefixes)
+      "substr($column, 1, ${p.length}) = '$p'",
+  ].join(' OR ');
 
   /// Impostazioni che sono insiemi (una voce per riga): si uniscono invece
   /// di vincere l'ultima modifica (un insegnamento rimosso su un dispositivo
@@ -276,7 +312,7 @@ abstract final class SyncSchema {
     }
     if (!s.syncDeletes) return;
     final only = t == 'app_settings'
-        ? ' AND OLD.key IN (${syncedSettings.map((k) => "'$k'").join(', ')})'
+        ? ' AND (${syncedSettingSql('OLD.key')})'
         : '';
     await ex.execute(
       'CREATE TRIGGER sync_del_$t AFTER DELETE ON $t '

@@ -145,7 +145,7 @@ class CourseInfoSection extends StatelessWidget {
         ),
         InfoRow(
           icon: Icons.record_voice_over_outlined,
-          label: 'Orale',
+          label: 'Orale/Scritto (facoltativo)',
           child: c.optionalOralInfo == null
               ? const Text('—')
               : ExpandableText(c.optionalOralInfo!),

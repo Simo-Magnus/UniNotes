@@ -51,6 +51,8 @@ RDoc parseRtf(Uint8List bytes) {
   final src = decodeCp1252(bytes);
   final blocks = <RBlock>[];
   final tables = <RTable>[];
+  // parti non mostrate (per l'avviso all'apertura)
+  final limits = <String>{};
   final para = RParaBuilder();
   var st = _RtfState();
   final stack = <_RtfState>[];
@@ -129,6 +131,8 @@ RDoc parseRtf(Uint8List bytes) {
           }
           endPara();
           blocks.add(RImage(data));
+        } else {
+          limits.add('immagini in formato WMF/EMF');
         }
       }
       i++;
@@ -291,7 +295,11 @@ RDoc parseRtf(Uint8List bytes) {
     i = j;
   }
   endPara();
-  return RDoc(sections: [RSection('', blocks)], tables: tables);
+  return RDoc(
+    sections: [RSection('', blocks)],
+    tables: tables,
+    limits: limits.toList(),
+  );
 }
 
 bool _isAlpha(int c) => (c >= 65 && c <= 90) || (c >= 97 && c <= 122);

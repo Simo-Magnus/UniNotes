@@ -10,6 +10,7 @@ import '../../models/course.dart';
 import '../../models/university.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'course_rename.dart';
 import 'course_ui.dart';
 import '../../core/constants/text_limits.dart';
@@ -84,10 +85,22 @@ Future<bool> deleteCourseWithConfirm(
   }
   services.revision.bump();
   if (context.mounted) {
-    showSnack(
-      context,
-      withData ? 'Corso eliminato' : 'Corso eliminato dagli elenchi: esami, prove, moduli e materiali restano (archiviato).',
-    );
+    if (withData) {
+      // eliminazione con i dati collegati: non si può annullare
+      showSnack(context, 'Corso eliminato');
+    } else {
+      // archiviazione: «Annulla» lo rimette com'era
+      showUndoSnackBar(
+        context,
+        'Corso eliminato dagli elenchi: esami, prove, moduli e materiali '
+        'restano (archiviato).',
+        undoneMessage: '«${course.name}» di nuovo negli elenchi.',
+        onUndo: () async {
+          await services.courses.update(course);
+          services.revision.bump();
+        },
+      );
+    }
   }
   return true;
 }
@@ -607,7 +620,7 @@ class _CourseFormPageState extends State<CourseFormPage> {
               maxLines: 8,
               maxLength: TextLimits.notes,
               decoration: const InputDecoration(
-                labelText: 'Orale (facoltativo)',
+                labelText: 'Orale/Scritto (facoltativo)',
                 alignLabelWithHint: true,
               ),
             ),

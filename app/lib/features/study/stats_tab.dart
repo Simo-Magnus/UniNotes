@@ -41,6 +41,9 @@ class StatsTab extends StatefulWidget {
 class _StatsTabState extends State<StatsTab> {
   _Range _range = _Range.month;
 
+  /// Materia della card «Per argomento» (null = «Tutte le materie»).
+  int? _topicCourse;
+
   @override
   Widget build(BuildContext context) {
     return RevisionBuilder<_StatsData>(
@@ -79,29 +82,34 @@ class _StatsTabState extends State<StatsTab> {
     final color = Theme.of(context).colorScheme.primary;
     final total = totalMinutes(inRange);
 
+    // grafici sempre sugli stessi periodi (non dipendono dalla scelta in
+    // alto): 7 giorni (oggi compreso), 4 settimane da lunedì a domenica
+    // (questa compresa), 6 mesi (questo compreso)
     final charts = [
       _ChartCard(
-        title: 'Giornaliero (ultimi 14 giorni)',
+        title: 'Giornaliero (ultimi 7 giorni)',
         child: MinutesBarChart(
-          totals: dailyTotals(data.sessions, today: now),
-          labelOf: (d) => '${d.day}',
+          totals: dailyTotals(data.sessions, today: now, days: 7),
+          labelOf: DateFormat('E d', 'it_IT').format,
           tooltipOf: formatShortWeekdayDmy,
           color: color,
         ),
       ),
       _ChartCard(
-        title: 'Settimanale (ultime 8 settimane)',
+        title: 'Mensile (ultime 4 settimane)',
         child: MinutesBarChart(
-          totals: weeklyTotals(data.sessions, today: now),
+          totals: weeklyTotals(data.sessions, today: now, weeks: 4),
           labelOf: DateFormat('dd/MM').format,
-          tooltipOf: (d) => 'Settimana dal ${formatDmy(d)}',
+          tooltipOf: (d) =>
+              'Settimana dal ${DateFormat('dd/MM').format(d)} al '
+              '${DateFormat('dd/MM').format(DateTime(d.year, d.month, d.day + 6))}',
           color: color,
         ),
       ),
       _ChartCard(
-        title: 'Mensile (ultimi 6 mesi)',
+        title: 'Semestrale (ultimi 6 mesi)',
         child: MinutesBarChart(
-          totals: monthlyTotals(data.sessions, today: now),
+          totals: monthlyTotals(data.sessions, today: now, months: 6),
           labelOf: DateFormat('MMM', 'it_IT').format,
           tooltipOf: DateFormat('MMMM y', 'it_IT').format,
           color: color,
@@ -109,10 +117,29 @@ class _StatsTabState extends State<StatsTab> {
       ),
     ];
 
+    // card «Per argomento»: tutte le materie o una sola (solo quelle con
+    // almeno una sessione, nell'ordine scelto in Studio)
+    final studied = {for (final x in data.sessions) x.courseId};
+    final topicCourses = [
+      for (final c in widget.catalog.courses)
+        if (studied.contains(c.id)) c,
+    ];
+    final topicCourse = topicCourses.any((c) => c.id == _topicCourse)
+        ? _topicCourse
+        : null;
+    final topicSessions = topicCourse == null
+        ? inRange
+        : [
+            for (final x in inRange)
+              if (x.courseId == topicCourse) x,
+          ];
+
     final breakdowns = [
       _BreakdownCard(
+        key: const Key('stats-by-course'),
         total: total,
         title: 'Per materia',
+        showPercent: false,
         rows: [
           for (final e in sortedByMinutes(minutesByCourse(inRange)))
             _Row(
@@ -123,10 +150,27 @@ class _StatsTabState extends State<StatsTab> {
         ],
       ),
       _BreakdownCard(
-        total: total,
+        key: const Key('stats-by-topic'),
+        total: totalMinutes(topicSessions),
         title: 'Per argomento',
+        showPercent: false,
+        filter: topicCourses.isEmpty
+            ? null
+            : ChoiceBox<int?>(
+                key: const Key('stats-topic-course'),
+                tooltip: 'Materia degli argomenti',
+                value: topicCourse,
+                items: [
+                  (null, 'Tutte le materie'),
+                  // solo il nome dell'insegnamento
+                  for (final c in topicCourses) (c.id, c.label),
+                ],
+                onChanged: (v) => setState(() => _topicCourse = v),
+              ),
         rows: [
-          for (final e in sortedByMinutes(minutesByTopic(inRange)).take(15))
+          for (final e in sortedByMinutes(
+            minutesByTopic(topicSessions),
+          ).take(15))
             _Row(
               e.key == null
                   ? 'Senza argomento'
@@ -137,6 +181,7 @@ class _StatsTabState extends State<StatsTab> {
         ],
       ),
       _BreakdownCard(
+        key: const Key('stats-by-activity'),
         total: total,
         title: 'Per attività',
         rows: [
@@ -305,15 +350,25 @@ class _Row {
 
 class _BreakdownCard extends StatelessWidget {
   const _BreakdownCard({
+    super.key,
     required this.title,
     required this.rows,
     required this.total,
+    this.showPercent = true,
+    this.filter,
   });
   final String title;
   final List<_Row> rows;
 
-  /// Totale del periodo: le barre mostrano la quota percentuale.
+  /// Totale del periodo: le barre mostrano la quota sul totale.
   final int total;
+
+  /// false: la barra senza la percentuale sul totale («Per materia», «Per
+  /// argomento»).
+  final bool showPercent;
+
+  /// Casella di scelta sotto il titolo (la materia in «Per argomento»).
+  final Widget? filter;
 
   @override
   Widget build(BuildContext context) {
@@ -324,6 +379,8 @@ class _BreakdownCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title, style: Theme.of(context).textTheme.titleSmall),
+            if (filter != null)
+              Padding(padding: const EdgeInsets.only(top: 4), child: filter),
             const SizedBox(height: 8),
             if (rows.isEmpty) const Text('Nessun dato nel periodo.'),
             for (final r in rows)
@@ -346,6 +403,7 @@ class _BreakdownCard extends StatelessWidget {
                     ProgressRow(
                       value: total == 0 ? 0 : r.minutes / total,
                       color: r.color,
+                      showPercent: showPercent,
                     ),
                   ],
                 ),

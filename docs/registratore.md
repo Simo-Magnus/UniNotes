@@ -174,10 +174,103 @@ solo**, `liveEngineOrder` in `app/lib/features/notes/recorder/live_transcriber.d
 | **Windows, macOS, Linux** | **Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx) | il modello Whisper scaricato dall'utente, a pezzi da ~10 s; altrimenti nessun testo | — |
 | **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua o si ferma | seconda passata con small q5_1 dove il telefono regge |
 
-Lingua: quella dell'insegnamento se nota (es. inglese per gli insegnamenti
-in inglese), altrimenti l'italiano. Nessun motore apre il microfono per
-conto suo: ricevono l'audio della registrazione (o lo leggono dal WAV di
-lavoro), e un loro errore non ferma mai la registrazione.
+Lingua: sempre fissata, **italiano** o **inglese** per gli insegnamenti in
+inglese (lingua dell'esame del corso), mai il rilevamento automatico né
+altre lingue (vedi «Lingua della trascrizione» sotto). Nessun motore apre il
+microfono per conto suo: ricevono l'audio della registrazione (o lo leggono
+dal WAV di lavoro), e un loro errore non ferma mai la registrazione.
+
+### Parole stabili confermate subito (22/10/2026)
+
+Prima il testo diventava modificabile solo a fine frase: con Parakeet alla
+pausa (o dopo 18 s di parlato continuo), con il riconoscitore del sistema
+quando lui chiudeva la frase, con Whisper a fine finestra (fino a 6 s). Si
+vedeva un lungo blocco grigio che poi veniva «incollato» tutto insieme.
+
+Ora vale la **conferma per accordo** (LocalAgreement-2, come
+whisper_streaming di Macháček, Dabre e Bojar, 2023;
+`app/lib/features/notes/recorder/live_agreement.dart`, logica pura): a ogni
+nuova decodifica del tratto in corso (Parakeet ogni ~0,75 s, il
+riconoscitore del sistema a ogni testo provvisorio, Whisper ogni ~2 s) le
+parole iniziali **uguali nelle ultime due decodifiche** diventano subito
+confermate ed entrano nella trascrizione come il resto: si modificano, si
+salvano, hanno i loro tempi. In grigio resta solo la coda ancora incerta.
+Con Parakeet una parola detta è modificabile **~1–2 s dopo** (due
+decodifiche a 0,75 s l'una dall'altra, più ~0,2–0,3 s di calcolo).
+
+Misura (22/10/2026, Parakeet vero dell'app installata, 17 frasi di FLEURS
+dev in italiano, 255 s, a pezzi da 100 ms): **311 parole su 366** confermate
+per accordo prima della fine della frase, **1,15 s di mediana** dalla fine
+della parola (90%: 2,0 s), più il calcolo di un'ipotesi (0,24 s di mediana,
+90%: 0,49 s); prima, con il testo modificabile solo a fine frase, 3,5 s di
+mediana e 7,8 s al 90%.
+
+- **Fine frase**: il testo definitivo del motore (Parakeet con tutto
+  l'audio della frase, il risultato del riconoscitore del sistema, la
+  finestra definitiva di Whisper) sostituisce le parole confermate:
+  punteggiatura, maiuscole e parole corrette, diviso in frasi con i loro
+  tempi. La prima frase tiene la sua chiave (inizio in ms), così nel campo
+  di modifica cambia al suo posto.
+- **Frasi corrette a mano**: non si toccano mai. Le parole nuove vanno in
+  una frase nuova dopo; a fine frase le parole del testo definitivo che
+  corrispondono a quelle già corrette si scartano (niente doppioni).
+- **Correzioni del riconoscitore** (Android e iOS a volte riscrivono parole
+  già dette): una parola confermata cambia solo se la stessa correzione
+  arriva in due testi provvisori di fila e la frase non è stata corretta a
+  mano; il resto si sistema a fine frase. Se il riconoscitore riparte da
+  capo (il testo nuovo non contiene più le parole confermate, es. iOS dopo
+  una pausa) la frase si chiude com'è e ne inizia una nuova.
+- **Frasi lunghissime senza pause**: le parole si confermano man mano; dopo
+  un punto si apre un segmento nuovo, così non resta un unico blocco.
+- **Whisper con la finestra piena**: l'ultima frase resta provvisoria e le
+  sue parole già confermate passano alla finestra dopo (si allineano, non
+  si ripetono). Il modello Whisper pesante (ripiego su PC, pezzi da 9 s
+  definitivi subito) non ridecodifica: lì il testo arriva a pezzi come
+  prima.
+- **Fine registrazione a metà frase**: il tratto si ritrascrive dopo il
+  salvataggio («Completo la trascrizione») e il risultato sostituisce le
+  parole confermate. Se il PC resta indietro e un tratto si salta, le parole
+  confermate restano e il recupero parte da dopo di loro.
+- **Seconda passata** (telefono): lavora solo sulle frasi chiuse, prima
+  della frase in corso; **formule** e controllo ortografico come prima.
+- Il file della sessione si salva al massimo ogni ~3 s mentre le parole si
+  confermano (subito a fine frase).
+- Nel campo di modifica le parole confermate si aggiungono in fondo alla
+  frase in corso: se il cursore era lì resta dov'è.
+
+Test: `app/test/live_agreement_test.dart` (ipotesi che cambiano,
+correzioni, frasi corrette a mano, ripartenze, frasi lunghissime, finestra
+piena di Whisper, Parakeet finto con la fine frase, la fine della
+registrazione e le frasi in un'altra lingua), `app/test/recorder_speech_test.dart`
+(riconoscitore del sistema che riscrive le parole).
+
+### Lingua della trascrizione (22/10/2026)
+
+La lingua è sempre quella della lezione: **italiano**, o **inglese** se
+l'insegnamento è in inglese (`Course.examLanguage`); in «Trascrivi con…» si
+può scegliere Italiano/Inglese per quella trascrizione. Mai il rilevamento
+automatico (`lectureLanguage`, `speech_language.dart`).
+
+- **Whisper** (whisper-cli e whisper.cpp nell'app, dal vivo, seconda
+  passata e file): `-l it`/`-l en` (`WhisperOptions.cliArgs`,
+  `language` del plugin). Era già `-l it` fisso: con il modello scaricato
+  (large-v3-turbo q5_0, provato il 22/10/2026 sulla registrazione che
+  mostrava le altre lingue) Whisper scrive in italiano.
+- **Parakeet** è la vera causa delle frasi in altre lingue: NVIDIA Parakeet
+  TDT 0.6B v3 riconosce da solo la lingua fra 25 lingue europee e
+  sherpa-onnx **non permette di fissarla** (le opzioni di lingua esistono
+  solo per Whisper, SenseVoice e Canary). Con audio lontano o rumoroso una
+  frase in italiano usciva in portoghese o in inglese (nella registrazione
+  del 22/10: «Eu sou um que se cheguei…», «Thank you.», «Yeah.»). Ora ogni
+  frase di Parakeet passa da `outsideLecture`: quelle in lingue diverse da
+  italiano e inglese (parole tipiche di spagnolo, portoghese, francese,
+  tedesco, olandese, rumeno, polacco, lettere e alfabeti che l'italiano non
+  usa) e, nelle lezioni in italiano, gli intercalari inglesi del rumore
+  («Thank you», «Yeah»…) non entrano nella trascrizione; se c'è un modello
+  Whisper scaricato quel tratto si **ritrascrive con Whisper** nella lingua
+  della lezione (dal vivo e in «Trascrivi con Parakeet»), altrimenti si
+  toglie e la card «Trascrizione» lo dice. Le frasi corte o incerte restano.
+- **Riconoscitore del sistema**: `it-IT` o `en-US` (`speechLocaleFor`).
 
 ### Perché sul telefono era peggiorata (21/10/2026)
 
@@ -308,8 +401,9 @@ pacchetto `sherpa_onnx`).
 volta con tutto l'audio arrivato nel frattempo (`PcmBacklog`). Il VAD
 (Silero: pausa di 0,5 s per chiudere una frase, parlato minimo 0,25 s,
 taglio forzato oltre 18 s di parlato continuo) decide dove sono le frasi:
-mentre si parla, ogni ~1 s di audio nuovo si decodifica la frase in corso
-(testo provvisorio); alla pausa la frase si decodifica una volta con tutto
+mentre si parla, ogni ~0,75 s di audio nuovo si decodifica la frase in
+corso (un'ipotesi: le parole uguali in due ipotesi di fila si confermano
+subito, vedi sopra); alla pausa la frase si decodifica una volta con tutto
 il suo audio (più 0,3 s prima, per non tagliare la prima parola) e diventa
 definitiva, divisa in frasi alla punteggiatura con i tempi dei token. I
 silenzi non producono testo e non costano calcolo. Due thread di ONNX
@@ -800,6 +894,31 @@ eliminato per ultimo, pieno come gli altri, con i colori di errore del tema
 `error`): contrasto almeno 4,5:1 in tema chiaro e scuro (prima il testo
 rosso sul fondo tonale non si leggeva). Le cartelle che iniziano con «.» non si sincronizzano: su OneDrive e
 Google Drive il file eliminato va nel cestino del servizio, come prima.
+
+## Windows: niente schermo nero riaprendo dalla barra delle applicazioni
+
+Riducendo a icona la finestra, Windows porta l'area della finestra a 0x0 e
+il runner la passava alla vista di Flutter: il motore si ridimensionava a
+0x0 e al ripristino doveva rifare layout e disegno di tutta la pagina a
+piena misura (vetro sfocato compreso) prima di mostrare qualcosa; nel
+frattempo restava il fondo vuoto (nero). Ora (`windows/runner/win32_window.cpp`,
+`WM_SIZE` con `SIZE_MINIMIZED`) la vista di Flutter tiene la sua misura e
+l'ultimo frame: al ripristino si vede subito. Il runner manda lui a Flutter
+lo stato «hidden» quando la finestra è ridotta a icona e «resumed» /
+«inactive» al ripristino (`flutter_window.cpp`, canale `flutter/lifecycle`):
+le Sessioni Focus continuano a sapere che l'app è in secondo piano. In più
+un frame forzato a ogni ritorno in primo piano (`WM_ACTIVATEAPP`, oltre a
+`WM_SIZE` e `WM_SHOWWINDOW`) e, lato Dart, `scheduleForcedFrame` in
+`desktop_window.dart`; la sincronizzazione al ritorno parte dopo 5 s.
+
+Prova (22/10/2026, app di prova con lo stesso runner e una pagina con 20
+riquadri sfocati, build release, riduci/ripristina da script): prima, a ogni
+ripristino Flutter riceveva una nuova misura e rifaceva la pagina (layout
+~18 ms + disegno 22–46 ms, con la superficie ricreata); dopo, nessuna
+nuova misura né ricostruzione, stati «hidden» → «resumed» corretti. Le
+catture di schermo (GDI, PrintWindow) non vedono il contenuto di Flutter
+(superficie DirectX), quindi il tempo di nero sullo schermo va controllato
+a occhio sull'app vera.
 
 ## Accessibilità
 

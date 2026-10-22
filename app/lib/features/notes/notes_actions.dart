@@ -13,6 +13,7 @@ import '../links/ai_assistants.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/share_files.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../study/study_widgets.dart';
 import 'ai_files.dart';
 import 'ai_prompts.dart';
@@ -26,6 +27,7 @@ import 'recorder/better_transcription.dart' show recordWhisperSpeed;
 import 'recorder/course_vocabulary.dart';
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
+import 'recorder/speech_language.dart';
 import '../links/link_settings.dart';
 
 /// Sul PC Whisper usa `whisper-cli`; sul telefono il motore incluso.
@@ -59,8 +61,12 @@ void transcribeWithWhisper(
   String? model,
   bool again = false,
   String? startedMessage,
+  String? language,
 }) {
   final s = context.read<AppServices>();
+  // lingua sempre fissata: quella scelta, altrimenti quella
+  // dell'insegnamento (inglese o, di predefinito, italiano)
+  final lang = lectureLanguage(language ?? course.examLanguage);
   final cancel = CancelToken();
   // un errore precedente sulla stessa registrazione si toglie
   for (final j in s.jobs.failedOn(rec.file.path, kind: JobKind.whisper)) {
@@ -114,6 +120,7 @@ void transcribeWithWhisper(
         model: chosen.id,
         cancel: cancel,
         prompt: prompt,
+        language: lang,
         onProgress: (pr) => report(
           '${pr.phase} · ${whisperModelLabel(chosen.id)}',
           pr.fraction,
@@ -221,6 +228,9 @@ Future<void> chooseWhisperModelAndTranscribe(
     );
     return;
   }
+  // lingua della lezione: quella dell'insegnamento, cambiabile qui (mai il
+  // rilevamento automatico)
+  var lang = lectureLanguage(course.examLanguage);
   final picked = await showModalBottomSheet<String>(
     context: context,
     showDragHandle: true,
@@ -236,6 +246,31 @@ Future<void> chooseWhisperModelAndTranscribe(
               child: Text(
                 again ? 'Trascrivi di nuovo con…' : 'Trascrivi con…',
                 style: Theme.of(c).textTheme.titleMedium,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+              child: StatefulBuilder(
+                builder: (c, setLocal) => Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Lingua della lezione',
+                        style: Theme.of(c).textTheme.bodyMedium,
+                      ),
+                    ),
+                    SegmentedButton<String>(
+                      key: const Key('transcribe-language'),
+                      showSelectedIcon: false,
+                      segments: const [
+                        ButtonSegment(value: 'it', label: Text('Italiano')),
+                        ButtonSegment(value: 'en', label: Text('Inglese')),
+                      ],
+                      selected: {lang},
+                      onSelectionChanged: (v) => setLocal(() => lang = v.first),
+                    ),
+                  ],
+                ),
               ),
             ),
             for (final m in models)
@@ -268,7 +303,14 @@ Future<void> chooseWhisperModelAndTranscribe(
     ),
   );
   if (picked == null || !context.mounted) return;
-  transcribeWithWhisper(context, course, rec, model: picked, again: again);
+  transcribeWithWhisper(
+    context,
+    course,
+    rec,
+    model: picked,
+    again: again,
+    language: lang,
+  );
 }
 
 /// I tre passi mostrati nel riquadro dell'AI (Registra → insegnamento).
@@ -364,25 +406,19 @@ Future<void> _saveCaptured(
   final before = await target.exists() ? await target.readAsString() : null;
   await s.notes.writeText(course, folder, name, text);
   s.revision.bump();
-  if (messenger == null || !messenger.mounted) return;
-  messenger
-    ..hideCurrentSnackBar()
-    ..showSnackBar(
-      SnackBar(
-        content: Text(done),
-        action: SnackBarAction(
-          label: 'Annulla',
-          onPressed: () async {
-            if (before == null) {
-              if (await target.exists()) await target.delete();
-            } else {
-              await target.writeAsString(before);
-            }
-            s.revision.bump();
-          },
-        ),
-      ),
-    );
+  // «Annulla»: il file torna com'era (o sparisce, se era nuovo)
+  showUndoSnackBarOn(
+    messenger,
+    done,
+    onUndo: () async {
+      if (before == null) {
+        if (await target.exists()) await target.delete();
+      } else {
+        await target.writeAsString(before);
+      }
+      s.revision.bump();
+    },
+  );
 }
 
 /// «Allega» nei Riassunti: copia i file scelti (Markdown, PDF, Word…) nella
@@ -622,21 +658,17 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
     course: course.name,
   );
   s.revision.bump();
-  if (entry != null) {
-    messenger
-      ?..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: const Text('Spostato in «Eliminati di recente».'),
-          action: SnackBarAction(
-            label: 'Annulla',
-            onPressed: () async {
-              await s.trash.restore(entry);
-              s.revision.bump();
-            },
-          ),
-        ),
-      );
+  if (entry != null && messenger != null && context.mounted) {
+    showUndoSnackBar(
+      context,
+      'Spostato in «Eliminati di recente».',
+      messenger: messenger,
+      undoneMessage: '«${f.name}» ripristinato.',
+      onUndo: () async {
+        await s.trash.restore(entry);
+        s.revision.bump();
+      },
+    );
   }
   return entry != null;
 }

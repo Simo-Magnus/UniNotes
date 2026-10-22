@@ -78,6 +78,19 @@
       return;
     }
 
+    // il selettore deve aprirsi entro 25 secondi: se Google rifiuta la chiave
+    // API (non valida o non autorizzata per questo sito) mostra l'errore
+    // dentro la sua finestra senza avvisare la pagina, e l'app resterebbe in
+    // attesa. Allora si torna all'app con la causa.
+    var loaded = false;
+    var answered = false;
+    setTimeout(function () {
+      if (!loaded && !answered) {
+        answered = true;
+        done({ error: 'chiave API non valida o selettore non aperto' }, 'Importazione non riuscita');
+      }
+    }, 25000);
+
     window.onPickerApi = function () {
       gapi.load('picker', function () {
         var view = new google.picker.DocsView(google.picker.ViewId.DOCS)
@@ -93,6 +106,12 @@
           .setTitle('Scegli i file da importare in UniNotes')
           .setCallback(function (data) {
             var action = data[google.picker.Response.ACTION];
+            if (action === 'loaded') {
+              loaded = true;
+              return;
+            }
+            if (answered) return;
+            answered = true;
             if (action === google.picker.Action.PICKED) {
               var ids = (data[google.picker.Response.DOCUMENTS] || []).map(function (d) {
                 return d[google.picker.Document.ID];
@@ -102,6 +121,8 @@
               done({ cancel: '1' }, 'Nessun file scelto');
             } else if (action === 'error') {
               done({ error: 'selettore non disponibile' }, 'Importazione non riuscita');
+            } else {
+              answered = false;
             }
           })
           .build();
@@ -115,6 +136,8 @@
     s.async = true;
     s.onload = function () { window.onPickerApi(); };
     s.onerror = function () {
+      if (answered) return;
+      answered = true;
       done({ error: 'Google non raggiungibile' }, 'Importazione non riuscita');
     };
     document.head.appendChild(s);

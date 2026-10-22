@@ -12,6 +12,7 @@ import '../../core/services/loopback_oauth.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
+import 'drive_picker.dart' show DrivePicker;
 import 'google_drive_service.dart';
 import 'incoming_files.dart';
 
@@ -183,6 +184,27 @@ Future<String> _uploadMessage(
 Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async {
   final picker = gd.picker();
   if (!picker.available) {
+    // senza chiave API il selettore di Google non si apre: lo si spiega e
+    // si propone la scelta dal dispositivo
+    final local = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        icon: const Icon(Icons.vpn_key_off_outlined),
+        title: const Text('Selettore di Google Drive non disponibile'),
+        content: const Text(DrivePicker.missingKeyMessage),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('Chiudi'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('Scegli dal dispositivo'),
+          ),
+        ],
+      ),
+    );
+    if (local != true || !context.mounted) return;
     final List<PlatformFile> picked;
     try {
       picked = await FilePicker.pickFiles(
@@ -207,10 +229,55 @@ Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async 
     }
     return;
   }
-  final result = await picker.pick(await gd.accessToken());
+  final token = await gd.accessToken();
+  if (!context.mounted) return;
+  // attesa visibile con «Annulla»: ogni errore (chiave rifiutata, pagina
+  // chiusa, nessuna risposta in 5 minuti) ferma l'attesa con il messaggio
+  final cancel = Completer<void>();
+  final waiting = showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (c) => AlertDialog(
+      title: const Text('Scegli i file su Google Drive'),
+      content: const Row(
+        children: [
+          SizedBox(
+            width: 22,
+            height: 22,
+            child: CircularProgressIndicator(strokeWidth: 2.5),
+          ),
+          SizedBox(width: 16),
+          Expanded(
+            child: Text(
+              'Il selettore è aperto nel browser: scegli i file, poi torna '
+              'qui.',
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            if (!cancel.isCompleted) cancel.complete();
+            Navigator.pop(c);
+          },
+          child: const Text('Annulla'),
+        ),
+      ],
+    ),
+  );
+  final PickerResult result;
+  try {
+    result = await picker.pick(token, cancel: cancel.future);
+  } finally {
+    if (!cancel.isCompleted) {
+      cancel.complete();
+      if (context.mounted) Navigator.of(context, rootNavigator: true).pop();
+    }
+    await waiting;
+  }
   if (result.error != null) {
-    throw OAuthException('Il selettore di Google Drive non ha risposto: '
-        '${result.error}');
+    throw OAuthException(DrivePicker.explain(result.error!));
   }
   if (result.cancelled || !context.mounted) return;
   final plan = await gd.planImport(result.ids);

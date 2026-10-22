@@ -127,8 +127,12 @@ class NotesScreen extends StatelessWidget {
                 GlassCard(
                   child: ListTile(
                     leading: const Icon(Icons.menu_book_outlined),
-                    title: const Text('OneNote'),
-                    subtitle: const Text('I tuoi blocchi appunti'),
+                    title: const Text('Blocchi appunti OneNote'),
+                    subtitle: const Text(
+                      'Leggi qui le pagine di OneNote del tuo account '
+                      'Microsoft (sola lettura) e aprile in OneNote per '
+                      'modificarle.',
+                    ),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(

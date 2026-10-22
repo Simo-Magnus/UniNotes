@@ -15,6 +15,7 @@ import 'package:university_notes/features/notes/ai_request_dialog.dart';
 import 'package:university_notes/features/notes/lesson_transcripts.dart';
 import 'package:university_notes/features/notes/recorder/live_transcriber.dart';
 import 'package:university_notes/features/notes/recorder/overlay_logic.dart';
+import 'package:university_notes/features/notes/recorder/speech_language.dart';
 import 'package:university_notes/features/notes/recorder/system_speech.dart';
 import 'package:university_notes/features/notes/recorder/wav.dart';
 import 'package:university_notes/features/notes/recycle_bin.dart';
@@ -39,12 +40,18 @@ void main() {
 
   tearDown(() => messenger.setMockMethodCallHandler(channel, null));
 
-  test('lingua: quella dell\'insegnamento, altrimenti italiano', () {
+  test('lingua: inglese per gli insegnamenti in inglese, altrimenti '
+      'italiano (mai altre lingue)', () {
     expect(speechLocaleFor(null), 'it-IT');
     expect(speechLocaleFor(''), 'it-IT');
     expect(speechLocaleFor('en'), 'en-US');
     expect(speechLocaleFor('en_GB'), 'en-GB');
-    expect(speechLocaleFor('fr'), 'fr-FR');
+    expect(speechLocaleFor('fr'), 'it-IT');
+    expect(speechLocaleFor('de-DE'), 'it-IT');
+    // lingua di Whisper e del controllo della lingua di Parakeet
+    expect(lectureLanguage(null), 'it');
+    expect(lectureLanguage('en-US'), 'en');
+    expect(lectureLanguage('pt'), 'it');
     expect(speechUnavailableText('android<13'), contains('Android 13'));
     expect(speechUnavailableText(null), isNull);
   });
@@ -89,11 +96,15 @@ void main() {
       await fromSystem('partial', {'session': 1, 'text': 'buongiorno'});
       expect(live.partial, 'buongiorno');
       await fromSystem('partial', {'session': 1, 'text': 'buongiorno a tutti'});
-      expect(live.partial, 'buongiorno a tutti');
-      expect(live.segments, isEmpty);
+      // «buongiorno» è in due testi provvisori di fila: confermato subito
+      // (modificabile), il resto resta provvisorio
+      expect(live.partial, 'a tutti');
+      expect(live.segments.single.text, 'buongiorno');
+      expect(live.segments.single.start, const Duration(seconds: 4));
       live.onAudio(const Duration(seconds: 7));
       await fromSystem('result', {'session': 1, 'text': 'Buongiorno a tutti.'});
       expect(live.partial, '');
+      // il testo definitivo sostituisce le parole confermate, stessa frase
       expect(live.segments.single.text, 'Buongiorno a tutti.');
       expect(live.segments.single.start, const Duration(seconds: 4));
       expect(live.segments.single.end, const Duration(seconds: 7));
@@ -106,6 +117,51 @@ void main() {
       await fromSystem('partial', {'session': 1, 'text': 'ultima frase'});
       await live.flush(timeout: const Duration(milliseconds: 50));
       expect(live.segments.last.text, 'ultima frase');
+      await live.close();
+    },
+  );
+
+  test(
+    'riconoscitore che riscrive le parole: niente doppioni, la frase '
+    'corretta a mano resta',
+    () async {
+      messenger.setMockMethodCallHandler(channel, (c) async {
+        return switch (c.method) {
+          'support' => {'available': true, 'onDevice': true},
+          'start' => true,
+          _ => null,
+        };
+      });
+      final live = LiveTranscriber(null, speech: SystemSpeech());
+      await live.begin(File('x.wav'), sampleRate: 16000, channels: 1);
+      live.onAudio(const Duration(seconds: 2));
+      Future<void> partial(String t) =>
+          fromSystem('partial', {'session': 1, 'text': t});
+      await partial('la derivata della');
+      await partial('la derivata della funzione');
+      expect(live.segments.single.text, 'la derivata della');
+      // il riconoscitore cambia idea su una parola già confermata
+      await partial('la derivate della funzione è');
+      await partial('la derivate della funzione è continua');
+      expect(live.segments.single.text, 'la derivate della funzione è');
+      // lo studente la corregge mentre si parla
+      live.editSegment(0, 'La derivata della funzione è');
+      await partial('la derivate della funzione è continua in');
+      await partial('la derivate della funzione è continua in zero');
+      expect(live.segments.map((s) => s.text), [
+        'La derivata della funzione è',
+        'continua in',
+      ]);
+      live.onAudio(const Duration(seconds: 5));
+      await fromSystem('result', {
+        'session': 1,
+        'text': 'La derivata della funzione è continua in zero.',
+      });
+      expect(live.segments.map((s) => s.text), [
+        'La derivata della funzione è',
+        'continua in zero.',
+      ]);
+      expect(live.partial, '');
       await live.close();
     },
   );

@@ -198,6 +198,15 @@ Win32Window::MessageHandler(HWND hwnd,
       return 0;
     }
     case WM_SIZE: {
+      // Ridotta a icona l'area della finestra diventa 0x0: passata a
+      // Flutter, l'app si ridisegnava a 0x0 (superficie svuotata, nera) e
+      // al ripristino restava nera finché non arrivava un frame nuovo a
+      // tutta misura (ricostruzione e rasterizzazione di tutta la pagina,
+      // anche ~1 s). La vista di Flutter tiene la sua misura: tornando dalla
+      // barra delle applicazioni si vede subito l'ultimo frame.
+      if (wparam == SIZE_MINIMIZED) {
+        return 0;
+      }
       RECT rect = GetClientArea();
       if (child_content_ != nullptr) {
         // Size and position the child window.

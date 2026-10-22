@@ -208,8 +208,8 @@ void main() {
       await _settle(tester, 120);
       expect(find.textContaining('OneDrive collegato come Studente'),
           findsOneWidget);
-      expect(find.textContaining('Collegato (Studente · s@outlook.it)'),
-          findsOneWidget);
+      // la scheda è subito «collegata»; la prima sincronizzazione continua
+      // da sola senza far aspettare il messaggio
       expect(find.text('Scollega'), findsOneWidget);
       // nei test non c'è il plugin della connettività (controlli automatici)
       final ex = tester.takeException();

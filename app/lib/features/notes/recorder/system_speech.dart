@@ -214,21 +214,18 @@ class SpeechSupport {
   final bool languageOk;
 }
 
-/// Lingua del riconoscimento: quella dell'insegnamento se nota (es. «en»
-/// per gli insegnamenti in inglese), altrimenti l'italiano.
+/// Lingua del riconoscimento: sempre fissata, «en-US» (o la variante
+/// inglese indicata, es. «en-GB») per gli insegnamenti in inglese,
+/// altrimenti «it-IT». La trascrizione resta in italiano o in inglese:
+/// mai altre lingue né il rilevamento automatico.
 String speechLocaleFor(String? language) {
   final raw = (language ?? '').trim().replaceAll('_', '-');
-  if (raw.isEmpty) return 'it-IT';
-  if (raw.contains('-')) return raw;
-  return switch (raw.toLowerCase()) {
-    'it' => 'it-IT',
-    'en' => 'en-US',
-    'fr' => 'fr-FR',
-    'de' => 'de-DE',
-    'es' => 'es-ES',
-    'pt' => 'pt-PT',
-    final l => l,
-  };
+  final l = raw.toLowerCase();
+  if (!l.startsWith('en')) return 'it-IT';
+  final parts = raw.split('-');
+  return parts.length == 2 && parts[1].length == 2
+      ? 'en-${parts[1].toUpperCase()}'
+      : 'en-US';
 }
 
 /// Spiegazione in italiano di un [SpeechSupport.reason] (null se non serve

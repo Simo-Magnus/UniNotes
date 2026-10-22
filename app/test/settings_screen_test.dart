@@ -120,6 +120,41 @@ void main() {
     await tester.runAsync(() => s.database.close());
   });
 
+  testWidgets('desktop: la card delle notifiche è nella colonna di sinistra', (
+    tester,
+  ) async {
+    final s = (await tester.runAsync(_services))!;
+    await _pump(tester, s, const Size(1400, 3000));
+    final notifiche = tester.getTopLeft(find.text('Notifiche'));
+    final percorso = tester.getTopLeft(find.text('Il mio percorso'));
+    final aspetto = tester.getTopLeft(find.text('Aspetto'));
+    final suoni = tester.getTopLeft(find.text('Suoni e vibrazioni'));
+    // stessa colonna del percorso e del calendario, non di aspetto e suoni
+    expect(notifiche.dx, closeTo(percorso.dx, 1));
+    expect(notifiche.dx, lessThan(aspetto.dx));
+    expect(notifiche.dx, lessThan(suoni.dx));
+    final calendario = tester.getTopLeft(find.text('Calendario'));
+    final esclusioni = tester.getTopLeft(find.text('Esclusioni'));
+    expect(calendario.dy, lessThan(notifiche.dy));
+    expect(notifiche.dy, lessThan(esclusioni.dy));
+    await tester.runAsync(() => s.database.close());
+  });
+
+  testWidgets('telefono: notifiche subito dopo il calendario, prima delle '
+      'esclusioni', (tester) async {
+    final s = (await tester.runAsync(_services))!;
+    await _pump(tester, s, const Size(400, 6000));
+    final calendario = tester.getTopLeft(find.text('Calendario')).dy;
+    final notifiche = tester.getTopLeft(find.text('Notifiche')).dy;
+    final esclusioni = tester.getTopLeft(find.text('Esclusioni')).dy;
+    final aspetto = tester.getTopLeft(find.text('Aspetto')).dy;
+    expect(calendario, lessThan(notifiche));
+    expect(notifiche, lessThan(esclusioni));
+    expect(esclusioni, lessThan(aspetto));
+    expect(tester.takeException(), isNull);
+    await tester.runAsync(() => s.database.close());
+  });
+
   for (final (label, width) in [('largo', 700.0), ('stretto', 360.0)]) {
     testWidgets('«Accesso e OFA» nella riga «Accesso» ($label)', (
       tester,

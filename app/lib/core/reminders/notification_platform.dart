@@ -11,6 +11,7 @@ import 'package:timezone/timezone.dart' as tz;
 
 import '../constants/build_flags.dart';
 import 'notification_plan.dart';
+import 'windows_toast_icon.dart';
 
 /// Tocco su una notifica o su uno dei suoi pulsanti.
 class NotificationTap {
@@ -64,6 +65,12 @@ abstract class NotificationPlatform {
   Future<void> show(PlannedNotification n);
   Future<void> cancel(int id);
   Future<void> openSystemSettings();
+
+  /// Avvisi all'ora esatta consentiti (Android; altrove sempre).
+  Future<bool> exactAlarmsAllowed();
+
+  /// Apre la richiesta del sistema per gli avvisi all'ora esatta.
+  Future<bool> requestExactAlarms();
 }
 
 /// Coda dei pulsanti premuti a app chiusa (SharedPreferences: la scrive il
@@ -243,7 +250,50 @@ class LocalNotificationPlatform implements NotificationPlatform {
         );
       }
     }
+    // logo dell'app accanto a «UniNotes» in cima ai toast di Windows: la
+    // chiave del registro scritta dal pacchetto può restare senza IconUri
+    if (Platform.isWindows) {
+      await WindowsToastIcon.ensure(_windowsArt('uninotes.png'));
+    }
     _ready = true;
+    _exact = null;
+  }
+
+  /// Avvisi all'ora esatta consentiti (Android 12+: «Sveglie e promemoria»);
+  /// letto una volta per inizializzazione o richiesta.
+  bool? _exact;
+
+  @override
+  Future<bool> exactAlarmsAllowed() async {
+    if (!Platform.isAndroid) return true;
+    final cached = _exact;
+    if (cached != null) return cached;
+    try {
+      return _exact =
+          await _plugin
+              .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin
+              >()
+              ?.canScheduleExactNotifications() ??
+          false;
+    } catch (_) {
+      return _exact = false;
+    }
+  }
+
+  @override
+  Future<bool> requestExactAlarms() async {
+    if (!Platform.isAndroid) return true;
+    _exact = null;
+    try {
+      await _plugin
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >()
+          ?.requestExactAlarmsPermission();
+    } catch (_) {}
+    _exact = null;
+    return exactAlarmsAllowed();
   }
 
   /// Canali che superano il Non disturbare: solo `focus_avvisi`.
@@ -548,9 +598,19 @@ class LocalNotificationPlatform implements NotificationPlatform {
       // istante locale convertito in UTC: nessun bisogno del fuso del sistema
       scheduledDate: tz.TZDateTime.from(n.at, tz.UTC),
       notificationDetails: await _details(n),
-      // niente SCHEDULE_EXACT_ALARM: qualche minuto di ritardo va bene
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      // prove e sessioni all'ora esatta se il sistema lo consente
+      // (calendario interno); altrimenti qualche minuto di ritardo
+      androidScheduleMode: await scheduleModeFor(n),
     );
+  }
+
+  /// Modo di pianificazione Android della notifica [n].
+  Future<AndroidScheduleMode> scheduleModeFor(PlannedNotification n) async {
+    final timely =
+        n.type == NotificationType.exam || n.type == NotificationType.session;
+    return timely && await exactAlarmsAllowed()
+        ? AndroidScheduleMode.exactAllowWhileIdle
+        : AndroidScheduleMode.inexactAllowWhileIdle;
   }
 
   @override

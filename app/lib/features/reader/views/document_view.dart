@@ -14,6 +14,7 @@ import '../reader_text.dart';
 import 'image_view.dart';
 import 'pinch.dart';
 import 'reader_surface.dart';
+import 'slide_view.dart';
 
 /// Elemento della lista: un blocco o l'intestazione di una sezione.
 class _Item {
@@ -373,18 +374,20 @@ class DocumentViewState extends State<DocumentView> {
     List<(int, int, bool)> hits,
     String keyPrefix,
     ReaderSurface surface,
-    Brightness b,
-  ) {
+    Brightness b, {
+    List<TextStyle>? styles,
+  }) {
     final out = <InlineSpan>[];
     var offset = 0;
     for (var k = 0; k < spans.length; k++) {
       final s = spans[k];
-      var style = base.copyWith(
+      final own = styles != null && k < styles.length ? styles[k] : base;
+      var style = own.copyWith(
         fontWeight: s.bold ? FontWeight.w700 : null,
         fontStyle: s.italic ? FontStyle.italic : null,
         fontFamily: s.mono ? 'IBMPlexMono' : null,
         fontSize: s.mono && !widget.doc.mono
-            ? (base.fontSize ?? 16) * 0.9
+            ? (own.fontSize ?? 16) * 0.9
             : null,
         decoration: TextDecoration.combine([
           if (s.underline || s.link != null) TextDecoration.underline,
@@ -580,6 +583,8 @@ class DocumentViewState extends State<DocumentView> {
         );
       case RTableRow():
         child = _row(block, i, surface, b);
+      case RSlide():
+        return _slide(block, i, width, surface, b);
       case RPara():
         child = _para(block, i, base, surface, b, theme);
     }
@@ -590,6 +595,67 @@ class DocumentViewState extends State<DocumentView> {
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: math.min(maxW, width)),
         child: child,
+      ),
+    );
+  }
+
+  /// Diapositiva disegnata: larga quanto la vista (al massimo 960 punti
+  /// per lo zoom), con il pulsante per vederla a tutto schermo.
+  Widget _slide(
+    RSlide slide,
+    int i,
+    double width,
+    ReaderSurface surface,
+    Brightness b,
+  ) {
+    final s = _scale;
+    final w = math.min(width, _fit ? width : 960 * s);
+    final title = widget.doc.sections.length > _items[i].section
+        ? widget.doc.sections[_items[i].section].title
+        : '';
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 12 * s),
+        child: Stack(
+          children: [
+            SlideCanvas(
+              slide: slide,
+              width: w,
+              keyOf: (t) => _activeIn(i, t) ? _activeKey : null,
+              spans: (t, spans, styles) => _spans(
+                spans,
+                styles.isEmpty ? const TextStyle() : styles.first,
+                _hits(i, t),
+                '$i.$t',
+                surface,
+                b,
+                styles: styles,
+              ),
+            ),
+            Positioned(
+              right: 4,
+              top: 4,
+              child: IconButton(
+                tooltip: 'Diapositiva a tutto schermo',
+                visualDensity: VisualDensity.compact,
+                style: IconButton.styleFrom(
+                  backgroundColor: const Color(0x66000000),
+                  foregroundColor: Colors.white,
+                ),
+                icon: const Icon(Icons.open_in_full, size: 18),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => SlideViewerPage(
+                      slide: slide,
+                      title: title.isEmpty ? 'Diapositiva' : title,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

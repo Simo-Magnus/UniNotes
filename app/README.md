@@ -25,6 +25,34 @@ tipo di un allegato (teoria, esercizi, ripasso) è un dato del database e un fil
 d'uno, quindi niente sottocartelle per tipo; le Sessioni Studio (cronometro e timer) sono righe
 del database (`study_sessions`), senza file. La Home legge le cartelle esistenti senza crearne.
 
+## Avvisi con «Annulla»
+
+Le azioni reversibili mostrano in basso un avviso con **Annulla**
+(`showUndoSnackBar` / `showUndoSnackBarOn` in `lib/widgets/undo_snack_bar.dart`): il
+pulsante rimette subito le cose com'erano e lo conferma; l'avviso si chiude da solo dopo 6
+secondi. Quello che non si può recuperare (togliere un file dal disco) si fa solo alla chiusura
+dell'avviso senza «Annulla» (`onCommit`), così l'annullamento è completo. Dove si usa:
+
+- Libri: libro rimosso, ripristinato o salvato (spunta verde); «Elimina libri non salvati»;
+  libro eliminato (la copia nell'app si cancella alla chiusura dell'avviso); copia tolta
+  dall'app (idem).
+- File e lettore: voce tolta dai recenti, «Cancella elenco»; segnalibro aggiunto o eliminato.
+- Registrazioni: registrazione eliminata (in corso, dal riquadro o da Registra) e file spostati
+  in «Eliminati di recente»; ripristino da «Eliminati di recente»; segnalibri del lettore delle
+  registrazioni (aggiunto/tolto); testo salvato da Gemini (torna il file di prima).
+- Studio: sessione eliminata (torna con lo stesso id); allegato rimosso (la copia si cancella
+  alla chiusura dell'avviso).
+- Esami e insegnamenti: prova eliminata (torna con lo stesso id e l'insegnamento a scelta nel
+  piano); «Segna tutti come sostenuti» degli anni precedenti; insegnamento tolto dagli elenchi
+  (archiviato); nome dell'insegnamento cambiato.
+- Impostazioni: «Ripristina le domande» (tornano le scelte «Non chiedere più»).
+
+Senza «Annulla» (si conferma prima, perché non si torna indietro in modo completo): eliminazione
+di un insegnamento con tutti i dati, di un modulo, degli argomenti e di «Rimuovi tutti i moduli»
+(gli allegati copiati si cancellano e le sessioni restano senza modulo/argomento), insegnamenti
+nascosti o rimessi dalle esclusioni del piano (riscaricano il piano), eliminazione definitiva da
+«Eliminati di recente».
+
 ## Lettore universale e sezione File
 
 `lib/features/reader/` apre nell'app qualsiasi file di appunti: `openInReader(context, path)`
@@ -34,6 +62,48 @@ e, su desktop, il trascinamento di un file nella finestra (non c'è più «Apri 
 sezione mostra i file dell'app). Libri, materiali,
 allegati di Studio si aprono qui (le registrazioni hanno il loro lettore, con forma d'onda, segnalibri e
 testo sincronizzato: vedi [docs/registratore.md](../docs/registratore.md)); **Apri con…** resta nel menu.
+
+**Recenti**: l'app ricorda gli ultimi 50 file aperti nel lettore e ne mostra 20 (circa due
+settimane di studio: dispense, libri e registrazioni dei corsi del semestre, senza allungare
+troppo la pagina sul telefono); «Mostra altri» apre il resto. Ogni voce si toglie con la X.
+
+**Apri con…** (menu del lettore e avviso dei formati semplificati) mostra la scelta dell'app del
+sistema anche quando per quel tipo di file c'è già un'app predefinita: Windows «Come vuoi aprire
+questo file?» (`SHOpenWithDialog` con `OAIF_ALLOW_REGISTRATION | OAIF_EXEC`,
+`windows/runner/open_with.cpp`; senza il canale `rundll32 shell32.dll,OpenAs_RunDLL`), macOS un
+pannello sulla cartella Applicazioni e poi `NSWorkspace` (`UniNotesOpenWith` in
+`MainFlutterWindow.swift`), Android `Intent.createChooser` con il FileProvider di open_filex
+(`OpenWith.kt`), iOS il menu «Apri in…» (`UIDocumentInteractionController`, `UniNotesOpenWith` in
+`AppDelegate.swift`), Linux `gio open` (l'app predefinita: non c'è una scelta comune ai desktop).
+Canale `io.github.simomagnus.universitynotes/apri_con`, metodo `openWith {path}` → "ok",
+"annullato", "nessuna_app" o "errore" (`ExternalLauncher.openWith`). «Apri con l'app
+predefinita» (pagina dei file non mostrabili) e i collegamenti ai file restano l'app predefinita.
+
+### Resa dei formati: completa, semplificata, non supportata
+
+Ogni formato ha una resa (`ReaderFormat.fidelity`): **completa**, **semplificata** (campo
+`limited`: cosa l'app non mostra) o **non supportata** (solo «Apri con…»). Anche un file di un
+formato a resa completa può avere parti che l'app non disegna (`RDoc.limits`: grafici, SmartArt
+senza disegno, formule, immagini EMF/WMF/SVM, oggetti incorporati). In questi casi, all'apertura,
+la finestra «Anteprima semplificata» (`reader_fidelity.dart`) dice cosa manca e propone due
+pulsanti: «Vedi anteprima semplificata» e «Apri con un'altra app» (scelta dell'app del sistema;
+il lettore si chiude). Con «Non chiedere più» la scelta vale per l'estensione
+(`dont_ask_reader_partial_<estensione>` = `external`, che poi apre subito con l'app predefinita,
+o `preview`) e si annulla da Impostazioni → «Ripristina le domande». In «Formati supportati» le
+estensioni semplificate hanno «(semplificato)».
+
+| Resa | Formati |
+|---|---|
+| Completa | .pdf; .docx .docm .dotx .dotm .odt .ott .rtf; .pptx .pptm .ppsx .ppsm .potx .odp .otp (diapositive disegnate); .xlsx .xlsm .xltx .ods .ots .csv .tsv; testo, markup e codice; .ipynb; .epub .mobi .azw .azw3 .prc .fb2 .cbz .cbr .djvu .djv; immagini; audio e video; .xopp .xoj .excalidraw .inkml .isf .ink; .enex .mm .opml; .zip .rar. Chiede comunque se il singolo file ha grafici, SmartArt senza disegno, formule, immagini EMF/WMF/SVM o oggetti incorporati |
+| Semplificata (chiede) | .doc .dot (solo testo); .ppt .pps .pot (testo e, in fondo, le immagini); .xls .xlt (solo valori); .ps .eps; .pages .key .numbers (anteprima salvata da Apple); .xps .oxps (solo testo); .kfx .kfx-zip .kpf (solo testo); .acsm (token per Adobe Digital Editions); .goodnotes .note .notability (PDF e immagini incorporati); .one (testo e immagini senza impaginazione); .onepkg (elenco delle sezioni); .canvas (schede in elenco) |
+| Non supportata | ogni altra estensione: informazioni sul file, «Apri con l'app predefinita», «Condividi» |
+
+Verifica su file veri (`test/fixtures/office/`, salvati da PowerPoint ed Excel: presentazione
+semplice, tema «Facet» con forme dello schema e del layout, gruppo, rotazione e ritaglio, la
+stessa presentazione in .odp e in .ppt, fogli .xlsx con e senza grafico, .xls, .ods; l'autore nei
+metadati è sostituito con «UniNotes»): le diapositive disegnate dall'app sono state confrontate
+con le immagini esportate da PowerPoint (stesse posizioni, colori, sfondi, elenchi, tabelle e
+immagini; cambia solo il carattere, quello dell'app). Test in `test/reader_fidelity_test.dart`.
 
 La tabella dei formati è `reader_formats.dart` (`kReaderFormats`, una riga per estensione con
 famiglia e vista): è anche l'elenco di controllo verificato da `test/reader_formats_test.dart`.
@@ -45,8 +115,9 @@ famiglia e vista): è anche l'elenco di controllo verificato da `test/reader_for
 | | .doc .dot (Word 97–2003) | solo testo, dal contenitore OLE2 (FIB → CLX) |
 | | .pages | PDF/immagine d'anteprima incorporati, altrimenti "Apri con…" |
 | | .ps .eps (PostScript) | testo delle stringhe passate a show/ashow/widthshow/xshow/… (una sezione per showpage); EPS: anteprima TIFF (intestazione DOS) o EPSI; i disegni richiedono un interprete |
-| Presentazioni | .pptx .pptm .ppsx .ppsm .potx .odp .otp | una sezione per diapositiva, note del relatore |
-| | .ppt .pps .pot (97–2003) | solo testo (TextCharsAtom/TextBytesAtom) |
+| Presentazioni | .pptx .pptm .ppsx .ppsm .potx | diapositive disegnate come nell'originale (`parsers/pptx_slides.dart`, vista `views/slide_view.dart`): sfondo, forme e immagini dello schema e del layout, segnaposto con posizioni e stili ereditati, caselle di testo (dimensioni, colori del tema, allineamento, elenchi puntati e numerati, adattamento), immagini anche ritagliate, forme predefinite con le regolazioni e a mano libera, linee, gruppi, rotazioni, tabelle con lo stile, SmartArt dal disegno salvato, formule dall'immagine di ripiego; grafici, EMF/WMF e oggetti → riquadro con il nome e domanda all'apertura; testo cercabile, a tutto schermo con zoom; note del relatore sotto. Se una forma non ha posizione: testo in sequenza |
+| | .odp .otp | pagine disegnate (`parsers/odp_slides.dart`): sfondo, forme dello schema, riquadri di testo, elenchi, immagini, forme di LibreOffice (preimpostate e tracciati semplici), linee, gruppi, rotazioni, tabelle; formule e grafici → domanda all'apertura |
+| | .ppt .pps .pot (97–2003) | testo (TextCharsAtom/TextBytesAtom) e, in fondo, le immagini PNG/JPEG del flusso Pictures |
 | | .key | anteprima incorporata |
 | Fogli di calcolo | .xlsx .xlsm .xltx .ods .ots .csv .tsv | tabelle con schede dei fogli, date e numeri formattati |
 | | .xls .xlt (BIFF8) | valori (SST, LABELSST, NUMBER, RK, formule calcolate) |

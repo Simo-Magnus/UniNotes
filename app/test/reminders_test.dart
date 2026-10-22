@@ -70,7 +70,7 @@ void main() {
         'esame-2',
         'esame-1',
       ]);
-      expect(agenda[1].title, 'Prova in itinere/esonero · Fisica · Esonero 1');
+      expect(agenda[1].title, 'Prova in itinere/esonero: Fisica · Esonero 1');
       expect(agenda[2].time, '09:30');
       expect(agenda[2].allDay, isFalse);
       expect(agenda[0].kind, AgendaKind.session);
@@ -120,7 +120,11 @@ void main() {
       List<PlannedNotification> plan({bool working = false}) =>
           planNotifications(
             now: now,
-            prefs: on,
+            prefs: const NotificationPrefs(
+              consent: true,
+              donation: false,
+              examOffsets: [7, 1],
+            ),
             agenda: [a, b],
             calendarWorking: working,
             calendarWritten: {a.key},
@@ -212,7 +216,11 @@ void main() {
         for (var i = 0; i < 50; i++)
           examItem(i + 1, DateTime(2027, 3, 1).add(Duration(days: i))),
       ];
-      final p = planNotifications(now: now, prefs: on, agenda: agenda);
+      final p = planNotifications(
+        now: now,
+        prefs: const NotificationPrefs(consent: true, examOffsets: [7, 1]),
+        agenda: agenda,
+      );
       expect(p.length, kMaxScheduled);
       expect(p.first.at.isBefore(p.last.at), isTrue);
     });
@@ -579,7 +587,7 @@ void main() {
       expect(await r.enableNotifications(), isTrue);
       expect(platform.askedPermission, isTrue);
       final p = await plan(now);
-      expect(ofType(p, NotificationType.exam).length, 2);
+      expect(ofType(p, NotificationType.exam).length, 1);
       expect(
         ofType(p, NotificationType.outcome).single.payload,
         'prova:$examId',
@@ -603,7 +611,7 @@ void main() {
         await r.refresh(now: now);
         expect((await r.calendar.status()).working, isFalse);
         final p2 = await plan(now);
-        expect(ofType(p2, NotificationType.exam).length, 2);
+        expect(ofType(p2, NotificationType.exam).length, 1);
       },
     );
 
@@ -659,7 +667,9 @@ void main() {
       final p = await NotificationPrefs.load(SettingsRepository(s.database));
       expect(p.consent, isFalse);
       expect(p.exams && p.sessions && p.outcome && p.links && p.review, isTrue);
-      expect(p.examOffsets, [7, 1]);
+      // il giorno prima e un'ora prima
+      expect(p.examOffsets, [1]);
+      expect(p.examHours, [1]);
       // build di test senza DONATIONS=link: niente invito al sostegno
       expect(p.donation, isFalse);
     });

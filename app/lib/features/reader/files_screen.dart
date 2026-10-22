@@ -9,6 +9,7 @@ import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'reader_formats.dart';
 import 'reader_screen.dart';
 import 'reader_store.dart';
@@ -105,6 +106,9 @@ class _FilesScreenState extends State<FilesScreen> {
   bool _dragging = false;
   int _reload = 0;
 
+  /// «Mostra altri»: tutti i recenti ricordati invece dei primi venti.
+  bool _allRecent = false;
+
   @override
   void dispose() {
     _search.dispose();
@@ -127,15 +131,34 @@ class _FilesScreenState extends State<FilesScreen> {
     if (mounted) setState(() => _reload++);
   }
 
-  Future<void> _forget(RecentFile r) async {
-    await ReaderStore(context.read<AppServices>().settings)
-        .removeRecent(r.path);
-    if (mounted) setState(() => _reload++);
-  }
+  Future<void> _forget(RecentFile r) => _changeRecent(
+    (store) => store.removeRecent(r.path),
+    '«${r.title}» tolto dai recenti.',
+  );
 
-  Future<void> _clearRecent() async {
-    await ReaderStore(context.read<AppServices>().settings).clearRecent();
-    if (mounted) setState(() => _reload++);
+  Future<void> _clearRecent() => _changeRecent(
+    (store) => store.clearRecent(),
+    'Elenco dei recenti cancellato.',
+  );
+
+  /// Modifica dei recenti con «Annulla» (l'elenco torna com'era).
+  Future<void> _changeRecent(
+    Future<void> Function(ReaderStore store) change,
+    String message,
+  ) async {
+    final store = ReaderStore(context.read<AppServices>().settings);
+    final before = await store.recent();
+    await change(store);
+    if (!mounted) return;
+    setState(() => _reload++);
+    showUndoSnackBar(
+      context,
+      message,
+      onUndo: () async {
+        await store.setRecent(before);
+        if (mounted) setState(() => _reload++);
+      },
+    );
   }
 
   @override
@@ -298,7 +321,31 @@ class _FilesScreenState extends State<FilesScreen> {
                       style: TextStyle(color: t.textMuted, fontSize: 13),
                     ),
                   ),
-                for (final r in data.recent.take(15)) _recentTile(context, r),
+                for (final r in data.recent.take(
+                  _allRecent ? ReaderStore.maxRecent : ReaderStore.shownRecent,
+                ))
+                  _recentTile(context, r),
+                if (data.recent.length > ReaderStore.shownRecent)
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: TextButton.icon(
+                        key: const Key('recent-more'),
+                        onPressed: () =>
+                            setState(() => _allRecent = !_allRecent),
+                        icon: Icon(
+                          _allRecent ? Icons.expand_less : Icons.expand_more,
+                        ),
+                        label: Text(
+                          _allRecent
+                              ? 'Mostra meno'
+                              : 'Mostra altri '
+                                    '(${data.recent.length - ReaderStore.shownRecent})',
+                        ),
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 6),
               ],
             ),
@@ -546,6 +593,17 @@ class SupportedFormatsDialog extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
+            Text(
+              '«Semplificato»: l\'app ne mostra una versione ridotta (per '
+              'esempio solo il testo) e all\'apertura propone l\'app di '
+              'riferimento. Lo stesso vale per i file con parti che l\'app '
+              'non disegna, come grafici e formule.',
+              style: TextStyle(
+                fontSize: 12.5,
+                color: t.textMuted,
+                height: 1.45,
+              ),
+            ),
             for (final e in byFamily.entries) ...[
               Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 2),
@@ -567,9 +625,13 @@ class SupportedFormatsDialog extends StatelessWidget {
                 children: [
                   for (final f in e.value)
                     Text(
-                      f.supported
-                          ? f.extension
-                          : '${f.extension}\u00A0(Apri\u00A0con…)',
+                      switch (f.fidelity) {
+                        ReaderFidelity.full => f.extension,
+                        ReaderFidelity.partial =>
+                          '${f.extension}\u00A0(semplificato)',
+                        ReaderFidelity.unsupported =>
+                          '${f.extension}\u00A0(Apri\u00A0con…)',
+                      },
                       style: TextStyle(
                         fontSize: 13,
                         color: t.textSecondary,

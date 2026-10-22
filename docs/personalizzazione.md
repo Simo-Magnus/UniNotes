@@ -41,6 +41,21 @@ oggi, settimana Focus), spunta con un piccolo rimbalzo nelle conferme
 (dissolvenza in avanti; su iOS e macOS quella del sistema, con il gesto per
 tornare indietro).
 
+**Fondo opaco durante le transizioni** (`PageBackdrop` in `motion.dart`): le
+schermate hanno lo Scaffold trasparente e le card sono di vetro traslucido,
+quindi durante un cambio di pagina il telefono componeva due schermate piene
+di strati semitrasparenti (la vecchia traspariva dalla nuova) e scattava. Ora
+sotto la pagina che entra (o esce) si stende lo stesso fondo dell'app, ma
+pieno e già disegnato come immagine (`RepaintBoundary`): nei primi 3/10
+dell'animazione sale da trasparente a pieno, così la pagina vecchia sparisce
+senza strappo, e si compone una sola pagina alla volta. A transizione finita il
+fondo si toglie (identico a quello dell'app) e non costa nulla a regime. Su iOS
+e macOS (`OpaqueSlideTransitionsBuilder`) il fondo pieno scorre con la pagina.
+Con «Riduci animazioni» la pagina compare subito, senza fondo. Finestre,
+card dal basso e menù avevano già il fondo pieno. Test: `page_transitions_test.dart`.
+Non è stata misurata con il profilo della timeline su un dispositivo vero:
+da verificare su un telefono Android.
+
 ## Aspetto
 
 Contrasto e grandezza del testo si scelgono già nel **primo passo

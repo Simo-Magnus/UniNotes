@@ -8,6 +8,8 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:pdfrx/pdfrx.dart';
 
+import '../../core/services/portable_path.dart';
+
 /// Colori dell'evidenziatore: distinti tra loro e leggibili sotto il testo
 /// nero (si disegnano in trasparenza).
 const kHighlightColors = <(String, Color)>[
@@ -65,13 +67,26 @@ class PdfHighlights extends ChangeNotifier {
   final String path;
   final List<PdfHighlight> items = [];
 
+  /// File delle evidenziazioni: per i PDF dentro l'app il nome viene dal
+  /// percorso relativo (uguale su tutti i dispositivi, la cartella si
+  /// sincronizza con OneDrive e Google Drive); quello delle versioni
+  /// precedenti (dal percorso assoluto) si rinomina alla prima apertura.
   Future<File> _file() async {
     final dir = Directory(
       p.join((await getApplicationSupportDirectory()).path, 'evidenziazioni'),
     );
     await dir.create(recursive: true);
-    final key = sha1.convert(utf8.encode(p.normalize(path))).toString();
-    return File(p.join(dir.path, '$key.json'));
+    String name(String s) => '${sha1.convert(utf8.encode(s))}.json';
+    final f = File(p.join(dir.path, name(portablePath(path))));
+    final old = File(p.join(dir.path, name(p.normalize(path))));
+    if (old.path != f.path && !await f.exists() && await old.exists()) {
+      try {
+        await old.rename(f.path);
+      } catch (_) {
+        return old;
+      }
+    }
+    return f;
   }
 
   Future<void> load() async {

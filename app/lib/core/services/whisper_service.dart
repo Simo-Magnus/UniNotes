@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../features/links/whisper_device.dart';
 import '../../features/links/whisper_models.dart';
+import '../../features/notes/recorder/speech_language.dart';
 import '../../repositories/settings_repository.dart';
 import 'audio_codec.dart';
 import 'file_downloader.dart';
@@ -47,17 +48,27 @@ enum WhisperEngineKind {
 /// Opzioni di whisper.cpp per una trascrizione: vocabolario del corso
 /// ([prompt], `initial_prompt`), rilevatore di voce Silero ([vad]: niente
 /// testo nei silenzi) e soppressione dei token non verbali («[Musica]»,
-/// «[BLANK_AUDIO]»), sempre attiva.
+/// «[BLANK_AUDIO]»), sempre attiva. La lingua ([language]) è sempre fissata:
+/// italiano, o inglese per gli insegnamenti in inglese; mai il rilevamento
+/// automatico (che con audio lontano o rumoroso sceglie lingue a caso).
 class WhisperOptions {
-  const WhisperOptions({this.prompt, this.vad});
+  const WhisperOptions({this.prompt, this.vad, this.language = 'it'});
   final String? prompt;
   final File? vad;
 
+  /// Lingua della lezione: si usa come «it» o «en» ([whisperLanguage]).
+  final String language;
+
+  /// «it» o «en» (qualunque altro valore, anche «auto», diventa «it»).
+  String get whisperLanguage => lectureLanguage(language);
+
   static const none = WhisperOptions();
 
-  /// Argomenti di `whisper-cli` (v1.9: `--prompt`, `--suppress-nst`,
+  /// Argomenti di `whisper-cli` (v1.9: `-l`, `--prompt`, `--suppress-nst`,
   /// `--vad`, `--vad-model`).
   List<String> get cliArgs => [
+    '-l',
+    whisperLanguage,
     '--suppress-nst',
     if (prompt != null && prompt!.trim().isNotEmpty) ...[
       '--prompt',
@@ -875,9 +886,16 @@ class WhisperService {
   }();
 
   /// Opzioni di whisper.cpp con il vocabolario del corso [prompt] (vedi
-  /// `buildWhisperPrompt`) e il VAD, se c'è.
-  Future<WhisperOptions> optionsFor(String? prompt) async =>
-      WhisperOptions(prompt: prompt, vad: await whisperVadModel());
+  /// `buildWhisperPrompt`), il VAD, se c'è, e la lingua della lezione
+  /// ([language]: «it» o «en», vedi `lectureLanguage`).
+  Future<WhisperOptions> optionsFor(
+    String? prompt, {
+    String language = 'it',
+  }) async => WhisperOptions(
+    prompt: prompt,
+    vad: await whisperVadModel(),
+    language: language,
+  );
 
   // ----------------------------------------- seconda passata (telefono)
 
@@ -959,19 +977,22 @@ class WhisperService {
 
   // ------------------------------------------------------------ trascrizione
 
-  /// Trascrive [audio] in italiano. Restituisce i segmenti con l'orario.
+  /// Trascrive [audio] in italiano (o in inglese, [language] «en»).
+  /// Restituisce i segmenti con l'orario.
   Future<List<WhisperSegment>> transcribe(
     File audio, {
     String? model,
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
     String? prompt,
+    String? language,
   }) async => (await transcribeWith(
     audio,
     model: model,
     onProgress: onProgress,
     cancel: cancel,
     prompt: prompt,
+    language: language,
   )).segments;
 
   /// Trascrive [audio] con [model] (null = scelta automatica, vedi
@@ -980,13 +1001,21 @@ class WhisperService {
   /// PC e Mac o il modello integrato sul telefono. [prompt]: vocabolario
   /// del corso per Whisper (`buildWhisperPrompt`); con Whisper anche il VAD
   /// e la soppressione dei token non verbali.
+  ///
+  /// [language]: lingua della lezione («it» se null, «en» per gli
+  /// insegnamenti in inglese), sempre fissata. Parakeet non permette di
+  /// fissarla: le sue frasi in altre lingue si ritrascrivono con Whisper
+  /// nella lingua della lezione, se c'è un modello scaricato, altrimenti si
+  /// tolgono (speech_language.dart).
   Future<WhisperResult> transcribeWith(
     File audio, {
     String? model,
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
     String? prompt,
+    String? language,
   }) async {
+    final lang = lectureLanguage(language);
     final st = await status();
     final builtIn = liveModelSupported ? await builtInModelFile() : null;
     final pk = await parakeetReady();
@@ -1009,14 +1038,28 @@ class WhisperService {
       throw WhisperException('File audio non trovato: ${audio.path}');
     }
     if (m.id == kParakeetId) {
-      final segs = await parakeet.transcribeFile(
-        audio,
-        onProgress: onProgress,
-        cancel: cancel,
-      );
-      return WhisperResult(segs, m);
+      LiveWhisper? whisper;
+      try {
+        final segs = await parakeet.transcribeFile(
+          audio,
+          onProgress: onProgress,
+          cancel: cancel,
+          language: lang,
+          rescue: st.engineReady && st.models.isNotEmpty
+              ? (wav) async {
+                  final w = whisper ??= await liveEngine(
+                    options: await optionsFor(prompt, language: lang),
+                  );
+                  return w == null ? const [] : w.transcribeWav(wav);
+                }
+              : null,
+        );
+        return WhisperResult(segs, m);
+      } finally {
+        await whisper?.close();
+      }
     }
-    final options = await optionsFor(prompt);
+    final options = await optionsFor(prompt, language: lang);
     // il modello integrato gira sempre con whisper.cpp dentro l'app
     final usesPlugin =
         st.engine == WhisperEngineKind.plugin ||
@@ -1132,8 +1175,6 @@ class WhisperService {
       model.path,
       '-f',
       audio.path,
-      '-l',
-      'it',
       '-t',
       '$threads',
       '-pp',
@@ -1278,8 +1319,6 @@ class _CliLiveWhisper extends LiveWhisper {
         _model.path,
         '-f',
         wav16k.path,
-        '-l',
-        'it',
         '-t',
         '$threads',
         '-np',

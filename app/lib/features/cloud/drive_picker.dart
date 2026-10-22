@@ -114,11 +114,81 @@ class DrivePicker {
     ).query,
   );
 
-  /// Apre il Picker e restituisce gli id scelti.
+  /// Messaggio quando la chiave API o il numero del progetto non sono
+  /// inclusi nella build (cosa deve fare chi pubblica l'app: vedi
+  /// docs/google_drive_setup.md).
+  static const missingKeyMessage =
+      '«Importa da Drive» usa il selettore di Google Drive, che ha bisogno '
+      'di una chiave API di Google inclusa nell\'app: questa versione non ce '
+      'l\'ha, quindi il selettore non si può aprire. Non devi fare nulla tu: '
+      'arriverà con un aggiornamento. Intanto puoi scegliere i file dal '
+      'dispositivo (anche dalla cartella di Google Drive, se usi Drive per '
+      'desktop o l\'app Drive) oppure condividerli con UniNotes dall\'app '
+      'Drive.';
+
+  /// Spiegazione di un errore del selettore (chiave non valida, Google
+  /// non raggiungibile, nessuna risposta).
+  static String explain(String error) {
+    final e = error.toLowerCase();
+    if (e.contains('chiave') || e.contains('api key') || e.contains('developer key')) {
+      return 'Il selettore di Google Drive ha rifiutato la chiave API '
+          'dell\'app (non valida o non autorizzata per questo sito). È un '
+          'problema della versione dell\'app, non del tuo account: scegli '
+          'intanto i file dal dispositivo.';
+    }
+    if (e.contains('raggiungibile')) {
+      return 'Google non è raggiungibile: controlla la connessione e riprova.';
+    }
+    if (e.contains('tempo') || e.contains('risposto')) {
+      return 'Il selettore di Google Drive non ha risposto: se la pagina nel '
+          'browser mostra un errore, chiudila e riprova; altrimenti scegli i '
+          'file dal dispositivo.';
+    }
+    return 'Il selettore di Google Drive non ha funzionato ($error).';
+  }
+
+  /// Apre il Picker e restituisce gli id scelti. Si ferma (con un errore,
+  /// mai un'attesa infinita) dopo [timeout] senza risposta o quando
+  /// [cancel] si completa (pulsante «Annulla» dell'app).
   Future<PickerResult> pick(
     String token, {
-    Duration timeout = const Duration(minutes: 10),
+    Duration timeout = const Duration(minutes: 5),
+    Future<void>? cancel,
   }) async {
+    if (!available) return const PickerResult(error: 'chiave API mancante');
+    // a fine attesa (risposta, «Annulla», tempo scaduto) il server locale si
+    // chiude: niente porte aperte né attese rimaste in sospeso
+    final stop = Completer<void>();
+    Future<PickerResult> guarded(Future<PickerResult> f) {
+      final c = Completer<PickerResult>();
+      c.future.whenComplete(() {
+        if (!stop.isCompleted) stop.complete();
+      }).ignore();
+      f.then((r) {
+        if (!c.isCompleted) c.complete(r);
+      }, onError: (Object e) {
+        if (!c.isCompleted) c.complete(PickerResult(error: '$e'));
+      });
+      cancel?.then((_) {
+        if (!c.isCompleted) c.complete(const PickerResult(cancelled: true));
+      });
+      final timer = Timer(timeout, () {
+        if (!c.isCompleted) {
+          c.complete(
+            const PickerResult(
+              error: 'nessuna risposta dal selettore entro il tempo previsto',
+            ),
+          );
+        }
+      });
+      c.future.whenComplete(timer.cancel).ignore();
+      return c.future;
+    }
+
+    return guarded(_pick(token, stop.future));
+  }
+
+  Future<PickerResult> _pick(String token, Future<void> stop) async {
     final state = LoopbackOAuth.randomToken(16);
     final client = mobileClientId;
     if (client != null && client.isNotEmpty) {
@@ -139,6 +209,7 @@ class DrivePicker {
       }
     }
     final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+    stop.then((_) => server.close(force: true)).ignore();
     try {
       final url = pageUri(
         token: token,
@@ -148,10 +219,7 @@ class DrivePicker {
       if (!await openBrowser(url)) {
         return const PickerResult(error: 'impossibile aprire il browser');
       }
-      return await waitForReturn(server, state).timeout(
-        timeout,
-        onTimeout: () => const PickerResult(cancelled: true),
-      );
+      return await waitForReturn(server, state);
     } finally {
       await server.close(force: true);
     }

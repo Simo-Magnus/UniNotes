@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder;
 import 'package:flutter/material.dart';
 
+import '../../widgets/glass.dart' show AppBackground;
 import '../theme/app_tokens.dart';
 import 'feedback_service.dart';
 
@@ -143,8 +144,71 @@ void showSuccessSnack(
     );
 }
 
-/// Transizioni tra le pagine uguali in tutta l'app (dissolvenza in avanti);
-/// con «Riduci animazioni» la pagina compare subito.
+/// Fondo opaco di una pagina SOLO mentre la transizione è in corso.
+///
+/// Le schermate hanno lo Scaffold trasparente (il fondo a strati sta sopra
+/// il Navigator, vedi [AppBackground]) e le card sono di vetro traslucido:
+/// durante il cambio di pagina la pagina precedente restava visibile
+/// attraverso quella nuova e il telefono doveva comporre due schermate piene
+/// di strati semitrasparenti a ogni fotogramma, da cui lo scatto. Qui sotto
+/// la pagina si stende lo stesso fondo dell'app, ma pieno e salvato come
+/// immagine (RepaintBoundary): la pagina vecchia sparisce subito e si
+/// compone una sola pagina alla volta. A transizione finita il fondo si
+/// toglie (è identico a quello dell'app, non si nota) e la pagina torna
+/// trasparente com'era.
+class PageBackdrop extends StatelessWidget {
+  const PageBackdrop({
+    super.key,
+    required this.animation,
+    required this.child,
+    this.rampEnd,
+  });
+
+  /// Animazione della pagina (0 = fuori, 1 = ferma al suo posto).
+  final Animation<double> animation;
+
+  /// Se non null, il fondo non compare di colpo: sale da 0 a 1 nel primo
+  /// tratto [0, rampEnd] dell'animazione (in uscita scende allo stesso
+  /// modo), così la pagina vecchia non sparisce all'improvviso.
+  final double? rampEnd;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final end = rampEnd;
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Positioned.fill(
+          child: IgnorePointer(
+            child: AnimatedBuilder(
+              animation: animation,
+              builder: (context, bg) {
+                // pagina ferma: nessun fondo (nessun costo a regime)
+                if (animation.isCompleted) return const SizedBox.shrink();
+                final v = end == null
+                    ? 1.0
+                    : Curves.easeOut.transform(
+                        (animation.value / end).clamp(0.0, 1.0),
+                      );
+                if (v <= 0) return const SizedBox.shrink();
+                return v >= 1 ? bg! : Opacity(opacity: v, child: bg);
+              },
+              child: const RepaintBoundary(
+                child: AppBackground(child: SizedBox.expand()),
+              ),
+            ),
+          ),
+        ),
+        child,
+      ],
+    );
+  }
+}
+
+/// Transizioni tra le pagine uguali in tutta l'app (dissolvenza in avanti)
+/// su fondo opaco ([PageBackdrop]); con «Riduci animazioni» la pagina
+/// compare subito.
 class CalmPageTransitionsBuilder extends PageTransitionsBuilder {
   const CalmPageTransitionsBuilder(this.inner);
   final PageTransitionsBuilder inner;
@@ -158,14 +222,44 @@ class CalmPageTransitionsBuilder extends PageTransitionsBuilder {
     Widget child,
   ) {
     if (reduceMotion(context)) return child;
-    return inner.buildTransitions(
-      route,
-      context,
-      animation,
-      secondaryAnimation,
-      child,
+    // il fondo sta fuori dalla dissolvenza: il contenuto compare sul fondo
+    // già pieno invece che sopra la pagina vecchia
+    return PageBackdrop(
+      animation: animation,
+      rampEnd: 0.3,
+      child: inner.buildTransitions(
+        route,
+        context,
+        animation,
+        secondaryAnimation,
+        child,
+      ),
     );
   }
+}
+
+/// Come [CalmPageTransitionsBuilder] per le transizioni che fanno scorrere
+/// la pagina (iOS e macOS): il fondo pieno scorre con la pagina, così la
+/// pagina vecchia non traspare, e il gesto per tornare indietro resta anche
+/// con «Riduci animazioni» (la transizione del sistema lo porta con sé).
+class OpaqueSlideTransitionsBuilder extends PageTransitionsBuilder {
+  const OpaqueSlideTransitionsBuilder(this.inner);
+  final PageTransitionsBuilder inner;
+
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) => inner.buildTransitions(
+    route,
+    context,
+    animation,
+    secondaryAnimation,
+    PageBackdrop(animation: animation, child: child),
+  );
 }
 
 /// Tema delle transizioni dell'app.
@@ -185,7 +279,11 @@ const PageTransitionsTheme kCalmPageTransitions = PageTransitionsTheme(
     ),
     // iOS e macOS: la transizione del sistema porta con sé il gesto per
     // tornare indietro, che deve restare anche con «Riduci animazioni».
-    TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-    TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+    TargetPlatform.iOS: OpaqueSlideTransitionsBuilder(
+      CupertinoPageTransitionsBuilder(),
+    ),
+    TargetPlatform.macOS: OpaqueSlideTransitionsBuilder(
+      CupertinoPageTransitionsBuilder(),
+    ),
   },
 );

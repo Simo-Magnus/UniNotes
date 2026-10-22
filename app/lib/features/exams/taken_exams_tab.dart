@@ -214,9 +214,12 @@ class _CourseGroupCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final course = group.course;
-    final color = course == null
+    // l'alone (bordo e intestazione) segue lo stato della prova, non
+    // l'ateneo: superato verde, non superato rosso, in attesa viola…
+    final headline = group.headlineStatus;
+    final color = headline == null
         ? theme.colorScheme.outline
-        : courseColor(course, data.universities);
+        : examStatusColor(context, headline);
     final passed = group.passedFinal;
     return GlassCard(
       shape: RoundedRectangleBorder(

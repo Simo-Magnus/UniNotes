@@ -8,9 +8,11 @@ import 'package:path/path.dart' as p;
 import '../../../core/services/power.dart';
 import '../../../core/services/whisper_service.dart';
 import '../spoken_math.dart';
+import 'live_agreement.dart';
 import 'live_transcript.dart';
 import 'recording_meta.dart';
 import 'second_pass.dart';
+import 'speech_language.dart';
 import 'system_speech.dart';
 import 'vad_segmenter.dart';
 import 'wav.dart';
@@ -73,12 +75,24 @@ List<LiveEngine> liveEngineOrder({required bool phone}) => phone
 
 /// Trascrizione dal vivo durante la registrazione.
 ///
+/// **Parole stabili confermate subito** (live_agreement.dart, per tutti i
+/// motori): a ogni nuova decodifica del tratto in corso le parole iniziali
+/// uguali nelle ultime due decodifiche diventano confermate ed entrano nei
+/// [segments] (modificabili, ~1–2 s dopo essere state dette); in grigio
+/// ([partial]) resta solo il resto. A fine frase il testo definitivo del
+/// motore le sostituisce (punteggiatura, maiuscole, frasi con i tempi),
+/// salvo le frasi già corrette a mano.
+///
 /// 1. **PC e Mac: Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx,
 ///    core/services/parakeet_service.dart). L'audio della registrazione
 ///    ([onPcm]) passa dal rilevatore di voce Silero: mentre si parla, ogni
-///    ~1 s si decodifica la frase in corso (testo provvisorio, [partial]);
-///    a una pausa (o dopo ~18 s di parlato continuo) diventa definitiva; i
-///    silenzi non producono testo ([VadLiveSegmenter]). Il modello (639
+///    ~0,75 s si decodifica la frase in corso (un'ipotesi); a una pausa (o
+///    dopo ~18 s di parlato continuo) diventa definitiva; i silenzi non
+///    producono testo ([VadLiveSegmenter]). Parakeet sceglie da solo la
+///    lingua: le frasi che escono in lingue diverse dall'italiano e
+///    dall'inglese si tolgono e si ritrascrivono con il modello Whisper
+///    scaricato, nella lingua della lezione ([language]), se c'è
+///    (speech_language.dart). Il modello (639
 ///    MiB) è incluso nell'app e si usa subito; solo se manca (build fatta
 ///    a mano) si scarica alla prima registrazione, con la barra nella card:
 ///    intanto si registra e quei tratti si trascrivono con Parakeet dopo il
@@ -133,6 +147,41 @@ class LiveTranscriber extends ChangeNotifier {
 
   /// Lingua del riconoscimento (es. «it-IT»).
   final String locale;
+
+  /// Lingua di Whisper e del controllo della lingua di Parakeet: «it» o
+  /// «en» (dalla lingua del riconoscimento).
+  String get language => lectureLanguage(locale);
+
+  /// Conferma delle parole stabili del tratto in corso.
+  late final LiveAgreement _agree = LiveAgreement(
+    merger,
+    isEdited: (k) => _edits.containsKey(k),
+  );
+
+  /// Ultimo testo provvisorio completo del riconoscitore del sistema.
+  String _sysHyp = '';
+
+  /// Frasi di Parakeet in un'altra lingua: tolte ([foreignDropped]) e
+  /// ritrascritte con Whisper nella lingua della lezione
+  /// ([foreignRescued]), se c'è un modello scaricato.
+  int foreignDropped = 0;
+  int foreignRescued = 0;
+  bool _rescueUnavailable = false;
+  LiveWhisper? _rescueEngine;
+  final List<LiveChunk> _rescueQueue = [];
+  Future<void>? _rescueInFlight;
+
+  /// Ultimo salvataggio chiesto (onSegments): mentre le parole si
+  /// confermano una alla volta si salva al massimo ogni 3 s.
+  DateTime? _savedAt;
+
+  void _segmentsChanged({bool force = false}) {
+    final now = DateTime.now();
+    final last = _savedAt;
+    if (!force && last != null && now.difference(last).inSeconds < 3) return;
+    _savedAt = now;
+    onSegments?.call();
+  }
 
   /// Nome dell'insegnamento, moduli e argomenti (il più pertinente prima):
   /// vocabolario per Whisper (`buildWhisperPrompt`).
@@ -327,6 +376,30 @@ class LiveTranscriber extends ChangeNotifier {
     return _second == null || s == null ? null : secondPassStopLabel(s);
   }
 
+  /// Frasi di Parakeet in un'altra lingua, per la card «Trascrizione» (null
+  /// se non ce ne sono).
+  String? get languageNote {
+    final n = foreignDropped;
+    if (n == 0) return null;
+    final lang = language == 'en' ? 'inglese' : 'italiano';
+    final one = n == 1;
+    final what = one
+        ? 'Parakeet ha scritto una frase in un\'altra lingua'
+        : 'Parakeet ha scritto $n frasi in un\'altra lingua';
+    if (!_rescueUnavailable) {
+      return '$what: Whisper ${one ? 'la' : 'le'} ritrascrive in $lang.';
+    }
+    return '$what (non permette di fissare la lingua): '
+        '${one ? 'è stata tolta' : 'sono state tolte'}. Con un modello '
+        'Whisper (Collegamenti → Whisper) si ritrascrivono in $lang.';
+  }
+
+  /// Avvisi sotto il testo (seconda passata, lingua), null se nessuno.
+  String? get note {
+    final parts = [?secondPassNote, ?languageNote];
+    return parts.isEmpty ? null : parts.join(' ');
+  }
+
   /// Avvia il riconoscitore: sistema (se c'è), Parakeet (PC e Mac),
   /// Whisper. Senza motori lo stato diventa [LiveState.unavailable].
   Future<void> begin(
@@ -402,7 +475,10 @@ class LiveTranscriber extends ChangeNotifier {
       if (w != null && w.isPhone) {
         unawaited(() async {
           try {
-            final o = await w.optionsFor(buildWhisperPrompt(vocabulary));
+            final o = await w.optionsFor(
+              buildWhisperPrompt(vocabulary),
+              language: language,
+            );
             await _beginSecondPass(w, o);
           } catch (_) {}
         }());
@@ -522,8 +598,15 @@ class LiveTranscriber extends ChangeNotifier {
   /// Tratto da [fromSample] a [toSample] saltato (da recuperare alla fine).
   void _skipSamples(int fromSample, int toSample) {
     final from = samplesToDuration(fromSample);
-    final start = _stable < from ? _stable : from;
+    var start = _stable < from ? _stable : from;
     final end = samplesToDuration(toSample);
+    // le parole già confermate restano: si recupera dopo di loro
+    final done = _agree.confirmedEnd;
+    if (_agree.open) {
+      _agree.close();
+      partial = '';
+      if (done != null && done > start) start = done;
+    }
     if (end - start >= const Duration(milliseconds: 600)) {
       _extraPending.add(_extraChunk(start, end));
     }
@@ -553,11 +636,28 @@ class LiveTranscriber extends ChangeNotifier {
       if (_finished || _closed) return;
       lastTook = step.took;
       if (step.stableUntil > _stable) _stable = step.stableUntil;
+      final now = samplesToDuration(start + s.length);
       if (step.committed.isNotEmpty) {
-        merger.add(step.committed);
-        onSegments?.call();
+        // fine frase: il testo definitivo sostituisce le parole confermate
+        _agree.finish(_inLanguage(step.committed), now: now);
+        _segmentsChanged(force: true);
       }
-      if (step.partial != null) partial = step.partial!;
+      final pt = step.partial;
+      if (pt != null) {
+        if (pt.isEmpty) {
+          if (step.committed.isEmpty) _agree.close();
+          partial = '';
+        } else if (outsideLecture(pt, lecture: language)) {
+          // ipotesi in un'altra lingua: non si conferma e non si mostra
+          partial = '';
+        } else {
+          final words = step.partialWords.isEmpty
+              ? wordsOfText(pt)
+              : step.partialWords;
+          if (_agree.hypothesis(words, now: now)) _segmentsChanged();
+          partial = _agree.pending;
+        }
+      }
       state = _lagSkips > 0 ? LiveState.lagging : LiveState.running;
       notifyListeners();
     } catch (err) {
@@ -568,8 +668,11 @@ class LiveTranscriber extends ChangeNotifier {
       _vad = null;
       unawaited(e.close().catchError((_) {}));
       // si continua con il modello Whisper scaricato, se c'è, dal punto
-      // in cui il testo era definitivo
-      final from = _stable;
+      // in cui il testo era definitivo (dopo le parole già confermate)
+      var from = _stable;
+      final done = _agree.confirmedEnd;
+      if (done != null && done > from) from = done;
+      _agree.close();
       _vadGiveUp();
       state = LiveState.starting;
       notifyListeners();
@@ -578,6 +681,86 @@ class LiveTranscriber extends ChangeNotifier {
         state = LiveState.failed;
         notifyListeners();
       }
+    }
+  }
+
+  /// Frasi di Parakeet nella lingua della lezione (o in inglese): le altre
+  /// si tolgono e il loro tratto si ritrascrive con Whisper, nella lingua
+  /// della lezione, se c'è un modello scaricato ([_pumpRescue]).
+  List<TranscriptSegment> _inLanguage(
+    List<TranscriptSegment> segs, {
+    File? source,
+  }) {
+    final out = <TranscriptSegment>[];
+    for (final s in segs) {
+      if (!outsideLecture(s.text, lecture: language)) {
+        out.add(s);
+        continue;
+      }
+      debugPrint('Parakeet, frase in un\'altra lingua: ${s.text}');
+      foreignDropped++;
+      if (!_rescueUnavailable) {
+        _rescueQueue.add(LiveChunk(_extraIndex++, s.start, s.end));
+      }
+    }
+    if (_rescueQueue.isNotEmpty) _pumpRescue(source: source);
+    return out;
+  }
+
+  void _pumpRescue({File? source}) {
+    if (_rescueInFlight != null || _closed || _rescueQueue.isEmpty) return;
+    final c = _rescueQueue.removeAt(0);
+    _rescueInFlight = _rescueOne(c, source: source).whenComplete(() {
+      _rescueInFlight = null;
+      if (!_closed) _pumpRescue(source: source);
+    });
+  }
+
+  Future<void> _rescueOne(LiveChunk c, {File? source}) async {
+    try {
+      var e = _rescueEngine;
+      if (e == null) {
+        final w = _whisper;
+        e = w == null
+            ? null
+            : await w.liveEngine(
+                options: await w.optionsFor(
+                  buildWhisperPrompt(vocabulary),
+                  language: language,
+                ),
+              );
+        if (_closed) {
+          unawaited(e?.close());
+          return;
+        }
+        if (e == null) {
+          _rescueUnavailable = true;
+          _rescueQueue.clear();
+          notifyListeners();
+          return;
+        }
+        _rescueEngine = e;
+      }
+      const pad = Duration(milliseconds: 200);
+      final from = c.start > pad ? c.start - pad : Duration.zero;
+      final segs = (await _run(
+        LiveChunk(c.index, from, c.end + pad),
+        source: source,
+        using: e,
+      )).segments;
+      if (_closed) return;
+      final kept = [
+        for (final s in segs)
+          if (!outsideLecture(s.text, lecture: language)) s,
+      ];
+      if (kept.isNotEmpty) {
+        merger.add(kept);
+        foreignRescued++;
+        _segmentsChanged(force: true);
+        notifyListeners();
+      }
+    } catch (err) {
+      debugPrint('Ritrascrizione con Whisper: $err');
     }
   }
 
@@ -593,7 +776,10 @@ class LiveTranscriber extends ChangeNotifier {
     var options = WhisperOptions.none;
     try {
       if (w != null) {
-        options = await w.optionsFor(buildWhisperPrompt(vocabulary));
+        options = await w.optionsFor(
+          buildWhisperPrompt(vocabulary),
+          language: language,
+        );
       }
       _engine = await w?.liveEngine(options: options);
     } catch (e) {
@@ -697,9 +883,14 @@ class LiveTranscriber extends ChangeNotifier {
   /// Fin dove il testo istantaneo non cambia più: l'inizio del tratto
   /// provvisorio di Whisper o, con il riconoscitore del sistema, la fine
   /// dell'ultima frase stabilizzata.
-  Duration get _secondStable => engine == LiveEngine.system
-      ? (merger.segments.isEmpty ? Duration.zero : merger.segments.last.end)
-      : planner.anchor;
+  Duration get _secondStable {
+    final s = engine == LiveEngine.system
+        ? (merger.segments.isEmpty ? Duration.zero : merger.segments.last.end)
+        : planner.anchor;
+    // la frase in corso (parole confermate per accordo) può ancora cambiare
+    final open = _agree.openFrom;
+    return open != null && open < s ? open : s;
+  }
 
   void _pumpSecond() {
     final e = _second;
@@ -776,10 +967,14 @@ class LiveTranscriber extends ChangeNotifier {
     switch (e.kind) {
       case SpeechEventKind.partial:
         final t = e.text.trim();
-        if (t.isEmpty || t == partial) return;
+        if (t.isEmpty || t == _sysHyp) return;
         // la frase è iniziata poco prima del primo testo provvisorio
-        _partialStart ??= _startOfSpeech();
-        partial = t;
+        final from = _partialStart ??= _startOfSpeech();
+        _sysHyp = t;
+        // parole uguali in due testi provvisori di fila: confermate subito
+        final words = wordsOfText(t, from: from, to: _recorded);
+        if (_agree.hypothesis(words, now: _recorded)) _segmentsChanged();
+        partial = _agree.pending;
         notifyListeners();
       case SpeechEventKind.result:
         _commit(e.text);
@@ -789,7 +984,7 @@ class LiveTranscriber extends ChangeNotifier {
         error = e.text;
         // il motivo resta visibile nella card (es. Dettatura disattivata)
         systemUnavailable ??= e.text;
-        _commit(partial);
+        _commit(_sysHyp);
         _fallbackToWhisper();
       case SpeechEventKind.ended:
         final done = _ended;
@@ -803,22 +998,26 @@ class LiveTranscriber extends ChangeNotifier {
     return guess < last ? last : guess;
   }
 
-  /// Testo stabilizzato dal sistema: diventa un segmento con i tempi della
+  /// Testo stabilizzato dal sistema: sostituisce le parole confermate della
+  /// frase e diventa una o più frasi (alla punteggiatura) con i tempi della
   /// registrazione.
   void _commit(String raw) {
     final t = raw.trim();
     final start = _partialStart ?? _startOfSpeech();
     _partialStart = null;
+    _sysHyp = '';
     partial = '';
     if (t.isEmpty || isHallucination(t)) {
+      // niente testo definitivo: le parole confermate restano
+      _agree.close();
       notifyListeners();
       return;
     }
     final end = _recorded > start
         ? _recorded
         : start + const Duration(milliseconds: 500);
-    merger.segments.add(TranscriptSegment(start, end, t));
-    onSegments?.call();
+    _agree.finish(splitTextSentences(t, start, end), now: _recorded);
+    _segmentsChanged(force: true);
     notifyListeners();
   }
 
@@ -904,6 +1103,16 @@ class LiveTranscriber extends ChangeNotifier {
   void _pump() {
     if (_inFlight != null || _closed || _finished || _engine == null) return;
     if (state == LiveState.failed) return;
+    // Whisper troppo indietro (il tratto vecchio si salta e si recupera
+    // alla fine): le parole già confermate restano, si salta da lì
+    if (_agree.open &&
+        !planner.busy &&
+        _recorded - planner.anchor > planner.maxWindow * 3) {
+      final done = _agree.confirmedEnd;
+      _agree.close();
+      partial = '';
+      if (done != null) planner.startAt(done);
+    }
     final c = planner.next(_recorded);
     if (c == null) return;
     _inFlight = _window(c).whenComplete(() {
@@ -928,11 +1137,33 @@ class LiveTranscriber extends ChangeNotifier {
         silentTail: r.silentTail,
         took: sw.elapsed,
       );
+      // frasi della finestra (come le vede il pianificatore)
+      final segs = [
+        for (final s in r.segments)
+          if (!isHallucination(s.text)) s.copyWith(text: s.text.trim()),
+      ];
       if (out.committed.isNotEmpty) {
-        merger.add(out.committed);
-        onSegments?.call();
+        // finestra definitiva: sostituisce le parole confermate; con la
+        // finestra piena l'ultima frase resta provvisoria (e le sue parole
+        // già confermate passano alla finestra dopo)
+        final carry = out.provisional.isNotEmpty;
+        _agree.finish(out.committed, carry: carry, now: c.end);
+        if (carry && segs.isNotEmpty) {
+          _agree.hypothesis(wordsOfSegments([segs.last]), now: c.end);
+        }
+        _segmentsChanged(force: true);
+        partial = carry ? _agree.pending : '';
+      } else if (out.provisional.isNotEmpty) {
+        // ipotesi: le parole uguali alla finestra di prima si confermano
+        if (_agree.hypothesis(wordsOfSegments(segs), now: c.end)) {
+          _segmentsChanged();
+        }
+        partial = _agree.pending;
+      } else {
+        // silenzio: se la finestra riparte da qui la frase è finita
+        if (planner.anchor >= c.end) _agree.close();
+        partial = '';
       }
-      partial = out.provisional;
       notifyListeners();
       _pumpSecond();
     } catch (e) {
@@ -948,9 +1179,8 @@ class LiveTranscriber extends ChangeNotifier {
   Future<void> _process(LiveChunk c, {File? source}) async {
     try {
       final segs = await transcribeChunk(c, source: source);
-      if (segs.isNotEmpty) {
-        merger.add(segs);
-        onSegments?.call();
+      if (_recovered(c, segs)) {
+        _segmentsChanged(force: true);
         notifyListeners();
       }
     } catch (e) {
@@ -1036,7 +1266,11 @@ class LiveTranscriber extends ChangeNotifier {
     } on TimeoutException {
       // il sistema non ha risposto: resta il testo provvisorio
     }
-    if (partial.trim().isNotEmpty) _commit(partial);
+    if (_sysHyp.trim().isNotEmpty) {
+      _commit(_sysHyp);
+    } else {
+      _agree.close();
+    }
   }
 
   /// Fine registrazione a [recorded]: tratti ancora da trascrivere (saltati
@@ -1047,19 +1281,41 @@ class LiveTranscriber extends ChangeNotifier {
     _download?.cancel();
     _finished = true;
     partial = '';
+    const minTail = Duration(milliseconds: 600);
     if (_vadWanted || _vad != null) {
       _backlog.clear();
       final out = [..._extraPending];
       _extraPending.clear();
-      if (recorded - _stable >= const Duration(milliseconds: 600)) {
+      if (recorded - _stable >= minTail) {
+        // la frase in corso: il suo testo definitivo arriva dal recupero e
+        // sostituisce le parole confermate ([_recovered])
         out.add(_extraChunk(_stable, recorded));
+      } else {
+        _agree.close();
       }
       _stable = recorded;
       return out..sort((a, b) => a.start.compareTo(b.start));
     }
-    if (_engine == null) return const [];
-    return [..._extraPending, ...planner.finish(recorded)]
+    if (_engine == null) {
+      _agree.close();
+      return const [];
+    }
+    if (recorded - planner.anchor < minTail) _agree.close();
+    return [..._extraPending, ...planner.finish(recorded, minTail: minTail)]
       ..sort((a, b) => a.start.compareTo(b.start));
+  }
+
+  /// Testo [segs] del tratto recuperato [c]: se è quello della frase in
+  /// corso sostituisce le parole confermate, altrimenti si inserisce al
+  /// suo posto. true se i segmenti sono cambiati.
+  bool _recovered(LiveChunk c, List<TranscriptSegment> segs) {
+    final from = _agree.openFrom ?? _agree.confirmedEnd;
+    if (_agree.open && from != null && c.end > from) {
+      return _agree.finish(segs);
+    }
+    if (segs.isEmpty) return false;
+    merger.add(segs);
+    return true;
   }
 
   /// Il motore sta trascrivendo un pezzo (o Parakeet si sta ancora
@@ -1067,12 +1323,23 @@ class LiveTranscriber extends ChangeNotifier {
   bool get busy =>
       _inFlight != null ||
       _vadInFlight != null ||
+      _rescueInFlight != null ||
+      _rescueQueue.isNotEmpty ||
       (_vadWanted && _vad == null && !_closed);
 
   /// Attende il pezzo in corso.
   Future<void> settle() async {
     await _inFlight;
     await _vadInFlight;
+  }
+
+  /// Attende le frasi in un'altra lingua ancora da ritrascrivere ([source]:
+  /// il WAV da cui leggerle dopo il salvataggio).
+  Future<void> _settleRescue(File? source) async {
+    while (!_closed && (_rescueInFlight != null || _rescueQueue.isNotEmpty)) {
+      if (_rescueInFlight == null) _pumpRescue(source: source);
+      await _rescueInFlight;
+    }
   }
 
   /// Recupera i tratti [chunks] leggendo da [source] (il WAV della
@@ -1098,9 +1365,8 @@ class LiveTranscriber extends ChangeNotifier {
             chunks[i].start,
             chunks[i].end,
           );
-          if (segs.isNotEmpty) {
-            merger.add(segs);
-            onSegments?.call();
+          if (_recovered(chunks[i], _inLanguage(segs, source: source))) {
+            _segmentsChanged(force: true);
             notifyListeners();
           }
         } catch (e) {
@@ -1111,15 +1377,20 @@ class LiveTranscriber extends ChangeNotifier {
           return;
         }
       }
+      await _settleRescue(source);
       progress?.call(chunks.length, chunks.length);
       return;
     }
-    if (_engine == null) return;
+    if (_engine == null) {
+      await _settleRescue(source);
+      return;
+    }
     for (var i = 0; i < chunks.length; i++) {
       progress?.call(i, chunks.length);
       await _process(chunks[i], source: source);
       if (state == LiveState.failed) return;
     }
+    await _settleRescue(source);
     progress?.call(chunks.length, chunks.length);
   }
 
@@ -1154,6 +1425,14 @@ class LiveTranscriber extends ChangeNotifier {
       await _second?.close();
     } catch (_) {}
     _second = null;
+    _rescueQueue.clear();
+    try {
+      await _rescueInFlight;
+    } catch (_) {}
+    try {
+      await _rescueEngine?.close();
+    } catch (_) {}
+    _rescueEngine = null;
     final tmp = _tmp;
     _tmp = null;
     try {
@@ -1163,6 +1442,7 @@ class LiveTranscriber extends ChangeNotifier {
 
   /// Segmenti già trascritti (da un file di sessione dopo un riavvio).
   void restore(List<TranscriptSegment> segs) {
+    _agree.close();
     merger.segments
       ..clear()
       ..addAll(segs);

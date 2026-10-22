@@ -54,8 +54,11 @@ enum SyncScope {
   data('Dati dell\'app: Studio, esami, voti, insegnamenti', 'Dati'),
   recordings('Registrazioni delle lezioni', 'Corsi'),
   notes('Trascrizioni, riassunti e appunti', 'Corsi'),
-  books('Libri e materiali copiati nell\'app', 'Libri'),
-  attachments('Allegati di Studio', 'Allegati'),
+  books(
+    'Libri e materiale didattico copiati nell\'app, con le evidenziazioni',
+    'Libri',
+  ),
+  attachments('Allegati di Studio (moduli e argomenti)', 'Allegati'),
   backup('Backup del database (copia per dispositivo)', 'Backup');
 
   const SyncScope(this.label, this.remoteDir);
@@ -97,7 +100,17 @@ class SyncSources {
     this.changeCounter,
     this.recordingInProgress,
     this.data,
+    this.highlights,
+    this.onChanged,
   });
+
+  /// Evidenziazioni dei PDF (una per documento, cartella `evidenziazioni`).
+  final Future<Directory> Function()? highlights;
+
+  /// Dopo una sincronizzazione che ha portato o tolto file (libri,
+  /// materiali, allegati, appunti…): le schermate aperte si aggiornano,
+  /// qualunque sezione sia aperta.
+  final void Function()? onChanged;
 
   /// Unione dei dati dell'app con gli altri dispositivi (casella «Dati»).
   final DataSync? data;
@@ -169,7 +182,7 @@ abstract class CloudDriveService extends ChangeNotifier {
 
   static const defaultFolder = 'UniNotes';
   static const defaultInterval = 10;
-  static const intervals = [5, 10, 15, 30, 60];
+  static const intervals = [2, 5, 10, 15, 30, 60];
 
   /// Libri tenuti solo su questo dispositivo: vale per tutti i servizi.
   static const booksLocalOnlyKey = 'onedrive_books_local_only';
@@ -226,6 +239,7 @@ abstract class CloudDriveService extends ChangeNotifier {
     'Libri',
     'Materiali',
     'Allegati',
+    'Evidenziazioni',
     'Backup',
   ];
 
@@ -256,6 +270,7 @@ abstract class CloudDriveService extends ChangeNotifier {
     await settings.set(accountKey, null);
     tokens = null;
     notifyListeners();
+    onScheduleChanged?.call();
     if (refresh == null || refresh.isEmpty) return true;
     try {
       return await revoke(refresh).timeout(const Duration(seconds: 10));
@@ -391,6 +406,103 @@ abstract class CloudDriveService extends ChangeNotifier {
     v.trim().replaceAll(RegExp(r'^[/\\]+|[/\\]+$'), ''),
   );
 
+  // ------------------------------------------------- nome della cartella
+
+  /// «Rinomina»: cambia il nome della cartella dell'app sul servizio (solo
+  /// l'ultima parte del percorso; i file restano dove sono) e lo ricorda.
+  /// Gli altri dispositivi la ritrovano da soli ([locateMovedFolder]).
+  /// Restituisce il nuovo percorso.
+  Future<String> renameFolder(String newName) async {
+    final n = newName.trim();
+    final err = validateFolderName(n);
+    if (err != null) throw FormatException(err);
+    final old = await folder();
+    final cut = old.lastIndexOf('/');
+    final next = cut < 0 ? n : '${old.substring(0, cut)}/$n';
+    if (next == old) return old;
+    await renameRemoteFolder(old, n);
+    await moveSyncStates(old, next);
+    await setFolder(next);
+    notifyListeners();
+    return next;
+  }
+
+  /// Nome di cartella non valido (null = valido).
+  static String? validateFolderName(String name) {
+    final n = name.trim();
+    if (n.isEmpty) return 'Scrivi un nome.';
+    if (RegExp(r'["*:<>?/\\|]').hasMatch(n)) {
+      return 'Il nome non può contenere " * : < > ? / \\ |';
+    }
+    if (n.endsWith('.')) return 'Il nome non può finire con un punto.';
+    return null;
+  }
+
+  /// Rinomina sul servizio la cartella [path] in [newName] (errore
+  /// leggibile se esiste già una cartella con quel nome).
+  Future<void> renameRemoteFolder(String path, String newName);
+
+  /// La cartella dell'app [base] non c'è più sul servizio perché è stata
+  /// rinominata o spostata (da un altro dispositivo o dal sito): il suo
+  /// nuovo percorso, ritrovato dagli id salvati. Null se c'è ancora o non si
+  /// ritrova (allora si ricrea come prima).
+  Future<String?> locateMovedFolder(String base) async => null;
+
+  /// Stati della sincronizzazione di [old] spostati su [next] (stessi file,
+  /// cartella con un altro nome): niente da rileggere né da ricaricare.
+  Future<void> moveSyncStates(String old, String next) async {
+    try {
+      final dir = await stateDir();
+      await for (final e in dir.list()) {
+        final name = p.basename(e.path);
+        if (e is! File ||
+            !name.startsWith('${prefix}_sync_') ||
+            !name.endsWith('.json')) {
+          continue;
+        }
+        final m = jsonDecode(await e.readAsString());
+        if (m is! Map) continue;
+        final rf = '${m['remoteFolder'] ?? ''}';
+        if (rf != old && !rf.startsWith('$old/')) continue;
+        m['remoteFolder'] = '$next${rf.substring(old.length)}';
+        await e.writeAsString(jsonEncode(m));
+      }
+    } catch (_) {}
+  }
+
+  /// Stati salvati di questo servizio (per [locateMovedFolder]).
+  Future<List<Map<Object?, Object?>>> syncStates() async {
+    final out = <Map<Object?, Object?>>[];
+    try {
+      final dir = await stateDir();
+      await for (final e in dir.list()) {
+        final name = p.basename(e.path);
+        if (e is! File ||
+            !name.startsWith('${prefix}_sync_') ||
+            !name.endsWith('.json')) {
+          continue;
+        }
+        final m = jsonDecode(await e.readAsString());
+        if (m is Map) out.add(m);
+      }
+    } catch (_) {}
+    return out;
+  }
+
+  /// Prima sincronizzazione della sessione (e quelle complete): controlla se
+  /// la cartella dell'app è stata rinominata altrove.
+  bool _folderChecked = false;
+
+  Future<void> _followMovedFolder({required bool force}) async {
+    if (_folderChecked && !force) return;
+    final base = await folder();
+    final moved = await locateMovedFolder(base);
+    _folderChecked = true;
+    if (moved == null || moved == base) return;
+    await moveSyncStates(base, moved);
+    await setFolder(moved);
+  }
+
   Future<Set<SyncScope>> scopes() async =>
       SyncScope.parse(await settings.get(scopesKey));
   Future<void> setScopes(Set<SyncScope> s) =>
@@ -449,7 +561,12 @@ abstract class CloudDriveService extends ChangeNotifier {
   Future<void> setIntervalMinutes(int m) async {
     await settings.set(intervalKey, '$m');
     if (_timer != null) _restartTimer(m);
+    onScheduleChanged?.call();
   }
+
+  /// Collegamento o intervallo cambiati: la sincronizzazione in background
+  /// si ripianifica (BackgroundSync, telefono).
+  static void Function()? onScheduleChanged;
 
   /// Nome/indirizzo dell'account collegato (null = non collegato).
   Future<String?> account() => settings.get(accountKey);
@@ -520,6 +637,18 @@ abstract class CloudDriveService extends ChangeNotifier {
             'materiali',
             await sources.materials!(),
             '$base/Materiali',
+          ),
+        );
+      }
+      // evidenziazioni dei PDF (file JSON per documento, con lo stesso nome
+      // su tutti i dispositivi: vedi PdfHighlights)
+      if (sources.highlights != null) {
+        out.add(
+          SyncTarget(
+            'evidenziazioni',
+            await sources.highlights!(),
+            '$base/Evidenziazioni',
+            include: (rel) => !rel.contains('/') && rel.endsWith('.json'),
           ),
         );
       }
@@ -648,6 +777,11 @@ abstract class CloudDriveService extends ChangeNotifier {
     try {
       final total = SyncReport();
       final state = await stateDir();
+      try {
+        await _followMovedFolder(force: force);
+      } catch (e) {
+        if (isNetworkError(e)) rethrow;
+      }
       if (sources.data != null && (await scopes()).contains(SyncScope.data)) {
         await _syncData(total, state, force: force);
       }
@@ -675,6 +809,13 @@ abstract class CloudDriveService extends ChangeNotifier {
       );
       if (total.errors.isNotEmpty) lastError = total.errors.first;
       _lastRun = DateTime.now();
+      // file arrivati o tolti: le schermate si aggiornano (i dati del
+      // database lo fanno già con l'unione, DataSync.onApplied)
+      if (total.downloaded + total.deletedLocal + total.conflicts > 0) {
+        try {
+          sources.onChanged?.call();
+        } catch (_) {}
+      }
       return total;
     } catch (e) {
       if (isNetworkError(e)) {
@@ -700,6 +841,7 @@ abstract class CloudDriveService extends ChangeNotifier {
     unawaited(() async {
       _restartTimer(await intervalMinutes());
     }());
+    onScheduleChanged?.call();
     try {
       _lifecycle ??= AppLifecycleListener(onResume: _soon);
     } catch (_) {

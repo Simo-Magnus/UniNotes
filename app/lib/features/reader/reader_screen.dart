@@ -12,9 +12,11 @@ import '../../core/services/external_launcher.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
 import '../../widgets/share_files.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../../widgets/find_bar.dart';
 import '../cloud/onenote_screen.dart';
 import 'reader_controller.dart';
+import 'reader_fidelity.dart';
 import 'reader_formats.dart';
 import 'reader_loader.dart';
 import 'reader_store.dart';
@@ -64,6 +66,7 @@ class ReaderScreen extends StatefulWidget {
     this.onPosition,
     this.initialQuery,
     this.store,
+    this.askPartial = true,
   });
 
   final String path;
@@ -74,6 +77,10 @@ class ReaderScreen extends StatefulWidget {
 
   /// Memoria delle posizioni (nei test); di norma quella dell'app.
   final ReaderStore? store;
+
+  /// Per i file a resa parziale chiedere all'apertura se usare l'app di
+  /// riferimento (vedi reader_fidelity.dart).
+  final bool askPartial;
 
   @override
   State<ReaderScreen> createState() => ReaderScreenState();
@@ -141,6 +148,8 @@ class ReaderScreenState extends State<ReaderScreen> {
     try {
       await store?.addRecent(widget.path, title: widget.title);
     } catch (_) {}
+    final loaded = _Loaded(format, content, state);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _checkFidelity(loaded));
     final q = widget.initialQuery?.trim() ?? '';
     if (q.isNotEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -150,7 +159,52 @@ class ReaderScreenState extends State<ReaderScreen> {
         pane.find(q);
       });
     }
-    return _Loaded(format, content, state);
+    return loaded;
+  }
+
+  /// Resa parziale (formato o parti del file non mostrate): si chiede se
+  /// aprire il file con l'app di riferimento, salvo una scelta già fatta
+  /// con «Non chiedere più».
+  Future<void> _checkFidelity(_Loaded l) async {
+    if (!mounted || !widget.askPartial) return;
+    final missing = readerShortfall(l.format, l.content);
+    if (missing == null) return;
+    final settings = _store?.settings;
+    final saved = await savedPartialChoice(settings, l.format);
+    if (!mounted || saved == PartialViewChoice.preview) return;
+    if (saved == PartialViewChoice.external) {
+      await _leaveTo(ExternalLauncher.openPath);
+      return;
+    }
+    final choice = await askPartialView(
+      context,
+      format: l.format,
+      missing: missing,
+      settings: settings,
+    );
+    if (!mounted || choice != PartialViewChoice.external) return;
+    await _leaveTo(ExternalLauncher.openWith);
+  }
+
+  /// Apre il file fuori dall'app e chiude il lettore (se l'apertura non
+  /// riesce resta l'anteprima, con il messaggio).
+  Future<void> _leaveTo(Future<LaunchResult> Function(String) open) async {
+    final r = await open(widget.path);
+    if (!mounted) return;
+    if (r.ok) {
+      // la finestra della domanda può essere ancora in chiusura: il lettore
+      // si toglie anche se non è in cima
+      final route = ModalRoute.of(context);
+      if (route == null) return;
+      final nav = Navigator.of(context);
+      if (route.isCurrent) {
+        nav.pop();
+      } else if (route.isActive) {
+        nav.removeRoute(route);
+      }
+    } else {
+      showLaunchResult(context, r);
+    }
   }
 
   @override
@@ -228,7 +282,14 @@ class ReaderScreenState extends State<ReaderScreen> {
 
   // ------------------------------------------------------------ Azioni
 
-  Future<void> _openExternal() async {
+  /// «Apri con…»: la scelta dell'app del sistema.
+  Future<void> _openWith() async {
+    final r = await ExternalLauncher.openWith(widget.path);
+    if (mounted) showLaunchResult(context, r);
+  }
+
+  /// «Apri con l'app predefinita» (pagina dei file non mostrabili).
+  Future<void> _openDefault() async {
     final r = await ExternalLauncher.openPath(widget.path);
     if (mounted) showLaunchResult(context, r);
   }
@@ -261,18 +322,42 @@ class ReaderScreenState extends State<ReaderScreen> {
     if (store == null || !pane.hasPositions) return;
     final pos = pane.position;
     final label = pane.describe?.call(pos) ?? '${pane.unitLabel} ${pane.unit}';
+    // segnalibro che c'era già in questo punto (si rimette con «Annulla»)
+    ReaderBookmark? replaced;
+    for (final b in _bookmarks) {
+      if (b.position == pos) replaced = b;
+    }
     final list = await store.addBookmark(
       widget.path,
       ReaderBookmark(pos, label, DateTime.now()),
     );
     if (!mounted) return;
     setState(() => _bookmarks = list);
-    showSnack(context, 'Segnalibro aggiunto: $label');
+    showUndoSnackBar(
+      context,
+      'Segnalibro aggiunto: $label',
+      onUndo: () async {
+        var l = await store.removeBookmark(widget.path, pos);
+        if (replaced != null) l = await store.addBookmark(widget.path, replaced);
+        if (mounted) setState(() => _bookmarks = l);
+      },
+    );
   }
 
   Future<void> _removeBookmark(ReaderBookmark b) async {
-    final list = await _store?.removeBookmark(widget.path, b.position);
-    if (mounted && list != null) setState(() => _bookmarks = list);
+    final store = _store;
+    if (store == null) return;
+    final list = await store.removeBookmark(widget.path, b.position);
+    if (!mounted) return;
+    setState(() => _bookmarks = list);
+    showUndoSnackBar(
+      context,
+      'Segnalibro eliminato: ${b.label.isEmpty ? '- -' : b.label}',
+      onUndo: () async {
+        final l = await store.addBookmark(widget.path, b);
+        if (mounted) setState(() => _bookmarks = l);
+      },
+    );
   }
 
   Future<void> _copyAll() async {
@@ -390,7 +475,7 @@ class ReaderScreenState extends State<ReaderScreen> {
           body: FileInfoView(
             path: widget.path,
             format: format,
-            onOpenExternal: _openExternal,
+            onOpenExternal: _openDefault,
             onShare: _share,
           ),
         ),
@@ -430,7 +515,7 @@ class ReaderScreenState extends State<ReaderScreen> {
           format: l.format,
           message:
               'Questa immagine (${l.format.label}) non si può decodificare su questo dispositivo.',
-          onOpenExternal: _openExternal,
+          onOpenExternal: _openDefault,
           onShare: _share,
         ),
       ),
@@ -469,7 +554,7 @@ class ReaderScreenState extends State<ReaderScreen> {
         path: widget.path,
         format: l.format,
         message: message,
-        onOpenExternal: _openExternal,
+        onOpenExternal: _openDefault,
         onShare: _share,
         onOneNote: onenote ? _openOneNote : null,
       ),
@@ -611,7 +696,7 @@ class ReaderScreenState extends State<ReaderScreen> {
                       ),
                     if (actions.contains(ReaderAction.openWith))
                       TextButton(
-                        onPressed: _openExternal,
+                        onPressed: _openWith,
                         child: const Text('Apri con…'),
                       ),
                     IconButton(
@@ -657,7 +742,7 @@ class ReaderScreenState extends State<ReaderScreen> {
         'bookmark' => _addBookmark(),
         'full' => _toggleFullscreen(),
         'copy' => _copyAll(),
-        'open' => _openExternal(),
+        'open' => _openWith(),
         'share' => _share(),
         'info' => _info(l.format),
         _ => null,

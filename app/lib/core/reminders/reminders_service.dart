@@ -55,6 +55,10 @@ class RemindersService extends ChangeNotifier {
       _s.settings,
       calendarBackend ??
           (useDefaultCalendar ? _defaultBackend(this.platformName) : null),
+      device: CalendarDevice(
+        installId: _s.onedrive.installId,
+        name: _s.onedrive.deviceName,
+      ),
     );
   }
 
@@ -81,9 +85,10 @@ class RemindersService extends ChangeNotifier {
   late final OutlookCalendarAuth? outlook;
 
   CalendarBackend? _defaultBackend(String p) => switch (p) {
-    'android' => DeviceCalendarBackend(),
-    // iPhone, iPad e Mac: EventKit con codice nativo (calendario visibile
-    // anche con iCloud attivo; sul Mac non serve più il file .ics)
+    // Android: calendario vero e sincronizzato (Google…) con codice nativo
+    'android' => AndroidCalendarBackend(),
+    // iPhone, iPad e Mac: EventKit con codice nativo (calendario predefinito
+    // per i nuovi eventi o quello scelto)
     'ios' || 'macos' => AppleCalendarBackend(),
     'windows' => OutlookCalendarBackend(outlook!),
     _ => null,
@@ -133,8 +138,13 @@ class RemindersService extends ChangeNotifier {
     try {
       _lifecycle = AppLifecycleListener(onResume: _resumed);
     } catch (_) {}
+    // controllo di salute del calendario anche una volta al giorno con l'app
+    // sempre aperta (PC nell'area di notifica)
+    _daily = Timer.periodic(const Duration(hours: 24), (_) => _soon());
     await refresh();
   }
+
+  Timer? _daily;
 
   Future<void> _resumed() async {
     try {
@@ -180,6 +190,7 @@ class RemindersService extends ChangeNotifier {
   @override
   void dispose() {
     _debounce?.cancel();
+    _daily?.cancel();
     _lifecycle?.dispose();
     if (_started) {
       _s.revision.removeListener(_soon);
@@ -221,7 +232,12 @@ class RemindersService extends ChangeNotifier {
     final prefs = await NotificationPrefs.load(_s.settings);
     var status = CalendarStatus.off;
     try {
-      status = await calendar.sync(data.agenda, prefs.examOffsets, now: now);
+      status = await calendar.sync(
+        data.agenda,
+        prefs.examOffsets,
+        offsetHours: prefs.examHours,
+        now: now,
+      );
     } on CalendarAccessException catch (e) {
       status = await calendar.status();
       if (e.expired) await linkBroken('calendario', now: now);
@@ -731,6 +747,53 @@ class RemindersService extends ChangeNotifier {
     }
     await calendar.setEnabled(false);
     await refresh();
+  }
+
+  /// Calendari tra cui scegliere (Impostazioni → Calendario): scrivibili,
+  /// sincronizzati (o, su iPhone e Mac, anche solo sul dispositivo), senza
+  /// quello «UniNotes» delle versioni precedenti.
+  Future<List<CalendarChoice>> calendarChoices() async {
+    final b = calendar.backend;
+    if (b == null || !await b.hasAccess()) return const [];
+    return [
+      for (final c in await b.calendars())
+        if (c.writable && !c.legacy && (c.synced || b.localCalendarsAllowed)) c,
+    ];
+  }
+
+  /// Sceglie il calendario [id] (null = predefinito): gli eventi dell'app si
+  /// spostano lì alla prossima sincronizzazione, subito.
+  Future<CalendarStatus> chooseCalendar(String? id) async {
+    await calendar.choose(id);
+    await refresh();
+    return calendar.status();
+  }
+
+  /// «Aggiorna da questo dispositivo»: il calendario dell'account lo scrive
+  /// questo dispositivo invece di quello che lo faceva.
+  Future<CalendarStatus> takeOverCalendar() async {
+    await calendar.takeOver();
+    await refresh();
+    return calendar.status();
+  }
+
+  /// Avvisi delle prove all'ora esatta (Android, calendario interno).
+  Future<bool> exactAlarmsAllowed() async {
+    try {
+      return await platform.exactAlarmsAllowed();
+    } catch (_) {
+      return false;
+    }
+  }
+
+  Future<bool> requestExactAlarms() async {
+    try {
+      final ok = await platform.requestExactAlarms();
+      await refresh();
+      return ok;
+    } catch (_) {
+      return false;
+    }
   }
 }
 

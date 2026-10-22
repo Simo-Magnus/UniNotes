@@ -53,11 +53,17 @@ Future<void> bringAppToFront() async {
   }
 }
 
-/// Pagina che il browser mostra dopo l'accesso o la scelta dei file: apre
-/// subito l'app con [kAppReturnUrl] (il browser può chiedere conferma:
-/// «Apri UniNotes»), prova a chiudere la scheda e, se il browser non lo
-/// permette, resta una pagina minima con il pulsante «Apri UniNotes».
-/// L'esito (riuscito o no, con la causa) lo mostra l'app.
+/// Pagina che il browser mostra dopo l'accesso o la scelta dei file.
+///
+/// - Riuscito ([ok]): apre subito l'app con [kAppReturnUrl] (il browser può
+///   chiedere conferma: «Apri UniNotes») e poi chiude la scheda con
+///   `window.close()`; i browser che non permettono a una pagina di
+///   chiudere la scheda aperta da un altro programma lasciano il testo di
+///   riserva «Puoi chiudere questa scheda». L'app mostra «OneDrive
+///   collegato…» (o il servizio usato).
+/// - Non riuscito: la scheda resta aperta con la causa spiegata (niente
+///   chiusura) e il pulsante per tornare all'app, che mostra lo stesso
+///   errore.
 String returnToAppPage({
   required bool ok,
   required String title,
@@ -65,6 +71,14 @@ String returnToAppPage({
 }) {
   const esc = HtmlEscape();
   final link = '$kAppReturnUrl?esito=${ok ? 'ok' : 'errore'}';
+  final script = ok
+      ? 'setTimeout(function(){location.href="$link"},150);'
+            'setTimeout(function(){window.close();'
+            'try{window.open("","_self").close()}catch(e){}'
+            'var t=document.getElementById("note");'
+            'if(t)t.textContent="Accesso completato: puoi chiudere questa '
+            'scheda e tornare a UniNotes."},1200);'
+      : '';
   return '<!doctype html><html lang="it"><head><meta charset="utf-8">'
       '<meta name="viewport" content="width=device-width,initial-scale=1">'
       '<title>UniNotes</title><style>'
@@ -83,13 +97,11 @@ String returnToAppPage({
       '</style></head><body><main>'
       '<h1>${esc.convert(title)}</h1>'
       '${detail == null || detail.isEmpty ? '' : '<p>${esc.convert(detail)}</p>'}'
-      '<p>${ok ? 'Fatto: UniNotes mostra l\'esito.' : 'UniNotes mostra cosa fare.'}'
-      ' Se il browser chiede di aprire UniNotes, scegli «Apri».</p>'
-      '<a id="app" href="$link">Apri UniNotes</a>'
-      '</main><script>'
-      'setTimeout(function(){location.href="$link"},150);'
-      'setTimeout(function(){window.close()},1500);'
-      '</script></body></html>';
+      '<p id="note">${ok ? 'Fatto: torno a UniNotes. Se il browser chiede di '
+                'aprire UniNotes, scegli «Apri».' : 'Puoi riprovare da UniNotes, '
+                'che mostra lo stesso errore.'}</p>'
+      '<a id="app" href="$link">${ok ? 'Apri UniNotes' : 'Torna a UniNotes'}</a>'
+      '</main><script>$script</script></body></html>';
 }
 
 class OAuthException implements Exception {

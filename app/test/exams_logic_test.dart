@@ -22,14 +22,21 @@ void main() {
         expect(next, hasLength(2), reason: s.label);
         expect(next.map((n) => n.status), isNot(contains(s)));
       }
-      // da «Da prenotare» si arriva a ogni stato
+      // da «Da prenotare» si arriva a ogni stato. «Sostenuto» e «Esito»
+      // aprono il menù del voto, che offre anche «Non superato».
       final seen = {ExamStatus.planned};
       var frontier = [ExamStatus.planned];
       while (frontier.isNotEmpty) {
         frontier = [
           for (final s in frontier)
             for (final n in nextExamStatuses(s))
-              if (seen.add(n.status)) n.status,
+              for (final to in [
+                n.status,
+                if (n.status == ExamStatus.taken ||
+                    n.status == ExamStatus.passed)
+                  ExamStatus.failed,
+              ])
+                if (seen.add(to)) to,
         ];
       }
       // tranne «Da completare»: solo per gli esami degli anni prima
@@ -41,6 +48,72 @@ void main() {
         ExamStatus.passed,
         ExamStatus.planned,
       ]);
+    });
+
+    test('dopo l\'esito (in attesa o con il voto) si torna a «Prenotato»', () {
+      for (final s in [ExamStatus.taken, ExamStatus.passed]) {
+        expect(
+          nextExamStatuses(s).map((n) => n.status),
+          contains(ExamStatus.booked),
+          reason: s.label,
+        );
+      }
+      // e da «Prenotato» a «Da prenotare»: catena all'indietro completa
+      var s = ExamStatus.passed;
+      final back = [s];
+      while (s != ExamStatus.planned) {
+        s = nextExamStatuses(s)
+            .map((n) => n.status)
+            .firstWhere(
+              (n) =>
+                  n == ExamStatus.booked ||
+                  (s == ExamStatus.booked && n == ExamStatus.planned),
+            );
+        back.add(s);
+      }
+      expect(back, [ExamStatus.passed, ExamStatus.booked, ExamStatus.planned]);
+    });
+
+    test('lo stato scelto toglie il voto', () {
+      const e = Exam(
+        courseId: 1,
+        status: ExamStatus.passed,
+        grade: 30,
+        laude: true,
+      );
+      final b = withStatus(e, ExamStatus.booked);
+      expect(b.status, ExamStatus.booked);
+      expect(b.grade, isNull);
+      expect(b.laude, isFalse);
+    });
+
+    test('colore della card del corso: segue lo stato della prova', () {
+      CourseExamGroup g(List<Exam> exams) =>
+          CourseExamGroup(const Course(id: 1, name: 'A'), 1, exams);
+      expect(
+        g([const Exam(courseId: 1, status: ExamStatus.failed)]).headlineStatus,
+        ExamStatus.failed,
+      );
+      // non superato e poi superato: vale il superato
+      expect(
+        g([
+          const Exam(courseId: 1, status: ExamStatus.failed),
+          const Exam(courseId: 1, status: ExamStatus.passed, grade: 24),
+        ]).headlineStatus,
+        ExamStatus.passed,
+      );
+      // solo prove in itinere: l'ultima
+      expect(
+        g([
+          const Exam(
+            courseId: 1,
+            kind: ExamKind.midterm,
+            status: ExamStatus.taken,
+          ),
+        ]).headlineStatus,
+        ExamStatus.taken,
+      );
+      expect(g(const []).headlineStatus, isNull);
     });
   });
 

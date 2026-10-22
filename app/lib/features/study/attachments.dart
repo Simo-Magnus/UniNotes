@@ -10,6 +10,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/attachment.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../notes/note_viewer_screen.dart';
 import '../notes/notes_store.dart';
 import '../reader/reader_screen.dart';
@@ -87,8 +88,23 @@ Future<void> removeAttachment(BuildContext context, Attachment a) async {
   if (!ok || !context.mounted) return;
   final s = context.read<AppServices>();
   await s.study.deleteAttachment(a.id!);
-  await s.attachmentsLibrary.remove(a.storedFile);
   s.revision.bump();
+  if (!context.mounted) {
+    await s.attachmentsLibrary.remove(a.storedFile);
+    return;
+  }
+  // «Annulla»: l'allegato torna con lo stesso id; la copia nell'app si
+  // cancella solo alla chiusura dell'avviso
+  showUndoSnackBar(
+    context,
+    'Allegato rimosso: «${a.title}».',
+    undoneMessage: 'Allegato ripristinato.',
+    onUndo: () async {
+      await s.database.db.insert('attachments', a.toMap());
+      s.revision.bump();
+    },
+    onCommit: () => s.attachmentsLibrary.remove(a.storedFile),
+  );
 }
 
 /// Elimina i file copiati nell'app degli allegati di un modulo/argomento
@@ -561,11 +577,16 @@ class AttachmentTile extends StatelessWidget {
     required this.course,
     required this.attachment,
     this.editable = true,
+    this.onOpen,
   });
 
   final Course course;
   final Attachment attachment;
   final bool editable;
+
+  /// Apertura al tocco (null = [openAttachment]); la schermata Focus la usa
+  /// per tenere il riquadro della sessione sopra il file aperto.
+  final ValueChanged<Attachment>? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -582,7 +603,9 @@ class AttachmentTile extends StatelessWidget {
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          onTap: () => openAttachment(context, course, a),
+          onTap: onOpen != null
+              ? () => onOpen!(a)
+              : () => openAttachment(context, course, a),
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 44),
             child: Row(
@@ -671,11 +694,13 @@ class AttachmentList extends StatelessWidget {
     required this.course,
     required this.attachments,
     this.editable = true,
+    this.onOpen,
   });
 
   final Course course;
   final List<Attachment> attachments;
   final bool editable;
+  final ValueChanged<Attachment>? onOpen;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -687,6 +712,7 @@ class AttachmentList extends StatelessWidget {
           course: course,
           attachment: a,
           editable: editable,
+          onOpen: onOpen,
         ),
     ],
   );

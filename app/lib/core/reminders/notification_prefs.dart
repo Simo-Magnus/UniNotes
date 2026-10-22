@@ -14,6 +14,9 @@ class NotificationKeys {
 
   static const exams = 'notif_exams';
   static const examOffsets = 'notif_exam_offsets';
+
+  /// Avvisi N ore prima delle prove con l'orario (es. "1").
+  static const examHours = 'notif_exam_hours';
   static const sessions = 'notif_sessions';
   static const outcome = 'notif_outcome';
   static const links = 'notif_links';
@@ -51,11 +54,18 @@ class NotificationKeys {
   static const linkWarnedPrefix = 'notif_link_warned_';
 }
 
-/// Anticipi predefiniti degli avvisi delle prove (giorni prima).
-const List<int> kDefaultExamOffsets = [7, 1];
+/// Anticipi predefiniti degli avvisi delle prove (giorni prima): il giorno
+/// prima, più un'ora prima per le prove con l'orario ([kDefaultExamHours]).
+const List<int> kDefaultExamOffsets = [1];
 
 /// Anticipi proposti nelle impostazioni.
 const List<int> kExamOffsetChoices = [1, 2, 3, 7, 14];
+
+/// Avvisi predefiniti nelle ore prima di una prova con l'orario.
+const List<int> kDefaultExamHours = [1];
+
+/// Ore prima proposte nelle impostazioni.
+const List<int> kExamHourChoices = [1, 2, 3];
 
 /// Preferenze delle notifiche lette dalle impostazioni.
 class NotificationPrefs {
@@ -63,6 +73,7 @@ class NotificationPrefs {
     this.consent = false,
     this.exams = true,
     this.examOffsets = kDefaultExamOffsets,
+    this.examHours = kDefaultExamHours,
     this.sessions = true,
     this.outcome = true,
     this.links = true,
@@ -75,6 +86,9 @@ class NotificationPrefs {
   final bool consent;
   final bool exams;
   final List<int> examOffsets;
+
+  /// Ore prima (solo prove con l'orario).
+  final List<int> examHours;
   final bool sessions;
   final bool outcome;
   final bool links;
@@ -96,6 +110,11 @@ class NotificationPrefs {
       consent: await s.get(NotificationKeys.consent) == '1',
       exams: await flag(NotificationKeys.exams, true),
       examOffsets: parseOffsets(await s.get(NotificationKeys.examOffsets)),
+      examHours: parseOffsets(
+        await s.get(NotificationKeys.examHours),
+        fallback: kDefaultExamHours,
+        max: 23,
+      ),
       sessions: await flag(NotificationKeys.sessions, true),
       outcome: await flag(NotificationKeys.outcome, true),
       links: await flag(NotificationKeys.links, true),
@@ -106,12 +125,17 @@ class NotificationPrefs {
     );
   }
 
-  /// "7,1" → [7, 1]; vuoto o non valido → anticipi predefiniti.
-  static List<int> parseOffsets(String? v) {
-    if (v == null) return kDefaultExamOffsets;
+  /// "7,1" → [7, 1]; mai impostato → [fallback] (anticipi predefiniti);
+  /// vuoto = nessun avviso di quel tipo.
+  static List<int> parseOffsets(
+    String? v, {
+    List<int> fallback = kDefaultExamOffsets,
+    int max = 60,
+  }) {
+    if (v == null) return fallback;
     final out = <int>{
       for (final x in v.split(','))
-        if (int.tryParse(x.trim()) case final n? when n > 0 && n <= 60) n,
+        if (int.tryParse(x.trim()) case final n? when n > 0 && n <= max) n,
     }.toList()..sort((a, b) => b - a);
     return out;
   }

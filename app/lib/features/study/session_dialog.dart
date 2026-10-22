@@ -164,7 +164,16 @@ class _SessionDialogState extends State<_SessionDialog> {
                 ),
                 items: [
                   for (final a in ActivityType.values)
-                    DropdownMenuItem(value: a, child: Text(a.label)),
+                    DropdownMenuItem(
+                      value: a,
+                      child: Row(
+                        children: [
+                          Icon(a.icon, size: 18),
+                          const SizedBox(width: 8),
+                          Text(a.label),
+                        ],
+                      ),
+                    ),
                 ],
                 onChanged: (v) => setState(() => _activity = v ?? _activity),
               ),

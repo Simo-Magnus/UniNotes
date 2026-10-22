@@ -9,9 +9,14 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <!-- Notifiche pianificate delle prove (flutter_local_notifications):
-         ripianificate dopo il riavvio del telefono. Pianificazione inesatta,
-         quindi niente SCHEDULE_EXACT_ALARM. -->
+         ripianificate dopo il riavvio del telefono (e lavoro della
+         sincronizzazione in background, BackgroundSync.kt). -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Calendario interno (nessun calendario sincronizzato): avvisi delle
+         prove all'ora esatta se lo studente lo consente (Impostazioni →
+         Calendario → «Avvisi puntuali»); senza il permesso restano inesatti
+         (qualche minuto di ritardo). -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
     <!-- Esami, prove in itinere, esoneri e sessioni nel calendario del
          telefono (solo se lo studente lo attiva in Impostazioni → Calendario). -->
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
@@ -176,6 +181,13 @@
             android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
             android:foregroundServiceType="microphone"
             android:stopWithTask="true"
+            android:exported="false" />
+        <!-- Sincronizzazione con OneDrive e Google Drive anche ad app chiusa
+             (JobScheduler del sistema, BackgroundSync.kt): lavoro periodico,
+             solo con la rete, ripianificato dopo il riavvio. -->
+        <service
+            android:name=".SyncJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="false" />
         <!-- Notifiche pianificate, ripianificazione al riavvio e pulsanti
              delle notifiche (flutter_local_notifications). -->

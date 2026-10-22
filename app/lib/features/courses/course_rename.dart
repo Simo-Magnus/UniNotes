@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../core/constants/text_limits.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
-import '../../widgets/common.dart';
+import '../../widgets/undo_snack_bar.dart';
 
 /// Dà all'insegnamento il nome [name] scelto dallo studente (vuoto o uguale a
 /// quello ufficiale = torna il nome ufficiale). Il nome è un dato solo
@@ -62,11 +62,14 @@ Future<bool> renameCourseDialog(BuildContext context, Course course) async {
   if (name == null || !context.mounted) return false;
   final next = await applyCourseName(s, course, name);
   if (next != null && context.mounted) {
-    showSnack(
+    // «Annulla»: torna il nome di prima (anche nelle cartelle degli appunti)
+    showUndoSnackBar(
       context,
       next.hasCustomName
           ? 'Nome cambiato in tutta l\'app: «${next.name}»'
           : 'Ripristinato il nome originale: «${next.name}»',
+      undoneMessage: 'Nome di nuovo «${course.name}».',
+      onUndo: () => applyCourseName(s, next, course.name),
     );
   }
   return next != null;

@@ -67,6 +67,7 @@ class ReaderFormat {
     this.family,
     this.viewer, {
     this.note,
+    this.limited,
   });
   final String extension;
   final String label;
@@ -76,11 +77,38 @@ class ReaderFormat {
   /// Limiti noti (mostrati nelle informazioni del file).
   final String? note;
 
+  /// Resa sempre parziale: cosa l'app non mostra (es. "immagini e
+  /// impaginazione"). All'apertura si propone l'app di riferimento (vedi
+  /// reader_fidelity.dart); null = resa completa (salvo i limiti trovati
+  /// nel singolo file, [RDoc.limits]).
+  final String? limited;
+
   bool get supported => viewer != ReaderViewer.info;
+
+  /// Resa del formato nell'app.
+  ReaderFidelity get fidelity => !supported
+      ? ReaderFidelity.unsupported
+      : (limited == null ? ReaderFidelity.full : ReaderFidelity.partial);
 }
+
+/// Resa di un formato: completa, parziale (all'apertura si chiede se usare
+/// l'app di riferimento) o non supportata (solo "Apri con…").
+enum ReaderFidelity { full, partial, unsupported }
 
 const _f = ReaderFamily.code;
 const _d = ReaderViewer.document;
+
+// Cosa manca nei formati a resa parziale (vedi [ReaderFormat.limited]).
+const _legacy = 'immagini, tabelle e impaginazione (si vede solo il testo)';
+const _slidesText =
+    'immagini, forme e impaginazione delle diapositive (si vede solo il testo)';
+const _apple =
+    'il documento vero e proprio (si vede l\'anteprima salvata dall\'app '
+    'Apple)';
+const _xps = 'immagini e impaginazione (si vede solo il testo)';
+const _kindle = 'immagini, stili e indice (si vede solo il testo)';
+const _handNotes =
+    'le pagine originali (si vedono il PDF e le immagini incorporati)';
 
 /// Tutti i formati riconosciuti.
 const List<ReaderFormat> kReaderFormats = [
@@ -97,6 +125,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.word,
     _d,
     note: 'Solo testo',
+    limited: _legacy,
   ),
   ReaderFormat(
     '.dot',
@@ -104,6 +133,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.word,
     _d,
     note: 'Solo testo',
+    limited: _legacy,
   ),
   ReaderFormat('.odt', 'Testo OpenDocument', ReaderFamily.word, _d),
   ReaderFormat('.ott', 'Modello OpenDocument', ReaderFamily.word, _d),
@@ -114,6 +144,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.word,
     _d,
     note: 'Solo il testo (i disegni richiedono un interprete PostScript)',
+    limited: 'disegni e impaginazione (si vede solo il testo)',
   ),
   ReaderFormat(
     '.eps',
@@ -121,6 +152,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.word,
     _d,
     note: 'Anteprima incorporata (TIFF o EPSI) e testo',
+    limited: 'il disegno vero e proprio (si vedono l\'anteprima e il testo)',
   ),
   ReaderFormat(
     '.pages',
@@ -128,6 +160,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.word,
     ReaderViewer.container,
     note: 'Anteprima incorporata',
+    limited: _apple,
   ),
   // Presentazioni
   ReaderFormat('.pptx', 'PowerPoint', ReaderFamily.presentation, _d),
@@ -151,6 +184,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.presentation,
     _d,
     note: 'Solo testo',
+    limited: _slidesText,
   ),
   ReaderFormat(
     '.pps',
@@ -158,6 +192,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.presentation,
     _d,
     note: 'Solo testo',
+    limited: _slidesText,
   ),
   ReaderFormat(
     '.pot',
@@ -165,6 +200,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.presentation,
     _d,
     note: 'Solo testo',
+    limited: _slidesText,
   ),
   ReaderFormat(
     '.odp',
@@ -184,6 +220,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.presentation,
     ReaderViewer.container,
     note: 'Anteprima incorporata',
+    limited: _apple,
   ),
   // Fogli di calcolo
   ReaderFormat('.xlsx', 'Excel', ReaderFamily.spreadsheet, _d),
@@ -195,6 +232,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.spreadsheet,
     _d,
     note: 'Solo valori',
+    limited: 'grafici, immagini e formattazione delle celle',
   ),
   ReaderFormat(
     '.xlt',
@@ -202,6 +240,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.spreadsheet,
     _d,
     note: 'Solo valori',
+    limited: 'grafici, immagini e formattazione delle celle',
   ),
   ReaderFormat('.ods', 'Foglio OpenDocument', ReaderFamily.spreadsheet, _d),
   ReaderFormat(
@@ -223,6 +262,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.spreadsheet,
     ReaderViewer.container,
     note: 'Anteprima incorporata',
+    limited: _apple,
   ),
   // Testo e markup
   ReaderFormat('.txt', 'Testo', ReaderFamily.text, _d),
@@ -312,8 +352,22 @@ const List<ReaderFormat> kReaderFormats = [
   ReaderFormat('.fb2', 'FictionBook', ReaderFamily.ebook, _d),
   ReaderFormat('.cbz', 'Fumetto (immagini)', ReaderFamily.ebook, _d),
   ReaderFormat('.cbr', 'Fumetto RAR', ReaderFamily.ebook, _d),
-  ReaderFormat('.xps', 'XPS', ReaderFamily.ebook, _d, note: 'Solo testo'),
-  ReaderFormat('.oxps', 'OpenXPS', ReaderFamily.ebook, _d, note: 'Solo testo'),
+  ReaderFormat(
+    '.xps',
+    'XPS',
+    ReaderFamily.ebook,
+    _d,
+    note: 'Solo testo',
+    limited: _xps,
+  ),
+  ReaderFormat(
+    '.oxps',
+    'OpenXPS',
+    ReaderFamily.ebook,
+    _d,
+    note: 'Solo testo',
+    limited: _xps,
+  ),
   ReaderFormat(
     '.djvu',
     'DjVu',
@@ -336,6 +390,7 @@ const List<ReaderFormat> kReaderFormats = [
     note:
         'Con DRM: solo nell\'app Kindle. Senza DRM: solo il testo (niente '
         'immagini, stili e indice)',
+    limited: _kindle,
   ),
   ReaderFormat(
     '.kfx-zip',
@@ -343,6 +398,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.ebook,
     _d,
     note: 'Con DRM: solo nell\'app Kindle. Senza DRM: solo il testo',
+    limited: _kindle,
   ),
   ReaderFormat(
     '.kpf',
@@ -350,6 +406,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.ebook,
     _d,
     note: 'Solo il testo',
+    limited: _kindle,
   ),
   ReaderFormat(
     '.acsm',
@@ -357,6 +414,9 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.ebook,
     _d,
     note: 'Non è il libro: si apre con Adobe Digital Editions',
+    limited:
+        'il libro (questo file serve ad Adobe Digital Editions per '
+        'scaricarlo)',
   ),
   // Immagini
   ReaderFormat('.png', 'PNG', ReaderFamily.image, ReaderViewer.image),
@@ -438,6 +498,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.handwriting,
     ReaderViewer.container,
     note: 'PDF e immagini incorporati',
+    limited: _handNotes,
   ),
   ReaderFormat(
     '.note',
@@ -445,6 +506,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.handwriting,
     ReaderViewer.container,
     note: 'PDF e immagini incorporati',
+    limited: _handNotes,
   ),
   ReaderFormat(
     '.notability',
@@ -452,6 +514,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.handwriting,
     ReaderViewer.container,
     note: 'PDF e immagini incorporati',
+    limited: _handNotes,
   ),
   ReaderFormat(
     '.inkml',
@@ -481,6 +544,7 @@ const List<ReaderFormat> kReaderFormats = [
     note:
         'Testo e immagini estratti (senza impaginazione); per le pagine '
         'complete usa OneNote',
+    limited: 'impaginazione, disegni a penna e allegati',
   ),
   ReaderFormat(
     '.onepkg',
@@ -488,6 +552,7 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.notes,
     ReaderViewer.archive,
     note: 'Elenco delle sezioni (archivio CAB non compresso o MSZIP)',
+    limited: 'le pagine (si vede l\'elenco delle sezioni)',
   ),
   ReaderFormat('.enex', 'Esportazione Evernote', ReaderFamily.notes, _d),
   ReaderFormat(
@@ -502,7 +567,13 @@ const List<ReaderFormat> kReaderFormats = [
     ReaderFamily.notes,
     ReaderViewer.outline,
   ),
-  ReaderFormat('.canvas', 'Canvas di Obsidian', ReaderFamily.notes, _d),
+  ReaderFormat(
+    '.canvas',
+    'Canvas di Obsidian',
+    ReaderFamily.notes,
+    _d,
+    limited: 'la disposizione delle schede sulla tela (si vedono in elenco)',
+  ),
   // Archivi
   ReaderFormat(
     '.zip',

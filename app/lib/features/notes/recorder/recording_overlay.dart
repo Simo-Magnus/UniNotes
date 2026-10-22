@@ -12,6 +12,7 @@ import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../widgets/floating_pill.dart';
+import '../../../widgets/undo_snack_bar.dart';
 import '../../study/focus/focus_pill.dart';
 import '../../study/study_stats.dart' show formatMinutes;
 import '../lecture_recorder.dart';
@@ -232,8 +233,20 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
       case RecordingCloseChoice.save:
         await _save();
       case RecordingCloseChoice.delete:
-        await discardRecording(_s);
-        _snack('Registrazione spostata in «Eliminati di recente».');
+        final entry = await discardRecording(_s);
+        if (entry == null || !nav.mounted) {
+          _snack('Registrazione spostata in «Eliminati di recente».');
+          break;
+        }
+        showUndoSnackBar(
+          nav,
+          'Registrazione spostata in «Eliminati di recente».',
+          undoneMessage: 'Registrazione ripristinata.',
+          onUndo: () async {
+            await _s.trash.restore(entry);
+            _s.revision.bump();
+          },
+        );
       case RecordingCloseChoice.cancel:
         break;
     }

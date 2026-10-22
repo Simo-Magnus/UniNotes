@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -112,6 +114,76 @@ class ExternalLauncher {
       return await _openWithSystem(path);
     } catch (e) {
       return LaunchResult.error('Impossibile aprire il file: $e');
+    }
+  }
+
+  /// Canale nativo di «Apri con…» (windows/runner/open_with.cpp,
+  /// MainActivity/OpenWith.kt, AppDelegate e MainFlutterWindow).
+  static const openWithChannel = MethodChannel(
+    'io.github.simomagnus.universitynotes/apri_con',
+  );
+
+  /// Piattaforma corrente (sostituibile nei test).
+  @visibleForTesting
+  static TargetPlatform Function() platform = () => defaultTargetPlatform;
+
+  /// «Apri con…»: la scelta dell'app del sistema, anche se per quel tipo di
+  /// file c'è già un'app predefinita (che resta per «Apri»):
+  /// - Windows: «Come vuoi aprire questo file?» (SHOpenWithDialog; senza il
+  ///   canale `rundll32 shell32.dll,OpenAs_RunDLL`);
+  /// - macOS: pannello sulla cartella Applicazioni, poi NSWorkspace;
+  /// - Android: Intent.createChooser; iOS: il menu «Apri in…»;
+  /// - Linux: `gio open` (l'app predefinita: non c'è una scelta comune a
+  ///   tutti i desktop).
+  /// Se l'utente chiude la scelta l'esito è ok, senza messaggi.
+  static Future<LaunchResult> openWith(String path) async {
+    final unsafe = unsafePathReason(path);
+    if (unsafe != null) return LaunchResult.error(unsafe);
+    if (!await File(path).exists()) return openPath(path);
+    final target = platform() == TargetPlatform.windows
+        ? MsixPaths.forOtherApps(path)
+        : path;
+    try {
+      final r = await openWithChannel.invokeMethod<String>('openWith', {
+        'path': target,
+      });
+      return switch (r) {
+        'ok' || 'annullato' => const LaunchResult.ok(),
+        'nessuna_app' => const LaunchResult.error(noAppMessage),
+        _ => const LaunchResult.error(
+          'Impossibile mostrare la scelta dell\'app: il file si apre con '
+          'quella predefinita.',
+        ),
+      };
+    } on MissingPluginException {
+      return _openWithFallback(target);
+    } on PlatformException catch (e) {
+      return LaunchResult.error('Impossibile aprire il file: ${e.message}');
+    }
+  }
+
+  /// Senza il canale nativo (es. build vecchia o Linux).
+  static Future<LaunchResult> _openWithFallback(String path) async {
+    try {
+      switch (platform()) {
+        case TargetPlatform.windows:
+          // OpenAs_RunDLL legge il resto della riga di comando come percorso
+          await Process.start('rundll32.exe', [
+            'shell32.dll,OpenAs_RunDLL',
+            path,
+          ], mode: ProcessStartMode.detached);
+          return const LaunchResult.ok();
+        case TargetPlatform.linux:
+          await Process.start('gio', [
+            'open',
+            path,
+          ], mode: ProcessStartMode.detached);
+          return const LaunchResult.ok();
+        default:
+          return await openPath(path);
+      }
+    } catch (_) {
+      return openPath(path);
     }
   }
 

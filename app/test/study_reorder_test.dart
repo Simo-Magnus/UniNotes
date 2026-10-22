@@ -9,6 +9,7 @@ import 'package:university_notes/features/study/attachments.dart';
 import 'package:university_notes/features/study/course_groups.dart';
 import 'package:university_notes/features/study/focus/focus_screen.dart';
 import 'package:university_notes/features/study/study_screen.dart';
+import 'package:university_notes/features/study/topics_tab.dart';
 import 'package:university_notes/models/attachment.dart';
 import 'package:university_notes/models/course.dart';
 import 'package:university_notes/models/study.dart';
@@ -159,11 +160,11 @@ void main() {
     // Geometria sopra Analisi I (stesso semestre)
     final analisi = find.ancestor(
       of: find.text('Analisi I').last,
-      matching: find.byType(ListTile),
+      matching: find.byType(CoursePickTile),
     );
     final geometria = find.ancestor(
       of: find.text('Geometria'),
-      matching: find.byType(ListTile),
+      matching: find.byType(CoursePickTile),
     );
     final dy = tester.getCenter(analisi).dy - tester.getCenter(geometria).dy;
     await _longDrag(tester, geometria, Offset(0, dy - 10));

@@ -92,6 +92,15 @@ class _NotificationsSectionState extends State<NotificationsSection> {
     await _s.reminders.refresh();
   }
 
+  Future<void> _setHours(List<int> v) async {
+    await _s.settings.set(
+      NotificationKeys.examHours,
+      NotificationPrefs.formatOffsets(v),
+    );
+    _reload();
+    await _s.reminders.refresh();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -153,7 +162,9 @@ class _NotificationsSectionState extends State<NotificationsSection> {
                     if (p.exams)
                       _OffsetsPicker(
                         selected: p.examOffsets,
+                        hours: p.examHours,
                         onChanged: _setOffsets,
+                        onHoursChanged: _setHours,
                       ),
                     toggle(
                       NotificationKeys.sessions,
@@ -232,11 +243,20 @@ class _NotificationsSectionState extends State<NotificationsSection> {
   }
 }
 
-/// Anticipi degli avvisi delle prove (giorni prima).
+/// Anticipi degli avvisi delle prove (ore prima, solo per le prove con
+/// l'orario, e giorni prima): valgono per le notifiche dell'app e per i
+/// promemoria degli eventi nel calendario.
 class _OffsetsPicker extends StatelessWidget {
-  const _OffsetsPicker({required this.selected, required this.onChanged});
+  const _OffsetsPicker({
+    required this.selected,
+    required this.hours,
+    required this.onChanged,
+    required this.onHoursChanged,
+  });
   final List<int> selected;
+  final List<int> hours;
   final ValueChanged<List<int>> onChanged;
+  final ValueChanged<List<int>> onHoursChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -246,6 +266,17 @@ class _OffsetsPicker extends StatelessWidget {
         spacing: 6,
         runSpacing: 6,
         children: [
+          for (final h in kExamHourChoices)
+            FilterChip(
+              key: Key('notif-hours-$h'),
+              label: Text(h == 1 ? 'Un\'ora prima' : '$h ore prima'),
+              selected: hours.contains(h),
+              onSelected: (on) => onHoursChanged([
+                for (final x in hours)
+                  if (x != h) x,
+                if (on) h,
+              ]),
+            ),
           for (final d in kExamOffsetChoices)
             FilterChip(
               label: Text(d == 1 ? 'Il giorno prima' : '$d giorni prima'),

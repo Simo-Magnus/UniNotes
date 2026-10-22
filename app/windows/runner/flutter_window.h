@@ -9,6 +9,7 @@
 #include "audio_transcoder.h"
 #include "focus_session.h"
 #include "live_speech.h"
+#include "open_with.h"
 #include "spell_check.h"
 #include "win32_window.h"
 
@@ -33,6 +34,13 @@ class FlutterWindow : public Win32Window {
   // The Flutter instance hosted by this window.
   std::unique_ptr<flutter::FlutterViewController> flutter_controller_;
 
+  // Finestra ridotta a icona (stato dell'app mandato da qui).
+  bool minimized_ = false;
+
+  // Manda a Flutter lo stato dell'app per la finestra [hwnd] (nascosta,
+  // in primo piano o no).
+  void SendLifecycleState(HWND hwnd);
+
   // Conversioni audio delle registrazioni (Media Foundation).
   std::unique_ptr<AudioTranscoderChannel> audio_channel_;
 
@@ -44,6 +52,9 @@ class FlutterWindow : public Win32Window {
 
   // Controllo ortografico di Windows nei campi di testo (ISpellChecker).
   std::unique_ptr<SpellCheckChannel> spell_channel_;
+
+  // «Apri con…»: scelta dell'app di Windows (SHOpenWithDialog).
+  std::unique_ptr<OpenWithChannel> open_with_channel_;
 };
 
 #endif  // RUNNER_FLUTTER_WINDOW_H_

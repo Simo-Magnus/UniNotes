@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
+import 'live_agreement.dart';
 import 'recording_meta.dart';
 
 /// Testo dal vivo guidato dalle pause (Parakeet su desktop): logica pura,
@@ -10,13 +11,16 @@ import 'recording_meta.dart';
 ///
 /// 1. L'audio della registrazione (mono 16 kHz) passa da un rilevatore di
 ///    voce ([SpeechVad], Silero VAD): i silenzi non producono testo.
-/// 2. Mentre si parla, ogni [VadLiveSegmenter.partialEvery] di audio nuovo
-///    si decodifica il tratto di parlato in corso: è il **testo
-///    provvisorio**, che si aggiorna.
+/// 2. Mentre si parla, ogni [VadLiveSegmenter.partialEvery] (~0,75 s) di
+///    audio nuovo si decodifica il tratto di parlato in corso: è
+///    un'**ipotesi**, con le parole e i loro tempi ([LiveStep.partialWords]).
+///    Le parole uguali in due ipotesi di fila diventano subito confermate e
+///    modificabili (live_agreement.dart), il resto è il testo provvisorio.
 /// 3. A una pausa (o dopo ~18 s di parlato senza pause: il VAD taglia da
-///    solo) il tratto diventa una frase **confermata**, decodificata una
-///    volta sola con tutto il suo audio e divisa in frasi alla
-///    punteggiatura ([splitSentences]), con i tempi della registrazione.
+///    solo) il tratto diventa **definitivo**, decodificato una volta sola
+///    con tutto il suo audio e diviso in frasi alla punteggiatura
+///    ([splitSentences]), con i tempi della registrazione: sostituisce le
+///    parole confermate (salvo le frasi già corrette a mano).
 
 /// Risultato del decodificatore: testo, pezzi (token) e istante d'inizio di
 /// ogni pezzo in secondi dall'inizio dell'audio decodificato.
@@ -90,12 +94,17 @@ class LiveStep {
   const LiveStep({
     this.committed = const [],
     this.partial,
+    this.partialWords = const [],
     this.speaking = false,
     this.stableUntil = Duration.zero,
     this.took = Duration.zero,
   });
   final List<TranscriptSegment> committed;
   final String? partial;
+
+  /// Parole di [partial] con i tempi della registrazione (dai pezzi di
+  /// Parakeet).
+  final List<HypWord> partialWords;
   final bool speaking;
   final Duration stableUntil;
 
@@ -114,7 +123,7 @@ class VadLiveSegmenter {
   VadLiveSegmenter(
     this.vad,
     this.decoder, {
-    this.partialEvery = 16000,
+    this.partialEvery = 12000,
     this.minPartial = 8000,
     this.lead = 2 * 512 + 4000,
     this.tail = 8000 + 1024,
@@ -128,7 +137,8 @@ class VadLiveSegmenter {
   final SpeechVad vad;
   final SpeechDecoder decoder;
 
-  /// Audio nuovo (campioni) fra due testi provvisori (~1 s).
+  /// Audio nuovo (campioni) fra due ipotesi (~0,75 s: una parola detta è
+  /// confermata, per accordo fra due ipotesi, entro ~1–2 s).
   final int partialEvery;
 
   /// Parlato minimo per un testo provvisorio (~0,5 s).
@@ -175,6 +185,7 @@ class VadLiveSegmenter {
     _fed += samples.length;
     final committed = _drain();
     String? text;
+    var words = const <HypWord>[];
     if (committed.isNotEmpty) text = '';
     if (vad.speaking) {
       final s = _speechStart ??= math.max(
@@ -187,6 +198,11 @@ class VadLiveSegmenter {
         _lastPartialAt = _fed;
         final d = decoder.decode(_slice(s, _fed));
         text = d.text.trim();
+        words = wordsOfDecoded(
+          d,
+          samplesToDuration(s),
+          samplesToDuration(_fed),
+        );
         _hadPartial = text.isNotEmpty;
       }
     } else {
@@ -199,6 +215,7 @@ class VadLiveSegmenter {
     return LiveStep(
       committed: committed,
       partial: text,
+      partialWords: words,
       speaking: vad.speaking,
       stableUntil: samplesToDuration(_stable()),
       took: sw.elapsed,
@@ -347,6 +364,51 @@ List<TranscriptSegment> splitSentences(
 }
 
 Duration _secs(double s) => Duration(microseconds: (s * 1e6).round());
+
+final _blank = RegExp(r'\s+');
+
+/// Parole del testo decodificato [d] (audio da [origin] a [end] della
+/// registrazione) con l'inizio di ognuna dai tempi dei pezzi (token): un
+/// pezzo che inizia con «▁» (o uno spazio) apre una parola nuova, la
+/// punteggiatura resta attaccata alla parola prima. Senza pezzi i tempi si
+/// stimano in proporzione ai caratteri.
+List<HypWord> wordsOfDecoded(DecodedText d, Duration origin, Duration end) {
+  final tokens = d.tokens;
+  final ts = d.timestamps;
+  if (tokens.isEmpty || ts.length != tokens.length) {
+    return wordsOfText(d.text.trim(), from: origin, to: end);
+  }
+  final texts = <String>[];
+  final starts = <Duration>[];
+  var space = true;
+  for (var i = 0; i < tokens.length; i++) {
+    final piece = tokens[i].replaceAll('▁', ' ');
+    final clean = piece.trim();
+    if (clean.isEmpty) {
+      space = true;
+      continue;
+    }
+    if (space || texts.isEmpty || piece.startsWith(' ')) {
+      texts.add(clean);
+      starts.add(origin + _secs(ts[i]));
+    } else {
+      texts[texts.length - 1] += clean;
+    }
+    space = piece.endsWith(' ');
+  }
+  final expect = d.text.trim().split(_blank).where((w) => w.isNotEmpty);
+  if (texts.length != expect.length) {
+    return wordsOfText(d.text.trim(), from: origin, to: end);
+  }
+  return [
+    for (var i = 0; i < texts.length; i++)
+      HypWord(
+        texts[i],
+        start: starts[i],
+        end: i + 1 < texts.length ? starts[i + 1] : end,
+      ),
+  ];
+}
 
 /// Audio arrivato dal microfono e non ancora passato al riconoscitore
 /// (lato interfaccia): si manda tutto insieme quando il riconoscitore è

@@ -137,11 +137,19 @@ class OutlookCalendarAuth {
   }
 }
 
-/// Calendario «UniNotes» nell'Outlook dell'account Microsoft (Windows), con
-/// Microsoft Graph: creato con `POST /me/calendars`, eventi legati alla
-/// prova da una proprietà estesa invisibile (chiave stabile) e dall'id
-/// salvato, promemoria con `reminderMinutesBeforeStart` (Outlook ne
-/// permette uno solo per evento: si usa il più vicino alla prova).
+/// Calendario Outlook dell'account Microsoft (Windows), con Microsoft Graph.
+///
+/// Gli eventi vanno nel calendario principale dell'account («Calendario»,
+/// quello che Outlook mostra a colpo d'occhio su PC, web e telefono) o in
+/// quello scelto in Impostazioni → Calendario. Le versioni precedenti li
+/// scrivevano in un calendario a parte «UniNotes» che Outlook elenca sotto
+/// «I miei calendari» ma spesso non mostra (casella non spuntata, app
+/// Calendario di Windows, Outlook sul telefono): lo studente non vedeva
+/// nulla. Ora quegli eventi si spostano e il calendario «UniNotes» vuoto si
+/// elimina. Eventi legati alla prova da una proprietà estesa invisibile
+/// (chiave stabile) e dall'id salvato, promemoria con
+/// `reminderMinutesBeforeStart` (Outlook ne permette uno solo per evento:
+/// si usa il più vicino alla prova).
 class OutlookCalendarBackend implements CalendarBackend, RemovableCalendar {
   OutlookCalendarBackend(this.auth, {this.transport});
 
@@ -186,36 +194,98 @@ class OutlookCalendarBackend implements CalendarBackend, RemovableCalendar {
   }
 
   @override
-  Future<String> ensureCalendar(String? knownId) => _call(() async {
-    final g = _graph;
-    if (knownId != null) {
-      final c = await g.getJson('me/calendars/$knownId', {r'$select': 'id'});
-      if (c?['id'] is String) return c!['id'] as String;
-    }
-    for (final c in await g.list('me/calendars', {r'$select': 'id,name'})) {
-      if (c['name'] == kCalendarName && c['id'] is String) {
-        return c['id'] as String;
-      }
-    }
-    final made = await g.sendJson('POST', 'me/calendars', {
-      'name': kCalendarName,
-      'color': 'lightBlue',
+  bool get localCalendarsAllowed => false;
+
+  static int? _hex(Object? v) {
+    if (v is! String || !RegExp(r'^#[0-9a-fA-F]{6}$').hasMatch(v)) return null;
+    return 0xFF000000 | int.parse(v.substring(1), radix: 16);
+  }
+
+  /// Calendari dell'account (anche per i test): il principale è
+  /// `isDefaultCalendar`, quelli condivisi in sola lettura hanno `canEdit`
+  /// false, «UniNotes» (non principale) è quello delle versioni precedenti.
+  static CalendarChoice? choiceOf(Map<String, Object?> c, String? me) {
+    final id = c['id'];
+    if (id is! String) return null;
+    final name = '${c['name'] ?? 'Calendario'}';
+    final owner = c['owner'] is Map ? (c['owner'] as Map)['address'] : null;
+    final primary = c['isDefaultCalendar'] == true;
+    return CalendarChoice(
+      id: id,
+      name: name,
+      account: owner is String && owner.isNotEmpty ? owner : me,
+      accountType: 'outlook',
+      color: _hex(c['hexColor']),
+      primary: primary,
+      writable: c['canEdit'] != false,
+      legacy: name == kCalendarName && !primary,
+    );
+  }
+
+  @override
+  Future<List<CalendarChoice>> calendars() => _call(() async {
+    final list = await _graph.list('me/calendars', {
+      r'$select': 'id,name,hexColor,isDefaultCalendar,canEdit,owner',
     });
-    final id = made['id'];
-    if (id is! String) throw Exception('Calendario Outlook non creato.');
-    return id;
+    return [
+      for (final c in list) ?choiceOf(c, null),
+    ];
   });
 
+  @override
+  Future<CalendarHealth> health(CalendarChoice c) => _call(() async {
+    final got = await _graph.getJson('me/calendars/${c.id}', {
+      r'$select': 'id,canEdit',
+    });
+    if (got == null) {
+      return CalendarHealth(
+        problem:
+            'Il calendario «${c.name}» non c\'è più nell\'account Microsoft: '
+            'scegline un altro in Impostazioni → Calendario.',
+      );
+    }
+    if (got['canEdit'] == false) {
+      return CalendarHealth(
+        problem:
+            'Il calendario «${c.name}» è di sola lettura: scegline un altro.',
+      );
+    }
+    return CalendarHealth.fine;
+  });
+
+  /// Eventi dell'app: solo quelli con la proprietà estesa (filtro di Graph),
+  /// così nel calendario principale non si scorrono tutti gli eventi dello
+  /// studente. Se Graph non accetta il filtro si leggono gli eventi da 400
+  /// giorni fa a 3 anni da oggi.
   @override
   Future<Map<String, List<String>>> existing(String calendarId) =>
       _call(() async {
         final out = <String, List<String>>{};
-        final events = await _graph.list('me/calendars/$calendarId/events', {
-          r'$select': 'id',
-          r'$top': '200',
-          r'$expand':
-              "singleValueExtendedProperties(\$filter=id eq '$keyProperty')",
-        });
+        final expand =
+            "singleValueExtendedProperties(\$filter=id eq '$keyProperty')";
+        List<Map<String, Object?>> events;
+        try {
+          events = await _graph.list('me/calendars/$calendarId/events', {
+            r'$select': 'id',
+            r'$top': '200',
+            r'$filter':
+                "singleValueExtendedProperties/Any(ep: ep/id eq "
+                "'$keyProperty' and ep/value ne null)",
+            r'$expand': expand,
+          });
+        } on GraphException catch (e) {
+          if (e.status != 400) rethrow;
+          final now = DateTime.now().toUtc();
+          events = await _graph.list('me/calendars/$calendarId/calendarView', {
+            'startDateTime': now
+                .subtract(const Duration(days: 400))
+                .toIso8601String(),
+            'endDateTime': now.add(const Duration(days: 1100)).toIso8601String(),
+            r'$select': 'id',
+            r'$top': '200',
+            r'$expand': expand,
+          });
+        }
         for (final e in events) {
           final props = e['singleValueExtendedProperties'];
           final id = e['id'];

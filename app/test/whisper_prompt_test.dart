@@ -104,13 +104,23 @@ void main() {
       expect(isPromptEcho('Equazioni differenziali, Cauchy', null), isFalse);
     });
 
-    test('whisper-cli: prompt, VAD e soppressione dei token non verbali', () {
-      expect(WhisperOptions.none.cliArgs, ['--suppress-nst']);
+    test('whisper-cli: lingua fissata, prompt, VAD e soppressione dei token '
+        'non verbali', () {
+      // sempre la lingua: italiano di predefinito, mai «auto»
+      expect(WhisperOptions.none.cliArgs, ['-l', 'it', '--suppress-nst']);
+      expect(WhisperOptions.none.whisperLanguage, 'it');
+      expect(const WhisperOptions(language: 'en').cliArgs.take(2), [
+        '-l',
+        'en',
+      ]);
+      expect(const WhisperOptions(language: 'auto').whisperLanguage, 'it');
       final o = WhisperOptions(
         prompt: ' Lezione di Fisica. ',
         vad: File('v.bin'),
       );
       expect(o.cliArgs, [
+        '-l',
+        'it',
         '--suppress-nst',
         '--prompt',
         'Lezione di Fisica.',

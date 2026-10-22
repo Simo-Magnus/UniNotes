@@ -38,12 +38,29 @@ Le ultime impostazioni e l'ultimo collegamento restano per la volta dopo.
 
 ## Durante la sessione
 
-Schermata a tutto schermo con il **timer grande ad anello** (anello di Design
-3, §7.2, in scala: azzurro perché il tempo lo conta la macchina, attenuato in
-pausa): fase («Concentrazione» o «Pausa»), tempo del tratto in corso, ora
-della prossima pausa o della fine. Sotto, i tratti della sessione (barre per
-la concentrazione, tratti brevi per le pause), i minuti fatti e le pause
-rimaste.
+Schermata a tutto schermo («Sessione Focus»). In alto **che cosa si studia**
+(`focus_context.dart`, `FocusContextHeader`): l'insegnamento in piccolo
+(solo il nome), il **modulo** come titolo, sotto l'argomento e una
+pastiglia con l'icona e il nome dell'attività; senza modulo il titolo è
+l'insegnamento. Al centro il protagonista, il **timer grande ad anello**
+(anello di Design 3, §7.2, in scala: azzurro perché il tempo lo conta la
+macchina, attenuato in pausa): fase («Concentrazione» o «Pausa»), tempo del
+tratto in corso, ora della prossima pausa o della fine. Sotto, i tratti
+della sessione (barre per la concentrazione, tratti brevi per le pause), i
+minuti fatti e le pause rimaste.
+
+**File del modulo** (`FocusFilesPanel`, `focusFileSections`): con un
+argomento scelto prima i suoi file («argomento della sessione»), poi il
+materiale del modulo e i file degli altri argomenti del modulo; con un
+modulo il suo materiale e un gruppo per argomento; con tutto l'insegnamento
+un gruppo per modulo. Su telefono il pannello sta sotto i comandi, sopra
+le righe sul silenzio; da 900 px di larghezza è un pannello a destra
+(400 px) e il timer resta nella sua colonna. Un tocco apre il file nel
+lettore **senza fermare il timer**: finché il file è aperto il riquadro
+della sessione resta sopra il lettore e un suo tocco torna alla schermata
+già aperta (`openFocusScreen` riusa `FocusScreen.openRoute`, niente
+doppioni). Il «Non disturbare» non cambia. Tipi e rimozione dei file
+restano in Argomenti.
 
 - **Pausa / Riprendi**: ferma il tempo (la sessione si allunga).
 - **Salta pausa** (durante una pausa): si riparte subito; la sessione finisce
@@ -123,8 +140,8 @@ obiettivo la interrompe.
   modulo (`module_id`) e la durata scelta (`planned_minutes`, pause
   comprese) — migrazione v9 dello schema; `duration_minutes` è il tempo di
   concentrazione, pause escluse. Compaiono nello storico di Sessioni Studio
-  (icona Focus e «Focus» nella riga) e nelle Statistiche (riquadro «Di cui
-  in Focus»).
+  (icona dell'attività con il bollino Focus e «Focus» nella riga) e nelle
+  Statistiche (riquadro «Di cui in Focus»).
 - Sessioni Studio → «Focus questa settimana»: minuti e sessioni Focus della
   settimana.
 

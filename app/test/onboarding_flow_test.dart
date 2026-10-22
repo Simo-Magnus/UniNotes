@@ -133,15 +133,22 @@ Future<void> _tap(WidgetTester tester, Finder f) async {
 }
 
 /// Statale → Piemonte → PoliTO → triennale → Ingegneria Informatica →
-/// 1° anno: il riepilogo.
+/// 1° anno: il riepilogo (il passo del percorso, se il corso ne ha uno
+/// solo, si salta da solo dopo aver letto il file del corso).
 Future<void> _toSummary(WidgetTester tester) async {
+  await _toYear(tester);
+  await _tap(tester, find.text('1° anno'));
+  await _settleUntil(tester, find.text('Tutto giusto?'));
+  expect(find.text('Tutto giusto?'), findsOneWidget);
+}
+
+/// Fino alla scelta dell'anno.
+Future<void> _toYear(WidgetTester tester) async {
   await _tap(tester, find.text('Statale'));
   await _tap(tester, find.text('Piemonte'));
   await _tap(tester, find.text('Politecnico di Torino'));
   await _tap(tester, find.text('Laurea (triennale)'));
   await _tap(tester, find.text('Ingegneria Informatica'));
-  await _tap(tester, find.text('1° anno'));
-  expect(find.text('Tutto giusto?'), findsOneWidget);
 }
 
 Future<void> _fullFlow(WidgetTester tester, Size size) async {
@@ -188,6 +195,8 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   expect(find.text('Fuori corso'), findsOneWidget);
 
   await _tap(tester, find.text('2° anno'));
+  // un solo percorso: il passo del percorso si salta da solo
+  await _settleUntil(tester, find.text('Tutto giusto?'));
   expect(find.text('Tutto giusto?'), findsOneWidget);
   expect(find.text('Passo 8 di 12'), findsOneWidget);
   // niente più casella del calendario (.ics) nel riepilogo
@@ -321,16 +330,13 @@ void main() {
   ) async {
     final remote = <String, String>{}; // offline
     final (s, _) = await _start(tester, _phone, remote: remote);
-    await _tap(tester, find.text('Statale'));
-    await _tap(tester, find.text('Piemonte'));
-    await _tap(tester, find.text('Politecnico di Torino'));
-    await _tap(tester, find.text('Laurea (triennale)'));
-    await _tap(tester, find.text('Ingegneria Informatica'));
-    await _tap(tester, find.text('1° anno'));
-    // niente download all'apertura del riepilogo: l'avviso arriva al tocco
+    await _toYear(tester);
+    // niente download finché non si sceglie l'anno
     await _settle(tester, 6);
     expect(find.byKey(const Key('catalog-offline')), findsNothing);
-    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _tap(tester, find.text('1° anno'));
+    // i percorsi del corso si leggono dal file del corso: l'avviso arriva
+    // già qui, nel passo del percorso, con «Riprova»
     await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
     expect(find.text(kServeConnessione), findsOneWidget);
     expect(
@@ -340,10 +346,14 @@ void main() {
     );
     expect(await tester.runAsync(s.profiles.load), isNull);
 
-    // di nuovo online: Riprova scarica i dati del solo ateneo scelto e
+    // di nuovo online: Riprova scarica i dati del solo corso scelto, non ci
+    // sono percorsi da scegliere e si arriva al riepilogo; il pulsante
     // importa il piano
     remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
     await _tap(tester, find.byKey(const Key('catalog-retry')));
+    await _settleUntil(tester, find.text('Tutto giusto?'));
+    expect(await tester.runAsync(s.profiles.load), isNull);
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.byKey(const Key('catalog-offline')), findsNothing);
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
@@ -360,7 +370,12 @@ void main() {
   ) async {
     final remote = <String, String>{}; // offline
     final (s, _) = await _start(tester, _phone, remote: remote);
-    await _toSummary(tester);
+    await _toYear(tester);
+    await _tap(tester, find.text('1° anno'));
+    // nel passo del percorso: senza rete si può continuare senza scegliere
+    await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
+    await _tap(tester, find.text('Continua senza scegliere'));
+    expect(find.text('Tutto giusto?'), findsOneWidget);
     await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
     await _tap(tester, find.text('Conferma senza piano'));
@@ -380,21 +395,26 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('riepilogo: nessun download finché non si preme il pulsante', (
-    tester,
-  ) async {
+  testWidgets('nessun download finché non si sceglie l\'anno; il file del '
+      'corso si scarica una volta sola', (tester) async {
     final requests = <Uri>[];
     final (s, _) = await _start(tester, _phone, requests: requests);
-    await _toSummary(tester);
+    await _toYear(tester);
     await _settle(tester, 10);
-    expect(find.text('Scarica il piano di studi'), findsOneWidget);
+    expect(find.text('Che anno frequenti?'), findsOneWidget);
     expect(requests, isEmpty);
     expect(s.catalog.progresso.value, isNull);
+    await _tap(tester, find.text('1° anno'));
+    await _settleUntil(tester, find.text('Tutto giusto?'));
+    // il file del corso (con i percorsi) è già sul dispositivo, ma il piano
+    // non è ancora importato
+    expect(find.text('Scarica il piano di studi'), findsOneWidget);
     expect(
       (await tester.runAsync(() => s.catalog.datiCorso('polito', _corso)))!
           .corsi,
-      isFalse,
+      isTrue,
     );
+    expect(await tester.runAsync(s.profiles.load), isNull);
     await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
@@ -413,23 +433,16 @@ void main() {
         requests: requests,
         attesa: (r) => r == _relCorso ? gate.future : null,
       );
-      await _toSummary(tester);
-      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+      await _toYear(tester);
+      await _tap(tester, find.text('1° anno'));
       expect(find.text('Scarico i dati del tuo corso…'), findsOneWidget);
-      final button = tester.widget<FilledButton>(
-        find.byKey(const Key('onboarding-confirm')),
-      );
-      expect(button.onPressed, isNull, reason: 'pulsante disattivato');
-      await tester.tap(
-        find.byKey(const Key('onboarding-confirm')),
-        warnIfMissed: false,
-      );
-      // indietro e di nuovo al riepilogo mentre il download continua
+      // indietro e di nuovo all'anno mentre il download continua
       await _tap(tester, find.byTooltip('Indietro'));
       expect(find.text('Che anno frequenti?'), findsOneWidget);
       await _tap(tester, find.text('1° anno'));
-      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
       gate.complete();
+      await _settleUntil(tester, find.text('Tutto giusto?'));
+      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
       await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
       expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
       expect(
@@ -445,39 +458,48 @@ void main() {
   ) async {
     final remote = {'corsi/polito.json': '<html>errore</html>'};
     await _start(tester, _phone, remote: remote);
-    await _toSummary(tester);
-    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _toYear(tester);
+    await _tap(tester, find.text('1° anno'));
     await _settleUntil(tester, find.byKey(const Key('catalog-offline')));
     expect(find.textContaining('incompleto o non valido'), findsOneWidget);
     remote['corsi/polito.json'] = jsonEncode(corsiPolitoFixture());
     await _tap(tester, find.byKey(const Key('catalog-retry')));
+    await _settleUntil(tester, find.text('Tutto giusto?'));
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
     expect(find.text('Importati 4 insegnamenti e 2 libri.'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
+  Map<String, String> conPercorsi() {
+    final corsi = corsiPolitoFixture();
+    final corso = (corsi['corsi'] as List).single as Map<String, Object?>;
+    final ins = corso['insegnamenti'] as List;
+    (ins[1] as Map)['curriculum'] = 'Percorso A';
+    (ins[2] as Map)['curriculum'] = 'Percorso A';
+    (ins[3] as Map)['curriculum'] = 'Percorso B';
+    return {'corsi/polito.json': jsonEncode(corsi)};
+  }
+
   testWidgets(
-    'corso con più percorsi: si sceglie dopo i corsi, prima dell\'import',
+    'corso con più percorsi: si sceglie prima del riepilogo, il piano si '
+    'importa e si scarica una volta sola',
     (tester) async {
-      final corsi = corsiPolitoFixture();
-      final corso = (corsi['corsi'] as List).single as Map<String, Object?>;
-      final ins = corso['insegnamenti'] as List;
-      (ins[1] as Map)['curriculum'] = 'Percorso A';
-      (ins[2] as Map)['curriculum'] = 'Percorso A';
-      (ins[3] as Map)['curriculum'] = 'Percorso B';
       final requests = <Uri>[];
       final (s, _) = await _start(
         tester,
         _phone,
         requests: requests,
-        remote: {'corsi/polito.json': jsonEncode(corsi)},
+        remote: conPercorsi(),
       );
-      await _toSummary(tester);
+      await _toYear(tester);
       expect(find.byKey(const Key('percorso')), findsNothing);
-      await _tap(tester, find.byKey(const Key('onboarding-confirm')));
-      await _settleUntil(tester, find.text('Importa il piano'));
-      expect(find.byKey(const Key('percorso')), findsOneWidget);
-      // solo i corsi, niente import né profilo prima della scelta
+      await _tap(tester, find.text('1° anno'));
+      // il passo del percorso viene prima del riepilogo
+      await _settleUntil(tester, find.byKey(const Key('percorso')));
+      expect(find.text('Quale percorso segui?'), findsOneWidget);
+      expect(find.text('Tutto giusto?'), findsNothing);
+      // solo il file del corso, niente import né profilo prima della scelta
       expect(requests.map((u) => u.path.split('/database/').last), [
         'meta.json',
         'per_corso/polito/indice.json',
@@ -486,6 +508,11 @@ void main() {
       expect(await tester.runAsync(s.profiles.load), isNull);
       await _tap(tester, find.byKey(const Key('percorso')));
       await _tap(tester, find.text('Percorso B').last);
+      await _tap(tester, find.byKey(const Key('onboarding-percorso-next')));
+      // riepilogo: percorso scelto, un solo pulsante per scaricare il piano
+      expect(find.text('Tutto giusto?'), findsOneWidget);
+      expect(find.byKey(const Key('percorso')), findsNothing);
+      expect(find.text('Percorso B'), findsOneWidget);
       await _tap(tester, find.byKey(const Key('onboarding-confirm')));
       await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
       expect(find.text('Importati 2 insegnamenti e 2 libri.'), findsOneWidget);
@@ -501,6 +528,72 @@ void main() {
     },
   );
 
+  testWidgets('percorso: indietro dal riepilogo torna alla scelta, la scelta '
+      'resta e non si riscarica nulla', (tester) async {
+    final requests = <Uri>[];
+    final (s, _) = await _start(
+      tester,
+      _phone,
+      requests: requests,
+      remote: conPercorsi(),
+    );
+    await _toYear(tester);
+    await _tap(tester, find.text('1° anno'));
+    await _settleUntil(tester, find.byKey(const Key('percorso')));
+    await _tap(tester, find.byKey(const Key('percorso')));
+    await _tap(tester, find.text('Percorso B').last);
+    await _tap(tester, find.byKey(const Key('onboarding-percorso-next')));
+    expect(find.text('Tutto giusto?'), findsOneWidget);
+    final prima = requests.length;
+    await _tap(tester, find.byTooltip('Indietro'));
+    expect(find.text('Quale percorso segui?'), findsOneWidget);
+    await _tap(tester, find.byKey(const Key('onboarding-percorso-next')));
+    expect(find.text('Percorso B'), findsOneWidget);
+    expect(requests.length, prima, reason: 'file del corso già scaricato');
+    // indietro fino all'anno: senza percorsi da cambiare non si riscarica
+    await _tap(tester, find.byTooltip('Indietro'));
+    await _tap(tester, find.byTooltip('Indietro'));
+    expect(find.text('Che anno frequenti?'), findsOneWidget);
+    await _tap(tester, find.text('2° anno'));
+    await _settleUntil(tester, find.byKey(const Key('percorso')));
+    expect(requests.length, prima);
+    expect(await tester.runAsync(s.profiles.load), isNull);
+  });
+
+  testWidgets('percorso: i corsi con un solo percorso non mostrano il passo '
+      'e indietro torna all\'anno', (tester) async {
+    await _start(tester, _phone);
+    await _toSummary(tester);
+    expect(find.text('Percorso'), findsNothing);
+    await _tap(tester, find.byTooltip('Indietro'));
+    expect(find.text('Che anno frequenti?'), findsOneWidget);
+  });
+
+  testWidgets('percorso: nel cambio corso si sceglie prima dell\'import', (
+    tester,
+  ) async {
+    final (s, finished) = await _start(
+      tester,
+      _phone,
+      changing: true,
+      remote: conPercorsi(),
+    );
+    expect(find.text('Passo 1 di 7'), findsOneWidget);
+    await _toYear(tester);
+    await _tap(tester, find.text('1° anno'));
+    await _settleUntil(tester, find.byKey(const Key('percorso')));
+    expect(find.text('Passo 7 di 8'), findsOneWidget);
+    await _tap(tester, find.byKey(const Key('onboarding-percorso-next')));
+    expect(find.text('Passo 8 di 8'), findsOneWidget);
+    await _tap(tester, find.byKey(const Key('onboarding-confirm')));
+    await _settleUntil(tester, find.byKey(const Key('onboarding-done')));
+    // percorso principale (il più seguito): 3 insegnamenti comuni o di A
+    expect((await tester.runAsync(s.profiles.load))!.curriculum, 'Percorso A');
+    await _tap(tester, find.byKey(const Key('onboarding-done')));
+    await _settle(tester);
+    expect(finished, [true]);
+  });
+
   testWidgets(
     'avvisi e calendario «Non ora»: niente permessi, una volta sola',
     (tester) async {
@@ -511,6 +604,7 @@ void main() {
       await _tap(tester, find.text('Laurea (triennale)'));
       await _tap(tester, find.text('Ingegneria Informatica'));
       await _tap(tester, find.text('1° anno'));
+      await _settleUntil(tester, find.byKey(const Key('onboarding-confirm')));
       await _tap(tester, find.byKey(const Key('onboarding-confirm')));
       await _settleUntil(tester, find.byKey(const Key('onboarding-next')));
       await _tap(tester, find.byKey(const Key('onboarding-next')));
@@ -548,6 +642,7 @@ void main() {
     await _tap(tester, find.text('Laurea (triennale)'));
     await _tap(tester, find.text('Ingegneria Informatica'));
     await _tap(tester, find.text('1° anno'));
+    await _settleUntil(tester, find.byKey(const Key('onboarding-confirm')));
     await _tap(tester, find.byKey(const Key('onboarding-confirm')));
     await _settleUntil(tester, find.byKey(const Key('onboarding-done')));
     expect(find.text('Vai all\'app'), findsOneWidget);

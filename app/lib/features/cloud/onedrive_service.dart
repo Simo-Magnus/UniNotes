@@ -127,10 +127,15 @@ class OneDriveService extends CloudDriveService {
     // nome dell'account e cartella subito; se non riescono l'accesso non
     // resta salvato a metà
     await completeSignIn(t, () async {
-      final me = await graph().getJson('me', {
+      // nome dell'account e cartella dell'app insieme (una richiesta di
+      // rete in meno da aspettare dopo il ritorno dal browser)
+      final g = graph();
+      final base = await folder();
+      final folderReady = OneDriveSync.ensureFolder(g, base)..ignore();
+      final me = await g.getJson('me', {
         r'$select': 'displayName,userPrincipalName,mail',
       });
-      await OneDriveSync.ensureFolder(graph(), await folder());
+      await folderReady;
       await setAccount(
         [
           me?['displayName'],
@@ -154,6 +159,60 @@ class OneDriveService extends CloudDriveService {
   OneNoteReader oneNote() => OneNoteReader(graph());
 
   OneDriveFolderBrowser folders() => OneDriveFolderBrowser(graph());
+
+  @override
+  Future<void> renameRemoteFolder(String path, String newName) async {
+    final g = graph();
+    final it = await g.getJson('me/drive/root:/${GraphClient.drivePath(path)}');
+    final id = it?['id'];
+    if (id is! String) {
+      // non c'è ancora sul servizio: basta il nome nuovo, la si crea così
+      return;
+    }
+    try {
+      await g.sendJson('PATCH', 'me/drive/items/$id', {
+        'name': newName,
+        '@microsoft.graph.conflictBehavior': 'fail',
+      });
+    } on GraphException catch (e) {
+      if (e.status == 409) {
+        throw GraphException(409, 'Esiste già una cartella «$newName» lì.');
+      }
+      rethrow;
+    }
+  }
+
+  /// La cartella `<base>/Libri` (o un'altra dell'app) ha un id salvato: se
+  /// esiste ancora sotto un'altra cartella, quella è la cartella dell'app
+  /// rinominata.
+  @override
+  Future<String?> locateMovedFolder(String base) async {
+    final g = graph();
+    if (await g.getJson('me/drive/root:/${GraphClient.drivePath(base)}', {
+          r'$select': 'id',
+        }) !=
+        null) {
+      return null;
+    }
+    for (final m in await syncStates()) {
+      final id = m['folderId'];
+      final rf = '${m['remoteFolder'] ?? ''}';
+      if (id is! String || !rf.startsWith('$base/')) continue;
+      final it = await g.getJson('me/drive/items/$id', {
+        r'$select': 'id,name,parentReference,deleted',
+      });
+      if (it == null || it['deleted'] != null) continue;
+      final path = (it['parentReference'] as Map?)?['path'];
+      if (path is! String) continue;
+      final at = path.indexOf('root:');
+      if (at < 0) continue;
+      final parent = Uri.decodeComponent(
+        path.substring(at + 5),
+      ).replaceAll(RegExp(r'^/+'), '');
+      if (parent.isNotEmpty) return parent;
+    }
+    return null;
+  }
 
   @override
   Future<int> deleteRemoteAppData() async {

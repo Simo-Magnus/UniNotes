@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:path/path.dart' as p;
 
+import '../../core/services/portable_path.dart';
 import '../../repositories/settings_repository.dart';
 
 /// Segnalibro in un file: posizione (pagina, blocco o secondi) ed etichetta.
@@ -56,23 +57,46 @@ class ReaderStore {
   ReaderStore(this._settings);
   final SettingsRepository _settings;
 
+  /// Impostazioni dell'app (scelte «Non chiedere più» del lettore).
+  SettingsRepository get settings => _settings;
+
   static const recentKey = 'reader_recent';
-  static const maxRecent = 30;
+
+  /// File recenti ricordati: in «File» se ne mostrano [shownRecent], gli
+  /// altri con «Mostra altri».
+  static const maxRecent = 50;
+
+  /// Recenti mostrati subito in «File»: circa due settimane di studio
+  /// (dispense, libri e registrazioni dei corsi del semestre) senza
+  /// allungare troppo la pagina sul telefono.
+  static const shownRecent = 20;
 
   /// Chiave del file: percorso e dimensione.
   static String keyFor(String path, int size) =>
       'reader:${sha1.convert(utf8.encode('${p.normalize(path)}|$size')).toString().substring(0, 20)}';
 
+  /// Chiave del file per il lettore: per i file dentro l'app (libri,
+  /// materiali, allegati) dal percorso relativo, uguale su tutti i
+  /// dispositivi, così posizione e segnalibri si sincronizzano
+  /// (impostazioni `reader:` in SyncSchema).
   static Future<String> keyOf(String path) async {
     var size = 0;
     try {
       size = await File(path).length();
     } catch (_) {}
-    return keyFor(path, size);
+    return keyFor(portablePath(path), size);
   }
 
   Future<ReaderFileState> load(String path) async {
-    final raw = await _settings.get(await keyOf(path));
+    var raw = await _settings.get(await keyOf(path));
+    // chiave delle versioni precedenti (percorso assoluto del dispositivo)
+    if (raw == null) {
+      var size = 0;
+      try {
+        size = await File(path).length();
+      } catch (_) {}
+      raw = await _settings.get(keyFor(path, size));
+    }
     if (raw == null) return const ReaderFileState();
     try {
       final j = jsonDecode(raw) as Map<String, dynamic>;
@@ -177,4 +201,20 @@ class ReaderStore {
   }
 
   Future<void> clearRecent() => _settings.set(recentKey, null);
+
+  /// Rimette l'elenco dei recenti com'era (es. «Annulla» dopo averne tolto
+  /// uno o averlo cancellato).
+  Future<void> setRecent(List<RecentFile> list) => _settings.set(
+    recentKey,
+    list.isEmpty
+        ? null
+        : jsonEncode([
+            for (final r in list.take(maxRecent))
+              {
+                'path': r.path,
+                'title': r.title,
+                'at': r.opened.toIso8601String(),
+              },
+          ]),
+  );
 }

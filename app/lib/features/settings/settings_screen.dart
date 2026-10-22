@@ -20,9 +20,13 @@ class SettingsScreen extends StatelessWidget {
   /// Larghezza oltre la quale le sezioni si dispongono su due colonne.
   static const double twoColumnBreakpoint = 1100;
 
+  /// Colonna di sinistra su desktop; su telefono (una colonna) viene prima
+  /// della destra: percorso, poi calendario e notifiche (promemoria) vicini,
+  /// poi esclusioni e Focus, quindi aspetto, suoni, dati e privacy.
   static const List<Widget> _left = [
     ProfileSection(),
     CalendarSection(),
+    NotificationsSection(),
     ExclusionsSection(),
     FocusQuietSection(),
   ];
@@ -30,7 +34,6 @@ class SettingsScreen extends StatelessWidget {
   static const List<Widget> _right = [
     AppearanceSection(),
     FeedbackSection(),
-    NotificationsSection(),
     BackupSection(),
     PrivacySection(),
   ];

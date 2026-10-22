@@ -236,8 +236,8 @@ String signInSuccessMessage(String service, String? account) {
   final who = account == null || account.isEmpty || account == 'collegato'
       ? ''
       : ' come $account';
-  return '$service collegato$who. Sincronizzazione avviata: file e dati '
-      'arrivano su tutti i dispositivi collegati.';
+  return '$service collegato$who: i tuoi dati si sincronizzano su questo '
+      'dispositivo e su tutti quelli collegati allo stesso account.';
 }
 
 /// «Sincronizza ora» non riuscito.

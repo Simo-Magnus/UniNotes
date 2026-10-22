@@ -2,6 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/reminders/apple_calendar_backend.dart';
+import 'package:university_notes/core/reminders/device_calendar_backend.dart';
+import 'package:university_notes/core/reminders/native_calendar_backend.dart';
 import 'package:university_notes/core/reminders/system_calendar.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/features/study/focus/focus_plan.dart';
@@ -217,6 +219,100 @@ void main() {
     });
   });
 
+  group('calendario del telefono (Android)', () {
+    test('giornata intera: mezzanotte UTC del giorno e del giorno dopo', () {
+      final a = AndroidCalendarBackend.eventArgs(
+        '7',
+        examItem(1, DateTime(2027, 2, 10)),
+        const [1440],
+      );
+      expect(a['allDay'], isTrue);
+      expect(a['startMs'], DateTime.utc(2027, 2, 10).millisecondsSinceEpoch);
+      expect(a['endMs'], DateTime.utc(2027, 2, 11).millisecondsSinceEpoch);
+      expect(a['alarms'], [1440]);
+      final t = AndroidCalendarBackend.eventArgs(
+        '7',
+        examItem(2, DateTime(2027, 2, 10), time: '09:00'),
+        const [60],
+      );
+      expect(t['startMs'], DateTime(2027, 2, 10, 9).millisecondsSinceEpoch);
+      expect(t['endMs'], DateTime(2027, 2, 10, 11).millisecondsSinceEpoch);
+    });
+
+    test('controllo di salute: grave → calendario interno, sync spenta → '
+        'solo avviso', () {
+      const c = CalendarChoice(
+        id: '7',
+        name: 'Personale',
+        account: 'studente@gmail.com',
+      );
+      expect(
+        NativeCalendarBackend.healthOf(const {'exists': false}, c).ok,
+        isFalse,
+      );
+      expect(
+        NativeCalendarBackend.healthOf(const {
+          'exists': true,
+          'writable': true,
+          'synced': false,
+        }, c).problem,
+        contains('non è sincronizzato'),
+      );
+      final off = NativeCalendarBackend.healthOf(const {
+        'exists': true,
+        'writable': true,
+        'synced': true,
+        'autoSync': false,
+        'masterSync': true,
+      }, c);
+      expect(off.ok, isTrue);
+      expect(off.warning, contains('studente@gmail.com'));
+      expect(
+        NativeCalendarBackend.healthOf(const {
+          'exists': true,
+          'writable': true,
+          'synced': true,
+          'autoSync': true,
+          'masterSync': true,
+        }, c).warning,
+        isNull,
+      );
+    });
+
+    test('scelta predefinita: il principale di Google, mai un locale', () {
+      const local = CalendarChoice(
+        id: '1',
+        name: 'UniNotes',
+        accountType: 'LOCAL',
+        synced: false,
+        legacy: true,
+      );
+      const samsung = CalendarChoice(
+        id: '2',
+        name: 'Calendario',
+        accountType: 'com.samsung',
+        primary: true,
+      );
+      const google = CalendarChoice(
+        id: '3',
+        name: 'studente@gmail.com',
+        accountType: 'com.google',
+        primary: true,
+      );
+      const other = CalendarChoice(
+        id: '4',
+        name: 'Festività',
+        accountType: 'com.google',
+        writable: false,
+      );
+      expect(pickCalendar([local, samsung, google, other], null)?.id, '3');
+      expect(pickCalendar([local, samsung, google], '2')?.id, '2');
+      // scelto ma non più utilizzabile: il predefinito
+      expect(pickCalendar([local, samsung, google, other], '4')?.id, '3');
+      expect(pickCalendar([local], null), isNull);
+    });
+  });
+
   group('calendario EventKit (iOS, macOS)', () {
     late _FakeEventKit kit;
     late AppleCalendarBackend backend;
@@ -301,7 +397,34 @@ void main() {
       expect(st.working, isTrue);
       expect(kit.events.keys, before);
       expect(kit.events.values.single['location'], 'Aula 7');
-      expect(kit.calendarsCreated, 1);
+      // nel calendario predefinito, nessun calendario creato
+      expect(kit.events.values.single['calendarId'], 'def');
+      expect(kit.calendarsCreated, 0);
+      expect(st.calendarName, 'Calendario');
+    });
+
+    test('calendario «UniNotes» delle versioni precedenti: eventi spostati '
+        'nel predefinito e calendario tolto', () async {
+      final db = await AppDatabase.openInMemory();
+      addTearDown(db.close);
+      final s = AppServices(db);
+      kit.calendars['old'] = 'UniNotes';
+      kit.events['vecchio'] = {
+        'calendarId': 'old',
+        'notes': 'Rif. UniNotes: esame-1',
+      };
+      final sync = SystemCalendarSync(s.settings, backend);
+      await sync.setEnabled(true);
+      await s.settings.set(CalendarKeys.calendarId, 'old');
+      final st = await sync.sync(
+        [examItem(1, DateTime(2027, 2, 10))],
+        const [1],
+        now: DateTime(2027, 1, 10),
+      );
+      expect(st.working, isTrue);
+      expect(kit.calendars.keys, ['def']);
+      expect(kit.events.length, 1);
+      expect(kit.events.values.single['calendarId'], 'def');
     });
 
     test('permesso negato: collegamento non funzionante', () async {
@@ -319,17 +442,19 @@ void main() {
     });
 
     test('calendario vuoto eliminato solo se è «UniNotes»', () async {
-      final cal = await backend.ensureCalendar(null);
-      expect(await backend.deleteCalendarIfEmpty(cal), isTrue);
-      expect(kit.calendars, isEmpty);
+      kit.calendars['old'] = 'UniNotes';
+      expect(await backend.deleteCalendarIfEmpty('def'), isFalse);
+      expect(await backend.deleteCalendarIfEmpty('old'), isTrue);
+      expect(kit.calendars.keys, ['def']);
     });
   });
 }
 
-/// EventKit finto: calendari ed eventi in memoria, come UniNotesCalendar.
+/// EventKit finto: calendari ed eventi in memoria, come UniNotesCalendar
+/// (`def` è il calendario predefinito per i nuovi eventi).
 class _FakeEventKit {
   String access = 'concesso';
-  final calendars = <String, String>{};
+  final calendars = <String, String>{'def': 'Calendario'};
   final events = <String, Map<Object?, Object?>>{};
   int calendarsCreated = 0;
   int updates = 0;
@@ -343,6 +468,25 @@ class _FakeEventKit {
       throw PlatformException(code: 'permesso');
     }
     switch (c.method) {
+      case 'calendars':
+        return [
+          for (final e in calendars.entries)
+            {
+              'id': e.key,
+              'name': e.value,
+              'account': 'iCloud',
+              'primary': e.key == 'def',
+              'synced': true,
+              'writable': true,
+              'legacy': e.value == 'UniNotes' && e.key != 'def',
+            },
+        ];
+      case 'health':
+        return {
+          'exists': calendars.containsKey(a['calendarId']),
+          'writable': true,
+          'synced': true,
+        };
       case 'ensureCalendar':
         final known = a['knownId'];
         if (calendars.containsKey(known)) return known;

@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:path/path.dart' as p;
 
 import '../../features/notes/recorder/recording_meta.dart';
+import '../../features/notes/recorder/speech_language.dart';
 import '../../features/notes/recorder/vad_segmenter.dart';
 import '../../features/notes/recorder/wav.dart';
 import 'file_downloader.dart';
@@ -410,11 +411,53 @@ class ParakeetService {
     }
   }
 
+  /// Il tratto della frase [s] (con 0,2 s di margine) ritrascritto da
+  /// [rescue]; le frasi ancora fuori lingua si tolgono.
+  Future<List<WhisperSegment>> _rescue(
+    File wav,
+    WavInfo info,
+    TranscriptSegment s,
+    Directory tmp,
+    Future<List<WhisperSegment>> Function(File wav16k) rescue,
+    String language,
+  ) async {
+    const pad = Duration(milliseconds: 200);
+    final from = s.start > pad ? s.start - pad : Duration.zero;
+    final raw = await readWavRange(wav, info, from, s.end + pad);
+    if (raw.isEmpty) return const [];
+    final piece = File(p.join(tmp.path, 'frase_${s.start.inMilliseconds}.wav'));
+    await writeWav16k(piece, toMono16k(raw, info.sampleRate, info.channels));
+    try {
+      return [
+        for (final r in await rescue(piece))
+          if (r.text.trim().isNotEmpty &&
+              !outsideLecture(r.text, lecture: language))
+            WhisperSegment(
+              from + r.start,
+              r.text.trim(),
+              end: r.end == null ? s.end : from + r.end!,
+            ),
+      ];
+    } finally {
+      try {
+        await piece.delete();
+      } catch (_) {}
+    }
+  }
+
   /// «Trascrivi con Parakeet»: tutto [audio] (anche ore), a blocchi.
+  ///
+  /// Parakeet sceglie da solo la lingua di ogni frase (sherpa-onnx non
+  /// permette di fissarla): le frasi che non sono nella lingua della
+  /// lezione [language] né in inglese (`outsideLecture`) si ritrascrivono
+  /// con [rescue] (Whisper con la lingua fissata, su un WAV mono a 16 kHz
+  /// del solo tratto) se c'è, altrimenti si tolgono.
   Future<List<WhisperSegment>> transcribeFile(
     File audio, {
     void Function(WhisperProgress)? onProgress,
     CancelToken? cancel,
+    String language = 'it',
+    Future<List<WhisperSegment>> Function(File wav16k)? rescue,
   }) async {
     if (!await audio.exists()) {
       throw WhisperException('File audio non trovato: ${audio.path}');
@@ -462,9 +505,20 @@ class ParakeetService {
             ),
           ),
         );
-        return [
-          for (final s in segs) WhisperSegment(s.start, s.text, end: s.end),
-        ];
+        final out = <WhisperSegment>[];
+        for (final s in segs) {
+          if (!outsideLecture(s.text, lecture: language)) {
+            out.add(WhisperSegment(s.start, s.text, end: s.end));
+            continue;
+          }
+          if (rescue == null) continue;
+          try {
+            out.addAll(await _rescue(wav, info, s, tmp, rescue, language));
+          } catch (_) {
+            // la frase in un'altra lingua resta fuori
+          }
+        }
+        return out;
       } on ParakeetException catch (e) {
         throw WhisperException('Parakeet non è riuscito a trascrivere: $e');
       } finally {

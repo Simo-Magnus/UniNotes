@@ -130,8 +130,7 @@ ExamOutcome outcomeOf(
 String outcomeLabel(int code, ExamStatus current) => switch (code) {
   kOutcomeFailed => 'Non superato',
   kOutcomePass => 'Idoneità (senza voto)',
-  kOutcomeNone =>
-    current.isPending ? 'Nessun voto' : 'In attesa dell\'esito',
+  kOutcomeNone => current.isPending ? 'Nessun voto' : 'In attesa dell\'esito',
   _ => '$code/30',
 };
 

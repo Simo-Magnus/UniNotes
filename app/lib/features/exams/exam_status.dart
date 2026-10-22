@@ -5,6 +5,7 @@ import '../../core/constants/enums.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
+import '../../widgets/common.dart' show confirmDialog;
 import 'exam_ui.dart';
 
 /// Scelta proposta toccando l'icona di una prova: lo stato e come si
@@ -15,9 +16,11 @@ typedef StatusStep = ({ExamStatus status, String label, String hint});
 /// scelte): avanti lungo la vita della prova oppure un passo indietro.
 /// «Sostenuto» chiede subito l'esito (voto, «Non superato» o in attesa), così
 /// «Non superato» si raggiunge da «Da prenotare» e da «Prenotato»; una prova
-/// non superata si riprenota. Tutti gli stati restano raggiungibili:
-/// da prenotare → prenotato → sostenuto → superato / non superato →
-/// riprenotato o annullato.
+/// non superata si riprenota. Anche dopo l'esito (in attesa o con il voto) si
+/// può tornare a «Prenotato» (e da lì a «Da prenotare»): il voto si toglie,
+/// con conferma. Tutti gli stati restano raggiungibili in entrambe le
+/// direzioni: da prenotare ⇄ prenotato ⇄ sostenuto ⇄ superato / non
+/// superato → riprenotato o annullato.
 List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
   ExamStatus.planned => const [
     (
@@ -43,21 +46,32 @@ List<StatusStep> nextExamStatuses(ExamStatus s) => switch (s) {
       hint: 'Annulla la prenotazione',
     ),
   ],
+  // «Esito» apre il menù del voto, dove c'è anche «Non superato»
   ExamStatus.taken => const [
-    (status: ExamStatus.passed, label: 'Superato', hint: 'Inserisci il voto'),
     (
-      status: ExamStatus.failed,
-      label: 'Non superato',
-      hint: 'Resta tra le prove da sostenere: potrai riprenotarlo',
+      status: ExamStatus.passed,
+      label: 'Esito',
+      hint: 'Voto, idoneità o non superato',
+    ),
+    (
+      status: ExamStatus.booked,
+      label: 'Prenotato',
+      hint: 'Torna alla prenotazione',
     ),
   ],
+  // «Cambia esito» riapre il menù del voto (voto diverso, in attesa o non
+  // superato); «Prenotato» toglie il voto, dopo conferma
   ExamStatus.passed => const [
     (
       status: ExamStatus.taken,
-      label: 'In attesa',
-      hint: 'Togli il voto: esito non ancora definitivo',
+      label: 'Cambia esito',
+      hint: 'Voto diverso, in attesa o non superato',
     ),
-    (status: ExamStatus.failed, label: 'Non superato', hint: 'Togli il voto'),
+    (
+      status: ExamStatus.booked,
+      label: 'Prenotato',
+      hint: 'Togli il voto e torna alla prenotazione',
+    ),
   ],
   ExamStatus.failed => const [
     (
@@ -125,6 +139,16 @@ Exam withOutcome(Exam exam, ExamOutcome o) => exam.copyWith(
   laude: o.laude,
 );
 
+/// «Il voto 28/30», «Il punteggio 5», «L'idoneità» di una prova superata.
+String _resultText(Exam e) {
+  if (e.kind == ExamKind.midterm) {
+    return e.grade == null ? 'L\'esito' : 'Il punteggio ${e.grade}';
+  }
+  if (e.laude) return 'Il voto 30 e lode';
+  if (e.grade == null) return 'L\'idoneità';
+  return 'Il voto ${e.grade}/30';
+}
+
 /// Cambia lo stato di una prova dall'icona laterale: due scelte; con
 /// «Sostenuto» o «Superato» si sceglie poi l'esito nel menù del voto.
 /// Restituisce true se la prova è stata aggiornata. Lo stato è uno solo,
@@ -168,19 +192,35 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
   );
   if (chosen == null || !context.mounted) return false;
   var next = withStatus(exam, chosen);
+  // dallo stato superato a una prova da sostenere: il voto si toglie, e prima
+  // si chiede conferma
+  if (exam.status == ExamStatus.passed && chosen.isPending) {
+    final ok = await confirmDialog(
+      context,
+      exam.kind == ExamKind.midterm
+          ? 'Togliere il punteggio?'
+          : 'Togliere il voto?',
+      '${_resultText(exam)} verrà tolto e la prova tornerà «${chosen.label}».',
+    );
+    if (!ok || !context.mounted) return false;
+  }
   if (chosen == ExamStatus.passed || chosen == ExamStatus.taken) {
     // l'esito: voto, idoneità, «Non superato» o in attesa
     // un esame degli anni precedenti segnato «Sostenuto» è già superato:
     // il menù parte da «Idoneità (senza voto)» e il voto è facoltativo
     final previous = exam.status.isToComplete;
+    // «Cambia esito» di una prova superata: il menù parte dal voto attuale
+    final change = exam.status == ExamStatus.passed;
     final r = await showDialog<ExamOutcome>(
       context: context,
       builder: (_) => GradeDialog(
         midterm: exam.kind == ExamKind.midterm,
-        status: previous ? ExamStatus.passed : ExamStatus.taken,
-        grade: chosen == ExamStatus.passed ? exam.grade : null,
-        laude: chosen == ExamStatus.passed && exam.laude,
-        title: chosen == ExamStatus.taken ? 'Esito' : null,
+        status: change || previous ? ExamStatus.passed : ExamStatus.taken,
+        grade: change || chosen == ExamStatus.passed ? exam.grade : null,
+        laude: (change || chosen == ExamStatus.passed) && exam.laude,
+        title: chosen == ExamStatus.taken || exam.status == ExamStatus.taken
+            ? 'Esito'
+            : null,
       ),
     );
     if (r == null || !context.mounted) return false;

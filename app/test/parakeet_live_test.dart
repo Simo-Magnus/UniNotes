@@ -106,7 +106,7 @@ Uint8List _pcm(double seconds) {
 
 void main() {
   group('VAD: frasi guidate dalle pause', () {
-    test('provvisorio ogni ~1 s mentre si parla, confermato alla pausa, '
+    test('ipotesi ogni ~0,75 s mentre si parla, confermato alla pausa, '
         'niente testo nei silenzi, tempi della registrazione', () {
       final vad = _EnergyVad();
       final dec = _LenDecoder();
@@ -137,8 +137,8 @@ void main() {
         expect(step.stableUntil, lessThanOrEqualTo(samplesToDuration(at)));
         stable = step.stableUntil;
       }
-      // 3 s di parlato: testo provvisorio 2 o 3 volte, non a ogni pezzo
-      expect(partials.length, inInclusiveRange(2, 3));
+      // 3 s di parlato: un'ipotesi 3 o 4 volte (~0,75 s), non a ogni pezzo
+      expect(partials.length, inInclusiveRange(3, 4));
       expect(committed, hasLength(1));
       final c = committed.single;
       // parlato da 2,5 s a 5,5 s della registrazione (con 0,3 s prima,

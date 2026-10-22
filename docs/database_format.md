@@ -21,10 +21,15 @@ personale). L'app lo legge in due modi:
    per ateneo `corsi/` e `moduli/` delle versioni precedenti dell'app). Il file
    di un corso pesa da pochi KB a circa 1,4 MB; il trasferimento è compresso con
    gzip (HttpClient lo decomprime da solo). Durante il download l'app mostra
-   file in corso e kilobyte ricevuti. Nell'onboarding non parte nulla da solo:
-   solo al tocco su «Scarica il piano di studi» si scarica il corso; se ha più
-   percorsi lo studente sceglie il suo, poi si scaricano le sessioni e si
-   importa il piano. I file arrivano a pezzi in un file temporaneo
+   file in corso e kilobyte ricevuti. Nell'onboarding non parte nulla da solo
+   finché lo studente non ha scelto ateneo, corso e anno. L'elenco dei percorsi
+   (curricula, orientamenti) sta solo nel file del corso, non nell'indice
+   leggero incluso nell'app: scelto l'anno, l'app scarica il file del corso
+   (pochi KB o circa 1 MB) e, se il corso ha più percorsi, mostra il passo
+   «Quale percorso segui?»; con un solo percorso il passo si salta da solo.
+   Poi, al tocco su «Scarica il piano di studi», si scaricano le sessioni e si
+   importa il piano: il file del corso è già sul dispositivo e non si riscarica
+   (un solo download). Lo stesso vale per «Cambia corso». I file arrivano a pezzi in un file temporaneo
    (`<corso>.json.part`), si controllano (in un isolate separato se superano
    512 KB) e sostituiscono la copia precedente con una rinomina: un download
    interrotto o un file non valido lasciano intatta la copia salvata, una copia

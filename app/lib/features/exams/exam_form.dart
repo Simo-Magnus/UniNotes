@@ -8,7 +8,6 @@ import '../../core/academic/plan_scope.dart';
 import '../../core/constants/enums.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/services/app_services.dart';
-import '../../core/reminders/system_calendar.dart';
 import '../../core/services/calendar_export.dart';
 import '../../models/course.dart';
 import '../../models/exam.dart';
@@ -16,6 +15,7 @@ import '../../repositories/exam_repository.dart';
 import '../../utils/exclusion_filter.dart';
 import '../../widgets/common.dart';
 import '../../widgets/reminders_prompt.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'exam_ui.dart';
 import 'study_materials_editor.dart';
 import 'exam_materials.dart';
@@ -87,9 +87,17 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   final dropped = await dropElectiveWithoutExam(services, exam.courseId);
   services.revision.bump();
   if (context.mounted) {
-    showSnack(
+    // «Annulla»: la prova torna con lo stesso id (e l'insegnamento a scelta
+    // nel piano)
+    showUndoSnackBar(
       context,
       dropped ? 'Eliminato: «${course!.name}» tolto dal piano' : 'Eliminato',
+      undoneMessage: 'Eliminazione annullata.',
+      onUndo: () async {
+        await services.database.db.insert('exams', exam.toMap());
+        if (dropped) await restoreElective(services, exam.courseId);
+        services.revision.bump();
+      },
     );
   }
   return true;
@@ -980,9 +988,9 @@ Future<void> offerExamCalendar(BuildContext context, AppServices s) async {
     builder: (c) => AlertDialog(
       title: const Text('Vuoi le prove nel calendario?'),
       content: Text(
-        'UniNotes può scrivere esami, prove in itinere ed esoneri nel '
-        '$label (calendario «$kCalendarName») e tenerli aggiornati quando '
-        'cambi data o stato. Puoi cambiare idea in Impostazioni.',
+        'UniNotes può scrivere esami, prove in itinere ed esoneri come '
+        'eventi nel tuo $label, con i promemoria, e tenerli aggiornati '
+        'quando cambi data o stato. Puoi cambiare idea in Impostazioni.',
       ),
       actions: [
         TextButton(

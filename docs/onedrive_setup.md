@@ -72,8 +72,8 @@ che la pagina mostra. Neanche la piattaforma Web richiede un segreto client.
   Con AppFolder la cartella sarebbe fissa (`App/UniNotes`)
 - `Notes.Read` (lettura dei blocchi appunti OneNote)
 - `offline_access` (resta collegato senza rifare l'accesso)
-- `Calendars.ReadWrite` (solo su Windows, calendario «UniNotes» in Outlook
-  con le date delle prove): l'app lo chiede con il consenso dinamico solo
+- `Calendars.ReadWrite` (solo su Windows: le prove come eventi nel
+  calendario principale di Outlook, o in quello scelto): l'app lo chiede con il consenso dinamico solo
   quando lo studente attiva Impostazioni → Calendario, con un token separato
   da quello di OneDrive (vedi docs/notifiche.md). **Va aggiunto all'elenco**:
   il consenso dinamico funzionerebbe anche senza, ma «Concedi il consenso
@@ -195,7 +195,7 @@ Microsoft può restare aperta senza tornare all'app, e allora l'errore non
 arriva. Dopo un blocco il link resta anche ad account collegato (impostazione
 `onedrive_admin_consent_needed`), con la sola richiesta all'ateneo. Il
 calendario Outlook su Windows (Impostazioni → Calendario) usa la stessa
-scheda: con l'account personale il calendario «UniNotes» va nell'Outlook di
+scheda: con l'account personale le prove vanno nel calendario Outlook di
 quell'account e OneDrive resta com'è.
 
 **Pagina per gli amministratori IT**: `sito/amministratori.html`, pubblicata

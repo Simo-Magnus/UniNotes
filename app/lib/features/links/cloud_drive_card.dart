@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/services/external_launcher.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
 import '../cloud/cloud_drive_service.dart';
+import '../study/study_widgets.dart' show promptText;
 import 'link_status.dart';
 import 'links_widgets.dart';
 
@@ -189,15 +192,29 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
     _reload();
     final who = await _sv.account();
     if (mounted) showSnack(context, signInSuccessMessage(_sv.serviceName, who));
-    final r = await _sv.sync();
+    // la scheda è già «collegata»: la prima sincronizzazione continua da
+    // sola (con il suo stato nella card) e i controlli automatici partono
     _sv.startAutoSync();
-    if (mounted && r != null && r.dataChanges > 0) {
-      showSnack(
-        context,
-        '${_sv.serviceName}: ${r.dataChanges} dati arrivati dagli altri '
-        'dispositivi.',
-      );
+    if (!mounted) {
+      unawaited(_sv.sync());
+      return;
     }
+    final messenger = ScaffoldMessenger.maybeOf(context);
+    final name = _sv.serviceName;
+    unawaited(
+      _sv.sync().then((r) {
+        if (r != null && r.dataChanges > 0) {
+          messenger?.showSnackBar(
+            SnackBar(
+              content: Text(
+                '$name: ${r.dataChanges} dati arrivati dagli altri '
+                'dispositivi.',
+              ),
+            ),
+          );
+        }
+      }),
+    );
   }
 
   /// Dialogo «Collegamento non riuscito» con causa e azione; true =
@@ -294,6 +311,33 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
     if (mounted) showSnack(context, 'Cartella ${_sv.serviceName}: /$now');
   }
 
+  /// «Rinomina»: nuovo nome della cartella dell'app sul servizio (i file
+  /// restano dove sono; gli altri dispositivi la ritrovano da soli).
+  Future<void> _renameFolder(String current) async {
+    final last = current.split('/').last;
+    final name = await promptText(
+      context,
+      title: 'Rinomina la cartella su ${_sv.serviceName}',
+      label: 'Nuovo nome',
+      initial: last,
+    );
+    if (name == null || name == last || !mounted) return;
+    final err = CloudDriveService.validateFolderName(name);
+    if (err != null) {
+      showSnack(context, err);
+      return;
+    }
+    try {
+      final now = await _sv.renameFolder(name);
+      _reload();
+      if (mounted) {
+        showSnack(context, 'Cartella ${_sv.serviceName} rinominata: /$now');
+      }
+    } catch (e) {
+      if (mounted) showSnack(context, 'Cartella non rinominata: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<_CloudState>(
@@ -351,9 +395,19 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
         title: Text('/${d.folder}'),
         subtitle: Text('Cartella dell\'app su $name'),
         trailing: d.connected
-            ? TextButton(
-                onPressed: () => _pickFolder(d.folder),
-                child: const Text('Cambia…'),
+            ? Wrap(
+                spacing: 4,
+                children: [
+                  TextButton(
+                    key: const Key('cloud-folder-rename'),
+                    onPressed: () => _renameFolder(d.folder),
+                    child: const Text('Rinomina'),
+                  ),
+                  TextButton(
+                    onPressed: () => _pickFolder(d.folder),
+                    child: const Text('Cambia…'),
+                  ),
+                ],
               )
             : null,
       ),
@@ -488,6 +542,16 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
           _reload();
         },
       ),
+      if (Power.isMobile)
+        const Padding(
+          padding: EdgeInsets.only(top: 6),
+          child: NoteText(
+            'Con l\'app aperta il controllo è a questo intervallo; con l\'app '
+            'chiusa il telefono sincronizza in background quando può '
+            '(al massimo ogni 15 minuti, decide il sistema).',
+            icon: Icons.info_outline,
+          ),
+        ),
     ];
   }
 }

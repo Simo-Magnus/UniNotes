@@ -66,6 +66,9 @@ class GoogleDriveSync extends FolderSync {
   Map<String, Object?> extraState() => {
     'pageToken': ?pageToken,
     'ids': [..._ids],
+    // cartella di questa parte (es. UniNotes/Libri): se la cartella
+    // dell'app viene rinominata la si ritrova da qui
+    'rootId': ?_dirs[''],
   };
 
   @override
@@ -371,6 +374,7 @@ class GoogleDriveSync extends FolderSync {
     final part = File('${target.path}.part');
     try {
       await drive.download(drive.url('files/${r.id}', {'alt': 'media'}), part);
+      await FolderSync.checkDownloaded(part, r.size);
     } catch (_) {
       if (await part.exists()) await part.delete();
       rethrow;

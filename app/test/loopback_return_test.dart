@@ -21,6 +21,13 @@ void main() {
     );
     expect(ko, contains('esito=errore'));
     expect(ko, isNot(contains('<script>x')));
+    // errore: la scheda resta aperta con la causa (nessuna chiusura né
+    // apertura automatica dell'app)
+    expect(ko, isNot(contains('window.close()')));
+    expect(ko, isNot(contains('location.href')));
+    expect(ko, contains('Torna a UniNotes'));
+    // riuscito: testo di riserva se il browser non chiude la scheda
+    expect(ok, contains('puoi chiudere questa scheda'));
   });
 
   test('accesso vero sul server locale: pagina nuova e app in primo piano',

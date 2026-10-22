@@ -92,6 +92,9 @@ class Sito(Client):
                 return None
             if r.status_code == 200 and r.text.strip():
                 return r
+            # risposta di sfida: il WAF lega il blocco ai cookie della sessione (il 22/10/2026 una raccolta
+            # è rimasta respinta per ore mentre una connessione nuova passava): si riparte senza cookie
+            self.s.cookies.clear()
         return None
 
     def get(self, url: str):

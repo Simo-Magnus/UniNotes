@@ -9,6 +9,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'exam_detail.dart';
 import 'exam_status.dart' show GradeDialog;
 import 'exam_ui.dart';
@@ -112,13 +113,25 @@ class PreviousYearsScreen extends StatelessWidget {
   Future<void> _markAll(BuildContext context, PreviousYear y) async {
     final s = context.read<AppServices>();
     if (!await _confirmMarkAll(context, s, y)) return;
+    // esami com'erano, per «Annulla»
+    final before = [
+      for (final c in y.mandatoryToComplete)
+        if (c.exam?.id != null) c.exam!,
+    ];
     final done = await markPreviousYearTaken(s, y);
     s.feedback.complete();
     if (context.mounted && done > 0) {
-      showSnack(
+      showUndoSnackBar(
         context,
         '${done == 1 ? 'Segnato come sostenuto' : 'Segnati come sostenuti'}: '
         '${examsCount(done)} del ${planYearLabel(y.year)}',
+        undoneMessage: 'Esami di nuovo da completare.',
+        onUndo: () async {
+          for (final e in before) {
+            await s.exams.update(e);
+          }
+          s.revision.bump();
+        },
       );
     }
   }

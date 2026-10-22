@@ -118,15 +118,18 @@ class GoogleDriveService extends CloudDriveService {
     // account e cartella subito; se non riescono l'accesso non resta
     // salvato a metà ([completeSignIn])
     await completeSignIn(t, () async {
-      final who = await drive().accountLabel();
-      // Cartella UniNotes subito. Se non si trova (prima volta, o creata da
-      // una registrazione precedente dell'app, che con drive.file non si
-      // vede) se ne crea una nuova, senza errori, e si spiega una volta
-      // come recuperare i file vecchi.
+      // Cartella UniNotes subito, insieme al nome dell'account (una
+      // richiesta di rete in meno da aspettare). Se non si trova (prima
+      // volta, o creata da una registrazione precedente dell'app, che con
+      // drive.file non si vede) se ne crea una nuova, senza errori, e si
+      // spiega una volta come recuperare i file vecchi.
       final d = drive();
       final base = await folder();
+      final account = d.accountLabel()..ignore();
+      final found = await d.folderPath(base, create: false);
+      final who = await account;
       var created = false;
-      if (await d.folderPath(base, create: false) == null) {
+      if (found == null) {
         await d.folderPath(base);
         created = true;
       }
@@ -345,6 +348,50 @@ class GoogleDriveService extends CloudDriveService {
       GoogleDriveClient(accessToken, transport: transport);
 
   GoogleDriveFolderBrowser folders() => GoogleDriveFolderBrowser(drive());
+
+  @override
+  Future<void> renameRemoteFolder(String path, String newName) async {
+    final d = drive();
+    final id = await d.folderPath(path, create: false);
+    if (id == null) return; // non c'è ancora: si creerà col nome nuovo
+    final cut = path.lastIndexOf('/');
+    final parent = cut < 0
+        ? 'root'
+        : await d.folderPath(path.substring(0, cut), create: false);
+    if (parent != null && await d.findFolder(parent, newName) != null) {
+      throw DriveException(409, 'Esiste già una cartella «$newName» lì.');
+    }
+    await d.sendJson('PATCH', d.url('files/$id', {'fields': 'id'}), {
+      'name': newName,
+    });
+  }
+
+  /// La cartella `<base>/Libri` (o un'altra dell'app) ha un id salvato
+  /// (`rootId`): la sua cartella madre, se c'è ancora, è la cartella
+  /// dell'app rinominata (solo cartelle nella radice del Drive).
+  @override
+  Future<String?> locateMovedFolder(String base) async {
+    if (base.contains('/')) return null;
+    final d = drive();
+    if (await d.folderPath(base, create: false) != null) return null;
+    for (final m in await syncStates()) {
+      final id = m['rootId'];
+      final rf = '${m['remoteFolder'] ?? ''}';
+      if (id is! String || !rf.startsWith('$base/')) continue;
+      final it = await d.fileMeta(id, fields: 'id,parents,trashed');
+      if (it == null || it['trashed'] == true) continue;
+      final parents = it['parents'];
+      if (parents is! List || parents.isEmpty) continue;
+      final up = await d.fileMeta(
+        '${parents.first}',
+        fields: 'id,name,trashed',
+      );
+      final name = up?['name'];
+      if (up == null || up['trashed'] == true || name is! String) continue;
+      return name;
+    }
+    return null;
+  }
 
   @override
   Future<int> deleteRemoteAppData() async {

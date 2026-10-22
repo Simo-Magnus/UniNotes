@@ -40,6 +40,12 @@ enum OnboardingStep {
   manuale,
   anno,
   annoFuoriCorso,
+
+  /// Percorso (curriculum, orientamento) che lo studente frequenta, solo
+  /// nei corsi che ne hanno più d'uno: si sceglie PRIMA di importare il
+  /// piano, così il piano si importa una volta sola. Se il corso ne ha uno
+  /// solo il passo si salta da solo.
+  percorso,
   fine,
 
   /// Dopo l'import del piano (solo al primo avvio): AI di riferimento,
@@ -67,7 +73,8 @@ extension on OnboardingStep {
 
 /// Onboarding: aspetto (contrasto e caratteri) → tipo di università (o
 /// ricerca diretta) → regione → università → tipo di laurea → corso → anno
-/// frequentato → riepilogo, download dei dati del corso e import del piano
+/// frequentato → percorso (solo se il corso ne ha più d'uno) → riepilogo,
+/// import del piano
 /// → AI di riferimento → avvisi → calendario (telefono) → gruppi da
 /// nascondere (OFA, lingua, facoltativi). Ogni passo ha al massimo due
 /// pulsanti. Al primo avvio; da Impostazioni → «Cambia corso» si rifanno solo
@@ -135,9 +142,18 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     OnboardingStep.tipoCorso,
     OnboardingStep.corso,
     OnboardingStep.anno,
+    if (_sceltaPercorso) OnboardingStep.percorso,
     OnboardingStep.fine,
     if (_full) ..._tail,
   ];
+
+  /// Posizione (da 1) del passo nella barra di avanzamento. Mentre si
+  /// controllano i percorsi del corso, e il passo non è ancora in elenco,
+  /// vale come il riepilogo.
+  int get _position {
+    final i = _order.indexOf(_step.slot);
+    return (i >= 0 ? i : _order.indexOf(OnboardingStep.fine)) + 1;
+  }
 
   @override
   void initState() {
@@ -176,6 +192,23 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
   int? _manualDuration;
   int? _year;
   bool _fuoriCorso = false;
+
+  /// Percorsi del corso scelto (letti dal file del corso, scaricato una
+  /// sola volta) e quello scelto. [_percorsiPer] è il corso a cui si
+  /// riferiscono: cambiando corso si rileggono.
+  PercorsiCorso? _percorsi;
+  String? _percorso;
+  String? _percorsiPer;
+
+  /// Il file del corso è già sul dispositivo (scaricato nel passo del
+  /// percorso): il riepilogo non lo scarica di nuovo.
+  bool _corsoScaricato = false;
+
+  /// Il corso ha più percorsi: il passo del percorso entra nella barra.
+  bool get _sceltaPercorso =>
+      _percorsiPer != null &&
+      _percorsiPer == _corso?.id &&
+      (_percorsi?.daScegliere ?? false);
 
   Future<_CatalogData> _loadData() async {
     final results = await Future.wait<Object>([
@@ -271,13 +304,23 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     _go(OnboardingStep.corso);
   }
 
+  /// Un altro corso: i percorsi del precedente non valgono più.
+  void _dimenticaPercorsi() {
+    _percorsi = null;
+    _percorso = null;
+    _percorsiPer = null;
+    _corsoScaricato = false;
+  }
+
   void _pickCorso(CorsoIndice c) {
+    if (c.id != _corso?.id) _dimenticaPercorsi();
     _corso = c;
     _manualName = null;
     _go(OnboardingStep.anno);
   }
 
   void _pickManual(String name, String? classe, int duration) {
+    _dimenticaPercorsi();
     _corso = null;
     _manualName = name;
     _manualClass = classe;
@@ -293,7 +336,35 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     }
     if (_step == OnboardingStep.anno) _fuoriCorso = false;
     _year = year;
-    _go(OnboardingStep.fine);
+    // il percorso si sceglie prima del riepilogo, dove il piano si importa
+    // una volta sola; i corsi a mano non ne hanno, e un corso senza scelta
+    // già controllato non si ricontrolla
+    final c = _corso;
+    final noti = _percorsiPer == c?.id ? _percorsi : null;
+    _go(
+      c == null || (noti != null && !noti.daScegliere)
+          ? OnboardingStep.fine
+          : OnboardingStep.percorso,
+    );
+  }
+
+  /// Percorsi del corso letti dal file del corso. Se non c'è nulla da
+  /// scegliere il passo si salta (si torna indietro, dal riepilogo, all'anno).
+  void _percorsiLetti(PercorsiCorso? p) {
+    final c = _corso;
+    if (c == null || !mounted) return;
+    final current = _s.profile.value;
+    setState(() {
+      _percorsi = p;
+      _percorsiPer = c.id;
+      _corsoScaricato = true;
+      _percorso = p?.valido(
+        current?.degreeId == c.id ? current?.curriculum : null,
+      );
+      if (p == null || !p.daScegliere) {
+        _history[_history.length - 1] = OnboardingStep.fine;
+      }
+    });
   }
 
   PathSelection get _selection => PathSelection(
@@ -305,6 +376,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     manualDuration: _manualDuration,
     year: _year ?? 1,
     fuoriCorso: _fuoriCorso,
+    percorso: _sceltaPercorso ? _percorso : null,
   );
 
   // ---------------------------------------------------------------- vista
@@ -329,10 +401,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
           title: const Text('Il tuo percorso'),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(22),
-            child: _Progress(
-              position: _order.indexOf(_step.slot) + 1,
-              total: _order.length,
-            ),
+            child: _Progress(position: _position, total: _order.length),
           ),
         ),
         body: _step.ownStep
@@ -461,8 +530,18 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
       allowFuoriCorso: false,
       onYear: _pickYear,
     ),
+    OnboardingStep.percorso => _PercorsoStep(
+      selection: _selection,
+      percorsi: _percorsiPer == _corso?.id ? _percorsi : null,
+      value: _percorso,
+      onLoaded: _percorsiLetti,
+      onChanged: (v) => setState(() => _percorso = v),
+      onNext: () => _go(OnboardingStep.fine),
+    ),
     OnboardingStep.fine => _SummaryStep(
       selection: _selection,
+      percorsi: _sceltaPercorso ? _percorsi : null,
+      corsoScaricato: _corsoScaricato,
       changing: widget.canCancel,
       onDone: _afterImport,
       onBusy: _setBusy,
@@ -938,6 +1017,178 @@ class _YearStep extends StatelessWidget {
   }
 }
 
+// ------------------------------------------------------------ percorso
+
+/// Passo «percorso»: se il corso ha più percorsi (curricula, orientamenti),
+/// lo studente sceglie quello che frequenta PRIMA dell'import, così il piano
+/// si importa una volta sola. L'elenco dei percorsi sta nel file del corso
+/// (il database leggero inserito nell'app non lo ha): si scarica qui, una
+/// sola volta, e l'import lo riusa. Se il corso ha un solo percorso, o nessuno,
+/// il passo si salta da solo ([onLoaded] sostituisce questo passo col
+/// riepilogo). Senza rete: avviso con «Riprova» e «Continua senza scegliere»
+/// (il percorso principale si cambia poi da Impostazioni → Il mio percorso).
+class _PercorsoStep extends StatefulWidget {
+  const _PercorsoStep({
+    required this.selection,
+    required this.percorsi,
+    required this.value,
+    required this.onLoaded,
+    required this.onChanged,
+    required this.onNext,
+  });
+  final PathSelection selection;
+
+  /// Percorsi già letti (ritorno a questo passo dal riepilogo).
+  final PercorsiCorso? percorsi;
+  final String? value;
+
+  /// Percorsi letti dal file del corso (null: file assente nel database).
+  final ValueChanged<PercorsiCorso?> onLoaded;
+  final ValueChanged<String?> onChanged;
+  final VoidCallback onNext;
+
+  @override
+  State<_PercorsoStep> createState() => _PercorsoStepState();
+}
+
+class _PercorsoStepState extends State<_PercorsoStep> {
+  late final AppServices _s = context.read<AppServices>();
+  Object? _errore;
+
+  /// Controllo dei percorsi in corso (download del file del corso).
+  late bool _carico = widget.percorsi == null;
+
+  @override
+  void initState() {
+    super.initState();
+    if (_carico) _carica();
+  }
+
+  Future<void> _carica() async {
+    final sel = widget.selection;
+    setState(() {
+      _carico = true;
+      _errore = null;
+    });
+    try {
+      // i file del corso precedente si eliminano solo all'import
+      final d = await _s.catalog.scaricaCorso(
+        sel.ateneo.id,
+        sel.degreeId,
+        pulisci: false,
+        soloCorso: true,
+      );
+      if (!mounted) return;
+      if (d.senzaRete) {
+        setState(() {
+          _carico = false;
+          _errore = d.errore;
+        });
+        return;
+      }
+      PercorsiCorso? p;
+      if (d.corsi) {
+        final file = await _s.catalog.corsiAteneo(
+          sel.ateneo.id,
+          remote: false,
+          scarica: false,
+          corso: sel.degreeId,
+        );
+        final corso = file?.data.corso(sel.degreeId);
+        if (corso != null) p = PercorsiCorso.di(corso);
+      }
+      if (!mounted) return;
+      setState(() => _carico = false);
+      widget.onLoaded(p);
+    } catch (e) {
+      // (scaricaCorso non lancia: qui solo la lettura del file)
+      if (!mounted) return;
+      setState(() {
+        _carico = false;
+        _errore = e;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.tokens;
+    final p = widget.percorsi;
+    final errore = _errore;
+    final nome = widget.selection.degreeName;
+    return ListView(
+      padding: const EdgeInsets.only(bottom: 24),
+      children: [
+        _StepHeader(
+          p != null && p.daScegliere
+              ? 'Quale percorso segui?'
+              : 'Controllo il tuo corso',
+          p != null && p.daScegliere
+              ? '$nome · il corso ha più percorsi: nel piano entreranno solo '
+                    'gli insegnamenti di quello che frequenti.'
+              : nome,
+        ),
+        if (_carico) ...[
+          const CatalogDownloadProgress(
+            padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
+          ),
+          Padding(
+            key: const Key('onboarding-percorso-carico'),
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+            child: Row(
+              children: [
+                const SizedBox.square(
+                  dimension: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Scarico i dati del tuo corso…',
+                    style: TextStyle(fontSize: 13, color: t.textMuted),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+        if (errore != null)
+          CatalogOfflineNotice(
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+            message: CatalogService.descriviErrore(errore),
+            detail:
+                'Puoi continuare senza scegliere: il percorso principale '
+                'si cambia poi da Impostazioni → Il mio percorso.',
+            onRetry: _carica,
+          ),
+        if (p != null && p.daScegliere)
+          GlassCard(
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+              child: PercorsoField(
+                percorsi: p,
+                value: widget.value,
+                onChanged: widget.onChanged,
+              ),
+            ),
+          ),
+        if (errore != null || (p != null && p.daScegliere))
+          _StepButtons(
+            primary: FilledButton.icon(
+              key: const Key('onboarding-percorso-next'),
+              onPressed: widget.onNext,
+              icon: const Icon(Icons.arrow_forward),
+              label: Text(
+                errore != null ? 'Continua senza scegliere' : 'Continua',
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
 // ------------------------------------------------------------ riepilogo
 
 /// Fasi del riepilogo. Nulla si scarica prima che lo studente prema il
@@ -946,12 +1197,9 @@ enum _Fase {
   /// In attesa del tocco su «Scarica il piano di studi».
   pronto,
 
-  /// Download dei soli corsi dell'ateneo (servono per la scelta del
-  /// percorso).
+  /// Download del file del corso (solo se il passo del percorso non l'ha
+  /// già scaricato: per esempio dopo «Continua senza scegliere» offline).
   corsi,
-
-  /// Il corso ha più percorsi: si sceglie prima dell'import.
-  percorso,
 
   /// Download degli altri file dell'ateneo e import del piano.
   importo,
@@ -964,10 +1212,20 @@ class _SummaryStep extends StatefulWidget {
   const _SummaryStep({
     required this.selection,
     required this.onDone,
+    this.percorsi,
+    this.corsoScaricato = false,
     this.onBusy,
     this.changing = false,
   });
+
+  /// Scelte fatte, percorso compreso: il piano si importa con quelle.
   final PathSelection selection;
+
+  /// Percorsi del corso (solo se più d'uno), per mostrare quello scelto.
+  final PercorsiCorso? percorsi;
+
+  /// Il file del corso è già sul dispositivo: si importa senza riscaricarlo.
+  final bool corsoScaricato;
 
   /// Dopo l'import: «Continua» (primo avvio) o «Vai all'app» (cambio corso).
   final VoidCallback onDone;
@@ -994,26 +1252,22 @@ class _SummaryStepState extends State<_SummaryStep> {
   /// valido): avviso con «Riprova» e conferma senza piano.
   Object? _erroreCorsi;
 
-  /// Percorsi del corso scelto (curricula, orientamenti); si sceglie solo se
-  /// sono più d'uno.
-  PercorsiCorso? _percorsi;
-  String? _percorso;
-
   bool get _busy => _fase == _Fase.corsi || _fase == _Fase.importo;
 
   void _set(VoidCallback fn) {
     if (mounted) setState(fn);
   }
 
-  /// Tocco sul pulsante principale: prima i corsi (e il percorso, se ce
-  /// n'è più d'uno), poi il resto dei dati e l'import. Durante
-  /// l'operazione il pulsante è disattivato; un download già in corso
-  /// dello stesso ateneo (per esempio dopo un ritorno al riepilogo) si
-  /// aspetta invece di avviarne un altro ([CatalogService.scaricaCorso]).
+  /// Tocco sul pulsante principale: import del piano (il percorso è già
+  /// scelto; il file del corso c'è già, scaricato nel passo del percorso).
+  /// Se il file manca (percorso saltato senza rete) lo si scarica prima, per
+  /// dare l'avviso con «Riprova» senza salvare nulla. Durante l'operazione
+  /// il pulsante è disattivato; un download già in corso dello stesso corso
+  /// si aspetta invece di avviarne un altro ([CatalogService.scaricaCorso]).
   Future<void> _avvia({bool senzaPiano = false}) async {
     if (_busy) return;
     final sel = widget.selection;
-    if (senzaPiano || sel.isManual || _fase == _Fase.percorso) {
+    if (senzaPiano || sel.isManual || widget.corsoScaricato) {
       return _importa(remote: !senzaPiano);
     }
     _set(() {
@@ -1037,32 +1291,9 @@ class _SummaryStepState extends State<_SummaryStep> {
         });
         return;
       }
-      PercorsiCorso? p;
-      if (d.corsi) {
-        final file = await _s.catalog.corsiAteneo(
-          sel.ateneo.id,
-          remote: false,
-          scarica: false,
-          corso: sel.degreeId,
-        );
-        final corso = file?.data.corso(sel.degreeId);
-        if (corso != null) p = PercorsiCorso.di(corso);
-      }
       if (!mounted) return;
-      if (p != null && p.daScegliere) {
-        final current = _s.profile.value;
-        final scelto = p.valido(
-          current?.degreeId == sel.degreeId ? current?.curriculum : null,
-        );
-        _set(() {
-          _percorsi = p;
-          _percorso = scelto;
-          _fase = _Fase.percorso;
-        });
-        return;
-      }
     } catch (e) {
-      // (scaricaCorso non lancia: qui solo la lettura del file)
+      // (scaricaCorso non lancia)
       _set(() {
         _fase = _Fase.pronto;
         _erroreCorsi = e;
@@ -1082,7 +1313,7 @@ class _SummaryStepState extends State<_SummaryStep> {
     widget.onBusy?.call(true);
     try {
       final r = await PathSetupService(_s)
-          .apply(widget.selection.withPercorso(_percorso), remote: remote);
+          .apply(widget.selection, remote: remote);
       // nuovo percorso: se l'anno di partenza è oltre il 1°, il riquadro
       // «Completa gli esami degli anni precedenti» torna subito nella Home e
       // i promemoria ripartono
@@ -1096,7 +1327,7 @@ class _SummaryStepState extends State<_SummaryStep> {
     } catch (e) {
       _set(() {
         _error = e;
-        _fase = _percorsi != null ? _Fase.percorso : _Fase.pronto;
+        _fase = _Fase.pronto;
       });
     } finally {
       if (mounted) widget.onBusy?.call(false);
@@ -1110,15 +1341,13 @@ class _SummaryStepState extends State<_SummaryStep> {
     final aa = AcademicYear.current().label;
     final result = _result;
     final erroreCorsi = _erroreCorsi;
-    final percorsi = _percorsi;
+    final percorsi = widget.percorsi;
     final stato = switch (_fase) {
       _Fase.corsi => 'Scarico i dati del tuo corso…',
       _Fase.importo =>
         sel.isManual
             ? 'Salvo il tuo percorso…'
             : 'Scarico le sessioni d\'esame e importo il piano di studi…',
-      _Fase.percorso =>
-        'Il tuo corso ha più percorsi: scegli il tuo, poi importa il piano.',
       _ => null,
     };
     return ListView(
@@ -1165,17 +1394,8 @@ class _SummaryStepState extends State<_SummaryStep> {
                     : '${planYearLabel(sel.year)} di ${sel.duration}',
               ),
               _SummaryRow('Anno accademico', aa),
-              if (percorsi != null)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                  child: PercorsoField(
-                    percorsi: percorsi,
-                    value: _percorso,
-                    onChanged: _fase != _Fase.percorso
-                        ? null
-                        : (v) => setState(() => _percorso = v),
-                  ),
-                ),
+              if (percorsi != null && sel.percorso != null)
+                _SummaryRow('Percorso', percorsi.etichetta(sel.percorso!)),
               const SizedBox(height: 12),
             ],
           ),
@@ -1279,7 +1499,6 @@ class _SummaryStepState extends State<_SummaryStep> {
                     ),
                     label: Text(switch (_fase) {
                       _ when erroreCorsi != null => 'Conferma senza piano',
-                      _Fase.percorso => 'Importa il piano',
                       _ when sel.isManual => 'Conferma',
                       _ => 'Scarica il piano di studi',
                     }),

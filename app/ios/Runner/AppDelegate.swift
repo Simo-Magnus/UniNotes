@@ -1,3 +1,4 @@
+import BackgroundTasks
 import Flutter
 import UIKit
 import UserNotifications
@@ -38,6 +39,8 @@ import flutter_local_notifications
   private var liveSpeech: LiveSpeech?
   /// File aperti con «Apri in UniNotes» / «Condividi» (IncomingFiles, sotto).
   private var incomingFiles: IncomingFiles?
+  /// «Apri con…» di un file dell'app (UniNotesOpenWith, in fondo).
+  private var openWith: UniNotesOpenWith?
 
   /// Schermata chiesta da un widget (`registra`, `prova:12`…), letta una volta
   /// da Flutter con `takeRoute`.
@@ -49,7 +52,58 @@ import flutter_local_notifications
   ) -> Bool {
     // notifiche locali anche con l'app in primo piano e tocchi sulle notifiche
     UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+    // sincronizzazione con OneDrive e Google Drive in background (il
+    // compito va registrato prima della fine dell'avvio)
+    _ = BGTaskScheduler.shared.register(
+      forTaskWithIdentifier: AppDelegate.syncTaskId, using: nil
+    ) { [weak self] task in
+      guard let refresh = task as? BGAppRefreshTask else {
+        task.setTaskCompleted(success: false)
+        return
+      }
+      self?.handleSync(refresh)
+    }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  /// Aggiornamento in background di iOS per la sincronizzazione
+  /// (lib/core/services/background_sync.dart): il sistema sceglie quando;
+  /// ogni volta Flutter riceve `run` e risponde a fine lavoro.
+  static let syncTaskId = "io.github.simomagnus.universitynotes.sync"
+  static let syncChannelName = "io.github.simomagnus.universitynotes/sincronizzazione"
+  static let syncMinutesKey = "uninotes_sync_minutes"
+  private var syncChannel: FlutterMethodChannel?
+
+  private func handleSync(_ task: BGAppRefreshTask) {
+    scheduleSync()
+    var done = false
+    let finish: (Bool) -> Void = { ok in
+      DispatchQueue.main.async {
+        if done { return }
+        done = true
+        task.setTaskCompleted(success: ok)
+      }
+    }
+    task.expirationHandler = { finish(false) }
+    DispatchQueue.main.async { [weak self] in
+      guard let channel = self?.syncChannel else {
+        finish(false)
+        return
+      }
+      channel.invokeMethod("run", arguments: nil) { result in
+        finish((result as? Bool) ?? false)
+      }
+    }
+  }
+
+  /// Prossimo aggiornamento non prima dell'intervallo scelto (minimo 15
+  /// minuti; il sistema può aspettare di più).
+  private func scheduleSync() {
+    let minutes = UserDefaults.standard.integer(forKey: AppDelegate.syncMinutesKey)
+    guard minutes > 0 else { return }
+    let request = BGAppRefreshTaskRequest(identifier: AppDelegate.syncTaskId)
+    request.earliestBeginDate = Date(timeIntervalSinceNow: Double(max(minutes, 15)) * 60)
+    try? BGTaskScheduler.shared.submit(request)
   }
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
@@ -100,8 +154,34 @@ import flutter_local_notifications
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesCalendar") {
       calendar = UniNotesCalendar(messenger: registrar.messenger())
     }
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesBackgroundSync") {
+      let channel = FlutterMethodChannel(
+        name: AppDelegate.syncChannelName,
+        binaryMessenger: registrar.messenger()
+      )
+      channel.setMethodCallHandler { [weak self] call, result in
+        switch call.method {
+        case "schedule":
+          let args = call.arguments as? [String: Any] ?? [:]
+          let minutes = (args["minutes"] as? NSNumber)?.intValue ?? 15
+          UserDefaults.standard.set(minutes, forKey: AppDelegate.syncMinutesKey)
+          self?.scheduleSync()
+          result(true)
+        case "cancel":
+          UserDefaults.standard.removeObject(forKey: AppDelegate.syncMinutesKey)
+          BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: AppDelegate.syncTaskId)
+          result(nil)
+        default:
+          result(FlutterMethodNotImplemented)
+        }
+      }
+      syncChannel = channel
+    }
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesLiveSpeech") {
       liveSpeech = LiveSpeech(messenger: registrar.messenger())
+    }
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesOpenWith") {
+      openWith = UniNotesOpenWith(messenger: registrar.messenger())
     }
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "UniNotesLiveActivity") {
       let channel = FlutterMethodChannel(
@@ -357,6 +437,9 @@ final class UniNotesCalendar: NSObject {
   /// Riga che lega un evento alla prova (kCalendarMarker in
   /// lib/core/reminders/system_calendar.dart).
   static let marker = "Rif. UniNotes: "
+  /// Calendario creato dalle versioni precedenti (ora gli eventi vanno nel
+  /// calendario dello studente).
+  static let legacyName = "UniNotes"
 
   private struct Failure: Error {
     let code: String
@@ -435,6 +518,10 @@ final class UniNotesCalendar: NSObject {
             knownId: args["knownId"] as? String,
             name: args["name"] as? String ?? "UniNotes",
             color: (args["color"] as? NSNumber)?.intValue ?? 0x38BDF8))
+      case "calendars":
+        result(calendars())
+      case "health":
+        result(health(args))
       case "events":
         guard let cal = calendar(args) else {
           throw Failure(code: "calendario", message: "Calendario non trovato.")
@@ -457,6 +544,35 @@ final class UniNotesCalendar: NSObject {
     } catch {
       result(FlutterError(code: "errore", message: error.localizedDescription, details: nil))
     }
+  }
+
+  /// Calendari per la scelta in Impostazioni → Calendario (senza quelli che
+  /// l'app Calendario non mostra): `primary` = predefinito per i nuovi
+  /// eventi, dove l'app scrive se lo studente non ne sceglie un altro;
+  /// `legacy` = «UniNotes» delle versioni precedenti (si svuota e si toglie).
+  private func calendars() -> [[String: Any]] {
+    let def = store.defaultCalendarForNewEvents?.calendarIdentifier
+    var out: [[String: Any]] = []
+    for c in store.calendars(for: .event) where !hidden(c) {
+      let source: EKSource? = c.source
+      out.append([
+        "id": c.calendarIdentifier,
+        "name": c.title,
+        "account": source?.title ?? "",
+        "accountType": source?.sourceType == .local ? "local" : "account",
+        "primary": c.calendarIdentifier == def,
+        "synced": true,
+        "writable": c.allowsContentModifications,
+        "legacy": c.title == UniNotesCalendar.legacyName && c.calendarIdentifier != def,
+      ])
+    }
+    return out
+  }
+
+  /// Controllo di salute: il calendario c'è ancora ed è modificabile.
+  private func health(_ args: [String: Any]) -> [String: Any] {
+    guard let cal = calendar(args) else { return ["exists": false] }
+    return ["exists": true, "writable": cal.allowsContentModifications, "synced": true]
   }
 
   private func date(_ v: Any?) -> Date {
@@ -630,5 +746,60 @@ final class UniNotesCalendar: NSObject {
     if !left.isEmpty { return false }
     try store.removeCalendar(cal, commit: true)
     return true
+  }
+}
+
+/// «Apri con…» (canale "io.github.simomagnus.universitynotes/apri_con", vedi
+/// lib/core/services/external_launcher.dart): il menu «Apri in…» di iOS
+/// (UIDocumentInteractionController) con le app che sanno aprire il file.
+/// Risponde "ok", "nessuna_app" o "errore".
+final class UniNotesOpenWith: NSObject, UIDocumentInteractionControllerDelegate {
+  private let channel: FlutterMethodChannel
+  /// Il controller resta vivo finché il menu è aperto.
+  private var controller: UIDocumentInteractionController?
+
+  init(messenger: FlutterBinaryMessenger) {
+    channel = FlutterMethodChannel(
+      name: "io.github.simomagnus.universitynotes/apri_con",
+      binaryMessenger: messenger
+    )
+    super.init()
+    channel.setMethodCallHandler { [weak self] call, result in
+      guard call.method == "openWith",
+        let args = call.arguments as? [String: Any],
+        let path = args["path"] as? String
+      else {
+        result(FlutterMethodNotImplemented)
+        return
+      }
+      self?.open(path, result: result)
+    }
+  }
+
+  private func open(_ path: String, result: FlutterResult) {
+    guard let view = UniNotesOpenWith.topViewController()?.view else {
+      result("errore")
+      return
+    }
+    let c = UIDocumentInteractionController(url: URL(fileURLWithPath: path))
+    c.delegate = self
+    controller = c
+    let rect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 1, height: 1)
+    result(c.presentOpenInMenu(from: rect, in: view, animated: true) ? "ok" : "nessuna_app")
+  }
+
+  func documentInteractionControllerDidDismissOpenInMenu(
+    _ controller: UIDocumentInteractionController
+  ) {
+    self.controller = nil
+  }
+
+  private static func topViewController() -> UIViewController? {
+    let windows = UIApplication.shared.connectedScenes
+      .compactMap { $0 as? UIWindowScene }
+      .flatMap { $0.windows }
+    var vc = (windows.first { $0.isKeyWindow } ?? windows.first)?.rootViewController
+    while let presented = vc?.presentedViewController { vc = presented }
+    return vc
   }
 }

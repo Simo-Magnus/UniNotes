@@ -21,6 +21,7 @@ import '../../widgets/common.dart';
 import '../../widgets/find_bar.dart';
 import '../../widgets/math_text.dart';
 import '../../widgets/share_files.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../reader/views/media_view.dart' show readerMediaEnabled;
 import '../study/study_widgets.dart' show promptText;
 import 'background_jobs.dart';
@@ -481,12 +482,23 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
 
   Future<void> _addBookmark() async {
     final at = _pos;
+    final added = Bookmark(at);
     setState(() {
-      _meta.bookmarks = [..._meta.bookmarks, Bookmark(at)]
+      _meta.bookmarks = [..._meta.bookmarks, added]
         ..sort((a, b) => a.at.compareTo(b.at));
     });
     await _saveMeta();
-    if (mounted) showSnack(context, 'Segnalibro a ${clockLabel(at)}');
+    if (!mounted) return;
+    showUndoSnackBar(
+      context,
+      'Segnalibro a ${clockLabel(at)}',
+      undoneMessage: 'Segnalibro tolto.',
+      onUndo: () async {
+        if (!mounted) return;
+        setState(() => _meta.bookmarks = [..._meta.bookmarks]..remove(added));
+        await _saveMeta();
+      },
+    );
   }
 
   Future<void> _editBookmark(Bookmark b) async {
@@ -516,6 +528,22 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     if (!mounted || action == null) return;
     if (action == 'togli') {
       setState(() => _meta.bookmarks = [..._meta.bookmarks]..remove(b));
+      await _saveMeta();
+      if (!mounted) return;
+      showUndoSnackBar(
+        context,
+        'Segnalibro a ${clockLabel(b.at)} tolto.',
+        undoneMessage: 'Segnalibro ripristinato.',
+        onUndo: () async {
+          if (!mounted) return;
+          setState(() {
+            _meta.bookmarks = [..._meta.bookmarks, b]
+              ..sort((x, y) => x.at.compareTo(y.at));
+          });
+          await _saveMeta();
+        },
+      );
+      return;
     } else {
       final note = await promptText(
         context,

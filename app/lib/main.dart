@@ -16,6 +16,8 @@ import 'core/router/app_shell.dart';
 import 'core/services/app_return.dart';
 import 'core/services/app_services.dart';
 import 'core/services/app_uninstall.dart';
+import 'core/services/background_sync.dart';
+import 'core/services/portable_path.dart';
 import 'core/services/install_check.dart';
 import 'core/services/temp_files.dart';
 import 'core/services/desktop_window.dart';
@@ -32,6 +34,11 @@ import 'features/settings/uninstall_mode.dart';
 import 'repositories/settings_repository.dart';
 import 'widgets/common.dart';
 import 'widgets/glass.dart';
+
+/// Sincronizzazione ad app chiusa: punto d'ingresso del motore senza
+/// interfaccia avviato da Android (BackgroundSync.kt).
+@pragma('vm:entry-point')
+Future<void> backgroundSyncMain() => runBackgroundSync();
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -96,6 +103,9 @@ Future<void> main(List<String> args) async {
     recheck: check.run,
   );
   final db = await AppDatabase.open();
+  // percorsi dei file dell'app uguali su tutti i dispositivi (posizione del
+  // lettore ed evidenziazioni sincronizzate)
+  await initPortableBase();
   final services = AppServices(db);
   services.themeMode.value = parseThemeMode(
     await services.settings.get(SettingKeys.themeMode),
@@ -140,6 +150,9 @@ Future<void> main(List<String> args) async {
   // copie temporanee di appunti e file estratti: non restano sul disco
   unawaited(clearTempFiles());
   // OneDrive e Google Drive: sincronizzazione all'avvio e ogni 10 minuti.
+  // Telefono: anche con l'app in background (JobScheduler, iOS background
+  // fetch; vedi core/services/background_sync.dart).
+  BackgroundSync.attach(services);
   for (final c in services.clouds) {
     c.startAutoSync();
   }

@@ -11,7 +11,13 @@ Gli insegnamenti compaiono solo con il loro nome.
   avanzamento, numero di moduli e argomenti, **Libri**, **Registrazioni**,
   **Sessione focus** (Sessioni Studio con l'insegnamento scelto, «Tutto
   l'insegnamento» e il timer pronto), **Revisiona con AI**, «Aggiungi
-  modulo». Menu ⋮ accanto al nome (se ci sono moduli): **Ordina i moduli**
+  modulo». Con almeno un modulo c'è un secondo **«Aggiungi modulo» sotto
+  l'ultimo modulo** (stessa azione, così con tanti moduli non si torna in
+  cima): riga contornata a tutta larghezza al livello delle card dei
+  moduli, alta 44 px, diversa da «Aggiungi argomento» (pulsante di testo
+  dentro il modulo). Senza moduli resta solo quello in alto (niente
+  doppione). Lo verifica `study_sessions_stats_focus_test.dart`.
+  Menu ⋮ accanto al nome (se ci sono moduli): **Ordina i moduli**
   e **Rimuovi tutti i moduli** (moduli, argomenti e file allegati
   dell'insegnamento, dopo la conferma; le sessioni di studio restano).
   Non c'è più la card «Corso».
@@ -19,7 +25,13 @@ Gli insegnamenti compaiono solo con il loro nome.
   `course_groups.dart`): diviso in **1° semestre**, **2° semestre**,
   **Annuale** (e «Semestre non indicato»; con l'anno davanti se gli anni
   sono più d'uno) e **OFA** in fondo (nome con «OFA» o «obblighi
-  formativi»). Solo il nome dell'insegnamento, niente stato. Tenendo
+  formativi»). Solo il nome dell'insegnamento, niente stato.
+  L'insegnamento scelto (`CoursePickTile`) **non è in azzurro**, il colore
+  dei titoli dei gruppi: è segnato con l'arancione «da testo» dell'app
+  (`AppTokens.orangeInk`, la scelta dell'utente nel Design 3) come
+  barretta a sinistra, fondo appena tinto, nome in semigrassetto e spunta;
+  contrasto ≥ 4,5:1 sul foglio in tema scuro, chiaro e ad alto contrasto
+  (verificato nei test). Tenendo
   premuto un insegnamento e trascinandolo se ne cambia l'ordine dentro il
   suo gruppo: si salva (`study_course_order` in `app_settings`, id in JSON)
   e vale in tutto Studio (menu di Sessioni Studio e Statistiche). Il primo
@@ -104,11 +116,38 @@ Focus e Sessioni in un'unica schermata:
      tempo. L'anello è grande quanto la larghezza permette (schermata: fino
      a 380 px; card: 180-260 px).
 4. **Obiettivo di oggi** e **Focus questa settimana**.
-5. **Storico** delle sessioni (ultimi 60 giorni ↔ tutte, «Aggiungi» per una
-   sessione a mano, tocco per modificarla).
+5. **Sessioni** (storico, `sessions_tab.dart`): accanto al titolo la
+   casella dell'intervallo (`SessionRange`: Oggi, Ultimi 7 giorni, Ultimi
+   15 giorni, Ultimi 30 giorni, Ultimi 60 giorni, Ultimi 6 mesi, Ultimo
+   anno; sempre oggi compreso, da mezzanotte). Si apre su **Ultimi 7
+   giorni**; la scelta resta finché l'app è aperta (cambiando scheda o
+   sezione) e torna a 7 giorni al riavvio. Titolo, casella e «Aggiungi»
+   stanno sulla stessa riga, centrati in verticale, con area di tocco di
+   44 px. Ogni sessione ha l'**icona della sua attività** nel cerchio del
+   colore della materia (Teoria `menu_book`, Esercizi `edit_note`, Ripasso
+   `replay` come i tipi dei file; Lettura `auto_stories`, Simulazione
+   `quiz`, Altro `category`, tutte «outlined»); le sessioni Focus hanno in
+   più un bollino con l'icona Focus. Le stesse icone sono nei menu
+   «Attività». Tocco su una sessione per modificarla.
+
+## Statistiche (`stats_tab.dart`)
+
+In alto 7 giorni / 30 giorni / Sempre per riepilogo e ripartizioni.
+
+- **Per materia** e **Per argomento**: tempo e barra della quota, senza la
+  percentuale sul totale (`ProgressRow(showPercent: false)`); «Per
+  attività» la mantiene.
+- **Per argomento**: casella con **Tutte le materie** (unica eccezione alla
+  regola «niente Tutti», chiesta dall'utente) e i nomi delle materie con
+  almeno una sessione, nell'ordine di Studio.
+- Grafici, sempre sugli stessi periodi: **Giornaliero (ultimi 7 giorni)**
+  (oggi compreso), **Mensile (ultime 4 settimane)** (settimane da lunedì,
+  questa compresa) e **Semestrale (ultimi 6 mesi)** (questo mese
+  compreso).
 
 La regolazione e la spiegazione del Non disturbare sono in **Impostazioni →
 Focus e Non disturbare** (`focus/focus_quiet_section.dart`).
 
 Test: `app/test/study_screen_test.dart`, `app/test/study_reorder_test.dart`,
-`app/test/study_timer_test.dart`, `app/test/focus_test.dart`.
+`app/test/study_timer_test.dart`, `app/test/focus_test.dart`,
+`app/test/study_sessions_stats_focus_test.dart`.

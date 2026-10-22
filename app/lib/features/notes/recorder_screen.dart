@@ -11,6 +11,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../study/course_catalog.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'lecture_recorder.dart';
@@ -175,9 +176,22 @@ class _RecorderScreenState extends State<RecorderScreen> {
     if (!_rec.active) return;
     if (mounted) setState(() => _busy = true);
     try {
-      await discardRecording(_s);
+      final entry = await discardRecording(_s);
       if (mounted) {
-        showSnack(context, 'Registrazione spostata in «Eliminati di recente».');
+        if (entry == null) {
+          showSnack(context, 'Registrazione eliminata.');
+        } else {
+          // «Annulla»: torna tra le registrazioni del corso
+          showUndoSnackBar(
+            context,
+            'Registrazione spostata in «Eliminati di recente».',
+            undoneMessage: 'Registrazione ripristinata.',
+            onUndo: () async {
+              await _s.trash.restore(entry);
+              _s.revision.bump();
+            },
+          );
+        }
       }
     } catch (e) {
       if (mounted) showSnack(context, 'Eliminazione non riuscita: $e');
@@ -718,7 +732,7 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 ],
               ),
             ],
-            if (live?.secondPassNote case final note?) ...[
+            if (live?.note case final note?) ...[
               const SizedBox(height: 8),
               Text(
                 note,

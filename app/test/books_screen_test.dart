@@ -246,6 +246,23 @@ void main() {
       find.byKey(ValueKey('course-books-menu-${course.id}')),
       findsNothing,
     );
+    // «Annulla» nell'avviso in basso: il libro torna tra i proposti (prima
+    // si chiude l'avviso di «Libro salvato.»)
+    await tester.pump(const Duration(seconds: 1));
+    await tester.pump(const Duration(seconds: 1));
+    expect(
+      find.text('Libro non salvato eliminato: lo ritrovi in "Libri rimossi".'),
+      findsOneWidget,
+    );
+    expect(find.widgetWithText(SnackBarAction, 'Annulla'), findsOneWidget);
+    await tester.tap(find.widgetWithText(SnackBarAction, 'Annulla'));
+    await _settle(tester);
+    await _settle(tester);
+    final undone = (await tester.runAsync(
+      () => services.books.byId(ids['nuovo']!),
+    ))!;
+    expect(undone.isRemoved, isFalse);
+    expect(find.text('Esercizi proposti'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

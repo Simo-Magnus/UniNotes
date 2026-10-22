@@ -167,14 +167,63 @@ propagano.
 - **App reinstallata**: il registro della vecchia installazione resta nel
   cloud e viene letto come quello di un altro dispositivo: i dati tornano.
 
+## Inventario: cosa si sincronizza (22/10/2026)
+
+| Dato | Come | Dove |
+|---|---|---|
+| Insegnamenti, esami e prove, voti, eventi | righe del database (`Dati/`) | `courses`, `exams`, `events` |
+| Avanzamento dello studio: moduli, argomenti e stato, sessioni (anche Focus) | righe del database | `modules`, `topics`, `study_sessions` |
+| Libri e materiale didattico (schede, anche le eliminazioni con il segnaposto) | righe del database | `books`, `materials` |
+| File dei libri e del materiale | cartelle `Libri/`, `Materiali/` (casella «Libri…») | `libri/`, `materiali/` |
+| Allegati di moduli e argomenti (schede e file) | righe + cartella `Allegati/` | `attachments`, `allegati/` |
+| Evidenziazioni dei PDF | cartella `Evidenziazioni/` (casella «Libri…»), un JSON per documento con nome uguale su tutti i dispositivi (dal percorso relativo, `portable_path.dart`) | `evidenziazioni/` |
+| Posizione e segnalibri del lettore | impostazioni `reader:<chiave>` (chiave dal percorso relativo per i file dell'app) | `app_settings` |
+| Registrazioni, trascrizioni, riassunti, appunti | cartella `Corsi/` (caselle «Registrazioni», «Trascrizioni…») | cartella degli appunti |
+| Note sui luoghi, profilo e anni del piano | righe del database | `place_personal`, `profile`, `plan_years` |
+| Scelte sincronizzabili | impostazioni (`SyncSchema.syncedSettings` e `syncedSettingPrefixes`): esclusioni, obiettivo e impostazioni Focus, AI di riferimento, insegnamenti tolti, moduli precompilati, ordine degli insegnamenti in Studio, tipi e anticipi delle notifiche, formule della trascrizione istantanea, «Non chiedere più» (`dont_ask_…`), dispositivo che scrive nel calendario (`syscal_writers`) | `app_settings` |
+| Backup del database | un JSON per dispositivo in `Backup/` (casella «Backup») | — |
+
+I file arrivati o tolti dalla sincronizzazione aggiornano le schermate aperte
+in qualsiasi sezione (`SyncSources.onChanged` → `revision.bump()`), non solo
+in Collegamenti. La sincronizzazione parte all'avvio, ogni N minuti
+(«Controlla le novità ogni»: 2, 5, 10, 15, 30, 60), al ritorno nell'app,
+quando torna la rete e con l'app in background: PC e Mac anche con la
+finestra nascosta nell'area di notifica (i controlli continuano), Android con
+un lavoro periodico del JobScheduler (`BackgroundSync.kt`, al massimo ogni
+15 minuti, solo con la rete, anche ad app chiusa: motore Flutter senza
+interfaccia su `backgroundSyncMain`), iPhone con l'aggiornamento in
+background di iOS (`BGAppRefreshTask`, quando lo decide il sistema).
+
+**Documenti vuoti.** Un PDF, un libro, un documento Office, un'immagine o un
+audio di 0 byte è un file rovinato (copia interrotta, file del fornitore del
+telefono non scaricato): non si carica mai, non crea conflitti (vince la
+copia piena dall'altra parte) e, se accanto c'è la sua copia «(conflitto …)»
+piena lasciata da una versione precedente, questa torna al suo nome. I
+download si controllano con la dimensione annunciata dal servizio: uno
+incompleto non sostituisce il file buono. Era la causa dell'errore del PDF
+«Principi di Chimica» fra Windows e Android (22/10/2026): sul telefono era
+comparso il file vuoto, caricato su OneDrive e Google Drive; il PC l'aveva
+preso per un conflitto, rinominato il file vero «(conflitto PC …)» e
+scaricato quello vuoto.
+
+**Cartella rinominata.** «Rinomina» (Collegamenti, accanto a «Cambia…»)
+cambia il nome della cartella dell'app sul servizio e sposta gli stati della
+sincronizzazione (niente da ricaricare). Gli altri dispositivi, alla prima
+sincronizzazione della sessione, non trovando più la cartella la ritrovano
+dagli id salvati (`locateMovedFolder`) invece di crearne una nuova vuota. Il
+selettore della cartella non crea più cartelle nuove.
+
 ## Cosa non si sincronizza
 
-- Impostazioni del dispositivo: aspetto, suoni, notifiche, calendario, account
-  e token (nel portachiavi, mai nel database), stato della sincronizzazione,
-  percorsi, Whisper, domande già fatte. Si sincronizzano solo:
-  `exclusion_patterns`, `focus_daily_goal`, `focus_settings`,
-  `links_reference_ai`, `removed_catalog_courses`, `prefilled_modules`
-  (`SyncSchema.syncedSettings`; aggiungere qui le nuove scelte di studio).
+- Impostazioni del dispositivo: aspetto, suoni, consenso e permesso delle
+  notifiche, calendario scelto (gli id sono del dispositivo), account e token
+  (nel portachiavi, mai nel database), stato della sincronizzazione,
+  percorsi, Whisper e modelli, file recenti del lettore, filtri delle
+  schermate, domande già fatte senza «Non chiedere più». Le nuove scelte di
+  studio vanno aggiunte a `SyncSchema.syncedSettings` (o a un prefisso di
+  `syncedSettingPrefixes`).
+- «Eliminati di recente» (cestino degli appunti, 30 giorni) e file
+  temporanei del lettore: restano sul dispositivo.
 - Colonne con percorsi assoluti del dispositivo (`books.file_path`,
   `materials.local_path`).
 - Email (`mail_*`), dati pubblici (atenei, corsi di laurea, luoghi), colori

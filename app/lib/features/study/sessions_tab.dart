@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/constants/enums.dart';
+import '../../core/feedback/feedback_service.dart';
 import '../../core/services/app_services.dart';
+import '../../core/theme/app_tokens.dart';
 import '../../models/study.dart';
 import '../../widgets/common.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'course_catalog.dart';
 import 'session_dialog.dart';
 import 'study_stats.dart';
@@ -17,27 +21,60 @@ class _SessionsData {
   final Map<int, String> topicNames;
 }
 
+/// Intervallo dello storico delle sessioni (casella accanto a «Sessioni»).
+enum SessionRange {
+  today('Oggi', 'oggi'),
+  week('Ultimi 7 giorni', 'negli ultimi 7 giorni'),
+  days15('Ultimi 15 giorni', 'negli ultimi 15 giorni'),
+  days30('Ultimi 30 giorni', 'negli ultimi 30 giorni'),
+  days60('Ultimi 60 giorni', 'negli ultimi 60 giorni'),
+  months6('Ultimi 6 mesi', 'negli ultimi 6 mesi'),
+  year('Ultimo anno', 'nell\'ultimo anno');
+
+  const SessionRange(this.label, this.phrase);
+  final String label;
+
+  /// Per le frasi: «Nessuna sessione negli ultimi 7 giorni».
+  final String phrase;
+
+  /// Primo istante dell'intervallo (mezzanotte), oggi compreso: «Ultimi 7
+  /// giorni» sono oggi e i 6 giorni prima, come nelle Statistiche.
+  DateTime from(DateTime now) {
+    final d = dayStart(now);
+    return switch (this) {
+      today => d,
+      week => DateTime(d.year, d.month, d.day - 6),
+      days15 => DateTime(d.year, d.month, d.day - 14),
+      days30 => DateTime(d.year, d.month, d.day - 29),
+      days60 => DateTime(d.year, d.month, d.day - 59),
+      months6 => DateTime(d.year, d.month - 6, d.day + 1),
+      year => DateTime(d.year - 1, d.month, d.day + 1),
+    };
+  }
+}
+
 /// Storico delle sessioni di studio (in fondo a Sessioni Studio),
 /// raggruppate per materia (con il colore della materia), dalla più
-/// recente. Il titolo passa da «ultimi 60 giorni» a «tutte»; «Aggiungi»
+/// recente. Accanto al titolo «Sessioni» la casella dell'intervallo (da
+/// «Oggi» a «Ultimo anno»; si apre su «Ultimi 7 giorni»); «Aggiungi»
 /// inserisce una sessione a mano.
 class SessionHistory extends StatefulWidget {
   const SessionHistory({super.key, required this.catalog});
   final CourseCatalog catalog;
+
+  /// Intervallo scelto: resta finché l'app è aperta (cambiando scheda o
+  /// sezione), a ogni avvio si riparte da «Ultimi 7 giorni».
+  static SessionRange range = SessionRange.week;
 
   @override
   State<SessionHistory> createState() => _SessionHistoryState();
 }
 
 class _SessionHistoryState extends State<SessionHistory> {
-  static const _recentDays = 60;
-  bool _showAll = false;
+  SessionRange get _range => SessionHistory.range;
 
   Future<_SessionsData> _load(AppServices s) async {
-    final from = _showAll
-        ? null
-        : dayStart(DateTime.now()).subtract(const Duration(days: _recentDays));
-    final sessions = await s.study.sessions(from: from);
+    final sessions = await s.study.sessions(from: _range.from(DateTime.now()));
     final topics = await s.study.allTopics();
     return _SessionsData(sessions, {for (final t in topics) t.id!: t.name});
   }
@@ -69,12 +106,23 @@ class _SessionHistoryState extends State<SessionHistory> {
     final s = context.read<AppServices>();
     await s.study.deleteSession(session.id!);
     s.revision.bump();
+    if (!mounted) return;
+    // «Annulla»: la sessione torna con lo stesso id
+    showUndoSnackBar(
+      context,
+      'Sessione eliminata.',
+      undoneMessage: 'Sessione ripristinata.',
+      onUndo: () async {
+        await s.database.db.insert('study_sessions', session.toMap());
+        s.revision.bump();
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return RevisionBuilder<_SessionsData>(
-      deps: [_showAll],
+      deps: [_range],
       load: _load,
       builder: (context, data) => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -94,52 +142,44 @@ class _SessionHistoryState extends State<SessionHistory> {
     for (final x in shown) {
       bySubject.putIfAbsent(x.courseId, () => []).add(x);
     }
-    final title = _showAll
-        ? 'Tutte le sessioni'
-        : 'Sessioni (ultimi $_recentDays giorni)';
     return [
+      // Titolo, casella dell'intervallo e «Aggiungi» sulla stessa riga,
+      // centrati in verticale e alti 44 px (area di tocco); il titolo parte
+      // dal margine delle intestazioni delle materie (16 px).
       Padding(
-        padding: const EdgeInsets.fromLTRB(4, 16, 8, 8),
+        padding: const EdgeInsets.fromLTRB(16, 16, 8, 8),
         child: Row(
+          key: const Key('sessions-title-row'),
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Il titolo stesso cambia vista: recenti ↔ tutte.
-            Flexible(
-              child: InkWell(
-                borderRadius: BorderRadius.circular(8),
-                onTap: () => setState(() => _showAll = !_showAll),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 6,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Flexible(
-                        child: Text(
-                          title,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Icon(
-                        Icons.swap_vert,
-                        size: 18,
-                        color: theme.colorScheme.onSurfaceVariant,
-                        semanticLabel: _showAll
-                            ? 'Mostra solo le sessioni recenti'
-                            : 'Mostra tutte le sessioni',
-                      ),
-                    ],
-                  ),
+            Text(
+              'Sessioni',
+              key: const Key('sessions-title'),
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: SessionRangeBox(
+                  value: _range,
+                  onChanged: (r) {
+                    if (r == _range) return;
+                    AppFeedback.of(context).toggle();
+                    setState(() => SessionHistory.range = r);
+                  },
                 ),
               ),
             ),
-            const Spacer(),
+            const SizedBox(width: 4),
             TextButton.icon(
               key: const Key('session-add'),
+              style: TextButton.styleFrom(
+                minimumSize: const Size(44, 44),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+              ),
               onPressed: () => _edit(),
               icon: const Icon(Icons.add),
               label: const Text('Aggiungi'),
@@ -148,11 +188,11 @@ class _SessionHistoryState extends State<SessionHistory> {
         ),
       ),
       if (bySubject.isEmpty)
-        const EmptyState(
+        EmptyState(
           icon: Icons.timer_outlined,
           message:
-              'Nessuna sessione registrata. Avvia il cronometro o il timer, '
-              'oppure aggiungi una sessione a mano.',
+              'Nessuna sessione ${_range.phrase}. Avvia il cronometro o il '
+              'timer, oppure aggiungi una sessione a mano.',
         ),
       for (final g in bySubject.entries) ...[
         SubjectSessionsHeader(
@@ -176,6 +216,27 @@ class _SessionHistoryState extends State<SessionHistory> {
       ],
     ];
   }
+}
+
+/// Casella dell'intervallo dello storico accanto a «Sessioni».
+class SessionRangeBox extends StatelessWidget {
+  const SessionRangeBox({
+    super.key,
+    required this.value,
+    required this.onChanged,
+  });
+
+  final SessionRange value;
+  final ValueChanged<SessionRange> onChanged;
+
+  @override
+  Widget build(BuildContext context) => ChoiceBox<SessionRange>(
+    key: const Key('session-range'),
+    tooltip: 'Intervallo delle sessioni',
+    value: value,
+    items: [for (final r in SessionRange.values) (r, r.label)],
+    onChanged: onChanged,
+  );
 }
 
 /// Intestazione di una materia nelle sessioni: barra del colore della
@@ -229,6 +290,67 @@ class SubjectSessionsHeader extends StatelessWidget {
   }
 }
 
+/// Icona di una sessione nello storico: l'icona dell'attività (Teoria,
+/// Esercizi, Ripasso, Lettura, Simulazione, Altro) nel cerchio del colore
+/// della materia; le sessioni Focus hanno in più un piccolo bollino con
+/// l'icona Focus in basso a destra (e «Focus» nella riga sotto).
+class SessionActivityIcon extends StatelessWidget {
+  const SessionActivityIcon({
+    super.key,
+    required this.activity,
+    required this.focus,
+    required this.color,
+  });
+
+  final ActivityType activity;
+  final bool focus;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final ink = readableOn(color, theme.brightness, minRatio: 3);
+    final label = focus ? 'Sessione Focus, ${activity.label}' : activity.label;
+    return Semantics(
+      label: label,
+      excludeSemantics: true,
+      child: SizedBox.square(
+        dimension: 40,
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            CircleAvatar(
+              radius: 20,
+              backgroundColor: color.withValues(alpha: 0.2),
+              foregroundColor: ink,
+              child: Icon(activity.icon, size: 20),
+            ),
+            if (focus)
+              Positioned(
+                right: -3,
+                bottom: -3,
+                child: Container(
+                  key: const Key('session-focus-badge'),
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.surface,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: ink, width: 1.2),
+                  ),
+                  child: Icon(
+                    Icons.center_focus_strong_outlined,
+                    size: 12,
+                    color: ink,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _SessionTile extends StatelessWidget {
   const _SessionTile({
     required this.session,
@@ -257,20 +379,14 @@ class _SessionTile extends StatelessWidget {
       ?session.notes,
     ].join(' · ');
     return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: catalog
-            .colorOf(session.courseId)
-            .withValues(alpha: 0.2),
-        foregroundColor: catalog.colorOf(session.courseId),
-        child: Icon(
-          session.focus
-              ? Icons.center_focus_strong_outlined
-              : session.activityType.icon,
-          size: 20,
-          semanticLabel: session.focus ? 'Sessione Focus' : null,
-        ),
+      leading: SessionActivityIcon(
+        activity: session.activityType,
+        focus: session.focus,
+        color: catalog.colorOf(session.courseId),
       ),
-      title: Text('${capitalize(formatShortWeekdayDmy(session.start))} · $range'),
+      title: Text(
+        '${capitalize(formatShortWeekdayDmy(session.start))} · $range',
+      ),
       subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,

@@ -31,6 +31,9 @@ class BookLibrary {
   static const materialsFolder = 'materiali';
   static const attachmentsFolder = 'allegati';
 
+  /// Evidenziazioni dei PDF (lib/features/reader/pdf_highlights.dart).
+  static const highlightsFolder = 'evidenziazioni';
+
   Future<Directory> directory() async {
     final dir = Directory(p.join((await _baseDir()).path, folderName));
     await dir.create(recursive: true);

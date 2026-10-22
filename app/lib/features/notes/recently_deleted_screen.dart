@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../core/services/app_services.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/undo_snack_bar.dart';
 import 'recycle_bin.dart';
 
 /// «Eliminati di recente»: registrazioni e appunti eliminati negli ultimi
@@ -32,23 +33,21 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
       final files = await _s.trash.restore(e);
       _s.revision.bump();
       if (messenger != null && messenger.mounted) {
-        messenger
-          ..hideCurrentSnackBar()
-          ..showSnackBar(
-            SnackBar(
-              content: Text(
-                files.isEmpty
-                    ? 'Niente da ripristinare.'
-                    : '«${e.title}» ripristinato.',
-              ),
-              action: files.isEmpty
-                  ? null
-                  : SnackBarAction(
-                      label: 'Annulla',
-                      onPressed: () => _undoRestore(e, files),
-                    ),
-            ),
+        if (files.isEmpty) {
+          messenger
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              const SnackBar(content: Text('Niente da ripristinare.')),
+            );
+        } else {
+          showUndoSnackBar(
+            context,
+            '«${e.title}» ripristinato.',
+            messenger: messenger,
+            undoneMessage: '«${e.title}» di nuovo in «Eliminati di recente».',
+            onUndo: () => _undoRestore(e, files),
           );
+        }
       }
     } catch (err) {
       if (mounted) showSnack(context, 'Ripristino non riuscito: $err');

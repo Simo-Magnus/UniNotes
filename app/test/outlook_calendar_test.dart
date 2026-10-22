@@ -59,10 +59,13 @@ class _FakeOAuth extends LoopbackOAuth {
   }
 }
 
-/// Outlook finto: calendari ed eventi in memoria.
+/// Outlook finto: calendari ed eventi in memoria (`def` = «Calendario»,
+/// il principale dell'account).
 class _FakeOutlook {
-  final calendars = <String, String>{}; // id → nome
+  final calendars = <String, String>{'def': 'Calendario'}; // id → nome
   final events = <String, Map<String, Object?>>{}; // id → corpo
+  final eventCalendar = <String, String>{}; // id evento → calendario
+  bool rejectFilter = false;
   var _n = 0;
   final requests = <String>[];
 
@@ -83,9 +86,21 @@ class _FakeOutlook {
     if (path == 'me/calendars' && method == 'GET') {
       return _json(200, {
         'value': [
-          for (final e in calendars.entries) {'id': e.key, 'name': e.value},
+          for (final e in calendars.entries)
+            {
+              'id': e.key,
+              'name': e.value,
+              'isDefaultCalendar': e.key == 'def',
+              'canEdit': true,
+              'owner': {'address': 'studente@outlook.it'},
+            },
         ],
       });
+    }
+    final del = RegExp(r'^me/calendars/([^/]+)$').firstMatch(path);
+    if (del != null && method == 'DELETE') {
+      calendars.remove(del[1]);
+      return GraphResponse(204, Uint8List(0));
     }
     if (path == 'me/calendars' && method == 'POST') {
       final id = 'c${_n++}';
@@ -95,16 +110,34 @@ class _FakeOutlook {
     final cal = RegExp(r'^me/calendars/([^/]+)$').firstMatch(path);
     if (cal != null) {
       return calendars.containsKey(cal[1])
-          ? _json(200, {'id': cal[1]})
+          ? _json(200, {
+              'id': cal[1],
+              'name': calendars[cal[1]],
+              'isDefaultCalendar': cal[1] == 'def',
+              'canEdit': true,
+            })
           : _json(404, {
               'error': {'code': 'ErrorItemNotFound'},
             });
     }
-    final evs = RegExp(r'^me/calendars/([^/]+)/events$').firstMatch(path);
+    final evs = RegExp(
+      r'^me/calendars/([^/]+)/(events|calendarView)$',
+    ).firstMatch(path);
     if (evs != null && method == 'GET') {
+      if (url.queryParameters.containsKey(r'$filter') && rejectFilter) {
+        return _json(400, {
+          'error': {'message': 'filtro non supportato'},
+        });
+      }
+      final pageCal = evs[1]!;
+      final calEvents = [
+        for (final e in events.entries)
+          if ((eventCalendar[e.key] ?? 'def') == pageCal) e,
+      ];
+      // senza $top=1 (controllo «vuoto») solo gli eventi dell'app
       return _json(200, {
         'value': [
-          for (final e in events.entries)
+          for (final e in calEvents)
             {'id': e.key, 'singleValueExtendedProperties': e.value['ext']},
         ],
       });
@@ -112,6 +145,7 @@ class _FakeOutlook {
     if (evs != null && method == 'POST') {
       final id = 'e${_n++}';
       events[id] = {...json!, 'ext': json['singleValueExtendedProperties']};
+      eventCalendar[id] = evs[1]!;
       return _json(201, {'id': id});
     }
     final ev = RegExp(r'^me/events/([^/]+)$').firstMatch(path);
@@ -124,6 +158,7 @@ class _FakeOutlook {
       }
       if (method == 'DELETE') {
         events.remove(id);
+        eventCalendar.remove(id);
         return GraphResponse(204, Uint8List(0));
       }
       events[id] = {...events[id]!, ...json!};
@@ -211,7 +246,8 @@ void main() {
   });
 
   test(
-    'calendario «UniNotes» creato una volta, eventi senza doppioni',
+    'eventi nel calendario principale dell\'account (nessun calendario a '
+    'parte), senza doppioni',
     () async {
       await secrets.write(OutlookCalendarAuth.refreshKey, 'cal-refresh');
       await sync.setEnabled(true);
@@ -219,8 +255,11 @@ void main() {
       final b = examItem(2, DateTime(2027, 2, 12), time: '14:00');
       var st = await sync.sync([a, b], [7, 1], now: now);
       expect(st.working, isTrue);
-      expect(outlook.calendars.values, ['UniNotes']);
+      expect(outlook.calendars.values, ['Calendario']);
       expect(outlook.events.length, 2);
+      expect(outlook.eventCalendar.values.toSet(), {'def'});
+      expect(st.calendarName, 'Calendario');
+      expect(st.account, 'studente@outlook.it');
       final ev = outlook.events.values.firstWhere(
         (e) => (e['ext'] as List).first['value'] == 'esame-1',
       );
@@ -241,6 +280,43 @@ void main() {
       expect(st.written, {b.key});
     },
   );
+
+  test('versioni precedenti: eventi dal calendario «UniNotes» (che Outlook '
+      'non mostrava) spostati nel principale, «UniNotes» eliminato', () async {
+    await secrets.write(OutlookCalendarAuth.refreshKey, 'cal-refresh');
+    await sync.setEnabled(true);
+    outlook.calendars['old'] = 'UniNotes';
+    outlook.events['vecchio'] = {
+      'subject': 'Esame · Analisi I',
+      'ext': [
+        {'id': OutlookCalendarBackend.keyProperty, 'value': 'esame-1'},
+      ],
+    };
+    outlook.eventCalendar['vecchio'] = 'old';
+    await settings.set(CalendarKeys.calendarId, 'old');
+    await settings.set(CalendarKeys.backend, 'outlook');
+    final st = await sync.sync(
+      [examItem(1, DateTime(2027, 2, 10))],
+      [1],
+      now: now,
+    );
+    expect(st.working, isTrue);
+    expect(outlook.calendars.keys, ['def']);
+    expect(outlook.events.keys, isNot(contains('vecchio')));
+    expect(outlook.eventCalendar.values.toSet(), {'def'});
+  });
+
+  test('Graph non accetta il filtro: si leggono gli eventi del periodo', () async {
+    await secrets.write(OutlookCalendarAuth.refreshKey, 'cal-refresh');
+    await sync.setEnabled(true);
+    outlook.rejectFilter = true;
+    final a = examItem(1, DateTime(2027, 2, 10));
+    var st = await sync.sync([a], [1], now: now);
+    expect(st.working, isTrue);
+    st = await sync.sync([a], [1], now: now);
+    expect(outlook.events.length, 1);
+    expect(outlook.requests.any((r) => r.endsWith('/calendarView')), isTrue);
+  });
 
   test('token scaduto: collegamento interrotto', () async {
     await secrets.write(OutlookCalendarAuth.refreshKey, 'cal-refresh');

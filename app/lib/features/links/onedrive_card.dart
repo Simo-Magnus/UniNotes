@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
-import '../../widgets/common.dart';
 import '../cloud/microsoft_admin_consent.dart';
 import '../cloud/onedrive_folders.dart';
-import '../study/study_widgets.dart' show promptText;
 import 'cloud_drive_card.dart';
 import 'microsoft_consent_sheet.dart';
 
@@ -68,9 +66,10 @@ class OneDriveCard extends StatelessWidget {
   }
 }
 
-/// Selettore della cartella (OneDrive, Google Drive): naviga, crea cartelle
-/// e scegli quella in cui l'app salva tutto. Restituisce il percorso (vuoto
-/// = radice).
+/// Selettore della cartella (OneDrive, Google Drive): naviga e scegli
+/// quella in cui l'app salva tutto (niente cartelle nuove da qui: per
+/// cambiare il nome di quella dell'app c'è «Rinomina» nella scheda).
+/// Restituisce il percorso (vuoto = radice).
 Future<String?> showOneDriveFolderPicker(
   BuildContext context,
   FolderBrowser browser, {
@@ -112,27 +111,6 @@ class _OneDriveFolderDialogState extends State<OneDriveFolderDialog> {
     _children = _list();
   });
 
-  Future<void> _create() async {
-    final name = await promptText(
-      context,
-      title: 'Nuova cartella',
-      label: 'Nome',
-      initial: 'UniNotes',
-    );
-    if (name == null) return;
-    final err = widget.browser.validate(name);
-    if (err != null) {
-      if (mounted) showSnack(context, err);
-      return;
-    }
-    try {
-      final f = await widget.browser.createFolder(_current, name);
-      _open(f);
-    } catch (e) {
-      if (mounted) showSnack(context, '$e');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -157,11 +135,6 @@ class _OneDriveFolderDialogState extends State<OneDriveFolderDialog> {
                         : '${widget.browser.serviceName}/${_current.path}',
                     overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                TextButton.icon(
-                  onPressed: _create,
-                  icon: const Icon(Icons.create_new_folder_outlined, size: 18),
-                  label: const Text('Nuova'),
                 ),
               ],
             ),

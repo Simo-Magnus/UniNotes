@@ -285,6 +285,7 @@ class OneDriveSync extends FolderSync {
       if (!res.ok) {
         throw GraphException(res.status, 'Download non riuscito: $rel');
       }
+      await FolderSync.checkDownloaded(part, r.size);
     } catch (_) {
       if (await part.exists()) await part.delete();
       rethrow;

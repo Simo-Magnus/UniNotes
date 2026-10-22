@@ -387,6 +387,10 @@ void main() {
       ),
     );
     await _settle(t);
+    // sezione OneNote: resa semplificata, si sceglie l'anteprima
+    expect(find.text('Anteprima semplificata'), findsOneWidget);
+    await t.tap(find.text('Vedi anteprima semplificata'));
+    await _settle(t, 4);
     await t.tap(find.widgetWithText(TextButton, 'OneNote'));
     await _settle(t, 4);
     expect(find.byType(OneNoteScreen), findsNothing);

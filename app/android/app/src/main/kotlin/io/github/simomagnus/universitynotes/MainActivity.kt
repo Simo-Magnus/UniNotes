@@ -33,6 +33,14 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  *
  * Sesto canale: notifica della registrazione con i pulsanti sempre
  * visibili (RecordingNotification.kt): `show`; verso Flutter, `command`.
+ *
+ * Settimo canale: prove nel calendario del telefono (UniNotesCalendar.kt).
+ *
+ * Ottavo canale: sincronizzazione con OneDrive e Google Drive in background
+ * (BackgroundSync.kt, JobScheduler del sistema).
+ *
+ * Nono canale: «Apri con…» con la scelta dell'app (OpenWith.kt):
+ * `openWith` {path}.
  */
 class MainActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
@@ -41,7 +49,19 @@ class MainActivity : FlutterActivity() {
     private var incomingChannel: MethodChannel? = null
     private var recordingChannel: MethodChannel? = null
     private var liveSpeech: LiveSpeech? = null
+    private var calendar: UniNotesCalendar? = null
+    private var calendarChannel: MethodChannel? = null
+    private var openWithChannel: MethodChannel? = null
     private var pendingRoute: String? = null
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray,
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        calendar?.onPermissionResult(requestCode)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         pendingRoute = WidgetSupport.routeOf(intent)
@@ -121,6 +141,32 @@ class MainActivity : FlutterActivity() {
             }
             RecordingNotification.onCommand = { ch.invokeMethod("command", it) }
         }
+        // Prove nel calendario del telefono (vedi UniNotesCalendar.kt).
+        val cal = UniNotesCalendar(applicationContext)
+        calendar = cal
+        calendarChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            UniNotesCalendar.CHANNEL,
+        ).also {
+            it.setMethodCallHandler { call, result -> cal.handle(this, call, result) }
+        }
+        // Sincronizzazione con OneDrive e Google Drive anche con l'app in
+        // background (vedi BackgroundSync.kt).
+        BackgroundSync.attach(applicationContext, flutterEngine)
+        // «Apri con…»: scelta dell'app (vedi OpenWith.kt).
+        openWithChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            OpenWith.CHANNEL,
+        ).also {
+            it.setMethodCallHandler { call, result ->
+                val path = call.argument<String>("path")
+                if (call.method == "openWith" && path != null) {
+                    result.success(OpenWith.open(this, path))
+                } else {
+                    result.notImplemented()
+                }
+            }
+        }
         // Disinstallazione dall'app.
         uninstallChannel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
@@ -193,6 +239,12 @@ class MainActivity : FlutterActivity() {
         RecordingNotification.onCommand = null
         liveSpeech?.dispose()
         liveSpeech = null
+        calendarChannel?.setMethodCallHandler(null)
+        calendarChannel = null
+        calendar = null
+        openWithChannel?.setMethodCallHandler(null)
+        openWithChannel = null
+        BackgroundSync.detach(flutterEngine)
         super.cleanUpFlutterEngine(flutterEngine)
     }
 }

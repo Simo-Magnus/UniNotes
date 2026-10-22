@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:xml/xml.dart';
 
 import '../reader_document.dart';
+import 'pptx_slides.dart';
 import 'text_formats.dart';
 import 'zip_util.dart';
 
@@ -95,6 +96,7 @@ RDoc parseDocx(Uint8List bytes) {
         RSection(paged ? 'Pagina ${i + 1}' : '', sections[i].blocks),
     ],
     tables: w.tables,
+    limits: w.limits.toList(),
   );
 }
 
@@ -106,6 +108,9 @@ class _DocxWriter {
 
   final sections = <RSection>[];
   final tables = <RTable>[];
+
+  /// Parti non mostrate (per l'avviso all'apertura).
+  final limits = <String>{};
   var _current = <RBlock>[];
   final _counters = <String, List<int>>{};
 
@@ -186,7 +191,16 @@ class _DocxWriter {
               final data = rel == null || rel.external
                   ? null
                   : zip.bytes(rel.target);
-              if (data != null) images.add(RImage(data));
+              if (data != null && PptxSlides.isMetafile(data)) {
+                limits.add('immagini EMF/WMF');
+              } else if (data != null) {
+                images.add(RImage(data));
+              }
+            }
+            if (c.firstDesc('chart') != null) limits.add('grafici');
+            if (c.firstDesc('relIds') != null) limits.add('SmartArt');
+            if (c.local == 'object' && c.firstDesc('imagedata') == null) {
+              limits.add('oggetti incorporati');
             }
             // Caselle di testo dentro il disegno.
             for (final t in c.desc('txbxContent')) {
@@ -215,6 +229,7 @@ class _DocxWriter {
               'sdt':
             inline(c, link: link);
           case 'oMath' || 'oMathPara':
+            limits.add('formule');
             b.write(c.desc('t').map((t) => t.innerText).join());
         }
       }
@@ -401,6 +416,7 @@ RDoc parsePptx(Uint8List bytes) {
   final tables = <RTable>[];
   final sections = <RSection>[];
   final toc = <RTocEntry>[];
+  final canvas = PptxSlides(zip, part);
   for (var i = 0; i < slides.length; i++) {
     final xml = zip.xml(slides[i]);
     if (xml == null) continue;
@@ -457,6 +473,17 @@ RDoc parsePptx(Uint8List bytes) {
 
     final spTree = xml.rootElement.firstDesc('spTree');
     if (spTree != null) tree(spTree);
+    // Diapositiva disegnata (al posto del solo testo, che resta come
+    // ripiego se il disegno non riesce).
+    RSlide? drawn;
+    try {
+      drawn = canvas.slide(slides[i]);
+    } catch (_) {}
+    if (drawn != null) {
+      blocks
+        ..clear()
+        ..add(drawn);
+    }
     // Note del relatore.
     for (final r in rels.values) {
       if (!r.type.endsWith('/notesSlide')) continue;
@@ -485,6 +512,7 @@ RDoc parsePptx(Uint8List bytes) {
     unitLabel: 'Diapositiva',
     toc: toc,
     tables: tables,
+    limits: canvas.limits.toList(),
   );
 }
 
@@ -589,6 +617,7 @@ RDoc parseXlsx(Uint8List bytes) {
   final tables = <RTable>[];
   final sections = <RSection>[];
   final toc = <RTocEntry>[];
+  final limits = <String>{};
   final sheets =
       wb?.rootElement.kid('sheets')?.kids('sheet') ?? const <XmlElement>[];
   for (final s in sheets) {
@@ -596,6 +625,16 @@ RDoc parseXlsx(Uint8List bytes) {
     final id = s.attr('id', prefixed: true);
     final rel = id == null ? null : rels[id];
     final xml = rel == null ? null : zip.xml(rel.target);
+    // grafici e immagini del foglio (non mostrati)
+    if (rel != null) {
+      for (final d in readRels(zip, rel.target).values) {
+        if (!d.type.endsWith('/drawing')) continue;
+        final drawing = zip.xml(d.target)?.rootElement;
+        if (drawing?.firstDesc('chart') != null) limits.add('grafici');
+        if (drawing?.firstDesc('pic') != null) limits.add('immagini');
+        if (drawing?.firstDesc('sp') != null) limits.add('forme');
+      }
+    }
     final rows = <List<String>>[];
     final data = xml?.rootElement.kid('sheetData');
     if (data != null) {
@@ -654,6 +693,7 @@ RDoc parseXlsx(Uint8List bytes) {
     toc: toc,
     tabs: true,
     tables: tables,
+    limits: limits.toList(),
   );
 }
 

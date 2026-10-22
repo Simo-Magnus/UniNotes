@@ -78,6 +78,12 @@ class AppServices {
 
   /// File allegati a moduli e argomenti di Studio, copiati dentro l'app.
   final BookLibrary attachmentsLibrary;
+
+  /// Evidenziazioni dei PDF (cartella `evidenziazioni`, vedi PdfHighlights):
+  /// sincronizzate con i libri.
+  final BookLibrary highlightsLibrary = BookLibrary(
+    folderName: BookLibrary.highlightsFolder,
+  );
   final CourseRepository courses;
   final CalendarRepository calendar;
   final ExamRepository exams;
@@ -152,6 +158,10 @@ class AppServices {
     backupJson: () => BackupService(database).exportJson(),
     recordingInProgress: () => recorder.active ? recorder.path : null,
     data: dataSync,
+    highlights: highlightsLibrary.directory,
+    // file arrivati dalla sincronizzazione: le schermate si aggiornano in
+    // qualsiasi sezione (Libri, File, Studio…), non solo in Collegamenti
+    onChanged: revision.bump,
     changeCounter: () async =>
         ((await database.db.rawQuery('SELECT total_changes() AS n')).first['n']
                 as num)

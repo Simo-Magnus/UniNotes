@@ -17,7 +17,7 @@ Codice: `app/lib/core/reminders/` (logica pura in `agenda.dart`,
 
 | Tipo (canale Android) | Quando | Testo | Azioni | Come si disattiva | «Non chiedere più» |
 |---|---|---|---|---|---|
-| **Prove in arrivo** (`prove`) | Esami, prove in itinere, esoneri ancora da sostenere del corso attuale: 7 giorni prima e il giorno prima alle 9:00; se la prova ha l'orario, l'avviso del giorno prima arriva 24 ore prima. Anticipi scelti in Impostazioni → Notifiche (1, 2, 3, 7, 14 giorni). | «Esame domani: Analisi I» · «martedì 12 gennaio alle 9:30 · Aula 1» | Tocco → scheda della prova | Interruttore «Prove in arrivo» | No |
+| **Prove in arrivo** (`prove`) | Esami, prove in itinere, esoneri ancora da sostenere del corso attuale. Predefiniti: **il giorno prima** (alle 9:00, o 24 ore prima se la prova ha l'orario) e **un'ora prima** (solo con l'orario). Anticipi scelti in Impostazioni → Notifiche: 1, 2 o 3 ore prima e 1, 2, 3, 7, 14 giorni prima; valgono anche per i promemoria degli eventi nel calendario. Fra le 22:00 e le 7:00 arrivano senza suono (`nightQuiet`). | «Esame domani: Analisi I» · «martedì 12 gennaio alle 9:30 · Aula 1»; «Tra 1 ora: Analisi I» · «Esame alle 9:30 · Aula 1» | Tocco → scheda della prova | Interruttore «Prove in arrivo» | No |
 | **Inizio sessione d'esame** (`sessioni`) | Il giorno prima dell'inizio di ogni sessione del corso (dal database `database/sessioni`), alle 9:00 | «Domani inizia la sessione d'esame» · «Sessione invernale, fino al 20 febbraio» | Tocco → Esami | Interruttore «Inizio sessione d'esame» | No |
 | **Esito delle prove** (`esiti`) | Il giorno dopo una prova senza esito registrato, alle 18:00; una sola volta per prova (registrando l'esito prima, non arriva) | «Com'è andata?» · «Ieri avevi l'esame di Analisi I. Registra l'esito quando lo sai.» | «Registra l'esito» (apre la scheda), «Non ricordarmelo per questa prova» | Interruttore «Com'è andata?» | Solo per la singola prova |
 | **Esami degli anni precedenti** (`anni_precedenti`) | Solo per chi ha iniziato a usare l'app dopo il 1° anno e ha ancora esami obbligatori «Da completare» (vedi [esami.md](esami.md#anni-precedenti)): alle 18:00 di 3 giorni dopo l'onboarding o il cambio di corso, e una sola ripetizione dopo 14 giorni | «Completa gli esami degli anni precedenti» · «3 esami del 1° e del 2° anno sono ancora da completare: indica quali hai già sostenuto.» | Tocco → Esami → Anni precedenti | Interruttore «Esami degli anni precedenti» | No (al massimo due, poi basta) |
@@ -51,11 +51,14 @@ richiesto nell'altro.
 
 ## Regola calendario ↔ notifiche
 
-Se il **collegamento al calendario di sistema è attivo e funzionante** e una
-prova (o l'inizio di una sessione) **è stata scritta con successo** nel
-calendario, l'app **non** pianifica le proprie notifiche per quella prova: gli
-avvisi arrivano dal calendario, con gli stessi anticipi. Altrimenti le
-pianifica lei.
+Niente doppioni. Se il **collegamento al calendario di sistema è attivo e
+funzionante** e una prova (o l'inizio di una sessione) **è nel calendario**
+(scritta da questo dispositivo o, con la regola dei dispositivi, da quello
+che aggiorna il calendario dell'account), l'app **non** pianifica le proprie
+notifiche per quella prova: gli avvisi arrivano dal calendario, con gli
+stessi anticipi. Altrimenti le pianifica lei («calendario interno»). L'app
+manda comunque le notifiche che il calendario non può dare («Com'è andata?»,
+anni precedenti, collegamenti).
 
 «Funzionante» vuol dire: l'ultima sincronizzazione è riuscita senza errori e
 il permesso (telefono) o il token (Outlook) è valido. Lo stato, con la data
@@ -93,49 +96,94 @@ descritto in [focus.md](focus.md#non-disturbare).
 ## Calendario di sistema
 
 Interruttore in Impostazioni → Calendario, con la richiesta del permesso del
-sistema solo quando lo si attiva. Si scrivono: esami, prove in itinere ed
-esoneri ancora da sostenere del corso attuale (dal database e aggiunti a
-mano) e la data d'inizio delle sessioni d'esame del corso.
+sistema solo quando lo si attiva. Si scrivono **eventi** (non attività:
+Google Tasks e Promemoria Apple non sono nel Calendar Provider di Android né
+uguali fra le piattaforme, gli eventi hanno ovunque i promemoria nativi):
+esami, prove in itinere ed esoneri ancora da sostenere del corso attuale
+(dal database e aggiunti a mano) e la data d'inizio delle sessioni d'esame.
 
-- **Android**: calendario del dispositivo con `device_calendar`, in un
-  calendario locale «UniNotes» (azzurro dell'app); se non si può creare, nel
-  calendario predefinito.
+**Evento.** Titolo «Esame: Analisi I» / «Prova in itinere/esonero: Fisica ·
+Esonero 1»; inizio all'ora della prova e fine 2 ore dopo (giornata intera se
+manca l'ora); luogo; descrizione con argomenti e note e la riga
+`Rif. UniNotes: <chiave>` (es. `esame-12`,
+`sessione-20270111-sessione-invernale`), con cui l'app ritrova i propri
+eventi, li aggiorna, li cancella e toglie i doppioni. Promemoria nativi
+(Android `METHOD_ALERT`, EventKit `EKAlarm`) agli anticipi scelti
+(predefiniti: il giorno prima e un'ora prima). Modifica della prova → evento
+aggiornato; prova sostenuta, annullata o eliminata → evento tolto.
+
+**Dove: il calendario vero dello studente**, non più un calendario «UniNotes»
+a parte (scelta in Impostazioni → Calendario, «Calendario usato», con nome,
+account e colore; senza scelta il predefinito):
+
+- **Android** (`device_calendar_backend.dart` → `AndroidCalendarBackend`,
+  codice nativo `android/.../UniNotesCalendar.kt`, canale
+  `io.github.simomagnus.universitynotes/calendario`): solo calendari
+  scrivibili, con `SYNC_EVENTS=1` e di un account vero (Google, Samsung,
+  Exchange…), mai locali; predefinito il principale dell'account Google
+  (`IS_PRIMARY` o `OWNER_ACCOUNT` = nome dell'account). Prima l'app creava con
+  `device_calendar` un calendario locale «UniNotes» (account locale,
+  `SYNC_EVENTS=0`) che Google Calendar mostrava con **«Sync error»**: i suoi
+  eventi si spostano nel calendario scelto e il calendario si elimina (come
+  sync adapter, solo se è dell'app e vuoto). Il pacchetto `device_calendar`
+  non si usa più (si può togliere dal `pubspec.yaml`).
 - **iOS e macOS**: EventKit con codice nativo (`UniNotesCalendar` in
   `ios/Runner/AppDelegate.swift` e `macos/Runner/MainFlutterWindow.swift`,
-  canale `io.github.simomagnus.universitynotes/calendario`, lato Dart
-  `apple_calendar_backend.dart`, test in `app/test/system_links_test.dart`).
-  Il calendario «UniNotes» nasce nell'account dove l'utente vede i suoi
-  calendari (iCloud se attivo, altrimenti sul dispositivo): con
-  `device_calendar` su iPhone finiva «Sul mio iPhone», che con iCloud attivo
-  l'app Calendario non mostra; un calendario così rimasto da una versione
-  precedente viene svuotato degli eventi dell'app ed eliminato se vuoto. Gli
-  eventi si aggiornano sul posto (stesso id; se l'evento è stato tolto a
-  mano si ricrea), la ricerca va a blocchi di un anno (EventKit cerca al
-  massimo 4 anni per volta). Accesso completo (`requestFullAccessToEvents`
-  da iOS 17/macOS 14; con l'accesso «solo aggiunta» l'app non può evitare i
-  doppioni e lo considera non concesso). Sul Mac: entitlement
-  `com.apple.security.personal-information.calendars` e testi del permesso
-  nell'Info.plist.
-- Android, iOS e macOS: ogni evento porta nella descrizione la riga `Rif. UniNotes: <chiave>` (es.
-  `esame-12`, `sessione-20270111-sessione-invernale`): l'app ritrova così i
-  propri eventi, li aggiorna o li cancella e toglie i doppioni. Promemoria
-  dell'evento agli stessi istanti delle notifiche.
+  stesso canale, lato Dart `apple_calendar_backend.dart`): il calendario
+  predefinito per i nuovi eventi (o quello scelto); su iPhone senza iCloud va
+  bene anche «Sul mio iPhone». Il calendario «UniNotes» delle versioni
+  precedenti si svuota e si toglie. Ricerca a blocchi di un anno (EventKit
+  cerca al massimo 4 anni per volta). Accesso completo
+  (`requestFullAccessToEvents` da iOS 17/macOS 14). Sul Mac: entitlement
+  `com.apple.security.personal-information.calendars`.
 - **Windows**: calendario Outlook dell'account Microsoft già collegato per
-  OneDrive, con Microsoft Graph. Lo scope delegato `Calendars.ReadWrite` si
-  chiede con il consenso dinamico solo quando si attiva il calendario: prima
-  in silenzio (se il consenso c'è già), poi con la pagina di Microsoft
-  sull'account collegato; il token è separato da quello di OneDrive, il cui
-  flusso non cambia. Calendario «UniNotes» creato con `POST /me/calendars`;
-  ogni evento ha la chiave in una proprietà estesa invisibile
-  (`singleValueExtendedProperties`) e il suo id è salvato localmente;
-  `reminderMinutesBeforeStart` è uno solo per evento (limite di Outlook): si
-  usa l'anticipo più vicino alla prova. Senza account Microsoft collegato la
-  sezione lo spiega e porta a Collegamenti.
+  OneDrive, con Microsoft Graph (`outlook_calendar_backend.dart`). Lo scope
+  delegato `Calendars.ReadWrite` si chiede con il consenso dinamico solo
+  quando si attiva il calendario (token separato da quello di OneDrive).
+  **Causa del «niente nel calendario» (22/10/2026)**: gli eventi venivano
+  scritti (stato «Collegamento funzionante») in un calendario a parte
+  «UniNotes» creato con `POST /me/calendars`, che Outlook elenca sotto «I miei
+  calendari» ma spesso non mostra (casella non spuntata, app Calendario di
+  Windows, Outlook sul telefono). Ora vanno nel calendario principale
+  dell'account (`isDefaultCalendar`, o quello scelto), quelli vecchi si
+  spostano e «UniNotes» vuoto si elimina; lo stato dice in quale calendario e
+  di quale account sono. Gli eventi dell'app si leggono con un filtro sulla
+  proprietà estesa (`singleValueExtendedProperties/Any(…)`), così nel
+  calendario principale non si scorrono quelli dello studente; se Graph non
+  accetta il filtro si legge il periodo da 400 giorni fa a 3 anni da oggi
+  (`calendarView`). Un solo promemoria per evento (limite di Outlook): il più
+  vicino alla prova.
 - Il file .ics (`calendar_export.dart`) resta solo per un sistema senza
-  calendario collegabile: su Android, iOS, macOS e Windows non c'è più (né nelle Impostazioni,
-  né nell'onboarding, né dopo «Aggiorna database»): le prove si aggiungono a
-  mano in Esami (o arrivano dal database) e il calendario di sistema le
-  riceve da solo.
+  calendario collegabile.
+
+**Controllo di salute** (all'avvio, al ritorno nell'app, dopo ogni modifica e
+una volta al giorno): permesso concesso, calendario ancora esistente e
+scrivibile, `SYNC_EVENTS=1`, eventi dell'app riletti (quelli tolti a mano si
+ricreano); su Android anche la sincronizzazione automatica dell'account
+(`ContentResolver.getSyncAutomatically` + `getMasterSyncAutomatically`): se è
+spenta gli eventi si scrivono lo stesso (il telefono avvisa comunque) con un
+avviso in Impostazioni. Un problema grave → **calendario interno**.
+
+**Calendario interno** (nessun calendario sincronizzato, permesso tolto,
+calendario sparito): l'agenda è quella dell'app (prove e sessioni nel
+database, `buildAgenda`), nessun calendario visibile nel telefono; le
+notifiche le pianifica l'app (Android: all'ora esatta se il sistema lo
+consente, «Avvisi puntuali» in Impostazioni → Calendario chiede
+`SCHEDULE_EXACT_ALARM`, altrimenti inesatte; iOS: le 60 più vicine,
+ripianificate a ogni apertura e aggiornamento; Windows e macOS: notifiche
+pianificate). Se il calendario torna a funzionare le notifiche dell'app per
+le prove spariscono da sole.
+
+**Un solo dispositivo scrive per account.** Con i dati sincronizzati fra
+dispositivi (OneDrive/Google Drive), l'impostazione sincronizzata
+`syscal_writers` dice quale dispositivo aggiorna il calendario di ogni
+account (`device:<account>`, `outlook:<indirizzo>`): il primo che lo collega.
+Gli altri leggono soltanto gli eventi (per non mandare notifiche doppie) e
+mostrano «Calendario aggiornato dal telefono» con «Aggiorna da questo
+dispositivo». Se il dispositivo che scriveva non si sente da 21 giorni, il
+posto passa a chi sincronizza; spegnendo il calendario su di lui il posto si
+libera. Anche se due dispositivi scrivessero insieme, la chiave nella
+descrizione fa togliere il doppione.
 
 **Quando si propone il calendario.** Sul telefono (Android, iOS) un passo
 dell'onboarding, dopo gli avvisi: «Vuoi le prove nel calendario?» con «Non
@@ -146,15 +194,9 @@ Windows (Outlook, serve l'account Microsoft) e per chi ha saltato
 l'onboarding la proposta arriva al primo salvataggio di una prova con una
 data, una volta sola; poi si decide da Impostazioni → Calendario.
 
-Spegnendo l'interruttore l'app toglie i propri eventi dal calendario. La
-sincronizzazione parte all'avvio, dopo ogni modifica delle prove
-(`revision.bump()`, con un ritardo di 2 secondi), al cambio di corso o
-percorso e al ritorno nell'app.
-
-Nota sulla dipendenza: `device_calendar` 4.3.3 (ultima versione) chiede
-`timezone ^0.9`, `flutter_local_notifications` 22 chiede `^0.11`; il
-`pubspec.yaml` forza `timezone ^0.11` (`dependency_overrides`): le API usate
-dal pacchetto sono invariate (verificato in compilazione e nei test).
+Spegnendo l'interruttore l'app toglie i propri eventi dal calendario (solo
+sul dispositivo che li scrive). Test: `app/test/calendar_sync_test.dart`,
+`app/test/outlook_calendar_test.dart`, `app/test/system_links_test.dart`.
 
 ## Permessi e consenso
 
@@ -173,9 +215,11 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
   «Vuoi un avviso prima delle prove?», una sola volta), oppure usa
   l'interruttore «Notifiche di UniNotes». Senza consenso l'app non
   pianifica nulla.
-- Android 13+: `POST_NOTIFICATIONS`. Pianificazione **inesatta**
-  (`AndroidScheduleMode.inexactAllowWhileIdle`): niente
-  `SCHEDULE_EXACT_ALARM`, qualche minuto di ritardo è accettabile.
+- Android 13+: `POST_NOTIFICATIONS`. Prove e sessioni all'ora esatta
+  (`exactAllowWhileIdle`) se lo studente concede «Sveglie e promemoria»
+  (`SCHEDULE_EXACT_ALARM`, pulsante «Avvisi puntuali» con il calendario
+  interno), altrimenti inesatte (`inexactAllowWhileIdle`, qualche minuto di
+  ritardo).
   `RECEIVE_BOOT_COMPLETED` e i receiver del pacchetto ripianificano dopo il
   riavvio. Calendario: `READ_CALENDAR`, `WRITE_CALENDAR`.
 - iOS: permesso delle notifiche (avvisi e suoni) e del calendario
@@ -183,7 +227,13 @@ dal pacchetto sono invariate (verificato in compilazione e nei test).
 - macOS: permesso delle notifiche.
 - Windows: versione del sito non pacchettizzata, inizializzazione con nome
   «UniNotes», AppUserModelID `io.github.simomagnus.universitynotes` e GUID
-  fisso (attivazione al tocco anche ad app chiusa); nella versione del
+  fisso (attivazione al tocco anche ad app chiusa). Il logo accanto a
+  «UniNotes» in cima al toast viene dall'`IconUri` della chiave
+  `HKCU\Software\Classes\AppUserModelId\io.github.simomagnus.universitynotes`:
+  il pacchetto la scriveva a volte vuota, ora l'app la controlla a ogni avvio
+  e la riscrive con il percorso assoluto di
+  `data\flutter_assets\assets\notifiche\uninotes.png`
+  (`windows_toast_icon.dart`), anche per chi aveva già l'app; nella versione del
   Microsoft Store (MSIX) l'attivazione dalle notifiche è registrata nel
   manifest (`app/windows/msix/AppxManifest.xml`).
 

@@ -143,6 +143,177 @@ class RRule extends RBlock {
   List<String> get texts => const [''];
 }
 
+enum RAlign { left, center, right, justify }
+
+enum RAnchor { top, middle, bottom }
+
+/// Tratto di testo di una diapositiva: dimensione in punti e colore (ARGB).
+class RRun {
+  const RRun(this.span, {this.size = 18, this.color});
+  final RSpan span;
+  final double size;
+  final int? color;
+}
+
+/// Paragrafo di una casella di testo di una diapositiva.
+class RSlidePara {
+  const RSlidePara(
+    this.runs, {
+    this.align = RAlign.left,
+    this.indent = 0,
+    this.hanging = 0,
+    this.bullet,
+    this.bulletColor,
+    this.spaceBefore = 0,
+    this.lineSpacing = 1,
+    this.size = 18,
+  });
+  final List<RRun> runs;
+  final RAlign align;
+
+  /// Rientro a sinistra del testo, in punti.
+  final double indent;
+
+  /// Spazio del segno dell'elenco a sinistra del testo, in punti.
+  final double hanging;
+
+  /// Segno dell'elenco ("•", "1.").
+  final String? bullet;
+  final int? bulletColor;
+
+  /// Spazio prima, in punti.
+  final double spaceBefore;
+
+  /// Interlinea (1 = singola).
+  final double lineSpacing;
+
+  /// Dimensione del testo del paragrafo (anche vuoto), in punti.
+  final double size;
+
+  String get text => runs.map((r) => r.span.text).join();
+}
+
+/// Cella di una tabella di una diapositiva.
+class RSlideCell {
+  const RSlideCell(this.paras, {this.fill, this.span = 1});
+  final List<RSlidePara> paras;
+  final int? fill;
+
+  /// Colonne occupate (celle unite).
+  final int span;
+
+  String get text => paras.map((p) => p.text).join('\n');
+}
+
+/// Tabella di una diapositiva: larghezze delle colonne e altezze delle
+/// righe in punti.
+class RSlideTable {
+  const RSlideTable(this.columns, this.rows, this.cells);
+  final List<double> columns;
+  final List<double> rows;
+
+  /// Righe di celle (le celle coperte da un'unione non ci sono).
+  final List<List<RSlideCell>> cells;
+}
+
+/// Comando di un tracciato, con i punti in frazioni del riquadro (0–1):
+/// 0 sposta, 1 linea, 2 curva cubica (3 punti), 3 chiude.
+class RPathCmd {
+  const RPathCmd(this.op, [this.points = const []]);
+  final int op;
+  final List<double> points;
+}
+
+/// Forma di una diapositiva: riquadro in punti, riempimento, contorno,
+/// immagine, testo o tabella.
+class RShape {
+  const RShape({
+    required this.x,
+    required this.y,
+    required this.w,
+    required this.h,
+    this.rotation = 0,
+    this.flipH = false,
+    this.flipV = false,
+    this.geometry = 'rect',
+    this.adjust,
+    this.path,
+    this.fill,
+    this.line,
+    this.lineWidth = 1,
+    this.image,
+    this.crop = const [0, 0, 0, 0],
+    this.paras = const [],
+    this.anchor = RAnchor.top,
+    this.insets = const [7.2, 3.6, 7.2, 3.6],
+    this.table,
+    this.label,
+  });
+  final double x;
+  final double y;
+  final double w;
+  final double h;
+
+  /// Gradi, in senso orario.
+  final double rotation;
+  final bool flipH;
+  final bool flipV;
+
+  /// Forma predefinita ("rect", "roundRect", "ellipse", "line", ...).
+  final String geometry;
+
+  /// Regolazione della forma predefinita (es. punta del triangolo, raggio
+  /// degli angoli), in frazione; null = valore predefinito.
+  final double? adjust;
+
+  /// Tracciati di una forma disegnata a mano (al posto di [geometry]).
+  final List<List<RPathCmd>>? path;
+  final int? fill;
+  final int? line;
+  final double lineWidth;
+  final Uint8List? image;
+
+  /// Ritaglio dell'immagine: sinistra, alto, destra, basso (frazioni).
+  final List<double> crop;
+  final List<RSlidePara> paras;
+  final RAnchor anchor;
+
+  /// Margini interni del testo: sinistra, alto, destra, basso (punti).
+  final List<double> insets;
+  final RSlideTable? table;
+
+  /// Contenuto che l'app non disegna (es. "Grafico"): riquadro con il nome.
+  final String? label;
+}
+
+/// Diapositiva disegnata come nell'originale: forme, immagini, tabelle e
+/// caselle di testo al loro posto (misure in punti).
+class RSlide extends RBlock {
+  const RSlide({
+    required this.width,
+    required this.height,
+    required this.shapes,
+    this.background = 0xFFFFFFFF,
+    this.backgroundImage,
+  });
+  final double width;
+  final double height;
+  final List<RShape> shapes;
+  final int background;
+  final Uint8List? backgroundImage;
+
+  /// Testi nell'ordine delle forme: un paragrafo (o una cella) per testo.
+  @override
+  List<String> get texts => [
+    for (final s in shapes) ...[
+      for (final p in s.paras) p.text,
+      if (s.table != null)
+        for (final row in s.table!.cells)
+          for (final c in row) c.text,
+    ],
+  ];
+}
+
 /// Pagina, diapositiva, foglio, capitolo o nota.
 class RSection {
   RSection(this.title, [List<RBlock>? blocks]) : blocks = blocks ?? [];
@@ -192,8 +363,13 @@ class RDoc {
     this.tabs = false,
     List<RTable>? tables,
     this.mono = false,
+    this.limits = const [],
   }) : toc = toc ?? [],
        tables = tables ?? [];
+
+  /// Parti del file che l'app non mostra (es. "grafici", "formule"): se ce
+  /// ne sono, all'apertura si propone l'app di riferimento.
+  final List<String> limits;
 
   final List<RSection> sections;
 

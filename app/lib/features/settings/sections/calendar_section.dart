@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,9 @@ class _CalendarData {
     required this.ics,
     required this.microsoftConnected,
     required this.adminBlocked,
+    required this.choices,
+    required this.chosen,
+    required this.exact,
   });
   final CalendarStatus status;
   final bool ics;
@@ -29,14 +34,27 @@ class _CalendarData {
 
   /// Windows: account Microsoft collegato (Collegamenti → OneDrive).
   final bool microsoftConnected;
+
+  /// Calendari tra cui scegliere (vuoto se il calendario è spento o manca il
+  /// permesso).
+  final List<CalendarChoice> choices;
+
+  /// Calendario scelto (null = predefinito).
+  final String? chosen;
+
+  /// Android: avvisi all'ora esatta consentiti.
+  final bool exact;
 }
 
 /// «Calendario»: esami, prove in itinere ed esoneri (aggiunti a mano in
-/// Esami o dal database) nel calendario di sistema (Android, iOS, macOS:
-/// calendario del dispositivo; Windows: Outlook dell'account Microsoft),
-/// aggiornati da soli a ogni modifica. Il file .ics resta solo dove non c'è
-/// un calendario di sistema collegabile (nessuna delle quattro piattaforme
-/// dell'app).
+/// Esami o dal database) come eventi nel calendario vero dello studente
+/// (Android: un calendario sincronizzato, di solito Google; iPhone, iPad e
+/// Mac: il predefinito; Windows: Outlook dell'account Microsoft), con i
+/// promemoria nativi e aggiornati da soli a ogni modifica. Si può scegliere
+/// il calendario; senza un calendario utilizzabile le notifiche le manda
+/// l'app («calendario interno», nessun calendario visibile). Con i dati
+/// sincronizzati fra dispositivi scrive un solo dispositivo per account. Il
+/// file .ics resta solo dove non c'è un calendario di sistema collegabile.
 class CalendarSection extends StatefulWidget {
   const CalendarSection({super.key});
 
@@ -69,13 +87,23 @@ class _CalendarSectionState extends State<CalendarSection> {
 
   Future<_CalendarData> _load() async {
     final outlook = _s.reminders.outlook;
+    final status = await _s.reminders.calendar.status();
+    var choices = const <CalendarChoice>[];
+    if (status.enabled) {
+      try {
+        choices = await _s.reminders.calendarChoices();
+      } catch (_) {}
+    }
     return _CalendarData(
-      status: await _s.reminders.calendar.status(),
+      status: status,
       ics: await CalendarExport(_s).enabled(),
       microsoftConnected: outlook == null
           ? true
           : await outlook.microsoftConnected(),
       adminBlocked: outlook != null && await _s.onedrive.adminConsentNeeded(),
+      choices: choices,
+      chosen: await _s.reminders.calendar.chosen(),
+      exact: await _s.reminders.exactAlarmsAllowed(),
     );
   }
 
@@ -106,8 +134,11 @@ class _CalendarSectionState extends State<CalendarSection> {
     try {
       if (chooseAccount) await outlook?.connect(chooseAccount: true);
       final st = await _s.reminders.enableCalendar();
-      if (mounted && !st.working && st.error != null) {
+      if (!mounted) return;
+      if (!st.working && st.error != null) {
         await showErrorDialog(context, 'Calendario non aggiornato', st.error!);
+      } else if (st.working) {
+        showSnack(context, calendarConnectedMessage(st));
       }
     } catch (e) {
       if (outlook == null || !MicrosoftAdminConsent.isAdminConsentError(e)) {
@@ -142,9 +173,22 @@ class _CalendarSectionState extends State<CalendarSection> {
       clientId: id,
       declined: MicrosoftAdminConsent.isDeclined(error),
       personalHint:
-          'Gratuito. Il calendario «UniNotes» sarà nell\'Outlook dell\'account '
+          'Gratuito. Le prove saranno nel calendario Outlook dell\'account '
           'personale; OneDrive resta collegato come ora.',
     );
+  }
+
+  Future<void> _choose(String? id) async {
+    setState(() => _busy = true);
+    try {
+      final st = await _s.reminders.chooseCalendar(id);
+      if (mounted && st.working) {
+        showSnack(context, calendarConnectedMessage(st));
+      }
+    } finally {
+      if (mounted) setState(() => _busy = false);
+      _reload();
+    }
   }
 
   @override
@@ -200,12 +244,19 @@ class _CalendarSectionState extends State<CalendarSection> {
                       title: Text(
                         windows
                             ? 'Scrivi le prove nel calendario Outlook'
-                            : 'Scrivi le prove nel calendario del dispositivo',
+                            : 'Scrivi le prove nel tuo calendario',
                       ),
-                      subtitle: const Text(
-                        'Esami, prove in itinere, esoneri e inizio delle '
-                        'sessioni nel calendario «UniNotes», con i '
-                        'promemoria. Si aggiornano da soli quando li modifichi.',
+                      subtitle: Text(
+                        windows
+                            ? 'Esami, prove in itinere, esoneri e inizio delle '
+                                  'sessioni come eventi nel calendario del tuo '
+                                  'account Microsoft, con i promemoria. Si '
+                                  'aggiornano da soli quando li modifichi.'
+                            : 'Esami, prove in itinere, esoneri e inizio delle '
+                                  'sessioni come eventi nel calendario che usi '
+                                  '(Google, Samsung, iCloud…), con i '
+                                  'promemoria. Si aggiornano da soli quando li '
+                                  'modifichi.',
                       ),
                       value: st.enabled,
                       onChanged: _busy ? null : _toggle,
@@ -224,10 +275,41 @@ class _CalendarSectionState extends State<CalendarSection> {
                     ),
                   if (st.enabled) ...[
                     const SizedBox(height: 4),
-                    _StatusLine(status: st),
-                    if (!st.working)
-                      ActionWrap(
-                        children: [
+                    CalendarStatusLine(
+                      status: st,
+                      thisDevice: _s.onedrive.deviceName,
+                    ),
+                    if (d.choices.isNotEmpty && st.writtenBy == null) ...[
+                      const SizedBox(height: 8),
+                      _CalendarPicker(
+                        choices: d.choices,
+                        chosen: d.chosen,
+                        current: st.calendarName,
+                        enabled: !_busy,
+                        onChanged: _choose,
+                      ),
+                    ],
+                    const SizedBox(height: 4),
+                    Text(
+                      'Promemoria agli anticipi scelti in Notifiche → Prove '
+                      'in arrivo (predefiniti: il giorno prima e un\'ora '
+                      'prima). Con il calendario funzionante gli avvisi delle '
+                      'prove arrivano da lì, non due volte.',
+                      style: muted,
+                    ),
+                    ActionWrap(
+                      children: [
+                        if (st.writtenBy != null)
+                          AsyncActionButton(
+                            label: 'Aggiorna da questo dispositivo',
+                            icon: Icons.devices_outlined,
+                            errorTitle: 'Calendario non aggiornato',
+                            onPressed: () async {
+                              await _s.reminders.takeOverCalendar();
+                              _reload();
+                            },
+                          ),
+                        if (!st.working)
                           AsyncActionButton(
                             label: windows ? 'Ricollega' : 'Riprova',
                             icon: Icons.refresh,
@@ -237,8 +319,17 @@ class _CalendarSectionState extends State<CalendarSection> {
                               _reload();
                             },
                           ),
-                        ],
-                      ),
+                        if (st.internal && Platform.isAndroid && !d.exact)
+                          AsyncActionButton(
+                            label: 'Avvisi puntuali',
+                            icon: Icons.alarm_on_outlined,
+                            onPressed: () async {
+                              await _s.reminders.requestExactAlarms();
+                              _reload();
+                            },
+                          ),
+                      ],
+                    ),
                   ],
                 ],
                 // file .ics solo senza calendario di sistema collegabile
@@ -283,38 +374,160 @@ class _CalendarSectionState extends State<CalendarSection> {
   }
 }
 
-/// «Collegamento funzionante · ultima sincronizzazione …» o l'errore.
-class _StatusLine extends StatelessWidget {
-  const _StatusLine({required this.status});
+/// «Prove nel calendario «Calendario» · nome@gmail.com».
+String calendarConnectedMessage(CalendarStatus st) {
+  final where = [
+    if (st.calendarName != null) '«${st.calendarName}»',
+    if (st.account != null && st.account!.isNotEmpty) st.account!,
+  ].join(' · ');
+  return where.isEmpty
+      ? 'Calendario collegato: le prove sono nel tuo calendario.'
+      : 'Calendario collegato: le prove sono nel calendario $where.';
+}
+
+/// Scelta del calendario (nome, account e colore).
+class _CalendarPicker extends StatelessWidget {
+  const _CalendarPicker({
+    required this.choices,
+    required this.chosen,
+    required this.current,
+    required this.enabled,
+    required this.onChanged,
+  });
+  final List<CalendarChoice> choices;
+  final String? chosen;
+  final String? current;
+  final bool enabled;
+  final ValueChanged<String?> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    // il calendario usato ora: quello scelto o, senza scelta, quello con il
+    // nome mostrato nello stato (il predefinito)
+    final value = choices.any((c) => c.id == chosen)
+        ? chosen
+        : choices.where((c) => c.name == current).firstOrNull?.id ??
+              choices.first.id;
+    return DropdownButtonFormField<String>(
+      key: const Key('calendar-choice'),
+      isExpanded: true,
+      initialValue: value,
+      style: Theme.of(context).textTheme.bodyLarge,
+      decoration: const InputDecoration(labelText: 'Calendario usato'),
+      items: [
+        for (final c in choices)
+          DropdownMenuItem(
+            value: c.id,
+            child: Row(
+              children: [
+                Icon(
+                  Icons.circle,
+                  size: 12,
+                  color: c.color == null ? scheme.primary : Color(c.color!),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    c.primary ? '${c.label} (principale)' : c.label,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
+      onChanged: enabled
+          ? (id) {
+              if (id != null && id != value) onChanged(id);
+            }
+          : null,
+    );
+  }
+}
+
+/// Stato del calendario: dove sono gli eventi e quando sono stati
+/// aggiornati, chi li aggiorna (un altro dispositivo) o, se non funziona,
+/// che le notifiche le manda l'app e perché.
+class CalendarStatusLine extends StatelessWidget {
+  const CalendarStatusLine({
+    super.key,
+    required this.status,
+    this.thisDevice,
+  });
   final CalendarStatus status;
+  final String? thisDevice;
+
+  /// Testo dello stato (anche per i test).
+  static String text(CalendarStatus status, {String? thisDevice}) {
+    final last = status.lastOk == null
+        ? 'mai'
+        : formatIsoDateTime(status.lastOk!.toIso8601String());
+    final where = [
+      if (status.calendarName != null) '«${status.calendarName}»',
+      if (status.account != null && status.account!.isNotEmpty)
+        status.account!,
+    ].join(' · ');
+    if (!status.working) {
+      return 'Calendario interno: le notifiche di tutte le prove le manda '
+          'l\'app (nessun calendario visibile). ${status.error ?? ''}'
+          '\nUltimo aggiornamento riuscito del calendario: $last';
+    }
+    final by = status.writtenBy;
+    if (by != null) {
+      return 'Calendario aggiornato '
+          '${calendarWriterLabel(by, thisDevice: thisDevice)}'
+          '${where.isEmpty ? '' : ' ($where)'}: questo dispositivo non lo '
+          'modifica, così non ci sono doppioni. Ultimo controllo: $last';
+    }
+    final n = status.written.length;
+    final count = n == 1 ? '1 evento' : '$n eventi';
+    return 'Collegamento funzionante · $count nel calendario '
+        '${where.isEmpty ? 'scelto' : where} · aggiornato $last';
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final ok = status.working;
-    final last = status.lastOk == null
-        ? 'mai'
-        : formatIsoDateTime(status.lastOk!.toIso8601String());
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    final warning = status.warning;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Icon(
-          ok ? Icons.check_circle_outline : Icons.error_outline,
-          size: 18,
-          color: ok ? theme.colorScheme.primary : theme.colorScheme.error,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              ok ? Icons.check_circle_outline : Icons.error_outline,
+              size: 18,
+              color: ok ? theme.colorScheme.primary : theme.colorScheme.error,
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                text(status, thisDevice: thisDevice),
+                style: theme.textTheme.bodySmall,
+              ),
+            ),
+          ],
         ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            ok
-                ? 'Collegamento funzionante · ultima sincronizzazione $last'
-                : 'Collegamento non funzionante: le notifiche dell\'app '
-                      'avvisano di tutte le prove. '
-                      '${status.error ?? ''}\nUltima sincronizzazione '
-                      'riuscita: $last',
-            style: theme.textTheme.bodySmall,
+        if (ok && warning != null) ...[
+          const SizedBox(height: 6),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.sync_problem_outlined,
+                size: 18,
+                color: theme.colorScheme.tertiary,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(warning, style: theme.textTheme.bodySmall),
+              ),
+            ],
           ),
-        ),
+        ],
       ],
     );
   }

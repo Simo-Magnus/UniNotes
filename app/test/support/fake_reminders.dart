@@ -49,9 +49,18 @@ class FakeNotificationPlatform implements NotificationPlatform {
 
   @override
   Future<void> openSystemSettings() async {}
+
+  bool exact = false;
+
+  @override
+  Future<bool> exactAlarmsAllowed() async => exact;
+
+  @override
+  Future<bool> requestExactAlarms() async => exact = true;
 }
 
-/// Calendario di sistema finto in memoria (come un calendario «UniNotes»).
+/// Calendario di sistema finto in memoria: un calendario Google principale
+/// sincronizzato (`cal-1`), più quelli aggiunti in [extra].
 class FakeCalendarBackend implements CalendarBackend {
   bool access = true;
   bool grantOnRequest = true;
@@ -63,13 +72,25 @@ class FakeCalendarBackend implements CalendarBackend {
   events = {};
   int _next = 0;
   int writes = 0;
+
+  /// Calendario in cui sono finiti gli ultimi eventi.
   String? calendarId;
+
+  /// Esito del controllo di salute.
+  CalendarHealth healthResult = CalendarHealth.fine;
+
+  /// Nessun calendario sincronizzato sul dispositivo.
+  bool noCalendars = false;
+  final List<CalendarChoice> extra = [];
 
   @override
   String get id => 'device';
 
   @override
   String get label => 'calendario finto';
+
+  @override
+  bool get localCalendarsAllowed => false;
 
   void _check() {
     if (revoked) {
@@ -84,20 +105,37 @@ class FakeCalendarBackend implements CalendarBackend {
   Future<bool> requestAccess() async => access = grantOnRequest;
 
   @override
-  Future<String> ensureCalendar(String? knownId) async {
+  Future<List<CalendarChoice>> calendars() async {
     _check();
-    return calendarId ??= 'cal-1';
+    if (noCalendars) return const [];
+    return [
+      const CalendarChoice(
+        id: 'cal-1',
+        name: 'Calendario',
+        account: 'studente@gmail.com',
+        accountType: 'com.google',
+        primary: true,
+      ),
+      ...extra,
+    ];
   }
+
+  @override
+  Future<CalendarHealth> health(CalendarChoice c) async => healthResult;
 
   @override
   Future<Map<String, List<String>>> existing(String calendarId) async {
     _check();
     final out = <String, List<String>>{};
     for (final e in events.entries) {
+      if ((eventCalendar[e.key] ?? 'cal-1') != calendarId) continue;
       (out[e.value.key] ??= []).add(e.key);
     }
     return out;
   }
+
+  /// Calendario di ogni evento (predefinito `cal-1`).
+  final Map<String, String> eventCalendar = {};
 
   @override
   Future<String> write(
@@ -112,8 +150,10 @@ class FakeCalendarBackend implements CalendarBackend {
       throw Exception('evento non trovato');
     }
     writes++;
+    this.calendarId = calendarId;
     final id = eventId ?? 'ev${_next++}';
     events[id] = (key: item.key, item: item, reminders: reminderMinutes);
+    eventCalendar[id] = calendarId;
     return id;
   }
 
@@ -121,6 +161,7 @@ class FakeCalendarBackend implements CalendarBackend {
   Future<void> delete(String calendarId, String eventId) async {
     _check();
     events.remove(eventId);
+    eventCalendar.remove(eventId);
   }
 }
 
@@ -147,7 +188,7 @@ AgendaItem examItem(
 }) => AgendaItem(
   key: examAgendaKey(id),
   kind: AgendaKind.exam,
-  title: 'Esame · $subject',
+  title: 'Esame: $subject',
   subject: subject,
   date: date,
   time: time,

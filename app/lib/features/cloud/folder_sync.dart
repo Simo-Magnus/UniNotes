@@ -172,6 +172,83 @@ abstract class FolderSync {
 
   bool wanted(String rel) => !ignored(rel) && (include?.call(rel) ?? true);
 
+  /// Documenti che vuoti (0 byte) non sono validi: un PDF o un libro vuoto
+  /// è un file rovinato (copia interrotta, file non scaricato dal fornitore
+  /// del telefono), non una modifica da propagare.
+  static const _contentful = {
+    '.pdf', '.epub', '.djvu', '.mobi', '.azw3', '.cbz', '.cbr', //
+    '.doc', '.docx', '.odt', '.rtf', '.ppt', '.pptx', '.odp', //
+    '.xls', '.xlsx', '.ods', '.one', '.zip', '.rar', '.7z', //
+    '.jpg', '.jpeg', '.png', '.gif', '.webp', '.heic', //
+    '.mp3', '.m4a', '.aac', '.wav', '.ogg', '.opus', '.flac', //
+    '.mp4', '.mov', '.mkv', '.webm', '.avi',
+  };
+
+  static bool mustHaveContent(String rel) =>
+      _contentful.contains(p.posix.extension(rel).toLowerCase());
+
+  /// File vuoto che non dovrebbe esserlo ([mustHaveContent]).
+  static bool damaged(String rel, int size) =>
+      size == 0 && mustHaveContent(rel);
+
+  /// Copie «nome (conflitto dispositivo data).ext» di [rel] tra [names].
+  static List<String> conflictCopiesOf(String rel, Iterable<String> names) {
+    final ext = p.posix.extension(rel);
+    final base = rel.substring(0, rel.length - ext.length);
+    final re = RegExp(
+      '^${RegExp.escape(base)} \\(conflitto [^)]*\\)${RegExp.escape(ext)}\$',
+    );
+    return [
+      for (final n in names)
+        if (re.hasMatch(n)) n,
+    ];
+  }
+
+  /// Il file scaricato in [part] ha la dimensione annunciata dal servizio
+  /// ([expected], 0 = non nota): altrimenti (connessione caduta senza
+  /// errore, app sospesa a metà) non sostituisce il file buono.
+  static Future<void> checkDownloaded(File part, int expected) async {
+    if (expected <= 0) return;
+    final got = await part.length();
+    if (got != expected) {
+      throw FileSystemException(
+        'Download incompleto ($got di $expected byte): si riprova alla '
+        'prossima sincronizzazione',
+        part.path,
+      );
+    }
+  }
+
+  /// Riparazione dei libri rovinati da versioni precedenti: un PDF (o altro
+  /// documento) vuoto accanto alla sua copia «(conflitto …)» piena era il
+  /// file buono rinominato per colpa di una copia vuota arrivata da un altro
+  /// dispositivo. La copia piena torna al suo nome (si ricarica sul
+  /// servizio) e quella vuota sparisce. Restituisce i file riparati.
+  Future<int> repairEmptyConflicts(Map<String, LocalFile> local) async {
+    var fixed = 0;
+    for (final rel in local.keys.toList()) {
+      final l = local[rel];
+      if (l == null || !damaged(rel, l.size)) continue;
+      final copies = [
+        for (final c in conflictCopiesOf(rel, local.keys))
+          if (local[c]!.size > 0) c,
+      ]..sort((a, b) => local[b]!.mtime.compareTo(local[a]!.mtime));
+      if (copies.isEmpty) continue;
+      final good = local[copies.first]!;
+      try {
+        await l.file.delete();
+        final moved = await good.file.rename(l.file.path);
+        final st = await moved.stat();
+        local[rel] = LocalFile(moved, st.size, st.modified.millisecondsSinceEpoch);
+        local.remove(copies.first);
+        fixed++;
+      } catch (_) {
+        // file in uso: si riprova alla prossima sincronizzazione
+      }
+    }
+    return fixed;
+  }
+
   static final _reserved = RegExp(
     r'^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$',
     caseSensitive: false,
@@ -342,6 +419,7 @@ abstract class FolderSync {
       state.clear();
     }
     final local = await listLocal();
+    await repairEmptyConflicts(local);
     final paths = {...remote.keys, ...local.keys, ...state.keys}
       ..removeWhere((r) => !wanted(r));
     final sorted = paths.toList()..sort();
@@ -357,6 +435,35 @@ abstract class FolderSync {
           (prev == null || l.size != prev.size || l.mtime != prev.mtime);
       final remoteChanged = r != null && (prev == null || r.ctag != prev.ctag);
       try {
+        if (l != null && damaged(rel, l.size)) {
+          // documento vuoto su questo dispositivo: non si carica mai (né
+          // diventa un conflitto che rinomina il file buono altrove); se il
+          // servizio ha la versione piena, la si riprende
+          if (r != null && r.size > 0) {
+            onProgress?.call('Scarico $rel');
+            state[rel] = await download(rel, r);
+            report.downloaded++;
+          } else if (r == null || prev == null || remoteChanged) {
+            report.errors.add(
+              '$rel: il file è vuoto (0 byte) su questo dispositivo, non '
+              'caricato. Aggiungilo di nuovo dall\'originale.',
+            );
+          }
+          continue;
+        }
+        if (l != null && r != null && r.size == 0 && l.size > 0 &&
+            mustHaveContent(rel)) {
+          // vuoto sul servizio (caricato rovinato da un altro dispositivo):
+          // vince la versione piena di questo dispositivo
+          onProgress?.call('Carico $rel');
+          state[rel] = await upload(rel, l.file);
+          report.uploaded++;
+          continue;
+        }
+        if (l == null && r != null && r.size == 0 && mustHaveContent(rel)) {
+          // documento vuoto sul servizio: non si scarica
+          continue;
+        }
         if (l != null && r != null) {
           if (prev == null &&
               l.size == r.size &&
@@ -365,6 +472,19 @@ abstract class FolderSync {
             // parti (es. copiato a mano). Si considera allineato. Con
             // contenuto diverso ([sameContent]) è un conflitto (sotto):
             // senza stato precedente vale «cambiato da entrambe le parti».
+            state[rel] = SyncedFile(
+              size: l.size,
+              mtime: l.mtime,
+              ctag: r.ctag,
+              remoteId: r.id,
+            );
+          } else if (localChanged &&
+              remoteChanged &&
+              mustHaveContent(rel) &&
+              l.size == r.size &&
+              await sameContent(l, r) != false) {
+            // stesso documento arrivato da entrambe le parti (es. libro
+            // riparato su due dispositivi): nessun conflitto
             state[rel] = SyncedFile(
               size: l.size,
               mtime: l.mtime,

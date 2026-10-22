@@ -68,7 +68,7 @@ class WhisperPluginEngine implements WhisperEngine {
           final res = await whisper.transcribe(
             transcribeRequest: wg.TranscribeRequest(
               audio: parts[i].path,
-              language: 'it',
+              language: options.whisperLanguage,
               threads: threads,
               isNoTimestamps: false,
               keepModelLoaded: i < parts.length - 1,
@@ -215,7 +215,7 @@ class PluginLiveWhisper extends LiveWhisper {
       final res = await _whisper.transcribe(
         transcribeRequest: wg.TranscribeRequest(
           audio: wav16k.path,
-          language: 'it',
+          language: options.whisperLanguage,
           threads:
               threads ??
               math.max(

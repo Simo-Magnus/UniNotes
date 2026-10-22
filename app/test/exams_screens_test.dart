@@ -14,6 +14,7 @@ import 'package:university_notes/models/book.dart';
 import 'package:university_notes/models/course.dart';
 import 'package:university_notes/models/exam.dart';
 import 'package:university_notes/models/university.dart';
+import 'package:university_notes/widgets/glass.dart';
 
 Future<AppServices> _seed({bool empty = false}) async {
   final db = await AppDatabase.openInMemory();
@@ -231,6 +232,127 @@ void main() {
     await tester.runAsync(() => s.database.close());
   });
 
+  testWidgets('Esami: dopo il voto si torna a «Prenotato» (voto tolto con '
+      'conferma)', (tester) async {
+    final s = (await tester.runAsync(_seed))!;
+    await _pump(tester, s, const ExamsScreen(), size: const Size(400, 3000));
+    await tester.tap(find.text('Sostenuti'));
+    await tester.pumpAndSettle();
+    final final30 = (await tester.runAsync(s.exams.all))!
+        .singleWhere((e) => e.laude);
+    await tester.tap(find.byKey(ValueKey('exam-status-${final30.id}')));
+    await tester.pumpAndSettle();
+    // due sole scelte: cambiare esito oppure tornare a «Prenotato»
+    expect(find.byKey(const ValueKey('status-taken')), findsOneWidget);
+    expect(find.byKey(const ValueKey('status-booked')), findsOneWidget);
+    expect(
+      find.byType(ListTile).evaluate().where((e) {
+        final k = e.widget.key;
+        return k is ValueKey<String> && k.value.startsWith('status-');
+      }),
+      hasLength(2),
+    );
+    expect(find.text('Cambia esito'), findsOneWidget);
+
+    // «Prenotato» chiede conferma: «Annulla» lascia il voto
+    await tester.tap(find.byKey(const ValueKey('status-booked')));
+    await tester.pumpAndSettle();
+    expect(find.text('Togliere il voto?'), findsOneWidget);
+    expect(
+      find.textContaining('Il voto 30 e lode verrà tolto'),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('Annulla'));
+    await tester.pumpAndSettle();
+    Exam? now = await tester.runAsync<Exam?>(() => s.exams.byId(final30.id!));
+    expect(now!.status, ExamStatus.passed);
+    expect(now.grade, 30);
+
+    // con «Conferma» il voto sparisce e la prova torna prenotata
+    await tester.tap(find.byKey(ValueKey('exam-status-${final30.id}')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('status-booked')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Conferma'));
+    for (var i = 0; i < 5; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 50)),
+      );
+      await tester.pump();
+    }
+    now = await tester.runAsync<Exam?>(() => s.exams.byId(final30.id!));
+    expect(now!.status, ExamStatus.booked);
+    expect(now.grade, isNull);
+    expect(now.laude, isFalse);
+
+    // «Cambia esito» riapre il menù del voto con il voto attuale
+    final other = (await tester.runAsync(s.exams.all))!
+        .singleWhere((e) => e.kind == ExamKind.midterm);
+    await tester.tap(find.byKey(ValueKey('exam-status-${other.id}')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('status-taken')));
+    await tester.pumpAndSettle();
+    expect(find.text('Esito'), findsOneWidget);
+    expect(find.byKey(const Key('grade-points')), findsOneWidget);
+    expect(
+      tester
+          .widget<TextField>(find.byKey(const Key('grade-points')))
+          .controller!
+          .text,
+      '27',
+    );
+    await tester.runAsync(() => s.database.close());
+  });
+
+  testWidgets('Sostenuti: l\'alone della card segue lo stato, non l\'ateneo', (
+    tester,
+  ) async {
+    final s = (await tester.runAsync(_seed))!;
+    // un altro insegnamento con una prova non superata
+    final other = (await tester.runAsync(
+      () => s.courses.save(
+        const Course(
+          name: 'Fisica I',
+          universityId: 'polito',
+          degreeId: 'polito:ing-informatica',
+          year: 1,
+          semester: '1',
+          cfu: 6,
+        ),
+      ),
+    ))!;
+    await tester.runAsync(
+      () => s.exams.save(
+        Exam(
+          courseId: other,
+          date: DateTime(2026, 6, 20),
+          status: ExamStatus.failed,
+        ),
+      ),
+    );
+    await _pump(tester, s, const ExamsScreen(), size: const Size(400, 3000));
+    await tester.tap(find.text('Sostenuti'));
+    await tester.pumpAndSettle();
+    final borders = {
+      for (final g in tester.widgetList<GlassCard>(find.byType(GlassCard)))
+        if (g.shape case final RoundedRectangleBorder r) r.side.color,
+    };
+    // università blu: l'alone non è più del suo colore; verde per il
+    // superato e rosso per il non superato
+    expect(
+      borders,
+      containsAll([
+        const Color(0xFF2E7D32).withValues(alpha: 0.4),
+        const Color(0xFFC62828).withValues(alpha: 0.4),
+      ]),
+    );
+    expect(
+      borders,
+      isNot(contains(const Color(0xFF1565C0).withValues(alpha: 0.4))),
+    );
+    await tester.runAsync(() => s.database.close());
+  });
+
   testWidgets('Esami: argomenti e materiali riempiti dal database', (
     tester,
   ) async {
@@ -384,7 +506,8 @@ void main() {
     expect(find.byKey(const Key('course-university')), findsOneWidget);
     expect(find.text('Politecnico di Torino'), findsOneWidget);
     expect(find.byKey(const Key('course-degree')), findsOneWidget);
-    expect(find.text('Orale (facoltativo)'), findsOneWidget);
+    expect(find.text('Orale/Scritto (facoltativo)'), findsOneWidget);
+    expect(find.text('Orale (facoltativo)'), findsNothing);
     expect(find.text('Perché e per chi'), findsNothing);
     expect(find.text('Ore di studio a casa'), findsNothing);
     expect(find.textContaining('27/30'), findsNothing);

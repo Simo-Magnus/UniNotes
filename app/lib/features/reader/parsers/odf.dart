@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:xml/xml.dart';
 
 import '../reader_document.dart';
+import 'odp_slides.dart';
+import 'pptx_slides.dart';
 import 'text_formats.dart';
 import 'zip_util.dart';
 
@@ -48,6 +50,29 @@ class OdfReader {
         if (parent != null) parents[name] = parent;
       }
     }
+  }
+
+  /// Immagini vettoriali di StarOffice/Windows (SVM, WMF, EMF), che Flutter
+  /// non disegna: sono anche le anteprime di formule e grafici.
+  static bool isVectorPicture(Uint8List d) =>
+      PptxSlides.isMetafile(d) ||
+      (d.length > 6 && String.fromCharCodes(d.sublist(0, 6)) == 'VCLMTF');
+
+  /// Parti di [root] non mostrate: formule e grafici (oggetti incorporati)
+  /// e immagini vettoriali.
+  List<String> limitsOf(XmlElement? root) {
+    if (root == null) return const [];
+    final out = <String>{};
+    if (root.firstDesc('object') != null) out.add('formule o grafici');
+    for (final img in root.desc('image')) {
+      if (img.parentElement?.kid('object') != null) continue;
+      final href = img.attr('href');
+      final data = href == null ? null : zip.bytes(href);
+      if (data != null && isVectorPicture(data)) {
+        out.add('immagini vettoriali');
+      }
+    }
+    return out.toList();
   }
 
   final Zip zip;
@@ -134,7 +159,7 @@ class OdfReader {
     final href = img?.attr('href');
     if (href != null) {
       final data = zip.bytes(href);
-      if (data != null) images.add(RImage(data));
+      if (data != null && !isVectorPicture(data)) images.add(RImage(data));
     }
     final box = frame.kid('text-box');
     if (box != null) {
@@ -246,7 +271,11 @@ RDoc parseOdt(Uint8List bytes) {
   final text = r.body?.kid('text');
   final out = <RBlock>[];
   if (text != null) r.blocks(text, out);
-  return RDoc(sections: [RSection('', out)], tables: r.tables);
+  return RDoc(
+    sections: [RSection('', out)],
+    tables: r.tables,
+    limits: r.limitsOf(text),
+  );
 }
 
 /// Presentazione OpenDocument (.odp, .otp): una sezione per diapositiva.
@@ -255,6 +284,7 @@ RDoc parseOdp(Uint8List bytes) {
   final pres = r.body?.kid('presentation');
   final sections = <RSection>[];
   final toc = <RTocEntry>[];
+  final canvas = OdpSlides(r.zip);
   for (final page in pres?.kids('page') ?? const <XmlElement>[]) {
     final out = <RBlock>[];
     String? title;
@@ -278,6 +308,15 @@ RDoc parseOdp(Uint8List bytes) {
       final table = frame.firstDesc('table');
       if (table != null) r._table(table, out);
     }
+    // pagina disegnata al posto del solo testo (che resta come ripiego)
+    try {
+      final drawn = canvas.slide(page);
+      if (drawn.shapes.isNotEmpty) {
+        out
+          ..clear()
+          ..add(drawn);
+      }
+    } catch (_) {}
     final notes = page.kid('notes');
     if (notes != null) {
       final n = <RBlock>[];
@@ -303,6 +342,7 @@ RDoc parseOdp(Uint8List bytes) {
     unitLabel: 'Diapositiva',
     toc: toc,
     tables: r.tables,
+    limits: canvas.limits.toList(),
   );
 }
 
@@ -364,5 +404,6 @@ RDoc parseOds(Uint8List bytes) {
     toc: toc,
     tabs: true,
     tables: tables,
+    limits: r.limitsOf(ss),
   );
 }

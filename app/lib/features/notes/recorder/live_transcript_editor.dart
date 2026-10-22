@@ -216,11 +216,18 @@ class TranscriptEditBuffer {
       if (owned.contains(x.key)) continue;
       final t = now[x.key];
       if (t != null && t.isNotEmpty) {
-        if (t != text.substring(x.start, x.end)) {
+        final old = text.substring(x.start, x.end);
+        if (t != old) {
           final start = x.start, end = x.end;
           // la frase stessa non si sposta: cambia la sua fine
           pieces.removeAt(i);
-          out.add(_replace(start, end, t));
+          // parole confermate in fondo alla frase in corso: si aggiungono
+          // dopo (il cursore che era alla fine della frase resta lì)
+          out.add(
+            t.startsWith(old)
+                ? _replace(end, end, t.substring(old.length), atEnd: true)
+                : _replace(start, end, t),
+          );
           pieces.insert(i, TranscriptPiece(x.key, start, start + t.length));
         }
         continue;

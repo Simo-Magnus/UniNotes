@@ -117,8 +117,14 @@ void main() {
         await tester.tap(find.text('Sostenuti'));
         await _settle(tester);
         expect(find.text('Sostenuto'), findsOneWidget);
-        // «Sostenuti»: Non superato
-        await pick('failed');
+        // «Sostenuti»: «Esito» apre il menù del voto, dove c'è «Non superato»
+        await pick('passed');
+        await tester.tap(find.byKey(const Key('grade-dropdown')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(ValueKey('grade-$kOutcomeFailed')).last);
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const Key('grade-save')));
+        await _settle(tester);
         expect(await stored(), ExamStatus.failed);
         expect(find.text('Non superato'), findsWidgets);
         // in «Da sostenere» lo stesso esame, con lo stesso stato

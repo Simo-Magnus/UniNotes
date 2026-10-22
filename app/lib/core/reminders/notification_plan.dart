@@ -255,7 +255,7 @@ List<PlannedNotification> planNotifications({
   final ids = <int>{};
   void add(PlannedNotification n) {
     if (!n.at.isAfter(now) || !ids.add(n.id)) return;
-    out.add(quietAware(n, quietUntil));
+    out.add(nightQuiet(quietAware(n, quietUntil)));
   }
 
   for (final item in agenda) {
@@ -281,10 +281,30 @@ List<PlannedNotification> planNotifications({
       continue;
     }
     if (!prefs.exams) continue;
-    for (final r in reminderTimes(item, prefs.examOffsets)) {
+    for (final r in reminderTimes(item, prefs.examOffsets, prefs.examHours)) {
       final what = item.kind == AgendaKind.midterm
           ? 'Prova in itinere'
           : 'Esame';
+      final place = item.location?.trim() ?? '';
+      if (r.hours > 0) {
+        // «Tra 1 ora: Analisi I» · «Esame alle 9:00 · Aula 5»
+        add(
+          PlannedNotification(
+            id: notificationId(NotificationType.exam, '${item.key}:h${r.hours}'),
+            type: NotificationType.exam,
+            at: r.at,
+            title: r.hours == 1
+                ? 'Tra 1 ora: ${item.subject}'
+                : 'Tra ${r.hours} ore: ${item.subject}',
+            body: [
+              '$what alle ${item.time}',
+              if (place.isNotEmpty) place,
+            ].join(' · '),
+            payload: AppRoutes.exam(item.examId!),
+          ),
+        );
+        continue;
+      }
       final when = r.days == 1 ? 'domani' : 'tra ${r.days} giorni';
       add(
         PlannedNotification(
@@ -295,8 +315,7 @@ List<PlannedNotification> planNotifications({
           body: [
             italianDate(item.date, weekday: true) +
                 (item.time != null ? ' alle ${item.time}' : ''),
-            if (item.location != null && item.location!.trim().isNotEmpty)
-              item.location!.trim(),
+            if (place.isNotEmpty) place,
           ].join(' · '),
           payload: AppRoutes.exam(item.examId!),
         ),
@@ -377,6 +396,25 @@ PlannedNotification quietAware(PlannedNotification n, DateTime? quietUntil) {
     return n;
   }
   return n.movedTo(quietUntil.add(const Duration(minutes: 1)));
+}
+
+/// Di notte (22:00–7:00) le notifiche pianificate arrivano senza suono né
+/// vibrazione: restano nella tendina per il mattino.
+PlannedNotification nightQuiet(PlannedNotification n) {
+  final h = n.at.hour;
+  if (n.silent || (h >= 7 && h < 22)) return n;
+  return PlannedNotification(
+    id: n.id,
+    type: n.type,
+    at: n.at,
+    title: n.title,
+    body: n.body,
+    payload: n.payload,
+    actions: n.actions,
+    ongoing: n.ongoing,
+    countdownTo: n.countdownTo,
+    silent: true,
+  );
 }
 
 /// Payload delle notifiche e dei widget: dove aprire l'app.

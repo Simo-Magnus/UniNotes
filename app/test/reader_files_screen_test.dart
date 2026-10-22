@@ -145,6 +145,17 @@ void main() {
       expect(find.textContaining('.docx'), findsOneWidget);
       expect(find.textContaining('.djvu'), findsOneWidget);
       expect(find.textContaining('(Apri con…)'), findsNothing);
+      // formati con la resa semplificata, spiegati in cima all'elenco
+      expect(find.textContaining('.ppt (semplificato)'), findsOneWidget);
+      expect(find.textContaining('«Semplificato»'), findsOneWidget);
+      await t.scrollUntilVisible(
+        find.textContaining('Apple Notes', findRichText: true),
+        300,
+        scrollable: find.descendant(
+          of: find.byType(AlertDialog),
+          matching: find.byType(Scrollable),
+        ),
+      );
       expect(
         find.textContaining('Apple Notes', findRichText: true),
         findsOneWidget,

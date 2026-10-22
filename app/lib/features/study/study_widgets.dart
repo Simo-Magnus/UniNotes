@@ -49,17 +49,27 @@ class CourseDropdown extends StatelessWidget {
   }
 }
 
-/// Barra di avanzamento con percentuale.
-/// Barra di avanzamento. Il colore dice a che punto sei, non di che materia
-/// si tratta (quello lo dice il pallino della materia): arancione all'inizio
+/// Barra di avanzamento (con la percentuale, salvo [showPercent] false).
+/// Il colore dice a che punto sei, non di che materia si tratta (quello lo
+/// dice il pallino della materia): arancione all'inizio
 /// (sotto il 34%), blu a metà strada, verde solo a lavoro completato.
 /// Con [color] la barra è una quota (es. tempo per materia) e usa quel colore.
 class ProgressRow extends StatelessWidget {
-  const ProgressRow({super.key, required this.value, this.label, this.color});
+  const ProgressRow({
+    super.key,
+    required this.value,
+    this.label,
+    this.color,
+    this.showPercent = true,
+  });
 
   final double value;
   final String? label;
   final Color? color;
+
+  /// false: solo la barra, senza la percentuale a destra (es. le card
+  /// «Per materia» e «Per argomento» delle Statistiche).
+  final bool showPercent;
 
   static Color colorFor(double v) => v >= 1
       ? const Color(0xFF2E7D32)
@@ -91,12 +101,15 @@ class ProgressRow extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 8),
-        // la percentuale cresce con i caratteri grandi (niente testo tagliato)
-        ConstrainedBox(
-          constraints: const BoxConstraints(minWidth: 44),
-          child: Text('$pct%', textAlign: TextAlign.end, maxLines: 1),
-        ),
+        if (showPercent) ...[
+          const SizedBox(width: 8),
+          // la percentuale cresce con i caratteri grandi (niente testo
+          // tagliato)
+          ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 44),
+            child: Text('$pct%', textAlign: TextAlign.end, maxLines: 1),
+          ),
+        ],
       ],
     );
   }
@@ -105,13 +118,17 @@ class ProgressRow extends StatelessWidget {
 /// Colore e icona per lo stato di un argomento.
 extension TopicStatusStyle on TopicStatus {
   /// Pallini e icone: almeno 3:1 sulle card in entrambi i temi.
-  Color color(ColorScheme scheme) => readableOn(switch (this) {
-    TopicStatus.notStarted => scheme.outline,
-    TopicStatus.inProgress => Colors.blue,
-    TopicStatus.partial => const Color(0xFF818CF8),
-    TopicStatus.completed => Colors.green,
-    TopicStatus.toReview => Colors.purple,
-  }, scheme.brightness, minRatio: 3);
+  Color color(ColorScheme scheme) => readableOn(
+    switch (this) {
+      TopicStatus.notStarted => scheme.outline,
+      TopicStatus.inProgress => Colors.blue,
+      TopicStatus.partial => const Color(0xFF818CF8),
+      TopicStatus.completed => Colors.green,
+      TopicStatus.toReview => Colors.purple,
+    },
+    scheme.brightness,
+    minRatio: 3,
+  );
 
   IconData get icon => switch (this) {
     TopicStatus.notStarted => Icons.radio_button_unchecked,
@@ -122,15 +139,103 @@ extension TopicStatusStyle on TopicStatus {
   };
 }
 
+/// Icona di ogni tipo di attività: stesso stile «outlined» delle icone dei
+/// tipi di file (Teoria, Esercizi, Ripasso sono le stesse), così attività e
+/// file si riconoscono a colpo d'occhio. Compare nel menu «Attività», nella
+/// schermata Focus e nell'elenco delle sessioni.
 extension ActivityTypeIcon on ActivityType {
   IconData get icon => switch (this) {
-    ActivityType.theory => Icons.menu_book,
-    ActivityType.exercises => Icons.edit_note,
+    ActivityType.theory => Icons.menu_book_outlined,
+    ActivityType.exercises => Icons.edit_note_outlined,
     ActivityType.review => Icons.replay,
-    ActivityType.reading => Icons.chrome_reader_mode,
-    ActivityType.simulation => Icons.quiz,
-    ActivityType.other => Icons.more_horiz,
+    ActivityType.reading => Icons.auto_stories_outlined,
+    ActivityType.simulation => Icons.quiz_outlined,
+    ActivityType.other => Icons.category_outlined,
   };
+}
+
+/// Casella con una scelta (es. l'intervallo delle sessioni, la materia
+/// delle statistiche per argomento): la voce scelta e la freccia; il menu
+/// elenca le voci con la spunta su quella scelta. Riquadro alto 36 px
+/// dentro un'area di tocco di 44.
+class ChoiceBox<T> extends StatelessWidget {
+  const ChoiceBox({
+    super.key,
+    required this.value,
+    required this.items,
+    required this.onChanged,
+    required this.tooltip,
+  });
+
+  final T value;
+
+  /// Voci del menu: (valore, etichetta).
+  final List<(T, String)> items;
+  final ValueChanged<T> onChanged;
+  final String tooltip;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final t = context.tokens;
+    final selected = items.indexWhere((x) => x.$1 == value);
+    final label = selected >= 0
+        ? items[selected].$2
+        : (items.firstOrNull?.$2 ?? '');
+    // il menu lavora con la posizione della voce: un valore null (es.
+    // «Tutte le materie») per il menu vorrebbe dire «chiuso senza scelta»
+    return PopupMenuButton<int>(
+      tooltip: tooltip,
+      initialValue: selected >= 0 ? selected : null,
+      position: PopupMenuPosition.under,
+      borderRadius: BorderRadius.circular(10),
+      onSelected: (i) => onChanged(items[i].$1),
+      itemBuilder: (_) => [
+        for (var i = 0; i < items.length; i++)
+          CheckedPopupMenuItem<int>(
+            value: i,
+            checked: i == selected,
+            child: Text(items[i].$2, overflow: TextOverflow.ellipsis),
+          ),
+      ],
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 44),
+        child: Center(
+          widthFactor: 1,
+          child: Container(
+            constraints: const BoxConstraints(minHeight: 36),
+            padding: const EdgeInsets.only(left: 12, right: 6),
+            decoration: BoxDecoration(
+              color: t.innerCard,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: theme.colorScheme.outline),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: t.textPrimary,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 2),
+                Icon(
+                  Icons.expand_more_rounded,
+                  size: 20,
+                  color: t.textSecondary,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 /// Dialogo con un solo campo di testo. Restituisce il testo (trim) o null.

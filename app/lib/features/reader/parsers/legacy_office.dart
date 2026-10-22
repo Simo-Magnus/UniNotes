@@ -384,12 +384,58 @@ RDoc parsePpt(Uint8List bytes) {
     sections.add(RSection(title == null ? label : '$label · $title', blocks));
     toc.add(RTocEntry(title ?? label, section: sections.length - 1));
   }
+  // immagini della presentazione (senza la diapositiva in cui stanno)
+  final pictures = pptPictures(cfb.stream('Pictures'));
+  if (pictures.isNotEmpty) {
+    sections.add(
+      RSection('Immagini della presentazione', [
+        for (final p in pictures) RImage(p),
+      ]),
+    );
+    toc.add(
+      RTocEntry('Immagini della presentazione', section: sections.length - 1),
+    );
+  }
   return RDoc(
     sections: sections,
     unitLabel: 'Diapositiva',
     toc: toc,
-    notice: kLegacyNotice,
+    notice: pictures.isEmpty
+        ? kLegacyNotice
+        : 'Formato PowerPoint 97–2003: mostrati il testo delle diapositive e, '
+              'in fondo, le immagini. Per l\'impaginazione usa "Apri con…".',
   );
+}
+
+/// Immagini PNG, JPEG e TIFF del flusso "Pictures" di un PowerPoint 97–2003
+/// (record OfficeArtBlip: intestazione di 8 byte, uno o due UID da 16 byte
+/// secondo l'istanza, un byte di etichetta, poi l'immagine). EMF, WMF e PICT
+/// si saltano (Flutter non li disegna).
+List<Uint8List> pptPictures(Uint8List? data) {
+  final out = <Uint8List>[];
+  if (data == null) return out;
+  var pos = 0;
+  while (pos + 8 <= data.length && out.length < 500) {
+    final verInst = data[pos] | (data[pos + 1] << 8);
+    final type = data[pos + 2] | (data[pos + 3] << 8);
+    final len =
+        data[pos + 4] |
+        (data[pos + 5] << 8) |
+        (data[pos + 6] << 16) |
+        (data[pos + 7] << 24);
+    final start = pos + 8;
+    final end = start + len;
+    if (len < 0 || end > data.length || type < 0xF018 || type > 0xF117) break;
+    final instance = verInst >> 4;
+    // istanza dispari: due UID
+    final skip = (instance.isOdd ? 32 : 16) + 1;
+    if ((type == 0xF01D || type == 0xF01E || type == 0xF029 || type == 0xF02A) &&
+        len > skip) {
+      out.add(Uint8List.sublistView(data, start + skip, end));
+    }
+    pos = end;
+  }
+  return out;
 }
 
 // --------------------------------------------------------------- Excel

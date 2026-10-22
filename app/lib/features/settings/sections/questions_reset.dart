@@ -5,6 +5,7 @@ import '../../../core/feedback/feedback_service.dart';
 import '../../../core/services/app_services.dart';
 import '../../../repositories/settings_repository.dart';
 import '../../../widgets/common.dart';
+import '../../../widgets/undo_snack_bar.dart';
 
 /// Prefisso delle impostazioni «Non chiedere più» in tutta l'app (es.
 /// `dont_ask_attachment_kind`, `dont_ask_delete_recording`): si azzerano
@@ -37,13 +38,27 @@ class ResetQuestionsTile extends StatelessWidget {
           'dell\'eliminazione di una registrazione).',
     );
     if (!ok || !context.mounted) return;
-    final n = await resetDontAskQuestions(context.read<AppServices>().settings);
+    final settings = context.read<AppServices>().settings;
+    // scelte di prima, per «Annulla»
+    final before = {
+      for (final e in (await settings.allSettings()).entries)
+        if (e.key.startsWith(kDontAskPrefix)) e.key: e.value,
+    };
+    final n = await resetDontAskQuestions(settings);
     if (!context.mounted) return;
-    showSnack(
+    if (n == 0) {
+      showSnack(context, 'Nessuna domanda da ripristinare.');
+      return;
+    }
+    showUndoSnackBar(
       context,
-      n == 0
-          ? 'Nessuna domanda da ripristinare.'
-          : 'Domande ripristinate: l\'app chiederà di nuovo.',
+      'Domande ripristinate: l\'app chiederà di nuovo.',
+      undoneMessage: 'Scelte «Non chiedere più» rimesse com\'erano.',
+      onUndo: () async {
+        for (final e in before.entries) {
+          await settings.set(e.key, e.value);
+        }
+      },
     );
   }
 

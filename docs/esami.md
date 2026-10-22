@@ -22,6 +22,17 @@ nome degli insegnamenti. Codice in `app/lib/features/exams/`,
   dell'esito: «In attesa dell'esito», «Non superato», «Idoneità (senza voto)»
   o un voto 18-30 (lode con 30); così «Non superato» si raggiunge da «Da
   prenotare» e da «Prenotato».
+- Anche dopo l'esito si può **tornare indietro**: da «Sostenuto» (in attesa)
+  e da «Superato» le due scelte sono «Esito» / «Cambia esito» (riapre il menù
+  del voto, con il voto attuale) e «Prenotato». Da «Superato» a «Prenotato» il
+  voto (o l'idoneità, o il punteggio) si toglie dopo una conferma («Togliere
+  il voto?», «Annulla» / «Conferma»); da «Prenotato» si arriva a «Da
+  prenotare». «Non superato» si sceglie nel menù dell'esito.
+- Nei **Sostenuti** la card di ogni insegnamento (bordo e fascia del titolo)
+  ha il colore dello stato della prova — superato verde, non superato rosso,
+  in attesa viola, annullato grigio —, non quello dell'ateneo
+  (`CourseExamGroup.headlineStatus`: il finale superato, altrimenti l'ultimo
+  finale, altrimenti l'ultima prova in itinere).
 - Il menù «Voto» (dettaglio della prova e modulo) ha le stesse voci: scegliere
   un voto segna la prova come superata, «Non superato» la segna non superata.
   Le prove in itinere e gli esoneri hanno il punteggio libero e la casella

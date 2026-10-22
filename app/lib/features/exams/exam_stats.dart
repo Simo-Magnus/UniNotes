@@ -214,6 +214,17 @@ class CourseExamGroup {
     return p.isEmpty ? null : p.last;
   }
 
+  /// Stato che dà il colore alla card del corso (bordo e intestazione): l'esame
+  /// finale superato; altrimenti l'ultimo esame finale; senza finali l'ultima
+  /// prova in itinere. Null se il gruppo non ha prove.
+  ExamStatus? get headlineStatus {
+    final p = passedFinal;
+    if (p != null) return p.status;
+    if (finals.isNotEmpty) return finals.last.status;
+    if (midterms.isNotEmpty) return midterms.last.status;
+    return null;
+  }
+
   String get name => course?.name ?? 'Corso sconosciuto';
 }
 

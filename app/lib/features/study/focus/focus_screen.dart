@@ -8,20 +8,32 @@ import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../../models/attachment.dart';
+import '../../../models/course.dart';
 import '../../../models/study.dart';
 import '../../../widgets/common.dart';
 import '../../../widgets/glass.dart';
+import '../attachments.dart' show openAttachment;
 import '../study_stats.dart';
+import 'focus_context.dart';
 import 'focus_goal.dart';
 import 'focus_plan.dart';
 import 'focus_service.dart';
 import 'focus_system.dart';
 import 'focus_timer.dart';
 
-/// Apre la schermata della sessione in corso.
-Future<void> openFocusScreen(BuildContext context) =>
-    Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));
+/// Apre la schermata della sessione in corso. Se è già aperta sotto un
+/// file aperto da lì (riquadro della sessione sopra il lettore) si torna a
+/// quella, senza aprirne una seconda.
+Future<void> openFocusScreen(BuildContext context) async {
+  final open = FocusScreen.openRoute;
+  if (open != null && open.isActive && open.navigator != null) {
+    open.navigator!.popUntil((r) => r == open);
+    return;
+  }
+  await Navigator.of(context)
+      .push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));
+}
 
 enum FocusCloseChoice { save, discard, cancel }
 
@@ -71,29 +83,85 @@ Future<bool> finishFocusAsking(BuildContext context, FocusService f) async {
   }
 }
 
-/// Sessione Focus a tutto schermo: anello grande con il tempo del tratto
-/// in corso, tratti della sessione, pausa, «Salta pausa» e «Termina». Alla
-/// fine il riepilogo con l'obiettivo del giorno.
+/// Sessione Focus a tutto schermo. In alto che cosa si studia
+/// (insegnamento, modulo, argomento, attività), al centro il protagonista:
+/// l'anello grande con il tempo del tratto in corso, i tratti della
+/// sessione, pausa, «Salta pausa» e «Termina»; poi i file del modulo, da
+/// aprire con un tocco senza fermare il timer (su schermi larghi in un
+/// pannello a destra). Alla fine il riepilogo con l'obiettivo del giorno.
 class FocusScreen extends StatefulWidget {
   const FocusScreen({super.key});
+
+  /// Pagina della schermata aperta (null = chiusa): vedi [openFocusScreen].
+  static ModalRoute<Object?>? openRoute;
 
   @override
   State<FocusScreen> createState() => _FocusScreenState();
 }
 
 class _FocusScreenState extends State<FocusScreen> {
-  late final FocusService _f = context.read<AppServices>().focus;
+  late final AppServices _s = context.read<AppServices>();
+  late final FocusService _f = _s.focus;
+
+  /// Insegnamento, modulo, argomento e file della sessione (null mentre si
+  /// carica).
+  FocusContext? _ctx;
+  Object? _ctxKey;
+  ModalRoute<Object?>? _route;
 
   @override
   void initState() {
     super.initState();
     _f.screenVisible = true;
+    _s.revision.addListener(_reloadContext);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _route = ModalRoute.of(context);
+    FocusScreen.openRoute = _route;
   }
 
   @override
   void dispose() {
+    _s.revision.removeListener(_reloadContext);
+    if (FocusScreen.openRoute == _route) FocusScreen.openRoute = null;
     _f.screenVisible = false;
     super.dispose();
+  }
+
+  /// Ricarica nomi e file se cambia il collegamento della sessione.
+  void _syncContext() {
+    final l = _f.current;
+    final key = (l.courseId, l.moduleId, l.topicId);
+    if (key == _ctxKey) return;
+    _ctxKey = key;
+    _reloadContext();
+  }
+
+  Future<void> _reloadContext() async {
+    final key = _ctxKey;
+    final FocusContext ctx;
+    try {
+      ctx = await FocusContext.load(_s, _f.current);
+    } catch (_) {
+      return; // dati non leggibili (es. app in chiusura): resta l'ultimo
+    }
+    if (mounted && key == _ctxKey) setState(() => _ctx = ctx);
+  }
+
+  /// Apre un file della sessione: la sessione continua e, finché il file è
+  /// aperto, il riquadro della sessione resta sopra il lettore (tocco =
+  /// ritorno qui). «Non disturbare» non cambia.
+  Future<void> _openFile(Course course, Attachment a) async {
+    AppFeedback.of(context).tap();
+    _f.screenVisible = false;
+    try {
+      await openAttachment(context, course, a);
+    } finally {
+      if (mounted) _f.screenVisible = true;
+    }
   }
 
   Future<void> _finish() async {
@@ -111,16 +179,25 @@ class _FocusScreenState extends State<FocusScreen> {
       builder: (context, _) {
         final active = _f.active;
         final done = _f.completed.value;
+        if (active) _syncContext();
+        final ctx = _ctx;
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              active ? (_f.current.label ?? 'Sessione Focus') : 'Focus',
+              active ? 'Sessione Focus' : 'Focus',
               overflow: TextOverflow.ellipsis,
             ),
           ),
           body: SafeArea(
             child: active
-                ? _Running(focus: _f, onFinish: _finish)
+                ? _Running(
+                    focus: _f,
+                    onFinish: _finish,
+                    header: FocusContextHeader(ctx: ctx, link: _f.current),
+                    files: ctx?.course == null
+                        ? null
+                        : FocusFilesPanel(ctx: ctx!, onOpen: _openFile),
+                  )
                 : done != null
                 ? _Completed(result: done, focus: _f)
                 : const Center(child: Text('Nessuna sessione in corso.')),
@@ -132,9 +209,24 @@ class _FocusScreenState extends State<FocusScreen> {
 }
 
 class _Running extends StatelessWidget {
-  const _Running({required this.focus, required this.onFinish});
+  const _Running({
+    required this.focus,
+    required this.onFinish,
+    required this.header,
+    required this.files,
+  });
   final FocusService focus;
   final VoidCallback onFinish;
+
+  /// Che cosa si studia (sopra l'anello).
+  final Widget header;
+
+  /// Pannello dei file (null senza insegnamento).
+  final Widget? files;
+
+  /// Da questa larghezza i file stanno in un pannello a destra del timer.
+  static const double sidePanelFrom = 900;
+  static const double sidePanelWidth = 400;
 
   @override
   Widget build(BuildContext context) {
@@ -165,15 +257,21 @@ class _Running extends StatelessWidget {
     };
     return LayoutBuilder(
       builder: (context, c) {
+        final files = this.files;
+        final side = files != null && c.maxWidth >= sidePanelFrom;
+        // con il pannello a destra il timer ha la sua colonna
+        final timerWidth = side ? c.maxWidth - sidePanelWidth : c.maxWidth;
         // anello grande quanto la larghezza permette (fino a 380 px)
-        final ring = math.min(c.maxWidth - 48, 380.0).clamp(200.0, 380.0);
-        return SingleChildScrollView(
+        final ring = math.min(timerWidth - 48, 380.0).clamp(200.0, 380.0);
+        final column = SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 520),
               child: Column(
                 children: [
+                  header,
+                  const SizedBox(height: 20),
                   FocusRing(
                     size: ring,
                     value: p.segmentProgress,
@@ -239,12 +337,33 @@ class _Running extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // schermi stretti: i file sotto i comandi, prima delle
+                  // righe sul silenzio
+                  if (files != null && !side) ...[
+                    const SizedBox(height: 24),
+                    files,
+                  ],
                   const SizedBox(height: 24),
                   _QuietInfo(focus: focus, hint: hint, color: t.textMuted),
                 ],
               ),
             ),
           ),
+        );
+        if (!side) return column;
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(child: column),
+            const VerticalDivider(width: 1),
+            SizedBox(
+              width: sidePanelWidth - 1,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+                child: files,
+              ),
+            ),
+          ],
         );
       },
     );

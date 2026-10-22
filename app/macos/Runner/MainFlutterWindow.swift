@@ -1,6 +1,7 @@
 import Cocoa
 import EventKit
 import FlutterMacOS
+import UniformTypeIdentifiers
 import WidgetKit
 
 class MainFlutterWindow: NSWindow {
@@ -18,6 +19,8 @@ class MainFlutterWindow: NSWindow {
   private var calendar: UniNotesCalendar?
   /// Controllo ortografico dei campi di testo (UniNotesSpellCheck, sotto).
   private var spellCheck: UniNotesSpellCheck?
+  /// «Apri con…»: scelta dell'app con cui aprire un file (UniNotesOpenWith).
+  private var openWith: UniNotesOpenWith?
 
   override func awakeFromNib() {
     let flutterViewController = FlutterViewController()
@@ -95,6 +98,8 @@ class MainFlutterWindow: NSWindow {
     liveSpeech = LiveSpeech(messenger: flutterViewController.engine.binaryMessenger)
     calendar = UniNotesCalendar(messenger: flutterViewController.engine.binaryMessenger)
     spellCheck = UniNotesSpellCheck(messenger: flutterViewController.engine.binaryMessenger)
+    openWith = UniNotesOpenWith(
+      messenger: flutterViewController.engine.binaryMessenger, window: self)
 
     super.awakeFromNib()
   }
@@ -167,6 +172,9 @@ final class UniNotesCalendar: NSObject {
   /// Riga che lega un evento alla prova (kCalendarMarker in
   /// lib/core/reminders/system_calendar.dart).
   static let marker = "Rif. UniNotes: "
+  /// Calendario creato dalle versioni precedenti (ora gli eventi vanno nel
+  /// calendario dello studente).
+  static let legacyName = "UniNotes"
 
   private struct Failure: Error {
     let code: String
@@ -245,6 +253,10 @@ final class UniNotesCalendar: NSObject {
             knownId: args["knownId"] as? String,
             name: args["name"] as? String ?? "UniNotes",
             color: (args["color"] as? NSNumber)?.intValue ?? 0x38BDF8))
+      case "calendars":
+        result(calendars())
+      case "health":
+        result(health(args))
       case "events":
         guard let cal = calendar(args) else {
           throw Failure(code: "calendario", message: "Calendario non trovato.")
@@ -267,6 +279,35 @@ final class UniNotesCalendar: NSObject {
     } catch {
       result(FlutterError(code: "errore", message: error.localizedDescription, details: nil))
     }
+  }
+
+  /// Calendari per la scelta in Impostazioni → Calendario: `primary` =
+  /// predefinito per i nuovi eventi, dove l'app scrive se lo studente non ne
+  /// sceglie un altro; `legacy` = «UniNotes» delle versioni precedenti (si
+  /// svuota e si toglie).
+  private func calendars() -> [[String: Any]] {
+    let def = store.defaultCalendarForNewEvents?.calendarIdentifier
+    var out: [[String: Any]] = []
+    for c in store.calendars(for: .event) where !hidden(c) {
+      let source: EKSource? = c.source
+      out.append([
+        "id": c.calendarIdentifier,
+        "name": c.title,
+        "account": source?.title ?? "",
+        "accountType": source?.sourceType == .local ? "local" : "account",
+        "primary": c.calendarIdentifier == def,
+        "synced": true,
+        "writable": c.allowsContentModifications,
+        "legacy": c.title == UniNotesCalendar.legacyName && c.calendarIdentifier != def,
+      ])
+    }
+    return out
+  }
+
+  /// Controllo di salute: il calendario c'è ancora ed è modificabile.
+  private func health(_ args: [String: Any]) -> [String: Any] {
+    guard let cal = calendar(args) else { return ["exists": false] }
+    return ["exists": true, "writable": cal.allowsContentModifications, "synced": true]
   }
 
   private func date(_ v: Any?) -> Date {
@@ -518,5 +559,62 @@ final class UniNotesSpellCheck: NSObject {
       out.append([r.location, r.location + r.length, Array(guesses.prefix(5))])
     }
     return out
+  }
+}
+
+/// «Apri con…» (canale "io.github.simomagnus.universitynotes/apri_con", vedi
+/// lib/core/services/external_launcher.dart): un pannello sulla cartella
+/// Applicazioni per scegliere l'app, poi il file si apre con quella
+/// (NSWorkspace). Risponde "ok", "annullato" o "errore".
+final class UniNotesOpenWith: NSObject {
+  private let channel: FlutterMethodChannel
+  private weak var window: NSWindow?
+
+  init(messenger: FlutterBinaryMessenger, window: NSWindow) {
+    channel = FlutterMethodChannel(
+      name: "io.github.simomagnus.universitynotes/apri_con",
+      binaryMessenger: messenger
+    )
+    self.window = window
+    super.init()
+    channel.setMethodCallHandler { [weak self] call, result in
+      guard call.method == "openWith",
+        let args = call.arguments as? [String: Any],
+        let path = args["path"] as? String
+      else {
+        result(FlutterMethodNotImplemented)
+        return
+      }
+      self?.open(path, result: result)
+    }
+  }
+
+  private func open(_ path: String, result: @escaping FlutterResult) {
+    let file = URL(fileURLWithPath: path)
+    let panel = NSOpenPanel()
+    panel.title = "Apri con"
+    panel.message = "Scegli l'app con cui aprire «\(file.lastPathComponent)»"
+    panel.prompt = "Apri"
+    panel.directoryURL = URL(fileURLWithPath: "/Applications", isDirectory: true)
+    panel.canChooseFiles = true
+    panel.canChooseDirectories = false
+    panel.allowsMultipleSelection = false
+    panel.allowedContentTypes = [.application]
+    let finish: (NSApplication.ModalResponse) -> Void = { response in
+      guard response == .OK, let app = panel.url else {
+        result("annullato")
+        return
+      }
+      NSWorkspace.shared.open(
+        [file], withApplicationAt: app, configuration: NSWorkspace.OpenConfiguration()
+      ) { _, error in
+        DispatchQueue.main.async { result(error == nil ? "ok" : "errore") }
+      }
+    }
+    if let window = window {
+      panel.beginSheetModal(for: window, completionHandler: finish)
+    } else {
+      finish(panel.runModal())
+    }
   }
 }

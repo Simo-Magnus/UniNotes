@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -344,6 +345,49 @@ void main() {
       final r = await picker.pick('tok');
       expect(r.ids, ['z1']);
       expect(opened.fragment, contains('token=tok'));
+    });
+
+    test('nessuna risposta o «Annulla»: l\'attesa si ferma sempre', () async {
+      // il browser non torna mai (pagina chiusa, chiave rifiutata)
+      final never = DrivePicker(
+        openBrowser: (_) async => true,
+        apiKey: 'K',
+        projectNumber: '1',
+        mobileClientId: '42-ab.apps.googleusercontent.com',
+        webAuth: (_, _) => Completer<String>().future,
+      );
+      final late = await never.pick(
+        'tok',
+        timeout: const Duration(milliseconds: 50),
+      );
+      expect(late.error, isNotNull);
+      expect(DrivePicker.explain(late.error!), contains('non ha risposto'));
+      final cancel = Completer<void>();
+      final f = never.pick('tok', cancel: cancel.future);
+      cancel.complete();
+      expect((await f).cancelled, isTrue);
+      // PC: il server locale si chiude anche se il browser non torna
+      final pc = DrivePicker(
+        openBrowser: (_) async => true,
+        apiKey: 'K',
+        projectNumber: '1',
+      );
+      final r = await pc.pick('tok', timeout: const Duration(milliseconds: 50));
+      expect(r.error, isNotNull);
+    });
+
+    test('chiave mancante o rifiutata: messaggi chiari', () async {
+      final none = DrivePicker(openBrowser: (_) async => true, apiKey: '');
+      expect((await none.pick('tok')).error, isNotNull);
+      expect(DrivePicker.missingKeyMessage, contains('chiave API'));
+      expect(
+        DrivePicker.explain('chiave API non valida o selettore non aperto'),
+        contains('ha rifiutato la chiave API'),
+      );
+      expect(
+        DrivePicker.explain('Google non raggiungibile'),
+        contains('connessione'),
+      );
     });
   });
 
