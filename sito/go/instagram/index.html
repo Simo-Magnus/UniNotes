@@ -5,7 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Instagram · UniNotes</title>
-<meta http-equiv="refresh" content="0; url=https://www.instagram.com/uninotes_app/">
+<script>
+(function () {
+  try {
+    if (navigator.sendBeacon && !navigator.webdriver && localStorage.getItem('skipgc') !== 't') {
+      var e = encodeURIComponent;
+      navigator.sendBeacon('https://uninotes.goatcounter.com/count?p=' + e(location.pathname) + '&t=' + e(document.title) +
+        '&r=' + e(document.referrer) + '&s=' + screen.width + '&rnd=' + Math.random().toString(36).slice(2, 7));
+    }
+  } catch (err) {}
+  location.replace("https://www.instagram.com/uninotes_app/");
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://www.instagram.com/uninotes_app/"></noscript>
 <link rel="canonical" href="https://www.instagram.com/uninotes_app/">
 <style>body{margin:0;background:#02060f;color:#dcebf7;font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}a{color:#38BDF8}</style>
 </head>

@@ -1,6 +1,6 @@
 # Informativa sulla privacy di UniNotes
 
-Ultimo aggiornamento: 21 ottobre 2026
+Ultimo aggiornamento: 22 ottobre 2026
 
 Questa informativa spiega quali dati personali entrano in gioco quando usi UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS, dove finiscono e chi ne risponde. È resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (di seguito «GDPR») e del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018). Vale per la versione 2026.9 dell'app e per le successive, finché non viene sostituita da una versione più recente di questo documento.
 
@@ -213,6 +213,10 @@ Lo sviluppatore è titolare del trattamento nei seguenti casi.
 
 In nessuno di questi casi i dati vengono usati per marketing, venduti o ceduti a terzi, né sottoposti a decisioni automatizzate o profilazione.
 
+### 10.3 Statistiche della pagina dei link
+
+La pagina dei link del sito (`simo-magnus.github.io/UniNotes/link/`) e i link corti che cominciano con `simo-magnus.github.io/UniNotes/go/` contano le visite con GoatCounter (`goatcounter.com`), un servizio di statistiche che non usa cookie e non salva l'indirizzo IP né l'intestazione del browser. GoatCounter conserva solo totali per pagina, giorno e ora: la pagina visitata, la pagina di provenienza, il nome e la versione del browser e del sistema operativo, la larghezza dello schermo, la lingua e il paese, ricavato dall'indirizzo IP al momento della visita. Questi totali non sono collegati tra loro né a una persona: lo sviluppatore vede, per esempio, quante persone sono arrivate dalla bio di Instagram o hanno aperto il server Discord, ma non chi sono. Servono a capire quali canali funzionano, sulla base del legittimo interesse dello sviluppatore (lettera f), e sono conservati finché servono a questo scopo. GoatCounter li tratta secondo la propria [informativa](https://www.goatcounter.com/help/privacy). Se usi un blocco dei tracciatori la visita non viene contata e i link funzionano lo stesso. Le altre pagine del sito, l'app e le pagine che l'app apre non contano nulla.
+
 ## 11. Trasferimenti fuori dall'Unione europea
 
 Lo sviluppatore non trasferisce verso paesi extra UE i dati che usi nell'app, perché non li riceve. I trasferimenti possono avvenire quando sei tu a usare servizi con sede o server fuori dall'Unione: Microsoft, Google, GitHub, Hugging Face e i fornitori di assistenti AI operano in tutto o in parte negli Stati Uniti. In questi casi il trasferimento è effettuato dal fornitore, con gli strumenti indicati nella sua informativa, per esempio la decisione di adeguatezza della Commissione europea sul quadro UE-USA per la protezione dei dati o le clausole contrattuali tipo.
@@ -278,4 +282,4 @@ The app connects to the internet only to download the public course database fro
 
 For ChatGPT, Claude, Copilot, Perplexity, NotebookLM and Gemini the app only copies a prompt to the clipboard, opens the service and shows the files to attach: you decide what to send, under that provider's terms. The current version does not call the Gemini API.
 
-The developer (Simone Magnano, GitHub user Simo-Magnus) is a controller only for emails you send, GitHub issues you open and donations you make. Lecture recordings contain other people's voices: follow your university's rules, ask the lecturer when required and do not share recordings without consent. You can delete everything, including the app's folders on OneDrive and Google Drive and the calendar events it added, from Settings → Privacy → «Disinstalla UniNotes» or «Elimina tutti i dati», and you may lodge a complaint with the Italian Data Protection Authority (<https://www.garanteprivacy.it>) or your local authority. Contact: uninotes-supporto@googlegroups.com.
+The developer (Simone Magnano, GitHub user Simo-Magnus) is a controller only for emails you send, GitHub issues you open and donations you make, and for the cookie-free, aggregate GoatCounter statistics of the website's link page (`/link/`) and short links (`/go/`), which store no IP address and no identifier. Lecture recordings contain other people's voices: follow your university's rules, ask the lecturer when required and do not share recordings without consent. You can delete everything, including the app's folders on OneDrive and Google Drive and the calendar events it added, from Settings → Privacy → «Disinstalla UniNotes» or «Elimina tutti i dati», and you may lodge a complaint with the Italian Data Protection Authority (<https://www.garanteprivacy.it>) or your local authority. Contact: uninotes-supporto@googlegroups.com.

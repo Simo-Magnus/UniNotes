@@ -7,12 +7,17 @@
   ?s=<social>; quando l'app sarà negli store, la pagina aggiungerà la fonte ai link degli store (console degli
   store: installazioni per fonte), senza contare nulla nel sito.
 
-Nessuna pagina raccoglie dati né carica codice di terzi. Uso, dalla radice del repository:
+Statistiche: GoatCounter (senza cookie, nessun dato personale salvato). La pagina aggregatore conta le visite con
+lo script ufficiale (il percorso include ?s=<sigla>, quindi si vede da quale bio arriva la gente); ogni link corto
+conta se stesso con una richiesta all'endpoint e poi porta alla destinazione, così le visite a /go/<nome>/ sono i
+clic verso quella destinazione. I link della pagina aggregatore si aprono in una nuova scheda. Uso, dalla radice del
+repository:
     python tools/genera_link_sito.py
 """
 from __future__ import annotations
 
 import html
+import json
 import re
 from pathlib import Path
 
@@ -20,6 +25,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SITO = ROOT / "sito"
 ICONE = ROOT / "tools" / "icone_social"
 BASE = "https://simo-magnus.github.io/UniNotes/"
+GOATCOUNTER = "https://uninotes.goatcounter.com/count"
+NUOVA = 'target="_blank" rel="noopener"'  # nuova scheda; il referrer resta, per sapere da dove arriva il clic
 
 # link corti: /go/<nome>/ → destinazione
 GO = {
@@ -70,9 +77,29 @@ def icona(nome: str) -> str:
     return f'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{d}"/></svg>'
 
 
-def reindirizzo(dest: str, titolo: str) -> str:
-    """Pagina che porta subito a [dest] (anche senza JavaScript), con il link di riserva."""
+def reindirizzo(dest: str, titolo: str, conta: bool = False) -> str:
+    """Pagina che porta subito a [dest] (anche senza JavaScript), con il link di riserva.
+
+    Con [conta] la visita si registra su GoatCounter prima di partire (sendBeacon arriva anche se la pagina se ne va
+    subito); senza JavaScript, con un blocco dei tracciatori o con il conteggio spento (#toggle-goatcounter) si va
+    alla destinazione senza contare."""
     d = html.escape(dest, quote=True)
+    if conta:
+        script = f"""<script>
+(function () {{
+  try {{
+    if (navigator.sendBeacon && !navigator.webdriver && localStorage.getItem('skipgc') !== 't') {{
+      var e = encodeURIComponent;
+      navigator.sendBeacon('{GOATCOUNTER}?p=' + e(location.pathname) + '&t=' + e(document.title) +
+        '&r=' + e(document.referrer) + '&s=' + screen.width + '&rnd=' + Math.random().toString(36).slice(2, 7));
+    }}
+  }} catch (err) {{}}
+  location.replace({json.dumps(dest)});
+}})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url={d}"></noscript>"""
+    else:
+        script = f'<meta http-equiv="refresh" content="0; url={d}">'
     return f"""<!doctype html>
 <html lang="it">
 <head>
@@ -80,7 +107,7 @@ def reindirizzo(dest: str, titolo: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>{html.escape(titolo)} · UniNotes</title>
-<meta http-equiv="refresh" content="0; url={d}">
+{script}
 <link rel="canonical" href="{d}">
 <style>body{{margin:0;background:#02060f;color:#dcebf7;font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}}a{{color:#38BDF8}}</style>
 </head>
@@ -93,13 +120,14 @@ def aggregatore() -> str:
     sezioni: dict[str, list[str]] = {}
     for sez, testo, desc, go, ic in PULSANTI:
         sezioni.setdefault(sez, []).append(
-            f'<a class="voce" href="../go/{go}/">{icona(ic)}<span><b>{html.escape(testo)}</b>'
+            f'<a class="voce" href="../go/{go}/" {NUOVA}>{icona(ic)}<span><b>{html.escape(testo)}</b>'
             f'<small>{html.escape(desc)}</small></span></a>')
     blocchi = "\n".join(
         f'<section aria-label="{html.escape(s)}"><h2>{html.escape(s)}</h2>\n' + "\n".join(v) + "\n</section>"
         for s, v in sezioni.items())
     social = "\n".join(
-        f'<a href="../go/{go}/" aria-label="UniNotes su {html.escape(n)}" title="{html.escape(n)}">{icona(go)}</a>'
+        f'<a href="../go/{go}/" {NUOVA} aria-label="UniNotes su {html.escape(n)}" title="{html.escape(n)}">'
+        f'{icona(go)}</a>'
         for n, go in SOCIAL)
     contatti = "\n".join(
         f'<div><dt>{html.escape(e)}</dt><dd><a href="mailto:{m}">{m}</a></dd></div>' for e, m in CONTATTI)
@@ -117,6 +145,8 @@ def aggregatore() -> str:
 <meta property="og:description" content="Download, community e social di UniNotes, l'app gratuita per organizzare l'università.">
 <meta property="og:image" content="{BASE}anteprima.png">
 <meta property="og:url" content="{BASE}link/">
+<script data-goatcounter="{GOATCOUNTER}"
+        async src="//gc.zgo.at/count.js"></script>
 <style>
   :root {{ --bg: #02060f; --card: rgba(255,255,255,.05); --line: rgba(255,255,255,.10); --text: #F3F7FB;
           --text2: rgba(235,245,255,.75); --muted: #8FA9C4; --blu: #1784FB; }}
@@ -164,7 +194,7 @@ def aggregatore() -> str:
   <h1>UniNotes</h1>
   <p>L'app gratuita per organizzare l'università</p>
 </header>
-<a class="scarica" href="../go/download/">Scarica l'app</a>
+<a class="scarica" href="../go/download/" {NUOVA}>Scarica l'app</a>
 <p class="sotto">Windows, macOS, Android e iPhone · senza account e senza pubblicità</p>
 {blocchi}
 <section aria-label="Social"><h2>Social</h2>
@@ -174,15 +204,16 @@ def aggregatore() -> str:
 </section>
 <section aria-label="Progetto"><h2>Progetto</h2>
 <nav class="altri">
-<a href="../go/sostieni/">{icona("kofi")}Sostieni il progetto</a>
-<a href="../go/github/">{icona("github")}Codice su GitHub</a>
+<a href="../go/sostieni/" {NUOVA}>{icona("kofi")}Sostieni il progetto</a>
+<a href="../go/github/" {NUOVA}>{icona("github")}Codice su GitHub</a>
 </nav>
 </section>
 <footer>
 <dl>
 {contatti}
 </dl>
-<p><a href="../privacy.html">Informativa sulla privacy</a> · Questa pagina non raccoglie dati.<br>
+<p>Visite e clic contati in forma anonima con GoatCounter, senza cookie
+(<a href="../privacy.html#10-3-statistiche-della-pagina-dei-link" {NUOVA}>informativa sulla privacy</a>).<br>
 UniNotes è sviluppata in modo indipendente e non è collegata a nessuna università.</p>
 </footer>
 </main>
@@ -200,7 +231,7 @@ def scrivi(rel: str, testo: str) -> None:
 def main() -> None:
     scrivi("link", aggregatore())
     for nome, dest in GO.items():
-        scrivi(f"go/{nome}", reindirizzo(dest, nome.replace("-", " ").capitalize()))
+        scrivi(f"go/{nome}", reindirizzo(dest, nome.replace("-", " ").capitalize(), conta=True))
     for sigla, nome in FONTI.items():
         scrivi(sigla, reindirizzo(f"{BASE}link/?s={sigla}", f"UniNotes · {nome}"))
     print(f"scritte: link/, {len(GO)} link corti in go/, {len(FONTI)} link per le bio")
