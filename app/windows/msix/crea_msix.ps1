@@ -36,9 +36,14 @@ function Avviso([string]$testo) {
 }
 
 # --- versione ---------------------------------------------------------------
-$riga = Select-String -Path $Pubspec -Pattern '^version:\s*(\S+)' | Select-Object -First 1
-if (-not $riga) { throw "version: non trovata in $Pubspec" }
-$nome = $riga.Matches[0].Groups[1].Value.Split('+')[0]
+# APP_VERSION (build automatica: AAAA.M.N, sempre crescente), altrimenti pubspec.yaml
+if ($env:APP_VERSION) {
+  $nome = $env:APP_VERSION.Trim()
+} else {
+  $riga = Select-String -Path $Pubspec -Pattern '^version:\s*(\S+)' | Select-Object -First 1
+  if (-not $riga) { throw "version: non trovata in $Pubspec" }
+  $nome = $riga.Matches[0].Groups[1].Value.Split('+')[0]
+}
 $parti = $nome.Split('.')
 if ($parti.Count -ne 3) { throw "Versione '$nome': servono tre numeri (es. 2026.9.0)" }
 foreach ($x in $parti) {
