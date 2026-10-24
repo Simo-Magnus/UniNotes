@@ -9,6 +9,7 @@ import 'package:path/path.dart' as p;
 
 import 'djvu/djvu_document.dart';
 import 'djvu/djvu_text.dart';
+import '../../utils/safe_text.dart';
 import 'parsers/archives.dart';
 import 'parsers/cfb.dart';
 import 'parsers/ebooks.dart';
@@ -25,6 +26,7 @@ import 'parsers/text_formats.dart';
 import 'parsers/windows_ink.dart';
 import 'reader_document.dart';
 import 'reader_formats.dart';
+import 'reader_well_formed.dart';
 
 /// Contenuto pronto per una vista del lettore.
 sealed class ReaderContent {
@@ -456,9 +458,11 @@ Future<ReaderContent> _load(
     case ReaderViewer.outline:
       final bytes = await _readAll(file);
       return OutlineContent(
-        await _run(
-          () => ext == '.opml' ? parseOpml(bytes) : parseMindMap(bytes),
-          bytes.length,
+        wellFormedOutline(
+          await _run(
+            () => ext == '.opml' ? parseOpml(bytes) : parseMindMap(bytes),
+            bytes.length,
+          ),
         ),
       );
     case ReaderViewer.info:
@@ -662,8 +666,12 @@ String? findNear(String dir, String name, {int depth = 3}) {
 }
 
 /// Documento da byte, per estensione (anche dentro un isolate). [path]
-/// serve alle note Markdown per le immagini incorporate.
-RDoc parseDocument(Uint8List bytes, String ext, {String? path}) {
+/// serve alle note Markdown per le immagini incorporate. Il testo esce
+/// sempre disegnabile ([wellFormedDoc]).
+RDoc parseDocument(Uint8List bytes, String ext, {String? path}) =>
+    wellFormedDoc(_parseDocumentRaw(bytes, ext, path: path));
+
+RDoc _parseDocumentRaw(Uint8List bytes, String ext, {String? path}) {
   // File OLE2 con estensione diversa (es. .doc rinominato in .xls).
   if (Cfb.isCfb(bytes)) {
     final kind = legacyKind(Cfb(bytes));
@@ -753,10 +761,15 @@ Future<(String, RDoc)?> findTranscript(String audioPath) async {
       } on FileSystemException {
         continue;
       }
-      if (ext == '.srt' || ext == '.vtt') return (f.path, subtitlesDoc(text));
+      if (ext == '.srt' || ext == '.vtt') {
+        return (f.path, wellFormedDoc(subtitlesDoc(text)));
+      }
       final timed = parseTimedLines(text);
-      if (timed.length >= 3) return (f.path, cuesDoc(timed));
-      return (f.path, ext == '.md' ? markdownDoc(text) : plainTextDoc(text));
+      if (timed.length >= 3) return (f.path, wellFormedDoc(cuesDoc(timed)));
+      return (
+        f.path,
+        wellFormedDoc(ext == '.md' ? markdownDoc(text) : plainTextDoc(text)),
+      );
     }
   }
   return null;
@@ -864,8 +877,8 @@ String safeFileName(String name, {bool? windows}) {
   if (n.length > 120) {
     final ext = p.extension(n);
     n = ext.length < 20
-        ? '${n.substring(0, 120 - ext.length)}$ext'
-        : n.substring(0, 120);
+        ? '${safePrefix(n, 120 - ext.length)}$ext'
+        : safePrefix(n, 120);
   }
   return n;
 }

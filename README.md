@@ -28,7 +28,8 @@ istruzioni per ogni piattaforma in [INSTALLAZIONE.md](INSTALLAZIONE.md). Su Wind
 l'installatore `UniNotes_setup.exe` (senza amministratore, disinstallazione da «App
 installate»), su macOS `UniNotes.dmg` (si trascina UniNotes in Applicazioni); gli zip
 restano come alternativa. Per togliere l'app con tutti i suoi dati, anche nel cloud e
-nel calendario: *Impostazioni → Privacy e informazioni → Disinstalla UniNotes*.
+nel calendario: prima *Impostazioni → Privacy e informazioni → Elimina tutti i dati*, poi
+si disinstalla con il sistema (vedi [INSTALLAZIONE.md](INSTALLAZIONE.md)).
 
 ## Cosa fa l'app
 

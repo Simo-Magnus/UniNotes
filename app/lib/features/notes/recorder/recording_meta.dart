@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:path/path.dart' as p;
 
 import '../../../utils/parse.dart';
+import '../../../utils/safe_text.dart';
 import '../safe_files.dart';
 
 /// Dati di una registrazione salvati accanto all'audio, con lo stesso nome
@@ -163,7 +164,8 @@ class RecordingMeta {
     final f = sidecarOf(audioPath);
     try {
       if (!await f.exists()) return RecordingMeta();
-      final j = jsonDecode(await f.readAsString());
+      // testo da disegnare: niente metà di coppie surrogate (un ud800 nel file)
+      final j = wellFormedJson(jsonDecode(await f.readAsString()));
       return j is Map ? fromJson(j) : RecordingMeta();
     } catch (_) {
       return RecordingMeta();

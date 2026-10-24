@@ -55,20 +55,61 @@ class AgendaItem {
   bool get allDay => time == null;
 
   /// Inizio locale: data e ora, o mezzanotte se è di un giorno intero.
+  /// Una data al limite di `DateTime` (anno 275760) con un'ora non si può
+  /// scrivere: vale la mezzanotte, senza lanciare.
   DateTime get start {
     final t = time;
     if (t == null) return date;
     final parts = t.split(':');
     final h = int.tryParse(parts[0]) ?? 0;
     final m = parts.length > 1 ? int.tryParse(parts[1]) ?? 0 : 0;
-    return DateTime(date.year, date.month, date.day, h, m);
+    try {
+      return DateTime(date.year, date.month, date.day, h, m);
+    } on ArgumentError {
+      return date;
+    }
   }
 
   /// Fine locale: 2 ore dopo l'inizio, o il giorno dopo se è di un giorno
-  /// intero (come nel file .ics).
-  DateTime get end => time == null
-      ? DateTime(date.year, date.month, date.day + 1)
-      : start.add(const Duration(hours: 2));
+  /// intero (come nel file .ics). Al limite di `DateTime` non c'è un dopo:
+  /// la fine coincide con l'inizio.
+  DateTime get end {
+    try {
+      return time == null
+          ? DateTime(date.year, date.month, date.day + 1)
+          : start.add(const Duration(hours: 2));
+    } on ArgumentError {
+      return start;
+    }
+  }
+
+  /// Inizio come istante (UTC) di una prova con l'ora: l'ora della prova è
+  /// quella dell'ateneo (Europe/Rome), uguale per chi ha il telefono in un
+  /// altro fuso. È l'istante che il .ics dichiara con `TZID=Europe/Rome`.
+  DateTime get startInstant => romeWallToUtc(start) ?? start.toUtc();
+
+  /// Fine come istante (UTC): 2 ore dopo [startInstant].
+  DateTime get endInstant {
+    try {
+      return startInstant.add(const Duration(hours: 2));
+    } on ArgumentError {
+      return startInstant;
+    }
+  }
+
+  /// Giornata intera: mezzanotte UTC del giorno (come vuole il Calendar
+  /// Provider di Android e Outlook).
+  DateTime get dayStartUtc => DateTime.utc(date.year, date.month, date.day);
+
+  /// Giornata intera: mezzanotte UTC del giorno dopo (al limite di
+  /// `DateTime`, il giorno stesso).
+  DateTime get dayEndUtc {
+    try {
+      return DateTime.utc(date.year, date.month, date.day + 1);
+    } on ArgumentError {
+      return dayStartUtc;
+    }
+  }
 
   /// Impronta dei dati scritti nel calendario: se non cambia, l'evento non
   /// si riscrive.
@@ -83,6 +124,34 @@ class AgendaItem {
 
   @override
   String toString() => 'AgendaItem($key, ${_ymd(date)} ${time ?? ''})';
+}
+
+/// Istante (UTC) dell'ora «a muro» italiana [wall] (anno, mese, giorno, ore e
+/// minuti; il fuso di [wall] non conta): Europe/Rome è UTC+1, e UTC+2 dalle
+/// 01:00 UTC dell'ultima domenica di marzo alle 01:00 UTC dell'ultima di
+/// ottobre (regola dell'Unione Europea). Un'ora che non esiste (le 02:30 del
+/// passaggio all'ora legale) vale un'ora dopo, una ripetuta (le 02:30 del
+/// ritorno all'ora solare) la prima volta. null se la data è fuori
+/// dall'intervallo di `DateTime`.
+DateTime? romeWallToUtc(DateTime wall) {
+  try {
+    final w = DateTime.utc(
+      wall.year,
+      wall.month,
+      wall.day,
+      wall.hour,
+      wall.minute,
+    );
+    int lastSunday(int month) =>
+        31 - (DateTime.utc(w.year, month, 31).weekday % 7);
+    final summerAsWall = w.subtract(const Duration(hours: 2));
+    final summer =
+        !summerAsWall.isBefore(DateTime.utc(w.year, 3, lastSunday(3), 1)) &&
+        summerAsWall.isBefore(DateTime.utc(w.year, 10, lastSunday(10), 1));
+    return w.subtract(Duration(hours: summer ? 2 : 1));
+  } on ArgumentError {
+    return null;
+  }
 }
 
 String _ymd(DateTime d) =>

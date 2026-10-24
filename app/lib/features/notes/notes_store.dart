@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
@@ -74,11 +75,21 @@ class NotesStore {
       // cartella scelta dall'utente vale solo se la sua unità esiste ancora.
       final docs = (await getApplicationDocumentsDirectory()).path;
       final old = Directory(p.join(docs, 'University Notes', 'Corsi'));
-      dir = await old.exists()
+      final fallback = await old.exists()
           ? old
           : Directory(p.join(docs, 'UniNotes', 'Corsi'));
-      if (base.isNotEmpty && await Directory(p.rootPrefix(base)).exists()) {
+      dir = fallback;
+      if (base.isNotEmpty && await _reachable(p.rootPrefix(base))) {
         dir = Directory(p.join(base, 'Corsi'));
+      }
+      try {
+        await dir.create(recursive: true);
+      } on FileSystemException {
+        // cartella scelta non utilizzabile (sola lettura, nome occupato da
+        // un file, unità che non risponde): si torna a quella predefinita
+        // invece di rendere inutilizzabili tutte le schermate degli appunti
+        if (dir.path == fallback.path) rethrow;
+        dir = fallback;
       }
     } else {
       Directory base;
@@ -94,6 +105,16 @@ class NotesStore {
     return dir;
   }
 
+  /// L'unità (o la cartella di rete) [prefix] risponde. Una condivisione di
+  /// rete spenta fa aspettare Windows decine di secondi per ogni controllo, e
+  /// la radice si chiede a ogni lettura degli appunti: dopo [_reachTimeout]
+  /// si considera non raggiungibile (si usa la cartella predefinita).
+  static const _reachTimeout = Duration(seconds: 4);
+  static Future<bool> _reachable(String prefix) => Directory(prefix)
+      .exists()
+      .timeout(_reachTimeout, onTimeout: () => false)
+      .catchError((Object _) => false);
+
   /// Nome della cartella del corso ("PoliTo - Analisi matematica I").
   static String folderName(Course c) {
     final uni = switch (c.universityId) {
@@ -105,10 +126,41 @@ class NotesStore {
     return safeName(raw);
   }
 
-  static String safeName(String s) {
+  /// Nome valido come cartella o file su ogni sistema: niente caratteri
+  /// vietati su Windows, punti e spazi finali, punti iniziali (il file
+  /// sparirebbe dagli elenchi, che saltano i nascosti, e «.eliminati» è il
+  /// cestino), al massimo 90 caratteri (senza spezzare un'emoji) e, su
+  /// Windows, mai un nome riservato (CON, aux.txt, COM1…) che il sistema
+  /// non lascia creare. Con [windows] si sceglie il sistema (test).
+  static String safeName(String s, {bool? windows}) {
     var v = s.replaceAll(RegExp(r'[<>:"/\\|?*\x00-\x1F]'), '_').trim();
-    v = v.replaceAll(RegExp(r'[. ]+$'), '');
-    if (v.length > 90) v = v.substring(0, 90).trim();
+    v = v.replaceFirst(RegExp(r'^[. ]+'), '');
+    v = cutText(v, 90).replaceAll(RegExp(r'[. ]+$'), '');
+    if (v.isEmpty) return 'Senza nome';
+    if ((windows ?? Platform.isWindows) && isWindowsReservedName(v)) {
+      final dot = v.indexOf('.');
+      final stem = (dot < 0 ? v : v.substring(0, dot)).trimRight();
+      v = '${stem}_${dot < 0 ? '' : v.substring(dot)}';
+    }
+    return v;
+  }
+
+  /// Windows: i percorsi oltre 260 caratteri (MAX_PATH) non li reggono tutti
+  /// i componenti (lettore audio, condivisione, programmi esterni): [name]
+  /// si accorcia perché `<dirPath>/<name>` più [reserve] caratteri (estensione
+  /// e suffissi) resti sotto i 240. Altrove non cambia nulla.
+  static String fitToPath(
+    String name,
+    String dirPath, {
+    int reserve = 16,
+    bool? windows,
+  }) {
+    if (!(windows ?? Platform.isWindows)) return name;
+    final room = 240 - dirPath.length - 1 - reserve;
+    if (name.length <= room) return name;
+    final v = cutText(name, room < 20 ? 20 : room)
+        .trim()
+        .replaceAll(RegExp(r'[. ]+$'), '');
     return v.isEmpty ? 'Senza nome' : v;
   }
 
@@ -127,17 +179,25 @@ class NotesStore {
   /// Il corso ha cambiato nome (modifica, versione in inglese, nome nuovo
   /// nel catalogo): registrazioni e appunti seguono il nome nuovo. Se esiste
   /// già una cartella col nome nuovo i file si uniscono (senza sovrascrivere).
+  ///
+  /// Non lancia errori: il nome nel database è già cambiato (chi chiama sta
+  /// importando il catalogo o ha salvato il corso) e una cartella degli
+  /// appunti non raggiungibile (unità scollegata, sincronizzazione in corso,
+  /// permessi) non deve far fallire o ripetere tutto il resto.
   Future<void> renameCourse(Course from, Course to) async {
-    final base = (await root()).path;
-    final src = Directory(p.join(base, folderName(from)));
-    final dst = Directory(p.join(base, folderName(to)));
-    if (src.path == dst.path || !await src.exists()) return;
     try {
+      final base = (await root()).path;
+      final src = Directory(p.join(base, folderName(from)));
+      final dst = Directory(p.join(base, folderName(to)));
+      if (src.path == dst.path || !await src.exists()) return;
       if (!await dst.exists()) {
         await src.rename(dst.path);
         return;
       }
-      await for (final e in src.list(recursive: true)) {
+      // (senza seguire i collegamenti: un collegamento a una cartella che
+      // contiene la cartella stessa farebbe ripetere l'elenco all'infinito,
+      // e i file fuori dalla cartella del corso non si spostano)
+      await for (final e in src.list(recursive: true, followLinks: false)) {
         if (e is! File) continue;
         final rel = p.relative(e.path, from: src.path);
         final target = File(p.join(dst.path, rel));
@@ -145,11 +205,17 @@ class NotesStore {
         await target.parent.create(recursive: true);
         await e.rename(target.path);
       }
-      if (await src.list(recursive: true).where((e) => e is File).isEmpty) {
+      // la vecchia cartella si toglie solo se non ha più file né
+      // collegamenti (restano le cartelle vuote)
+      if (await src
+          .list(recursive: true, followLinks: false)
+          .where((e) => e is! Directory)
+          .isEmpty) {
         await src.delete(recursive: true);
       }
-    } on FileSystemException {
-      // cartella in uso (es. sincronizzazione): resta com'è
+    } on Exception {
+      // cartella in uso (es. sincronizzazione) o dei documenti non
+      // disponibile: resta com'è
     }
   }
 
@@ -176,18 +242,31 @@ class NotesStore {
       );
       final items = <NoteFile>[];
       if (await dir.exists()) {
-        await for (final e in dir.list()) {
-          if (e is! File) continue;
-          final name = p.basename(e.path);
-          if (name.startsWith('.') || name.endsWith('.part')) continue;
-          // dati delle registrazioni (segnalibri, testo con i tempi,
-          // forma d'onda): si gestiscono insieme all'audio
-          if (f == NoteFolder.recordings &&
-              p.extension(name).toLowerCase() == '.json') {
-            continue;
+        try {
+          await for (final e in dir.list()) {
+            if (e is! File) continue;
+            final name = p.basename(e.path);
+            if (name.startsWith('.') || name.endsWith('.part')) continue;
+            // dati delle registrazioni (segnalibri, testo con i tempi,
+            // forma d'onda): si gestiscono insieme all'audio
+            if (f == NoteFolder.recordings &&
+                p.extension(name).toLowerCase() == '.json') {
+              continue;
+            }
+            final FileStat st;
+            try {
+              st = await e.stat();
+            } on FileSystemException {
+              continue; // file bloccato o tolto durante l'elenco
+            }
+            // un file tolto durante l'elenco non dà errore: tipo «non trovato»
+            if (st.type != FileSystemEntityType.file) continue;
+            items.add(NoteFile(e, f, st.modified, st.size));
           }
-          final st = await e.stat();
-          items.add(NoteFile(e, f, st.modified, st.size));
+        } on FileSystemException {
+          // cartella sparita o senza permesso durante la lettura (disco
+          // scollegato, sincronizzazione che la sposta): si mostrano i file
+          // già letti invece di rompere la schermata
         }
       }
       items.sort((a, b) => b.name.compareTo(a.name));
@@ -208,15 +287,19 @@ class NotesStore {
     for (final f in NoteFolder.values) {
       final dir = Directory(p.join(base, folderName(c), f.dirName));
       if (!await dir.exists()) continue;
-      await for (final e in dir.list()) {
-        if (e is! File) continue;
-        final name = p.basename(e.path);
-        if (name.startsWith('.') || name.endsWith('.part')) continue;
-        if (f == NoteFolder.recordings &&
-            p.extension(name).toLowerCase() == '.json') {
-          continue;
+      try {
+        await for (final e in dir.list()) {
+          if (e is! File) continue;
+          final name = p.basename(e.path);
+          if (name.startsWith('.') || name.endsWith('.part')) continue;
+          if (f == NoteFolder.recordings &&
+              p.extension(name).toLowerCase() == '.json') {
+            continue;
+          }
+          n++;
         }
-        n++;
+      } on FileSystemException {
+        // cartella sparita o illeggibile: si contano i file già letti
       }
     }
     return n;
@@ -292,9 +375,15 @@ class NotesStore {
     NoteFile f,
     String newName,
   ) async {
-    final name = safeName(newName);
-    if (name == f.name) return const {};
     final base = p.join((await root()).path, folderName(c));
+    // (la cartella più lunga della lezione: «Registrazioni»; il resto è
+    // l'estensione, « (Gemini)» e il file temporaneo)
+    final name = fitToPath(
+      safeName(newName),
+      p.join(base, NoteFolder.recordings.dirName),
+      reserve: 20,
+    );
+    if (name == f.name) return const {};
     final folders = lessonFolders.contains(f.folder)
         ? lessonFolders
         : {f.folder};

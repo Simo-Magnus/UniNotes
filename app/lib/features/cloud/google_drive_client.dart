@@ -32,12 +32,19 @@ class GoogleDriveClient {
     this._token, {
     GraphTransport? transport,
     GraphDownload? download,
+    this.onUnauthorized,
   }) : _send = transport ?? ioTransport,
        _download =
            download ??
            (transport == null ? ioDownload : bufferedDownload(transport));
 
   final Future<String> Function() _token;
+
+  /// Chiamata quando il servizio rifiuta il token (401) che l'app crede
+  /// ancora valido (orologio spostato indietro, accesso revocato): il token
+  /// si dimentica e la richiesta si ripete una volta con uno nuovo. Prima
+  /// ogni richiesta falliva fino alla scadenza segnata in memoria.
+  final void Function()? onUnauthorized;
   final GraphTransport _send;
   final GraphDownload _download;
 
@@ -68,7 +75,13 @@ class GoogleDriveClient {
     Set<int> accept = const {404},
   }) async {
     final h = {'Authorization': 'Bearer ${await _token()}', ...headers};
-    final r = await _send(method, url, headers: h, body: body);
+    var r = await _send(method, url, headers: h, body: body);
+    final retry = onUnauthorized;
+    if (r.status == 401 && retry != null) {
+      retry();
+      h['Authorization'] = 'Bearer ${await _token()}';
+      r = await _send(method, url, headers: h, body: body);
+    }
     if (!r.ok && !accept.contains(r.status)) _fail(r, method, url);
     return r;
   }

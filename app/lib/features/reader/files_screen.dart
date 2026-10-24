@@ -470,6 +470,9 @@ class FolderBrowserScreen extends StatefulWidget {
 }
 
 class _FolderBrowserScreenState extends State<FolderBrowserScreen> {
+  /// Oltre queste voci l'elenco è una lista pigra.
+  static const lazyFrom = 150;
+
   late Future<List<FileSystemEntity>> _entries = _list();
 
   Future<List<FileSystemEntity>> _list() async {
@@ -520,34 +523,39 @@ class _FolderBrowserScreenState extends State<FolderBrowserScreen> {
               message: 'La cartella è vuota.',
             );
           }
+          Widget tile(FileSystemEntity e) => e is Directory
+              ? ListTile(
+                  leading: Icon(Icons.folder_outlined, color: t.cyanSoft),
+                  title: Text(p.basename(e.path)),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => FolderBrowserScreen(
+                        dir: e,
+                        title: p.basename(e.path),
+                      ),
+                    ),
+                  ),
+                )
+              : _fileTile(context, e as File);
+          if (list.length > lazyFrom) {
+            // Cartella con migliaia di file: costruire tutte le righe (e
+            // leggere la dimensione di ogni file) fermava l'interfaccia
+            // all'apertura (2000 file: secondi sul telefono). Lista pigra
+            // dentro la card.
+            return GlassCard(
+              margin: const EdgeInsets.fromLTRB(12, 6, 12, 32),
+              child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, i) => tile(list[i]),
+              ),
+            );
+          }
           return ListView(
             padding: const EdgeInsets.only(bottom: 32),
             children: [
               GlassCard(
-                child: Column(
-                  children: [
-                    for (final e in list)
-                      if (e is Directory)
-                        ListTile(
-                          leading: Icon(
-                            Icons.folder_outlined,
-                            color: t.cyanSoft,
-                          ),
-                          title: Text(p.basename(e.path)),
-                          trailing: const Icon(Icons.chevron_right),
-                          onTap: () => Navigator.of(context).push(
-                            MaterialPageRoute<void>(
-                              builder: (_) => FolderBrowserScreen(
-                                dir: e,
-                                title: p.basename(e.path),
-                              ),
-                            ),
-                          ),
-                        )
-                      else
-                        _fileTile(context, e as File),
-                  ],
-                ),
+                child: Column(children: [for (final e in list) tile(e)]),
               ),
             ],
           );

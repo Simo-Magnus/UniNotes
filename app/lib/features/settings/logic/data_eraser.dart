@@ -15,7 +15,7 @@ import '../../cloud/onedrive_service.dart';
 import '../../notes/notes_store.dart';
 import '../../notes/recycle_bin.dart';
 
-/// Voci di «Disinstalla UniNotes» → «Scegli cosa eliminare».
+/// Voci di «Elimina tutti i dati» → «Scegli cosa eliminare».
 enum EraseItem {
   profile('Profilo, corso scelto e impostazioni'),
   database('Database: insegnamenti, esami, studio'),
@@ -70,8 +70,8 @@ const _recordingFolders = [
 ];
 const _noteFolders = [NoteFolder.notes, NoteFolder.ai];
 
-/// Eliminazione dei dati dell'app, unica per «Elimina tutti i dati»,
-/// «Disinstalla UniNotes» (Impostazioni) e la disinstallazione da Windows
+/// Eliminazione dei dati dell'app, unica per «Elimina tutti i dati»
+/// (Impostazioni) e la schermata di disinstallazione di Windows
 /// (`uninotes.exe --disinstalla`, avviato dal disinstallatore).
 ///
 /// Fuori dal dispositivo tocca solo ciò che l'app ha creato: le sue
@@ -137,10 +137,27 @@ class DataEraser {
   /// Cartelle dei corsi nella cartella degli appunti.
   Future<List<Directory>> _courseDirs(Directory root) async {
     if (!await root.exists()) return const [];
-    return [
-      await for (final e in root.list(followLinks: false))
-        if (e is Directory && !p.basename(e.path).startsWith('.')) e,
-    ];
+    return _dirsOf(
+      root,
+      (e) => e is Directory && !p.basename(e.path).startsWith('.'),
+    );
+  }
+
+  /// Le cartelle di [root] che passano [keep]; con la cartella sparita o
+  /// illeggibile a metà (disco scollegato) restano quelle già lette.
+  Future<List<Directory>> _dirsOf(
+    Directory root,
+    bool Function(FileSystemEntity) keep,
+  ) async {
+    final out = <Directory>[];
+    try {
+      await for (final e in root.list(followLinks: false)) {
+        if (e is Directory && keep(e)) out.add(e);
+      }
+    } on FileSystemException {
+      // vedi sopra
+    }
+    return out;
   }
 
   /// Sottocartelle [folders] di ogni corso.
@@ -156,13 +173,12 @@ class DataEraser {
   /// file eliminati su un altro dispositivo).
   Future<List<Directory>> _hiddenTrash(Directory root) async {
     if (!await root.exists()) return const [];
-    return [
-      await for (final e in root.list(followLinks: false))
-        if (e is Directory &&
-            (p.basename(e.path) == RecycleBin.dirName ||
-                p.basename(e.path).startsWith('.cestino')))
-          e,
-    ];
+    return _dirsOf(
+      root,
+      (e) =>
+          p.basename(e.path) == RecycleBin.dirName ||
+          p.basename(e.path).startsWith('.cestino'),
+    );
   }
 
   Future<int> _size(List<FileSystemEntity> items) async {
@@ -287,7 +303,7 @@ class DataEraser {
   }
 
   /// Elimina le voci [items]. Dopo, il database è chiuso: l'app va chiusa
-  /// (e disinstallata o riaperta). [onStep]: testo per l'avanzamento.
+  /// (e riaperta). [onStep]: testo per l'avanzamento.
   Future<EraseReport> run(
     Set<EraseItem> items, {
     void Function(String step)? onStep,
@@ -476,17 +492,21 @@ class DataEraser {
   Future<void> _deleteSyncState() async {
     final dir = await _supportDir();
     if (!await dir.exists()) return;
-    await for (final e in dir.list(followLinks: false)) {
-      final name = p.basename(e.path);
-      final sync =
-          (e is File && RegExp(r'^\w+_sync_.*\.json').hasMatch(name)) ||
-          // copie locali dei registri dei dati (OneDrive, Google Drive)
-          (e is Directory && RegExp(r'^\w+_dati$').hasMatch(name));
-      if (sync) {
-        try {
-          await e.delete(recursive: true);
-        } catch (_) {}
+    try {
+      await for (final e in dir.list(followLinks: false)) {
+        final name = p.basename(e.path);
+        final sync =
+            (e is File && RegExp(r'^\w+_sync_.*\.json').hasMatch(name)) ||
+            // copie locali dei registri dei dati (OneDrive, Google Drive)
+            (e is Directory && RegExp(r'^\w+_dati$').hasMatch(name));
+        if (sync) {
+          try {
+            await e.delete(recursive: true);
+          } catch (_) {}
+        }
       }
+    } on FileSystemException {
+      // cartella illeggibile a metà: il resto si pulisce alla prossima volta
     }
   }
 }

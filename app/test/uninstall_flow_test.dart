@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/services/app_services.dart';
-import 'package:university_notes/core/services/app_uninstall.dart';
 import 'package:university_notes/features/settings/erase_all.dart';
 import 'package:university_notes/features/settings/logic/data_eraser.dart';
 
@@ -35,13 +34,11 @@ void main() {
   late AppServices s;
   late _FakeEraser eraser;
   var quit = 0;
-  var uninstalls = 0;
 
   setUp(() async {
     s = AppServices(await AppDatabase.openInMemory());
     eraser = _FakeEraser(s);
     quit = 0;
-    uninstalls = 0;
   });
   tearDown(() => s.database.close());
 
@@ -54,10 +51,6 @@ void main() {
               context,
               mode: mode,
               eraser: eraser,
-              uninstall: () async {
-                uninstalls++;
-                return const UninstallResult.started();
-              },
               quit: () => quit++,
             ),
             child: const Text('apri'),
@@ -80,28 +73,30 @@ void main() {
       .evaluate()
       .length;
 
-  testWidgets('Elimina tutto → conferma → disinstallazione', (tester) async {
-    await start(tester, EraseFlowMode.uninstall);
-    expect(find.text('Disinstalla UniNotes'), findsOneWidget);
+  testWidgets('Elimina tutto → conferma → dati eliminati e chiusura', (
+    tester,
+  ) async {
+    await start(tester, EraseFlowMode.eraseOnly);
+    expect(find.text('Eliminare i dati?'), findsOneWidget);
     expect(dialogButtons(), 2);
     await tester.tap(find.text('Elimina tutto'));
     await tester.pumpAndSettle();
     expect(find.text('Confermi?'), findsOneWidget);
-    expect(find.textContaining('Poi UniNotes si disinstalla'), findsOneWidget);
+    expect(find.textContaining('disinstall'), findsNothing);
     expect(dialogButtons(), 2);
-    await tester.tap(find.text('Elimina e disinstalla'));
+    await tester.tap(find.text('Elimina'));
     await tester.pumpAndSettle();
     expect(eraser.erased, isNot(contains(EraseItem.onenote)));
     expect(eraser.erased, contains(EraseItem.onedrive));
     expect(eraser.erased!.length, EraseItem.values.length - 2);
-    expect(uninstalls, 1);
+    expect(find.text('Dati eliminati'), findsOneWidget);
+    expect(quit, 0);
+    await tester.tap(find.text('Chiudi'));
     expect(quit, 1);
   });
 
-  testWidgets('Scegli cosa eliminare → solo alcune voci → tieni l\'app', (
-    tester,
-  ) async {
-    await start(tester, EraseFlowMode.uninstall);
+  testWidgets('Scegli cosa eliminare → solo alcune voci', (tester) async {
+    await start(tester, EraseFlowMode.eraseOnly);
     await tester.tap(find.text('Scegli cosa eliminare'));
     await tester.pumpAndSettle();
     expect(
@@ -118,35 +113,20 @@ void main() {
     await tester.ensureVisible(find.byKey(const ValueKey('erase-whisper')));
     await tester.tap(find.byKey(const ValueKey('erase-whisper')));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Elimina e disinstalla'));
+    await tester.tap(find.text('Elimina'));
     await tester.pumpAndSettle();
     expect(
       find.textContaining('Modelli di Whisper (150,0 MB)'),
       findsOneWidget,
     );
-    await tester.tap(find.text('Elimina e disinstalla'));
+    await tester.tap(find.text('Elimina'));
     await tester.pumpAndSettle();
     expect(eraser.erased, {EraseItem.whisper});
-    // scelta parziale: disinstallare comunque o tenere l'app
-    expect(find.text('Disinstallare UniNotes?'), findsOneWidget);
-    expect(dialogButtons(), 2);
-    await tester.tap(find.text('Tieni l\'app'));
-    await tester.pumpAndSettle();
-    expect(uninstalls, 0);
+    // nessuna domanda sulla disinstallazione: solo l'avviso finale
+    expect(find.textContaining('isinstall'), findsNothing);
     expect(find.text('Dati eliminati'), findsOneWidget);
     await tester.tap(find.text('Chiudi'));
     expect(quit, 1);
-  });
-
-  testWidgets('Elimina tutti i dati: nessuna disinstallazione', (tester) async {
-    await start(tester, EraseFlowMode.eraseOnly);
-    await tester.tap(find.text('Elimina tutto'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Elimina'));
-    await tester.pumpAndSettle();
-    expect(eraser.erased, isNotNull);
-    expect(uninstalls, 0);
-    expect(find.text('Dati eliminati'), findsOneWidget);
   });
 
   testWidgets('disinstallatore di Windows: chiudendo restano i dati', (
@@ -158,7 +138,19 @@ void main() {
     await tester.pumpAndSettle();
     expect(eraser.erased, isNull);
     expect(quit, 1);
-    expect(uninstalls, 0);
+  });
+
+  testWidgets('disinstallatore di Windows: elimina tutto e chiude', (
+    tester,
+  ) async {
+    await start(tester, EraseFlowMode.windowsUninstaller);
+    await tester.tap(find.text('Elimina tutto'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Elimina'));
+    await tester.pumpAndSettle();
+    expect(eraser.erased, isNotNull);
+    expect(quit, 1);
+    expect(find.text('Dati eliminati'), findsNothing);
   });
 
   test('dimensioni leggibili', () {

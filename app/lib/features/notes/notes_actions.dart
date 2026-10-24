@@ -416,7 +416,9 @@ Future<void> _saveCaptured(
       if (before == null) {
         if (await target.exists()) await target.delete();
       } else {
-        await target.writeAsString(before);
+        // (scrittura sicura: con il disco pieno il testo di prima non si
+        // perde troncando il file)
+        await writeStringAtomic(target, before);
       }
       s.revision.bump();
     },
@@ -452,7 +454,9 @@ Future<void> attachSummaries(BuildContext context, Course course) async {
         );
       }
       try {
-        await File(src).copy(dest);
+        // (via un file temporaneo: con il disco pieno non resta un riassunto
+        // troncato che sembra un file buono)
+        await copyFileSafely(File(src), dest);
         n++;
       } on FileSystemException catch (e) {
         // file sparito o bloccato, disco pieno: si allegano gli altri
@@ -565,7 +569,9 @@ Future<void> exportPdf(
     );
     if (isDesktop) {
       final out = File(p.setExtension(note.file.path, '.pdf'));
-      await out.writeAsBytes(bytes);
+      // (scrittura sicura: il PDF esportato prima non si perde se il disco
+      // è pieno)
+      await writeBytesAtomic(out, bytes);
       final r = await ExternalLauncher.openPath(out.path);
       if (context.mounted) showLaunchResult(context, r);
       return;
@@ -632,10 +638,15 @@ Future<String?> renameNote(
   try {
     final moves = await s.notes.rename(course, f, name);
     if (moves.isEmpty) return null;
+    // il nome davvero dato ai file (ripulito e, su Windows, accorciato
+    // perché il percorso non superi i 260 caratteri)
+    final newName = moves[f.file.path] == null
+        ? NotesStore.safeName(name)
+        : p.basenameWithoutExtension(moves[f.file.path]!);
     await s.study.renameAttachmentPaths(
       moves,
       oldName: f.name,
-      newName: NotesStore.safeName(name),
+      newName: newName,
     );
     s.revision.bump();
     if (context.mounted) {
@@ -644,7 +655,7 @@ Future<String?> renameNote(
         moves.length == 1 ? 'Rinominato.' : 'Rinominati ${moves.length} file.',
       );
     }
-    return NotesStore.safeName(name);
+    return newName;
   } on FileSystemException catch (e) {
     if (context.mounted) showSnack(context, '${e.message}.');
     return null;

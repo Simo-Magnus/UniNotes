@@ -324,8 +324,16 @@ class CatalogService {
   /// Download completi recenti (l'import subito dopo un download non
   /// riscarica) e corsi scaricati da poco da soli (onboarding: prima il
   /// corso per la scelta del percorso, poi il resto). Chiave: ateneo/corso.
-  final Map<String, (DateTime, AteneoScaricato)> _recenti = {};
-  final Map<String, (DateTime, String)> _corsiRecenti = {};
+  /// L'istante è quello di [_orologio] (monotono): con l'orologio del
+  /// sistema spostato indietro un download non resterebbe «recente» per ore.
+  final Map<String, (Duration, AteneoScaricato)> _recenti = {};
+  final Map<String, (Duration, String)> _corsiRecenti = {};
+
+  /// Tempo trascorso dall'avvio, indipendente dall'orologio del sistema.
+  static final Stopwatch _orologio = Stopwatch()..start();
+
+  static bool _ancoraRecente(Duration quando) =>
+      _orologio.elapsed - quando < _validitaRecente;
 
   /// Download in corso per corso ([completo]: anche le sessioni) e per file
   /// (percorso relativo → byte ricevuti e impronta).
@@ -897,7 +905,7 @@ class CatalogService {
       final recente = _recenti[k];
       if (!forza &&
           recente != null &&
-          DateTime.now().difference(recente.$1) < _validitaRecente) {
+          _ancoraRecente(recente.$1)) {
         r = recente.$2;
       } else {
         r = await _accoda(
@@ -987,7 +995,7 @@ class CatalogService {
       final appena =
           !forza &&
           recente != null &&
-          DateTime.now().difference(recente.$1) < _validitaRecente;
+          _ancoraRecente(recente.$1);
       if (presente &&
           (appena ||
               (stessoCorso &&
@@ -1014,7 +1022,7 @@ class CatalogService {
             scaricati++;
             corsi = corsiAggiornati = true;
             shaCorso = sha;
-            _corsiRecenti[k] = (DateTime.now(), sha);
+            _corsiRecenti[k] = (_orologio.elapsed, sha);
           }
         } on CatalogNotFoundException {
           // il corso (o l'ateneo) non c'è (più) nel database
@@ -1095,7 +1103,7 @@ class CatalogService {
       corsiAssenti: corsiAssenti,
       errore: errore,
     );
-    if (errore == null && !soloCorso) _recenti[k] = (DateTime.now(), r);
+    if (errore == null && !soloCorso) _recenti[k] = (_orologio.elapsed, r);
     return r;
   }
 
@@ -1234,6 +1242,13 @@ class CatalogService {
       throw CatalogOfflineException('Connessione interrotta.');
     } on TimeoutException {
       throw CatalogOfflineException('Tempo scaduto durante il download.');
+    } on TlsException {
+      // certificato non valido: di solito una rete Wi‑Fi con pagina di
+      // accesso; come la rete assente (si usa la copia salvata)
+      throw CatalogOfflineException(
+        'Connessione sicura non riuscita: se sei su una rete Wi‑Fi pubblica, '
+        'accedi dalla sua pagina nel browser.',
+      );
     } finally {
       client.close(force: true);
     }
@@ -1301,6 +1316,13 @@ class CatalogService {
       throw CatalogOfflineException('Connessione interrotta.');
     } on TimeoutException {
       throw CatalogOfflineException('Tempo scaduto durante il download.');
+    } on TlsException {
+      // certificato non valido: di solito una rete Wi‑Fi con pagina di
+      // accesso; come la rete assente (si usa la copia salvata)
+      throw CatalogOfflineException(
+        'Connessione sicura non riuscita: se sei su una rete Wi‑Fi pubblica, '
+        'accedi dalla sua pagina nel browser.',
+      );
     } finally {
       if (out != null) {
         try {

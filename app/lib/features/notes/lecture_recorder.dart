@@ -143,7 +143,10 @@ class LectureRecorder extends ChangeNotifier {
   static const maxHistory = 600;
 
   /// Forma d'onda dell'intera registrazione (0–255 ogni [sampleEvery]).
-  final BytesBuilder _peaks = BytesBuilder(copy: false);
+  /// Con `copy: false` ogni [BytesBuilder.addByte] era un array a sé (~50
+  /// byte per livello: 4 ore ≈ 7,5 MB invece di 144 KB, 40 ore 75 MB);
+  /// quello che copia scrive in un buffer unico.
+  final BytesBuilder _peaks = BytesBuilder();
 
   final List<Bookmark> bookmarks = [];
 

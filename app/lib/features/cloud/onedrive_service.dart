@@ -154,7 +154,11 @@ class OneDriveService extends CloudDriveService {
     return _oauthFactory(id, await tenant()).refresh(refreshToken);
   }
 
-  GraphClient graph() => GraphClient(accessToken, transport: transport);
+  GraphClient graph() => GraphClient(
+    accessToken,
+    transport: transport,
+    onUnauthorized: forgetAccessToken,
+  );
 
   OneNoteReader oneNote() => OneNoteReader(graph());
 

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/enums.dart';
 import '../../core/constants/text_limits.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../models/exam.dart';
@@ -36,7 +37,9 @@ class ExamDetailScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Dettaglio prova')),
       body: ExamDetailView(
         examId: examId,
-        onDeleted: () => Navigator.maybePop(context),
+        // dopo l'eliminazione: solo questa pagina (non quella sotto se
+        // si è già tornati indietro)
+        onDeleted: () => popIfCurrent(context),
       ),
     );
   }

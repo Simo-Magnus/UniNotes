@@ -11,6 +11,7 @@ import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/audio_codec.dart';
 import '../../core/services/whisper_service.dart'
@@ -622,6 +623,8 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   void _openSearch() {
     setState(() => _searchOpen = true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // la schermata può essere già chiusa (controller e fuoco eliminati)
+      if (!mounted) return;
       _queryFocus.requestFocus();
       _query.selection = TextSelection(
         baseOffset: 0,
@@ -712,7 +715,8 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     final done = await trashNote(context, widget.course, _note);
     if (!mounted) return;
     if (done) {
-      Navigator.of(context).pop();
+      // Indietro durante l'eliminazione: la pagina sotto resta
+      popIfCurrent(context);
     } else {
       await _initPlayer();
     }

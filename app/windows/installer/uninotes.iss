@@ -13,14 +13,13 @@
 ;   restano.
 ; - Disinstallazione: il disinstallatore standard di Inno Setup. Avviato da
 ;   «App installate» lancia prima `uninotes.exe --disinstalla`, che apre la
-;   schermata «Disinstalla UniNotes» dell'app (scelta dei dati da eliminare,
+;   schermata di disinstallazione dell'app (scelta dei dati da eliminare,
 ;   anche nel cloud e nel calendario) e aspetta che si chiuda; poi toglie i
-;   file del programma. Quando invece è l'app a lanciarlo, dopo la pulizia,
-;   lo fa in modalità silenziosa e lascia un segno nella cartella del
-;   programma: `--disinstalla` lo trova e si chiude subito, senza ripetere
-;   le domande (vedi lib/core/services/app_uninstall.dart). Prima chiude
-;   UniNotes se è aperto ([Code]) e alla fine toglie tutta la cartella del
-;   programma, anche i file creati dopo l'installazione.
+;   file del programma. L'app non ha un tasto per disinstallarsi: la
+;   disinstallazione parte sempre da qui (vedi
+;   lib/core/services/app_uninstall.dart). Prima chiude UniNotes se è aperto
+;   ([Code]) e alla fine toglie tutta la cartella del programma, anche i file
+;   creati dopo l'installazione.
 
 #ifndef AppVersion
   #define AppVersion "0.0.0"
@@ -97,18 +96,14 @@ Name: "{autodesktop}\UniNotes"; Filename: "{app}\uninotes.exe"; Tasks: desktopic
 Filename: "{app}\uninotes.exe"; Description: "Avvia UniNotes"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
-; Schermata «Disinstalla UniNotes» dell'app (si chiude da sola se la
-; pulizia è già stata fatta dall'app).
+; Schermata di disinstallazione dell'app (scelta dei dati da eliminare).
 Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilterminated; RunOnceId: "DisinstallaUniNotes"
 
 [UninstallDelete]
-; Segno «pulizia già fatta» scritto dall'app prima di avviare la
-; disinstallazione.
-Type: files; Name: "{app}\.pulizia_fatta"
 ; Tutto quello che resta nella cartella del programma (file creati dopo
 ; l'installazione, modelli scaricati come ripiego): la cartella sparisce. I
 ; dati dello studente non sono qui (AppData\Roaming) e li gestisce la
-; schermata «Disinstalla UniNotes».
+; schermata di disinstallazione dell'app.
 Type: filesandordirs; Name: "{app}"
 
 [Registry]
@@ -128,7 +123,7 @@ Root: HKCU; Subkey: "Software\Classes\uninotes\shell\open\command"; ValueType: s
 // UniNotes aperto (anche solo nell'area di notifica) blocca uninotes.exe e
 // le sue librerie: il disinstallatore non riuscirebbe a toglierli e l'app
 // resterebbe. Si chiude prima di iniziare e di nuovo prima di cancellare i
-// file (la schermata «Disinstalla UniNotes» a quel punto è già chiusa).
+// file (la schermata di disinstallazione dell'app a quel punto è già chiusa).
 procedure ChiudiUniNotes();
 var
   Codice: Integer;

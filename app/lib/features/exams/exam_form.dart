@@ -7,6 +7,7 @@ import '../../core/academic/electives.dart';
 import '../../core/academic/plan_scope.dart';
 import '../../core/constants/enums.dart';
 import '../../core/feedback/feedback_service.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/calendar_export.dart';
 import '../../models/course.dart';
@@ -85,6 +86,9 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
                   'l\'esame).' : ''}',
       );
   if (!ok || !context.mounted || exam.id == null) return false;
+  // stato dell'insegnamento prima dell'eventuale archiviazione: «Annulla»
+  // lo riporta com'era, non sempre «In corso»
+  final statusBefore = (await services.courses.byId(exam.courseId))?.status;
   await services.exams.delete(exam.id!);
   final dropped = await dropElectiveWithoutExam(services, exam.courseId);
   services.revision.bump();
@@ -97,7 +101,13 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
       undoneMessage: 'Eliminazione annullata.',
       onUndo: () async {
         await services.database.db.insert('exams', exam.toMap());
-        if (dropped) await restoreElective(services, exam.courseId);
+        if (dropped) {
+          await restoreElective(
+            services,
+            exam.courseId,
+            status: statusBefore,
+          );
+        }
         services.revision.bump();
       },
     );
@@ -576,8 +586,12 @@ class _ExamFormPageState extends State<ExamFormPage> {
       ),
     );
     // prima prova con una data: si propongono gli avvisi e il calendario
-    // (una volta sola ciascuno)
-    if (mounted && exam.date != null && exam.status.isPending) {
+    // (una volta sola ciascuno; non sopra la pagina sotto se il modulo si
+    // sta già chiudendo)
+    if (mounted &&
+        isCurrentRoute(context) &&
+        exam.date != null &&
+        exam.status.isPending) {
       await offerExamReminders(context, services);
       if (mounted) await offerExamCalendar(context, services);
     }
@@ -585,7 +599,8 @@ class _ExamFormPageState extends State<ExamFormPage> {
     if (existing != null) {
       showSnack(context, 'Aggiornato l\'esame finale già presente');
     }
-    Navigator.pop(context, true);
+    // Indietro durante il salvataggio: la pagina sotto resta
+    popIfCurrent(context, true);
   }
 
   @override

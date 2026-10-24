@@ -19,9 +19,18 @@ Future<bool> dropElectiveWithoutExam(AppServices s, int courseId) async {
 }
 
 /// Un esame aggiunto a un insegnamento a scelta rimosso lo riporta nel
-/// piano (lo stato si ricalcola alla prossima lista).
-Future<void> restoreElective(AppServices s, int courseId) async {
+/// piano (lo stato si ricalcola alla prossima lista). Con [status] (lo stato
+/// che l'insegnamento aveva prima di [dropElectiveWithoutExam], per
+/// «Annulla») torna a quello invece che «In corso».
+Future<void> restoreElective(
+  AppServices s,
+  int courseId, {
+  CourseStatus? status,
+}) async {
   final c = await s.courses.byId(courseId);
   if (c == null || !isDroppedElective(c)) return;
-  await s.courses.update(c.copyWith(status: CourseStatus.active));
+  final back = status == null || status == CourseStatus.archived
+      ? CourseStatus.active
+      : status;
+  await s.courses.update(c.copyWith(status: back));
 }

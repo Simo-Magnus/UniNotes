@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,6 +26,7 @@ import 'study_ai.dart';
 import 'study_sessions_tab.dart' show openStudySession;
 import 'study_widgets.dart';
 import 'topic_logic.dart';
+import '../notes/safe_files.dart';
 
 /// Moduli e argomenti di un corso.
 class _CourseTopics {
@@ -414,7 +413,7 @@ class _CourseContentState extends State<_CourseContent> {
         for (final b in books) {
           final path = b.filePath?.trim() ?? '';
           if (await s.library.fileOf(b) != null ||
-              (path.isNotEmpty && await File(path).exists())) {
+              (path.isNotEmpty && await fileExistsQuick(path))) {
             available.add(b.id!);
           }
         }

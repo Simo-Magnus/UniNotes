@@ -68,7 +68,12 @@ class Exam {
     if (h < 0 || h > 23 || m < 0 || m > 59) {
       return DateTime(date!.year, date!.month, date!.day);
     }
-    return DateTime(date!.year, date!.month, date!.day, h, m);
+    try {
+      return DateTime(date!.year, date!.month, date!.day, h, m);
+    } on ArgumentError {
+      // ultimo giorno rappresentabile (anno 275760): niente ora
+      return date;
+    }
   }
 
   factory Exam.fromMap(Map<String, Object?> m) {

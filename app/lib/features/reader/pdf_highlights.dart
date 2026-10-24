@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdfrx/pdfrx.dart';
 
 import '../../core/services/portable_path.dart';
+import '../../utils/safe_text.dart';
 import '../notes/safe_files.dart';
 
 /// Colori dell'evidenziatore: distinti tra loro e leggibili sotto il testo
@@ -100,7 +101,7 @@ class PdfHighlights extends ChangeNotifier {
       if (!await f.exists()) return;
       final Object? decoded;
       try {
-        decoded = jsonDecode(await f.readAsString());
+        decoded = wellFormedJson(jsonDecode(await f.readAsString()));
       } on FormatException {
         // testo non valido (scritto a metà, altra versione): si tiene una
         // copia, il prossimo salvataggio non la cancella

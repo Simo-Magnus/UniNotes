@@ -3,6 +3,7 @@ import 'package:flutter/services.dart'
     show SpellCheckService, SuggestionSpan, rootBundle;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:super_sliver_list/super_sliver_list.dart';
 
 import '../../widgets/find_bar.dart';
 import '../../widgets/math_text.dart';
@@ -61,6 +62,11 @@ class MarkdownLiteView extends StatefulWidget {
   /// Servizio del controllo ortografico al posto di quello del sistema (per
   /// i test).
   final SpellCheckService? spellService;
+
+  /// Oltre questi blocchi il testo si mostra in una lista pigra (si
+  /// costruisce solo quello che si vede; la selezione con Ctrl+A prende i
+  /// blocchi costruiti).
+  static const lazyFrom = 300;
 
   /// Testi cercabili nell'ordine di visualizzazione (stesso conteggio di
   /// build). Le formule sono disegni, non testo: non si cercano.
@@ -128,6 +134,8 @@ class _MarkdownLiteViewState extends State<MarkdownLiteView> {
   @override
   void dispose() {
     _checker?.dispose();
+    _list.dispose();
+    _ownScroll?.dispose();
     super.dispose();
   }
 
@@ -145,14 +153,56 @@ class _MarkdownLiteViewState extends State<MarkdownLiteView> {
     return (b.toString(), starts);
   }
 
-  @override
-  Widget build(BuildContext context) {
+  /// Blocchi del testo (analizzati una volta per testo, non a ogni disegno:
+  /// il controllo ortografico ridisegna spesso).
+  List<MdBlock> _parsed = const [];
+  String? _parsedText;
+
+  /// Risultati della ricerca prima di ogni blocco (ultimo = totale), per la
+  /// ricerca [_beforeQuery] nel testo [_beforeText].
+  List<int> _before = const [0];
+  String? _beforeText;
+  String? _beforeQuery;
+
+  /// Lista pigra dei documenti lunghi.
+  final _list = ListController();
+  ScrollController? _ownScroll;
+
+  List<MdBlock> get _blocks {
+    if (_parsedText != widget.text) {
+      _parsed = parseMarkdown(widget.text);
+      _parsedText = widget.text;
+    }
+    return _parsed;
+  }
+
+  List<int> _matchesBefore(List<MdBlock> blocks, String q) {
+    if (_beforeText != widget.text || _beforeQuery != q) {
+      final out = List<int>.filled(blocks.length + 1, 0);
+      for (var i = 0; i < blocks.length; i++) {
+        var n = 0;
+        if (q.isNotEmpty) {
+          for (final s in MarkdownLiteView._searchable([blocks[i]])) {
+            n += findOccurrences(s, q).length;
+          }
+        }
+        out[i + 1] = out[i] + n;
+      }
+      _before = out;
+      _beforeText = widget.text;
+      _beforeQuery = q;
+    }
+    return _before;
+  }
+
+  /// Il blocco [i], con i risultati della ricerca numerati da [first]; il
+  /// blocco con il risultato attivo riceve [MarkdownLiteView.activeKey].
+  Widget _blockWidget(BuildContext context, MdBlock b, int first) {
     final theme = Theme.of(context);
     final t = theme.textTheme;
-    final blocks = parseMarkdown(widget.text);
     final q = widget.query ?? '';
     final activeMatch = widget.activeMatch;
-    var counter = 0;
+    var counter = first;
     var activeHere = false;
 
     // Spezza un testo nei risultati della ricerca (evidenziati) e nelle
@@ -206,13 +256,7 @@ class _MarkdownLiteViewState extends State<MarkdownLiteView> {
       }
       if (i < text.length) {
         out.addAll(
-          misspelledSpans(
-            text,
-            errors,
-            style: style,
-            start: i,
-            offset: offset,
-          ),
+          misspelledSpans(text, errors, style: style, start: i, offset: offset),
         );
       }
       return out;
@@ -261,95 +305,188 @@ class _MarkdownLiteViewState extends State<MarkdownLiteView> {
     }
 
     final body = t.bodyLarge!.copyWith(height: 1.55);
-    final children = <Widget>[];
-    for (final b in blocks) {
-      activeHere = false;
-      final Widget w;
-      switch (b.type) {
-        case MdBlockType.heading:
-          final style = switch (b.level) {
-            1 => t.headlineSmall,
-            2 => t.titleLarge,
-            3 => t.titleMedium,
-            _ => t.titleSmall,
-          }!.copyWith(fontWeight: FontWeight.w700);
-          w = Padding(
-            padding: EdgeInsets.only(top: b.level <= 2 ? 20 : 14, bottom: 6),
-            child: Text.rich(spans(b.spans, style)),
-          );
-        case MdBlockType.paragraph:
-          w = Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text.rich(spans(b.spans, body)),
-          );
-        case MdBlockType.bullet || MdBlockType.numbered:
-          w = Padding(
-            padding: EdgeInsets.only(left: 6.0 + 18 * b.level, bottom: 6),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 22,
-                  child: Text(
-                    b.type == MdBlockType.numbered ? '${b.number}.' : '•',
-                    style: body.copyWith(color: theme.colorScheme.primary),
-                  ),
+    final Widget w;
+    switch (b.type) {
+      case MdBlockType.heading:
+        final style = switch (b.level) {
+          1 => t.headlineSmall,
+          2 => t.titleLarge,
+          3 => t.titleMedium,
+          _ => t.titleSmall,
+        }!.copyWith(fontWeight: FontWeight.w700);
+        w = Padding(
+          padding: EdgeInsets.only(top: b.level <= 2 ? 20 : 14, bottom: 6),
+          child: Text.rich(spans(b.spans, style)),
+        );
+      case MdBlockType.paragraph:
+        w = Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Text.rich(spans(b.spans, body)),
+        );
+      case MdBlockType.bullet || MdBlockType.numbered:
+        w = Padding(
+          padding: EdgeInsets.only(left: 6.0 + 18 * b.level, bottom: 6),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 22,
+                child: Text(
+                  b.type == MdBlockType.numbered ? '${b.number}.' : '•',
+                  style: body.copyWith(color: theme.colorScheme.primary),
                 ),
-                Expanded(child: Text.rich(spans(b.spans, body))),
-              ],
-            ),
-          );
-        case MdBlockType.quote:
-          w = Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            padding: const EdgeInsets.fromLTRB(12, 6, 8, 6),
-            decoration: BoxDecoration(
-              border: Border(
-                left: BorderSide(color: theme.colorScheme.primary, width: 3),
               ),
+              Expanded(child: Text.rich(spans(b.spans, body))),
+            ],
+          ),
+        );
+      case MdBlockType.quote:
+        w = Container(
+          margin: const EdgeInsets.only(bottom: 10),
+          padding: const EdgeInsets.fromLTRB(12, 6, 8, 6),
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(color: theme.colorScheme.primary, width: 3),
             ),
-            child: Text.rich(
-              spans(b.spans, body.copyWith(fontStyle: FontStyle.italic)),
-            ),
-          );
-        case MdBlockType.rule:
-          w = const Divider(height: 28);
-        case MdBlockType.math:
-          w = Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: MathBlock(b.raw ?? '', style: body),
-          );
-        case MdBlockType.code:
-          final code = body.copyWith(fontFamily: 'IBMPlexMono', fontSize: 13);
-          w = Container(
-            width: double.infinity,
-            margin: const EdgeInsets.only(bottom: 10),
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceContainerHighest,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text.rich(
-              TextSpan(style: code, children: split(b.raw ?? '', null)),
-            ),
-          );
+          ),
+          child: Text.rich(
+            spans(b.spans, body.copyWith(fontStyle: FontStyle.italic)),
+          ),
+        );
+      case MdBlockType.rule:
+        w = const Divider(height: 28);
+      case MdBlockType.math:
+        w = Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: MathBlock(b.raw ?? '', style: body),
+        );
+      case MdBlockType.code:
+        final code = body.copyWith(fontFamily: 'IBMPlexMono', fontSize: 13);
+        w = Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(bottom: 10),
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surfaceContainerHighest,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Text.rich(
+            TextSpan(style: code, children: split(b.raw ?? '', null)),
+          ),
+        );
+    }
+    return activeHere && widget.activeKey != null
+        ? KeyedSubtree(key: widget.activeKey, child: w)
+        : w;
+  }
+
+  /// Blocco con il risultato attivo, se c'è.
+  int? _activeBlock(List<int> before) {
+    final m = widget.activeMatch;
+    if (m == null || m < 0 || m >= before.last) return null;
+    var lo = 0, hi = before.length - 2;
+    while (lo < hi) {
+      final mid = (lo + hi + 1) >> 1;
+      if (before[mid] <= m) {
+        lo = mid;
+      } else {
+        hi = mid - 1;
       }
-      children.add(
-        activeHere && widget.activeKey != null
-            ? KeyedSubtree(key: widget.activeKey, child: w)
-            : w,
+    }
+    return lo;
+  }
+
+  /// Documento lungo: il risultato attivo può essere in un blocco non
+  /// ancora costruito (lista pigra). Lo si porta in vista con la lista e poi
+  /// si centra come fa la ricerca ([SearchableMarkdownView]).
+  void _revealLazy(int block) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || widget.activeKey?.currentContext != null) return;
+      final scroll = widget.scrollController ?? _ownScroll;
+      if (!_list.isAttached || scroll == null || !scroll.hasClients) return;
+      _list.jumpToItem(index: block, scrollController: scroll, alignment: 0.3);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final c = widget.activeKey?.currentContext;
+        if (!mounted || c == null || !c.mounted) return;
+        Scrollable.ensureVisible(
+          c,
+          alignment: 0.3,
+          duration: const Duration(milliseconds: 200),
+        );
+      });
+    });
+  }
+
+  int? _revealed;
+  String? _revealedQuery;
+
+  @override
+  Widget build(BuildContext context) {
+    final blocks = _blocks;
+    final q = widget.query ?? '';
+    final before = _matchesBefore(blocks, q);
+    final padding = widget.padding ?? const EdgeInsets.fromLTRB(20, 12, 20, 40);
+    if (blocks.length > MarkdownLiteView.lazyFrom) {
+      // la lista pigra ha bisogno di un'altezza: dentro un'altra vista che
+      // scorre (altezza libera) resta la colonna
+      return LayoutBuilder(
+        builder: (context, c) => c.hasBoundedHeight
+            ? _lazy(context, blocks, before, padding, q)
+            : _column(context, blocks, before, padding),
       );
     }
-    // Colonna (non lista pigra): il risultato attivo deve esistere per
-    // poterlo portare in vista anche se è lontano.
+    return _column(context, blocks, before, padding);
+  }
+
+  /// Colonna (non lista pigra): tutto il testo si seleziona insieme e il
+  /// risultato attivo esiste sempre per portarlo in vista.
+  Widget _column(
+    BuildContext context,
+    List<MdBlock> blocks,
+    List<int> before,
+    EdgeInsets padding,
+  ) => SelectionArea(
+    child: SingleChildScrollView(
+      controller: widget.scrollController,
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          for (var i = 0; i < blocks.length; i++)
+            _blockWidget(context, blocks[i], before[i]),
+        ],
+      ),
+    ),
+  );
+
+  /// Documento lungo (trascrizione di ore, migliaia di paragrafi): lista
+  /// pigra. Costruire e impaginare tutto insieme fermava l'interfaccia (5000
+  /// paragrafi: ~3 s sul PC a ogni apertura e a ogni ridisegno del controllo
+  /// ortografico); ora si costruisce solo quello che si vede.
+  Widget _lazy(
+    BuildContext context,
+    List<MdBlock> blocks,
+    List<int> before,
+    EdgeInsets padding,
+    String q,
+  ) {
+    final active = _activeBlock(before);
+    if (active != null &&
+        (widget.activeMatch != _revealed || q != _revealedQuery)) {
+      _revealLazy(active);
+    }
+    _revealed = widget.activeMatch;
+    _revealedQuery = q;
+    final scroll =
+        widget.scrollController ?? (_ownScroll ??= ScrollController());
     return SelectionArea(
-      child: SingleChildScrollView(
-        controller: widget.scrollController,
-        padding: widget.padding ?? const EdgeInsets.fromLTRB(20, 12, 20, 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: children,
-        ),
+      child: SuperListView.builder(
+        controller: scroll,
+        listController: _list,
+        padding: padding,
+        itemCount: blocks.length,
+        itemBuilder: (context, i) =>
+            _blockWidget(context, blocks[i], before[i]),
       ),
     );
   }
@@ -416,6 +553,8 @@ class SearchableMarkdownViewState extends State<SearchableMarkdownView> {
   void openFind() {
     setState(() => _open = true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // la schermata può essere già chiusa (controller e fuoco eliminati)
+      if (!mounted) return;
       _focus.requestFocus();
       _query.selection = TextSelection(
         baseOffset: 0,

@@ -266,7 +266,6 @@ void main() {
         'link-terms',
         'link-licenses',
         'erase-all',
-        'uninstall-app',
       ];
       final rects = [for (final k in keys) tester.getRect(find.byKey(Key(k)))];
       for (final (i, r) in rects.indexed) {
@@ -288,8 +287,14 @@ void main() {
       }
       expect(
         tester.getTopLeft(find.text('Informativa privacy')).dx,
-        closeTo(tester.getTopLeft(find.text('Disinstalla UniNotes')).dx, 0.5),
+        closeTo(tester.getTopLeft(find.text('Elimina tutti i dati')).dx, 0.5),
       );
+      // la funzione «Disinstalla UniNotes» non c'è più: resta il consiglio
+      // di usare il sistema e «Elimina tutti i dati» prima
+      expect(find.byKey(const Key('uninstall-app')), findsNothing);
+      expect(find.text('Disinstalla UniNotes'), findsNothing);
+      expect(find.byKey(const Key('uninstall-help')), findsOneWidget);
+      expect(find.textContaining('usa il sistema'), findsOneWidget);
       // a destra «apre fuori» per i siti, la freccia per le pagine dell'app
       expect(
         find.descendant(

@@ -264,6 +264,8 @@ class ReaderScreenState extends State<ReaderScreen> {
     if (!pane.canFind) return;
     setState(() => _findOpen = true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // la schermata può essere già chiusa (controller e fuoco eliminati)
+      if (!mounted) return;
       _queryFocus.requestFocus();
       _query.selection = TextSelection(
         baseOffset: 0,
@@ -316,7 +318,11 @@ class ReaderScreenState extends State<ReaderScreen> {
         count: pane.unitCount,
       ),
     );
-    if (u != null) pane.goToUnit(u.clamp(1, pane.unitCount));
+    // dopo l'attesa il documento può essere cambiato (nessuna unità: clamp
+    // con minimo > massimo darebbe un errore)
+    if (u != null && pane.unitCount >= 1) {
+      pane.goToUnit(u.clamp(1, pane.unitCount));
+    }
   }
 
   Future<void> _addBookmark() async {

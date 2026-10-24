@@ -18,15 +18,12 @@ const String kUninstallArg = '--disinstalla';
 /// Windows: il disinstallatore di Inno Setup, avviato da «App installate»,
 /// lancia `uninotes.exe --disinstalla` e aspetta. L'app parte in modalità
 /// minima (niente sincronizzazioni, promemoria o area di notifica) con la
-/// stessa schermata di «Disinstalla UniNotes» ([runEraseFlow]) e poi si
-/// chiude; il disinstallatore toglie i file del programma. Quando invece è
-/// l'app ad avviare il disinstallatore (dopo la pulizia) lo fa in modalità
-/// silenziosa e lascia il segno [AppUninstall.windowsCleanupMark]: qui ci si
-/// chiude subito. Solo per l'installatore del sito: nella build del Microsoft
-/// Store l'argomento si ignora ([AppUninstall.handlesUninstallArg]).
+/// schermata di disinstallazione dell'app ([runEraseFlow], modalità
+/// [EraseFlowMode.windowsUninstaller]) e poi si chiude; il disinstallatore
+/// toglie i file del programma. Solo per l'installatore del sito: nella build
+/// del Microsoft Store l'argomento si ignora
+/// ([AppUninstall.handlesUninstallArg]).
 Future<void> runUninstallMode() async {
-  // disinstallatore avviato dall'app dopo la pulizia: niente da chiedere
-  if (await AppUninstall.takeWindowsCleanupMark()) exit(0);
   AppDatabase db;
   try {
     db = await File(await AppDatabase.defaultPath()).exists()

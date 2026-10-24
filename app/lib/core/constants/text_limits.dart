@@ -27,6 +27,11 @@ abstract final class TextLimits {
   static const materialLine = 200;
   static const noteTitle = 90;
   static const search = 100;
+
+  /// Testo cercato dentro un documento (Trova nel testo): senza un tetto,
+  /// una pagina incollata (megabyte) ripiegava e confrontava tutto il testo
+  /// a ogni tasto e bloccava l'app.
+  static const findQuery = 500;
   static const shortNote = 500;
   static const notes = 2000;
   static const longText = 4000;

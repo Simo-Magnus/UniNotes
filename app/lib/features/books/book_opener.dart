@@ -11,6 +11,7 @@ import '../../models/book.dart';
 import '../../widgets/common.dart';
 import '../reader/reader_screen.dart';
 import 'pdf_reader_screen.dart';
+import '../notes/safe_files.dart';
 
 /// «Aggiungi» su un libro senza file: l'utente sceglie il file (l'app non
 /// può verificare che sia davvero quel libro), che viene copiato nell'app;
@@ -66,7 +67,7 @@ Future<void> _openBook(BuildContext context, Book book) async {
   var file = await s.library.fileOf(b);
   final path = b.filePath?.trim();
   if (file == null && path != null && path.isNotEmpty) {
-    if (await File(path).exists()) {
+    if (await fileExistsQuick(path)) {
       if (context.mounted) {
         showSnack(context, 'Copio "${b.title}" nell\'app…');
       }

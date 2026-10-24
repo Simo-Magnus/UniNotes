@@ -7,6 +7,7 @@ import 'package:super_sliver_list/super_sliver_list.dart';
 
 import '../../../core/services/external_launcher.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../../utils/safe_text.dart';
 import '../../notes/markdown_view.dart' show findActiveColor, findMatchColor;
 import '../reader_controller.dart';
 import '../reader_document.dart';
@@ -220,7 +221,7 @@ class DocumentViewState extends State<DocumentView> {
   /// megabyte in una colonna stretta diventerebbe decine di migliaia di
   /// righe da impaginare). La ricerca usa il testo intero.
   static String _cellText(String t) =>
-      t.length > 2000 ? '${t.substring(0, 2000)}…' : t;
+      t.length > 2000 ? '${safePrefix(t, 2000)}…' : t;
 
   /// Caratteri massimi di un elemento della vista (vedi [_splitPara]).
   static const _maxParaChars = 6000;
@@ -253,6 +254,9 @@ class DocumentViewState extends State<DocumentView> {
         var cut = room;
         final ws = t.lastIndexOf(RegExp(r'[\s,;]'), room);
         if (ws > room ~/ 2) cut = ws + 1;
+        // mai in mezzo a una coppia surrogata (emoji): il pezzo non sarebbe
+        // disegnabile
+        cut = cutBefore(t, cut);
         if (cut <= 0) {
           push();
           continue;
@@ -288,7 +292,7 @@ class DocumentViewState extends State<DocumentView> {
         ? '${widget.doc.unitLabel} ${it.section + 1}'
         : null;
     var text = it.block.texts.join(' ').replaceAll(RegExp(r'\s+'), ' ').trim();
-    if (text.length > 60) text = '${text.substring(0, 60)}…';
+    if (text.length > 60) text = '${safePrefix(text, 60)}…';
     return [?unit, if (text.isNotEmpty) text].join(' · ');
   }
 

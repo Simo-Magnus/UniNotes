@@ -548,6 +548,12 @@ String formatNumber(double v) {
 
 /// Data da numero seriale di Excel (sistema 1900).
 String excelDate(double serial, {bool time = false}) {
+  // Excel mostra date solo da 0 a 2958465 (31/12/9999): numeri enormi,
+  // negativi o non finiti (cella con stile data ma contenuto strano) restano
+  // numeri; il calcolo con i millisecondi lancerebbe un errore di intervallo
+  if (!serial.isFinite || serial < 0 || serial >= 2958466) {
+    return formatNumber(serial);
+  }
   final d = DateTime.utc(
     1899,
     12,

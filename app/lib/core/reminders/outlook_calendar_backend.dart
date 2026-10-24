@@ -308,11 +308,13 @@ class OutlookCalendarBackend implements CalendarBackend, RemovableCalendar {
     final DateTime start;
     final DateTime end;
     if (item.allDay) {
-      start = DateTime.utc(item.date.year, item.date.month, item.date.day);
-      end = DateTime.utc(item.date.year, item.date.month, item.date.day + 1);
+      start = item.dayStartUtc;
+      end = item.dayEndUtc;
     } else {
-      start = item.start.toUtc();
-      end = item.end.toUtc();
+      // l'ora della prova è quella italiana (Europe/Rome), come nel file
+      // .ics e nel calendario del telefono
+      start = item.startInstant;
+      end = item.endInstant;
     }
     final reminder = reminderMinutes.isEmpty
         ? null

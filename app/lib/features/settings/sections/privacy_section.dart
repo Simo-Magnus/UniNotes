@@ -160,14 +160,20 @@ class PrivacySection extends StatelessWidget {
               destructive: true,
               onTap: () => eraseAllData(context),
             ),
-            _LinkRow(
-              key: const Key('uninstall-app'),
-              icon: Icons.delete_sweep_outlined,
-              label: 'Disinstalla UniNotes',
-              destructive: true,
-              onTap: () => uninstallApp(context),
-            ),
           ],
+        ),
+        Padding(
+          key: const Key('uninstall-help'),
+          padding: const EdgeInsets.fromLTRB(4, 8, 4, 0),
+          child: Text(
+            'Per togliere l\'app usa il sistema (impostazioni del telefono, '
+            '«App installate» di Windows, Cestino su Mac). Prima conviene '
+            'usare «Elimina tutti i dati»: toglie anche le cartelle nel '
+            'cloud e gli eventi nel calendario.',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
         ),
       ],
     );

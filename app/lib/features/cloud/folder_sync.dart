@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'google_drive_client.dart' show DriveException;
 import 'graph_client.dart' show GraphException;
 
 /// L'errore viene dalla rete (nessuna connessione, servizio non
@@ -16,6 +17,19 @@ bool isNetworkError(Object e) =>
     e is HttpException ||
     e is TlsException ||
     (e is GraphException && e.status == 0);
+
+/// Il servizio chiede di rallentare (429, 503; Google Drive anche 403 con
+/// «rate limit»): riprovare subito con gli altri file peggiora le cose.
+bool isThrottled(Object e) {
+  final (status, msg) = switch (e) {
+    GraphException(:final status, :final message) => (status, message),
+    DriveException(:final status, :final message) => (status, message),
+    _ => (0, ''),
+  };
+  return status == 429 ||
+      status == 503 ||
+      (status == 403 && msg.toLowerCase().contains('rate limit'));
+}
 
 /// Stato di un file all'ultima sincronizzazione riuscita.
 class SyncedFile {
@@ -557,7 +571,9 @@ abstract class FolderSync {
           state.remove(rel); // sparito da entrambe le parti
         }
       } catch (e) {
-        if (isNetworkError(e)) {
+        // (anche per le richieste rifiutate perché troppe: si riprova alla
+        // prossima sincronizzazione, non con tutti i file adesso)
+        if (isNetworkError(e) || isThrottled(e)) {
           offline = e;
           break;
         }

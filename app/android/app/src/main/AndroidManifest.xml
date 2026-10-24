@@ -25,12 +25,6 @@
          se lo studente lo vuole e dà l'«Accesso a Non disturbare» dalle
          impostazioni del sistema (FocusDnd.kt). -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-    <!-- «Disinstalla UniNotes» (Impostazioni): dopo la pulizia dei dati
-         l'app apre la richiesta di disinstallazione del sistema per sé
-         stessa (ACTION_DELETE; da Android 9 serve questo permesso normale,
-         concesso all'installazione e ammesso da Google Play). -->
-    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
-
     <!-- Dati solo sul dispositivo: niente backup automatico su Google Drive né
          copia su un nuovo telefono (reinstallando si riparte da zero). -->
     <application

@@ -73,50 +73,24 @@ void main() {
     expect(await AppUninstall.installIdentity(rules: store), isNull);
   });
 
-  test('disinstallazione nello Store: si apre «App installate»', () async {
-    final opened = <Uri>[];
-    final r = await AppUninstall.windowsStore(
-      open: (u) async {
-        opened.add(u);
-        return true;
-      },
-    );
-    expect(r.started, isFalse);
-    expect(r.message, contains('App installate'));
-    expect(opened, [Uri.parse('ms-settings:appsfeatures')]);
-    // anche se Impostazioni non si apre resta la spiegazione
-    final failed = await AppUninstall.windowsStore(
-      open: (_) async => throw Exception('no'),
-    );
-    expect(failed.message, AppUninstall.windowsStoreMessage);
-  });
-
-  group('«Disinstalla UniNotes» nello Store', () {
+  group('«Elimina tutti i dati» nello Store', () {
     late AppServices s;
     setUp(() async => s = AppServices(await AppDatabase.openInMemory()));
     tearDown(() => s.database.close());
 
-    testWidgets('elimina i dati, poi spiega come togliere l\'app', (
+    testWidgets('elimina i dati e l\'app si chiude, senza disinstallarsi', (
       tester,
     ) async {
       final eraser = _FakeEraser(s);
       var quit = 0;
-      final opened = <Uri>[];
       await tester.pumpWidget(
         MaterialApp(
           home: Builder(
             builder: (context) => TextButton(
               onPressed: () => runEraseFlow(
                 context,
-                mode: EraseFlowMode.uninstall,
+                mode: EraseFlowMode.eraseOnly,
                 eraser: eraser,
-                windowsStore: true,
-                uninstall: () => AppUninstall.windowsStore(
-                  open: (u) async {
-                    opened.add(u);
-                    return true;
-                  },
-                ),
                 quit: () => quit++,
               ),
               child: const Text('apri'),
@@ -130,17 +104,12 @@ void main() {
       await tester.pumpAndSettle();
       // cloud e calendario fra le voci, come nelle altre build
       expect(find.textContaining(EraseItem.onedrive.label), findsOneWidget);
-      expect(
-        find.textContaining('«App installate» di Windows'),
-        findsOneWidget,
-      );
-      expect(find.textContaining('Poi UniNotes si disinstalla'), findsNothing);
-      await tester.tap(find.text('Elimina e disinstalla'));
+      expect(find.textContaining('App installate'), findsNothing);
+      expect(find.textContaining('disinstalla'), findsNothing);
+      await tester.tap(find.text('Elimina'));
       await tester.pumpAndSettle();
       expect(eraser.erased, EraseItem.values.toSet());
-      expect(opened, [AppUninstall.windowsAppsSettings]);
       expect(find.text('Dati eliminati'), findsOneWidget);
-      expect(find.textContaining('Windows elimina'), findsOneWidget);
       expect(quit, 0);
       await tester.tap(find.text('Chiudi'));
       expect(quit, 1);

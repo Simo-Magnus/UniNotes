@@ -280,6 +280,16 @@ piena di Whisper, Parakeet finto con la fine frase, la fine della
 registrazione e le frasi in un'altra lingua), `app/test/recorder_speech_test.dart`
 (riconoscitore del sistema che riscrive le parole).
 
+### Maiuscole a inizio pezzo (24/10/2026)
+
+Il riconoscitore del telefono restituisce ogni pezzo con la maiuscola anche quando continua la frase di
+prima («oggi parliamo Di integrali»). Unendo i pezzi (`TranscriptMerger` in `live_transcript.dart`), se il
+testo precedente non finisce con `.`, `!`, `?` o `…` l'iniziale torna minuscola. Restano maiuscoli i nomi
+propri noti (parole del vocabolario dell'insegnamento che non sono la prima del loro nome, per esempio
+«Lagrange» in «Teorema di Lagrange», e parole già viste con la maiuscola a metà frase nella stessa lezione),
+le sigle e le parole con maiuscole interne («PDF», «UniNotes») e «I» nelle lezioni in inglese. Le frasi già
+corrette a mano non si toccano. Test: `test/live_transcript_case_test.dart`.
+
 ### Lingua della trascrizione (22/10/2026)
 
 La lingua è sempre quella della lezione: **italiano**, o **inglese** se
@@ -593,6 +603,18 @@ le unisce in una sola, dall'inizio della prima alla fine dell'ultima; una
 frase svuotata si toglie (`TranscriptEditBuffer`,
 `LiveTranscriber.replaceSegments`). Il testo originale resta in memoria per
 unire bene le finestre successive di Whisper.
+
+**Lezioni di ore** (24/10/2026, test in `app/test/crash_r3_memoria_test.dart`):
+il testo è diviso in blocchi di 40 frasi (`kLiveReadingBlock`, ~4 minuti di
+lezione), ognuno un paragrafo: a ogni parola nuova si ricostruisce e si
+reimpagina solo l'ultimo blocco (prima un paragrafo unico con tutta la
+lezione: con 2600 frasi, ~4 ore, 115 ms sul PC per ogni parola, più volte al
+secondo; ora ~25 ms quasi costanti). Toccando il testo si modifica **il
+blocco toccato**: nel campo ci sono le sue frasi, gli altri blocchi restano
+in lettura sopra e sotto (prima tutto il testo era nel campo: ~140 ms per
+tasto e per parola confermata dopo 4 ore; ora ~25 ms). Una selezione o una
+cancellazione non attraversa due blocchi; nell'ultimo blocco le frasi nuove
+entrano nel campo come prima. Con meno di 40 frasi non cambia niente.
 
 ### Controllo ortografico
 

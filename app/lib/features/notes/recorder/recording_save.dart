@@ -10,6 +10,7 @@ import '../../../core/services/audio_codec.dart';
 import '../../../core/services/whisper_service.dart';
 import '../notes_store.dart';
 import '../recycle_bin.dart';
+import '../safe_files.dart';
 import 'live_transcriber.dart';
 import 'recording_meta.dart';
 import 'recording_session.dart';
@@ -62,7 +63,9 @@ Future<File> writeTranscriptFor(
     subtitle: [if (course.isNotEmpty) course, source].join(' · '),
   );
   final f = File(p.join(dir.path, '$name.md'));
-  await f.writeAsString(md);
+  // scrittura sicura: con il disco pieno la trascrizione già salvata non
+  // resta troncata
+  await writeStringAtomic(f, md);
   return f;
 }
 

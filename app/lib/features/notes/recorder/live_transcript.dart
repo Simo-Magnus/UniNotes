@@ -338,12 +338,58 @@ bool isHallucination(String text) {
   return _hallucinations.any(t.contains);
 }
 
+final _sentenceEnd = RegExp(r'[.!?…]["»”’)\]]*$');
+final _leadingCapital = RegExp(
+  r'^([^\p{L}\p{N}]*)(\p{Lu})(\p{Ll}*)(?=$|[^\p{L}\p{N}])',
+  unicode: true,
+);
+final _titleWord = RegExp(r'^\p{Lu}\p{Ll}+$', unicode: true);
+final _wordEdges = RegExp(r'^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$', unicode: true);
+
+/// Parole con la sola iniziale maiuscola che in [text] stanno a metà frase
+/// (non dopo un punto): nomi propri, in minuscolo.
+Iterable<String> midSentenceNames(String text) sync* {
+  final words = text.split(RegExp(r'\s+'));
+  for (var k = 1; k < words.length; k++) {
+    if (_sentenceEnd.hasMatch(words[k - 1])) continue;
+    final w = words[k].replaceAll(_wordEdges, '');
+    if (_titleWord.hasMatch(w)) yield w.toLowerCase();
+  }
+}
+
 /// Unisce i pezzi trascritti in un'unica trascrizione ordinata per tempo,
 /// senza doppioni nella sovrapposizione.
+///
+/// Il riconoscitore del telefono restituisce ogni pezzo con la maiuscola,
+/// anche quando continua la frase di prima: se il testo precedente non
+/// finisce con un punto (`.`, `!`, `?`, `…`) l'iniziale torna minuscola,
+/// tranne per i nomi propri noti ([properNames]: dal vocabolario
+/// dell'insegnamento e dalle parole già viste con la maiuscola a metà frase),
+/// le sigle e le parole con maiuscole interne («PDF», «UniNotes»), e «I»
+/// nelle lezioni in inglese ([english]).
 class TranscriptMerger {
   final List<TranscriptSegment> segments = [];
 
+  /// Nomi propri noti, in minuscolo.
+  final Set<String> properNames = {};
+
+  /// Lezione in inglese: «I» resta maiuscola.
+  bool english = false;
+
   String get text => segments.map((s) => s.text).join(' ');
+
+  /// [text] con l'iniziale minuscola se continua [before] (che non finisce
+  /// con un punto) e non è un nome proprio noto.
+  String continueSentence(String text, String? before) {
+    if (before == null || before.trim().isEmpty) return text;
+    if (_sentenceEnd.hasMatch(before.trimRight())) return text;
+    final m = _leadingCapital.firstMatch(text);
+    if (m == null) return text;
+    final word = '${m[2]}${m[3]}';
+    if (english && word == 'I') return text;
+    if (properNames.contains(word.toLowerCase())) return text;
+    return '${m[1]}${m[2]!.toLowerCase()}${m[3]}${text.substring(m.end)}';
+  }
 
   /// Aggiunge i segmenti di un pezzo (tempi già riferiti alla
   /// registrazione intera).
@@ -375,6 +421,15 @@ class TranscriptMerger {
           .map((s) => s.text)
           .join(' ');
       segs = _trimTail(segs, next);
+    }
+    for (final s in segs) {
+      properNames.addAll(midSentenceNames(s.text));
+    }
+    var before = i > 0 ? segments[i - 1].text : null;
+    for (var k = 0; k < segs.length; k++) {
+      final t = continueSentence(segs[k].text, before);
+      if (t != segs[k].text) segs[k] = segs[k].copyWith(text: t);
+      before = t;
     }
     segments.insertAll(i, segs);
   }

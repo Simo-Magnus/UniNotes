@@ -156,6 +156,29 @@ account e colore; senza scelta il predefinito):
 - Il file .ics (`calendar_export.dart`) resta solo per un sistema senza
   calendario collegabile.
 
+**Fuso orario delle prove (22/10/2026).** L'ora di una prova («09:30») è l'ora
+dell'ateneo, cioè Europe/Rome (come in `docs/database_format.md`), e non
+dipende dal fuso del telefono: chi è in un altro fuso (viaggio, Erasmus) deve
+vedere la prova all'ora che corrisponde a quella italiana. Lo stesso criterio
+vale ovunque:
+
+- **.ics**: `DTSTART;TZID=Europe/Rome:20270120T093000`, con il `VTIMEZONE`
+  completo (regole dell'ora legale europea) nel file. Le cifre sono quelle
+  salvate, mai convertite nel fuso del dispositivo; la fine (+2 ore) si calcola
+  sulle stesse cifre. Perché non «ora fluttuante» (senza `TZID`): il calendario
+  la riporterebbe all'ora del telefono e la prova si sposterebbe; non UTC
+  con `Z`: perderebbe l'ora legale se l'evento si modificasse a mano. La
+  giornata intera resta `VALUE=DATE` (senza ora né fuso, RFC 5545).
+- **Android, iOS, macOS e Outlook**: si scrive l'istante (UTC) dell'ora
+  italiana (`romeWallToUtc` in `agenda.dart`, `AgendaItem.startInstant`),
+  che il calendario mostra nel fuso del telefono; prima si usava l'ora del
+  telefono, uguale solo per chi è in Italia. La giornata intera resta come
+  prima (mezzanotte UTC su Android e Outlook, mezzanotte locale su Apple).
+- Le notifiche dell'app (sopra) non cambiano: restano agli istanti locali del
+  dispositivo (9:00 del giorno N prima, un'ora prima, ecc.).
+- Date al limite di `DateTime` (anno 275760): niente eccezioni, la prova vale
+  una giornata intera / fine uguale all'inizio.
+
 **Controllo di salute** (all'avvio, al ritorno nell'app, dopo ogni modifica e
 una volta al giorno): permesso concesso, calendario ancora esistente e
 scrivibile, `SYNC_EVENTS=1`, eventi dell'app riletti (quelli tolti a mano si
@@ -182,7 +205,9 @@ Gli altri leggono soltanto gli eventi (per non mandare notifiche doppie) e
 mostrano «Calendario aggiornato dal telefono» con «Aggiorna da questo
 dispositivo». Se il dispositivo che scriveva non si sente da 21 giorni, il
 posto passa a chi sincronizza; spegnendo il calendario su di lui il posto si
-libera. Anche se due dispositivi scrivessero insieme, la chiave nella
+libera. Un segno con l'orario nel futuro (dispositivo con l'orologio avanti)
+vale come scritto adesso e da lì invecchia, come in «Orologi diversi» della
+sincronizzazione: non blocca più gli altri per mesi. Anche se due dispositivi scrivessero insieme, la chiave nella
 descrizione fa togliere il doppione.
 
 **Quando si propone il calendario.** Sul telefono (Android, iOS) un passo

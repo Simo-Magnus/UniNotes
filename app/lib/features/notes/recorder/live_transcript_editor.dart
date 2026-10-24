@@ -287,6 +287,47 @@ class _Anchor {
   final int rawLength;
 }
 
+/// Frasi per blocco del testo in lettura ([EditableLiveTranscript]).
+const kLiveReadingBlock = 40;
+
+/// Un blocco di frasi del testo in lettura: testi ed errori con cui è stato
+/// costruito (per riusarlo se non cambiano), tratti, posizioni (del blocco)
+/// e chiave del suo paragrafo.
+class _ReadingBlock {
+  _ReadingBlock(
+    this.keys,
+    this.texts,
+    this.errors,
+    this.span,
+    this.anchors,
+    this.raw,
+  );
+
+  /// Chiavi delle frasi (inizio in millisecondi).
+  final List<int> keys;
+  final List<String> texts;
+  final List<List<SuggestionSpan>> errors;
+  final InlineSpan span;
+  final List<_Anchor> anchors;
+
+  /// Lunghezza del testo da modificare del blocco (frasi e spazi fra loro).
+  final int raw;
+  final GlobalKey key = GlobalKey();
+
+  /// Paragrafo già costruito (blocchi senza il testo provvisorio).
+  Widget? widget;
+
+  bool sameAs(List<int> k, List<String> t, List<List<SuggestionSpan>> e) {
+    if (t.length != texts.length) return false;
+    for (var i = 0; i < t.length; i++) {
+      if (k[i] != keys[i] || t[i] != texts[i] || !identical(e[i], errors[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
 /// Testo dal vivo modificabile come in un normale editor di testo (Blocco
 /// note, Google Docs): un tocco (o un clic) in un punto qualsiasi del testo
 /// mette lì il cursore e si scrive, cancella, seleziona, copia e incolla
@@ -356,10 +397,40 @@ class EditableLiveTranscript extends StatefulWidget {
 class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
   final _controller = TextEditingController();
   final _focus = FocusNode(debugLabel: 'trascrizione dal vivo');
-  final _text = GlobalKey();
   TranscriptEditBuffer? _buffer;
-  List<_Anchor> _anchors = const [];
-  int _rawLength = 0;
+
+  /// Il testo in lettura a blocchi di [kLiveReadingBlock] frasi: dopo ore di
+  /// lezione (migliaia di frasi) un paragrafo unico si reimpaginava tutto a
+  /// ogni parola nuova (2600 frasi: ~115 ms sul PC, molto di più sul
+  /// telefono, più volte al secondo: interfaccia ferma). Si ricostruisce e
+  /// si reimpagina solo il blocco che cambia (di solito l'ultimo).
+  List<_ReadingBlock> _blocks = const [];
+  TextStyle? _blocksStyle;
+
+  /// Modifica di un testo di più blocchi: nel campo c'è solo il blocco
+  /// toccato (frasi da [_editFrom] incluso a [_editTo] escluso, chiavi in
+  /// millisecondi; null = tutto il testo, o fino in fondo); quelli prima
+  /// ([_before]) e dopo ([_after]) restano paragrafi in lettura. Un campo
+  /// con ore di testo si reimpaginava tutto a ogni tasto e a ogni parola
+  /// confermata (2600 frasi: ~140 ms sul PC, molto di più sul telefono).
+  int? _editFrom;
+  int? _editTo;
+  List<_ReadingBlock> _before = const [];
+  List<_ReadingBlock> _after = const [];
+
+  bool _inWindow(TranscriptSegment s) {
+    final from = _editFrom;
+    if (from == null) return true;
+    final k = s.start.inMilliseconds;
+    final to = _editTo;
+    return k >= from && (to == null || k < to);
+  }
+
+  /// Le frasi del campo di modifica.
+  List<TranscriptSegment> get _windowSegments => [
+    for (final s in widget.segments)
+      if (_inWindow(s)) s,
+  ];
   SpellCheckConfiguration _spell = const SpellCheckConfiguration.disabled();
 
   /// Errori delle frasi per la linea rossa in lettura.
@@ -391,7 +462,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     // frasi nuove o cambiate mentre si scrive: al loro posto, nello stesso
     // campo; cursore, selezione e parola in composizione della tastiera
     // restano dove sono (la tastiera del telefono non perde la parola)
-    final changes = buffer.sync(widget.segments);
+    final changes = buffer.sync(_windowSegments);
     if (changes.isEmpty) return;
     int map(int o) {
       for (final c in changes) {
@@ -465,16 +536,35 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
   /// Dal tocco nel testo disegnato alla modifica, con il cursore lì.
   void _startAt(Offset global, {bool word = false}) {
     if (widget.segments.isEmpty) return;
-    var shown = -1;
-    final box = _text.currentContext?.findRenderObject();
-    if (box is RenderParagraph && box.hasSize) {
-      shown = box.getPositionForOffset(box.globalToLocal(global)).offset;
+    // il blocco toccato (il primo che arriva sotto il punto, o l'ultimo)
+    var at = -1;
+    var hit = _blocks.length - 1;
+    for (var i = 0; i < _blocks.length; i++) {
+      final b = _blocks[i];
+      final box = b.key.currentContext?.findRenderObject();
+      if (box is RenderParagraph && box.hasSize) {
+        final local = box.globalToLocal(global);
+        if (local.dy < box.size.height || i == _blocks.length - 1) {
+          at = _rawOffset(b, box.getPositionForOffset(local).offset);
+          hit = i;
+          break;
+        }
+      }
     }
-    final buffer = TranscriptEditBuffer(widget.segments);
-    final raw = (shown < 0 ? _rawLength : _rawOffset(shown)).clamp(
-      0,
-      buffer.text.length,
-    );
+    if (_blocks.length > 1 && hit >= 0) {
+      // testo lungo: nel campo solo il blocco toccato
+      _editFrom = _blocks[hit].keys.first;
+      _editTo = hit + 1 < _blocks.length ? _blocks[hit + 1].keys.first : null;
+      _before = _blocks.sublist(0, hit);
+      _after = _blocks.sublist(hit + 1);
+    } else {
+      _editFrom = null;
+      _editTo = null;
+      _before = const [];
+      _after = const [];
+    }
+    final buffer = TranscriptEditBuffer(_windowSegments);
+    final raw = (at < 0 ? buffer.text.length : at).clamp(0, buffer.text.length);
     var selection = TextSelection.collapsed(offset: raw);
     if (word) selection = _wordAt(buffer.text, raw);
     setState(() {
@@ -511,8 +601,10 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
         : TextSelection(baseOffset: a, extentOffset: b);
   }
 
-  int _rawOffset(int shown) {
-    for (final a in _anchors) {
+  /// Dalla posizione [shown] nel paragrafo del blocco [b] a quella nel suo
+  /// testo da modificare.
+  static int _rawOffset(_ReadingBlock b, int shown) {
+    for (final a in b.anchors) {
       if (shown > a.shown + a.shownLength) continue;
       if (a.shownLength == a.rawLength) {
         return a.raw + (shown - a.shown).clamp(0, a.rawLength);
@@ -520,7 +612,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
       // formula: prima o dopo
       return shown <= a.shown ? a.raw : a.raw + a.rawLength;
     }
-    return _rawLength;
+    return b.raw;
   }
 
   void _changed(String text) {
@@ -534,23 +626,26 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     setState(() {
       _buffer = null;
       _spell = const SpellCheckConfiguration.disabled();
+      _editFrom = null;
+      _editTo = null;
+      _before = const [];
+      _after = const [];
     });
     widget.onEditing?.call(false);
   }
 
-  /// Le frasi come testo disegnato (formule comprese), con le posizioni
-  /// per portare il cursore nel punto toccato.
-  InlineSpan _reading() {
+  /// Le frasi [texts] di un blocco come testo disegnato (formule comprese),
+  /// con le posizioni per portare il cursore nel punto toccato.
+  _ReadingBlock _readingBlock(
+    List<int> keys,
+    List<String> texts,
+    List<List<SuggestionSpan>> errorsOf,
+  ) {
     final children = <InlineSpan>[];
     final anchors = <_Anchor>[];
     var shown = 0, raw = 0;
-    // come nel campo di modifica (TranscriptEditBuffer): frasi vuote saltate
-    final segs = [
-      for (final s in widget.segments)
-        if (s.text.isNotEmpty) s,
-    ];
-    for (var i = 0; i < segs.length; i++) {
-      final text = segs[i].text;
+    for (var i = 0; i < texts.length; i++) {
+      final text = texts[i];
       if (i > 0) {
         children.add(const TextSpan(text: ' '));
         anchors.add(_Anchor(shown, 1, raw, 1));
@@ -560,7 +655,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
       // errori della frase (nelle posizioni del suo testo); le parti con le
       // formule li usano a tratti. Il testo disegnato è lo stesso, solo
       // diviso in tratti: le posizioni restano quelle.
-      final errors = _checker.errorsOf(text);
+      final errors = errorsOf[i];
       if (!mayContainMath(text)) {
         children.addAll(misspelledSpans(text, errors));
         anchors.add(_Anchor(shown, text.length, raw, text.length));
@@ -617,9 +712,75 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
       }
       raw += text.length;
     }
-    _anchors = anchors;
-    _rawLength = raw;
-    return TextSpan(children: children);
+    return _ReadingBlock(
+      keys,
+      texts,
+      errorsOf,
+      TextSpan(children: children),
+      anchors,
+      raw,
+    );
+  }
+
+  /// [segs] a blocchi di [kLiveReadingBlock] frasi (quelle vuote saltate,
+  /// come nel campo di modifica): i blocchi di [previous] con le stesse
+  /// frasi e gli stessi errori si riusano (stesso paragrafo, niente
+  /// impaginazione).
+  List<_ReadingBlock> _chunk(
+    Iterable<TranscriptSegment> segs,
+    List<_ReadingBlock> previous,
+  ) {
+    final list = [
+      for (final s in segs)
+        if (s.text.isNotEmpty) s,
+    ];
+    final out = <_ReadingBlock>[];
+    for (var from = 0; from < list.length; from += kLiveReadingBlock) {
+      final part = list.sublist(
+        from,
+        math.min(list.length, from + kLiveReadingBlock),
+      );
+      final k = [for (final s in part) s.start.inMilliseconds];
+      final t = [for (final s in part) s.text];
+      final e = [for (final x in t) _checker.errorsOf(x)];
+      final i = out.length;
+      final old = i < previous.length ? previous[i] : null;
+      out.add(
+        old != null && old.sameAs(k, t, e) ? old : _readingBlock(k, t, e),
+      );
+    }
+    return out;
+  }
+
+  /// Paragrafo di un blocco senza il testo provvisorio, costruito una volta
+  /// e ridisegnato a parte (il blocco che cambia non ridipinge gli altri).
+  Widget _paragraph(_ReadingBlock b) => b.widget ??= RepaintBoundary(
+    child: Text.rich(
+      TextSpan(style: widget.style, children: [b.span]),
+      key: b.key,
+    ),
+  );
+
+  /// Il testo in lettura: un paragrafo per blocco, il testo provvisorio in
+  /// fondo all'ultimo.
+  Widget _readingView(InlineSpan? partial) {
+    final blocks = _blocks = _chunk(widget.segments, _blocks);
+    if (blocks.isEmpty) {
+      return Text.rich(TextSpan(style: widget.style, children: [?partial]));
+    }
+    final last = blocks.length - 1;
+    final paragraphs = [
+      for (var i = 0; i < last; i++) _paragraph(blocks[i]),
+      Text.rich(
+        TextSpan(style: widget.style, children: [blocks[last].span, ?partial]),
+        key: blocks[last].key,
+      ),
+    ];
+    if (paragraphs.length == 1) return paragraphs.single;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: paragraphs,
+    );
   }
 
   static const _noFrame = InputDecoration(
@@ -640,6 +801,13 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
     final segs = widget.segments;
     final partialText = widget.partial;
     final muted = TextStyle(color: theme.colorScheme.onSurfaceVariant);
+    if (_blocksStyle != widget.style) {
+      // paragrafi già costruiti con lo stile di prima
+      _blocks = const [];
+      _before = const [];
+      _after = const [];
+      _blocksStyle = widget.style;
+    }
     if (!_editing) {
       final partial = partialText.isEmpty
           ? null
@@ -655,17 +823,23 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
             behavior: HitTestBehavior.opaque,
             onTapUp: (d) => _startAt(d.globalPosition),
             onLongPressStart: (d) => _startAt(d.globalPosition, word: true),
-            child: Text.rich(
-              TextSpan(style: widget.style, children: [_reading(), ?partial]),
-              key: _text,
-            ),
+            child: _readingView(partial),
           ),
         ),
       );
     }
+    // i blocchi prima e dopo quello in modifica, in lettura
+    final from = _editFrom, to = _editTo;
+    final before = _before = from == null
+        ? const <_ReadingBlock>[]
+        : _chunk(segs.where((s) => s.start.inMilliseconds < from), _before);
+    final after = _after = to == null
+        ? const <_ReadingBlock>[]
+        : _chunk(segs.where((s) => s.start.inMilliseconds >= to), _after);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        for (final b in before) _paragraph(b),
         CallbackShortcuts(
           bindings: {
             const SingleActivator(LogicalKeyboardKey.escape): _focus.unfocus,
@@ -688,6 +862,7 @@ class _EditableLiveTranscriptState extends State<EditableLiveTranscript> {
             onTapOutside: (_) => _focus.unfocus(),
           ),
         ),
+        for (final b in after) _paragraph(b),
         if (partialText.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(top: 4),

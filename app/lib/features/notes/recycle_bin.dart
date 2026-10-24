@@ -77,6 +77,17 @@ class RecycleBin {
   static const dirName = '.eliminati';
   static const keep = Duration(days: 30);
 
+  /// Dopo i 30 giorni un elemento si cancella solo se è visto scaduto da
+  /// almeno questo tempo: con l'orologio del dispositivo portato avanti per
+  /// errore (batteria della scheda madre, data sbagliata, fuso) tutto il
+  /// cestino risultava scaduto e spariva in un colpo, senza rimedio. Così
+  /// chi corregge l'orologio entro [grace] non perde nulla.
+  static const grace = Duration(days: 3);
+
+  /// File nella cartella dell'elemento con il momento in cui lo si è visto
+  /// scaduto la prima volta.
+  static const expiredMark = '.scaduto';
+
   /// Giorni che restano prima della cancellazione definitiva (almeno 0).
   static int daysLeft(DateTime deletedAt, DateTime now) {
     final left = deletedAt.add(keep).difference(now);
@@ -171,19 +182,24 @@ class RecycleBin {
     final base = await dir();
     if (!await base.exists()) return const [];
     final out = <TrashEntry>[];
-    await for (final e in base.list()) {
-      if (e is! Directory) continue;
-      final info = File(p.join(e.path, 'info.json'));
-      if (!await info.exists()) continue;
-      try {
-        final entry = TrashEntry.fromJson(
-          p.basename(e.path),
-          jsonDecode(await info.readAsString()),
-        );
-        if (entry != null) out.add(entry);
-      } catch (_) {
-        // elemento illeggibile: resta finché non scade la cartella
+    try {
+      await for (final e in base.list()) {
+        if (e is! Directory) continue;
+        final info = File(p.join(e.path, 'info.json'));
+        try {
+          if (!await info.exists()) continue;
+          final entry = TrashEntry.fromJson(
+            p.basename(e.path),
+            jsonDecode(await info.readAsString()),
+          );
+          if (entry != null) out.add(entry);
+        } catch (_) {
+          // elemento illeggibile: resta finché non scade la cartella
+        }
       }
+    } on FileSystemException {
+      // cestino sparito o illeggibile durante l'elenco (disco scollegato,
+      // sincronizzazione): si mostrano gli elementi già letti
     }
     out.sort((a, b) => b.deletedAt.compareTo(a.deletedAt));
     return out;
@@ -291,7 +307,10 @@ class RecycleBin {
         } catch (_) {
           continue;
         }
-        if (expired(at, now)) {
+        if (!expired(at, now)) {
+          // (orologio tornato a posto: l'annotazione non vale più)
+          await _clearMark(e);
+        } else if (await _graceOver(e, now)) {
           await _deleteDir(e);
           n++;
         }
@@ -300,6 +319,35 @@ class RecycleBin {
       // cartella del cestino illeggibile: si riprova alla prossima pulizia
     }
     return n;
+  }
+
+  /// L'elemento scaduto [e] è stato visto scaduto da almeno [grace]. La
+  /// prima volta (o se l'orologio è tornato indietro dopo l'annotazione) si
+  /// annota il momento e si aspetta: non si cancella nulla.
+  static Future<bool> _graceOver(Directory e, DateTime now) async {
+    final mark = File(p.join(e.path, expiredMark));
+    try {
+      DateTime? seen;
+      if (await mark.exists()) {
+        seen = DateTime.tryParse((await mark.readAsString()).trim());
+      }
+      if (seen == null || seen.isAfter(now)) {
+        await writeStringAtomic(mark, now.toIso8601String());
+        return false;
+      }
+      return now.difference(seen) >= grace;
+    } catch (_) {
+      // annotazione non leggibile o non scrivibile (sola lettura): per
+      // sicurezza non si cancella
+      return false;
+    }
+  }
+
+  static Future<void> _clearMark(Directory e) async {
+    try {
+      final mark = File(p.join(e.path, expiredMark));
+      if (await mark.exists()) await mark.delete();
+    } catch (_) {}
   }
 
   static Future<void> _deleteDir(Directory d) async {

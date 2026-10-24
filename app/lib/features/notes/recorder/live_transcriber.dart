@@ -132,7 +132,13 @@ class LiveTranscriber extends ChangeNotifier {
     this.locale = 'it-IT',
     this.vocabulary = const [],
   }) : _customPlanner = planner,
-       planner = planner ?? LiveWindowPlanner();
+       planner = planner ?? LiveWindowPlanner() {
+    // maiuscole a inizio pezzo: restano solo per i nomi propri noti
+    merger.english = language == 'en';
+    for (final v in vocabulary) {
+      merger.properNames.addAll(midSentenceNames(v));
+    }
+  }
 
   final WhisperService? _whisper;
 

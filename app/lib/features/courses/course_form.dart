@@ -5,6 +5,7 @@ import '../../core/catalog/path_setup.dart';
 import '../../core/catalog/teaching_language.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../models/university.dart';
@@ -331,7 +332,9 @@ class _CourseFormPageState extends State<CourseFormPage> {
         await lang.replaceBooks(services, course, english: _english);
       }
       services.revision.bump();
-      if (mounted) Navigator.pop(context, id);
+      // con Indietro durante il salvataggio la pagina si sta già chiudendo:
+      // un pop toglierebbe quella sotto
+      if (mounted) popIfCurrent(context, id);
     } catch (e) {
       if (mounted) {
         setState(() => _saving = false);

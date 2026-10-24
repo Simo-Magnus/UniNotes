@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/constants/text_limits.dart';
 import '../core/theme/app_tokens.dart';
 
 /// Ctrl+F (⌘F su macOS) apre la ricerca, Esc la chiude; F3 e Maiusc+F3
@@ -121,6 +122,7 @@ class FindBar extends StatelessWidget {
                     focusNode: focusNode,
                     autofocus: true,
                     textInputAction: TextInputAction.search,
+                    inputFormatters: TextLimits.max(TextLimits.findQuery),
                     decoration: const InputDecoration(
                       hintText: 'Trova nel testo',
                       isDense: true,

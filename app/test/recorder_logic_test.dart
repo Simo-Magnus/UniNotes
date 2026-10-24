@@ -564,6 +564,10 @@ void main() {
         RecycleBin.expired(DateTime(2026, 10, 1), DateTime(2026, 10, 31)),
         isTrue,
       );
+      // scaduto: resta ancora per i giorni di tolleranza (orologio sbagliato),
+      // poi si cancella
+      expect((await bin.list()).length, 1);
+      now = now.add(RecycleBin.grace);
       expect(await bin.list(), isEmpty);
     });
 

@@ -496,11 +496,10 @@ void main() {
       });
       final item = examItem(2, DateTime(2027, 2, 10), time: '09:30');
       final timed = OutlookCalendarBackend.eventJson(item, const []);
-      final utc = item.start.toUtc();
-      expect(
-        (timed['start'] as Map)['dateTime'],
-        '${utc.year}-02-10T${utc.hour.toString().padLeft(2, '0')}:30:00',
-      );
+      // 09:30 a Roma a febbraio (UTC+1) = 08:30 UTC, in qualunque fuso sia il
+      // computer
+      expect((timed['start'] as Map)['dateTime'], '2027-02-10T08:30:00');
+      expect((timed['end'] as Map)['dateTime'], '2027-02-10T10:30:00');
       expect(timed['isReminderOn'], isFalse);
       expect(timed.containsKey('reminderMinutesBeforeStart'), isFalse);
     });

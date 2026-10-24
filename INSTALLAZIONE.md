@@ -64,13 +64,13 @@ solo la versione giusta.
 e scegli *Installa*. Gli aggiornamenti arrivano dallo Store. Per toglierla: menu Start →
 tasto destro su UniNotes → *Disinstalla*; Windows elimina anche i dati dell'app sul PC,
 mentre appunti e registrazioni in `Documenti\UniNotes` restano. Se vuoi eliminare anche
-le cartelle nel cloud e gli eventi nel calendario, prima usa *Disinstalla UniNotes*
+le cartelle nel cloud e gli eventi nel calendario, prima usa *Elimina tutti i dati*
 nell'app. La versione dello Store e `UniNotes_setup.exe` sono la stessa app: basta
 installarne una.
 
 **Senza installazione** (alternativa): scarica `UniNotes-windows.zip`, **estrai tutta
 la cartella** (tasto destro → *Estrai tutto*) e avvia `uninotes.exe`. In questo caso
-UniNotes non compare in *App installate*: per toglierla usa *Disinstalla UniNotes*
+UniNotes non compare in *App installate*: per toglierla usa *Elimina tutti i dati*
 nell'app e poi elimina la cartella.
 
 ## macOS
@@ -116,8 +116,9 @@ link d'invito.
 
 ## Disinstallare UniNotes
 
-Il modo completo, su tutti i dispositivi, è **dall'app**: *Impostazioni → Privacy e
-informazioni → Disinstalla UniNotes*.
+L'app non ha un tasto per disinstallarsi: la disinstallazione la fa il sistema
+operativo. Per togliere anche tutto ciò che l'app ha creato fuori dal dispositivo, prima
+usa **dall'app** *Impostazioni → Privacy e informazioni → Elimina tutti i dati*.
 
 1. Scegli **Elimina tutto** oppure **Scegli cosa eliminare**: un elenco con le
    dimensioni dove si possono calcolare (profilo e corso scelto con le impostazioni;
@@ -130,34 +131,32 @@ informazioni → Disinstalla UniNotes*.
    «UniNotes» se resta vuota, nel cestino del servizio per circa 30 giorni) e gli
    eventi con il riferimento «UniNotes». OneNote l'app lo legge soltanto: lì non
    crea nulla, quindi non c'è niente da eliminare.
-3. Se hai scelto solo alcune voci, l'app chiede se disinstallarla comunque o tenerla.
-4. Poi la disinstallazione parte dove il sistema lo permette:
-   - **Windows**: l'app avvia il disinstallatore e si chiude; il programma sparisce
-     da *App installate*.
-   - **Android**: si apre la richiesta di disinstallazione del sistema (tocca *OK*);
-     se non si apre, la pagina *Informazioni app*: tocca *Disinstalla*.
-   - **macOS**: l'app prova a spostarsi nel Cestino; se macOS non lo permette apre
-     il Finder su UniNotes: trascinala nel Cestino.
-   - **iPhone e iPad**: non si può fare dall'app. Tieni premuta l'icona di
-     UniNotes → *Rimuovi app* → *Elimina app*.
+3. Alla fine l'app si chiude (su iPhone e iPad la chiudi tu). Poi togli l'app con il
+   sistema:
+   - **Windows**: *Impostazioni → App → App installate → UniNotes → Disinstalla*
+     (oppure menu Start → tasto destro su UniNotes → *Disinstalla*).
+   - **Android**: *Impostazioni del telefono → App → UniNotes → Disinstalla*.
+   - **macOS**: trascina UniNotes dalla cartella *Applicazioni* nel Cestino.
+   - **iPhone e iPad**: tieni premuta l'icona di UniNotes → *Rimuovi app* →
+     *Elimina app*.
 
-Se disinstalli **senza passare dall'app**:
+Se disinstalli **senza aver usato prima «Elimina tutti i dati»**:
 
-- **Windows** (*Impostazioni → App → App installate → UniNotes → Disinstalla*): il
-  disinstallatore apre la stessa schermata *Disinstalla UniNotes*; chiudendola senza
-  scegliere, i dati restano sul PC. Gli appunti in `Documenti\UniNotes` si eliminano
-  solo se li scegli.
+- **Windows** (*Impostazioni → App → App installate → UniNotes → Disinstalla*, con
+  `UniNotes_setup.exe`): il disinstallatore apre la schermata di disinstallazione
+  dell'app, con le stesse scelte; chiudendola senza scegliere, i dati restano sul PC.
+  Gli appunti in `Documenti\UniNotes` si eliminano solo se li scegli.
 - **Android**: il sistema elimina tutti i dati dell'app (l'app non usa cartelle
   condivise e non va nel backup di Google, quindi reinstallandola non ritrovi
   nulla). Restano solo i dati nel cloud e gli eventi nel calendario: per toglierli
-  usa prima *Disinstalla UniNotes*.
+  usa prima *Elimina tutti i dati*.
 - **iPhone e iPad**: il sistema elimina i dati dell'app ma non le voci nel
   portachiavi; l'app le svuota da sola al primo avvio dopo una nuova installazione.
   Anche qui cloud e calendario restano.
 - **macOS**: trascinare l'app nel Cestino **non** elimina i suoi dati, che restano in
   `~/Library/Containers/io.github.simomagnus.universitynotes` (con le preferenze e
-  le cache) e nel portachiavi. Per eliminare tutto usa *Disinstalla UniNotes*
-  dall'app. Se l'hai già trascinata nel Cestino: reinstallala e scegli *Elimina*
+  le cache) e nel portachiavi. Per eliminare tutto usa *Elimina tutti i dati*
+  dall'app prima di trascinarla nel Cestino. Se l'hai già trascinata nel Cestino: reinstallala e scegli *Elimina*
   quando chiede «Ho trovato dati di una installazione precedente», oppure elimina a
   mano quella cartella dal Finder (*Vai → Vai alla cartella…* →
   `~/Library/Containers`) e, in *Accesso Portachiavi*, le voci di UniNotes.

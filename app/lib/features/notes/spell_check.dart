@@ -57,6 +57,12 @@ class SystemSpellCheckService extends SpellCheckService {
   final SpellCheckService? _mobile;
   final TargetPlatform _platform;
 
+  /// Righe più lunghe di così non si controllano (PC e Mac).
+  static const maxLineChars = 20000;
+
+  /// Caratteri massimi controllati in una sola richiesta (PC e Mac).
+  static const maxCheckChars = 100000;
+
   /// Risultati per riga (testo della riga → errori nella riga).
   final Map<String, List<SuggestionSpan>> _cache = {};
   static const _maxCache = 4000;
@@ -82,10 +88,21 @@ class SystemSpellCheckService extends SpellCheckService {
       return spans == null ? null : filterSpellCheckSpans(text, spans);
     }
     final lines = text.split('\n');
-    final missing = <String>{
-      for (final l in lines)
-        if (l.trim().isNotEmpty && !_cache.containsKey(l)) l,
-    }.toList();
+    // il correttore di Windows e di macOS gira sul filo dell'interfaccia: una
+    // riga da megabyte (testo incollato senza a capo) o decine di migliaia di
+    // righe nuove insieme bloccavano l'app. Le righe troppo lunghe non si
+    // controllano; le altre, un tanto per volta (le restanti al prossimo
+    // controllo: quelle già viste sono in memoria).
+    final seen = <String>{};
+    final missing = <String>[];
+    var budget = maxCheckChars;
+    for (final l in lines) {
+      if (l.trim().isEmpty || l.length > maxLineChars) continue;
+      if (_cache.containsKey(l) || !seen.add(l)) continue;
+      if (l.length > budget) break;
+      budget -= l.length;
+      missing.add(l);
+    }
     if (missing.isNotEmpty) {
       List<Object?>? raw;
       try {
@@ -316,6 +333,34 @@ class ReadingSpellChecker extends ChangeNotifier {
   static const _maxCache = 4000;
   static const _maxFailures = 2;
 
+  /// Ultimo uso di ogni testo in memoria (contatore delle chiamate a
+  /// [errorsOf]): si tolgono per primi i testi non più mostrati.
+  final Map<String, int> _used = {};
+  int _touch = 0;
+
+  /// Testi controllati in memoria (per i test).
+  @visibleForTesting
+  int get cachedCount => _cache.length;
+
+  /// Mette in memoria gli errori di [text]. Prima a 4000 testi la memoria
+  /// si svuotava tutta: con più frasi o blocchi di così sullo schermo (una
+  /// lezione di ore, un documento lungo) si ricontrollava tutto senza fine,
+  /// con un ridisegno ogni 25 controlli; e durante la registrazione ogni
+  /// parola confermata aggiunge una versione nuova della frase in corso.
+  /// Ora si tolgono i testi usati meno di recente (le versioni vecchie),
+  /// mai quelli usati nell'ultimo disegno: se servono tutti, la memoria
+  /// cresce.
+  void _remember(String text, List<SuggestionSpan> errors) {
+    while (_cache.length >= _maxCache) {
+      final oldest = _cache.keys.first;
+      if (_touch - (_used[oldest] ?? 0) <= _cache.length) break;
+      _cache.remove(oldest);
+      _used.remove(oldest);
+    }
+    _cache[text] = errors;
+    _used[text] = ++_touch;
+  }
+
   SpellCheckService? get _service => _injected ?? spellCheckService(_language);
 
   /// C'è un correttore su questo sistema.
@@ -327,6 +372,7 @@ class ReadingSpellChecker extends ChangeNotifier {
     if (value == _language) return;
     _language = value;
     _cache.clear();
+    _used.clear();
     _queue.clear();
     _failures.clear();
   }
@@ -339,7 +385,14 @@ class ReadingSpellChecker extends ChangeNotifier {
 
   List<SuggestionSpan> errorsOf(String text) {
     final known = _cache[text];
-    if (known != null) return known;
+    if (known != null) {
+      // in fondo all'ordine: in testa restano i testi non più mostrati
+      _cache
+        ..remove(text)
+        ..[text] = known;
+      _used[text] = ++_touch;
+      return known;
+    }
     if (_disposed || text.trim().isEmpty || !enabled) return const [];
     if (text != _busy && _queue.add(text)) _schedule();
     return const [];
@@ -384,10 +437,11 @@ class ReadingSpellChecker extends ChangeNotifier {
             continue;
           }
         }
-        if (_cache.length >= _maxCache) _cache.clear();
-        _cache[text] = found == null
-            ? const []
-            : filterSpellCheckSpans(text, found);
+        _remember(
+          text,
+          found == null ? const [] : filterSpellCheckSpans(text, found),
+        );
+        _failures.remove(text);
         // ogni tanto ridisegna: un testo lungo si sottolinea a pezzi
         if (++done % 25 == 0) notifyListeners();
       }
@@ -460,14 +514,18 @@ class SentenceSpellCheck extends SpellCheckService {
     String text,
   ) async {
     final out = <SuggestionSpan>[];
-    for (final (at, s) in sentences(text)) {
+    final all = sentences(text);
+    // il limite cresce con il testo: con più di 4000 frasi la memoria si
+    // svuotava a metà controllo e a ogni tasto si ricontrollava tutto
+    final limit = math.max(_maxCache, all.length * 2);
+    for (final (at, s) in all) {
       var spans = known?.call(s) ?? cache[s];
       if (spans == null) {
         final found = await inner.fetchSpellCheckSuggestions(locale, s);
         // un controllo più recente ha preso il posto di questo
         if (found == null) return null;
         spans = filterSpellCheckSpans(s, found);
-        if (cache.length >= _maxCache) cache.clear();
+        if (cache.length >= limit) cache.clear();
         cache[s] = spans;
       }
       for (final x in spans) {

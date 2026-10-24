@@ -495,7 +495,15 @@ Future<WavInfo> cutWav(
   ];
   final total = ranges.fold<int>(0, (s, r) => s + r.$2 - r.$1);
   final out = await dst.open(mode: FileMode.write);
-  final inp = await src.open();
+  final RandomAccessFile inp;
+  try {
+    inp = await src.open();
+  } catch (_) {
+    // originale sparito o bloccato: il file di destinazione non resta aperto
+    // (su Windows non si potrebbe più cancellare né rinominare)
+    await out.close();
+    rethrow;
+  }
   try {
     await out.writeFrom(
       wavHeader(

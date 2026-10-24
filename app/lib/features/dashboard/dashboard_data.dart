@@ -210,16 +210,23 @@ class DashboardData {
         final base = p.join(root.path, NotesStore.folderName(c));
         final dir = Directory(p.join(base, NoteFolder.recordings.dirName));
         if (!await dir.exists()) continue;
-        await for (final e in dir.list()) {
-          if (e is! File) continue;
-          final ext = p.extension(e.path).toLowerCase();
-          if (!NotesStore.audioExtensions.contains(ext)) continue;
-          if (p.basename(e.path).startsWith('.')) continue;
-          final st = await e.stat();
-          found.add((
-            c,
-            NoteFile(e, NoteFolder.recordings, st.modified, st.size),
-          ));
+        try {
+          await for (final e in dir.list()) {
+            if (e is! File) continue;
+            final ext = p.extension(e.path).toLowerCase();
+            if (!NotesStore.audioExtensions.contains(ext)) continue;
+            if (p.basename(e.path).startsWith('.')) continue;
+            final st = await e.stat();
+            // file tolto durante l'elenco: non dà errore, tipo «non trovato»
+            if (st.type != FileSystemEntityType.file) continue;
+            found.add((
+              c,
+              NoteFile(e, NoteFolder.recordings, st.modified, st.size),
+            ));
+          }
+        } on FileSystemException {
+          // cartella di un corso illeggibile (disco scollegato a metà): le
+          // registrazioni degli altri corsi si vedono comunque
         }
       }
       found.sort((a, b) => b.$2.modified.compareTo(a.$2.modified));

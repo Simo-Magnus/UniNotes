@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
 import '../../models/book.dart';
+import '../../features/notes/safe_files.dart';
 import '../../repositories/book_repository.dart';
 
 /// Esito della copia nell'app dei libri collegati a un percorso esterno.
@@ -69,7 +70,7 @@ class BookLibrary {
       throw FileSystemException('File non trovato', sourcePath);
     }
     final dir = await directory();
-    final name = _uniqueName(dir, p.basename(sourcePath));
+    final name = uniqueName(dir, p.basename(sourcePath));
     final tmp = File(p.join(dir.path, '$name.part'));
     try {
       await src.copy(tmp.path);
@@ -114,7 +115,7 @@ class BookLibrary {
       if (await fileOf(b) != null) continue;
       final path = b.filePath?.trim();
       if (path == null || path.isEmpty) continue;
-      if (!await File(path).exists()) {
+      if (!await fileExistsQuick(path)) {
         r.missing++;
         continue;
       }
@@ -137,7 +138,7 @@ class BookLibrary {
       if (await fileNamed(m.storedFile) != null) continue;
       final path = m.localPath?.trim();
       if (path == null || path.isEmpty) continue;
-      if (!await File(path).exists()) {
+      if (!await fileExistsQuick(path)) {
         r.missing++;
         continue;
       }
@@ -155,17 +156,23 @@ class BookLibrary {
   static bool isPdf(String name) => p.extension(name).toLowerCase() == '.pdf';
 
   /// Nome sicuro e non ancora usato nella cartella.
-  static String _uniqueName(Directory dir, String original) {
-    // anche l'estensione senza caratteri non validi su Windows
-    final ext = p
+  static String uniqueName(Directory dir, String original) {
+    // anche l'estensione senza caratteri non validi su Windows, e non
+    // lunga a dismisura (un «nome» con migliaia di caratteri dopo l'ultimo
+    // punto superava il limite di 255 del file system)
+    var ext = p
         .extension(original)
         .replaceAll(RegExp(r'[<>:"/\\|?*\x00-\x1F ]'), '_');
+    ext = cutText(ext, 16).replaceAll(RegExp(r'[. ]+$'), '');
     var base = p
         .basenameWithoutExtension(original)
         .replaceAll(RegExp(r'[<>:"/\\|?*\x00-\x1F]'), '_')
         .trim();
+    // punti e spazi finali non esistono su Windows; «CON», «aux.pdf»… sono
+    // nomi riservati (il file non si crea): si aggiunge un trattino basso
+    base = cutText(base, 80).replaceAll(RegExp(r'[. ]+$'), '');
     if (base.isEmpty) base = 'libro';
-    if (base.length > 80) base = base.substring(0, 80);
+    if (isWindowsReservedName('$base$ext')) base = '${base}_';
     var name = '$base$ext';
     for (var i = 2; File(p.join(dir.path, name)).existsSync(); i++) {
       name = '$base ($i)$ext';

@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import '../../models/course.dart';
 import '../../models/exam.dart';
 import '../../repositories/exam_repository.dart';
 import '../constants/enums.dart';
 import '../services/app_services.dart';
+import '../services/error_log.dart';
 
 /// Semestre in corso secondo il calendario: il primo va da settembre a
 /// gennaio (lezioni ed esami della sessione invernale), il secondo da
@@ -48,6 +51,11 @@ CourseStatus deriveCourseStatus(
 /// Aggiorna nel database lo stato di tutti gli insegnamenti (solo quelli
 /// cambiati). Si chiama prima di mostrare elenchi di corsi; non avvisa le
 /// schermate (nessun `revision.bump`). Restituisce quanti sono cambiati.
+///
+/// Una scrittura che non riesce (disco pieno, database in sola lettura o
+/// bloccato) non ferma la lettura che segue: gli stati restano quelli di
+/// prima fino alla prossima volta e l'errore va nel registro. Prima Home,
+/// Insegnamenti, Studio, Libri ed Esami mostravano solo «Errore».
 Future<int> syncCourseStatuses(AppServices s, {DateTime? now}) async {
   final profile = await s.profiles.load();
   final finals = <int, List<Exam>>{};
@@ -77,7 +85,13 @@ Future<int> syncCourseStatuses(AppServices s, {DateTime? now}) async {
       now: t,
     );
     if (next != c.status) {
-      await s.courses.update(c.copyWith(status: next));
+      try {
+        await s.courses.update(c.copyWith(status: next));
+      } catch (e, st) {
+        // le altre scritture non riuscirebbero meglio
+        unawaited(ErrorLog.record(e, st, context: 'Stato degli insegnamenti'));
+        break;
+      }
       changed++;
     }
   }

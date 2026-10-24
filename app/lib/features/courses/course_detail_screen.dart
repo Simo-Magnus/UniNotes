@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/book.dart';
@@ -68,7 +69,9 @@ class CourseDetailScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Dettaglio corso')),
       body: CourseDetailView(
         courseId: courseId,
-        onDeleted: () => Navigator.maybePop(context),
+        // dopo l'eliminazione: solo questa pagina (non quella sotto se
+        // si è già tornati indietro)
+        onDeleted: () => popIfCurrent(context),
       ),
     );
   }
@@ -159,7 +162,7 @@ class CourseDetailView extends StatelessWidget {
                 Expanded(
                   child: ExamDetailView(
                     examId: e.id!,
-                    onDeleted: () => Navigator.pop(c),
+                    onDeleted: () => popIfCurrent(c),
                   ),
                 ),
               ],

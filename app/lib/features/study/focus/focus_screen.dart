@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
+import '../../../core/router/safe_pop.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../models/attachment.dart';
@@ -31,8 +32,16 @@ Future<void> openFocusScreen(BuildContext context) async {
     open.navigator!.popUntil((r) => r == open);
     return;
   }
-  await Navigator.of(context)
-      .push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));
+  // la pagina conta come aperta da subito, non dal fotogramma in cui si
+  // costruisce: due richieste ravvicinate (tocco sul riquadro, notifica)
+  // non ne aprono due
+  final route = MaterialPageRoute<void>(builder: (_) => const FocusScreen());
+  FocusScreen.openRoute = route;
+  try {
+    await Navigator.of(context).push(route);
+  } finally {
+    if (FocusScreen.openRoute == route) FocusScreen.openRoute = null;
+  }
 }
 
 enum FocusCloseChoice { save, discard, cancel }
@@ -168,7 +177,8 @@ class _FocusScreenState extends State<FocusScreen> {
     final stopped = await finishFocusAsking(context, _f);
     // scartata: niente riepilogo, si torna indietro
     if (stopped && mounted && _f.completed.value == null) {
-      await Navigator.of(context).maybePop();
+      // solo questa pagina: non quella aperta sopra nel frattempo
+      popIfCurrent(context);
     }
   }
 

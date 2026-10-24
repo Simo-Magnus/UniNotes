@@ -3,6 +3,8 @@
 /// originale (la piegatura è carattere per carattere, stessa lunghezza).
 library;
 
+import '../../utils/safe_text.dart';
+
 /// Lettere accentate → lettera base (una unità UTF-16 per una).
 const _accented = {
   'a': 'àáâãäåāăąǎ',
@@ -69,7 +71,10 @@ String foldText(String s) {
 /// [foldedText] evita di ripiegare lo stesso testo a ogni ricerca.
 List<int> findFolded(String text, String query, {String? foldedText}) {
   final q = foldText(query);
-  if (q.isEmpty) return const [];
+  // una metà di emoji (campo di testo a metà di una composizione) troverebbe
+  // la metà di ogni emoji del testo: l'evidenziazione spezzerebbe la coppia
+  // e il testo non sarebbe disegnabile
+  if (q.isEmpty || hasLoneSurrogate(q)) return const [];
   final t = foldedText ?? foldText(text);
   final out = <int>[];
   for (var i = t.indexOf(q); i >= 0; i = t.indexOf(q, i + q.length)) {

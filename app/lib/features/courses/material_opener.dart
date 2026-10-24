@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
@@ -13,6 +11,7 @@ import '../../models/book.dart';
 import '../../widgets/common.dart';
 import '../books/pdf_reader_screen.dart';
 import '../reader/reader_screen.dart';
+import '../notes/safe_files.dart';
 
 /// Il materiale ha un file (nell'app o in un percorso locale).
 bool materialHasFile(StudyMaterial m) =>
@@ -28,7 +27,7 @@ Future<void> openMaterial(BuildContext context, StudyMaterial material) async {
   var file = await s.materialsLibrary.fileNamed(m.storedFile);
   final path = m.localPath?.trim();
   if (file == null && path != null && path.isNotEmpty) {
-    if (await File(path).exists()) {
+    if (await fileExistsQuick(path)) {
       try {
         final name = await s.materialsLibrary.store(path);
         m = m.withFile(storedFile: () => name);

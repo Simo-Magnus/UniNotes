@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:university_notes/core/services/app_uninstall.dart';
 import 'package:university_notes/core/services/install_check.dart';
 import 'package:university_notes/core/services/local_data.dart';
 import 'package:university_notes/features/onboarding/install_questions.dart';
@@ -140,16 +139,6 @@ Destinazione: LegacyGeneric:target=altro_VGhpcyBpcyB0aGUgcHJlZml4IGZv_x
       'key_uninotes_VGhpcyBpcyB0aGUgcHJlZml4IGZv_',
       'uninotes_VGhpcyBpcyB0aGUgcHJlZml4IGZv_onedrive.refreshToken',
     ]);
-  });
-
-  test('disinstallatore di Windows avviato dopo la chiusura dell\'app', () {
-    final cmd = AppUninstall.windowsDelayedCommand(
-      r"C:\Users\Dell'Acqua\AppData\Local\Programs\UniNotes\unins000.exe",
-    );
-    expect(cmd, startsWith('Start-Sleep'));
-    expect(cmd, contains(r"'C:\Users\Dell''Acqua\AppData"));
-    expect(cmd, contains("'/VERYSILENT'"));
-    expect(AppUninstall.utf16le('Ab'), [65, 0, 98, 0]);
   });
 
   group('domande all\'avvio', () {

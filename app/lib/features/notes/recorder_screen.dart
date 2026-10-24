@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/feedback/feedback_service.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
@@ -177,8 +178,15 @@ class _RecorderScreenState extends State<RecorderScreen> {
     // (il riquadro arriva sopra la pagina del corso)
     unawaited(offerBetterTranscription(_s, course, f));
     if (widget.fromCourse == course.id) {
-      // la pagina del corso è sotto: ci si torna
-      Navigator.of(context).pop(f.path);
+      // la pagina del corso è sotto: ci si torna (se non lo si è già fatto
+      // con Indietro durante il salvataggio)
+      popIfCurrent(context, f.path);
+      return;
+    }
+    // pagina già in chiusura (Indietro durante il salvataggio) o coperta da
+    // un'altra: pushReplacement sostituirebbe la pagina sbagliata
+    if (!isCurrentRoute(context)) {
+      showSnack(context, 'Registrazione salvata in ${course.name}.');
       return;
     }
     await Navigator.of(context).pushReplacement(

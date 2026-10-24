@@ -11,9 +11,22 @@ class GraphResponse {
 
   bool get ok => status >= 200 && status < 300;
   String get text => utf8.decode(body, allowMalformed: true);
+  /// Corpo JSON. Un corpo che non è JSON (pagina HTML di una rete Wi‑Fi con
+  /// pagina di accesso o di un proxy, risposta troncata) è un errore di rete
+  /// ([GraphException] con stato 0): la sincronizzazione si ferma e riprova,
+  /// invece di fallire file per file con una FormatException.
   Map<String, Object?> get json {
     if (body.isEmpty) return const {};
-    final v = jsonDecode(text);
+    final Object? v;
+    try {
+      v = jsonDecode(text);
+    } on FormatException {
+      throw GraphException(
+        0,
+        'Risposta non valida dal servizio (non è JSON): se sei su una rete '
+        'Wi‑Fi pubblica, accedi dalla sua pagina nel browser e riprova.',
+      );
+    }
     return v is Map ? v.cast<String, Object?>() : const {};
   }
 }
@@ -185,8 +198,12 @@ GraphDownload bufferedDownload(GraphTransport send) =>
 
 /// Client minimo per Microsoft Graph v1.0 (OneDrive e OneNote).
 class GraphClient {
-  GraphClient(this._token, {GraphTransport? transport, GraphDownload? download})
-    : _send = transport ?? ioTransport,
+  GraphClient(
+    this._token, {
+    GraphTransport? transport,
+    GraphDownload? download,
+    this.onUnauthorized,
+  }) : _send = transport ?? ioTransport,
       _download =
           download ??
           (transport == null ? ioDownload : bufferedDownload(transport));
@@ -194,6 +211,12 @@ class GraphClient {
   final Future<String> Function() _token;
   final GraphTransport _send;
   final GraphDownload _download;
+
+  /// Chiamata quando il servizio rifiuta il token (401) che l'app crede
+  /// ancora valido (orologio spostato indietro, accesso revocato): il token
+  /// si dimentica e la richiesta si ripete una volta con uno nuovo. Prima
+  /// ogni richiesta falliva fino alla scadenza segnata in memoria.
+  final void Function()? onUnauthorized;
 
   static final base = Uri.https('graph.microsoft.com', '/v1.0/');
 
@@ -223,7 +246,13 @@ class GraphClient {
       if (auth) 'Authorization': 'Bearer ${await _token()}',
       ...headers,
     };
-    final r = await _send(method, url(path, query), headers: h, body: body);
+    var r = await _send(method, url(path, query), headers: h, body: body);
+    final retry = onUnauthorized;
+    if (r.status == 401 && auth && retry != null) {
+      retry();
+      h['Authorization'] = 'Bearer ${await _token()}';
+      r = await _send(method, url(path, query), headers: h, body: body);
+    }
     if (!r.ok && r.status != 404) _fail(r, method, path);
     return r;
   }

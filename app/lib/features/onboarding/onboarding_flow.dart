@@ -11,6 +11,7 @@ import '../../core/constants/build_flags.dart';
 import '../../core/constants/text_limits.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/reminders/notification_prefs.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/theme/display_prefs.dart';
@@ -88,7 +89,8 @@ Future<void> showChangePath(BuildContext context) =>
         fullscreenDialog: true,
         builder: (c) => OnboardingFlow(
           canCancel: true,
-          onFinished: () => Navigator.of(c).pop(),
+          // alla fine dell'import: non la pagina sotto se si è già usciti
+          onFinished: () => popIfCurrent(c),
         ),
       ),
     );

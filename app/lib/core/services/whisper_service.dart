@@ -466,35 +466,74 @@ class WhisperService {
     }
   }
 
+  /// Installazioni in corso di whisper.cpp e di ffmpeg: due installazioni
+  /// insieme (due modelli scaricati subito, doppio tocco) scaricherebbero e
+  /// estrarrebbero lo stesso archivio; la seconda aspetta la prima.
+  Completer<void>? _cliInstall, _ffmpegInstall;
+
   /// Scarica ffmpeg (Windows) ed estrae solo l'eseguibile.
   Stream<WhisperProgress> installFfmpeg({CancelToken? cancel}) async* {
-    final dir = await _dir('ffmpeg');
-    final zip = File(p.join(dir.path, 'ffmpeg.zip'));
-    yield* _download(
-      ffmpegUrl,
-      zip,
-      'Scarico il convertitore ffmpeg',
-      cancel: cancel,
-    );
-    yield const WhisperProgress('Estraggo ffmpeg…', null);
-    final input = InputFileStream(zip.path);
+    for (var o = _ffmpegInstall; o != null; o = _ffmpegInstall) {
+      yield const WhisperProgress('Attendo l\'altro download di ffmpeg…', null);
+      await o.future;
+    }
+    // (subito, prima di qualsiasi attesa: un'altra installazione partita
+    // nello stesso momento deve vederla)
+    final lock = _ffmpegInstall = Completer<void>();
+    final File exe;
     try {
-      final archive = ZipDecoder().decodeStream(input);
-      final entry = archive.files.where(
-        (f) => f.isFile && p.basename(f.name) == _ffmpegName,
-      );
-      if (entry.isEmpty) {
-        throw WhisperException('ffmpeg non trovato nell\'archivio scaricato.');
+      final dir = await _dir('ffmpeg');
+      exe = File(p.join(dir.path, _ffmpegName));
+      if (await exe.exists()) {
+        yield const WhisperProgress('Pronto', 1);
+        return;
       }
-      final out = OutputFileStream(p.join(dir.path, _ffmpegName));
-      entry.first.writeContent(out);
-      await out.close();
+      final zip = File(p.join(dir.path, 'ffmpeg.zip'));
+      yield* _download(
+        ffmpegUrl,
+        zip,
+        'Scarico il convertitore ffmpeg',
+        cancel: cancel,
+      );
+      yield const WhisperProgress('Estraggo ffmpeg…', null);
+      // prima in un file temporaneo: un'estrazione interrotta (disco pieno,
+      // archivio troncato) non lascia un ffmpeg a metà che sembra installato
+      final tmp = File('${exe.path}.part');
+      InputFileStream? input;
+      try {
+        input = InputFileStream(zip.path);
+        final archive = ZipDecoder().decodeStream(input);
+        final entry = archive.files.where(
+          (f) => f.isFile && p.basename(f.name) == _ffmpegName,
+        );
+        if (entry.isEmpty) {
+          throw WhisperException('ffmpeg non trovato nell\'archivio scaricato.');
+        }
+        final out = OutputFileStream(tmp.path);
+        try {
+          entry.first.writeContent(out);
+        } finally {
+          await out.close();
+        }
+        await tmp.rename(exe.path);
+      } on WhisperException {
+        rethrow;
+      } catch (e) {
+        throw WhisperException('Archivio di ffmpeg non valido: $e');
+      } finally {
+        await input?.close();
+        for (final f in [zip, tmp]) {
+          try {
+            if (await f.exists()) await f.delete();
+          } catch (_) {}
+        }
+      }
     } finally {
-      await input.close();
-      if (await zip.exists()) await zip.delete();
+      _ffmpegInstall = null;
+      lock.complete();
     }
     if (host != WhisperHost.windows) {
-      await Process.run('chmod', ['+x', p.join(dir.path, _ffmpegName)]);
+      await Process.run('chmod', ['+x', exe.path]);
     }
     yield const WhisperProgress('Pronto', 1);
   }
@@ -517,24 +556,71 @@ class WhisperService {
 
   /// Download di `whisper-cli` (solo Windows: binari ufficiali).
   Stream<WhisperProgress> installCli({CancelToken? cancel}) async* {
-    if (await findCli() != null) return;
-    if (!canDownloadCli && host != WhisperHost.linux) {
-      throw WhisperException(
-        'Su questo sistema whisper-cli non si scarica dall\'app: installalo con '
-        'Homebrew («brew install whisper-cpp») oppure indica il file.',
-      );
+    for (var o = _cliInstall; o != null; o = _cliInstall) {
+      yield const WhisperProgress('Attendo l\'altro download di whisper.cpp…', null);
+      await o.future;
     }
-    yield const WhisperProgress('Scarico whisper.cpp…', 0);
-    final bin = await _dir('bin');
-    final zip = File(p.join(bin.path, 'whisper.zip'));
-    yield* _download(binariesUrl, zip, 'Scarico whisper.cpp', cancel: cancel);
-    yield const WhisperProgress('Estraggo whisper.cpp…', null);
+    // (subito, prima di qualsiasi attesa: un'altra installazione partita
+    // nello stesso momento deve vederla)
+    final lock = _cliInstall = Completer<void>();
     try {
-      await extractFileToDisk(zip.path, bin.path);
-    } catch (e) {
-      throw WhisperException('Archivio di whisper.cpp non valido: $e');
+      if (await findCli() != null) return;
+      if (!canDownloadCli && host != WhisperHost.linux) {
+        throw WhisperException(
+          'Su questo sistema whisper-cli non si scarica dall\'app: installalo '
+          'con Homebrew («brew install whisper-cpp») oppure indica il file.',
+        );
+      }
+      yield const WhisperProgress('Scarico whisper.cpp…', 0);
+      final bin = await _dir('bin');
+      final zip = File(p.join(bin.parent.path, 'whisper.zip'));
+      yield* _download(binariesUrl, zip, 'Scarico whisper.cpp', cancel: cancel);
+      yield const WhisperProgress('Estraggo whisper.cpp…', null);
+      // prima in una cartella a parte, poi al posto di «bin»: un'estrazione
+      // interrotta (disco pieno, archivio troncato) non lascia un
+      // whisper-cli a metà che sembra installato
+      final staging = Directory(p.join(bin.parent.path, 'bin.part'));
+      try {
+        try {
+          if (await staging.exists()) await staging.delete(recursive: true);
+          await extractFileToDisk(zip.path, staging.path);
+          if (!await staging
+              .list(recursive: true)
+              .any((e) => e is File && p.basename(e.path) == _cliName)) {
+            throw WhisperException(
+              'whisper-cli non trovato nell\'archivio scaricato.',
+            );
+          }
+        } on WhisperException {
+          rethrow;
+        } catch (e) {
+          throw WhisperException('Archivio di whisper.cpp non valido: $e');
+        }
+        // (più tentativi: un controllo dello stato nel frattempo ricrea
+        // «bin» vuota)
+        for (var i = 0; ; i++) {
+          try {
+            if (await bin.exists()) await bin.delete(recursive: true);
+            await staging.rename(bin.path);
+            break;
+          } on FileSystemException catch (e) {
+            if (i < 2) continue;
+            throw WhisperException(
+              'Installazione di whisper.cpp non riuscita (${e.message}): '
+              'chiudi eventuali trascrizioni in corso e riprova.',
+            );
+          }
+        }
+      } finally {
+        for (final e in <FileSystemEntity>[zip, staging]) {
+          try {
+            if (await e.exists()) await e.delete(recursive: true);
+          } catch (_) {}
+        }
+      }
     } finally {
-      if (await zip.exists()) await zip.delete();
+      _cliInstall = null;
+      lock.complete();
     }
     final cli = await findCli();
     if (cli == null) {

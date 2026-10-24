@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 
 import '../../models/course.dart';
 import '../notes/notes_store.dart';
+import '../notes/safe_files.dart';
 
 /// Un file arrivato da fuori: «Condividi → UniNotes» (Android), «Apri in
 /// UniNotes» (iPhone, iPad), trascinamento nella finestra (PC, Mac).
@@ -124,7 +125,13 @@ class IncomingFiles {
   static String safeFileName(String name) {
     final ext = p.extension(name);
     final stem = ext.isEmpty ? name : name.substring(0, name.length - ext.length);
-    final cleanExt = ext.replaceAll(RegExp(r'[^A-Za-z0-9.]'), '');
+    // (estensione non più lunga di 16 caratteri: un nome senza punti ma con
+    // un punto in fondo a migliaia di caratteri superava il limite del file
+    // system)
+    final cleanExt = cutText(
+      ext.replaceAll(RegExp(r'[^A-Za-z0-9.]'), ''),
+      16,
+    ).replaceAll(RegExp(r'\.+$'), '');
     final s = NotesStore.safeName(stem);
     return '$s$cleanExt';
   }
@@ -145,9 +152,8 @@ class IncomingFiles {
       if (!await src.exists()) continue;
       final name = uniqueName(dir, f.name);
       final target = p.join(dir.path, name);
-      final part = File('$target.part');
-      await src.copy(part.path);
-      await part.rename(target);
+      // (con il disco pieno non resta un file troncato accanto agli altri)
+      await copyFileSafely(src, target);
       saved.add('${dest.folder}/$name');
       if (f.temporary) await discard([f]);
     }

@@ -286,6 +286,10 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// dove togliere l'accesso dall'account.
   Future<bool> revoke(String refreshToken) async => true;
 
+  /// Token rifiutato dal servizio (401): il prossimo [accessToken] ne chiede
+  /// uno nuovo con il refresh token invece di riusarlo fino alla scadenza.
+  void forgetAccessToken() => tokens = null;
+
   Future<String> accessToken() async {
     final t = tokens;
     if (t != null && t.valid) return t.accessToken;

@@ -431,7 +431,17 @@ class SystemCalendarSync {
     if (d == null) return null;
     final me = await d.installId();
     final all = await writers();
-    final w = all[key];
+    var w = all[key];
+    // segno con l'orario nel futuro (orologio avanti sul dispositivo che
+    // l'ha scritto): vale come scritto adesso e da qui invecchia con questo
+    // orologio, come «Orologi diversi» della sincronizzazione. Prima un
+    // segno di un anno avanti impediva per un anno agli altri di subentrare
+    // e al dispositivo stesso, con l'orologio rimesso a posto, di rinnovarlo.
+    if (w != null && w.at.isAfter(now)) {
+      w = (install: w.install, device: w.device, at: now);
+      all[key] = w;
+      await _saveWriters(all);
+    }
     if (w != null && w.install != me && now.difference(w.at) < kCalendarWriterStale) {
       return w;
     }

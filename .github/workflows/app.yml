@@ -235,6 +235,8 @@ jobs:
       # Link alle donazioni ammesso (policy 10.8.2: donazioni volontarie con
       # un servizio di pagamento esterno, da dichiarare in Partner Center).
       # MSSTORE_ID (facoltativo): ID dello Store per «Lascia una recensione».
+      # WINDOWS_FOCUS_LAF_TOKEN e WINDOWS_FOCUS_LAF_ATTESTATION (facoltativi): token di
+      # Microsoft per avviare la sessione di concentrazione di Windows (docs/focus.md).
       # Parakeet (NVIDIA, CC BY 4.0) incluso nell'app desktop: 670 MB scaricati
       # una volta da Hugging Face con lo SHA-256 controllato, poi presi dalla
       # cache (mai nel repository). Su Windows li installa CMake in
@@ -251,7 +253,7 @@ jobs:
         run: python3 tool/prepara_modello_parakeet.py || python tool/prepara_modello_parakeet.py
       - name: Build Windows per lo Store
         if: env.HAS_MSSTORE_IDENTITY == 'true'
-        run: flutter build windows --release --dart-define=STORE=microsoft --dart-define=MSSTORE_ID=${{ secrets.MSSTORE_ID }} --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build windows --release --dart-define=STORE=microsoft --dart-define=MSSTORE_ID=${{ secrets.MSSTORE_ID }} --dart-define=WINDOWS_FOCUS_LAF_TOKEN=${{ secrets.WINDOWS_FOCUS_LAF_TOKEN }} "--dart-define=WINDOWS_FOCUS_LAF_ATTESTATION=${{ secrets.WINDOWS_FOCUS_LAF_ATTESTATION }}" --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
       # Manifest (app/windows/msix/AppxManifest.xml) con identità e versione,
       # icone, resources.pri e makeappx del Windows SDK del runner.
       - name: Pacchetto UniNotes.msix (non firmato)
@@ -462,7 +464,7 @@ jobs:
               Telefoni vecchi a 32 bit: `UniNotes-android-32bit.apk`; Chromebook ed emulatori x86: `UniNotes-android-x86_64.apk`.
             - **iPhone/iPad**: `UniNotes-ios-non-firmata.ipa` → va firmata con il proprio account Apple (es. Sideloadly o AltStore).
 
-            Per togliere l'app con tutti i suoi dati (anche nel cloud e nel calendario): in UniNotes *Impostazioni → Privacy e informazioni → Disinstalla UniNotes*.
+            Per togliere l'app con tutti i suoi dati (anche nel cloud e nel calendario): prima in UniNotes *Impostazioni → Privacy e informazioni → Elimina tutti i dati*, poi disinstalla l'app con il sistema.
 
             Istruzioni complete: [INSTALLAZIONE.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/INSTALLAZIONE.md)
           files: out/*

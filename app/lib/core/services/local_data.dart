@@ -95,10 +95,15 @@ class LocalData {
   /// Svuota [dir] (la cartella resta). Un file bloccato non ferma gli altri.
   static Future<void> clearDirectory(Directory dir) async {
     if (!await dir.exists()) return;
-    await for (final e in dir.list(followLinks: false)) {
-      try {
-        await e.delete(recursive: true);
-      } catch (_) {}
+    try {
+      await for (final e in dir.list(followLinks: false)) {
+        try {
+          await e.delete(recursive: true);
+        } catch (_) {}
+      }
+    } on FileSystemException {
+      // cartella sparita o illeggibile a metà (disco scollegato): quanto si
+      // è potuto togliere basta, il resto si vedrà al prossimo controllo
     }
   }
 

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../core/constants/text_limits.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
+import '../../utils/safe_text.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../study/course_catalog.dart';
@@ -21,15 +22,17 @@ String? searchSnippet(
   String query, {
   int before = 40,
   int after = 60,
+  String? lower,
 }) {
   final q = query.trim().toLowerCase();
   if (q.isEmpty) return null;
-  final i = text.toLowerCase().indexOf(q);
+  // [lower]: [text] già in minuscolo (calcolato una volta sola)
+  final i = (lower ?? text.toLowerCase()).indexOf(q);
   if (i < 0) return null;
   final a = (i - before).clamp(0, text.length);
   final b = (i + q.length + after).clamp(0, text.length);
   return '${a > 0 ? '…' : ''}'
-      '${text.substring(a, b).replaceAll(RegExp(r'\s+'), ' ').trim()}'
+      '${safeSlice(text, a, b).replaceAll(RegExp(r'\s+'), ' ').trim()}'
       '${b < text.length ? '…' : ''}';
 }
 
@@ -45,11 +48,20 @@ String transcriptBody(String md) => md
     .trim();
 
 class _Item {
-  _Item(this.course, this.transcript, this.audio, this.text);
+  _Item(this.course, this.transcript, this.audio, this.text)
+    : lower = text.toLowerCase(),
+      name = transcript.name.toLowerCase();
   final Course course;
   final NoteFile transcript;
   final NoteFile? audio;
   final String text;
+
+  /// Testo e nome in minuscolo, calcolati una volta: a ogni lettera
+  /// scritta si cercava rifacendo il minuscolo di tutte le trascrizioni
+  /// (centinaia di lezioni: decine di milioni di caratteri copiati per
+  /// tasto, sul filo dell'interfaccia).
+  final String lower;
+  final String name;
 }
 
 /// Ricerca nelle trascrizioni di tutte le registrazioni (Registra → lente).
@@ -161,13 +173,12 @@ class _TranscriptSearchScreenState extends State<TranscriptSearchScreen> {
                   '${items.length == 1 ? 'trascrizione' : 'trascrizioni'}.',
             );
           }
+          final lq = q.toLowerCase();
           final hits = <(_Item, String?)>[
             for (final it in items)
-              if (searchSnippet(it.text, q) case final snip?)
+              if (searchSnippet(it.text, q, lower: it.lower) case final snip?)
                 (it, snip)
-              else if (it.transcript.name.toLowerCase().contains(
-                q.toLowerCase(),
-              ))
+              else if (it.name.contains(lq))
                 (it, null),
           ];
           if (hits.isEmpty) {

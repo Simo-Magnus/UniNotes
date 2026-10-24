@@ -150,3 +150,180 @@ combinazioni, input da centinaia di migliaia di caratteri), da lanciare a parte.
   cursore «Difficoltà», passo dell'onboarding, intestazione delle card, voto
   nei voti dell'anno e voce «Attività» del cronometro cedono spazio invece di
   uscire dal riquadro.
+
+## Rete e download (terzo giro, 22/10/2026)
+
+Test in `app/test/crash_r3_rete_test.dart` (server HTTP locali su
+127.0.0.1: risposte lente, troncate, HTML, 416/206 sbagliati, 429, TLS).
+
+- `FileDownloader` (modelli Whisper e Parakeet, whisper.cpp, ffmpeg): limite
+  di attesa senza dati (`networkIdleTimeout`, 60 s) anche per la risposta e
+  per ogni pezzo, non solo per il collegamento: una rete caduta senza errore
+  non lascia il download appeso. Una pagina HTML al posto del file (Wi‑Fi
+  con pagina di accesso) è un errore chiaro e non sovrascrive la parte già
+  scaricata. 416 con una dimensione diversa dalla parte e 206 con un
+  intervallo diverso da quello chiesto: si riparte da zero invece di
+  rinominare o allungare un file sbagliato. Byte ricevuti diversi da quelli
+  annunciati: errore (la parte resta per riprendere). Certificato non valido,
+  disco pieno, cartella non scrivibile, 429/503 con `Retry-After`: messaggi
+  chiari invece di eccezioni grezze. La scrittura aspetta il disco pezzo per
+  pezzo (niente dati accumulati in memoria).
+- Un solo download per file in tutta l'app: un secondo download dello stesso
+  file (doppio tocco, scheda e seconda passata) aspetta il primo e, se è
+  riuscito, non riscarica.
+- whisper.cpp e ffmpeg (Windows): una sola installazione alla volta (due
+  modelli scaricati subito chiedevano entrambi whisper.cpp sullo stesso
+  archivio); estrazione in una cartella o in un file temporaneo poi
+  rinominato, così un'estrazione interrotta non lascia un programma a metà
+  che sembra installato; archivio non valido = errore del download.
+- Microsoft Graph e Google Drive: un corpo non JSON in una risposta 2xx è un
+  errore di rete (stato 0, la sincronizzazione si ferma e riprova), non una
+  FormatException per ogni file. Con 429/503 (e 403 «rate limit» di Drive) la
+  sincronizzazione si ferma al primo file invece di riprovare con tutti.
+- Accesso OAuth: una risposta del server dei token con byte non UTF-8 non è
+  più una FormatException.
+- Catalogo: certificato non valido = «senza rete» (si usa la copia salvata);
+  i download «recenti» (15 minuti) si contano con un orologio monotono, non
+  con quello del sistema che può essere spostato indietro.
+
+## Navigazione e stato nel tempo (terzo giro, 22/10/2026)
+
+Test in `app/test/crash_r3_navigazione_test.dart`.
+
+- Chiusura dopo un'attesa: `popIfCurrent` (`core/router/safe_pop.dart`)
+  chiude la pagina o il riquadro solo se è in cima; se nel frattempo se n'è
+  aperta un'altra sopra (notifica, widget) toglie solo la propria; se si sta
+  già chiudendo (Indietro, gesto «indietro», Esc durante l'attesa) non fa
+  nulla. Prima `if (mounted) Navigator.pop(context)` toglieva la pagina sotto
+  (la pagina in uscita è ancora montata durante l'animazione) o chiudeva la
+  pagina aperta dalla notifica al posto del modulo. Usato da nuovo
+  insegnamento, voti dell'anno, modulo della prova, modulo del libro, nota,
+  registratore e registrazione, dettaglio di prova e insegnamento dopo
+  «Elimina», «Cambia corso», fine della sessione Focus. Il registratore non fa
+  più `pushReplacement` da una pagina che non è in cima (sostituiva quella
+  sotto); il modulo della prova non propone avvisi e calendario se si sta già
+  chiudendo; il riquadro «Elimino i dati…» si chiude anche con una pagina
+  aperta sopra (prima restava per sempre).
+- Sessione Focus: la schermata conta come aperta dalla richiesta, non dal
+  fotogramma dopo: due richieste ravvicinate (riquadro e notifica) ne aprono
+  una sola.
+- Giorno che cambia con l'app aperta o ripresa dopo giorni (`DayWatcher`):
+  a mezzanotte (controllo almeno ogni ora, per i PC in sospensione) e a ogni
+  ripresa le schermate rileggono i dati («oggi», «domani», conti alla
+  rovescia) e, se è iniziato un nuovo anno accademico, arriva la domanda
+  come all'avvio (una sola alla volta).
+- Stato degli insegnamenti: una scrittura non riuscita in
+  `syncCourseStatuses` (disco pieno, sola lettura) va nel registro e non
+  impedisce più la lettura: Home, Insegnamenti, Studio, Libri, Esami non
+  mostrano più solo «Errore».
+- Token rifiutato (401) che l'app crede ancora valido (orologio spostato
+  indietro, accesso revocato): OneDrive e Google Drive lo dimenticano e
+  ripetono la richiesta una volta con uno nuovo, invece di fallire fino alla
+  scadenza segnata.
+- Calendario: un segno di `syscal_writers` con l'orario nel futuro vale come
+  scritto adesso (vedi `docs/notifiche.md`).
+
+## Memoria, sessioni lunghe e filo dell'interfaccia (terzo giro, 24/10/2026)
+
+Prove in `app/test/crash_r3_memoria_test.dart` (veloci nella suite; con
+`CRASH_R3_LONG=1` le dimensioni vere e le misure: 4 ore di lezione = 2600
+frasi, 5000 paragrafi, 2000 file).
+
+- Trascrizione dal vivo di ore: testo in lettura a blocchi di 40 frasi e,
+  in modifica, nel campo solo il blocco toccato (vedi `docs/registratore.md`,
+  «Modificare il testo mentre si registra»). Per ogni parola: 115 → 25 ms;
+  per tasto in modifica: 145 → 27 ms (PC, 2600 frasi).
+- Controllo ortografico in lettura (`ReadingSpellChecker`): a 4000 testi la
+  memoria si svuotava tutta; con più frasi o blocchi di così sullo schermo
+  (lezioni di oltre ~6 ore, documenti lunghi) si ricontrollava tutto senza
+  fine, ridisegnando ogni 25 controlli, e durante la registrazione ogni
+  parola confermata aggiungeva una versione nuova della frase in corso. Ora
+  escono per prime le versioni non più mostrate e mai i testi usati
+  nell'ultimo disegno. Nel campo di modifica (`SentenceSpellCheck`) il limite
+  cresce con il numero di frasi.
+- Documenti lunghi (`MarkdownLiteView`: trascrizioni, riassunti, note):
+  oltre 300 blocchi si mostrano in una lista pigra; prima 5000 paragrafi
+  fermavano l'interfaccia ~3,2 s all'apertura e a ogni ridisegno del
+  controllo ortografico, ora ~0,4 s. La ricerca porta in vista anche un
+  risultato in un blocco non ancora costruito; Ctrl+A seleziona i blocchi
+  costruiti. Il testo si analizza una volta per testo, non a ogni disegno.
+- Forma d'onda della registrazione: `BytesBuilder(copy: false)` faceva un
+  array per ogni livello (10 al secondo): ~7,5 MB in 4 ore invece di 144 KB.
+- Ricerca nelle trascrizioni (Registra → lente) e negli appunti del corso:
+  il testo in minuscolo si calcola una volta per file, non per ogni lettera
+  scritta su tutte le trascrizioni.
+- Cartella con migliaia di file (File → cartella): oltre 150 voci lista
+  pigra nella card (prima tutte le righe e la dimensione di ogni file
+  all'apertura).
+- Taglio del WAV con l'originale sparito: il file di destinazione non resta
+  aperto (su Windows non si cancellava più).
+
+## Testo, input e accessibilità (terzo giro, 22/10/2026)
+
+- **Coppie surrogate.** Flutter rifiuta ogni stringa con una metà spaiata di
+  un carattere fuori dal piano base (emoji, ideogrammi rari) con `string is
+  not well-formed UTF-16` appena la disegna: la schermata diventa rossa.
+  Nasce da un taglio con `substring` in mezzo a una coppia o da dati letti da
+  fuori (un `&#xD800;` in un XML, un `\ud800` in un JSON, un file UTF-16
+  troncato). Rimedi in `lib/utils/safe_text.dart`: `safePrefix`, `safeSlice`,
+  `cutBefore`/`cutAfter` per tagliare, `wellFormed` e `wellFormedJson` per
+  ripulire (la metà spaiata diventa U+FFFD).
+- Tagli corretti: frammenti attorno alla parola cercata (`searchSnippet`, ricerca
+  negli appunti), paragrafi lunghi, celle e descrizioni del lettore, nomi
+  accorciati dei file estratti dal lettore.
+- Il lettore ripulisce ogni documento una volta sola, alla consegna
+  (`parseDocument`, `findTranscript`, scalette: `lib/features/reader/
+  reader_well_formed.dart`). Anche i dati JSON accanto alle registrazioni, i
+  segnalibri e le evidenziazioni passano da `wellFormedJson`.
+- `findFolded` non cerca una metà di emoji (il campo può passare da lì mentre
+  si compone): l'evidenziazione spezzerebbe la coppia.
+- **Campi di testo.** «Trova nel testo» (`FindBar`) ha un tetto di 500
+  caratteri (`TextLimits.findQuery`): una pagina incollata ripiegava e
+  confrontava megabyte a ogni tasto. Le ricerche con `.*+?()[]` non sono
+  espressioni regolari (testo semplice) e i filtri scritti dall'utente con
+  alternative sovrapposte e quantificatore, come `(a|aa)+`, si usano come
+  testo (`ExclusionFilter`).
+- Dopo l'apertura della ricerca, fuoco e selezione partono un fotogramma dopo:
+  se la schermata si è già chiusa non si toccano più (controller eliminato).
+- **Controllo ortografico di Windows e macOS**: gira sul filo
+  dell'interfaccia; le righe oltre 20000 caratteri non si controllano e a ogni
+  richiesta se ne mandano al massimo 100000 caratteri (le altre al controllo
+  dopo; quelle già viste sono in memoria).
+- **Lettore di schermo**: le schermate principali si aprono con
+  `tester.ensureSemantics()` e nomi ostili (emoji, destra-sinistra, controlli
+  bidi, nullo, a capo di Windows, righe enormi) senza asserzioni
+  (`test/crash_r3_testo_test.dart`).
+
+## File system e percorsi (terzo giro, 24/10/2026)
+
+Test in `app/test/crash_r3_file_test.dart`.
+
+- **Nomi scelti dall'utente** (`NotesStore.safeName`): su Windows i nomi
+  riservati (`CON`, `aux.txt`, `COM1`…) prendono un «_» dopo il nome (la
+  sincronizzazione li rifiutava e altri programmi non li cancellano); i punti
+  e gli spazi iniziali si tolgono (un file `.nota.md` spariva dagli elenchi e
+  una cartella `.eliminati` era il cestino); il taglio a 90 caratteri non
+  spezza le emoji e non lascia punti finali. Rinominando una lezione, su
+  Windows il nome si accorcia perché il percorso resti sotto i 260 caratteri
+  (`fitToPath`); il nome davvero dato ai file arriva agli allegati di Studio.
+  Libri (`BookLibrary.uniqueName`), file ricevuti da fuori e file `.ics`
+  seguono le stesse regole; le estensioni sono al massimo di 16 caratteri.
+- **Cartelle che spariscono o non si leggono**: elenco degli appunti, conteggio,
+  Home, cestino e pulizie mostrano quanto hanno letto invece di rompere la
+  schermata; un file tolto durante l'elenco (tipo «non trovato») si salta.
+  `renameCourse` non lancia mai (il nome nel database è già cambiato). Se la
+  cartella degli appunti scelta non si può creare si usa quella predefinita;
+  un'unità di rete che non risponde entro 4 secondi vale «non raggiungibile».
+  I percorsi esterni di libri e allegati si controllano con
+  `fileExistsQuick` (5 secondi) per non fermare la schermata.
+- **Copie e scritture**: `copyFileSafely` (via `.part`) per riassunti allegati
+  e file ricevuti; `writeStringAtomic`/`writeBytesAtomic` tolgono il `.part`
+  se la scrittura fallisce (disco pieno) e sono usate per la trascrizione
+  salvata, il PDF esportato e l'«Annulla» del testo dell'AI.
+- **Cestino e orologio**: dopo i 30 giorni un elemento si cancella solo se è
+  visto scaduto da almeno 3 giorni (`RecycleBin.grace`, annotazione
+  `.scaduto` nella sua cartella): un orologio portato avanti per errore e poi
+  corretto non svuota più il cestino.
+- **Temporanei**: all'avvio si tolgono le cartelle di lavoro (`whisper_*`,
+  `parakeet_*`, `uninotes_live_*`, `uninotes_onda_*`, `uninotes_taglio_*`)
+  più vecchie di 6 ore; mai `uninotes_cestino_*` (contiene un audio).

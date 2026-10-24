@@ -27,14 +27,15 @@ class AndroidCalendarBackend extends NativeCalendarBackend {
 
   /// Argomenti di `write` (anche per i test). Giornata intera: mezzanotte
   /// UTC del giorno e del giorno dopo (come vuole il Calendar Provider,
-  /// fuso «UTC»); altrimenti inizio e fine nel fuso del telefono.
+  /// fuso «UTC»); altrimenti inizio e fine come istanti dell'ora italiana
+  /// (Europe/Rome, come il file .ics): il telefono in un altro fuso mostra
+  /// la prova all'ora giusta, non alla stessa ora del suo orologio.
   static Map<String, Object?> eventArgs(
     String calendarId,
     AgendaItem item,
     List<int> reminderMinutes, {
     String? eventId,
   }) {
-    final d = item.date;
     return {
       'calendarId': calendarId,
       'eventId': ?eventId,
@@ -42,12 +43,10 @@ class AndroidCalendarBackend extends NativeCalendarBackend {
       'notes': eventDescription(item),
       'location': item.location,
       'allDay': item.allDay,
-      'startMs': item.allDay
-          ? DateTime.utc(d.year, d.month, d.day).millisecondsSinceEpoch
-          : item.start.millisecondsSinceEpoch,
-      'endMs': item.allDay
-          ? DateTime.utc(d.year, d.month, d.day + 1).millisecondsSinceEpoch
-          : item.end.millisecondsSinceEpoch,
+      'startMs': (item.allDay ? item.dayStartUtc : item.startInstant)
+          .millisecondsSinceEpoch,
+      'endMs': (item.allDay ? item.dayEndUtc : item.endInstant)
+          .millisecondsSinceEpoch,
       'alarms': reminderMinutes,
     };
   }

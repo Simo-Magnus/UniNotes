@@ -14,6 +14,7 @@ import '../../widgets/undo_snack_bar.dart';
 import '../notes/note_viewer_screen.dart';
 import '../notes/notes_store.dart';
 import '../reader/reader_screen.dart';
+import '../notes/safe_files.dart';
 
 /// File di un allegato su questo dispositivo, se c'è ancora.
 Future<File?> attachmentFile(AppServices s, Attachment a) async {
@@ -23,7 +24,7 @@ Future<File?> attachmentFile(AppServices s, Attachment a) async {
   final path = a.path;
   if (path == null) return null;
   final f = File(path);
-  return await f.exists() ? f : null;
+  return await fileExistsQuick(path) ? f : null;
 }
 
 IconData attachmentIcon(Attachment a) {

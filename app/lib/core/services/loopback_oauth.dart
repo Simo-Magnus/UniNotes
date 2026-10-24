@@ -362,8 +362,10 @@ class LoopbackOAuth {
         ).query,
       );
       final res = await req.close().timeout(const Duration(seconds: 30));
+      // (byte non UTF-8, es. una pagina di errore di un proxy: niente
+      // FormatException, il corpo si legge comunque)
       final body = await res
-          .transform(utf8.decoder)
+          .transform(const Utf8Decoder(allowMalformed: true))
           .join()
           .timeout(const Duration(seconds: 30));
       // risposta qualsiasi (pagina HTML di un proxy, JSON non oggetto,

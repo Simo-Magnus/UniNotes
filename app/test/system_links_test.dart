@@ -235,8 +235,10 @@ void main() {
         examItem(2, DateTime(2027, 2, 10), time: '09:00'),
         const [60],
       );
-      expect(t['startMs'], DateTime(2027, 2, 10, 9).millisecondsSinceEpoch);
-      expect(t['endMs'], DateTime(2027, 2, 10, 11).millisecondsSinceEpoch);
+      // 09:00 a Roma a febbraio (UTC+1) = 08:00 UTC, in qualunque fuso sia il
+      // telefono
+      expect(t['startMs'], DateTime.utc(2027, 2, 10, 8).millisecondsSinceEpoch);
+      expect(t['endMs'], DateTime.utc(2027, 2, 10, 10).millisecondsSinceEpoch);
     });
 
     test('controllo di salute: grave → calendario interno, sync spenta → '
@@ -348,8 +350,14 @@ void main() {
         const [],
         eventId: 'e1',
       );
-      expect(t['startMs'], DateTime(2027, 2, 10, 9, 30).millisecondsSinceEpoch);
-      expect(t['endMs'], DateTime(2027, 2, 10, 11, 30).millisecondsSinceEpoch);
+      expect(
+        t['startMs'],
+        DateTime.utc(2027, 2, 10, 8, 30).millisecondsSinceEpoch,
+      );
+      expect(
+        t['endMs'],
+        DateTime.utc(2027, 2, 10, 10, 30).millisecondsSinceEpoch,
+      );
       expect(t['eventId'], 'e1');
     });
 

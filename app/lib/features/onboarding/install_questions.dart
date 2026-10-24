@@ -12,7 +12,7 @@ import '../settings/erase_all.dart';
 /// due pulsanti per dialogo; senza risposta (Esc) la domanda si ripete.
 ///
 /// - Dati rimasti nelle cartelle dell'app: «Usa» li tiene, «Elimina» chiama
-///   [eraseLeftover] (la stessa pulizia di «Disinstalla UniNotes») e poi
+///   [eraseLeftover] (la stessa pulizia di «Elimina tutti i dati») e poi
 ///   [recheck] (che può trovare ancora appunti in Documenti).
 /// - Appunti in una cartella condivisa (PC): «Usa» li rilegge, «Ignora» li
 ///   mette da parte con [setAside] (`Corsi (installazione precedente)`):

@@ -19,6 +19,7 @@ import 'core/services/app_return.dart';
 import 'core/services/app_services.dart';
 import 'core/services/app_uninstall.dart';
 import 'core/services/background_sync.dart';
+import 'core/services/day_watcher.dart';
 import 'core/services/error_log.dart';
 import 'core/services/portable_path.dart';
 import 'core/services/install_check.dart';
@@ -334,11 +335,31 @@ class _NewYearGateState extends State<_NewYearGate> {
   String? _degreeId;
   bool _noticing = false;
 
+  /// Giorno cambiato con l'app aperta o ripresa dopo giorni: le schermate
+  /// rileggono i dati («oggi», conti alla rovescia) e, se è iniziato un
+  /// nuovo anno accademico, arriva la domanda come all'avvio.
+  late final DayWatcher _day = DayWatcher(_onNewDay);
+  bool _askingYear = false;
+
+  Future<void> _onNewDay() async {
+    _services.revision.bump();
+    if (_askingYear || !mounted) return;
+    _askingYear = true;
+    try {
+      await _guard('Nuovo anno accademico', () async {
+        await checkNewAcademicYear(context);
+      });
+    } finally {
+      _askingYear = false;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     _degreeId = _services.profile.value?.degreeId;
     _services.profile.addListener(_onProfile);
+    _day.start();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!mounted) return;
       // corsi di laurea sostituiti nel catalogo (doppioni uniti): il profilo
@@ -349,9 +370,15 @@ class _NewYearGateState extends State<_NewYearGate> {
       if (!mounted) return;
       // Il passaggio d'anno aggiorna già il database.
       Object? answer;
-      final asked = await _guard('Nuovo anno accademico', () async {
-        answer = await checkNewAcademicYear(context);
-      });
+      _askingYear = true;
+      final bool asked;
+      try {
+        asked = await _guard('Nuovo anno accademico', () async {
+          answer = await checkNewAcademicYear(context);
+        });
+      } finally {
+        _askingYear = false;
+      }
       if (asked && answer == null && mounted) {
         await _guard(
           'Aggiornamento del database',
@@ -376,6 +403,7 @@ class _NewYearGateState extends State<_NewYearGate> {
 
   @override
   void dispose() {
+    _day.dispose();
     _services.profile.removeListener(_onProfile);
     super.dispose();
   }

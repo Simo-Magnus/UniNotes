@@ -7,6 +7,7 @@ import 'package:sqflite/sqflite.dart';
 
 import '../../core/database/app_database.dart';
 import '../../core/database/sync_schema.dart';
+import '../../core/services/error_log.dart';
 import 'data_sync_snapshot.dart';
 
 export 'data_sync_snapshot.dart';
@@ -259,8 +260,12 @@ class DataSync {
     // dispositivo (o vengono da «Elimina dati»): non si propagano
     if (base != null) {
       for (final r in await txn.query(SyncSchema.tombstones)) {
-        tombs.putIfAbsent(r['tbl'] as String, () => {})[r['sync_id']
-            as String] = (r['deleted_at'] as num).toInt();
+        final tbl = r['tbl'], sid = r['sync_id'], at = r['deleted_at'];
+        if (tbl is! String || sid is! String || at is! num || !at.isFinite) {
+          _skipped('eliminazione', 'tbl=$tbl sync_id=$sid deleted_at=$at');
+          continue;
+        }
+        tombs.putIfAbsent(tbl, () => {})[sid] = at.toInt();
       }
     }
     for (final s in SyncSchema.tables) {
@@ -269,52 +274,19 @@ class DataSync {
       final data = _syncedColumns(s, cols);
       final table = out.table(s.table);
       for (final row in ctx.rows[s.table]!) {
-        final id = ctx.idOf(s, row);
-        if (id == null || !_wanted(s, id)) continue;
-        final m = (row['sync_mtime'] as num?)?.toInt() ?? 0;
-        final stamp = m > 0 ? m : (firstJoin ? 0 : -m);
-        final b = base?.entry(s.table, id);
-        final bAlive = b != null && b.alive;
-        final e = SyncEntry(deleted: b?.deleted);
-        for (final c in data) {
-          final v = _exportValue(s, c, row[c], ctx);
-          if (v is _Skip) continue;
-          if (bAlive && b.values.containsKey(c) && sameValue(b.values[c], v)) {
-            e.values[c] = v;
-            e.times[c] = b.times[c] ?? stamp;
-            continue;
-          }
-          final ref = s.refs[c];
-          if (bAlive &&
-              ref != null &&
-              v == null &&
-              b.values[c] is String &&
-              !ctx.resolvable(ref, b.values[c] as String)) {
-            // riferimento a una riga che qui non c'è (es. argomento
-            // eliminato): non è una modifica di questo dispositivo
-            e.values[c] = b.values[c];
-            e.times[c] = b.times[c] ?? stamp;
-            continue;
-          }
-          e.values[c] = v;
-          e.times[c] = stamp;
+        String? id;
+        try {
+          id = ctx.idOf(s, row);
+          if (id == null || !_wanted(s, id)) continue;
+          table[id] = _exportRow(s, row, id, cols, data, ctx, base, firstJoin);
+        } catch (err, st) {
+          // riga con un valore di tipo sbagliato (es. orario di modifica o
+          // riferimento scritto come testo da un'altra versione o a mano):
+          // si salta questa riga, l'unione delle altre prosegue. Se la base
+          // la conosceva, resta com'era nel registro (non diventa una
+          // eliminazione).
+          _skipped('riga di ${s.table} ($id)', '$err', st);
         }
-        if (bAlive) {
-          // colonne di una versione più recente dell'app: restano
-          for (final c in b.values.keys) {
-            if (e.values.containsKey(c) || cols.contains(c)) continue;
-            e.values[c] = b.values[c];
-            e.times[c] = b.times[c] ?? 0;
-          }
-        }
-        // la riga c'è: un'eliminazione precedente fatta qui non vale più
-        if (e.deleted != null && e.latest < e.deleted!) {
-          final at = e.deleted!;
-          for (final c in e.times.keys) {
-            if (e.times[c]! < at) e.times[c] = at;
-          }
-        }
-        table[id] = e;
       }
       final localTombs = tombs[s.table] ?? const {};
       for (final entry in base?.tables[s.table]?.entries ??
@@ -334,6 +306,79 @@ class DataSync {
     return out;
   }
 
+  /// Voce del registro per la riga [row] di questo dispositivo. Lancia
+  /// [FormatException] se un valore ha il tipo sbagliato.
+  SyncEntry _exportRow(
+    SyncTableSpec s,
+    Map<String, Object?> row,
+    String id,
+    List<String> cols,
+    List<String> data,
+    _Ctx ctx,
+    SyncSnapshot? base,
+    bool firstJoin,
+  ) {
+    final raw = row['sync_mtime'];
+    if (raw != null && (raw is! num || !raw.isFinite)) {
+      throw FormatException('sync_mtime di tipo ${raw.runtimeType}: $raw');
+    }
+    final m = (raw as num?)?.toInt() ?? 0;
+    final stamp = m > 0 ? m : (firstJoin ? 0 : -m);
+    final b = base?.entry(s.table, id);
+    final bAlive = b != null && b.alive;
+    final e = SyncEntry(deleted: b?.deleted);
+    for (final c in data) {
+      final v = _exportValue(s, c, row[c], ctx);
+      if (v is _Skip) continue;
+      if (bAlive && b.values.containsKey(c) && sameValue(b.values[c], v)) {
+        e.values[c] = v;
+        e.times[c] = b.times[c] ?? stamp;
+        continue;
+      }
+      final ref = s.refs[c];
+      if (bAlive &&
+          ref != null &&
+          v == null &&
+          b.values[c] is String &&
+          !ctx.resolvable(ref, b.values[c] as String)) {
+        // riferimento a una riga che qui non c'è (es. argomento
+        // eliminato): non è una modifica di questo dispositivo
+        e.values[c] = b.values[c];
+        e.times[c] = b.times[c] ?? stamp;
+        continue;
+      }
+      e.values[c] = v;
+      e.times[c] = stamp;
+    }
+    if (bAlive) {
+      // colonne di una versione più recente dell'app: restano
+      for (final c in b.values.keys) {
+        if (e.values.containsKey(c) || cols.contains(c)) continue;
+        e.values[c] = b.values[c];
+        e.times[c] = b.times[c] ?? 0;
+      }
+    }
+    // la riga c'è: un'eliminazione precedente fatta qui non vale più
+    if (e.deleted != null && e.latest < e.deleted!) {
+      final at = e.deleted!;
+      for (final c in e.times.keys) {
+        if (e.times[c]! < at) e.times[c] = at;
+      }
+    }
+    return e;
+  }
+
+  /// Annota nel registro degli errori una riga che l'unione ha saltato.
+  static void _skipped(String what, String why, [StackTrace? stack]) {
+    unawaited(
+      ErrorLog.record(
+        'Sincronizzazione: $what saltata ($why)',
+        stack,
+        context: 'Unione dei dati',
+      ),
+    );
+  }
+
   static bool _wanted(SyncTableSpec s, String id) =>
       s.table != 'app_settings' || SyncSchema.isSyncedSetting(id);
 
@@ -347,7 +392,12 @@ class DataSync {
     final ref = s.refs[c];
     if (ref != null) {
       if (v == null) return null;
-      return ctx.syncIdOf(ref, (v as num).toInt());
+      // un riferimento che non è un numero (testo, infinito: dati scritti a
+      // mano o da un'altra versione) non si può tradurre: riga saltata
+      if (v is! num || !v.isFinite) {
+        throw FormatException('$c di tipo ${v.runtimeType}: $v');
+      }
+      return ctx.syncIdOf(ref, v.toInt());
     }
     if (s.notePaths.contains(c) && v is String && ctx.notesRoot != null) {
       final root = ctx.notesRoot!;
@@ -549,10 +599,13 @@ class _Ctx {
     final toLocal = ctx._toLocal['places'] = {};
     try {
       for (final r in await txn.query('places', columns: ['id', 'external_id'])) {
-        final id = (r['id'] as num).toInt();
-        final ext = r['external_id'] as String;
-        toSync[id] = ext;
-        toLocal[ext] = id;
+        final id = r['id'];
+        final ext = r['external_id'];
+        // luogo senza identificativo testuale (dati rovinati): non si
+        // sincronizza, ma non ferma l'unione
+        if (id is! num || ext is! String) continue;
+        toSync[id.toInt()] = ext;
+        toLocal[ext] = id.toInt();
       }
     } on DatabaseException {
       // tabella assente
@@ -561,7 +614,11 @@ class _Ctx {
   }
 
   String? idOf(SyncTableSpec s, Map<String, Object?> row) {
-    if (s.hasSyncId) return row['sync_id'] as String?;
+    if (s.hasSyncId) {
+      // un identificativo che non è testo (dati rovinati): riga ignorata
+      final v = row['sync_id'];
+      return v is String ? v : null;
+    }
     final v = row[s.key];
     return v == null ? null : '$v';
   }

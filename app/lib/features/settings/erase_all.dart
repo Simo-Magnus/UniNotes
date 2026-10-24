@@ -3,20 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/constants/build_flags.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
-import '../../core/services/app_uninstall.dart';
 import 'logic/data_eraser.dart';
 
 /// Da dove parte l'eliminazione dei dati.
 enum EraseFlowMode {
-  /// Impostazioni → «Elimina tutti i dati»: l'app resta installata.
+  /// Impostazioni → «Elimina tutti i dati»: l'app resta installata (per
+  /// toglierla si usa il sistema: l'app non ha un tasto per disinstallarsi).
   eraseOnly,
-
-  /// Impostazioni → «Disinstalla UniNotes»: dopo la pulizia si avvia la
-  /// disinstallazione dove il sistema lo permette (Microsoft Store: si apre
-  /// «App installate» di Windows).
-  uninstall,
 
   /// Windows, disinstallazione avviata da «App installate»: il
   /// disinstallatore lancia `uninotes.exe --disinstalla` e, alla chiusura
@@ -31,35 +26,23 @@ Future<void> eraseAllData(BuildContext context) => runEraseFlow(
   eraser: DataEraser(context.read<AppServices>()),
 );
 
-/// Impostazioni → «Disinstalla UniNotes».
-Future<void> uninstallApp(BuildContext context) => runEraseFlow(
-  context,
-  mode: EraseFlowMode.uninstall,
-  eraser: DataEraser(context.read<AppServices>()),
-);
-
 void _exitApp() => exit(0);
 
-/// Il flusso unico di eliminazione e disinstallazione (due pulsanti per
-/// dialogo):
+/// Il flusso unico di eliminazione dei dati (due pulsanti per dialogo):
 /// 1. «Elimina tutto» oppure «Scegli cosa eliminare» (elenco con spunte e
 ///    dimensioni);
 /// 2. conferma con il riepilogo;
 /// 3. eliminazione ([DataEraser]);
-/// 4. con una scelta parziale, domanda se disinstallare comunque o tenere
-///    l'app;
-/// 5. disinstallazione ([AppUninstall]) o chiusura dell'app.
+/// 4. chiusura dell'app (su iPhone e iPad la chiude l'utente).
 ///
-/// Nella build del Microsoft Store ([windowsStore], predefinito: Windows con
-/// `STORE=microsoft`) non c'è un disinstallatore da avviare: dopo la pulizia
-/// si apre «App installate» di Windows ([AppUninstall.windowsStore]).
+/// L'app non si disinstalla da sola: lo fa il sistema (nella modalità
+/// [EraseFlowMode.windowsUninstaller] è il disinstallatore di Windows a
+/// togliere i file del programma dopo la chiusura).
 Future<void> runEraseFlow(
   BuildContext context, {
   required EraseFlowMode mode,
   required DataEraser eraser,
-  Future<UninstallResult> Function() uninstall = AppUninstall.uninstall,
   VoidCallback quit = _exitApp,
-  bool? windowsStore,
 }) async {
   // un doppio tocco su «Elimina tutti i dati» aprirebbe due giri di dialoghi
   // (e due eliminazioni una sopra l'altra)
@@ -72,9 +55,7 @@ Future<void> runEraseFlow(
       context,
       mode: mode,
       eraser: eraser,
-      uninstall: uninstall,
       quit: quit,
-      windowsStore: windowsStore,
     );
   } finally {
     _eraseRunning[owner] = null;
@@ -87,11 +68,8 @@ Future<void> _runEraseFlow(
   BuildContext context, {
   required EraseFlowMode mode,
   required DataEraser eraser,
-  required Future<UninstallResult> Function() uninstall,
   required VoidCallback quit,
-  bool? windowsStore,
 }) async {
-  final store = windowsStore ?? (Platform.isWindows && kMicrosoftStoreBuild);
   final windows = mode == EraseFlowMode.windowsUninstaller;
   final options = await eraser.options();
   if (!context.mounted) return;
@@ -99,9 +77,7 @@ Future<void> _runEraseFlow(
     for (final o in options)
       if (o.available) o.item,
   };
-  final action = mode == EraseFlowMode.uninstall
-      ? 'Elimina e disinstalla'
-      : 'Elimina';
+  const action = 'Elimina';
   final all = await askTwoChoices(
     context,
     title: mode == EraseFlowMode.eraseOnly
@@ -111,11 +87,6 @@ Future<void> _runEraseFlow(
       EraseFlowMode.eraseOnly =>
         'Puoi eliminare tutti i dati dell\'app (anche quelli collegati nel '
             'cloud e nel calendario) oppure scegliere cosa eliminare.',
-      EraseFlowMode.uninstall =>
-        'Prima di disinstallare puoi eliminare tutti i dati dell\'app, '
-            'anche quelli collegati nel cloud e nel calendario, così '
-            'reinstallandola non ritrovi nulla. Oppure scegli cosa '
-            'eliminare.',
       EraseFlowMode.windowsUninstaller =>
         'Il programma si sta disinstallando. Scegli quali dati eliminare: '
             'chiudendo questa finestra restano tutti sul PC.',
@@ -138,7 +109,6 @@ Future<void> _runEraseFlow(
     if (windows) quit();
     return;
   }
-  final everything = items.containsAll(available);
   final ok = await askTwoChoices(
     context,
     title: 'Confermi?',
@@ -148,13 +118,6 @@ Future<void> _runEraseFlow(
         if (items.contains(o.item))
           '• ${o.item.label}'
               '${o.bytes != null && o.bytes! > 0 ? ' (${formatBytes(o.bytes!)})' : ''}',
-      if (mode == EraseFlowMode.uninstall && everything)
-        store
-            ? '\nPoi si apre «App installate» di Windows per togliere '
-                  'UniNotes.'
-            : '\nPoi UniNotes si disinstalla.',
-      if (mode != EraseFlowMode.eraseOnly && !everything && !windows)
-        '\nAlla fine potrai scegliere se disinstallare l\'app o tenerla.',
       '\nNon si può annullare.',
     ].join('\n'),
     no: 'Annulla',
@@ -191,34 +154,6 @@ Future<void> _runEraseFlow(
       await _info(context, 'Disinstallazione', problems.join('\n\n'));
     }
     quit();
-    return;
-  }
-  var doUninstall = mode == EraseFlowMode.uninstall;
-  if (doUninstall && !everything) {
-    doUninstall =
-        await askTwoChoices(
-          context,
-          title: 'Disinstallare UniNotes?',
-          body:
-              'Hai eliminato solo alcuni dati. Vuoi disinstallare comunque '
-              'l\'app o tenerla?',
-          no: 'Tieni l\'app',
-          yes: 'Disinstalla',
-        ) ==
-        true;
-    if (!context.mounted) return;
-  }
-  if (doUninstall) {
-    final r = await uninstall();
-    if (r.started) {
-      quit();
-      return;
-    }
-    if (!context.mounted) return;
-    await _finalDialog(context, 'Dati eliminati', [
-      ...problems,
-      ?r.message,
-    ], quit);
     return;
   }
   await _finalDialog(context, 'Dati eliminati', [
@@ -394,34 +329,49 @@ Future<EraseReport> runEraseWithProgress(
 ) async {
   final step = ValueNotifier('Elimino i dati…');
   final nav = Navigator.of(context);
+  // contesto del riquadro: alla fine si chiude lui, anche se nel frattempo
+  // si è aperta un'altra pagina sopra (tocco su una notifica); un semplice
+  // pop avrebbe tolto quella e lasciato il riquadro senza fine
+  BuildContext? dialog;
   showDialog<void>(
     context: context,
     barrierDismissible: false,
     builder: (c) => PopScope(
       canPop: false,
-      child: AlertDialog(
-        content: Row(
-          children: [
-            const SizedBox.square(
-              dimension: 28,
-              child: CircularProgressIndicator(),
+      child: Builder(
+        builder: (c) {
+          dialog = c;
+          return AlertDialog(
+            content: Row(
+              children: [
+                const SizedBox.square(
+                  dimension: 28,
+                  child: CircularProgressIndicator(),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: ValueListenableBuilder(
+                    valueListenable: step,
+                    builder: (_, v, _) => Text(v),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 20),
-            Expanded(
-              child: ValueListenableBuilder(
-                valueListenable: step,
-                builder: (_, v, _) => Text(v),
-              ),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     ),
   );
   try {
     return await eraser.run(items, onStep: (v) => step.value = v);
   } finally {
-    if (nav.mounted) nav.pop();
+    final d = dialog;
+    if (d != null && d.mounted) {
+      popIfCurrent(d);
+    } else if (nav.mounted) {
+      // riquadro non ancora costruito: è in cima
+      nav.pop();
+    }
   }
 }
 

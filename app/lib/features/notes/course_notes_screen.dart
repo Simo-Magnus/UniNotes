@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/whisper_service.dart' show WhisperModelInfo;
 import '../../models/course.dart';
+import '../../utils/safe_text.dart';
 import '../../widgets/common.dart';
 import '../../widgets/find_bar.dart';
 import '../../widgets/glass.dart';
@@ -59,7 +60,9 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
   late String? _justSaved = widget.justSaved;
 
   /// Testo dei file Markdown per la ricerca (per percorso e data).
-  final _texts = <String, (DateTime, String)>{};
+  /// Testi letti per la ricerca: data, testo e testo in minuscolo (fatto
+  /// una volta, non a ogni lettera scritta per tutti i file).
+  final _texts = <String, (DateTime, String, String)>{};
 
   Course get course => widget.course;
 
@@ -83,6 +86,8 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
   void _openSearch() {
     setState(() => _searchOpen = true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // la schermata può essere già chiusa (controller e fuoco eliminati)
+      if (!mounted) return;
       _queryFocus.requestFocus();
       _query.selection = TextSelection(
         baseOffset: 0,
@@ -130,9 +135,9 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
         String? snippet;
         if (!f.isAudio && f.extension == '.md') {
           final cached = _texts[f.file.path];
-          String text;
+          String text, lower;
           if (cached != null && cached.$1 == f.modified) {
-            text = cached.$2;
+            (_, text, lower) = cached;
           } else {
             try {
               text = await readTextLenient(f.file);
@@ -140,9 +145,10 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
               // file sparito o bloccato: cerca solo nel nome
               text = '';
             }
-            _texts[f.file.path] = (f.modified, text);
+            lower = text.toLowerCase();
+            _texts[f.file.path] = (f.modified, text, lower);
           }
-          final i = text.toLowerCase().indexOf(q);
+          final i = lower.indexOf(q);
           if (i >= 0) snippet = _snippet(text, i, q.length);
         }
         if (snippet != null || f.name.toLowerCase().contains(q)) {
@@ -157,7 +163,7 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
     final a = (i - 40).clamp(0, text.length);
     final b = (i + len + 60).clamp(0, text.length);
     return '${a > 0 ? '…' : ''}'
-        '${text.substring(a, b).replaceAll(RegExp(r'\s+'), ' ').trim()}'
+        '${safeSlice(text, a, b).replaceAll(RegExp(r'\s+'), ' ').trim()}'
         '${b < text.length ? '…' : ''}';
   }
 

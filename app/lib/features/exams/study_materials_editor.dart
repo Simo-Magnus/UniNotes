@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +6,7 @@ import '../../widgets/common.dart';
 import '../reader/reader_screen.dart';
 import 'exam_ui.dart';
 import '../../core/constants/text_limits.dart';
+import '../notes/safe_files.dart';
 
 /// Editor della lista "Materiali da studiare": righe di testo libero oppure
 /// percorsi locali scelti con il selettore file.
@@ -157,7 +156,7 @@ class _MaterialRow extends StatelessWidget {
 /// ODF, EPUB, immagini, audio e video…; per gli altri formati propone «Apri
 /// con…»); se il file non c'è più, il messaggio del sistema.
 Future<void> openStudyFile(BuildContext context, String path) async {
-  if (!await File(path).exists()) {
+  if (!await fileExistsQuick(path)) {
     final r = await ExternalLauncher.openPath(path);
     if (context.mounted) showLaunchResult(context, r);
     return;

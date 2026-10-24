@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/feedback/motion.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../widgets/common.dart';
@@ -192,7 +193,9 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
           .catchError((Object e) {
             if (!mounted) return;
             showSnack(context, 'Impossibile aprire la nota: $e');
-            Navigator.maybePop(context);
+            // già chiusa con Indietro durante la lettura: la pagina sotto
+            // resta
+            popIfCurrent(context);
           });
     }
   }
@@ -234,7 +237,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
     }
     if (!mounted) return;
     final messenger = ScaffoldMessenger.maybeOf(context);
-    Navigator.pop(context);
+    // Indietro durante il salvataggio: la pagina sotto resta
+    popIfCurrent(context);
     if (messenger != null && messenger.mounted) {
       showSuccessSnack(
         messenger.context,

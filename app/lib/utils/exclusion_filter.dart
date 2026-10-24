@@ -17,8 +17,15 @@ class ExclusionFilter {
     r'\((?:[^()\\]|\\.)*[+*](?:[^()\\]|\\.)*\)(?:[+*]|\{\d+,\d*\})',
   );
 
+  /// Gruppo con alternative e un quantificatore fuori, come `(a|aa)+` o
+  /// `(x|x?)*`: stesso problema (le alternative si sovrappongono). Un filtro
+  /// normale come `(ofa|inglese)` non ha il quantificatore e resta valido.
+  static final _quantifiedAlternation = RegExp(
+    r'\((?:[^()\\]|\\.)*\|(?:[^()\\]|\\.)*\)(?:[+*]|\{\d+,\d*\})',
+  );
+
   static RegExp _compile(String p) {
-    if (_nestedQuantifier.hasMatch(p)) {
+    if (_nestedQuantifier.hasMatch(p) || _quantifiedAlternation.hasMatch(p)) {
       return RegExp(RegExp.escape(p), caseSensitive: false);
     }
     try {

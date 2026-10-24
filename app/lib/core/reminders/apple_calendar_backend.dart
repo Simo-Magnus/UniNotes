@@ -29,7 +29,9 @@ class AppleCalendarBackend extends NativeCalendarBackend {
 
   /// Argomenti di `write` (anche per i test): giornata intera dalla
   /// mezzanotte locale del giorno (fine = inizio, come in EventKit),
-  /// altrimenti inizio e fine locali; promemoria in minuti prima.
+  /// altrimenti inizio e fine come istanti dell'ora italiana (Europe/Rome,
+  /// come il file .ics e il calendario di Android); promemoria in minuti
+  /// prima.
   static Map<String, Object?> eventArgs(
     String calendarId,
     AgendaItem item,
@@ -44,8 +46,9 @@ class AppleCalendarBackend extends NativeCalendarBackend {
       'notes': eventDescription(item),
       'location': item.location,
       'allDay': item.allDay,
-      'startMs': (item.allDay ? day : item.start).millisecondsSinceEpoch,
-      'endMs': (item.allDay ? day : item.end).millisecondsSinceEpoch,
+      'startMs': (item.allDay ? day : item.startInstant)
+          .millisecondsSinceEpoch,
+      'endMs': (item.allDay ? day : item.endInstant).millisecondsSinceEpoch,
       'alarms': reminderMinutes,
     };
   }

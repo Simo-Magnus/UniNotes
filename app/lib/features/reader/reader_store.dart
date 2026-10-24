@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 
 import '../../core/services/portable_path.dart';
 import '../../repositories/settings_repository.dart';
+import '../../utils/safe_text.dart';
 
 /// Segnalibro in un file: posizione (pagina, blocco o secondi) ed etichetta.
 class ReaderBookmark {
@@ -100,7 +101,7 @@ class ReaderStore {
     }
     if (raw == null) return const ReaderFileState();
     try {
-      final j = jsonDecode(raw);
+      final j = wellFormedJson(jsonDecode(raw));
       if (j is! Map) return const ReaderFileState();
       // Un campo rovinato non deve far perdere gli altri: i segnalibri si
       // riscrivono al primo salvataggio della posizione.
@@ -164,7 +165,7 @@ class ReaderStore {
     final raw = await _settings.get(recentKey);
     if (raw == null) return const [];
     try {
-      final list = jsonDecode(raw);
+      final list = wellFormedJson(jsonDecode(raw));
       if (list is! List) return const [];
       // voci rovinate saltate una per una (le altre restano)
       return [

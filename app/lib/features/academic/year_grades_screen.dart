@@ -5,6 +5,7 @@ import '../../core/academic/plan_scope.dart';
 import '../../core/academic/academic_year.dart';
 import '../../core/academic/year_completion.dart';
 import '../../core/constants/enums.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/course.dart';
@@ -209,7 +210,8 @@ class _YearGradesScreenState extends State<YearGradesScreen> {
             ? '${planYearLabel(widget.year)} completato.'
             : 'Completato in parte: ${r.missingSummary.toLowerCase()}.',
       );
-      Navigator.of(context).pop(r);
+      // Indietro durante il salvataggio: la pagina sotto resta
+      popIfCurrent(context, r);
     } catch (e) {
       // gli esami già scritti restano: un nuovo «Salva» completa il resto
       if (mounted) showSnack(context, 'Salvataggio non riuscito: $e');

@@ -347,7 +347,11 @@ class GoogleDriveService extends CloudDriveService {
   }
 
   GoogleDriveClient drive() =>
-      GoogleDriveClient(accessToken, transport: transport);
+      GoogleDriveClient(
+        accessToken,
+        transport: transport,
+        onUnauthorized: forgetAccessToken,
+      );
 
   GoogleDriveFolderBrowser folders() => GoogleDriveFolderBrowser(drive());
 

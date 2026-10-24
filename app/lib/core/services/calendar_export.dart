@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../models/exam.dart';
 import '../academic/plan_scope.dart';
+import '../../features/notes/notes_store.dart';
 import '../constants/enums.dart';
 import 'app_services.dart';
 import 'external_launcher.dart';
@@ -59,8 +60,9 @@ class CalendarExport {
       p.join((await getApplicationSupportDirectory()).path, 'calendario'),
     );
     await dir.create(recursive: true);
-    // nome del file valido su ogni sistema (es. «Prova 1/2», «Esame: scritto»)
-    final safe = name.replaceAll(RegExp(r'[<>:"/\\|?*\x00-\x1F]'), '_').trim();
+    // nome del file valido su ogni sistema e non troppo lungo (es. «Prova
+    // 1/2», «Esame: scritto», un titolo arrivato da un'altra versione)
+    final safe = NotesStore.safeName(name);
     final f = File(p.join(dir.path, 'UniNotes - $safe.ics'));
     await f.writeAsString(ics);
     return ExternalLauncher.openPath(f.path);
@@ -162,13 +164,34 @@ String buildIcs(List<({Exam exam, String course})> items, {DateTime? now}) {
     line('SEQUENCE:$sequence');
     final start = exam.dateTime;
     if (exam.time != null && start != null) {
+      // Ora «a muro» dell'ateneo, scritta con i suoi numeri (mai convertita
+      // nel fuso del telefono) e dichiarata Europe/Rome; la fine si calcola
+      // sugli stessi numeri, non con l'orologio del dispositivo (che in un
+      // altro fuso avrebbe il cambio d'ora in un altro momento).
+      DateTime end;
+      try {
+        end = DateTime.utc(
+          start.year,
+          start.month,
+          start.day,
+          start.hour,
+          start.minute,
+        ).add(const Duration(hours: 2));
+      } on ArgumentError {
+        end = start;
+      }
       line('DTSTART;TZID=Europe/Rome:${dateTime(start)}');
-      line(
-        'DTEND;TZID=Europe/Rome:${dateTime(start.add(const Duration(hours: 2)))}',
-      );
+      line('DTEND;TZID=Europe/Rome:${dateTime(end)}');
     } else {
+      DateTime next;
+      try {
+        next = DateTime.utc(d.year, d.month, d.day + 1);
+      } on ArgumentError {
+        // ultimo giorno rappresentabile: non c'è un giorno dopo
+        next = d;
+      }
       line('DTSTART;VALUE=DATE:${date(d)}');
-      line('DTEND;VALUE=DATE:${date(DateTime(d.year, d.month, d.day + 1))}');
+      line('DTEND;VALUE=DATE:${date(next)}');
     }
     line('SUMMARY:${esc(title)}');
     if (exam.location != null) line('LOCATION:${esc(exam.location!)}');

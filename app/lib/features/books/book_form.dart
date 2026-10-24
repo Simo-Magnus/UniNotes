@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/enums.dart';
 import '../../core/constants/text_limits.dart';
+import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/book.dart';
@@ -259,7 +260,8 @@ class _BookFormState extends State<BookForm> {
     }
     if (!mounted) return;
     final sameFile = stored == b?.storedFile;
-    Navigator.pop(
+    // Indietro durante la copia del file: la pagina sotto resta
+    popIfCurrent(
       context,
       Book(
         id: b?.id,
