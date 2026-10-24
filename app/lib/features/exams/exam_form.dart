@@ -52,17 +52,20 @@ const String kDontAskDeleteExamKey = 'dont_ask_delete_exam';
 
 /// Chiede conferma ed elimina l'esame: «Annulla» ed «Elimina», più la
 /// casella «Non chiedere più». Con la casella spuntata le eliminazioni
-/// successive non chiedono più, tranne quella dell'esame finale di un
-/// insegnamento a scelta, che toglie l'insegnamento dal piano. Restituisce
-/// true se eliminato.
+/// successive non chiedono più, tranne quella dell'ultimo esame finale di un
+/// insegnamento a scelta o dell'ultima prova in itinere / esonero di uno senza
+/// esame finale, che tolgono l'insegnamento dal piano (stesso avviso, stesso
+/// «Annulla»). Restituisce true se eliminato.
 Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   final what = exam.kind == ExamKind.midterm
       ? 'la prova in itinere o l\'esonero'
       : 'l\'esame';
   final services = context.read<AppServices>();
   final course = await services.courses.byId(exam.courseId);
-  final elective =
-      exam.kind == ExamKind.finalExam && course?.mandatory == false;
+  // l'eliminazione toglie l'insegnamento a scelta dal piano: vale per
+  // l'esame finale e anche per l'ultima prova in itinere o esonero di un
+  // insegnamento senza esame finale
+  final elective = await wouldDropElective(services, exam);
   var skip = false;
   if (!elective) {
     try {
@@ -81,9 +84,9 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
         '${course == null ? '' : ' di «${course.name}»'}? Voto, data, '
         'argomenti e materiali della prova si perdono.'
         '${elective ? '\n\n«${course!.name}» è un insegnamento a scelta: '
-                  'senza esame sparisce anche da Registra, Studio, Libri '
-                  'e Home (i dati restano; lo riprendi aggiungendo di nuovo '
-                  'l\'esame).' : ''}',
+                  'senza esame finale sparisce anche da Registra, Studio, '
+                  'Libri e Home (i dati restano; lo riprendi aggiungendo di '
+                  'nuovo l\'esame).' : ''}',
       );
   if (!ok || !context.mounted || exam.id == null) return false;
   // stato dell'insegnamento prima dell'eventuale archiviazione: «Annulla»
@@ -673,6 +676,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
             value: ExamKind.finalExam,
             label: const Text('Esame finale'),
             icon: narrow ? null : const Icon(Icons.flag_outlined),
+            // una prova in itinere o un esonero non conta nel voto: non si
+            // trasforma in esame finale (se ne crea uno nuovo)
+            enabled: widget.exam?.kind != ExamKind.midterm,
           ),
           ButtonSegment(
             value: ExamKind.midterm,
@@ -683,7 +689,13 @@ class _ExamFormPageState extends State<ExamFormPage> {
           ),
         ],
         selected: {_kind},
-        onSelectionChanged: (s) => setState(() => _kind = s.first),
+        onSelectionChanged: (s) {
+          if (s.first == ExamKind.finalExam &&
+              widget.exam?.kind == ExamKind.midterm) {
+            return;
+          }
+          setState(() => _kind = s.first);
+        },
       ),
       gap,
       DropdownButtonFormField<int>(

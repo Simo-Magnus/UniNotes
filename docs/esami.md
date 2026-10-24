@@ -182,7 +182,32 @@ legge come «Da prenotare».
 Dialogo «Eliminare la prova?» con «Annulla» ed «Elimina» e la casella «Non
 chiedere più» (impostazione `dont_ask_delete_exam`, si annulla da Impostazioni
 → «Ripristina le domande»). L'esame finale di un insegnamento a scelta, che
-toglie l'insegnamento dal piano, chiede sempre.
+toglie l'insegnamento dal piano, chiede sempre; lo stesso vale per l'ultima
+prova in itinere o esonero di un insegnamento a scelta che non ha un esame
+finale (anche questo lo archivia): stesso avviso, stesso «Annulla» che lo
+riporta com'era (`wouldDropElective` in `core/academic/electives.dart`
+decide se avvisare, con la stessa condizione di `dropElectiveWithoutExam`).
+
+## Prove in itinere ed esoneri non contano nel voto
+
+Le prove in itinere e gli esoneri hanno un punteggio, mai un voto: non entrano
+nelle medie (aritmetica e ponderata), nella base di laurea, nei CFU acquisiti,
+nei voti dell'anno né nei conteggi di superati e non superati. Per questo **non
+si trasformano in esame finale**:
+
+- dal dettaglio la chip del tipo di una prova in itinere o di un esonero non
+  si tocca (nessun «Cambia tipo»); dal modulo di modifica la voce «Esame
+  finale» è disattivata. Un esame finale nuovo si crea dal pulsante di nuova
+  prova;
+- resta possibile il passaggio inverso, da esame finale a prova in itinere /
+  esonero (il voto diventa punteggio e la lode si toglie);
+- prove in itinere ed esoneri sono lo stesso tipo (`ExamKind.midterm`): il
+  «Tipo di prova» (scritto, orale…) è un altro campo;
+- non c'è migrazione: un esame finale nato in passato da una prova in
+  itinere resta com'è;
+- l'unico calcolo sui punteggi è la «media delle prove in itinere» di un
+  insegnamento (`midtermAverage`), mostrata a parte nel dettaglio e in
+  Sostenuti, non nelle medie del voto.
 
 «Segnala date d'esame» non c'è più: le date dipendono dal canale e dal
 docente, si indicano su ogni prova.

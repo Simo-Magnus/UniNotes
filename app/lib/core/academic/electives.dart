@@ -1,12 +1,14 @@
+import '../../models/exam.dart';
 import '../constants/enums.dart';
 import '../services/app_services.dart';
 import 'plan_scope.dart';
 
-/// Dopo l'eliminazione di un esame finale: se l'insegnamento è a scelta e
-/// non ha più esami finali, lo studente non lo sostiene più e
-/// l'insegnamento si archivia, sparendo da Registra, Studio, Libri, Esami e
-/// Home (resta in Insegnamenti con il filtro «Archiviato» e si riprende
-/// aggiungendo di nuovo l'esame). Restituisce true se archiviato.
+/// Dopo l'eliminazione di un esame finale (o dell'ultima prova in itinere /
+/// esonero): se l'insegnamento è a scelta e non ha più esami finali, lo
+/// studente non lo sostiene più e l'insegnamento si archivia, sparendo da
+/// Registra, Studio, Libri, Esami e Home (resta in Insegnamenti con il filtro
+/// «Archiviato» e si riprende aggiungendo di nuovo l'esame). Restituisce true
+/// se archiviato.
 Future<bool> dropElectiveWithoutExam(AppServices s, int courseId) async {
   final c = await s.courses.byId(courseId);
   if (c == null || c.mandatory != false) return false;
@@ -16,6 +18,23 @@ Future<bool> dropElectiveWithoutExam(AppServices s, int courseId) async {
   if (finals.isNotEmpty) return false;
   await s.courses.update(c.copyWith(status: CourseStatus.archived));
   return true;
+}
+
+/// Vero se eliminare la prova [removing] (esame finale, prova in itinere o
+/// esonero) farebbe archiviare l'insegnamento a scelta: è a scelta, non è già
+/// archiviato e, tolta questa prova, non gli resta nessun esame finale. Serve
+/// al dialogo di eliminazione, per avvisare prima (stessa condizione di
+/// [dropElectiveWithoutExam]).
+Future<bool> wouldDropElective(AppServices s, Exam removing) async {
+  final c = await s.courses.byId(removing.courseId);
+  if (c == null || c.mandatory != false) return false;
+  if (c.status == CourseStatus.archived) return false;
+  final finals = (await s.exams.byCourse(removing.courseId)).where(
+    (e) =>
+        e.kind == ExamKind.finalExam &&
+        (removing.id == null || e.id != removing.id),
+  );
+  return finals.isEmpty;
 }
 
 /// Un esame aggiunto a un insegnamento a scelta rimosso lo riporta nel

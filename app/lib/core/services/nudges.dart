@@ -88,7 +88,10 @@ class Nudges {
       final until = await _date(_reviewUntil);
       if (until == null || t.isAfter(until)) {
         final recentPass = (await _s.exams.byStatus([ExamStatus.passed])).any(
-          (e) => e.date != null && t.difference(e.date!).inDays.abs() <= 7,
+          (e) =>
+              e.kind == ExamKind.finalExam &&
+              e.date != null &&
+              t.difference(e.date!).inDays.abs() <= 7,
         );
         if (recentPass || days >= 30) return NudgeKind.review;
       }

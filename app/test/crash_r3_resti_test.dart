@@ -349,8 +349,9 @@ void main() {
       }
     });
 
-    testWidgets('dettaglio: «Cambia tipo» da prova in itinere (punteggio 5) '
-        'a esame finale e tutte le schermate di medie e voti', (tester) async {
+    testWidgets('dettaglio: una prova in itinere (punteggio 5) non si '
+        'trasforma in esame finale (il punteggio non diventa un voto) e tutte '
+        'le schermate di medie e voti', (tester) async {
       tester.view.physicalSize = const Size(900, 1400);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.reset);
@@ -390,28 +391,40 @@ void main() {
       );
       await _pump(tester, s, ExamDetailScreen(examId: mid));
       _noCrash(tester, 'dettaglio della prova in itinere');
+      // la chip del tipo non apre nessun foglio: niente «Cambia tipo»
+      expect(find.byTooltip('Cambia tipo'), findsNothing);
       await tester.tap(find.byType(ExamKindChip));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
-      await tester.tap(find.text('Esame finale').last);
-      await _settle(tester, 10);
-      _noCrash(tester, 'dopo «Cambia tipo»');
+      expect(find.text('Esame finale'), findsNothing);
+      await _settle(tester, 4);
+      _noCrash(tester, 'dopo il tocco sul tipo');
       final converted = (await tester.runAsync(() => s.exams.byId(mid)))!;
-      // comportamento attuale (da decidere): il punteggio diventa il voto
-      expect(converted.kind, ExamKind.finalExam);
-      expect(converted.status, ExamStatus.passed);
+      expect(converted.kind, ExamKind.midterm);
       expect(converted.grade, 5);
 
+      // il punteggio della prova in itinere non entra nelle medie
       final all = (await tester.runAsync(s.exams.all))!;
       final r = weightedAverage(all, {
         for (final c in (await tester.runAsync(s.courses.all))!) c.id!: c,
       });
-      expect(r.count, 2);
-      expect(r.arithmeticAverage, closeTo(16.5, 1e-9));
+      expect(r.count, 1);
+      expect(r.arithmeticAverage, closeTo(28, 1e-9));
+
+      // un vecchio esame finale nato dalla trasformazione di una prova in
+      // itinere (voto 5, fuori 18–30) resta com'è e non rompe le schermate
+      final legacyId = (await tester.runAsync(
+        () => s.exams.save(
+          Exam(courseId: a, status: ExamStatus.passed, grade: 5),
+        ),
+      ))!;
+      final legacy = (await tester.runAsync(() => s.exams.byId(legacyId)))!;
 
       for (final screen in <Widget>[
         ExamDetailScreen(examId: mid),
+        ExamDetailScreen(examId: legacyId),
         ExamFormPage(exam: converted),
+        ExamFormPage(exam: legacy),
         const ExamsScreen(),
         const YearGradesScreen(year: 1),
         const PreviousYearsScreen(),
@@ -529,6 +542,9 @@ void main() {
         );
         await tester.tap(find.text('Elimina prova'));
         await _settle(tester);
+        // l'avviso dell'insegnamento a scelta c'è anche per l'ultima prova
+        // in itinere
+        expect(find.textContaining('è un insegnamento a scelta'), findsOneWidget);
         await tester.tap(find.byKey(const Key('exam-delete-confirm')));
         await _settle(tester, 10);
         _noCrash(tester, 'eliminazione');
