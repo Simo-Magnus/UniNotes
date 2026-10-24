@@ -191,7 +191,14 @@ class UniNotesCalendar(private val context: Context) {
                 "writable" to (c.getInt(2) >= CalendarContract.Calendars.CAL_ACCESS_CONTRIBUTOR),
                 "synced" to (c.getInt(3) == 1 && !local),
                 "autoSync" to auto,
-                "masterSync" to ContentResolver.getMasterSyncAutomatically(),
+                // serve READ_SYNC_SETTINGS (permesso normale, nel manifest): se
+                // manca, il controllo si salta invece di sembrare un permesso
+                // del calendario negato
+                "masterSync" to try {
+                    ContentResolver.getMasterSyncAutomatically()
+                } catch (e: Exception) {
+                    null
+                },
             )
         }
         return mapOf("exists" to false)

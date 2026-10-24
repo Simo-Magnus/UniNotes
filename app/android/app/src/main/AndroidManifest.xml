@@ -21,6 +21,11 @@
          telefono (solo se lo studente lo attiva in Impostazioni → Calendario). -->
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
     <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <!-- Lettura (solo lettura) dell'impostazione «Sincronizzazione automatica»
+         del sistema e dell'account del calendario scelto: se è spenta le prove
+         scritte non arrivano su Google Calendar e l'app lo spiega. Permesso
+         normale: nessuna richiesta all'utente. -->
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
     <!-- Sessioni Focus: Non disturbare del telefono durante la sessione, solo
          se lo studente lo vuole e dà l'«Accesso a Non disturbare» dalle
          impostazioni del sistema (FocusDnd.kt). -->

@@ -200,5 +200,24 @@ void main() {
         expect(c, contains('android:exported='), reason: c);
       }
     });
+
+    test('Android: il controllo della sincronizzazione del calendario ha il '
+        'suo permesso e non si confonde con il permesso del calendario', () {
+      // senza READ_SYNC_SETTINGS getMasterSyncAutomatically lancia
+      // SecurityException, che il canale traduceva in «Permesso del
+      // calendario negato» anche con il calendario consentito
+      final m = read('android/app/src/main/AndroidManifest.xml');
+      expect(
+        m,
+        contains('android:name="android.permission.READ_SYNC_SETTINGS"'),
+      );
+      final kt = read(
+        'android/app/src/main/kotlin/io/github/simomagnus/universitynotes/'
+        'UniNotesCalendar.kt',
+      );
+      final i = kt.indexOf('getMasterSyncAutomatically');
+      expect(i, greaterThan(0));
+      expect(kt.substring(i - 200, i), contains('try {'));
+    });
   });
 }

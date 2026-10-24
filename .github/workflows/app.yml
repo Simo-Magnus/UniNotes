@@ -45,6 +45,8 @@ jobs:
       - name: Numero di versione
         id: versione
         shell: bash
+        # prima del checkout la cartella app/ non c'è ancora
+        working-directory: ${{ github.workspace }}
         run: |
           echo "version=$(date -u +%Y).$(date -u +%-m).${{ github.run_number }}" >> "$GITHUB_OUTPUT"
           echo "build=${{ github.run_number }}" >> "$GITHUB_OUTPUT"
