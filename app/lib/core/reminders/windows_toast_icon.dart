@@ -1,20 +1,24 @@
 import 'dart:io';
 
+import 'windows_aumid.dart';
+
 /// Icona dell'app in cima ai toast di Windows (accanto a «UniNotes»).
 ///
 /// Per un'app non pacchettizzata Windows prende nome e icona dalla chiave
 /// `HKCU\Software\Classes\AppUserModelId\<AUMID>` (DisplayName, IconUri):
-/// flutter_local_notifications la scrive a ogni avvio, ma con l'IconUri
-/// vuoto se il percorso dell'immagine non gli arriva (così era sui PC degli
-/// studenti: toast senza logo). Dopo l'inizializzazione delle notifiche
-/// l'app controlla la chiave e, se l'IconUri manca o punta a un file che non
-/// c'è più (cartella spostata, vecchia installazione), la riscrive con il
-/// percorso assoluto del PNG dell'app (`data\flutter_assets\assets\
-/// notifiche\uninotes.png` accanto all'eseguibile). Vale anche per chi ha
-/// già l'app installata: basta un avvio della versione nuova.
+/// flutter_local_notifications la scrive a ogni avvio, all'inizializzazione
+/// e quindi prima di qualsiasi toast, con il percorso del logo
+/// (`iconPath`). È vuota se il percorso non gli arriva: rete di sicurezza,
+/// dopo l'inizializzazione l'app controlla la chiave e, se l'IconUri manca o
+/// punta a un file che non c'è più (cartella spostata, vecchia
+/// installazione), la riscrive con il percorso assoluto del PNG dell'app
+/// (`data\flutter_assets\assets\notifiche\uninotes.png` accanto
+/// all'eseguibile). Windows memorizza nome e icona di un AUMID al primo
+/// toast: per questo l'AUMID è cambiato (vedi [WindowsAumid]).
 abstract final class WindowsToastIcon {
-  static const aumid = 'io.github.simomagnus.universitynotes';
-  static const key = r'HKCU\Software\Classes\AppUserModelId\' + aumid;
+  /// Chiave del registro dell'AUMID [aumid].
+  static String keyFor(String aumid) =>
+      r'HKCU\Software\Classes\AppUserModelId\' + aumid;
 
   /// IconUri letto dall'output di `reg query <chiave> /v IconUri` (null =
   /// assente o vuoto).
@@ -34,10 +38,14 @@ abstract final class WindowsToastIcon {
   static bool needsUpdate(String? current, String wanted, bool currentExists) =>
       current == null || !currentExists || current.toLowerCase() != wanted.toLowerCase();
 
-  /// Controlla e corregge la chiave (errori ignorati: il toast resta solo
-  /// senza logo).
-  static Future<void> ensure(String? iconPath) async {
+  /// Controlla e corregge la chiave dell'AUMID [aumid] (errori ignorati: il
+  /// toast resta solo senza logo).
+  static Future<void> ensure(
+    String? iconPath, {
+    String aumid = WindowsAumid.current,
+  }) async {
     if (!Platform.isWindows || iconPath == null) return;
+    final key = keyFor(aumid);
     try {
       if (!await File(iconPath).exists()) return;
       final q = await Process.run('reg', ['query', key, '/v', 'IconUri']);

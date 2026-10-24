@@ -251,16 +251,52 @@ sul dispositivo che li scrive). Test: `app/test/calendar_sync_test.dart`,
   (`NSCalendarsFullAccessUsageDescription`, `NSCalendarsUsageDescription`).
 - macOS: permesso delle notifiche.
 - Windows: versione del sito non pacchettizzata, inizializzazione con nome
-  «UniNotes», AppUserModelID `io.github.simomagnus.universitynotes` e GUID
-  fisso (attivazione al tocco anche ad app chiusa). Il logo accanto a
-  «UniNotes» in cima al toast viene dall'`IconUri` della chiave
-  `HKCU\Software\Classes\AppUserModelId\io.github.simomagnus.universitynotes`:
-  il pacchetto la scriveva a volte vuota, ora l'app la controlla a ogni avvio
-  e la riscrive con il percorso assoluto di
-  `data\flutter_assets\assets\notifiche\uninotes.png`
-  (`windows_toast_icon.dart`), anche per chi aveva già l'app; nella versione del
-  Microsoft Store (MSIX) l'attivazione dalle notifiche è registrata nel
-  manifest (`app/windows/msix/AppxManifest.xml`).
+  «UniNotes», AppUserModelID (AUMID) `SimoMagnus.UniNotes` e GUID fisso
+  `5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13` (attivazione al tocco anche ad app
+  chiusa); vedi `windows_aumid.dart`.
+  - **Logo in cima al toast.** Accanto a «UniNotes» Windows mette l'`IconUri`
+    della chiave `HKCU\Software\Classes\AppUserModelId\<AUMID>`. Il pacchetto
+    delle notifiche la scrive all'inizializzazione, quindi prima di qualsiasi
+    toast, con il percorso assoluto di
+    `data\flutter_assets\assets\notifiche\uninotes.png`; poi l'app la
+    ricontrolla e se serve la riscrive (`windows_toast_icon.dart`, rete di
+    sicurezza).
+  - **Perché l'AUMID è cambiato.** Fino a ottobre 2026 era
+    `io.github.simomagnus.universitynotes`. Windows memorizza nome e icona di
+    un AUMID al primo toast, e le versioni vecchie mandavano il primo toast con
+    l'`IconUri` ancora vuoto: da lì in poi il logo non compariva più, neanche
+    con l'`IconUri` corretto (verificato: con un AUMID nuovo e l'`IconUri`
+    scritto prima del primo toast il logo c'è).
+  - **Passaggio una volta sola** (primo avvio della versione nuova, solo
+    senza pacchetto MSIX): il codice nativo (canale
+    `io.github.simomagnus.universitynotes/notifiche`, metodo `migraAumid`,
+    `windows/runner/notification_identity.cpp`) toglie i toast pianificati e
+    la cronologia del vecchio AUMID (`RemoveFromSchedule`,
+    `History.ClearWithId`), così i promemoria non arrivano doppi, ed elimina
+    le sue chiavi del registro (`AppUserModelId`,
+    `PushNotifications\Backup`, `Notifications\Settings`: niente seconda voce
+    «UniNotes» nelle impostazioni delle notifiche). Poi il servizio dei
+    promemoria, che a ogni avvio cancella e ripianifica tutto, li ripianifica
+    con l'AUMID nuovo. Fatto, si segna nelle impostazioni
+    (`uninotes_aumid_windows_migrato`); un errore non blocca l'avvio e si
+    riprova al prossimo.
+  - **Collegamento con l'AUMID** (metodo ufficiale per le app desktop non
+    pacchettizzate): i collegamenti dell'installatore nel menu Start e sul
+    desktop hanno `AppUserModelID` `SimoMagnus.UniNotes` e
+    `AppUserModelToastActivatorCLSID` uguale al GUID qui sopra
+    (`app/windows/installer/uninotes.iss`); il processo dichiara lo stesso
+    AUMID all'avvio, prima di qualsiasi finestra
+    (`SetCurrentProcessExplicitAppUserModelID` in `windows/runner/main.cpp`,
+    solo senza identità di pacchetto). Finestra, collegamento e toast sono la
+    stessa app per la barra delle applicazioni. Chi aveva **fissato UniNotes
+    sulla barra delle applicazioni** con una versione precedente deve
+    toglierlo e rimetterlo una volta (il vecchio pulsante non ha l'AUMID e
+    resterebbe separato dalla finestra).
+  - Disinstallando si tolgono le chiavi dell'AUMID nuovo e di quello vecchio.
+  - Microsoft Store (MSIX): l'AUMID lo decide il pacchetto e non cambia nulla
+    (al pacchetto delle notifiche si passa ancora l'AUMID vecchio, che con
+    l'identità di pacchetto si ignora; niente passaggio); l'attivazione dalle
+    notifiche è registrata nel manifest (`app/windows/msix/AppxManifest.xml`).
 
 ## Dettagli tecnici
 

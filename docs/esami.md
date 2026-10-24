@@ -192,15 +192,14 @@ decide se avvisare, con la stessa condizione di `dropElectiveWithoutExam`).
 
 Le prove in itinere e gli esoneri hanno un punteggio, mai un voto: non entrano
 nelle medie (aritmetica e ponderata), nella base di laurea, nei CFU acquisiti,
-nei voti dell'anno né nei conteggi di superati e non superati. Per questo **non
-si trasformano in esame finale**:
+nei voti dell'anno né nei conteggi di superati e non superati. Per questo
+**esami finali e prove in itinere / esoneri non si trasformano l'uno
+nell'altro**: si aggiungono e si eliminano, ma il tipo resta quello scelto
+alla creazione (decisione del 24/10/2026):
 
-- dal dettaglio la chip del tipo di una prova in itinere o di un esonero non
-  si tocca (nessun «Cambia tipo»); dal modulo di modifica la voce «Esame
-  finale» è disattivata. Un esame finale nuovo si crea dal pulsante di nuova
-  prova;
-- resta possibile il passaggio inverso, da esame finale a prova in itinere /
-  esonero (il voto diventa punteggio e la lode si toglie);
+- dal dettaglio la chip del tipo non si tocca (nessun «Cambia tipo»); nel
+  modulo di modifica è attivo solo il tipo della prova. Il tipo si sceglie
+  solo creando una prova nuova;
 - prove in itinere ed esoneri sono lo stesso tipo (`ExamKind.midterm`): il
   «Tipo di prova» (scritto, orale…) è un altro campo;
 - non c'è migrazione: un esame finale nato in passato da una prova in

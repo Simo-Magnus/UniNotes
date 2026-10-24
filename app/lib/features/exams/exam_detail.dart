@@ -253,42 +253,6 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     if (v != null && mounted) await _save(exam.copyWith(examType: v));
   }
 
-  /// Da esame finale a prova in itinere/esonero (la scelta inversa non c'è:
-  /// le prove in itinere e gli esoneri non contano nel voto, quindi non
-  /// diventano esami finali).
-  Future<void> _editKind() async {
-    if (_midterm) return;
-    final v = await showModalBottomSheet<ExamKind>(
-      context: context,
-      showDragHandle: true,
-      builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (final k in ExamKind.values)
-              ListTile(
-                leading: Icon(
-                  k == ExamKind.midterm ? Icons.timelapse : Icons.flag_outlined,
-                ),
-                title: Text(
-                  k == ExamKind.midterm
-                      ? 'Prova in itinere o esonero'
-                      : 'Esame finale',
-                ),
-                trailing: k == exam.kind ? const Icon(Icons.check) : null,
-                onTap: () => Navigator.pop(c, k),
-              ),
-          ],
-        ),
-      ),
-    );
-    if (v == null || v == exam.kind || !mounted) return;
-    // le prove in itinere non hanno lode
-    await _save(
-      exam.copyWith(kind: v, laude: v == ExamKind.midterm ? false : null),
-    );
-  }
-
   /// CFU propri dell'esame finale (vuoto = quelli dell'insegnamento).
   Future<void> _editCfu() async {
     final v = await _askText(
@@ -466,19 +430,9 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
             runSpacing: 8,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              // la prova in itinere / l'esonero non conta nel voto: non si
-              // trasforma in esame finale, quindi il tipo non si cambia
-              if (_midterm)
-                ExamKindChip(exam.kind)
-              else
-                Tooltip(
-                  message: 'Cambia tipo',
-                  child: InkWell(
-                    onTap: _editKind,
-                    borderRadius: BorderRadius.circular(12),
-                    child: ExamKindChip(exam.kind),
-                  ),
-                ),
+              // esame finale e prova in itinere / esonero non si scambiano:
+              // si aggiungono e si eliminano, il tipo resta quello scelto
+              ExamKindChip(exam.kind),
               Tooltip(
                 message: 'Cambia stato',
                 child: InkWell(

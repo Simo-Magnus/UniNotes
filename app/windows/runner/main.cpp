@@ -3,6 +3,7 @@
 #include <windows.h>
 
 #include "flutter_window.h"
+#include "notification_identity.h"
 #include "utils.h"
 
 namespace {
@@ -50,6 +51,15 @@ bool HasArg(const std::vector<std::string>& args, const char* arg) {
 
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
                       _In_ wchar_t *command_line, _In_ int show_command) {
+  // Prima di tutto (prima di qualsiasi finestra, anche dell'avviso di
+  // errore e della schermata di --disinstalla): l'AUMID del processo è
+  // quello del collegamento nel menu Start e dei toast, così la barra delle
+  // applicazioni li tratta come la stessa app. Solo senza identità di
+  // pacchetto: nel pacchetto MSIX l'AUMID lo decide il pacchetto. Le copie
+  // che si chiudono subito (ritorno dal browser, seconda copia) non creano
+  // finestre: per loro non cambia nulla.
+  ApplyProcessAumid();
+
   const std::vector<std::string> launch_args = GetCommandLineArguments();
   if (ReturnToRunningApp(launch_args)) {
     return EXIT_SUCCESS;

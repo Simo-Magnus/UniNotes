@@ -10,7 +10,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 import '../constants/build_flags.dart';
+import '../services/msix_paths.dart';
 import 'notification_plan.dart';
+import 'windows_aumid.dart';
 import 'windows_toast_icon.dart';
 
 /// Tocco su una notifica o su uno dei suoi pulsanti.
@@ -124,8 +126,11 @@ class LocalNotificationPlatform implements NotificationPlatform {
   LocalNotificationPlatform([
     FlutterLocalNotificationsPlugin? plugin,
     this.donationsAllowed = kShowDonationLink,
-  ]) : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
+    WindowsAumidMigration? windowsMigration,
+  ]) : _plugin = plugin ?? FlutterLocalNotificationsPlugin(),
+       _windowsMigration = windowsMigration ?? WindowsAumidMigration();
   final FlutterLocalNotificationsPlugin _plugin;
+  final WindowsAumidMigration _windowsMigration;
 
   /// Build con le donazioni consentite (`DONATIONS=link`): altrimenti il
   /// canale, la categoria e la notifica del sostegno non esistono.
@@ -149,8 +154,28 @@ class LocalNotificationPlatform implements NotificationPlatform {
   static const _accent = Color(0xFF0F72F2);
 
   /// App non pacchettizzata su Windows: nome e identità fissi (il GUID
-  /// registra l'attivazione al tocco anche ad app chiusa).
+  /// registra l'attivazione al tocco anche ad app chiusa; è anche il
+  /// ToastActivatorCLSID del collegamento nel menu Start, uninotes.iss, e
+  /// del manifest MSIX).
   static const _windowsGuid = '5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13';
+
+  /// Inizializzazione di Windows: AUMID secondo il tipo di installazione
+  /// ([WindowsAumid.of]); [iconPath] = logo accanto a «UniNotes», scritto
+  /// dal pacchetto nell'IconUri dell'AUMID prima di qualsiasi toast.
+  @visibleForTesting
+  static WindowsInitializationSettings windowsSettings({
+    required bool packaged,
+    String? iconPath,
+  }) => WindowsInitializationSettings(
+    appName: 'UniNotes',
+    appUserModelId: WindowsAumid.of(packaged: packaged),
+    guid: _windowsGuid,
+    iconPath: iconPath,
+  );
+
+  /// Processo con identità di pacchetto (MSIX del Microsoft Store).
+  static bool get _windowsPackaged =>
+      Platform.isWindows && MsixPaths.packageFamilyName() != null;
 
   static String _category(NotificationType t) => 'uninotes_${t.channelId}';
 
@@ -200,6 +225,13 @@ class LocalNotificationPlatform implements NotificationPlatform {
   @override
   Future<void> init(void Function(NotificationTap tap) onTap) async {
     if (_ready) return;
+    final packaged = _windowsPackaged;
+    // Windows non pacchettizzato: una volta sola, via i toast pianificati e
+    // la cronologia dell'AUMID vecchio (il servizio dei promemoria
+    // ripianifica poi con quello nuovo); errori ignorati
+    if (Platform.isWindows) {
+      await _windowsMigration.run(packaged: packaged);
+    }
     // i permessi si chiedono solo quando lo studente attiva le notifiche
     final darwin = DarwinInitializationSettings(
       requestAlertPermission: false,
@@ -217,10 +249,8 @@ class LocalNotificationPlatform implements NotificationPlatform {
         linux: const LinuxInitializationSettings(defaultActionName: 'Apri'),
         // logo dell'app nei toast (senza, Windows mostra un'icona vuota
         // per le app non pacchettizzate)
-        windows: WindowsInitializationSettings(
-          appName: 'UniNotes',
-          appUserModelId: 'io.github.simomagnus.universitynotes',
-          guid: _windowsGuid,
+        windows: windowsSettings(
+          packaged: packaged,
           iconPath: _windowsArt('uninotes.png'),
         ),
       ),
@@ -270,7 +300,10 @@ class LocalNotificationPlatform implements NotificationPlatform {
     // logo dell'app accanto a «UniNotes» in cima ai toast di Windows: la
     // chiave del registro scritta dal pacchetto può restare senza IconUri
     if (Platform.isWindows) {
-      await WindowsToastIcon.ensure(_windowsArt('uninotes.png'));
+      await WindowsToastIcon.ensure(
+        _windowsArt('uninotes.png'),
+        aumid: WindowsAumid.of(packaged: packaged),
+      );
     }
     _ready = true;
     _exact = null;

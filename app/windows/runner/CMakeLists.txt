@@ -10,6 +10,7 @@ add_executable(${BINARY_NAME} WIN32
   "audio_transcoder.cpp"
   "focus_session.cpp"
   "live_speech.cpp"
+  "notification_identity.cpp"
   "open_with.cpp"
   "spell_check.cpp"
   "flutter_window.cpp"
@@ -47,6 +48,7 @@ target_link_libraries(${BINARY_NAME} PRIVATE "mfplat.lib" "mfreadwrite.lib"
 # Windows 11 durante le sessioni Focus (runner/focus_session.cpp).
 # Anche per la trascrizione istantanea delle lezioni con
 # Windows.Media.SpeechRecognition (runner/live_speech.cpp).
+# E per togliere i toast dell'AUMID vecchio (runner/notification_identity.cpp).
 target_link_libraries(${BINARY_NAME} PRIVATE "runtimeobject.lib")
 target_include_directories(${BINARY_NAME} PRIVATE "${CMAKE_SOURCE_DIR}")
 

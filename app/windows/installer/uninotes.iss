@@ -85,8 +85,15 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "{#BuildDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{autoprograms}\UniNotes"; Filename: "{app}\uninotes.exe"
-Name: "{autodesktop}\UniNotes"; Filename: "{app}\uninotes.exe"; Tasks: desktopicon
+; Collegamenti con l'AppUserModelID dell'app (lo stesso che il processo
+; dichiara all'avvio, windows/runner/notification_identity.cpp, e dei toast,
+; lib/core/reminders/windows_aumid.dart) e il CLSID che attiva l'app dal
+; tocco su un toast (GUID di lib/core/reminders/notification_platform.dart,
+; scritto anche nel CustomActivator dell'AUMID): metodo ufficiale per le
+; notifiche delle app desktop non pacchettizzate; nome e icona dei toast e
+; il pulsante sulla barra delle applicazioni sono quelli di UniNotes.
+Name: "{autoprograms}\UniNotes"; Filename: "{app}\uninotes.exe"; AppUserModelID: "SimoMagnus.UniNotes"; AppUserModelToastActivatorCLSID: "5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13"
+Name: "{autodesktop}\UniNotes"; Filename: "{app}\uninotes.exe"; AppUserModelID: "SimoMagnus.UniNotes"; AppUserModelToastActivatorCLSID: "5d3f2b7e-91c4-4a8e-b6f1-0c7a2e9d4b13"; Tasks: desktopicon
 
 [Run]
 ; Ultima pagina dell'installazione: casella «Avvia UniNotes» (selezionata;
@@ -108,7 +115,12 @@ Type: filesandordirs; Name: "{app}"
 
 [Registry]
 ; Registrazione delle notifiche di Windows scritta dall'app al primo avvio
-; (flutter_local_notifications): si toglie con il programma.
+; (flutter_local_notifications): si toglie con il programma. AUMID attuale
+; SimoMagnus.UniNotes; io.github.simomagnus.universitynotes è quello delle
+; versioni fino a ottobre 2026 (l'app lo toglie da sola al primo avvio della
+; versione nuova; qui per chi disinstalla senza averla mai aperta).
+Root: HKCU; Subkey: "Software\Classes\AppUserModelId\SimoMagnus.UniNotes"; Flags: uninsdeletekey dontcreatekey
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\PushNotifications\Backup\SimoMagnus.UniNotes"; Flags: uninsdeletekey dontcreatekey
 Root: HKCU; Subkey: "Software\Classes\AppUserModelId\io.github.simomagnus.universitynotes"; Flags: uninsdeletekey dontcreatekey
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\PushNotifications\Backup\io.github.simomagnus.universitynotes"; Flags: uninsdeletekey dontcreatekey
 ; Schema uninotes:// : dopo l'accesso a OneDrive o Google Drive nel browser

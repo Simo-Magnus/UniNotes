@@ -9,6 +9,7 @@
 #include "audio_transcoder.h"
 #include "focus_session.h"
 #include "live_speech.h"
+#include "notification_identity.h"
 #include "open_with.h"
 #include "spell_check.h"
 #include "win32_window.h"
@@ -55,6 +56,9 @@ class FlutterWindow : public Win32Window {
 
   // «Apri con…»: scelta dell'app di Windows (SHOpenWithDialog).
   std::unique_ptr<OpenWithChannel> open_with_channel_;
+
+  // Identità dei toast: passaggio una volta sola all'AUMID nuovo.
+  std::unique_ptr<NotificationIdentityChannel> notification_identity_channel_;
 };
 
 #endif  // RUNNER_FLUTTER_WINDOW_H_

@@ -62,6 +62,9 @@ bool FlutterWindow::OnCreate() {
       flutter_controller_->engine()->messenger());
   open_with_channel_ = std::make_unique<OpenWithChannel>(
       flutter_controller_->engine()->messenger(), GetHandle());
+  notification_identity_channel_ =
+      std::make_unique<NotificationIdentityChannel>(
+          flutter_controller_->engine()->messenger());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
 
   flutter_controller_->engine()->SetNextFrameCallback([&]() {
@@ -82,6 +85,7 @@ void FlutterWindow::OnDestroy() {
   speech_channel_ = nullptr;
   spell_channel_ = nullptr;
   open_with_channel_ = nullptr;
+  notification_identity_channel_ = nullptr;
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
   }

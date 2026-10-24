@@ -676,9 +676,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
             value: ExamKind.finalExam,
             label: const Text('Esame finale'),
             icon: narrow ? null : const Icon(Icons.flag_outlined),
-            // una prova in itinere o un esonero non conta nel voto: non si
-            // trasforma in esame finale (se ne crea uno nuovo)
-            enabled: widget.exam?.kind != ExamKind.midterm,
+            // esame finale e prova in itinere / esonero non si scambiano:
+            // modificando una prova il tipo resta quello scelto
+            enabled: widget.exam == null || widget.exam!.kind == ExamKind.finalExam,
           ),
           ButtonSegment(
             value: ExamKind.midterm,
@@ -686,14 +686,12 @@ class _ExamFormPageState extends State<ExamFormPage> {
               narrow ? 'Itinere o esonero' : 'Prova in itinere o Esonero',
             ),
             icon: narrow ? null : const Icon(Icons.timelapse),
+            enabled: widget.exam == null || widget.exam!.kind == ExamKind.midterm,
           ),
         ],
         selected: {_kind},
         onSelectionChanged: (s) {
-          if (s.first == ExamKind.finalExam &&
-              widget.exam?.kind == ExamKind.midterm) {
-            return;
-          }
+          if (widget.exam != null) return;
           setState(() => _kind = s.first);
         },
       ),

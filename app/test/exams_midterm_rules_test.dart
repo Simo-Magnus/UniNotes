@@ -106,8 +106,9 @@ void main() {
       expect(e.grade, 25);
     });
 
-    testWidgets('dettaglio: un esame finale si può ancora fare prova in '
-        'itinere (il voto diventa punteggio, niente lode)', (tester) async {
+    testWidgets('dettaglio: nemmeno un esame finale cambia tipo', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(900, 1400);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.reset);
@@ -127,19 +128,20 @@ void main() {
         ),
       ))!;
       await _pump(tester, s, ExamDetailScreen(examId: id));
-      expect(find.byTooltip('Cambia tipo'), findsOneWidget);
+      expect(find.byTooltip('Cambia tipo'), findsNothing);
       await tester.tap(find.byType(ExamKindChip));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
-      await tester.tap(find.text('Prova in itinere o esonero'));
-      await _settle(tester, 10);
+      expect(find.text('Prova in itinere o esonero'), findsNothing);
+      await _settle(tester, 4);
       final e = (await tester.runAsync(() => s.exams.byId(id)))!;
-      expect(e.kind, ExamKind.midterm);
-      expect(e.laude, isFalse);
+      expect(e.kind, ExamKind.finalExam);
+      expect(e.grade, 30);
+      expect(e.laude, isTrue);
     });
 
-    testWidgets('modulo di modifica: «Esame finale» disattivato per una prova '
-        'in itinere, attivo per un esame finale e per una prova nuova', (
+    testWidgets('modulo di modifica: il tipo resta quello della prova; per una '
+        'prova nuova si sceglie', (
       tester,
     ) async {
       tester.view.physicalSize = const Size(900, 1400);
@@ -173,8 +175,12 @@ void main() {
       await _pump(tester, s, ExamFormPage(exam: finalExam));
       expect(_segments(tester), {
         ExamKind.finalExam: true,
-        ExamKind.midterm: true,
+        ExamKind.midterm: false,
       });
+      // il tocco sul segmento disattivato non cambia il tipo
+      await tester.tap(find.text('Prova in itinere o Esonero'));
+      await _settle(tester);
+      expect(find.text('Modifica prova in itinere o esonero'), findsNothing);
 
       await _pump(tester, s, const SizedBox());
       await _pump(tester, s, ExamFormPage(initialCourseId: c));
