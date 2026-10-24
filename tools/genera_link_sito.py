@@ -212,8 +212,7 @@ def aggregatore() -> str:
 <dl>
 {contatti}
 </dl>
-<p>Visite e clic contati in forma anonima con GoatCounter, senza cookie
-(<a href="../privacy.html#10-3-statistiche-della-pagina-dei-link" {NUOVA}>informativa sulla privacy</a>).<br>
+<p><a href="../privacy.html" {NUOVA}>Informativa sulla privacy</a><br>
 UniNotes è sviluppata in modo indipendente e non è collegata a nessuna università.</p>
 </footer>
 </main>
