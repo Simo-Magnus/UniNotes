@@ -217,7 +217,7 @@ In nessuno di questi casi i dati vengono usati per marketing, venduti o ceduti a
 
 ### 10.3 Statistiche del sito
 
-Il sito del progetto conta le visite alle sue pagine in forma anonima e aggregata, senza cookie e senza salvare l'indirizzo IP, per sapere quali pagine e canali funzionano (legittimo interesse, lettera f). Non conta nulla la pagina di «Importa da Drive»; l'app non contiene statistiche.
+Il sito del progetto conta le visite alle sue pagine in forma anonima e aggregata, senza cookie e senza salvare l'indirizzo IP, per sapere quali pagine e canali funzionano (legittimo interesse, lettera f).
 
 ## 11. Trasferimenti fuori dall'Unione europea
 
