@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/theme/app_tokens.dart';
 import 'course_catalog.dart';
 import '../../core/constants/text_limits.dart';
@@ -44,7 +45,7 @@ class CourseDropdown extends StatelessWidget {
             value: c.id,
             // solo il nome dell'insegnamento: niente pallino né sigla
             // dell'ateneo
-            child: Text(c.label, overflow: TextOverflow.ellipsis),
+            child: Text(c.name, overflow: TextOverflow.ellipsis),
           ),
       ],
       onChanged: onChanged,
@@ -248,7 +249,7 @@ Future<String?> promptText(
   required String label,
   String initial = '',
 }) async {
-  final r = await showDialog<String>(
+  final r = await showAppDialog<String>(
     context: context,
     builder: (_) => _TextPrompt(title: title, label: label, initial: initial),
   );
@@ -283,6 +284,7 @@ class _TextPromptState extends State<_TextPrompt> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.title),
       content: TextField(
         controller: _ctrl,

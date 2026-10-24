@@ -26,8 +26,12 @@ class _WhisperState {
     required this.defaultId,
     required this.recommendation,
     required this.device,
+    this.included = false,
   });
   final WhisperStatus status;
+
+  /// PC e Mac: Whisper small q5_1 incluso nell'app ([kDesktopWhisperModel]).
+  final bool included;
   final String? ffmpeg;
   final Map<String, int> partial;
 
@@ -80,6 +84,7 @@ class _WhisperCardState extends State<WhisperCard> {
       defaultId: await _w.selectedModelId(),
       recommendation: await _w.recommendation(),
       device: await _w.deviceProfile(),
+      included: await _w.includedModelFile() != null,
     );
   }
 
@@ -143,10 +148,17 @@ class _WhisperCardState extends State<WhisperCard> {
   }
 
   Future<void> _delete(WhisperModelInfo m) async {
+    final included =
+        m.id == kDesktopWhisperModel && await _w.includedModelFile() != null;
+    if (!mounted) return;
     if (!await confirmDialog(
       context,
       'Eliminare ${m.id}?',
-      'Il file del modello (${m.disk}) viene cancellato. Potrai riscaricarlo.',
+      included
+          ? 'La copia scaricata (${m.disk}) viene cancellata: resta quella '
+                'inclusa nell\'app.'
+          : 'Il file del modello (${m.disk}) viene cancellato. Potrai '
+                'riscaricarlo.',
     )) {
       return;
     }
@@ -207,20 +219,38 @@ class _WhisperCardState extends State<WhisperCard> {
         _ParakeetSection(onChanged: _reload),
         const SizedBox(height: 12),
       ],
+      // PC e Mac: Whisper small q5_1 incluso nell'app, come Parakeet: niente
+      // da scaricare né da eliminare
+      if (d.included) ...[
+        StatusLine(
+          'Whisper $kDesktopWhisperModel incluso nell\'app '
+          '(${whisperModelById(kDesktopWhisperModel)!.disk}): ritrascrive '
+          'nella lingua della lezione le frasi che Parakeet scrive in '
+          'un\'altra lingua.',
+          ok: true,
+        ),
+        const SizedBox(height: 6),
+      ],
       StatusLine(_engineText(st), ok: st.engineReady),
       const SizedBox(height: 6),
       StatusLine(
-        installed.isEmpty
+        // (un predefinito scelto fra i motori senza download, es. small q5_1
+        // incluso: si dice quello)
+        installed.isEmpty && !d.available.any((m) => m.id == d.defaultId)
             ? (builtIn
                   ? 'Nessun modello scaricato: «Trascrivi con Whisper» usa il '
                         'modello integrato (base, ${kBuiltInWhisperModel.disk}).'
                   : (parakeet
                         ? 'Nessun modello Whisper scaricato: «Trascrivi con…» '
                               'usa Parakeet.'
-                        : 'Nessun modello scaricato.'))
+                        : (d.included
+                              ? 'Nessun modello Whisper scaricato: «Trascrivi '
+                                    'con…» usa $kDesktopWhisperModel, incluso '
+                                    'nell\'app.'
+                              : 'Nessun modello scaricato.')))
             : 'Le trascrizioni usano: $used'
                   '${d.defaultId == null ? ' (automatico)' : ''}',
-        ok: installed.isNotEmpty || builtIn || parakeet,
+        ok: installed.isNotEmpty || builtIn || parakeet || d.included,
       ),
       // consiglio in base al dispositivo
       NoteText(
@@ -426,12 +456,17 @@ class _WhisperCardState extends State<WhisperCard> {
         .lastOrNull;
     final installed = d.status.models.contains(m.id);
     final partial = d.partial[m.id] ?? 0;
+    // incluso nell'app (PC e Mac): non si scarica né si elimina, come
+    // Parakeet; una copia scaricata prima si può ancora togliere
+    final included = d.included && m.id == kDesktopWhisperModel;
     return Wrap(
       spacing: 4,
       runSpacing: 4,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        if (installed)
+        if (included && !installed)
+          const SizedBox.shrink()
+        else if (installed)
           OutlinedButton.icon(
             onPressed: () => _delete(m),
             icon: const Icon(Icons.delete_outline, size: 18),
@@ -484,7 +519,13 @@ class _WhisperCardState extends State<WhisperCard> {
               style: TextStyle(fontSize: 11, color: t.cyanSoft),
             ),
           ),
-        if (installed)
+        if (d.included && m.id == kDesktopWhisperModel)
+          Text(
+            'incluso nell\'app',
+            key: const Key('whisper-included'),
+            style: TextStyle(fontSize: 11, color: t.cyanSoft),
+          )
+        else if (installed)
           Text('scaricato', style: TextStyle(fontSize: 11, color: t.cyanSoft)),
         if (!m.italianOk)
           Text(
@@ -901,13 +942,17 @@ class _SecondPassSwitchState extends State<_SecondPassSwitch> {
     final sub = _unfit != null
         ? '$_unfit Resta il testo del modello integrato.'
         : (widget.downloaded
-              ? 'Mentre registri, il testo già confermato si ritrascrive a '
-                    'blocchi di 30 s con small, più preciso (le frasi che hai '
-                    'corretto restano). Si sospende se il telefono resta '
-                    'indietro, si scalda o ha meno del 20% di batteria.'
-              : 'Mentre registri, il testo già confermato si ritrascrive con '
-                    'small, più preciso. small q5_1 (${small.disk}) si '
-                    'scarica da solo con il Wi‑Fi alla prossima registrazione.');
+              ? 'Quando il testo dal vivo è del modello integrato (senza il '
+                    'riconoscitore del telefono), il testo già confermato si '
+                    'ritrascrive a blocchi di 30 s con small, più preciso (le '
+                    'frasi che hai corretto restano). Si ferma da sola se il '
+                    'telefono resta indietro, si scalda o ha meno del 20% di '
+                    'batteria.'
+              : 'Quando il testo dal vivo è del modello integrato (senza il '
+                    'riconoscitore del telefono), il testo già confermato si '
+                    'ritrascrive con small, più preciso. small q5_1 '
+                    '(${small.disk}) si scarica da solo con il Wi‑Fi alla '
+                    'prossima registrazione che ne ha bisogno.');
     return SwitchListTile(
       key: const Key('whisper-second-pass'),
       contentPadding: EdgeInsets.zero,

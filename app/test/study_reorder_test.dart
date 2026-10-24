@@ -103,6 +103,17 @@ void main() {
       ]);
     });
 
+    test('Home: senza l\'anno nei nomi, gli anni non dividono i gruppi', () {
+      final g = groupStudyCourses(const [
+        Course(id: 1, name: 'A', year: 2, semester: '1'),
+        Course(id: 2, name: 'B', year: 1, semester: '2'),
+        Course(id: 3, name: 'C', semester: '1'),
+        Course(id: 4, name: 'D', year: 1, semester: 'annuale'),
+      ], yearInLabel: false);
+      expect(g.map((x) => x.label), ['1° semestre', '2° semestre', 'Annuale']);
+      expect(g[0].courses.map((c) => c.id), [1, 3]);
+    });
+
     test('ordine salvato; i nuovi dopo, nell\'ordine di partenza', () {
       const courses = [
         Course(id: 1, name: 'A'),
@@ -175,6 +186,28 @@ void main() {
     };
     final saved = [for (final id in order) names[id]];
     expect(saved.indexOf('Geometria'), lessThan(saved.indexOf('Analisi I')));
+  });
+
+  testWidgets('insegnamento a scelta: solo il nome, senza «(a scelta)»', (
+    tester,
+  ) async {
+    await _pump(tester, (s) async {
+      for (final c in const [
+        Course(name: 'Analisi I', semester: '1', mandatory: true),
+        Course(name: 'Robotica', semester: '1', mandatory: false),
+      ]) {
+        await s.courses.insert(c);
+      }
+    }, size: const Size(1400, 900));
+    await tester.tap(find.byKey(const Key('course-name')));
+    await tester.pumpAndSettle();
+    expect(find.text('Robotica'), findsWidgets);
+    expect(find.textContaining('a scelta'), findsNothing);
+    // l'insegnamento a scelta resta a scelta: dopo gli obbligatori
+    expect(
+      tester.getTopLeft(find.text('Robotica').last).dy,
+      greaterThan(tester.getTopLeft(find.text('Analisi I').last).dy),
+    );
   });
 
   testWidgets('moduli: ordine al centro tenendo premuto il nome, rimuovi '

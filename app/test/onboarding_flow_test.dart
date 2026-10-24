@@ -13,6 +13,8 @@ import 'package:university_notes/features/exams/exam_form.dart'
     show kCalendarOfferedKey;
 import 'package:university_notes/features/links/ai_assistants.dart';
 import 'package:university_notes/features/links/link_settings.dart';
+import 'package:university_notes/features/notes/recorder/lecture_language.dart'
+    show kLectureLanguageKey;
 import 'package:university_notes/features/onboarding/onboarding_flow.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
@@ -156,7 +158,7 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   // 1. aspetto, prima della ricerca dell'ateneo
   expect(find.text('Come preferisci leggere?'), findsOneWidget);
   // aspetto, 7 passi del percorso, AI, avvisi, calendario, esclusioni
-  expect(find.text('Passo 1 di 12'), findsOneWidget);
+  expect(find.text('Passo 1 di 13'), findsOneWidget);
   await _tap(tester, find.text('Alto contrasto'));
   expect(s.display.value.highContrast, isTrue);
   expect(
@@ -166,7 +168,7 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   await _tap(tester, find.byKey(const Key('onboarding-appearance-next')));
 
   expect(find.text('Che università frequenti?'), findsOneWidget);
-  expect(find.text('Passo 2 di 12'), findsOneWidget);
+  expect(find.text('Passo 2 di 13'), findsOneWidget);
 
   await _tap(tester, find.text('Statale'));
   expect(find.text('In quale regione?'), findsOneWidget);
@@ -198,7 +200,7 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   // un solo percorso: il passo del percorso si salta da solo
   await _settleUntil(tester, find.text('Tutto giusto?'));
   expect(find.text('Tutto giusto?'), findsOneWidget);
-  expect(find.text('Passo 8 di 12'), findsOneWidget);
+  expect(find.text('Passo 8 di 13'), findsOneWidget);
   // niente più casella del calendario (.ics) nel riepilogo
   expect(find.byKey(const Key('onboarding-calendar')), findsNothing);
 
@@ -210,14 +212,25 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
   // 9. AI di riferimento: la scelta va in Collegamenti
   await _tap(tester, find.byKey(const Key('onboarding-next')));
   expect(find.text('Con quale AI studi?'), findsOneWidget);
-  expect(find.text('Passo 9 di 12'), findsOneWidget);
+  expect(find.text('Passo 9 di 13'), findsOneWidget);
   await _tap(tester, find.text('Claude'));
   expect(
     await tester.runAsync(() => s.settings.referenceAi()),
     ReferenceAi.claude,
   );
 
-  // 10. avvisi: spiegazione, poi il permesso del sistema
+  // 10. lingua delle lezioni: due opzioni, la scelta va nelle impostazioni
+  expect(find.text('In che lingua sono le tue lezioni?'), findsOneWidget);
+  expect(find.text('Passo 10 di 13'), findsOneWidget);
+  expect(find.byType(FilledButton), findsNothing);
+  expect(find.byType(TextButton), findsNothing);
+  await _tap(tester, find.text('Inglese'));
+  expect(
+    await tester.runAsync(() => s.settings.get(kLectureLanguageKey)),
+    'en',
+  );
+
+  // 11. avvisi: spiegazione, poi il permesso del sistema
   expect(find.text('Vuoi gli avvisi?'), findsOneWidget);
   expect(find.byType(FilledButton), findsOneWidget);
   await _tap(tester, find.byKey(const Key('onboarding-notifications-on')));
@@ -227,14 +240,14 @@ Future<void> _fullFlow(WidgetTester tester, Size size) async {
     '1',
   );
 
-  // 11. calendario del telefono: proposto qui, non al primo esame
+  // 12. calendario del telefono: proposto qui, non al primo esame
   await _tap(tester, find.byKey(const Key('onboarding-calendar-on')));
   await _settleUntil(tester, find.text('Vuoi nascondere qualcosa?'));
   expect(await tester.runAsync(() => s.settings.get(kCalendarOfferedKey)), '1');
   expect(await tester.runAsync(s.reminders.calendar.enabled), isTrue);
 
-  // 12. gruppi da nascondere
-  expect(find.text('Passo 12 di 12'), findsOneWidget);
+  // 13. gruppi da nascondere
+  expect(find.text('Passo 13 di 13'), findsOneWidget);
   await _tap(tester, find.byKey(const Key('onboarding-exclude-ofa')));
   await _tap(tester, find.byKey(const Key('onboarding-done')));
   await _settle(tester, 20);
@@ -286,7 +299,7 @@ void main() {
     expect(find.text('Statale'), findsNothing);
     await _tap(tester, find.text('Università degli Studi di Milano “Bicocca”'));
     expect(find.text('Che tipo di corso frequenti?'), findsOneWidget);
-    expect(find.text('Passo 5 di 12'), findsOneWidget);
+    expect(find.text('Passo 5 di 13'), findsOneWidget);
     await _tap(tester, find.text('Laurea (triennale)'));
     expect(find.text('Scienze psicologiche'), findsOneWidget);
     // Indietro torna alla ricerca.
@@ -611,6 +624,7 @@ void main() {
       // dopo l'import non si torna al riepilogo
       expect(find.byTooltip('Indietro'), findsNothing);
       await _tap(tester, find.byKey(const Key('onboarding-ai-skip')));
+      await _tap(tester, find.text('Italiano'));
       await _tap(
         tester,
         find.byKey(const Key('onboarding-notifications-later')),
@@ -627,6 +641,7 @@ void main() {
       expect(settings[kCalendarOfferedKey], '1');
       expect(await tester.runAsync(s.reminders.calendar.enabled), isFalse);
       expect(await tester.runAsync(s.settings.exclusionPatterns), isEmpty);
+      expect(settings[kLectureLanguageKey], 'it');
     },
   );
 

@@ -17,6 +17,9 @@ import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/models/course.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
 
+/// Nome sul disco di una lezione delle 8:30 («2026-10-05 08꞉30»).
+final String _lesson = NotesStore.lessonBaseName(DateTime(2026, 10, 5, 8, 30));
+
 Future<void> _settle(WidgetTester t) async {
   for (var i = 0; i < 40; i++) {
     await t.runAsync(
@@ -71,13 +74,13 @@ void main() {
       await store.writeText(
         course,
         NoteFolder.transcripts,
-        '2026-10-05 08-30 Lezione',
+        _lesson,
         '# Trascrizione\n\nciao',
       );
       await store.writeText(
         course,
         NoteFolder.summaries,
-        '2026-10-05 08-30 Lezione',
+        _lesson,
         '# Riassunto\n\n==chiave==',
       );
     });
@@ -121,7 +124,9 @@ void main() {
     // da «Vedi trascrizione» sulla card della registrazione.
     expect(find.text('Trascrizioni'), findsNothing);
     expect(find.textContaining('riassunta'), findsOneWidget);
-    expect(find.text('2026-10-05 08-30 Lezione'), findsNWidgets(2));
+    // il nome si vede con i due punti veri nell'orario, senza «Lezione»
+    expect(find.text('2026-10-05 08:30'), findsNWidgets(2));
+    expect(find.textContaining('Lezione'), findsNothing);
     expect(find.text("Domande d'esame"), findsOneWidget);
     expect(find.text('Studia con la tua AI di riferimento'), findsOneWidget);
     // card rinominate
@@ -146,7 +151,7 @@ void main() {
     // la ricerca legge i file: su Windows ci vuole un po'
     await _settle(t);
     await _settle(t);
-    expect(find.text('2026-10-05 08-30 Lezione'), findsOneWidget);
+    expect(find.text('2026-10-05 08:30'), findsOneWidget);
     expect(find.textContaining('==chiave=='), findsOneWidget);
     // la ricerca trova anche il testo delle trascrizioni
     await t.enterText(find.byType(TextField), 'ciao');
@@ -182,20 +187,15 @@ void main() {
     final rec = File(
       await store.newRecordingPath(c, DateTime(2026, 10, 5, 8, 30), '.m4a'),
     )..writeAsStringSync('a');
-    final tr = await store.writeText(
-      c,
-      NoteFolder.transcripts,
-      '2026-10-05 08-30 Lezione',
-      'x',
-    );
+    final tr = await store.writeText(c, NoteFolder.transcripts, _lesson, 'x');
     File(p.setExtension(tr.path, '.pdf')).writeAsStringSync('pdf');
     await store.writeText(
       c,
       NoteFolder.transcripts,
-      '2026-10-05 08-30 Lezione (Gemini)',
+      '$_lesson (Gemini)',
       'g',
     );
-    await store.writeText(c, NoteFolder.notes, '2026-10-05 08-30 Lezione', 'y');
+    await store.writeText(c, NoteFolder.notes, _lesson, 'y');
     final files = await store.list(c);
     final moves = await store.rename(
       c,
@@ -204,20 +204,19 @@ void main() {
     );
     expect(moves, hasLength(4));
     final after = await store.list(c);
+    // sul disco i due punti sono «꞉» (ammesso da Windows), all'utente «:»
+    const onDisk = 'Stechiometria꞉ esercizi';
+    expect(after[NoteFolder.recordings]!.single.name, onDisk);
     expect(
-      after[NoteFolder.recordings]!.single.name,
-      'Stechiometria_ esercizi',
+      after[NoteFolder.recordings]!.single.title,
+      'Stechiometria: esercizi',
     );
     expect(
       after[NoteFolder.transcripts]!.map((f) => p.basename(f.file.path)),
-      containsAll([
-        'Stechiometria_ esercizi.md',
-        'Stechiometria_ esercizi.pdf',
-        'Stechiometria_ esercizi (Gemini).md',
-      ]),
+      containsAll(['$onDisk.md', '$onDisk.pdf', '$onDisk (Gemini).md']),
     );
     // Gli appunti personali non fanno parte della lezione.
-    expect(after[NoteFolder.notes]!.single.name, '2026-10-05 08-30 Lezione');
+    expect(after[NoteFolder.notes]!.single.name, _lesson);
     expect(rec.existsSync(), isFalse);
     // Nome già usato: errore, nessun file toccato.
     await store.writeText(c, NoteFolder.summaries, 'Occupato', 'z');
@@ -227,7 +226,117 @@ void main() {
     );
     expect(
       (await store.list(c))[NoteFolder.recordings]!.single.name,
-      'Stechiometria_ esercizi',
+      onDisk,
     );
+  });
+
+  group('nome della lezione con l\'orario', () {
+    test('nome predefinito: due punti, senza «Lezione»', () {
+      final t = DateTime(2026, 10, 5, 14, 4);
+      final base = NotesStore.lessonBaseName(t);
+      // sul disco «꞉» (U+A789): i due punti veri non sono ammessi da Windows
+      expect(base, '2026-10-05 14꞉' '04');
+      expect(base, isNot(contains(':')));
+      expect(base, isNot(contains('Lezione')));
+      expect(NotesStore.displayName(base), '2026-10-05 14:04');
+      // mezzanotte e orari con una cifra
+      expect(
+        NotesStore.displayName(
+          NotesStore.lessonBaseName(DateTime(2026, 1, 2, 0, 5)),
+        ),
+        '2026-01-02 00:05',
+      );
+    });
+
+    test('registrazioni di prima («14-04 Lezione»): si mostrano con «:»', () {
+      expect(
+        NotesStore.displayName('2026-10-05 14-04 Lezione'),
+        '2026-10-05 14:04 Lezione',
+      );
+      expect(
+        NotesStore.displayName('2026-10-05 14-04 Lezione (Gemini)'),
+        '2026-10-05 14:04 Lezione (Gemini)',
+      );
+      expect(NotesStore.displayName('2026-10-05 14-04'), '2026-10-05 14:04');
+      // un nome qualunque non cambia
+      expect(NotesStore.displayName('Analisi 2-3 esercizi'), 'Analisi 2-3 esercizi');
+      expect(NotesStore.displayName('2026-10-05 Lezione'), '2026-10-05 Lezione');
+      expect(NotesStore.displayName('2026-10-05 14-045'), '2026-10-05 14-045');
+    });
+
+    test('il nome sul disco è valido su Windows', () {
+      final base = NotesStore.lessonBaseName(DateTime(2026, 10, 5, 14, 4));
+      expect(NotesStore.safeName(base, windows: true), base);
+      // titolo scritto con «:» → nome del file con «꞉»
+      expect(NotesStore.fileStem('2026-10-05 14:04'), base);
+      expect(NotesStore.fileStem('Analisi: limiti'), 'Analisi꞉ limiti');
+    });
+
+    test('nuova registrazione: file con l\'orario «꞉»', () async {
+      tmp = await Directory.systemTemp.createTemp('um_notes_');
+      final db = await AppDatabase.openInMemory();
+      final store = NotesStore(
+        SettingsRepository(db),
+        root: () async => Directory(p.join(tmp.path, 'Appunti')),
+      );
+      s = AppServices(db, notes: store);
+      const c = Course(id: 1, universityId: 'polito', name: 'Chimica');
+      final a = await store.newRecordingPath(
+        c,
+        DateTime(2026, 10, 5, 14, 4),
+        '.m4a',
+      );
+      expect(p.basename(a), '2026-10-05 14꞉' '04.m4a');
+      File(a).writeAsStringSync('a');
+      // stesso minuto: « (2)», niente sovrascrittura
+      final b = await store.newRecordingPath(
+        c,
+        DateTime(2026, 10, 5, 14, 4),
+        '.m4a',
+      );
+      expect(p.basename(b), '2026-10-05 14꞉' '04 (2).m4a');
+      final listed = (await store.list(c))[NoteFolder.recordings]!.single;
+      expect(listed.title, '2026-10-05 14:04');
+    });
+
+    test('rinomina: lo stesso nome scritto con «:» non tocca la registrazione '
+        'di prima', () async {
+      tmp = await Directory.systemTemp.createTemp('um_notes_');
+      final db = await AppDatabase.openInMemory();
+      final store = NotesStore(
+        SettingsRepository(db),
+        root: () async => Directory(p.join(tmp.path, 'Appunti')),
+      );
+      s = AppServices(db, notes: store);
+      const c = Course(id: 1, universityId: 'polito', name: 'Chimica');
+      final dir = await store.courseDir(c, NoteFolder.recordings);
+      File(
+        p.join(dir.path, '2026-10-05 14-04 Lezione.m4a'),
+      ).writeAsStringSync('a');
+      final old = (await store.list(c))[NoteFolder.recordings]!.single;
+      // l'utente la vede come «14:04» e la apre in «Rinomina»
+      expect(old.title, '2026-10-05 14:04 Lezione');
+      expect(await store.rename(c, old, old.title), isEmpty);
+      expect(
+        (await store.list(c))[NoteFolder.recordings]!.single.name,
+        '2026-10-05 14-04 Lezione',
+      );
+    });
+  });
+
+  testWidgets('Registra: niente card «Blocchi appunti OneNote»', (t) async {
+    await setUpData(t);
+    // (la card compariva con l'account Microsoft collegato: gli appunti
+    // OneNote si allegano dalla registrazione e da Studio)
+    await t.pumpWidget(
+      Provider.value(
+        value: s,
+        child: const MaterialApp(home: NotesScreen()),
+      ),
+    );
+    await _settle(t);
+    expect(find.text('Analisi matematica I'), findsOneWidget);
+    expect(find.text('Blocchi appunti OneNote'), findsNothing);
+    expect(find.textContaining('OneNote'), findsNothing);
   });
 }

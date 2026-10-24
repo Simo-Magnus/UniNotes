@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/enums.dart';
 import '../../core/constants/text_limits.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
@@ -159,7 +160,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     int maxLength = TextLimits.notes,
     bool multiline = false,
     TextInputType? keyboard,
-  }) => showDialog<String>(
+  }) => showAppDialog<String>(
     context: context,
     builder: (_) => _TextEditDialog(
       title: title,
@@ -193,7 +194,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     );
     if (d == null || !mounted) return;
     final parts = exam.time?.split(':');
-    final t = await showTimePicker(
+    final t = await showSafeTimePicker(
       context: context,
       initialTime: TimeOfDay(
         // ora salvata strana («99:99» da dati importati): dentro il quadrante
@@ -232,7 +233,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
   }
 
   Future<void> _editType() async {
-    final v = await showDialog<String>(
+    final v = await showAppDialog<String>(
       context: context,
       builder: (c) => SimpleDialog(
         title: const Text('Tipo di prova'),
@@ -276,7 +277,7 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
   /// segna la prova come superata, «Non superato» la lascia tra quelle da
   /// sostenere, nessun voto la riporta in attesa di esito.
   Future<void> _editGrade() async {
-    final r = await showDialog<ExamOutcome>(
+    final r = await showAppDialog<ExamOutcome>(
       context: context,
       builder: (c) => GradeDialog(
         midterm: _midterm,
@@ -640,6 +641,7 @@ class _TextEditDialogState extends State<_TextEditDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.title),
       content: TextField(
         controller: _ctrl,

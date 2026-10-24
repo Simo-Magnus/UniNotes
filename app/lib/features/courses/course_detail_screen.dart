@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_theme.dart';
@@ -144,7 +145,7 @@ class CourseDetailView extends StatelessWidget {
   void _openExam(BuildContext context, Exam e) {
     if (e.id == null) return;
     if (context.isWide) {
-      showDialog<void>(
+      showAppDialog<void>(
         context: context,
         builder: (c) => Dialog(
           child: ConstrainedBox(

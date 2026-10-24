@@ -1,6 +1,6 @@
 # Informativa sulla privacy di UniNotes
 
-Ultimo aggiornamento: 22 ottobre 2026
+Ultimo aggiornamento: 24 ottobre 2026
 
 Questa informativa spiega quali dati personali entrano in gioco quando usi UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS, dove finiscono e chi ne risponde. È resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (di seguito «GDPR») e del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018). Vale per la versione 2026.9 dell'app e per le successive, finché non viene sostituita da una versione più recente di questo documento.
 
@@ -97,14 +97,14 @@ In Impostazioni → Il mio percorso → «Indirizzo del database» puoi indicare
 
 La trascrizione con Whisper avviene interamente sul dispositivo: l'audio non viene inviato a nessuno. Servono però dei file da scaricare, e lo fai tu da Collegamenti → Whisper:
 
-- i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB (sul telefono un modello piccolo per il testo dal vivo, circa 57 MB, è già incluso nell'app; su PC e Mac è incluso Parakeet, vedi sotto);
+- i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB (sul telefono un modello piccolo per il testo dal vivo, circa 57 MB, è già incluso nell'app; su PC e Mac sono inclusi Parakeet e il modello Whisper small, circa 181 MB, vedi sotto);
 - solo su Windows, il programma whisper.cpp (versione 1.9.2, dal repository ufficiale `ggml-org/whisper.cpp` su GitHub) e, se ti serve per le registrazioni `.m4a` fatte con il telefono, il convertitore ffmpeg (build di BtbN su GitHub, circa 170 MB).
 
 Su Mac, Android e iOS whisper.cpp è già incluso nell'app. Su Mac puoi installare a parte la versione di Homebrew: in quel caso l'installazione avviene fuori dall'app e segue le regole di Homebrew.
 
 Se lavori con i dati mobili, ricorda che questi download possono consumare molto traffico.
 
-**Testo dal vivo durante la registrazione.** Su **Windows e Mac** il testo che compare sullo schermo lo produce Parakeet (modello NVIDIA Parakeet TDT 0.6B v3, incluso nell'app), interamente sul dispositivo: l'audio non viene inviato a nessuno. Solo se i file del modello mancano (versioni costruite a mano) l'app li scarica da Hugging Face (circa 640 MB) alla prima registrazione o da Collegamenti → Whisper. Su **iPhone, iPad e Android** il testo lo produce il riconoscimento vocale del sistema operativo, che riceve l'audio della registrazione: su iPhone e iPad lavora sul dispositivo quando la lingua lo permette, altrimenti passa dai servizi di Apple; su Android usa il riconoscitore del telefono, sul dispositivo dove c'è. Valgono le informative di Apple e Google. Dove il riconoscimento del sistema non c'è o si ferma, il testo dal vivo lo fa Whisper sul telefono, senza inviare l'audio a nessuno; dove il telefono regge, durante la registrazione il modello Whisper small (circa 181 MB, scaricato da Hugging Face solo con il Wi‑Fi) ritrascrive sul telefono il testo già scritto per renderlo più preciso.
+**Testo dal vivo durante la registrazione.** Su **Windows e Mac** il testo che compare sullo schermo lo produce Parakeet (modello NVIDIA Parakeet TDT 0.6B v3, incluso nell'app), interamente sul dispositivo: l'audio non viene inviato a nessuno. Solo se i file del modello mancano (versioni costruite a mano) l'app li scarica da Hugging Face (circa 640 MB) alla prima registrazione o da Collegamenti → Whisper. Le frasi che Parakeet scrive in una lingua diversa da quella della lezione le ritrascrive, sempre sul dispositivo, il modello Whisper small (OpenAI, licenza MIT), anch'esso incluso nell'app per Windows e Mac: non serve scaricarlo. Su **iPhone, iPad e Android** il testo lo produce il riconoscimento vocale del sistema operativo, che riceve l'audio della registrazione: su iPhone e iPad lavora sul dispositivo quando la lingua lo permette, altrimenti passa dai servizi di Apple; su Android usa il riconoscitore del telefono, sul dispositivo dove c'è. Valgono le informative di Apple e Google. Dove il riconoscimento del sistema non c'è o si ferma, il testo dal vivo lo fa Whisper sul telefono, senza inviare l'audio a nessuno; dove il telefono regge, durante la registrazione il modello Whisper small (circa 181 MB, scaricato da Hugging Face solo con il Wi‑Fi) ritrascrive sul telefono il testo già scritto per renderlo più preciso.
 
 ### 6.3 OneDrive e OneNote (facoltativo)
 

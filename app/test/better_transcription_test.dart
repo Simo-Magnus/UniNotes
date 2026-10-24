@@ -19,6 +19,16 @@ void main() {
     expect(betterThanLive(null, null), isNull);
   });
 
+  test('dopo il riconoscitore del sistema (Google, Apple) si propone solo '
+      'un modello più accurato di small', () {
+    expect(betterThanLive(whisperModelById('small'), kSystemSpeechRank), isNull);
+    expect(betterThanLive(whisperModelById('base'), kSystemSpeechRank), isNull);
+    expect(
+      betterThanLive(whisperModelById('medium'), kSystemSpeechRank)?.id,
+      'medium',
+    );
+  });
+
   test('PC: dopo il testo di Parakeet si propone solo un modello più '
       'accurato di Parakeet', () {
     expect(betterThanLive(whisperModelById('small'), kParakeetId), isNull);

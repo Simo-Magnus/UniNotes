@@ -143,6 +143,50 @@ void main() {
     });
   });
 
+  test('nomi delle suddivisioni: solo semestre, mai l\'anno', () async {
+    final s = AppServices(await AppDatabase.openInMemory());
+    // corsi di anni diversi (e uno senza anno, che compare in ogni anno):
+    // prima i nomi erano «1° anno · 1° semestre», «Anno non indicato · …»
+    final specs = [
+      ('Analisi', 1, '1'),
+      ('Fisica', 1, '2'),
+      ('Algebra', 2, '1'),
+      ('Chimica', null, '1'),
+      ('Laboratorio', 2, 'annuale'),
+    ];
+    for (final (name, year, sem) in specs) {
+      final id = await s.courses.insert(
+        Course(name: name, year: year, semester: sem),
+      );
+      final m = await s.study.insertModule(
+        StudyModule(courseId: id, name: 'Modulo'),
+      );
+      await s.study.insertTopic(Topic(moduleId: m, name: 'Argomento'));
+    }
+    final data = await DashboardData.load(s);
+    expect(data.progressGroups.map((g) => g.label), [
+      '1° semestre',
+      '2° semestre',
+      'Annuale',
+    ]);
+    // ogni anno nello stesso gruppo del suo semestre
+    expect(
+      data.progressGroups.first.courses.map((c) => c.name).toSet(),
+      {'Analisi', 'Algebra', 'Chimica'},
+    );
+    await s.database.close();
+  });
+
+  test('scelta salvata con i nomi di prima (con l\'anno): si legge ancora', () {
+    expect(progressGroupName('2° anno · 1° semestre'), '1° semestre');
+    expect(progressGroupName('1° anno · Annuale'), 'Annuale');
+    expect(progressGroupName('Anno non indicato · 2° semestre'), '2° semestre');
+    expect(progressGroupName('1° semestre'), '1° semestre');
+    expect(progressGroupName('OFA'), 'OFA');
+    // un semestre con nome libero non si altera
+    expect(progressGroupName('Modulo estivo'), 'Modulo estivo');
+  });
+
   test('cambiare lo stato di un argomento lo annota per la Home', () async {
     final (s, topicId) = await _seed();
     expect(await s.study.lastTopicChange(), isNull);

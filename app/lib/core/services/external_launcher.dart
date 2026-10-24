@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:open_filex/open_filex.dart';
+import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
 import 'msix_paths.dart';
@@ -82,6 +83,13 @@ class ExternalLauncher {
     final t = path.trim();
     if (t.startsWith(r'\\') || t.startsWith('//')) {
       return 'I percorsi di rete non si aprono dall\'app:\n$path';
+    }
+    // percorso relativo (libro con un percorso scritto a mano, arrivato da
+    // un backup o da un'altra versione): si risolverebbe rispetto alla
+    // cartella di lavoro del programma e «Apri cartella» aprirebbe quella
+    if (t.isEmpty || p.isRelative(t)) {
+      return 'Percorso incompleto (manca la cartella di partenza): non si '
+          'può aprire.\n$path';
     }
     final dot = t.lastIndexOf('.');
     final ext = dot < 0 ? '' : t.substring(dot).toLowerCase();

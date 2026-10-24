@@ -224,7 +224,9 @@ void main() {
       // niente «Materiali da studiare» nelle prossime prove
       expect(find.text('Materiali da studiare'), findsNothing);
       expect(find.text('Lezioni 1-8'), findsNothing);
-      expect(find.text('Argomenti: Limiti e derivate'), findsOneWidget);
+      // «Argomenti:» su una riga, l'elenco a capo
+      expect(find.text('Argomenti:\nLimiti e derivate'), findsOneWidget);
+      expect(find.text('Argomenti: Limiti e derivate'), findsNothing);
       await tester.scrollUntilVisible(
         find.text('Moduli e argomenti'),
         300,

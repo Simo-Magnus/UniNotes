@@ -72,7 +72,7 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.note.name, overflow: TextOverflow.ellipsis),
+        title: Text(widget.note.title, overflow: TextOverflow.ellipsis),
         actions: [
           IconButton(
             tooltip: 'Trova nel testo (Ctrl+F)',
@@ -170,12 +170,15 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
     super.initState();
     final n = widget.note;
     if (n == null) {
-      _title.text = NotesStore.lessonBaseName(DateTime.now())
-          .replaceFirst('Lezione', 'Nota');
+      // «2026-10-05 08:30 Nota»: il titolo mostra i due punti, nel nome del
+      // file diventano «꞉» (writeText)
+      _title.text =
+          '${NotesStore.displayName(NotesStore.lessonBaseName(DateTime.now()))}'
+          ' Nota';
       _loaded = true;
       enableSpellCheck();
     } else {
-      _title.text = n.name;
+      _title.text = n.title;
       // file non in UTF-8 si legge lo stesso; file sparito: si dice e si
       // torna indietro (prima la rotella girava per sempre)
       n.file

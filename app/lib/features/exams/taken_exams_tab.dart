@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/constants/enums.dart';
 import '../../models/exam.dart';
 import '../../utils/grade_math.dart';
+import '../../widgets/adaptive_row.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../courses/course_ui.dart';
@@ -232,33 +233,32 @@ class _CourseGroupCard extends StatelessWidget {
           Container(
             color: color.withValues(alpha: 0.08),
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-            child: Row(
-              children: [
-                // solo il nome dell'insegnamento: niente pallino né sigla
-                // dell'ateneo
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(group.name, style: theme.textTheme.titleMedium),
-                      Text(
-                        [
-                          formatCfu(course?.cfu),
-                          if (midtermAvg != null)
-                            'Media prove in itinere: ${formatNumber(midtermAvg, decimals: 2)}',
-                        ].join(' · '),
-                        style: theme.textTheme.bodySmall,
-                      ),
-                    ],
+            // il badge a destra non supera metà riga: con caratteri grandi si
+            // accorcia invece di spingere il nome fuori dallo schermo
+            child: TrailingRow(
+              // solo il nome dell'insegnamento: niente pallino né sigla
+              // dell'ateneo
+              body: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(group.name, style: theme.textTheme.titleMedium),
+                  Text(
+                    [
+                      formatCfu(course?.cfu),
+                      if (midtermAvg != null)
+                        'Media prove in itinere: ${formatNumber(midtermAvg, decimals: 2)}',
+                    ].join(' · '),
+                    style: theme.textTheme.bodySmall,
                   ),
-                ),
-                if (passed != null)
-                  SmallBadge(
-                    label: 'Voto finale ${gradeLabel(passed) ?? '—'}',
-                    color: Colors.green.shade700,
-                    icon: Icons.verified,
-                  ),
-              ],
+                ],
+              ),
+              trailing: passed == null
+                  ? null
+                  : SmallBadge(
+                      label: 'Voto finale ${gradeLabel(passed) ?? '—'}',
+                      color: Colors.green.shade700,
+                      icon: Icons.verified,
+                    ),
             ),
           ),
           for (final e in group.finals)

@@ -37,24 +37,65 @@ suoni si spengono senza errori.
 si abbassano appena alla pressione (`Pressable`, scala 0,96), contatori che
 scorrono al nuovo valore (`AnimatedCount`: argomenti completati, minuti di
 oggi, settimana Focus), spunta con un piccolo rimbalzo nelle conferme
-(`showSuccessSnack`), transizioni tra pagine uguali in tutta l'app
-(dissolvenza in avanti; su iOS e macOS quella del sistema, con il gesto per
-tornare indietro).
+(`showSuccessSnack`).
 
-**Fondo opaco durante le transizioni** (`PageBackdrop` in `motion.dart`): le
-schermate hanno lo Scaffold trasparente e le card sono di vetro traslucido,
-quindi durante un cambio di pagina il telefono componeva due schermate piene
-di strati semitrasparenti (la vecchia traspariva dalla nuova) e scattava. Ora
-sotto la pagina che entra (o esce) si stende lo stesso fondo dell'app, ma
-pieno e già disegnato come immagine (`RepaintBoundary`): nei primi 3/10
-dell'animazione sale da trasparente a pieno, così la pagina vecchia sparisce
-senza strappo, e si compone una sola pagina alla volta. A transizione finita il
-fondo si toglie (identico a quello dell'app) e non costa nulla a regime. Su iOS
-e macOS (`OpaqueSlideTransitionsBuilder`) il fondo pieno scorre con la pagina.
-Con «Riduci animazioni» la pagina compare subito, senza fondo. Finestre,
-card dal basso e menù avevano già il fondo pieno. Test: `page_transitions_test.dart`.
-Non è stata misurata con il profilo della timeline su un dispositivo vero:
-da verificare su un telefono Android.
+**Animazioni come su iOS, su tutte le piattaforme** (dal 24/10/2026):
+
+- **Cambio di pagina** (`IosPageTransitionsBuilder` in `motion.dart`, nel tema
+  per Android, iOS, Windows, macOS e Linux): la pagina nuova entra da destra
+  con la curva e la durata di iOS (500 ms) e l'ombra sul bordo sinistro;
+  quella sotto scorre a sinistra di un terzo (parallasse) e si scurisce appena.
+  Si torna indietro trascinando dal bordo sinistro (dito, o mouse su PC), con
+  il gesto «Indietro» di Android 14+ (la pagina segue il dito invece di
+  chiudersi solo alla fine), con due dita verso destra sul touchpad del PC e
+  con il tasto «Indietro» del mouse. Il tasto «Indietro» di Android e i tasti
+  di navigazione funzionano come prima. I gesti non partono sulla prima pagina,
+  durante una transizione e sui moduli che chiedono conferma prima di chiudere
+  (`PopScope`).
+- **Moduli a schermo intero** (aggiungi/modifica libro, esame, insegnamento,
+  voti dell'anno, onboarding: route con `fullscreenDialog`): salgono dal basso
+  come i moduli di iOS; la pagina sotto resta ferma. «Aggiungi libro» aveva una
+  dissolvenza propria (`PageRouteBuilder`) che lasciava vedere la lista dei
+  libri attraverso il form: ora usa la stessa route degli altri moduli.
+- **Finestre e fogli dal basso** (`showAppDialog`, `showAppSheet` in
+  `core/feedback/app_modals.dart`, usati da tutta l'app al posto di
+  `showDialog`/`showModalBottomSheet`): la molla di iOS (`kIosSpring`,
+  smorzamento critico, rigidità 522,35 come `CASpringAnimation`). Le finestre
+  compaiono con dissolvenza e un leggero ingrandimento all'indietro (da 1,15 a
+  1, come gli avvisi di iOS) in 404 ms e si chiudono con una dissolvenza rapida;
+  i fogli salgono in 450 ms e scendono in 320 ms con la molla rovesciata. Il
+  fondo sotto si scurisce come prima, senza contenuti sovrapposti.
+- **Riquadri che si aprono** (`ExpansionTile`): la molla al posto di 200 ms che
+  acceleravano verso la fine (`kIosExpansionAnimation` nel tema).
+- **Sezioni della barra in basso**: cambio immediato, come le schede di iOS.
+
+**Pagine opache durante le transizioni** (`PageBackdrop` in `motion.dart`): le
+schermate hanno lo Scaffold trasparente e le card sono di vetro traslucido.
+Sotto la pagina che entra (o esce) si stende lo stesso fondo dell'app, pieno e
+già disegnato come immagine (`RepaintBoundary`), e scorre con la pagina: della
+pagina sotto si vede solo la parte scoperta, come nella parallasse di iOS, e si
+compone una sola pagina alla volta. A transizione finita il fondo si toglie
+(identico a quello dell'app) e le pagine sotto non si disegnano più (route
+opache), quindi non costa nulla a regime.
+
+**Fluidità**: la transizione si ricostruisce a ogni fotogramma, quindi lì ci
+sono solo widget leggeri (la pagina è già salvata come immagine dalla route);
+le vecchie transizioni proprie di «Aggiungi libro» e dell'ordine dei moduli
+creavano una curva nuova a ogni fotogramma (ascoltatori che si accumulavano),
+ora tolte. Il vetro non usa `BackdropFilter`. Le immagini del lettore sono già
+ridotte alla decodifica (`limitedImage`).
+
+**«Riduci animazioni»** (sistema o app): pagine, finestre, fogli e riquadri
+compaiono e scompaiono subito; durante un gesto «Indietro» la pagina segue
+comunque il dito. Finché la route è in movimento la pagina resta opaca.
+Restano con le animazioni di Material i menu a tendina e i menu dei tre
+puntini (brevi).
+
+Test: `page_transitions_test.dart` (transizioni, opacità, gesti, «Riduci
+animazioni») e `ios_motion_test.dart` (finestre, fogli, molla e controllo che
+nel codice non ci siano `showDialog`, `showModalBottomSheet`,
+`PageRouteBuilder` o route trasparenti). Da provare su un telefono vero: la
+fluidità (profilo della timeline) e il gesto «Indietro» di Android 14+.
 
 ## Aspetto
 
@@ -75,7 +116,8 @@ subito come preferisce lo studente. Poi si cambiano in Impostazioni →
   14+), entro 0,85–2× (`AppTextScaler` in `core/theme/display_prefs.dart`),
   ed è applicata a tutta l'app con il `textScaler` del MediaQuery.
 - **Riduci animazioni**: oltre all'impostazione del sistema, che è sempre
-  rispettata. Pagine, contatori e conferme compaiono senza movimento.
+  rispettata. Pagine, finestre, fogli dal basso, riquadri che si aprono,
+  contatori e conferme compaiono senza movimento.
 - **Ripristina le domande**: dopo una conferma azzera tutte le scelte «Non
   chiedere più» dell'app (le impostazioni con il prefisso `dont_ask_`, es.
   `dont_ask_attachment_kind`, `dont_ask_delete_recording`,

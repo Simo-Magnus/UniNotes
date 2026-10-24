@@ -17,47 +17,28 @@ import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../cloud/cloud_drive_service.dart';
 import '../study/course_catalog.dart';
-import '../../core/feedback/motion.dart';
+import '../../core/feedback/app_modals.dart';
 
 /// Apre il form libro a schermo intero. Restituisce il libro salvato.
 ///
-/// Transizione breve e leggera (dissolvenza con un piccolo scorrimento dal
-/// basso, 220 ms) al posto di quella predefinita delle pagine: con la lista
-/// dei libri sotto, piena di card con l'ombra, quella era lenta e scattosa.
-/// Con «Riduci animazioni» il form compare subito.
+/// Transizione dei moduli di iOS (sale dal basso, opaca: la lista dei libri
+/// sotto non traspare né si muove), la stessa degli altri moduli a schermo
+/// intero (core/feedback/motion.dart). Prima era una dissolvenza propria
+/// che lasciava vedere la lista attraverso il form e creava una curva nuova
+/// a ogni fotogramma. Con «Riduci animazioni» il form compare subito.
 Future<Book?> showBookForm(
   BuildContext context, {
   required CourseCatalog catalog,
   Book? book,
   int? initialCourseId,
 }) => Navigator.of(context).push<Book>(
-  PageRouteBuilder<Book>(
+  MaterialPageRoute<Book>(
     fullscreenDialog: true,
-    transitionDuration: const Duration(milliseconds: 220),
-    reverseTransitionDuration: const Duration(milliseconds: 160),
-    pageBuilder: (_, _, _) => BookForm(
+    builder: (_) => BookForm(
       catalog: catalog,
       book: book,
       initialCourseId: initialCourseId,
     ),
-    transitionsBuilder: (context, animation, _, child) {
-      if (reduceMotion(context)) return child;
-      final curved = CurvedAnimation(
-        parent: animation,
-        curve: Curves.easeOutCubic,
-        reverseCurve: Curves.easeInCubic,
-      );
-      return FadeTransition(
-        opacity: curved,
-        child: SlideTransition(
-          position: Tween(
-            begin: const Offset(0, 0.04),
-            end: Offset.zero,
-          ).animate(curved),
-          child: child,
-        ),
-      );
-    },
   ),
 );
 
@@ -461,10 +442,15 @@ class _BookFormState extends State<BookForm> {
           key: ValueKey(_ownership),
           style: Theme.of(context).textTheme.bodyLarge,
           initialValue: _ownership,
+          // a mezza larghezza, con caratteri grandi, il testo andrebbe oltre
+          isExpanded: true,
           decoration: const InputDecoration(labelText: 'Stato di possesso'),
           items: [
             for (final o in BookOwnership.values)
-              DropdownMenuItem(value: o, child: Text(o.label)),
+              DropdownMenuItem(
+                value: o,
+                child: Text(o.label, overflow: TextOverflow.ellipsis),
+              ),
           ],
           onChanged: (v) => setState(() => _ownership = v ?? _ownership),
         ),
@@ -548,7 +534,7 @@ class _CourseField extends StatelessWidget {
 
   Future<void> _pick(BuildContext context) async {
     final courses = catalog.courses;
-    final r = await showDialog<int>(
+    final r = await showAppDialog<int>(
       context: context,
       builder: (c) => SimpleDialog(
         title: const Text('Materia associata'),
@@ -561,9 +547,7 @@ class _CourseField extends StatelessWidget {
               itemBuilder: (_, i) {
                 final id = i == 0 ? _none : courses[i - 1].id;
                 return ListTile(
-                  title: Text(
-                    i == 0 ? 'Nessuna materia' : courses[i - 1].label,
-                  ),
+                  title: Text(i == 0 ? 'Nessuna materia' : courses[i - 1].name),
                   trailing: id == (value ?? _none)
                       ? const Icon(Icons.check)
                       : null,
@@ -592,7 +576,7 @@ class _CourseField extends StatelessWidget {
           suffixIcon: Icon(Icons.arrow_drop_down),
         ),
         child: Text(
-          valid ? catalog.byId[value]!.label : 'Nessuna materia',
+          valid ? catalog.byId[value]!.name : 'Nessuna materia',
           overflow: TextOverflow.ellipsis,
         ),
       ),

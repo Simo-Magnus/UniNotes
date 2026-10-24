@@ -313,7 +313,8 @@ Test in `app/test/crash_r3_file_test.dart`.
   schermata; un file tolto durante l'elenco (tipo «non trovato») si salta.
   `renameCourse` non lancia mai (il nome nel database è già cambiato). Se la
   cartella degli appunti scelta non si può creare si usa quella predefinita;
-  un'unità di rete che non risponde entro 4 secondi vale «non raggiungibile».
+  un'unità di rete che non risponde entro 15 secondi vale «non raggiungibile»
+  (4 fino al quinto giro, vedi sotto).
   I percorsi esterni di libri e allegati si controllano con
   `fileExistsQuick` (5 secondi) per non fermare la schermata.
 - **Copie e scritture**: `copyFileSafely` (via `.part`) per riassunti allegati
@@ -372,7 +373,7 @@ Errori nuovi introdotti dalle correzioni dei primi tre giri. Test in
   copia al suo posto e non si cancella mai finché è l'unica copia.
 - **Cartella degli appunti di ripiego e sincronizzazione**
   (`NotesStore.rootWithFallback`): con la cartella scelta non raggiungibile
-  (disco scollegato, unità di rete che non risponde entro 4 secondi,
+  (disco scollegato, unità di rete che non risponde entro 15 secondi,
   cartella non creabile) si usa quella predefinita; la sincronizzazione
   prendeva quella come radice e i file della cartella scelta, che lì non ci
   sono, risultavano «eliminati qui»: finivano nel cestino del servizio e
@@ -531,3 +532,173 @@ eccezioni non gestite e si ferma con scenario, seme, passo e ultime 40 azioni.
   con l'impaginazione scaduta. In release non chiudono l'app.
 - I «testi fuori spazio» (RenderFlex overflowed) si contano e si stampano
   ma non fermano la prova: non sono crash.
+
+## Quinto giro: resti dei giri precedenti (24/10/2026)
+
+Test in `app/test/crash_r5_resti_test.dart` (rossi sul codice del commit
+84ee405d, verdi dopo).
+
+- **Insegnamento a scelta archiviato troppo presto**: eliminando una prova
+  in itinere o un esonero di un insegnamento a scelta senza esame finale,
+  l'insegnamento si archiviava anche se gli restavano altre prove. Regola
+  decisa dall'utente: si archivia (con l'avviso «… è un insegnamento a scelta
+  e questa è la sua ultima prova» e «Annulla») solo quando non gli resta
+  NESSUNA prova, né esame finale né prove in itinere / esoneri
+  (`wouldDropElective`/`dropElectiveWithoutExam`, `docs/esami.md`).
+- **Rinomina della cartella di un insegnamento con la cartella in uso**
+  (`NotesStore.renameCourse`): gli appunti restavano col nome vecchio e
+  sparivano dall'app. Ora la rinomina resta in sospeso (impostazione
+  `notes_pending_course_renames`, nome nuovo → nome sul disco): l'app usa la
+  cartella col nome di prima (anche per le registrazioni nuove), riprova a
+  ogni accesso e, se la cartella col nome nuovo c'era già, mostra anche i
+  file rimasti in quella vecchia durante l'unione (che ora prosegue file per
+  file e dà « (2)» ai nomi già presenti). Modulo dell'insegnamento e
+  «Rinomina» lo dicono con `NotesStore.renamePendingNote`.
+- **Unità che si sveglia** (`NotesStore._reachable`): con 4 secondi un disco
+  USB o di rete in risparmio energetico mandava nella cartella di ripiego
+  (vuota) e le registrazioni nuove si salvavano lì. Ora il primo controllo
+  aspetta fino a 15 secondi; «raggiungibile» si ricorda per 2 minuti, «non
+  raggiungibile» risponde subito e si ricontrolla dietro le quinte al
+  massimo ogni 20 secondi (un controllo alla volta per unità). Quando si
+  passa alla cartella di ripiego si annota il momento
+  (`notes_fallback_since`); quando quella scelta torna, i file salvati da
+  allora nella cartella di ripiego (e gli elementi del cestino eliminati da
+  allora) si spostano nella stessa posizione di quella scelta, senza
+  sovrascrivere (« (2)»), con `moveFile` (anche fra dischi diversi; un file
+  in uso resta e si riprova). Gli allegati di Studio che li indicavano
+  seguono il percorso nuovo. Gli appunti più vecchi della cartella
+  predefinita restano dove sono.
+- **Percorsi degli allegati con la cartella di ripiego** (`DataSync`): si
+  traducevano rispetto alla cartella di ripiego e quelli della cartella
+  scelta andavano agli altri dispositivi come assoluti. Ora la radice dei
+  percorsi è sempre la cartella scelta (`NotesStore.syncRoots`, anche se ora
+  non raggiungibile) e i file della cartella di ripiego si scrivono relativi
+  come se fossero già in quella scelta.
+- **Ripristino da «Eliminati di recente» dopo il cambio della cartella degli
+  appunti** (`RecycleBin.currentOrigin`): le voci ricordano il percorso
+  assoluto d'origine e i file tornavano nella radice di prima. Un file di un
+  insegnamento (`…/<insegnamento>/<Registrazioni|Trascrizioni|Riassunti|
+  Appunti|AI>/<file>`) torna nella stessa cartella della radice attuale;
+  vale anche per «Annulla» del ripristino.
+- **«Elimina tutti i dati» su Android**: aspetta anche la sincronizzazione
+  del motore in background (`CloudDriveService.busyElsewhereNow`, fino a
+  `syncWait`) e per tutta l'eliminazione nessuna sincronizzazione parte
+  (`CloudDriveService.hold`, anche quella chiesta dal lavoro periodico di
+  Android all'app aperta); resta acceso dopo un'eliminazione riuscita
+  (database chiuso, app da riaprire), si spegne se l'eliminazione fallisce.
+- **Tocco su un widget Android durante l'avvio** (`MainActivity.onNewIntent`):
+  se Dart non è ancora partito il motore scarta il messaggio `route` e il
+  tocco andava perso. Ora l'invio ha una risposta: «non gestito» o errore
+  rimettono la schermata in `pendingRoute`, che l'app legge con `takeRoute`
+  all'avvio e a ogni ritorno in primo piano (con Dart partito ma senza
+  ascolto il messaggio resta in coda nel motore). Il test controlla il
+  sorgente Kotlin.
+- **Percorsi relativi** (`ExternalLauncher.unsafePathReason`): «Apri cartella»
+  di un libro con un percorso relativo apriva la cartella di lavoro del
+  programma (`p.dirname('libro.pdf')` = «.»). Ora `openPath` e `openWith`
+  rifiutano i percorsi relativi con «Percorso incompleto…».
+- **Caricamenti su reti molto lente** (`ioTransport`): il corpo doveva
+  partire tutto entro il tempo di «almeno 32 KB/s». Ora si invia a pezzi da
+  16 KB e scade solo se un pezzo non parte entro `networkIdleTimeout`
+  (60 secondi); dopo l'ultimo pezzo si aspetta la risposta per
+  `networkIdleTimeout` più il tempo di al massimo 512 KB rimasti nella
+  memoria della connessione.
+- **Minori**: pagina HTML troppo annidata mostrata come testo
+  (`parseHtmlSafe`) con «&amp;» alla lettera (le entità si raddoppiavano);
+  `WavWriter.duration`/`dataBytes` contavano anche i pezzi non scritti dopo
+  un errore (disco pieno, limite dei 4 GB): ora solo quelli scritti, e dopo
+  un errore i pezzi nuovi non si contano.
+- **Da provare su dispositivo**: disco USB o di rete addormentato (Windows),
+  rinomina di un insegnamento con la cartella aperta in Esplora file o in
+  sincronizzazione, tocco sul widget degli esami ad app chiusa (Android),
+  caricamento di una registrazione grande su una rete lenta.
+
+## Testi ed elementi che escono dal loro spazio (quinto giro, 24/10/2026)
+
+Un «A RenderFlex overflowed by N pixels» è un difetto d'aspetto in release (testo
+tagliato, pulsante fuori dal riquadro) e le strisce gialle e nere in debug. La
+prova a caso del quarto giro li contava ma non si fermava (circa 29 prove su 36
+ne avevano). Dal quinto giro **un overflow è un errore della prova**.
+
+**Raccolta nella prova a caso** (`test/crash_r4_monkey_test.dart`):
+- `OverflowSpot` registra per ogni overflow il widget dell'app responsabile
+  (file:riga dal «relevant error-causing widget»), il lato, i pixel, la
+  finestra, la scala dei caratteri, il tema, la schermata (i widget dell'app
+  sopra l'elemento) e l'azione che l'ha mostrato. A fine prova stampa una riga
+  `OVERFLOW|file:riga|widget|lato|volte|pixel max|finestre|caratteri|temi|schermate|azione`
+  per luogo; il riepilogo di tutto il giro si ottiene con
+  `grep "^OVERFLOW|"` sull'output.
+- Senza opzioni un overflow ferma la prova con il messaggio completo. Con
+  `CRASH_R5_COLLECT=1` si raccolgono senza fermarsi (per fare l'elenco). Gli
+  errori di layout riportano anche `constraints:` e `creator:`.
+- `CRASH_R5_FULL=1` aggiunge a `test/crash_r2_layout_test.dart` (tutte le
+  schermate e i riquadri con i dati limite) le finestre 568×320 (orizzontale)
+  ×2, 360×640 ×1,3, 768×1024 ×2 e 1366×768 ×2: zero overflow.
+- Nei test il carattere è Ahem (ogni lettera è un quadrato largo quanto il corpo):
+  è circa il doppio più largo dell'IBM Plex, quindi la prova è più severa della
+  realtà; con i caratteri ×2 è come un ×4 vero.
+
+**Luoghi trovati e corretti** (3 giri di raccolta da 36 prove × 1200 azioni, poi
+il giro finale senza nessun overflow):
+
+| Luogo | Causa | Correzione |
+| --- | --- | --- |
+| Foglio «Altro» della barra in basso (`app_shell.dart`) | colonna di voci non scorrevole in un foglio basso (320 px in orizzontale) | `SingleChildScrollView` |
+| Foglio «Nuova prova» (`exams_screen.dart`), segnalibro del registratore e del lettore, «Allega a…» (`attachments.dart`) | stessa causa | `SingleChildScrollView` |
+| Modulo del libro, «Stato di possesso» (`book_form.dart`) | menu a tendina a mezza larghezza con voce lunga | `isExpanded` e puntini |
+| Riquadro dell'anno mostrato (`YearStatusBanner`), riquadro «Anni precedenti» (`PreviousYearsBanner`) | testo e pulsante («Segna come completato») sulla stessa riga | `AdaptiveActionRow`: una riga se c'è posto, il pulsante sotto se no |
+| Menu «Cambia anno» (`year_widgets.dart`) | etichetta di stato non comprimibile | `Flexible` e puntini |
+| Chip «Da aggiungere» (`MutedChip`) e riga dei libri senza file (`books_screen.dart`) | chip più largo della riga | chip con puntini, `TrailingRow` |
+| Riga di un esame in «Anni precedenti» (`previous_years_screen.dart`) | soglia fissa (560 px) per mettere il selettore accanto al testo, ma il selettore cresce con i caratteri | soglia moltiplicata per la scala dei caratteri |
+| Intestazione di sezione con pulsante (`SectionHeader`, «Segna tutti come sostenuti») | pulsante a destra senza limite | massimo il 60% della riga, la scritta va a capo |
+| Titolo delle sessioni con casella e «Aggiungi» (`sessions_tab.dart`) | titolo e pulsante senza posto | il titolo è `Flexible` con puntini |
+| Intestazione della materia nelle sessioni | riepilogo «N sessioni · tempo» senza limite | massimo metà riga |
+| Pulsanti «Segna», registra, «Salva» (`recorder_screen.dart`) | tre colonne senza limite con scritte larghe | i laterali dividono lo spazio, scritte con puntini |
+| Pulsante degli avvisi in basso («Aggiungi nota», «Annulla») | `SnackBarAction` di Flutter dà alla scritta larghezza illimitata e misura l'ingombro senza la scala dei caratteri | `AppSnackBarAction` (un vero `SnackBarAction` dentro un limite del 55% dello schermo, la scritta va a capo), usato nei 6 avvisi con pulsante |
+| Selettore dell'ora | quadrante e campi di misura fissa, caratteri ×2 e finestra bassa | `showSafeTimePicker`: caratteri ×1,3 (×1 con finestra più bassa di 420 px) solo nel selettore |
+| Intestazione dell'insegnamento negli esami sostenuti (`taken_exams_tab.dart`) | badge «Voto finale» senza limite | `TrailingRow` |
+| Formati supportati (`files_screen.dart`) | etichetta della famiglia di formati non comprimibile | `Flexible` e puntini |
+| Riquadri «Eliminare la prova/la registrazione?», «Esame a scelta», «Segnare tutti come sostenuti?», voto (`GradeDialog`) | contenuto più alto della finestra (320 px in orizzontale) | `AlertDialog(scrollable: true)` |
+| Formula in linea più larga della riga (`MathFormula`) | una formula in una riga di testo non si spezza | `FittedBox(scaleDown)` (più stretta: invariata; non si legge: il testo di ripiego va a capo come prima) |
+
+In più, in via preventiva, `scrollable: true` su altri 26 riquadri con
+contenuto a colonna (nessun cambiamento dove lo spazio basta; aiuta anche con
+la tastiera a schermo).
+
+**Esito**: due giri lunghi consecutivi (36 prove × 1200 azioni = 43.200 azioni
+ciascuno, tre scenari, 12 semi, finestre da 320×568 a 1920×1080, caratteri
+×1, ×1,3 e ×2, tema chiaro e scuro) senza errori e senza overflow; suite
+completa 1593 superati, 4 saltati.
+
+**Strumenti nuovi**: `lib/widgets/adaptive_row.dart` (`AdaptiveActionRow`,
+`TrailingRow`), `lib/widgets/app_snack_action.dart` (`AppSnackBarAction`),
+`showSafeTimePicker` in `lib/widgets/date_pick.dart`. Chi aggiunge una riga con
+un pulsante o un'etichetta a destra deve usarli (o un `Flexible`/`Expanded` con
+puntini): la prova a caso e `test/crash_r5_layout_test.dart` falliscono al
+primo overflow.
+
+**Altri errori trovati dalla stessa prova**:
+- `_BooksButton._open` (`topics_tab.dart`): dopo aver toccato un libro nel
+  foglio si usava il `context` del pulsante senza controllare `mounted`; con
+  la finestra ridimensionata a foglio aperto il pulsante non c'era più e
+  `openBook` falliva con «Looking up a deactivated widget's ancestor is
+  unsafe». Ora `if (context.mounted)`.
+
+**Sospetti non confermati** (non riprodotti con lo stesso seme né con prove
+mirate, pila solo di Flutter, solo con le asserzioni di debug):
+- `RRect argument contained a NaN value` nell'indicatore del valore del
+  cursore della durata Focus (`focus_setup.dart`), una volta, subito dopo un
+  cambio di finestra e di caratteri;
+- `offset.isFinite` nell'albero semantico (`_BoxEdge`), una volta, con la prova
+  a caso e il lettore di schermo acceso;
+- «Trailing widget consumes the entire tile width» in una scheda di libro
+  (`book_tile.dart`) dopo un ridimensionamento 360→1920 con la schermata Libri;
+  `test/crash_r5_layout_test.dart` prova ora la scheda in colonne da 280 a
+  1200 px e la schermata con la finestra che cambia, senza errori.
+  Se si ripresentano, i resoconti ora hanno `constraints:`.
+
+**Test**: `test/crash_r5_layout_test.dart` (avvisi, registratore, righe con
+pulsante, intestazioni, riquadri degli anni, fogli, riquadri, selettore
+dell'ora, schede dei libri, formule), con 320×568, 568×320 e 1920×1080,
+caratteri ×1 e ×2 e tema chiaro e scuro (`CRASH_R5_FULL=1`: tutte le sei
+finestre e anche ×1,3).

@@ -445,7 +445,7 @@ void main() {
       var stored = (await s.courses.byId(cid))!;
       expect(stored.name, 'Fisica generale');
       expect(stored.hasCustomName, isTrue);
-      expect(stored.label, 'Fisica generale');
+      expect(stored.name, 'Fisica generale');
       // il database dei corsi cambia il nome ufficiale
       await DataPackImporter(s.database).importMap({
         'format': 'university-manager-datapack',

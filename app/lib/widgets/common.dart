@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../core/feedback/app_modals.dart';
 import '../core/services/app_services.dart';
 import '../core/services/external_launcher.dart';
 import '../core/theme/app_tokens.dart';
@@ -55,19 +56,29 @@ class SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 8, 4),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.w700,
+      child: LayoutBuilder(
+        // l'elemento a destra (un pulsante con la scritta lunga) non supera il
+        // 60% della riga: se serve la sua scritta va a capo
+        builder: (context, c) => Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
-          ),
-          ?trailing,
-        ],
+            if (trailing != null)
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: c.hasBoundedWidth ? c.maxWidth * 0.6 : 400,
+                ),
+                child: trailing,
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -195,9 +206,10 @@ Future<bool> confirmDialog(
   String title,
   String message,
 ) async {
-  final r = await showDialog<bool>(
+  final r = await showAppDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       title: Text(title),
       content: Text(message),
       actions: [

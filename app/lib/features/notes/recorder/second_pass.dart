@@ -1,9 +1,13 @@
 import 'recording_meta.dart';
 
 /// Seconda passata sul telefono: mentre si registra, i tratti già
-/// confermati del testo istantaneo (Whisper base) si ritrascrivono in
-/// blocchi da ~30 s con small q5_1, più accurato, e lo sostituiscono; le
-/// frasi corrette a mano restano. Logica pura (test in
+/// confermati del testo istantaneo di Whisper base (il ripiego quando il
+/// riconoscitore del sistema manca) si ritrascrivono in blocchi da ~30 s
+/// con small q5_1, più accurato, e lo sostituiscono; le frasi corrette a
+/// mano restano. Con il riconoscitore del sistema non si fa: Google e Apple
+/// sul dispositivo sono già almeno precisi quanto small. Si ferma in
+/// silenzio (nessuna scritta nella card) se resta indietro, se il telefono
+/// si scalda o con la batteria bassa. Logica pura (test in
 /// test/second_pass_test.dart); il lavoro lo fa LiveTranscriber.
 
 /// Sceglie il prossimo blocco: segmenti interi già confermati, da dove era
@@ -167,16 +171,3 @@ class SecondPassGovernor {
     if (!low && stopped == SecondPassStop.battery) stopped = null;
   }
 }
-
-/// Perché la seconda passata si è fermata, per la card «Trascrizione».
-String secondPassStopLabel(SecondPassStop s) => switch (s) {
-  SecondPassStop.slow =>
-    'Seconda passata con small spenta: questo telefono è troppo lento.',
-  SecondPassStop.behind =>
-    'Seconda passata con small sospesa: era troppo indietro.',
-  SecondPassStop.hot =>
-    'Seconda passata con small sospesa: il telefono sta rallentando '
-        '(si scalda).',
-  SecondPassStop.battery =>
-    'Seconda passata con small sospesa: batteria sotto il 20%.',
-};

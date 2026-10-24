@@ -141,9 +141,9 @@ class FocusContextHeader extends StatelessWidget {
     final course = ctx?.course;
     final module = ctx?.module;
     final topic = ctx?.topic;
-    final overline = module == null ? null : course?.label;
+    final overline = module == null ? null : course?.name;
     final title =
-        module?.name ?? course?.label ?? link.label ?? 'Sessione Focus';
+        module?.name ?? course?.name ?? link.label ?? 'Sessione Focus';
     return Semantics(
       container: true,
       child: Column(
@@ -255,7 +255,7 @@ class FocusFilesPanel extends StatelessWidget {
     if (course == null) return const SizedBox.shrink();
     final t = context.tokens;
     final theme = Theme.of(context);
-    final where = ctx.topic?.name ?? ctx.module?.name ?? course.label;
+    final where = ctx.topic?.name ?? ctx.module?.name ?? course.name;
     return GlassCard(
       key: const Key('focus-files'),
       margin: margin,

@@ -111,6 +111,19 @@ if ($mancanti) {
   $mb = (Get-ChildItem $parakeet | Measure-Object -Property Length -Sum).Sum / 1MB
   Write-Output ("Parakeet incluso: data\parakeet ({0:N0} MB)" -f $mb)
 }
+# Whisper small q5_1 (MIT) in data\whisper: ritrascrive le frasi di Parakeet
+# in un'altra lingua (windows/CMakeLists.txt, con il testo delle licenze)
+$whisper = Join-Path $pacchetto 'data\whisper\ggml-small-q5_1.bin'
+if (-not (Test-Path $whisper) -or (Get-Item $whisper).Length -ne 190085487) {
+  Avviso "Whisper small q5_1 non incluso (manca o e' incompleto data\whisper\ggml-small-q5_1.bin): le frasi di Parakeet in un'altra lingua si toglieranno."
+} else {
+  Write-Output ("Whisper small q5_1 incluso: data\whisper ({0:N0} MB)" -f ((Get-Item $whisper).Length / 1MB))
+}
+$vecchio = Join-Path $pacchetto 'data\whisper\ggml-base-q5_1.bin'
+if (Test-Path $vecchio) {
+  # modello base q5_1 rimasto da una build precedente al 21/10/2026: non si usa
+  Remove-Item -Force $vecchio
+}
 
 # --- manifest -----------------------------------------------------------------
 function Xml([string]$s) { [System.Security.SecurityElement]::Escape($s) }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/services/app_services.dart';
@@ -20,10 +21,11 @@ Future<void> editDailyGoal(BuildContext context) async {
     kDailyGoalChoices.first.toDouble(),
     kDailyGoalChoices.last.toDouble(),
   );
-  final v = await showDialog<int>(
+  final v = await showAppDialog<int>(
     context: context,
     builder: (c) => StatefulBuilder(
       builder: (c, setLocal) => AlertDialog(
+        scrollable: true,
         title: const Text('Obiettivo giornaliero'),
         content: Column(
           mainAxisSize: MainAxisSize.min,

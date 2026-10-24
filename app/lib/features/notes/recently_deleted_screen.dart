@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
@@ -115,11 +116,12 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
   }
 
   Future<bool> _confirm(String title, String body) async {
-    final ok = await showDialog<bool>(
+    final ok = await showAppDialog<bool>(
       context: context,
       builder: (c) {
         final scheme = Theme.of(c).colorScheme;
         return AlertDialog(
+          scrollable: true,
           title: Text(title),
           content: Text(body),
           actions: [

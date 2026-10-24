@@ -92,6 +92,18 @@ import 'package:university_notes/models/study.dart';
 /// Nella suite normale bastano poche combinazioni, in pochi minuti.
 final _full = Platform.environment['CRASH_R2_FULL'] == '1';
 
+/// Quinto giro (R5-B): con `CRASH_R5_FULL=1` anche le finestre intermedie e
+/// in orizzontale, con i caratteri fino al massimo dell'app (×2).
+final _r5 = Platform.environment['CRASH_R5_FULL'] == '1';
+
+/// Finestre aggiunte dal quinto giro (larghezza, altezza, caratteri).
+const _r5Combos = <(double, double, double)>[
+  (568, 320, 2),
+  (360, 640, 1.3),
+  (768, 1024, 2),
+  (1366, 768, 2),
+];
+
 const _long =
     'Insegnamento dal nome lunghissimo con parole come '
     'Elettrotecnicaapplicataallemacchineelettricheeaisistemidipotenza e '
@@ -520,6 +532,7 @@ void main() {
     (320, 568, 3),
     (1920, 1080, 1),
     if (_full) (1920, 1080, 3),
+    if (_r5) ..._r5Combos,
   ];
 
   for (final data in _full ? _Data.values : const [_Data.limite]) {
@@ -694,6 +707,7 @@ void _dialogTests() {
     if (_full) (320, 568, 1),
     (320, 568, 3),
     if (_full) (1920, 1080, 1),
+    if (_r5) ..._r5Combos,
   ]) {
     testWidgets(
       'riquadri e fogli, ${w.toInt()}x${h.toInt()}, caratteri ×$scale',

@@ -196,7 +196,10 @@ void main() {
       );
       expect(outsideLecture('Nossa allora sentir la nostra.'), isFalse);
       expect(outsideLecture('Allora, un epilogo rapido, è le trate.'), isFalse);
-      expect(outsideLecture('I don\'t think.'), isFalse);
+      // dal 24/10/2026 conta solo la lingua scelta: una frase inglese in una
+      // lezione in italiano è fuori, in una lezione in inglese no
+      expect(outsideLecture('I don\'t think.'), isTrue);
+      expect(outsideLecture('I don\'t think.', lecture: 'en'), isFalse);
       // in una lezione in italiano gli intercalari inglesi del rumore no
       expect(outsideLecture('Thank you.'), isTrue);
       expect(outsideLecture('Yeah.'), isTrue);
@@ -215,6 +218,66 @@ void main() {
         isFalse,
       );
       expect(outsideLecture('Ok.'), isFalse);
+    });
+
+    test('solo la lingua della lezione, salvo nomi e termini tecnici', () {
+      // frasi uscite da Parakeet vero su audio lontano e rumoroso (prove del
+      // 24/10/2026, docs/registratore.md)
+      for (final t in [
+        'And I\'ll show you that for any day, but I\'m not.',
+        'Shakespeare\'s Christian lettuce in the section to come in order to '
+            'speak.',
+        'So I didn\'t get something about it.',
+        'Com soltar, solidade, o desce, a faca, passar e se volve.',
+      ]) {
+        expect(outsideLecture(t), isTrue, reason: t);
+      }
+      // lezioni in italiano con termini tecnici e nomi inglesi: restano
+      for (final t in [
+        'Nel machine learning supervisionato il dataset viene diviso in '
+            'training set e test set.',
+        'Per il deep learning useremo una rete neurale convoluzionale, cioè '
+            'una CNN.',
+        'Il protocollo TCP garantisce la consegna ordinata dei pacchetti, a '
+            'differenza di UDP.',
+        'Il software open source si distribuisce con una licenza che permette '
+            'di modificarlo.',
+        'Il marketing digitale usa il customer journey per capire il '
+            'comportamento del cliente.',
+        'In economia il break even point è il punto in cui ricavi e costi si '
+            'equivalgono.',
+        'La funzione di costo si minimizza con la discesa del gradiente, il '
+            'gradient descent.',
+        'Il codice va caricato su GitHub entro venerdì, con un file README che '
+            'spiega come eseguirlo.',
+        'Shakespeare scrisse Amleto all\'inizio del Seicento, come ricorda il '
+            'professor Smith.',
+        'Questo è il cosiddetto state of the art.',
+        'Il paper si intitola Attention is all you need.',
+      ]) {
+        expect(outsideLecture(t), isFalse, reason: t);
+      }
+      // lezioni in inglese: nomi italiani sì, frasi in italiano no
+      for (final t in [
+        'The Renaissance began in Florence, with artists like Leonardo da '
+            'Vinci and Michelangelo.',
+        'Professor Rossi from the University of Bologna will give a guest '
+            'lecture on Friday.',
+        'We will use Python and the NumPy library for the lab sessions.',
+      ]) {
+        expect(outsideLecture(t, lecture: 'en'), isFalse, reason: t);
+      }
+      expect(
+        outsideLecture(
+          'Allora, oggi vediamo il teorema di Cauchy e le sue conseguenze.',
+          lecture: 'en',
+        ),
+        isTrue,
+      );
+      expect(
+        outsideLecture('Il problema è che non abbiamo tempo.', lecture: 'en'),
+        isTrue,
+      );
     });
   });
 

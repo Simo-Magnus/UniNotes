@@ -148,15 +148,21 @@ class _SessionHistoryState extends State<SessionHistory> {
       // dal margine delle intestazioni delle materie (16 px).
       Padding(
         padding: const EdgeInsets.fromLTRB(16, 16, 8, 8),
+        // il titolo si accorcia (puntini) se con i caratteri grandi non c'è
+        // posto per tutti e tre
         child: Row(
           key: const Key('sessions-title-row'),
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Sessioni',
-              key: const Key('sessions-title'),
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w700,
+            Flexible(
+              child: Text(
+                'Sessioni',
+                key: const Key('sessions-title'),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             const SizedBox(width: 10),
@@ -260,31 +266,40 @@ class SubjectSessionsHeader extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 10, 16, 2),
-      child: Row(
-        children: [
-          Container(
-            width: 4,
-            height: 22,
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(2),
-            ),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              name,
-              style: theme.textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w700,
+      child: LayoutBuilder(
+        // il riepilogo a destra non supera metà riga: oltre va a capo
+        builder: (context, c) => Row(
+          children: [
+            Container(
+              width: 4,
+              height: 22,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(2),
               ),
-              overflow: TextOverflow.ellipsis,
             ),
-          ),
-          Text(
-            '${count == 1 ? '1 sessione' : '$count sessioni'} · ${formatMinutes(minutes)}',
-            style: theme.textTheme.bodySmall,
-          ),
-        ],
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                name,
+                style: theme.textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: c.hasBoundedWidth ? c.maxWidth * 0.5 : 400,
+              ),
+              child: Text(
+                '${count == 1 ? '1 sessione' : '$count sessioni'} · ${formatMinutes(minutes)}',
+                textAlign: TextAlign.end,
+                style: theme.textTheme.bodySmall,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

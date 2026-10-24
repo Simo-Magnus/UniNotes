@@ -11,6 +11,7 @@ class GraphResponse {
 
   bool get ok => status >= 200 && status < 300;
   String get text => utf8.decode(body, allowMalformed: true);
+
   /// Corpo JSON. Un corpo che non è JSON (pagina HTML di una rete Wi‑Fi con
   /// pagina di accesso o di un proxy, risposta troncata) è un errore di rete
   /// ([GraphException] con stato 0): la sincronizzazione si ferma e riprova,
@@ -91,9 +92,38 @@ GraphException _tlsOffline(Uri url, TlsException e) => GraphException(
 /// accorcia.
 Duration networkIdleTimeout = const Duration(seconds: 60);
 
-/// Tempo in più per inviare [bytes] (blocchi dei caricamenti) anche con una
-/// rete lenta (almeno 32 KB al secondo).
-Duration _sendTime(int bytes) => Duration(milliseconds: bytes ~/ 32);
+/// Pezzi in cui si invia il corpo di una richiesta (blocchi dei
+/// caricamenti): dopo ognuno si aspetta che il sistema l'abbia preso, al
+/// massimo [networkIdleTimeout]. Il limite è legato all'avanzamento, non
+/// alla dimensione: prima un blocco doveva partire tutto entro il tempo
+/// di «almeno 32 KB al secondo» e su una rete più lenta un file grande non
+/// si caricava mai.
+const _sendPiece = 16 * 1024;
+
+/// Dopo l'ultimo pezzo il sistema può averne ancora una parte da spedire
+/// (memoria della connessione): tempo in più per al massimo questi byte,
+/// con la stima di prima (32 KB al secondo).
+const _sendTail = 512 * 1024;
+
+Duration _tailTime(int bytes) =>
+    Duration(milliseconds: (bytes < _sendTail ? bytes : _sendTail) ~/ 32);
+
+/// Invia [body] a pezzi: scade solo se per [idle] nessun pezzo parte.
+Future<void> _sendBody(
+  HttpClientRequest req,
+  List<int> body,
+  Duration idle,
+) async {
+  for (var i = 0; i < body.length; i += _sendPiece) {
+    final end = i + _sendPiece < body.length ? i + _sendPiece : body.length;
+    req.add(
+      body is Uint8List
+          ? Uint8List.sublistView(body, i, end)
+          : body.sublist(i, end),
+    );
+    await req.flush().timeout(idle);
+  }
+}
 
 Future<GraphResponse> ioTransport(
   String method,
@@ -108,9 +138,9 @@ Future<GraphResponse> ioTransport(
     headers.forEach(req.headers.set);
     if (body != null) {
       req.contentLength = body.length;
-      req.add(body);
+      await _sendBody(req, body, idle);
     }
-    final res = await req.close().timeout(idle + _sendTime(body?.length ?? 0));
+    final res = await req.close().timeout(idle + _tailTime(body?.length ?? 0));
     return GraphResponse(
       res.statusCode,
       await _readAll(res.timeout(idle)),
@@ -164,7 +194,11 @@ Future<GraphResponse> ioDownload(
     final res = await req.close().timeout(idle);
     final h = _headers(res);
     if (res.statusCode < 200 || res.statusCode >= 300) {
-      return GraphResponse(res.statusCode, await _readAll(res.timeout(idle)), h);
+      return GraphResponse(
+        res.statusCode,
+        await _readAll(res.timeout(idle)),
+        h,
+      );
     }
     final sink = to.openWrite();
     try {
@@ -204,9 +238,9 @@ class GraphClient {
     GraphDownload? download,
     this.onUnauthorized,
   }) : _send = transport ?? ioTransport,
-      _download =
-          download ??
-          (transport == null ? ioDownload : bufferedDownload(transport));
+       _download =
+           download ??
+           (transport == null ? ioDownload : bufferedDownload(transport));
 
   final Future<String> Function() _token;
   final GraphTransport _send;
@@ -307,7 +341,10 @@ class GraphClient {
       final page = await getJson(next, q);
       if (page == null) {
         if (strict) {
-          throw GraphException(404, 'Microsoft Graph: cartella non trovata ($path)');
+          throw GraphException(
+            404,
+            'Microsoft Graph: cartella non trovata ($path)',
+          );
         }
         break;
       }

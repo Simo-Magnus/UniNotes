@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/feedback/app_modals.dart';
 import '../core/theme/app_tokens.dart';
 import 'common.dart';
 
@@ -59,7 +60,7 @@ Future<void> showPromptDialog(
   required String intro,
   required String prompt,
   IconData icon = Icons.auto_awesome_outlined,
-}) => showDialog<void>(
+}) => showAppDialog<void>(
   context: context,
   builder: (c) => AlertDialog(
     icon: Icon(icon),

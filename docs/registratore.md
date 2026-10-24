@@ -9,6 +9,9 @@ Nella pagina **Registra** gli insegnamenti sono divisi come in Studio: **1°
 semestre**, **2° semestre**, **Annuale** e **OFA** (con l'anno davanti se
 il percorso ne mostra più d'uno), ognuno solo con il suo nome
 (`groupStudyCourses` in `app/lib/features/study/course_groups.dart`).
+Sotto l'insegnamento c'è **Lingua della lezione: Italiano | Inglese**
+(vedi «Lingua delle lezioni» più sotto): si cambia prima di registrare e
+durante la registrazione si vede ma resta fissa.
 
 Codice: `app/lib/features/notes/` (`lecture_recorder.dart`,
 `recorder_screen.dart`, `recording_player_screen.dart`,
@@ -19,7 +22,8 @@ dal vivo con `live_transcriber.dart`, modifica del testo con
 `live_transcript_editor.dart`, proposta di una trascrizione più accurata con
 `better_transcription.dart`, salvataggio, riquadro sopra le schermate,
 controlli in background, `vad_segmenter.dart` e `second_pass.dart`, vocabolario
-del corso `course_vocabulary.dart`). Parakeet: `app/lib/core/services/parakeet_service.dart`,
+del corso `course_vocabulary.dart`, lingua delle lezioni
+`lecture_language.dart` e `speech_language.dart`). Parakeet: `app/lib/core/services/parakeet_service.dart`,
 `parakeet_engine.dart`, `whisper_prompt.dart` e `app/lib/features/links/parakeet_model.dart`
 (test `parakeet_live_test.dart`, `parakeet_service_test.dart`,
 `second_pass_test.dart`, `whisper_prompt_test.dart` e, con il modello vero,
@@ -33,7 +37,8 @@ audio: `app/lib/core/services/audio_codec.dart` e, su Windows,
 `app/windows/runner/audio_transcoder.cpp`. Test:
 `app/test/recorder_logic_test.dart`, `app/test/recorder_speech_test.dart`,
 `app/test/recording_overlay_test.dart`, `app/test/live_transcript_edit_test.dart`,
-`app/test/better_transcription_test.dart`, `app/test/spell_check_test.dart` e
+`app/test/better_transcription_test.dart`, `app/test/spell_check_test.dart`,
+`app/test/recorder_language_test.dart` (lingua, Mac con macOS 26, maiuscole) e
 `app/test/share_files_test.dart`; formule a voce
 `app/lib/features/notes/spoken_math.dart` (`app/test/spoken_math_test.dart`);
 scelta e consiglio dei modelli Whisper `app/lib/features/links/whisper_device.dart`
@@ -199,8 +204,9 @@ solo**, `liveEngineOrder` in `app/lib/features/notes/recorder/live_transcriber.d
 
 | Sistema | 1° motore | Ripiego | In più |
 |---|---|---|---|
-| **Windows, macOS, Linux** | **Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx) | il modello Whisper scaricato dall'utente, a pezzi da ~10 s; altrimenti nessun testo | — |
-| **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua, si ferma o non risponde all'avvio entro 45 s | seconda passata con small q5_1 dove il telefono regge |
+| **macOS 26 o successivo** | **riconoscitore nuovo di Apple** (SpeechAnalyzer + SpeechTranscriber, sul Mac, nella lingua della lezione) | **Parakeet** se il modello della lingua non è ancora sul Mac (si scarica in background per la volta dopo), la lingua manca, il permesso è negato, non risponde all'avvio entro 45 s o si ferma a metà (Parakeet continua da lì); poi Whisper (small q5_1 incluso nell'app o un modello scaricato) | — |
+| **Windows, Linux, macOS fino al 15** | **Parakeet** (NVIDIA Parakeet TDT 0.6B v3 con sherpa-onnx) | Whisper a pezzi da ~10 s: **small q5_1 incluso nell'app** (dal 24/10/2026) o un modello scaricato più adatto; senza nessuno dei due nessun testo | frasi fuori lingua ritrascritte con Whisper small incluso (vedi «Lingua della trascrizione» e «Whisper small incluso su PC e Mac») |
+| **Android, iOS** | **riconoscitore del sistema** (Google/Apple, sul dispositivo dove c'è) | Whisper base q5_1 integrato, se il riconoscitore manca, non ha la lingua, si ferma o non risponde all'avvio entro 45 s | seconda passata con small q5_1 solo con Whisper base, dove il telefono regge |
 
 Un riconoscitore che non risponde all'avvio (iOS 26 che scarica il modello
 della lingua senza rete, dettatura di Windows che non finisce di
@@ -210,9 +216,9 @@ gli eventi che arrivassero dopo si scartano e si passa al motore
 successivo, che riparte dall'inizio del WAV di lavoro (test in
 `app/test/crash_r2_nativo_test.dart`).
 
-Lingua: sempre fissata, **italiano** o **inglese** per gli insegnamenti in
-inglese (lingua dell'esame del corso), mai il rilevamento automatico né
-altre lingue (vedi «Lingua della trascrizione» sotto). Nessun motore apre il
+Lingua: sempre fissata, **italiano** o **inglese**, quella scelta
+nell'onboarding o in Registra (vedi «Lingua delle lezioni» sotto), mai il
+rilevamento automatico né altre lingue. Nessun motore apre il
 microfono per conto suo: ricevono l'audio della registrazione (o lo leggono
 dal WAV di lavoro), e un loro errore non ferma mai la registrazione.
 
@@ -267,8 +273,9 @@ mediana e 7,8 s al 90%.
   salvataggio («Completo la trascrizione») e il risultato sostituisce le
   parole confermate. Se il PC resta indietro e un tratto si salta, le parole
   confermate restano e il recupero parte da dopo di loro.
-- **Seconda passata** (telefono): lavora solo sulle frasi chiuse, prima
-  della frase in corso; **formule** e controllo ortografico come prima.
+- **Seconda passata** (telefono, solo con Whisper base): lavora solo sulle
+  frasi chiuse, prima della frase in corso; **formule** e controllo
+  ortografico come prima.
 - Il file della sessione si salva al massimo ogni ~3 s mentre le parole si
   confermano (subito a fine frase).
 - Nel campo di modifica le parole confermate si aggiungono in fondo alla
@@ -283,40 +290,149 @@ registrazione e le frasi in un'altra lingua), `app/test/recorder_speech_test.dar
 ### Maiuscole a inizio pezzo (24/10/2026)
 
 Il riconoscitore del telefono restituisce ogni pezzo con la maiuscola anche quando continua la frase di
-prima («oggi parliamo Di integrali»). Unendo i pezzi (`TranscriptMerger` in `live_transcript.dart`), se il
-testo precedente non finisce con `.`, `!`, `?` o `…` l'iniziale torna minuscola. Restano maiuscoli i nomi
-propri noti (parole del vocabolario dell'insegnamento che non sono la prima del loro nome, per esempio
-«Lagrange» in «Teorema di Lagrange», e parole già viste con la maiuscola a metà frase nella stessa lezione),
-le sigle e le parole con maiuscole interne («PDF», «UniNotes») e «I» nelle lezioni in inglese. Le frasi già
-corrette a mano non si toccano. Test: `test/live_transcript_case_test.dart`.
+prima («oggi parliamo Di integrali»), e lo stesso fanno il riconoscitore di Apple sul Mac, Parakeet
+quando il VAD taglia a una pausa a metà frase e Whisper all'inizio di ogni finestra o blocco. Se il
+testo precedente non finisce con `.`, `!`, `?` o `…` l'iniziale torna minuscola. Restano maiuscoli i
+nomi propri noti (parole del vocabolario dell'insegnamento che non sono la prima del loro nome, per
+esempio «Lagrange» in «Teorema di Lagrange», e parole già viste con la maiuscola a metà frase nella
+stessa lezione), le sigle e le parole con maiuscole interne («PDF», «UniNotes») e «I» nelle lezioni in
+inglese. Le frasi già corrette a mano non si toccano.
 
-### Lingua della trascrizione (22/10/2026)
+Dove si applica (`TranscriptMerger` in `live_transcript.dart`):
 
-La lingua è sempre quella della lezione: **italiano**, o **inglese** se
-l'insegnamento è in inglese (`Course.examLanguage`); in «Trascrivi con…» si
-può scegliere Italiano/Inglese per quella trascrizione. Mai il rilevamento
-automatico (`lectureLanguage`, `speech_language.dart`).
+| Testo | Come |
+|---|---|
+| pezzi uniti (`merger.add`: finestre di Whisper, frasi definitive senza parole confermate, tratti recuperati, frasi ritrascritte con Whisper) | in `add`, come prima |
+| parole confermate per accordo e testo definitivo di fine frase (riconoscitore del sistema e di Apple, Parakeet, Whisper) | `merger.recase` sulle ultime frasi a ogni cambiamento (`LiveTranscriber._segmentsChanged`) |
+| seconda passata con small (telefono) | `recase` dal blocco sostituito in poi |
+| trascrizione salvata e «Completo la trascrizione» | sono le frasi qui sopra (`live.segments`) |
+| «Trascrivi con…» / «Trascrivi di nuovo con…» dopo il salvataggio, anche quella «più accurata» proposta da `better_transcription.dart` (Whisper e Parakeet) | `TranscriptMerger.recaseTexts` sui segmenti prima di scriverli (`notes_actions.dart`), con il vocabolario dell'insegnamento come nomi propri |
+
+Test: `test/live_transcript_case_test.dart` (unione dei pezzi), `test/recorder_language_test.dart`
+(riconoscitore del sistema con parole confermate e testo definitivo, Parakeet con una pausa a metà
+frase, trascrizione dopo il salvataggio).
+
+### Lingua delle lezioni (24/10/2026)
+
+La lingua della trascrizione la sceglie lo studente, **italiano** o
+**inglese** (`recorder/lecture_language.dart`):
+
+- **onboarding**, dopo l'AI di riferimento: «In che lingua sono le tue
+  lezioni?» («Scegli la lingua della maggior parte delle lezioni che
+  registrerai…»), due opzioni, **Italiano** e **Inglese**; un tocco salva
+  (`lecture_language`) e va avanti. Chi ha fatto l'onboarding prima ha
+  l'italiano, o l'inglese per gli insegnamenti seguiti in inglese;
+- **Registra**, sotto l'insegnamento: «Lingua della lezione: Italiano |
+  Inglese», prima di registrare; la scelta resta per quell'insegnamento
+  (`lecture_language_course_<id>`). Ordine: scelta per l'insegnamento →
+  insegnamento seguito in inglese (`Course.examLanguage`) → lingua
+  dell'onboarding → italiano (`pickLectureLanguage`);
+- la lingua si salva con la registrazione (`lingua` nel `.json` accanto,
+  `RecordingMeta.language`) e la usano «Completo la trascrizione», la
+  trascrizione più accurata proposta dopo il salvataggio e «Trascrivi
+  con…» (che la mostra già scelta e permette di cambiarla).
+
+Nelle Impostazioni non c'è un posto per la lingua (non c'era nemmeno
+prima): si cambia dove serve, in Registra.
+
+### Lingua della trascrizione (22/10/2026, aggiornato il 24/10)
+
+La lingua è sempre quella della lezione (sopra). Mai il rilevamento
+automatico (`lectureLanguage`, `speech_language.dart`). Il risultato deve
+contenere solo parole di quella lingua, salvo nomi propri e termini
+tecnico-scientifici.
 
 - **Whisper** (whisper-cli e whisper.cpp nell'app, dal vivo, seconda
   passata e file): `-l it`/`-l en` (`WhisperOptions.cliArgs`,
-  `language` del plugin). Era già `-l it` fisso: con il modello scaricato
-  (large-v3-turbo q5_0, provato il 22/10/2026 sulla registrazione che
-  mostrava le altre lingue) Whisper scrive in italiano.
-- **Parakeet** è la vera causa delle frasi in altre lingue: NVIDIA Parakeet
-  TDT 0.6B v3 riconosce da solo la lingua fra 25 lingue europee e
-  sherpa-onnx **non permette di fissarla** (le opzioni di lingua esistono
-  solo per Whisper, SenseVoice e Canary). Con audio lontano o rumoroso una
-  frase in italiano usciva in portoghese o in inglese (nella registrazione
-  del 22/10: «Eu sou um que se cheguei…», «Thank you.», «Yeah.»). Ora ogni
-  frase di Parakeet passa da `outsideLecture`: quelle in lingue diverse da
-  italiano e inglese (parole tipiche di spagnolo, portoghese, francese,
-  tedesco, olandese, rumeno, polacco, lettere e alfabeti che l'italiano non
-  usa) e, nelle lezioni in italiano, gli intercalari inglesi del rumore
-  («Thank you», «Yeah»…) non entrano nella trascrizione; se c'è un modello
-  Whisper scaricato quel tratto si **ritrascrive con Whisper** nella lingua
-  della lezione (dal vivo e in «Trascrivi con Parakeet»), altrimenti si
-  toglie e la card «Trascrizione» lo dice. Le frasi corte o incerte restano.
-- **Riconoscitore del sistema**: `it-IT` o `en-US` (`speechLocaleFor`).
+  `language` del plugin): il modello scrive nella lingua fissata.
+- **Riconoscitore del sistema** (telefono) e **di Apple** (Mac con macOS
+  26): `it-IT` o `en-US` (`speechLocaleFor`), modelli di una sola lingua.
+- **Parakeet** (NVIDIA Parakeet TDT 0.6B v3) riconosce da solo la lingua
+  fra 25 lingue europee e sherpa-onnx **non permette di fissarla** (le
+  opzioni di lingua esistono solo per Whisper, SenseVoice e Canary); gli
+  hotwords non cambiano il testo (provato il 21/10, vedi «Parakeet su PC e
+  Mac»). Ogni frase di Parakeet (dal vivo, testo provvisorio compreso, e
+  «Trascrivi con Parakeet») passa da `outsideLecture(frase, lecture:)`: se
+  **la frase intera** è in un'altra lingua (dal 24/10 anche l'**inglese in
+  una lezione in italiano** e l'**italiano in una lezione in inglese**,
+  oltre a spagnolo, portoghese, francese, tedesco, olandese, rumeno,
+  polacco e alfabeti diversi) o, in italiano, è solo un intercalare inglese
+  del rumore («Thank you», «Yeah»…), non entra nella trascrizione: quel
+  tratto si **ritrascrive con Whisper fissato sulla lingua della lezione**
+  (dal vivo e in «Trascrivi con Parakeet»), con **Whisper small q5_1
+  incluso nell'app** (dal 24/10/2026, vedi «Whisper small incluso su PC e
+  Mac») o con un modello scaricato più adatto (`WhisperService.liveEngine`).
+  Solo in una build senza il modello incluso e senza modelli scaricati si
+  toglie, e la card «Trascrizione» lo dice. Le frasi corte o incerte
+  restano.
+
+**Come decide** `outsideLecture`: conta le parole funzionali tipiche di ogni
+lingua (articoli, preposizioni, pronomi, ausiliari: «the», «and», «you»,
+«il», «che», «sono», «que», «não»…), le lettere che l'italiano e
+l'inglese non usano («ñ», «ã», «í»…) e le finali che l'italiano non ha
+(«-ção», «-dade», «-ción», «-ung»…). Le parole uguali in italiano e in
+inglese («a», «in», «so», «me», «all'») non contano. La frase è fuori
+lingua se l'altra lingua ha almeno due indizi e più di 1,5 volte (+1)
+quelli della lingua della lezione. Si guarda la frase intera e non la
+singola parola apposta: i termini tecnici inglesi sono parole piene
+(«dataset», «training set», «gradient descent», «customer journey»),
+quasi mai parole funzionali, e restano; i nomi italiani in una lezione in
+inglese («Leonardo da Vinci», «University of Bologna») anche.
+
+**Misure** (24/10/2026, Parakeet vero int8 di sherpa-onnx 1.13.8 su questo
+PC, a frasi come il testo definitivo; script in `bench/bin/lang.dart`,
+`whisper_lang.dart` e `detect_eval.dart` nella cartella di lavoro
+dell'agente, non nel repository). Audio: 17 frasi vere in italiano di
+FLEURS (230 s, voci diverse), 16 frasi di lezione in italiano con termini
+tecnici inglesi (voce Elsa di Windows) e 16 frasi di lezione in inglese con
+nomi italiani (voci Zira e Hazel), ognuna pulita e con un «microfono
+lontano» simulato (riverbero, guadagno basso e rumore di fondo):
+«lontano» = riverbero 0,5 s e 10 dB di rapporto segnale/rumore, «molto
+lontano» = 0,7 s e 6 dB, «in fondo all'aula» = 0,9 s e 3 dB.
+
+| Audio | WER di Parakeet (FLEURS · Elsa · Zira · Hazel) | Frasi tolte da `outsideLecture` |
+|---|---|---|
+| pulito | 4,7% · 5,8% · 2,7% · 2,7% | 0 su 74 |
+| lontano | 13,4% · 18,8% · 3,8% · 5,4% | 0 su 77 |
+| molto lontano | 42,4% · 35,1% · 5,9% · 17,3% | 2 su 80 (tutte e due davvero in inglese) |
+| in fondo all'aula | 80,4% · 59,6% · 20,0% · 42,7% | 10 su 82 (9 frasi inglesi e 1 portoghese uscite da audio italiano) |
+
+- Parakeet sbaglia lingua **solo quando l'audio è cattivo**: con l'audio
+  pulito o lontano nessuna frase in un'altra lingua (le frasi inglesi
+  restano inglesi, quelle italiane con i termini tecnici restano
+  italiane: nessuna frase giusta tolta); in fondo all'aula interi tratti
+  di audio italiano diventano frasi inglesi inventate («And I'll show you
+  that for any day, but I'm not.», «So I didn't get something about
+  it.») o portoghesi. L'audio inglese non è mai uscito in italiano.
+- Le frasi miste (qualche parola straniera in una frase italiana,
+  «Il m'entend finale ha deviato la victoria di un punto») restano: a quel
+  livello di rumore le parole sono sbagliate comunque e una parola
+  straniera non si distingue da un termine tecnico. Un controllo parola
+  per parola con i dizionari toglierebbe anche i termini tecnici.
+- **Whisper fissato sulla lingua** (medium q5_0 scaricato dall'utente,
+  `-l it`, 4 thread, con altri test in corso sul PC) sulle stesse frasi di
+  FLEURS: 11,8% lontano (Parakeet 13,4%), **31,7%** molto lontano
+  (Parakeet 42,4%) e **38,0%** in fondo all'aula (Parakeet 80,4%), sempre
+  in italiano; ma lavora 1,9–2,6 s per
+  secondo di audio, contro 0,09 di Parakeet: **come motore principale non
+  sta al passo** su un PC normale (con large-v3-turbo è peggio ancora). Per
+  questo resta il ripiego delle sole frasi fuori lingua.
+- **«Ancora»** (metà frase precedente nella lingua giusta messa davanti a
+  ogni frase, perché il decodificatore di Parakeet tende a continuare nella
+  lingua in cui sta scrivendo): provata e **scartata**: non toglie le frasi
+  in un'altra lingua (con l'audio cattivo anche l'ancora è cattiva), il WER
+  cambia di poco in meglio o in peggio (es. FLEURS lontano 13,4% → 11,0%,
+  Zira pulito 2,7% → 10,3%, parole tagliate al confine) e il calcolo
+  cresce del 20–65%.
+
+Fatto il 24/10/2026, su decisione dell'utente: le build desktop includono
+**Whisper small q5_1** (181 MiB; il base q5_1, 57 MiB, incluso fino al
+21/10, è molto meno preciso), così le frasi fuori lingua si ritrascrivono
+sempre, anche senza un modello scaricato (vedi «Whisper small incluso su
+PC e Mac»). Resta solo da valutare, con l'approvazione dell'utente, NVIDIA
+Canary-1B v2 (stessa famiglia di Parakeet, 25 lingue, la lingua si indica;
+circa 1 miliardo di parametri, più lento), se ne esiste una versione per
+sherpa-onnx, che per i modelli Canary permette di fissare la lingua.
 
 ### Perché sul telefono era peggiorata (21/10/2026)
 
@@ -334,8 +450,9 @@ lì), con lo stesso codice nativo di allora (`LiveSpeech.kt`, `LiveSpeech.swift`
 riavvio del riconoscitore dopo le pause, Android 13+ con l'audio da una
 pipe, `it-IT`, riconoscimento sul dispositivo dove c'è, permessi invariati);
 la card torna a spiegare perché il riconoscitore non trascrive (lingua,
-permesso) mentre lavora Whisper. Su PC e Mac il riconoscitore del sistema
-resta spento.
+permesso) mentre lavora Whisper. Su PC il riconoscitore del sistema resta
+spento; sul Mac si usa da macOS 26, solo quello nuovo (vedi «Mac con
+macOS 26»).
 
 ### Che cosa succede con ogni combinazione
 
@@ -343,16 +460,56 @@ resta spento.
 |---|---|---|
 | PC/Mac (Parakeet incluso nell'app) | Parakeet, subito | niente da proporre, salvo un modello Whisper scaricato più accurato (large): riquadro «Trascrivere di nuovo con …?» |
 | PC/Mac, build senza il modello incluso (fatta a mano): prima registrazione | barra «Scarico Parakeet…» con «Annulla»; la registrazione va, l'audio si tiene | «Completo la trascrizione» aspetta la fine del download e trascrive tutto con Parakeet |
-| PC/Mac senza modello incluso, download annullato o non riuscito | il modello Whisper scaricato a pezzi, altrimenti nessun testo (la card spiega come averlo) | «Trascrivi con…» Parakeet (riprende il download dalla card) o Whisper |
-| PC/Mac con meno di 4 GB di RAM | il modello Whisper scaricato a pezzi, altrimenti nessun testo; la card dice perché | «Trascrivi con Whisper» o Gemini |
-| PC/Mac, Parakeet si ferma a metà (errore) | si continua con il modello Whisper scaricato dal punto in cui il testo era definitivo, altrimenti «Trascrizione dal vivo interrotta» | i tratti mancanti si recuperano |
-| Telefono con il riconoscitore del sistema | riconoscitore del sistema (+ small in seconda passata dove regge) | riquadro se c'è un modello scaricato più accurato |
-| Telefono senza riconoscitore (Android < 13, lingua mancante) o che si ferma | Whisper integrato (+ small dove regge) | come sopra |
+| PC/Mac senza modello incluso, download annullato o non riuscito | Whisper small incluso (o il modello scaricato) a pezzi, altrimenti nessun testo (la card spiega come averlo) | «Trascrivi con…» Parakeet (riprende il download dalla card) o Whisper |
+| PC/Mac con meno di 4 GB di RAM | Whisper small incluso (o il modello scaricato) a pezzi, altrimenti nessun testo; la card dice perché | «Trascrivi con…» Whisper small incluso, un modello scaricato o Gemini |
+| PC/Mac, Parakeet si ferma a metà (errore) | si continua con Whisper (small incluso o scaricato) dal punto in cui il testo era definitivo, altrimenti «Trascrizione dal vivo interrotta» | i tratti mancanti si recuperano |
+| PC/Mac, frase di Parakeet in un'altra lingua | il tratto si ritrascrive con Whisper small incluso (o un modello scaricato più adatto) nella lingua della lezione | lo stesso in «Trascrivi con Parakeet» |
+| Mac con macOS 26 e il modello della lingua di Apple | riconoscitore di Apple, sul Mac; se si ferma, Parakeet da lì | riquadro se c'è un modello scaricato più accurato di small |
+| Mac con macOS 26, modello della lingua non ancora scaricato | Parakeet (la card lo dice; il modello di Apple si scarica in background per la volta dopo) | come PC/Mac |
+| Telefono con il riconoscitore del sistema | riconoscitore del sistema (niente seconda passata) | riquadro se c'è un modello scaricato più accurato di small |
+| Telefono senza riconoscitore (Android < 13, lingua mancante) o che si ferma | Whisper integrato (+ small dove regge) | riquadro se c'è un modello scaricato più accurato |
 | Nessun motore | nessun testo, la registrazione va avanti | «Trascrivi con…» o Gemini dalla pagina del corso |
 
 I tempi dei segmenti sono quelli della registrazione. Alla fine («Salva») il
 tratto ancora provvisorio e quelli saltati si completano in background
 («Completo la trascrizione», visibile nella card della registrazione).
+
+### Mac con macOS 26: il riconoscitore di Apple (24/10/2026)
+
+Da macOS 26 il testo dal vivo sul Mac lo fa il **riconoscitore nuovo di
+Apple** (SpeechAnalyzer con SpeechTranscriber, lo stesso di Note e Memo
+Vocali), sul Mac e nella lingua della lezione: un modello per una sola
+lingua, quindi niente parole di altre lingue (il problema di Parakeet,
+vedi sotto). Parakeet resta il ripiego. Codice: `liveEngineOrder(appleSpeech:)`
+e `LiveTranscriber._beginSystem` (`live_transcriber.dart`),
+`macAppleSpeech`/`macOSMajor` (`system_speech.dart`, dalla versione di
+`Platform.operatingSystemVersion`), `AnalyzerSpeechEngine` in
+`macos/Runner/LiveSpeech.swift` (lo stesso file di iOS).
+
+1. `support` con `prepare: true`: il Mac risponde anche lo stato del
+   modello della lingua (`analyzer`: `installed`, `downloading`,
+   `unsupported`). Se non è ancora sul Mac parte il download in background
+   (`AssetInventory`, una volta sola) e **questa** registrazione la fa
+   Parakeet, subito: la card lo dice («Il riconoscitore di Apple sta
+   scaricando la lingua della lezione…»). Dalla registrazione dopo
+   trascrive Apple.
+2. `start` con `analyzerOnly: true`: solo SpeechAnalyzer, mai
+   SFSpeechRecognizer (che sul Mac vuole la Dettatura attiva e può usare la
+   rete) e nessun download durante l'avvio. Se non parte risponde
+   `analyzer` e si passa a Parakeet; se non risponde entro 45 s
+   (`SystemSpeech.kStartTimeout`) anche, e il tratto iniziale si trascrive
+   con Parakeet dopo il salvataggio.
+3. Se Apple si ferma a metà lezione (errore definitivo) il testo fin lì
+   resta e **Parakeet continua da quel punto** (`_beginParakeet(fromNow:
+   true)`: niente ritrascrizione dell'inizio); se Parakeet non può girare,
+   il modello Whisper scaricato.
+4. Permesso: la prima volta macOS chiede quello del riconoscimento vocale
+   (`NSSpeechRecognitionUsageDescription`, già nell'Info.plist); negato =
+   Parakeet, e la card dice dove riabilitarlo.
+
+Etichetta della card: «dal vivo · Apple, sul Mac». macOS fino al 15 e
+Windows: come prima (Parakeet, poi Whisper). Test:
+`test/recorder_language_test.dart` («Mac con macOS 26»).
 
 ### Parakeet su PC e Mac
 
@@ -405,16 +562,18 @@ l'app. Il VAD di sherpa-onnx riceve l'audio a pezzi di 0,1 s: con blocchi
 da 30 s (trascrizione di un file) non chiudeva le frasi alle pause e perdeva
 l'inizio.
 
-**Pesi** (21/10/2026; il modello int8 si comprime poco):
+**Pesi** (21/10/2026, colonna con Whisper small aggiornata il 24/10; i
+modelli quantizzati si comprimono poco: small q5_1, 190 MB, diventa 184 MB
+con Deflate e 180 MB con LZMA al massimo, misurato):
 
-| Pacchetto | Senza Parakeet | Con Parakeet |
-|---|---|---|
-| cartella Release di Windows | ~153 MB | 825 MB (misurato) |
-| UniNotes-windows.zip (Deflate) | ~90 MB | **564 MB** (misurato) |
-| UniNotes_setup.exe (LZMA2 max, solido) | ~60 MB | **~500 MB** (stima: l'encoder con LZMA2 al massimo passa da 652 a 428 MB) |
-| UniNotes.msix (Deflate) | ~90 MB | **~570 MB** (stima) |
-| UniNotes.dmg / UniNotes-macos.zip | ~100 MB | **~580 MB** (stima: l'encoder con Deflate 465 MB) |
-| spazio occupato dopo l'installazione | | ~0,85 GB (Windows), ~0,8 GB (Mac) |
+| Pacchetto | Senza Parakeet | Con Parakeet | Con Parakeet e Whisper small q5_1 (dal 24/10) |
+|---|---|---|---|
+| cartella Release di Windows | ~153 MB | 825 MB (misurato) | 996 MB (misurato il 24/10) |
+| UniNotes-windows.zip (Deflate) | ~90 MB | **564 MB** (misurato) | **~750 MB** |
+| UniNotes_setup.exe (LZMA2 max, solido) | ~60 MB | **~500 MB** (stima: l'encoder con LZMA2 al massimo passa da 652 a 428 MB) | **~680 MB** |
+| UniNotes.msix (Deflate) | ~90 MB | **~570 MB** (stima) | **~755 MB** |
+| UniNotes.dmg / UniNotes-macos.zip | ~100 MB | **~580 MB** (stima: l'encoder con Deflate 465 MB) | **~765 MB** |
+| spazio occupato dopo l'installazione | | ~0,85 GB (Windows), ~0,8 GB (Mac) | ~1,05 GB (Windows), ~1 GB (Mac) |
 
 Tutti sotto il limite di 2 GB per file delle release di GitHub (e degli
 artefatti); Microsoft Store e notarizzazione Apple accettano queste
@@ -491,6 +650,77 @@ dell'app):
   storpiate, a tratti in spagnolo), al contrario delle voci vere: per le
   prove servono registrazioni vere, non la sintesi vocale.
 
+### Whisper small incluso su PC e Mac (24/10/2026)
+
+Decisione dell'utente del 24/10/2026: le app desktop includono il modello
+Whisper **small multilingue q5_1** (`ggml-small-q5_1.bin`, 190 085 487 byte,
+181 MiB; `kDesktopWhisperModel` in `features/links/whisper_models.dart`),
+così le frasi che Parakeet scrive in un'altra lingua si ritrascrivono
+**sempre** con Whisper fissato sulla lingua della lezione, senza scaricare
+niente (prima, senza un modello Whisper scaricato, si toglievano).
+
+| Build | Dove sta | Come ci arriva |
+|---|---|---|
+| Windows (UniNotes_setup.exe, zip, MSIX) | `data\whisper\` accanto a `uninotes.exe`, con `LICENSE.txt` | `app/windows/CMakeLists.txt` lo scarica durante `flutter build windows` nella cache `app/build/whisper/` (SHA-256 controllato, `<file>.sha256` accanto) e lo installa; `-DUNINOTES_WHISPER=OFF` per una build senza; `crea_msix.ps1` controlla che ci sia |
+| macOS (UniNotes.app, .dmg, .zip) | `UniNotes.app/Contents/Resources/whisper/` | il workflow, dopo `flutter build macos` e prima della firma: `python3 tool/prepara_modello_whisper_desktop.py --installa …/Contents/Resources/whisper` |
+| Linux | `data/whisper/` accanto all'eseguibile | nessuna build Linux nel repository: l'app lo cerca lì |
+| Android, iOS | — | nessun cambiamento (lì c'è base q5_1 integrato e, dove il telefono regge, small q5_1 scaricato per la seconda passata) |
+
+**File e impronte**: il file ufficiale del repository di whisper.cpp su
+Hugging Face (`ggerganov/whisper.cpp`, ramo main); SHA-256
+`ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb`
+(impronta LFS pubblicata da Hugging Face, `X-Linked-ETag` e API
+`paths-info`) e SHA-1 `6fe57ddcfdd1c6b07cdcc73aaf620810ce5fc771` (tabella del
+README del repository), tutte e due controllate sul file scaricato il
+24/10/2026 da `tool/prepara_modello_whisper_desktop.py`. Nella CI la cache
+`app/build/whisper` ha la chiave `whisper-small-q5_1-ae85e4a9` (Windows,
+Store e macOS); il file non è mai nel repository. Un `ggml-base-q5_1.bin`
+rimasto in `data\whisper\` da una build o un'installazione di prima del
+21/10 si toglie (CMake, `[InstallDelete]` dell'installatore e
+`crea_msix.ps1`): niente doppioni.
+
+**Nell'app** (`WhisperService.includedModelFile`): il file si legge da lì
+senza copiarlo, se ha la dimensione giusta (lo SHA-256 si controlla durante
+la build) e se si può usare (whisper.cpp dentro l'app, `whisper_ggml`, che
+su Windows vuole una CPU con AVX2, oppure `whisper-cli` se scaricato). Lo
+usano:
+
+- **testo dal vivo**: `liveEngine` lo sceglie fra i modelli per il vivo
+  (`_livePreference`: large-v3-turbo q5_0, small, **small q5_1**, medium
+  q5_0…, quindi un modello scaricato più adatto viene prima) per
+  ritrascrivere le frasi di Parakeet in un'altra lingua e come ripiego
+  quando Parakeet non può girare (meno di 4 GB di RAM, errore), a pezzi da
+  ~10 s;
+- **«Trascrivi con Parakeet»** dopo il salvataggio: i tratti fuori lingua
+  vanno a lui (`rescue`);
+- **«Trascrivi con…»**: compare fra i motori («small-q5_1») e si può scegliere
+  come modello predefinito. Con «Automatico» però resta **Parakeet**: in
+  `kWhisperAccuracy` small q5_1 viene dopo Parakeet, che sull'audio pulito
+  è più preciso (WER 4,7% misurato su FLEURS contro ~10–15% di small) e
+  circa tre volte più veloce (0,06 contro ~0,2 s per secondo di audio).
+  Whisper è meglio solo con l'audio cattivo (le misure con medium sopra),
+  e lì lavora già sulle frasi che Parakeet sbaglia di lingua. Small q5_1
+  diventa il motore di «Trascrivi con…» solo dove Parakeet non può girare.
+
+**Collegamenti → Whisper**: riga «Whisper small-q5_1 incluso nell'app
+(181 MiB): ritrascrive nella lingua della lezione le frasi che Parakeet
+scrive in un'altra lingua.»; nella tabella dei modelli small-q5_1 ha
+l'etichetta «incluso nell'app» e nessun «Scarica» né «Elimina» (come
+Parakeet incluso). Una copia scaricata prima si può ancora eliminare («resta
+quella inclusa nell'app»).
+
+**Licenza**: MIT per i pesi e il codice di Whisper (OpenAI) e per la
+conversione in ggml (whisper.cpp, autori di ggml). Testi in
+`app/assets/licenses/whisper_LICENSE.txt`, mostrati nella pagina Licenze
+dell'app (voce «Whisper small q5_1 (OpenAI, whisper.cpp)») e copiati come
+`LICENSE.txt` accanto al modello; introduzione della pagina Licenze,
+PRIVACY.md §6.2, TERMINI.md e README aggiornati.
+
+Test: `app/test/whisper_included_test.dart` (scelta del modello incluso,
+nessun doppione con una copia scaricata, Parakeet ancora predefinito,
+ripiego senza Parakeet, telefono invariato; frase fuori lingua
+ritrascritta dal vivo e in «Trascrivi con Parakeet» con motori finti).
+
 ### Dopo il salvataggio su PC e Mac
 
 Parakeet è fra i motori di «Trascrivi con…» / «Trascrivi di nuovo con…»
@@ -526,25 +756,58 @@ Le stesse opzioni valgono per «Trascrivi con Whisper» dopo il salvataggio
 `whisper-cli` (`--prompt`, `--suppress-nst`, `--vad --vad-model`).
 
 **Seconda passata con small** (`second_pass.dart`): con small q5_1
-(181 MiB, nella tabella dei modelli; si scarica da solo con il Wi‑Fi se la
-seconda passata è accesa e il telefono è adatto), mentre si registra i
-tratti già confermati del testo istantaneo (del riconoscitore del sistema o
-di Whisper) si ritrascrivono in blocchi da ~30 s, in background (2 thread,
-small non resta in memoria fra un blocco e l'altro perché whisper.cpp tiene
-un modello solo, quello del testo istantaneo) e sostituiscono il testo,
-salvo le frasi corrette a mano. Condizioni:
+(181 MiB, nella tabella dei modelli; si scarica da solo con il Wi‑Fi la
+prima volta che serve, se la seconda passata è accesa e il telefono è
+adatto), mentre si registra i tratti già confermati del testo istantaneo
+**di Whisper base** si ritrascrivono in blocchi da ~30 s, in background (2
+thread, small non resta in memoria fra un blocco e l'altro perché
+whisper.cpp tiene un modello solo, quello del testo istantaneo) e
+sostituiscono il testo, salvo le frasi corrette a mano. Condizioni:
 
+- solo quando il testo dal vivo è di **Whisper base** (riconoscitore del
+  sistema assente, senza la lingua o fermo): **mai sul testo del
+  riconoscitore del sistema** (dal 24/10/2026, vedi sotto);
 - telefono con almeno 6 GB di RAM e 6 core e almeno 700 MB liberi;
 - **prova al primo uso**: il primo blocco misura la velocità
   (impostazione `whisper_second_pass_rtf`); oltre 0,5 s di lavoro per
   secondo di audio la seconda passata resta spenta su quel telefono;
-- si **sospende** se resta indietro di oltre 90 s, se due blocchi di fila
-  sono molto più lenti della prova (il telefono si scalda e rallenta) o con
-  la batteria sotto il 20% senza caricabatterie (riprende con il
-  caricabatterie); la card «Trascrizione» dice perché;
+- si **ferma da sola** se resta indietro di oltre 90 s, se due blocchi di
+  fila sono molto più lenti della prova (il telefono si scalda e rallenta)
+  o con la batteria sotto il 20% senza caricabatterie (riprende con il
+  caricabatterie). La card «Trascrizione» **non lo scrive più** (prima:
+  «Seconda passata con small sospesa: …»): il testo istantaneo resta e
+  migliora dopo il salvataggio con «Trascrivi di nuovo con…»;
 - interruttore «Seconda passata con small mentre registri» in Collegamenti
   → Whisper (impostazione `whisper_second_pass`, accesa di predefinito dove
   il telefono regge).
+
+**Perché non sul testo del riconoscitore del sistema** (decisione del
+24/10/2026):
+
+- *precisione*: Whisper small multilingue sbaglia in italiano circa una
+  parola su dieci anche su audio pulito (WER ~10–15% su FLEURS secondo
+  l'articolo di Whisper, la stessa stima della tabella dei modelli in
+  `whisper_models.dart`; il q5_1 qualcosa in più); il riconoscitore di Google sul dispositivo (Android 13+) e quello
+  di Apple (SFSpeechRecognizer sul dispositivo, SpeechAnalyzer da iOS 26)
+  sono modelli fatti per la dettatura in una sola lingua, con
+  punteggiatura, e quando il 21/10 il testo dal vivo del telefono è
+  passato per errore a Whisper è peggiorato in modo evidente (vedi
+  «Perché sul telefono era peggiorata»). Small non è quindi un
+  miglioramento sicuro: può cambiare frasi giuste in sbagliate, e sul
+  rumore Whisper inventa frasi intere;
+- *batteria e calore*: small q5_1 sul telefono lavora 0,3–0,5 s per
+  secondo di audio su 2 core grandi, cioè 20–30 minuti di calcolo pieno
+  per ogni ora di lezione, sopra al riconoscitore che già gira; in due ore
+  di lezione è la voce di consumo più grande dell'app e fa scaldare il
+  telefono (che poi rallenta anche la registrazione);
+- *testo che cambia sotto gli occhi*: le frasi già lette (e a volte in
+  corso di correzione) venivano sostituite a blocchi da 30 s.
+
+Con Whisper base invece small è un miglioramento netto (base sbaglia in
+italiano circa il doppio: WER ~20–30% contro ~10–15%), quindi lì resta. Per un
+testo migliore di quello del riconoscitore, dopo il salvataggio si propone
+solo un modello **più accurato di small** (medium o large, se scaricato:
+`kSystemSpeechRank` in `better_transcription.dart`).
 
 ### Dopo il salvataggio: una trascrizione più accurata
 
@@ -742,7 +1005,9 @@ alla prima registrazione che ne ha bisogno.
 **Dal 21/10/2026 non c'è più su PC e Mac**: `app/windows/CMakeLists.txt` non
 lo scarica più durante la build e l'installatore non lo mette in
 `data/whisper/`; una copia rimasta nella cartella dei modelli di un Mac non
-si usa (`WhisperService.builtInSupported` è vero solo sul telefono).
+si usa (`WhisperService.builtInSupported` è vero solo sul telefono). Dal
+24/10/2026 in `data/whisper/` c'è invece **small q5_1** (vedi «Whisper
+small incluso su PC e Mac»); il vecchio base q5_1 si toglie.
 
 **Finestre corte** (`LiveWindowPlanner` in `recorder/live_transcript.dart`):
 ogni ~2 s di audio nuovo si ritrascrive dal WAV di lavoro il tratto non
@@ -879,9 +1144,10 @@ Con più modelli scaricati (Collegamenti → Whisper):
    PC/Mac o il 40% di quella del telefono (`deviceCanRun`); se nessuno
    regge, il più accurato comunque;
 4. senza modelli scaricati, o se il programma whisper.cpp manca (Windows
-   senza `whisper-cli`): su PC e Mac **Parakeet** (se scaricato), sul
-   telefono il **modello integrato**, che gira sempre con whisper.cpp
-   dentro l'app.
+   senza `whisper-cli`): su PC e Mac **Parakeet** (incluso o scaricato) e,
+   dove Parakeet non può girare, **Whisper small q5_1 incluso nell'app**
+   (con whisper.cpp dentro l'app); sul telefono il **modello integrato**,
+   che gira sempre con whisper.cpp dentro l'app.
 
 Perché così: il predefinito lascia allo studente il controllo; l'automatico
 evita che un modello scaricato per prova (o più vecchio) resti in uso
@@ -984,3 +1250,48 @@ Pulsanti grandi (64–96 px nel registratore, 48 px nel riquadro), etichette
 per i lettori di schermo su tutti i comandi (anche il riquadro, letto come
 «Registrazione in corso: corso, tempo»), pallino che non pulsa con
 «Riduci animazioni».
+
+## Nome predefinito delle registrazioni e orario con i due punti (24/10/2026)
+
+- **Nome predefinito**: «2026-10-05 14:04» (data e ora d'inizio), **senza la
+  parola «Lezione»** (prima «2026-10-05 14-04 Lezione»). Due registrazioni
+  nello stesso minuto: «… (2)».
+- **I due punti sul disco**: Windows (e OneDrive) non ammettono «:» nei nomi
+  dei file. Il nome del file ha al suo posto «꞉» (U+A789, «modifier letter
+  colon»), che sembra due punti ed è un carattere normale per Windows,
+  OneDrive, Android, macOS e Linux: `Registrazioni/2026-10-05 14꞉04.m4a`,
+  `Trascrizioni/2026-10-05 14꞉04.md`, `Riassunti/…`. Scelta fatta al posto di
+  un titolo nei metadati: registrazione, trascrizione, riassunto, PDF e
+  trascrizione di Gemini si ritrovano dal nome del file (non ci sono due
+  nomi da tenere allineati fra cartelle, sincronizzazione e backup), e il
+  nome resta leggibile anche fuori dall'app.
+- **Quello che vede l'utente** è sempre «14:04»: `NotesStore.displayName`
+  (e `NoteFile.title`) sostituisce «꞉» con «:». Vale per elenchi, titoli,
+  titolo della trascrizione, lavori in background, «Eliminati di recente»,
+  condivisione, allegati di Studio, ricerca (si trova scrivendo «14:04»),
+  campo «Rinomina» (parte da «14:04»). Scrivendo «:» nel campo, il nome del
+  file prende «꞉» (`NotesStore.fileStem`); le note personali ne guadagnano:
+  «Analisi: limiti» non diventa più «Analisi_ limiti».
+- **Registrazioni di prima** («2026-10-05 14-04 Lezione.m4a»): restano come
+  sono sul disco (nessun file rinominato, i collegamenti con trascrizioni,
+  riassunti e allegati non si toccano) e si **mostrano** anche loro con
+  «14:04» («2026-10-05 14:04 Lezione»); la parola «Lezione» dei nomi vecchi
+  si lascia. Aprendo «Rinomina» su una di queste senza cambiare niente, il
+  file non viene toccato.
+- Titoli degli allegati di Studio: i nuovi si salvano con «14:04»; quando si
+  rinomina la lezione si aggiornano sia quelli vecchi (che finiscono con il
+  nome del file) sia quelli nuovi.
+- Da provare su dispositivo vero: salvare una registrazione su Android e su
+  Windows e controllare che la cartella sincronizzata con OneDrive/Drive
+  mostri il file con «꞉» e che la condivisione verso altre app lo accetti.
+  Test: `notes_screens_test.dart` (gruppo «nome della lezione con l'orario»).
+
+## Registra: niente card «Blocchi appunti OneNote» (24/10/2026)
+
+La card in cima alla pagina Registra (visibile con l'account Microsoft
+collegato) è stata tolta. Gli appunti OneNote si allegano come qualunque file
+(sono accettati anche `.one` e `.onepkg`, il lettore interno li apre e da lì
+«OneNote nell'app» porta ai blocchi dell'account): dalla pagina di un corso in
+Registra → «Riassunti lezioni e Appunti» → **Allega** (e «Allega a
+modulo/argomento di Studio» sul file), oppure in Studio → **Aggiungi file**
+sul modulo o sull'argomento (dal dispositivo o dagli appunti del corso).

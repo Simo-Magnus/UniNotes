@@ -596,6 +596,15 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// così i due non lavorano insieme sugli stessi file. Null = nessuno.
   static Future<bool> Function()? busyElsewhere;
 
+  /// «Elimina tutti i dati» in corso: nessuna sincronizzazione parte
+  /// (timer, ritorno nell'app, lavoro periodico di Android che chiede
+  /// all'app di sincronizzare). Resta acceso dopo un'eliminazione riuscita:
+  /// il database è chiuso e l'app va riaperta.
+  static bool hold = false;
+
+  /// Una sincronizzazione gira fuori da questo motore ([busyElsewhere]).
+  static Future<bool> busyElsewhereNow() => _busyElsewhere();
+
   static Future<bool> _busyElsewhere() async {
     final f = busyElsewhere;
     if (f == null) return false;
@@ -826,7 +835,7 @@ abstract class CloudDriveService extends ChangeNotifier {
     // (avvio, timer, «Sincronizza ora», ritorno nell'app, lavoro in
     // background) altrimenti passano entrambe e lavorano sugli stessi file
     // di stato
-    if (_syncing) return null;
+    if (_syncing || hold) return null;
     _syncing = true;
     var ready = false;
     try {

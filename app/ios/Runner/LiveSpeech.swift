@@ -54,12 +54,16 @@ final class LiveSpeech: NSObject {
     let args = call.arguments as? [String: Any] ?? [:]
     switch call.method {
     case "support":
-      support(locale: args["locale"] as? String ?? "it-IT", result: result)
+      support(
+        locale: args["locale"] as? String ?? "it-IT",
+        prepare: (args["prepare"] as? Bool) ?? false,
+        result: result)
     case "start":
       let ses = (args["session"] as? NSNumber)?.intValue ?? session + 1
       start(
         locale: args["locale"] as? String ?? "it-IT",
         session: ses,
+        analyzerOnly: (args["analyzerOnly"] as? Bool) ?? false,
         result: result)
     case "feed":
       if let data = call.arguments as? FlutterStandardTypedData {
@@ -81,7 +85,11 @@ final class LiveSpeech: NSObject {
     }
   }
 
-  private func support(locale: String, result: @escaping FlutterResult) {
+  /// Cosa c'è per [locale]. Da iOS/macOS 26 anche "analyzer": stato del
+  /// modello di SpeechAnalyzer per la lingua ("installed", "downloading",
+  /// "unsupported"); con [prepare] un modello mancante si scarica in
+  /// background (pronto dalla registrazione dopo).
+  private func support(locale: String, prepare: Bool, result: @escaping FlutterResult) {
     let status = SFSpeechRecognizer.authorizationStatus()
     if status == .denied || status == .restricted {
       result(["available": false, "reason": "denied"])
@@ -100,15 +108,29 @@ final class LiveSpeech: NSObject {
       result(["available": false, "reason": "offline"])
       return
     }
-    result([
+    let info: [String: Any] = [
       "available": true,
       "onDevice": onDevice || engine == "speechanalyzer",
       "feedsAudio": true,
       "engine": engine,
-    ])
+    ]
+    #if compiler(>=6.2)
+      if #available(iOS 26.0, macOS 26.0, *) {
+        let loc = Locale(identifier: locale)
+        Task { @MainActor in
+          var r = info
+          r["analyzer"] = await AnalyzerSpeechEngine.state(for: loc, prepare: prepare)
+          result(r)
+        }
+        return
+      }
+    #endif
+    result(info)
   }
 
-  private func start(locale: String, session ses: Int, result: @escaping FlutterResult) {
+  private func start(
+    locale: String, session ses: Int, analyzerOnly: Bool, result: @escaping FlutterResult
+  ) {
     engine?.cancel()
     engine = nil
     session = ses
@@ -130,18 +152,25 @@ final class LiveSpeech: NSObject {
       }
       #if compiler(>=6.2)
         if #available(iOS 26.0, macOS 26.0, *) {
-          let e = AnalyzerSpeechEngine(locale: loc, emit: emit)
+          // solo SpeechAnalyzer (Mac): il modello della lingua deve essere
+          // già sul Mac, niente download qui (l'app intanto usa Parakeet)
+          let e = AnalyzerSpeechEngine(locale: loc, emit: emit, download: !analyzerOnly)
           self.engine = e
           e.begin { started in
             if started {
               result(true)
               return
             }
-            // SpeechAnalyzer non disponibile per la lingua: SFSpeechRecognizer
             guard ses == self.session else {
               result(false)
               return
             }
+            if analyzerOnly {
+              self.engine = nil
+              result("analyzer")
+              return
+            }
+            // SpeechAnalyzer non disponibile per la lingua: SFSpeechRecognizer
             let fallback = SFSpeechEngine(locale: loc, emit: emit)
             self.engine = fallback
             result(fallback?.begin() ?? false)
@@ -149,6 +178,11 @@ final class LiveSpeech: NSObject {
           return
         }
       #endif
+      if analyzerOnly {
+        // prima di iOS/macOS 26 (o compilato con un Xcode più vecchio)
+        result("analyzer")
+        return
+      }
       let e = SFSpeechEngine(locale: loc, emit: emit)
       self.engine = e
       result(e?.begin() ?? false)
@@ -354,6 +388,10 @@ final class SFSpeechEngine: LiveSpeechEngine {
   }
 }
 
+/// Lingue il cui modello di SpeechAnalyzer si sta scaricando (una volta
+/// sola; solo dal filo principale).
+private var analyzerPreparing = Set<String>()
+
 #if compiler(>=6.2)
   /// SpeechAnalyzer (iOS/macOS 26): trascrizione sul dispositivo con
   /// risultati provvisori e definitivi.
@@ -369,25 +407,58 @@ final class SFSpeechEngine: LiveSpeechEngine {
     private var results: Task<Void, Never>?
     private var ready = false
     private var finishing = false
+    private let download: Bool
 
-    init(locale: Locale, emit: @escaping (String, [String: Any]) -> Void) {
+    init(locale: Locale, emit: @escaping (String, [String: Any]) -> Void, download: Bool = true) {
       self.locale = locale
       self.emit = emit
+      self.download = download
     }
 
-    /// Prepara il modello della lingua (scaricandolo se serve) e avvia
-    /// l'analisi; [done] false se la lingua non è supportata.
+    /// La lingua di SpeechTranscriber per [locale]: la stessa variante,
+    /// altrimenti la stessa lingua (es. en-GB per en-US).
+    static func match(_ locale: Locale, in supported: [Locale]) -> Locale? {
+      let wanted = locale.identifier(.bcp47)
+      return supported.first(where: { $0.identifier(.bcp47) == wanted })
+        ?? supported.first(where: { $0.language.languageCode == locale.language.languageCode })
+    }
+
+    /// Stato del modello per [locale]: "installed" (si parte subito),
+    /// "downloading" (con [prepare] il download parte adesso, in
+    /// background) o "unsupported".
+    @MainActor
+    static func state(for locale: Locale, prepare: Bool) async -> String {
+      let supported = await SpeechTranscriber.supportedLocales
+      guard let loc = match(locale, in: supported) else { return "unsupported" }
+      let id = loc.identifier(.bcp47)
+      let installed = await SpeechTranscriber.installedLocales
+      if installed.contains(where: { $0.identifier(.bcp47) == id }) { return "installed" }
+      if prepare && !analyzerPreparing.contains(id) {
+        analyzerPreparing.insert(id)
+        Task { @MainActor in
+          let t = SpeechTranscriber(
+            locale: loc, transcriptionOptions: [], reportingOptions: [], attributeOptions: [])
+          do {
+            if let request = try await AssetInventory.assetInstallationRequest(supporting: [t]) {
+              try await request.downloadAndInstall()
+            }
+          } catch {
+            // senza rete: si riprova alla prossima registrazione
+          }
+          analyzerPreparing.remove(id)
+        }
+      }
+      return "downloading"
+    }
+
+    /// Prepara il modello della lingua (scaricandolo se serve e se
+    /// [download]) e avvia l'analisi; [done] false se la lingua non è
+    /// supportata o il modello non c'è.
     func begin(_ done: @escaping (Bool) -> Void) {
       Task { @MainActor in
         do {
           let supported = await SpeechTranscriber.supportedLocales
-          let wanted = self.locale.identifier(.bcp47)
-          guard
-            let loc = supported.first(where: { $0.identifier(.bcp47) == wanted })
-              ?? supported.first(where: {
-                $0.language.languageCode == self.locale.language.languageCode
-              })
-          else {
+          guard let loc = AnalyzerSpeechEngine.match(self.locale, in: supported) else {
             done(false)
             return
           }
@@ -399,6 +470,11 @@ final class SFSpeechEngine: LiveSpeechEngine {
           if let request = try await AssetInventory.assetInstallationRequest(
             supporting: [transcriber])
           {
+            // modello mancante: sul Mac non si aspetta il download
+            guard self.download else {
+              done(false)
+              return
+            }
             try await request.downloadAndInstall()
           }
           let analyzer = SpeechAnalyzer(modules: [transcriber])

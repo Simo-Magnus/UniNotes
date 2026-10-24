@@ -200,7 +200,9 @@ const List<WhisperModelInfo> kWhisperModels = [
     sha1: '55356645c2b361a969dfd0ef2c5a50d530afd8d5',
   ),
   // small quantizzato: la seconda passata del registratore sul telefono
-  // (kSecondPassModel). Peso e SHA-256 dalla API di Hugging Face.
+  // (kSecondPassModel) e il modello incluso nelle app per PC e Mac
+  // (kDesktopWhisperModel). Peso e SHA-256 dalla API di Hugging Face (oid
+  // LFS); SHA-1 6fe57ddc… nella tabella del README di whisper.cpp.
   WhisperModelInfo(
     id: 'small-q5_1',
     params: '244 M',
@@ -217,8 +219,10 @@ const List<WhisperModelInfo> kWhisperModels = [
     sha256: 'ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb',
     quantized: true,
     note:
-        'Sul telefono ritrascrive in background, mentre registri, il testo '
-        'del modello integrato (seconda passata).',
+        'Su PC e Mac è incluso nell\'app: ritrascrive nella lingua della '
+        'lezione le frasi che Parakeet scrive in un\'altra lingua. Sul '
+        'telefono ritrascrive in background, mentre registri, il testo del '
+        'modello integrato (seconda passata).',
   ),
   WhisperModelInfo(
     id: 'medium',
@@ -462,6 +466,17 @@ String transcriptionEngineLabel(String id) =>
 
 /// Modello Whisper della seconda passata sul telefono.
 const kSecondPassModel = 'small-q5_1';
+
+/// Modello Whisper **incluso nelle app per PC e Mac** (dal 24/10/2026):
+/// small multilingue q5_1 (`ggml-small-q5_1.bin`, 181 MiB, MIT), in
+/// `data/whisper/` accanto all'eseguibile (Windows, Linux) o in
+/// `UniNotes.app/Contents/Resources/whisper/` (macOS). Ritrascrive, con la
+/// lingua fissata, le frasi che Parakeet scrive in un'altra lingua, ed è il
+/// ripiego del testo dal vivo e di «Trascrivi con…» quando Parakeet non può
+/// girare. Non sostituisce Parakeet come predefinito dopo il salvataggio:
+/// sull'audio pulito Parakeet è più preciso (WER ~5% contro ~10–15%) e circa
+/// tre volte più veloce (docs/registratore.md).
+const kDesktopWhisperModel = 'small-q5_1';
 
 /// Seconda passata: al massimo 0,5 s di lavoro per secondo di audio (un
 /// blocco da 30 s in 15 s), così il telefono resta avanti anche con il

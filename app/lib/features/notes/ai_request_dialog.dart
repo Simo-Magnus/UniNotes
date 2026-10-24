@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/services/msix_paths.dart';
 import '../../widgets/common.dart';
@@ -138,7 +139,7 @@ Future<void> showAiRequestDialog(
   List<String> steps = const [],
   Future<void> Function(String text)? onCapture,
 }) {
-  return showDialog<void>(
+  return showAppDialog<void>(
     context: context,
     builder: (c) => _AiRequestDialog(
       title: title,

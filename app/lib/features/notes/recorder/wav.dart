@@ -217,13 +217,17 @@ class WavWriter {
   /// Primo errore di scrittura (es. spazio esaurito).
   Object? error;
 
-  int get dataBytes => _bytes;
+  /// Byte arrivati senza errori (in coda o già scritti). Dopo un errore di
+  /// scrittura solo quelli davvero scritti: i pezzi successivi non vanno
+  /// più nel file, e la durata mostrata e salvata non deve contarli.
+  int get dataBytes => error == null ? _bytes : _written;
+  int _written = 0;
   int get _blockAlign => channels * 2;
   Duration get duration {
     final rate = sampleRate * _blockAlign;
     return rate <= 0
         ? Duration.zero
-        : Duration(microseconds: _bytes * 1000000 ~/ rate);
+        : Duration(microseconds: dataBytes * 1000000 ~/ rate);
   }
 
   /// Formato effettivo scelto dal sistema (prima dei dati). Valori non
@@ -235,7 +239,9 @@ class WavWriter {
   }
 
   void add(Uint8List pcm) {
-    if (_closed || pcm.isEmpty) return;
+    // dopo un errore (disco pieno, limite dei 4 GB) i pezzi non si scrivono
+    // più: non si contano
+    if (_closed || pcm.isEmpty || error != null) return;
     var data = pcm;
     if (_carry != null) {
       data = Uint8List(pcm.length + 1)
@@ -264,6 +270,7 @@ class WavWriter {
       if (error != null) return;
       try {
         await _raf.writeFrom(copy);
+        _written += copy.length;
         if (header) await _writeSizes();
       } catch (e) {
         error = e;

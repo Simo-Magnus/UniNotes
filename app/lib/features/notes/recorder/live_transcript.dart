@@ -391,6 +391,30 @@ class TranscriptMerger {
     return '${m[1]}${m[2]!.toLowerCase()}${m[3]}${text.substring(m.end)}';
   }
 
+  /// Rifà le iniziali (vedi [continueSentence]) dei segmenti da [from] in
+  /// poi, per le modifiche che non passano da [add]: parole confermate per
+  /// accordo, testo definitivo di fine frase, seconda passata. I segmenti
+  /// per cui [skip] è vero (corretti a mano) non si toccano. Solo
+  /// maiuscole che diventano minuscole: rifarlo non cambia niente. true se
+  /// qualcosa è cambiato.
+  bool recase({int from = 1, bool Function(TranscriptSegment s)? skip}) {
+    final start = math.max(1, from);
+    for (var i = math.max(0, start - 1); i < segments.length; i++) {
+      properNames.addAll(midSentenceNames(segments[i].text));
+    }
+    var changed = false;
+    for (var i = start; i < segments.length; i++) {
+      final s = segments[i];
+      if (skip != null && skip(s)) continue;
+      final t = continueSentence(s.text, segments[i - 1].text);
+      if (t != s.text) {
+        segments[i] = s.copyWith(text: t);
+        changed = true;
+      }
+    }
+    return changed;
+  }
+
   /// Aggiunge i segmenti di un pezzo (tempi già riferiti alla
   /// registrazione intera).
   void add(List<TranscriptSegment> chunk) {
@@ -436,6 +460,32 @@ class TranscriptMerger {
 
   static String _joined(List<TranscriptSegment> s) =>
       s.map((x) => x.text).join(' ');
+
+  /// [texts] (pezzi in ordine, es. i segmenti di una trascrizione fatta dopo
+  /// il salvataggio con Whisper o Parakeet) con l'iniziale minuscola dove il
+  /// pezzo continua la frase del precedente, come in [add]; [names]: nomi
+  /// propri noti (vocabolario dell'insegnamento).
+  static List<String> recaseTexts(
+    List<String> texts, {
+    bool english = false,
+    Iterable<String> names = const [],
+  }) {
+    final m = TranscriptMerger()..english = english;
+    for (final n in names) {
+      m.properNames.addAll(midSentenceNames(n));
+    }
+    for (final t in texts) {
+      m.properNames.addAll(midSentenceNames(t));
+    }
+    final out = <String>[];
+    String? before;
+    for (final t in texts) {
+      final r = m.continueSentence(t, before);
+      out.add(r);
+      before = r;
+    }
+    return out;
+  }
 
   static List<TranscriptSegment> _trimHead(
     List<TranscriptSegment> segs,

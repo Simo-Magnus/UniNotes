@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
 import '../../models/study.dart';
@@ -31,7 +32,7 @@ Future<void> askAiStudy(
       ? const <Topic>[]
       : await s.study.topicsOfCourse(course.id!);
   if (!context.mounted) return;
-  final choice = await showDialog<_AiChoice>(
+  final choice = await showAppDialog<_AiChoice>(
     context: context,
     builder: (_) => _AiScopeDialog(
       modules: modules,
@@ -208,7 +209,8 @@ Future<DateTime?> _nextExamDate(AppServices s, Course course) async {
   final today = DateTime.now();
   final dates = [
     for (final e in await s.exams.byCourse(course.id!))
-      if (e.date != null && !e.date!.isBefore(DateTime(today.year, today.month, today.day)))
+      if (e.date != null &&
+          !e.date!.isBefore(DateTime(today.year, today.month, today.day)))
         e.date!,
   ]..sort();
   return dates.isEmpty ? null : dates.first;

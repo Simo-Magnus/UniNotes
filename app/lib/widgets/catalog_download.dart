@@ -5,6 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'app_snack_action.dart';
 import '../core/catalog/catalog_service.dart';
 import '../core/catalog/path_setup.dart';
 import '../core/services/app_services.dart';
@@ -232,7 +233,7 @@ void mostraServeConnessione(
         ),
         action: onRetry == null
             ? null
-            : SnackBarAction(
+            : AppSnackBarAction(
                 label: 'Riprova',
                 // la barra resta anche cambiando pagina: «Riprova» non deve
                 // usare il contesto di una pagina già chiusa

@@ -5,6 +5,7 @@ import '../../core/catalog/path_setup.dart';
 import '../../core/catalog/teaching_language.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
@@ -12,6 +13,7 @@ import '../../models/university.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../../widgets/undo_snack_bar.dart';
+import '../notes/notes_store.dart';
 import 'course_rename.dart';
 import 'course_ui.dart';
 import '../../core/constants/text_limits.dart';
@@ -32,10 +34,11 @@ Future<bool> deleteCourseWithConfirm(
   Course course,
 ) async {
   var withData = true;
-  final ok = await showDialog<bool>(
+  final ok = await showAppDialog<bool>(
     context: context,
     builder: (c) => StatefulBuilder(
       builder: (c, setState) => AlertDialog(
+        scrollable: true,
         title: const Text('Elimina corso'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -331,8 +334,13 @@ class _CourseFormPageState extends State<CourseFormPage> {
           ? course.withUserEdited()
           : course;
       final id = await services.courses.save(toSave);
-      if (old != null && old.name != toSave.name) {
-        await services.notes.renameCourse(old, toSave);
+      if (old != null &&
+          old.name != toSave.name &&
+          !await services.notes.renameCourse(old, toSave) &&
+          mounted) {
+        // cartella degli appunti in uso: resta col nome di prima (l'app la
+        // usa ancora) e si rinomina appena si libera
+        showSnack(context, NotesStore.renamePendingNote);
       }
       if (lang != null && _english != _initialEnglish) {
         await lang.replaceBooks(services, course, english: _english);

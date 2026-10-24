@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import 'logic/data_eraser.dart';
@@ -51,12 +52,7 @@ Future<void> runEraseFlow(
   if (_eraseRunning[owner] == true) return;
   _eraseRunning[owner] = true;
   try {
-    await _runEraseFlow(
-      context,
-      mode: mode,
-      eraser: eraser,
-      quit: quit,
-    );
+    await _runEraseFlow(context, mode: mode, eraser: eraser, quit: quit);
   } finally {
     _eraseRunning[owner] = null;
   }
@@ -101,7 +97,7 @@ Future<void> _runEraseFlow(
   }
   final items = all
       ? available
-      : await showDialog<Set<EraseItem>>(
+      : await showAppDialog<Set<EraseItem>>(
           context: context,
           builder: (_) => EraseChecklist(options: options, action: action),
         );
@@ -171,7 +167,7 @@ Future<void> _finalDialog(
   String title,
   List<String> lines,
   VoidCallback quit,
-) => showDialog<void>(
+) => showAppDialog<void>(
   context: context,
   barrierDismissible: false,
   builder: (c) => PopScope(
@@ -188,7 +184,7 @@ Future<void> _finalDialog(
 );
 
 Future<void> _info(BuildContext context, String title, String text) =>
-    showDialog<void>(
+    showAppDialog<void>(
       context: context,
       builder: (c) => AlertDialog(
         title: Text(title),
@@ -297,7 +293,7 @@ Future<bool?> askTwoChoices(
   required String no,
   required String yes,
   bool danger = false,
-}) => showDialog<bool>(
+}) => showAppDialog<bool>(
   context: context,
   builder: (c) {
     final scheme = Theme.of(c).colorScheme;
@@ -333,7 +329,7 @@ Future<EraseReport> runEraseWithProgress(
   // si è aperta un'altra pagina sopra (tocco su una notifica); un semplice
   // pop avrebbe tolto quella e lasciato il riquadro senza fine
   BuildContext? dialog;
-  showDialog<void>(
+  showAppDialog<void>(
     context: context,
     barrierDismissible: false,
     builder: (c) => PopScope(

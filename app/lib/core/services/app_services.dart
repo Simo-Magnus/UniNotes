@@ -135,8 +135,25 @@ class AppServices {
   }
 
   /// Appunti dei corsi (registrazioni, trascrizioni, riassunti) come file.
-  late final NotesStore notes = _notesOverride ?? NotesStore(settings);
+  late final NotesStore notes = (_notesOverride ?? NotesStore(settings))
+    ..onFilesMoved ??= _noteFilesMoved;
   final NotesStore? _notesOverride;
+
+  /// File portati dalla cartella di ripiego degli appunti a quella scelta:
+  /// gli allegati di Studio che li indicavano seguono il percorso nuovo.
+  Future<void> _noteFilesMoved(Map<String, String> moved) async {
+    for (final m in moved.entries) {
+      try {
+        await database.db.update(
+          'attachments',
+          {'path': m.value},
+          where: 'path = ?',
+          whereArgs: [m.key],
+        );
+      } catch (_) {}
+    }
+    revision.bump();
+  }
 
   /// OneDrive (appunti su tutti i dispositivi) e OneNote.
   late final OneDriveService onedrive =
@@ -173,7 +190,11 @@ class AppServices {
   /// Dopo un'unione che porta novità le schermate si aggiornano.
   late final DataSync dataSync = DataSync(
     database,
-    notesRoot: () async => (await notes.root()).path,
+    // la cartella scelta anche quando si usa quella di ripiego: con quella
+    // i percorsi degli allegati andavano agli altri dispositivi come
+    // assoluti (collegamenti rotti)
+    notesRoot: () async => (await notes.syncRoots()).$1,
+    notesFallbackRoot: () async => (await notes.syncRoots()).$2,
     onApplied: () async {
       try {
         final p = await profiles.load();

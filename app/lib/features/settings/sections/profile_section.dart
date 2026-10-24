@@ -6,6 +6,7 @@ import '../../../core/catalog/catalog_models.dart';
 import '../../../core/catalog/catalog_service.dart';
 import '../../../core/catalog/curricula.dart';
 import '../../../core/catalog/path_setup.dart';
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/calendar_export.dart';
 import '../../../utils/dates.dart';
@@ -219,7 +220,7 @@ class ProfileSection extends StatelessWidget {
 
   /// Testo completo dei requisiti di accesso e degli OFA, con la fonte.
   Future<void> _showRequisiti(BuildContext context, Ammissione a) =>
-      showDialog<void>(
+      showAppDialog<void>(
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Accesso e OFA'),

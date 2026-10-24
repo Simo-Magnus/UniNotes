@@ -28,12 +28,19 @@ class StudyCourseGroup {
 /// Divide [courses] per semestre (1°, 2°, annuale, non indicato; con l'anno
 /// davanti se gli anni sono più d'uno) e mette gli OFA in un gruppo a parte
 /// alla fine. Dentro ogni gruppo resta l'ordine di [courses].
-List<StudyCourseGroup> groupStudyCourses(List<Course> courses) {
+///
+/// Con [yearInLabel] false l'anno non compare mai nel nome e non divide i
+/// gruppi (la Home: l'anno si sceglie con la casella accanto al corso di
+/// laurea, il semestre ha solo «1° semestre», «2° semestre», «Annuale»).
+List<StudyCourseGroup> groupStudyCourses(
+  List<Course> courses, {
+  bool yearInLabel = true,
+}) {
   final years = {
     for (final c in courses)
       if (!isOfaCourse(c)) c.year,
   };
-  final withYear = years.length > 1;
+  final withYear = yearInLabel && years.length > 1;
   final keys = <String, (int, int, String)>{};
   final byKey = <String, List<Course>>{};
   final ofa = <Course>[];
@@ -42,7 +49,8 @@ List<StudyCourseGroup> groupStudyCourses(List<Course> courses) {
       ofa.add(c);
       continue;
     }
-    final y = c.year ?? 99;
+    // senza l'anno nel nome l'anno non divide nemmeno i gruppi
+    final y = yearInLabel ? (c.year ?? 99) : 0;
     final so = semesterOrder(c.semester);
     final key = '$y|$so|${so == 5 ? c.semester!.trim().toLowerCase() : ''}';
     keys[key] ??= (

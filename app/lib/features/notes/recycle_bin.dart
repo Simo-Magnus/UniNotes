@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'notes_store.dart' show NotesStore;
 import 'safe_files.dart';
 
 /// Elemento di «Eliminati di recente».
@@ -49,7 +50,8 @@ class TrashEntry {
     if (at == null) return null;
     return TrashEntry(
       id: id,
-      title: '${j['titolo'] ?? id}',
+      // (orario con «:» anche per i titoli salvati con «08-30»)
+      title: NotesStore.displayName('${j['titolo'] ?? id}'),
       course: j['corso'] is String ? j['corso'] as String : null,
       deletedAt: at,
       files: [
@@ -208,7 +210,11 @@ class RecycleBin {
   /// Rimette i file al loro posto (con « (ripristinato)» se nel frattempo
   /// è comparso un file con lo stesso nome). Restituisce i file ripristinati.
   Future<List<File>> restore(TrashEntry e) async {
-    final folder = Directory(p.join((await dir()).path, e.id));
+    final root = (await _root()).path;
+    final folder = Directory(p.join(root, dirName, e.id));
+    // origini nella cartella degli appunti attuale (se nel frattempo è
+    // cambiata, i file tornavano in quella di prima, dove l'app non guarda)
+    e = _here(e, root);
     final out = <File>[];
     // il suffisso è lo stesso per tutti i file dell'elemento (registrazione
     // e dati restano collegati dal nome)
@@ -240,15 +246,57 @@ class RecycleBin {
     return out;
   }
 
+  /// Cartelle dei file degli appunti dentro la cartella di un insegnamento
+  /// (`NoteFolder.dirName`, più «Claude», il nome di prima di «AI»).
+  static const noteFolderNames = {
+    'Registrazioni',
+    'Trascrizioni',
+    'Riassunti',
+    'Appunti',
+    'AI',
+    'Claude',
+  };
+
+  /// Percorso di ripristino di un file eliminato da [origin] con la cartella
+  /// degli appunti ora in [root] (stessa logica di `currentTargetDir` per le
+  /// registrazioni rimaste): dentro la radice attuale resta com'è; un file
+  /// di un insegnamento (`…/<insegnamento>/<Registrazioni|Appunti…>/<file>`)
+  /// rimasto con la radice di prima va nella stessa cartella di quella
+  /// attuale; un percorso che non è degli appunti resta quello.
+  static String currentOrigin(String origin, String root) {
+    if (p.isWithin(root, origin)) return origin;
+    final parts = p.split(origin);
+    if (parts.length < 4) return origin;
+    final sub = parts[parts.length - 2];
+    final course = parts[parts.length - 3];
+    if (!noteFolderNames.contains(sub) || course.startsWith('.')) {
+      return origin;
+    }
+    return p.join(root, course, sub, parts.last);
+  }
+
+  /// [e] con le origini nella cartella degli appunti [root] ([currentOrigin]).
+  static TrashEntry _here(TrashEntry e, String root) => TrashEntry(
+    id: e.id,
+    title: e.title,
+    course: e.course,
+    deletedAt: e.deletedAt,
+    files: [
+      for (final (name, origin) in e.files) (name, currentOrigin(origin, root)),
+    ],
+  );
+
   /// «Annulla» dopo un ripristino: i file [restored] (restituiti da
   /// [restore]) tornano nel cestino come l'elemento [e] di prima, con la
   /// stessa data di eliminazione (i 30 giorni non ripartono).
   Future<void> undoRestore(TrashEntry e, List<File> restored) async {
-    final folder = Directory(p.join((await dir()).path, e.id));
+    final root = (await _root()).path;
+    final folder = Directory(p.join(root, dirName, e.id));
     await folder.create(recursive: true);
+    final here = _here(e, root);
     for (final f in restored) {
       if (!await f.exists()) continue;
-      final name = _trashNameOf(e, f.path) ?? p.basename(f.path);
+      final name = _trashNameOf(here, f.path) ?? p.basename(f.path);
       await moveFile(f, p.join(folder.path, name));
     }
     await writeStringAtomic(

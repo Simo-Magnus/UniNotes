@@ -11,6 +11,7 @@ import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/audio_codec.dart';
@@ -199,6 +200,9 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   NoteFile get _note =>
       NoteFile(_file, NoteFolder.recordings, DateTime.now(), 0);
   String get _name => p.basenameWithoutExtension(_file.path);
+
+  /// Nome come lo vede l'utente (orario con «:»).
+  String get _title => NotesStore.displayName(_name);
   Duration get _pos => _clock.value;
   Duration get _total =>
       _dur > Duration.zero ? _dur : (_meta.duration ?? Duration.zero);
@@ -564,26 +568,28 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   }
 
   Future<void> _editBookmark(Bookmark b) async {
-    final action = await showModalBottomSheet<String>(
+    final action = await showAppSheet<String>(
       context: context,
       showDragHandle: true,
       builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.edit_note),
-              title: Text(
-                b.note.isEmpty ? 'Aggiungi una nota' : 'Modifica la nota',
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: const Icon(Icons.edit_note),
+                title: Text(
+                  b.note.isEmpty ? 'Aggiungi una nota' : 'Modifica la nota',
+                ),
+                onTap: () => Navigator.pop(c, 'nota'),
               ),
-              onTap: () => Navigator.pop(c, 'nota'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.bookmark_remove_outlined),
-              title: const Text('Togli il segnalibro'),
-              onTap: () => Navigator.pop(c, 'togli'),
-            ),
-          ],
+              ListTile(
+                leading: const Icon(Icons.bookmark_remove_outlined),
+                title: const Text('Togli il segnalibro'),
+                onTap: () => Navigator.pop(c, 'togli'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -731,13 +737,13 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   Future<void> _menu(_Menu m) async {
     switch (m) {
       case _Menu.shareAudio:
-        await shareFiles(context, [_file], subject: _name);
+        await shareFiles(context, [_file], subject: _title);
       case _Menu.shareText:
         if (_transcript != null) {
-          await shareFiles(context, [_transcript!], subject: _name);
+          await shareFiles(context, [_transcript!], subject: _title);
         }
       case _Menu.shareBoth:
-        await shareFiles(context, [_file, ?_transcript], subject: _name);
+        await shareFiles(context, [_file, ?_transcript], subject: _title);
       case _Menu.summarize:
         final t = _transcriptNote;
         if (t == null) {
@@ -772,7 +778,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
       showSnack(context, 'Il taglio non è disponibile su questo sistema.');
       return;
     }
-    final choice = await showModalBottomSheet<(Duration, Duration, bool)>(
+    final choice = await showAppSheet<(Duration, Duration, bool)>(
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
@@ -792,7 +798,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
       return;
     }
     final job = _s.jobs.start(
-      'Taglio · $_name',
+      'Taglio · $_title',
       courseId: widget.course.id,
       target: _file.path,
       (report) async {
@@ -819,7 +825,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
           // l'originale (con i suoi dati) va nel cestino
           await _s.trash.trash(
             [_file, RecordingMeta.sidecarOf(_file.path)],
-            title: '$name (prima del taglio)',
+            title: '${NotesStore.displayName(name)} (prima del taglio)',
             course: widget.course.name,
           );
           report('Comprimo…', null);
@@ -879,9 +885,9 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 2),
               child: Text(
-                _name,
+                _title,
                 overflow: TextOverflow.ellipsis,
-                semanticsLabel: '$_name, tocca per rinominare',
+                semanticsLabel: '$_title, tocca per rinominare',
               ),
             ),
           ),

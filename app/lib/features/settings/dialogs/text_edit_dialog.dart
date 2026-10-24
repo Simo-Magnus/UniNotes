@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/constants/text_limits.dart';
+import '../../../core/feedback/app_modals.dart';
 
 /// Dialogo con un campo di testo. Restituisce il testo confermato o null.
 /// [validator] restituisce un messaggio d'errore o null se valido.
@@ -13,7 +15,7 @@ Future<String?> showTextEditDialog(
   String? Function(String value)? validator,
   List<({String label, String value})> presets = const [],
 }) {
-  return showDialog<String>(
+  return showAppDialog<String>(
     context: context,
     builder: (_) => _TextEditDialog(
       title: title,
@@ -51,7 +53,9 @@ class _TextEditDialog extends StatefulWidget {
 }
 
 class _TextEditDialogState extends State<_TextEditDialog> {
-  late final TextEditingController _ctrl = TextEditingController(text: widget.initialValue);
+  late final TextEditingController _ctrl = TextEditingController(
+    text: widget.initialValue,
+  );
   String? _error;
 
   @override
@@ -73,6 +77,7 @@ class _TextEditDialogState extends State<_TextEditDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.title),
       content: ConstrainedBox(
         constraints: const BoxConstraints(minWidth: 320, maxWidth: 560),
@@ -106,7 +111,10 @@ class _TextEditDialogState extends State<_TextEditDialog> {
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Annulla')),
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Annulla'),
+        ),
         FilledButton(onPressed: _submit, child: const Text('Salva')),
       ],
     );

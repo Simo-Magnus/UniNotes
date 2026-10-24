@@ -11,6 +11,7 @@ library;
 
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../repositories/settings_repository.dart';
 import 'reader_formats.dart';
 import 'reader_loader.dart';
@@ -80,10 +81,11 @@ Future<PartialViewChoice?> askPartialView(
   SettingsRepository? settings,
 }) async {
   var dontAsk = false;
-  final choice = await showDialog<PartialViewChoice>(
+  final choice = await showAppDialog<PartialViewChoice>(
     context: context,
     builder: (c) => StatefulBuilder(
       builder: (c, setLocal) => AlertDialog(
+        scrollable: true,
         icon: const Icon(Icons.preview_outlined),
         title: const Text('Anteprima semplificata'),
         content: Column(

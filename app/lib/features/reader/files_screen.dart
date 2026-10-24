@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
@@ -216,7 +217,7 @@ class _FilesScreenState extends State<FilesScreen> {
           IconButton(
             tooltip: 'Formati supportati',
             icon: const Icon(Icons.help_outline),
-            onPressed: () => showDialog<void>(
+            onPressed: () => showAppDialog<void>(
               context: context,
               builder: (_) => const SupportedFormatsDialog(),
             ),
@@ -630,9 +631,12 @@ class SupportedFormatsDialog extends StatelessWidget {
                   children: [
                     Icon(readerFamilyIcon(e.key), size: 18, color: t.cyanSoft),
                     const SizedBox(width: 8),
-                    Text(
-                      e.key.label,
-                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    Flexible(
+                      child: Text(
+                        e.key.label,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ],
                 ),

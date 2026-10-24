@@ -11,6 +11,7 @@ import '../../../core/services/book_library.dart';
 import '../../../core/services/error_log.dart';
 import '../../../core/services/local_data.dart';
 import '../../../core/services/temp_files.dart';
+import '../../cloud/cloud_drive_service.dart';
 import '../../cloud/onedrive_service.dart';
 import '../../notes/notes_store.dart';
 import '../../notes/recycle_bin.dart';
@@ -225,10 +226,15 @@ class DataEraser {
         case EraseItem.books:
           out.add(EraseOption(item, bytes: await _size(await _libraryDirs())));
         case EraseItem.whisper:
-          out.add(EraseOption(item, bytes: await _size([await _sub('whisper')])));
+          out.add(
+            EraseOption(item, bytes: await _size([await _sub('whisper')])),
+          );
         case EraseItem.catalog:
           out.add(
-            EraseOption(item, bytes: await _size([await _sub('database_cache')])),
+            EraseOption(
+              item,
+              bytes: await _size([await _sub('database_cache')]),
+            ),
           );
         case EraseItem.onedrive:
           out.add(await _cloudOption(item, s.onedrive));
@@ -266,10 +272,7 @@ class DataEraser {
             if (await _connected(c)) names.add(c.serviceName);
           }
           out.add(
-            EraseOption(
-              item,
-              detail: names.isEmpty ? null : names.join(', '),
-            ),
+            EraseOption(item, detail: names.isEmpty ? null : names.join(', ')),
           );
       }
     }
@@ -308,6 +311,30 @@ class DataEraser {
     Set<EraseItem> items, {
     void Function(String step)? onStep,
   }) async {
+    // nessuna sincronizzazione parte da qui in poi (timer, ritorno
+    // nell'app, lavoro periodico di Android che chiede all'app di
+    // sincronizzare): ripartirebbe a metà cancellazione
+    CloudDriveService.hold = true;
+    try {
+      return await _run(items, onStep);
+    } catch (_) {
+      // eliminazione interrotta: l'app resta usabile
+      CloudDriveService.hold = false;
+      rethrow;
+    }
+  }
+
+  /// Sincronizzazione in corso nell'app o nel motore senza interfaccia di
+  /// Android (lavoro periodico avviato ad app chiusa, che continua se nel
+  /// frattempo l'app si apre: stesso database, stessi file).
+  Future<bool> _syncBusy() async =>
+      s.clouds.any((c) => c.syncing) ||
+      await CloudDriveService.busyElsewhereNow();
+
+  Future<EraseReport> _run(
+    Set<EraseItem> items,
+    void Function(String step)? onStep,
+  ) async {
     final report = EraseReport();
     final root = await s.notes.root();
     for (final c in s.clouds) {
@@ -315,7 +342,7 @@ class DataEraser {
     }
     // una sincronizzazione in corso finisce prima di cancellare
     final until = DateTime.now().add(syncWait);
-    while (s.clouds.any((c) => c.syncing) && DateTime.now().isBefore(until)) {
+    while (await _syncBusy() && DateTime.now().isBefore(until)) {
       await Future<void>.delayed(const Duration(milliseconds: 200));
     }
 

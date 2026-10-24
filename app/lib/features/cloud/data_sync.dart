@@ -59,6 +59,7 @@ class DataSync {
     this._db, {
     Future<Directory> Function()? stateDir,
     this.notesRoot,
+    this.notesFallbackRoot,
     this.onApplied,
   }) : _stateDir = stateDir ?? getApplicationSupportDirectory;
 
@@ -67,6 +68,12 @@ class DataSync {
 
   /// Cartella degli appunti (percorsi degli allegati collegati agli appunti).
   final Future<String> Function()? notesRoot;
+
+  /// Cartella degli appunti di ripiego, se diversa da [notesRoot] (cartella
+  /// scelta non raggiungibile): i suoi file prendono lo stesso posto nella
+  /// cartella scelta quando torna, quindi i loro percorsi si scrivono
+  /// relativi come quelli di [notesRoot] invece che assoluti.
+  final Future<String?> Function()? notesFallbackRoot;
 
   /// Dopo un'unione che ha cambiato il database (aggiornare le schermate).
   final FutureOr<void> Function()? onApplied;
@@ -178,11 +185,16 @@ class DataSync {
     }
     final firstJoin = base == null && remotes.isNotEmpty;
     final root = await notesRoot?.call();
+    String? fallbackRoot;
+    try {
+      fallbackRoot = await notesFallbackRoot?.call();
+    } catch (_) {}
     late SyncSnapshot merged;
     var applied = 0;
     await _db.db.transaction((txn) async {
       await SyncSchema.dedupe(txn);
-      final ctx = await _Ctx.load(txn, root);
+      final ctx = await _Ctx.load(txn, root)
+        ..fallbackRoot = fallbackRoot;
       final local = await _export(txn, ctx, base, firstJoin: firstJoin);
       merged = mergeSnapshots(
         [local, ...remotes],
@@ -289,8 +301,9 @@ class DataSync {
         }
       }
       final localTombs = tombs[s.table] ?? const {};
-      for (final entry in base?.tables[s.table]?.entries ??
-          const <MapEntry<String, SyncEntry>>[]) {
+      for (final entry
+          in base?.tables[s.table]?.entries ??
+              const <MapEntry<String, SyncEntry>>[]) {
         if (table.containsKey(entry.key)) continue;
         final e = entry.value.copy();
         final t = localTombs[entry.key];
@@ -400,9 +413,10 @@ class DataSync {
       return ctx.syncIdOf(ref, v.toInt());
     }
     if (s.notePaths.contains(c) && v is String && ctx.notesRoot != null) {
-      final root = ctx.notesRoot!;
-      if (p.isWithin(root, v)) {
-        return '$notesPrefix${p.split(p.relative(v, from: root)).join('/')}';
+      for (final root in [ctx.notesRoot!, ?ctx.fallbackRoot]) {
+        if (p.isWithin(root, v)) {
+          return '$notesPrefix${p.split(p.relative(v, from: root)).join('/')}';
+        }
       }
       return v;
     }
@@ -557,6 +571,9 @@ class _Ctx {
   static const rowid = '_sync_rowid';
 
   final String? notesRoot;
+
+  /// Cartella degli appunti di ripiego (vedi [DataSync.notesFallbackRoot]).
+  String? fallbackRoot;
   final Map<String, List<String>> columns = {};
   final Map<String, List<Map<String, Object?>>> rows = {};
 
@@ -598,7 +615,10 @@ class _Ctx {
     final toSync = ctx._toSync['places'] = {};
     final toLocal = ctx._toLocal['places'] = {};
     try {
-      for (final r in await txn.query('places', columns: ['id', 'external_id'])) {
+      for (final r in await txn.query(
+        'places',
+        columns: ['id', 'external_id'],
+      )) {
         final id = r['id'];
         final ext = r['external_id'];
         // luogo senza identificativo testuale (dati rovinati): non si

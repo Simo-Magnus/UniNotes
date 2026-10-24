@@ -153,7 +153,13 @@ includono, per il testo istantaneo:
   affiliata a NVIDIA né approvata da NVIDIA; il modello è fornito «così com'è»,
   senza garanzie, e la PolyForm non ne limita l'uso: chi lo riceve può usarlo
   secondo la CC BY 4.0;
-- **sherpa-onnx** (Apache-2.0), **ONNX Runtime** (MIT) e **Silero VAD** (MIT).
+- **sherpa-onnx** (Apache-2.0), **ONNX Runtime** (MIT) e **Silero VAD** (MIT);
+- **whisper.cpp** (MIT) e il modello **Whisper small** di OpenAI (MIT), nella
+  conversione ggml quantizzata q5_1 di whisper.cpp (`ggml-small-q5_1.bin`, dal
+  repository [ggerganov/whisper.cpp](https://huggingface.co/ggerganov/whisper.cpp)),
+  che ritrascrive nella lingua della lezione le frasi che Parakeet scrive in
+  un'altra lingua (`data/whisper/` su Windows, `UniNotes.app/Contents/Resources/whisper/`
+  su Mac, con `LICENSE.txt`).
 
 Su Android e iOS sono inclusi whisper.cpp (MIT) e il modello Whisper base di
 OpenAI (MIT).

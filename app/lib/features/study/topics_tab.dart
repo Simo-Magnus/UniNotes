@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/feedback/motion.dart';
 import '../../core/services/app_services.dart';
@@ -94,7 +95,7 @@ Future<int?> pickCourse(
 ) async {
   final s = context.read<AppServices>();
   var changed = false;
-  final id = await showModalBottomSheet<int>(
+  final id = await showAppSheet<int>(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
@@ -215,7 +216,7 @@ class _CoursePickerListState extends State<CoursePickerList> {
                 index: i,
                 child: CoursePickTile(
                   // solo il nome dell'insegnamento
-                  label: course.label,
+                  label: course.name,
                   selected: course.id == widget.selected,
                   onTap: () => widget.onSelect(course.id!),
                 ),
@@ -648,7 +649,7 @@ class _BooksButton extends StatelessWidget {
             x.required == true ? 0 : (x.required == null ? 1 : 2);
         return rank(a).compareTo(rank(b));
       });
-    await showModalBottomSheet<void>(
+    await showAppSheet<void>(
       context: context,
       showDragHandle: true,
       isScrollControlled: true,
@@ -658,7 +659,7 @@ class _BooksButton extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                course.label,
+                course.name,
                 style: Theme.of(c).textTheme.titleMedium,
               ),
             ),
@@ -677,7 +678,9 @@ class _BooksButton extends StatelessWidget {
                 enabled: available.contains(b.id),
                 onTap: () {
                   Navigator.pop(c);
-                  openBook(context, b);
+                  // il pulsante può non esserci più (finestra ridimensionata
+                  // con il foglio aperto, pagina chiusa)
+                  if (context.mounted) openBook(context, b);
                 },
               ),
           ],

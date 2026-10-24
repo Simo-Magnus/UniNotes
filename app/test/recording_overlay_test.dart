@@ -189,7 +189,8 @@ void main() {
       }
       expect(s.recorder.active, isFalse);
       expect(find.text('Analisi matematica I'), findsNothing);
-      expect(trashed.single.title, '2026-10-12 08-30 Lezione');
+      // (orario con «:» anche per le registrazioni di prima)
+      expect(trashed.single.title, '2026-10-12 08:30 Lezione');
       expect(trashed.single.isAudio, isTrue);
       // la prossima volta non si chiede più (si ripristina dalle
       // Impostazioni: chiavi «dont_ask_»)

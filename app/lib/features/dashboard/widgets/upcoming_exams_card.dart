@@ -170,10 +170,11 @@ class _ExamItem extends StatelessWidget {
             ),
             if (x.topics != null) ...[
               const SizedBox(height: 6),
+              // «Argomenti:» su una riga, l'elenco sotto (sempre a capo)
               Text(
-                'Argomenti: ${x.topics}',
+                'Argomenti:\n${x.topics}',
                 style: theme.textTheme.bodySmall,
-                maxLines: 3,
+                maxLines: 4,
                 overflow: TextOverflow.ellipsis,
               ),
             ],

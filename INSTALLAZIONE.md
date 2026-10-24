@@ -21,12 +21,14 @@ va sul Mac App Store.
 | Piattaforma | File da scaricare | Requisiti |
 |---|---|---|
 | Android | `UniNotes-android.apk` (quasi tutti i telefoni, 64 bit); `UniNotes-android-32bit.apk` per i telefoni vecchi a 32 bit; `UniNotes-android-x86_64.apk` per Chromebook ed emulatori | Android 7.0 o successivo |
-| Windows | `UniNotes_setup.exe` (~0,5 GB; oppure `UniNotes-windows.zip`, ~0,57 GB); Microsoft Store quando disponibile | Windows 10/11 a 64 bit, ~0,9 GB liberi, 4 GB di RAM per il testo istantaneo |
-| macOS | `UniNotes.dmg` (~0,6 GB; oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon), ~0,9 GB liberi |
+| Windows | `UniNotes_setup.exe` (~0,7 GB; oppure `UniNotes-windows.zip`, ~0,75 GB); Microsoft Store quando disponibile | Windows 10/11 a 64 bit, ~1,1 GB liberi, 4 GB di RAM per il testo istantaneo |
+| macOS | `UniNotes.dmg` (~0,8 GB; oppure `UniNotes-macos.zip`) | macOS 12 o successivo (Intel o Apple Silicon), ~1,1 GB liberi |
 
 Le versioni per Windows e macOS pesano di più perché includono Parakeet, il modello di
-NVIDIA (licenza CC BY 4.0) che scrive il testo istantaneo mentre registri, senza
-internet e senza download alla prima registrazione.
+NVIDIA (licenza CC BY 4.0) che scrive il testo istantaneo mentre registri, e il modello
+Whisper small di OpenAI (licenza MIT, ~181 MB) che ritrascrive nella lingua della
+lezione le frasi che Parakeet scrive in un'altra lingua: tutto senza internet e senza
+download alla prima registrazione.
 | iPhone / iPad | `UniNotes-ios-non-firmata.ipa` | iOS 15.6 o successivo; va firmato (vedi sotto) |
 
 ## Android

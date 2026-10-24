@@ -151,7 +151,9 @@ class _CourseNotesScreenState extends State<CourseNotesScreen> {
           final i = lower.indexOf(q);
           if (i >= 0) snippet = _snippet(text, i, q.length);
         }
-        if (snippet != null || f.name.toLowerCase().contains(q)) {
+        if (snippet != null ||
+            f.name.toLowerCase().contains(q) ||
+            f.title.toLowerCase().contains(q)) {
           hits[f.file.path] = snippet;
         }
       }
@@ -510,7 +512,7 @@ class _Section extends StatelessWidget {
             f.isAudio ? Icons.graphic_eq : Icons.article_outlined,
             color: Theme.of(context).colorScheme.primary,
           ),
-          title: Text(f.name),
+          title: Text(f.title),
           subtitle: snippet != null
               ? Text(snippet, maxLines: 2, overflow: TextOverflow.ellipsis)
               : (chips.isEmpty ? null : Text(chips.join(' · '))),
@@ -590,7 +592,7 @@ class _Section extends StatelessWidget {
           await openRecording(context, course, f, query: query);
         } else if (f.extension != '.md') {
           // Altri file: lettore interno; "Apri con…" è nel suo menu.
-          await openInReader(context, f.file.path, title: f.name);
+          await openInReader(context, f.file.path, title: f.title);
         } else {
           await openNote(context, course, f, query: query);
         }
@@ -717,10 +719,10 @@ class _RecordingTile extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 4),
                               child: Text(
-                                f.name,
+                                f.title,
                                 style: theme.textTheme.bodyLarge,
                                 semanticsLabel:
-                                    '${f.name}, tocca per rinominare',
+                                    '${f.title}, tocca per rinominare',
                               ),
                             ),
                           ),
@@ -1018,7 +1020,7 @@ class _AiSection extends StatelessWidget {
                   Icons.article_outlined,
                   color: theme.colorScheme.primary,
                 ),
-                title: Text(f.name),
+                title: Text(f.title),
                 onTap: () => openNote(context, course, f),
                 trailing: Wrap(
                   children: [

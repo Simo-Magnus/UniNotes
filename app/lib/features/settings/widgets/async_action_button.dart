@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/feedback/app_modals.dart';
+
 /// Pulsante per operazioni asincrone: mostra un indicatore durante
 /// l'esecuzione, impedisce doppi tocchi e mostra gli errori in un dialogo.
 class AsyncActionButton extends StatefulWidget {
@@ -68,7 +70,7 @@ Future<void> showErrorDialog(
   BuildContext context,
   String title,
   Object error,
-) => showDialog<void>(
+) => showAppDialog<void>(
   context: context,
   builder: (c) => AlertDialog(
     icon: const Icon(Icons.error_outline),

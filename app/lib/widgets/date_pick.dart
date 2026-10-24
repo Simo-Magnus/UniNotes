@@ -35,3 +35,28 @@ Future<DateTime?> showSafeDatePicker({
   if (initial.isAfter(last)) last = initial;
   return (initial: initial, first: first, last: last);
 }
+
+/// [showTimePicker] con i caratteri del selettore limitati a ×1,3 (×1 con la finestra bassa; come fa
+/// Flutter per il selettore della data): il quadrante e i campi dell'ora
+/// hanno misure fisse e, con i caratteri al massimo dell'app (×2) su una
+/// finestra bassa o stretta, uscivano dal riquadro (RenderFlex overflowed).
+/// Il resto dell'app resta alla grandezza scelta.
+Future<TimeOfDay?> showSafeTimePicker({
+  required BuildContext context,
+  required TimeOfDay initialTime,
+}) => showTimePicker(
+  context: context,
+  initialTime: initialTime,
+  builder: (context, child) {
+    final media = MediaQuery.of(context);
+    // in orizzontale su un telefono (finestra bassa) il quadrante ha già
+    // poco spazio: i caratteri restano a ×1
+    final maxScale = media.size.height < 420 ? 1.0 : 1.3;
+    return MediaQuery(
+      data: media.copyWith(
+        textScaler: media.textScaler.clamp(maxScaleFactor: maxScale),
+      ),
+      child: child!,
+    );
+  },
+);

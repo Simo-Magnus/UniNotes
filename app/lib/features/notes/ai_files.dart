@@ -80,7 +80,7 @@ Future<List<File>> collectAiFiles(
         continue;
       }
       md.writeln(
-        '\n---\n\n## ${n.folder.dirName} – ${n.name}\n\n'
+        '\n---\n\n## ${n.folder.dirName} – ${n.title}\n\n'
         '${stripTranscriptTimes(body)}',
       );
     }

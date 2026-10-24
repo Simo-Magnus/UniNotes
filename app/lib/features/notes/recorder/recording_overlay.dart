@@ -7,6 +7,8 @@ import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../../widgets/app_snack_action.dart';
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_theme.dart';
@@ -208,7 +210,7 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
           content: const Text('Registrazione salvata.'),
           action: course == null
               ? null
-              : SnackBarAction(
+              : AppSnackBarAction(
                   label: 'Apri',
                   onPressed: () => appNavigatorKey.currentState?.push(
                     MaterialPageRoute<void>(
@@ -313,9 +315,10 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
       'it_IT',
     ).format(session.started);
     // due pulsanti; chiudendo il dialogo si decide più tardi
-    final choice = await showDialog<RecordingCloseChoice>(
+    final choice = await showAppDialog<RecordingCloseChoice>(
       context: nav,
       builder: (c) => AlertDialog(
+        scrollable: true,
         title: const Text('Registrazione da recuperare'),
         content: Text(
           'UniNotes si è chiusa durante la registrazione di '
@@ -599,9 +602,10 @@ class _ResizeHandleState extends State<_ResizeHandle> {
 /// «Salvare la registrazione?»: Salva o Elimina (con conferma); toccando
 /// fuori dal dialogo la registrazione continua.
 Future<RecordingCloseChoice> askSaveRecording(BuildContext context) async {
-  final choice = await showDialog<RecordingCloseChoice>(
+  final choice = await showAppDialog<RecordingCloseChoice>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       title: const Text('Salvare la registrazione?'),
       content: const Text(
         'La registrazione si ferma. Puoi salvarla negli appunti del corso o '
@@ -657,12 +661,14 @@ Future<bool> confirmDeleteRecording(
   }
   if (!context.mounted) return false;
   var dontAsk = false;
-  final ok = await showDialog<bool>(
+  final ok = await showAppDialog<bool>(
     context: context,
     builder: (c) {
       final scheme = Theme.of(c).colorScheme;
       return StatefulBuilder(
         builder: (c, setLocal) => AlertDialog(
+          // scorre se lo spazio è poco (finestra bassa, caratteri grandi)
+          scrollable: true,
           icon: Icon(Icons.delete_outline, color: scheme.error),
           title: const Text('Eliminare la registrazione?'),
           content: Column(

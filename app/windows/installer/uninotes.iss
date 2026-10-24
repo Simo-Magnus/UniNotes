@@ -58,8 +58,9 @@ UninstallDisplayIcon={app}\uninotes.exe
 UninstallDisplayName=UniNotes
 Compression=lzma2/max
 SolidCompression=yes
-; Il modello Parakeet incluso (data\parakeet, 670 MB) si comprime poco
-; (~430 MB): più thread per non allungare troppo la build.
+; I modelli inclusi (Parakeet in data\parakeet, 670 MB, e Whisper small
+; q5_1 in data\whisper, 181 MiB) si comprimono poco (~430 + ~170 MB): più
+; thread per non allungare troppo la build.
 LZMAUseSeparateProcess=yes
 LZMANumBlockThreads=4
 WizardStyle=modern
@@ -80,6 +81,11 @@ Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+
+[InstallDelete]
+; Modello Whisper base q5_1 delle versioni fino al 21/10/2026 (non si usa
+; più): un aggiornamento lo toglie, al suo posto c'è small q5_1.
+Type: files; Name: "{app}\data\whisper\ggml-base-q5_1.bin"
 
 [Files]
 Source: "{#BuildDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/math_text.dart';
@@ -65,7 +66,7 @@ void insertFormula(TextEditingController c, FormulaChoice f) {
 Future<FormulaChoice?> showFormulaDialog(
   BuildContext context, {
   String initial = '',
-}) => showDialog<FormulaChoice>(
+}) => showAppDialog<FormulaChoice>(
   context: context,
   builder: (_) => _FormulaDialog(initial: initial),
 );

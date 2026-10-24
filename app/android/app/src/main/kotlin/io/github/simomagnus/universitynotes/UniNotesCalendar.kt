@@ -302,11 +302,27 @@ class UniNotesCalendar(private val context: Context) {
                 val name = c.getString(0) ?: return
                 val type = c.getString(1) ?: return
                 if (type == CalendarContract.ACCOUNT_TYPE_LOCAL) return
+                val account = Account(name, type)
+                // Android 12+: come lavoro urgente («expedited job»), che parte
+                // subito se l'app è aperta; altrimenti Android la mette in coda
+                // con le altre sincronizzazioni (anche un minuto e più)
+                if (android.os.Build.VERSION.SDK_INT >= 31) {
+                    try {
+                        val urgent = android.os.Bundle().apply {
+                            putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true)
+                            putBoolean(ContentResolver.SYNC_EXTRAS_SCHEDULE_AS_EXPEDITED_JOB, true)
+                        }
+                        ContentResolver.requestSync(account, CalendarContract.AUTHORITY, urgent)
+                        return
+                    } catch (e: Exception) {
+                        // quota dei lavori urgenti finita o non ammesso: richiesta normale
+                    }
+                }
                 val extras = android.os.Bundle().apply {
                     putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true)
                     putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
                 }
-                ContentResolver.requestSync(Account(name, type), CalendarContract.AUTHORITY, extras)
+                ContentResolver.requestSync(account, CalendarContract.AUTHORITY, extras)
             }
         } catch (e: Exception) {
             // la sincronizzazione arriverà comunque con quella periodica

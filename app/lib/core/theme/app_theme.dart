@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../widgets/glass_border.dart';
-import '../feedback/motion.dart' show kCalmPageTransitions;
+import '../feedback/motion.dart'
+    show kIosExpansionAnimation, kIosPageTransitions;
 import 'app_tokens.dart';
 
 /// Tema "Design 3" (scuro predefinito, chiaro speculare). Fondo e card sono
@@ -262,8 +263,8 @@ class AppTheme {
       canvasColor: scheme.surface,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       splashFactory: InkSparkle.splashFactory,
-      // transizioni uguali in tutta l'app, ferme con «Riduci animazioni»
-      pageTransitionsTheme: kCalmPageTransitions,
+      // transizioni di iOS in tutta l'app, ferme con «Riduci animazioni»
+      pageTransitionsTheme: kIosPageTransitions,
       dividerTheme: DividerThemeData(
         color: t.cardBorder,
         thickness: 1,
@@ -546,6 +547,8 @@ class AppTheme {
         collapsedTextColor: t.textPrimary,
         shape: const Border(),
         collapsedShape: const Border(),
+        // con «Riduci animazioni» lo toglie main.dart
+        expansionAnimationStyle: kIosExpansionAnimation,
       ),
       tooltipTheme: TooltipThemeData(
         decoration: BoxDecoration(

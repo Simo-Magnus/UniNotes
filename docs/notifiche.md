@@ -226,7 +226,8 @@ sul dispositivo che li scrive). Test: `app/test/calendar_sync_test.dart`,
 ## Permessi e consenso
 
 - **Primo ingresso**: penultimi passi dell'onboarding (dopo la scelta
-  dell'AI di riferimento), passo «Vuoi gli avvisi?» che spiega cosa arriva
+  dell'AI di riferimento e della lingua delle lezioni), passo «Vuoi gli
+  avvisi?» che spiega cosa arriva
   (prove 7 giorni prima e il giorno prima, fine del timer e delle pause
   anche con il Non disturbare, registrazione in corso fuori dall'app, una
   sola richiesta di recensione e l'eventuale invito al sostegno) **prima**

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/constants/build_flags.dart';
+import '../core/feedback/app_modals.dart';
 import '../core/reminders/notification_prefs.dart';
 import '../core/services/app_services.dart';
 import 'common.dart';
@@ -17,9 +18,10 @@ Future<void> offerExamReminders(BuildContext context, AppServices s) async {
     return;
   }
   if (!context.mounted) return;
-  final yes = await showDialog<bool>(
+  final yes = await showAppDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       title: const Text('Vuoi un avviso prima delle prove?'),
       content: const Text(
         'UniNotes può ricordarti esami, prove in itinere ed esoneri 7 giorni '

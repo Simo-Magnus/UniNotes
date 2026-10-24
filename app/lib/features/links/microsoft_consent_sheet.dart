@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart' show ShareParams;
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
 import '../../widgets/share_files.dart' show systemShare;
@@ -43,7 +44,7 @@ Future<bool> showUniversityBlockedSheet(
   bool allowPersonal = true,
   String personalHint = kPersonalAccountHint,
 }) async {
-  final r = await showModalBottomSheet<bool>(
+  final r = await showAppSheet<bool>(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
@@ -101,7 +102,7 @@ Future<void> showAdminRequestSheet(
   required String clientId,
 }) {
   final text = MicrosoftAdminConsent.requestText(clientId: clientId);
-  return showModalBottomSheet<void>(
+  return showAppSheet<void>(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,

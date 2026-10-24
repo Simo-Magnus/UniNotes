@@ -449,7 +449,7 @@ class ParakeetService {
   ///
   /// Parakeet sceglie da solo la lingua di ogni frase (sherpa-onnx non
   /// permette di fissarla): le frasi che non sono nella lingua della
-  /// lezione [language] né in inglese (`outsideLecture`) si ritrascrivono
+  /// lezione [language] (`outsideLecture`) si ritrascrivono
   /// con [rescue] (Whisper con la lingua fissata, su un WAV mono a 16 kHz
   /// del solo tratto) se c'è, altrimenti si tolgono.
   Future<List<WhisperSegment>> transcribeFile(

@@ -40,21 +40,32 @@ class MathFormula extends StatelessWidget {
     if (tex.length > kMaxFormulaChars) {
       return Text(fallback, style: base.copyWith(fontFamily: 'IBMPlexMono'));
     }
+    final math = Math.tex(
+      tex,
+      mathStyle: display ? MathStyle.display : MathStyle.text,
+      textStyle: base,
+      onErrorFallback: (_) => Text(
+        fallback,
+        style: base.copyWith(
+          fontFamily: 'IBMPlexMono',
+          color: Theme.of(context).colorScheme.error,
+        ),
+      ),
+    );
     return Semantics(
       label: 'Formula: $tex',
       excludeSemantics: true,
-      child: Math.tex(
-        tex,
-        mathStyle: display ? MathStyle.display : MathStyle.text,
-        textStyle: base,
-        onErrorFallback: (_) => Text(
-          fallback,
-          style: base.copyWith(
-            fontFamily: 'IBMPlexMono',
-            color: Theme.of(context).colorScheme.error,
-          ),
-        ),
-      ),
+      // Una formula più larga dello spazio (in una riga di testo non si
+      // spezza) si rimpicciolisce invece di uscire dal bordo (RenderFlex
+      // overflowed); se è più stretta resta com'è. Quando non si legge il
+      // testo di ripiego resta testo, che va a capo.
+      child: math.parseError != null
+          ? math
+          : FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: AlignmentDirectional.centerStart,
+              child: math,
+            ),
     );
   }
 }

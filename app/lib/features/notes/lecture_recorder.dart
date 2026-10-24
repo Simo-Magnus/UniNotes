@@ -367,17 +367,27 @@ class LectureRecorder extends ChangeNotifier {
     );
     _state = audio.onStateChanged().listen(_onState, onError: (_) {});
     // riconoscitore del sistema solo se la scelta per piattaforma lo
-    // prevede (liveEngineOrder, oggi su nessun sistema)
+    // prevede (liveEngineOrder: telefono e Mac con macOS 26)
     final phone = _whisper?.isPhone ?? (Platform.isAndroid || Platform.isIOS);
+    final apple =
+        !phone &&
+        macAppleSpeech(
+          macOS: Platform.isMacOS,
+          osVersion: Platform.operatingSystemVersion,
+        );
     final lt = LiveTranscriber(
       _whisper,
       speech:
           _speech ??
-          (liveEngineOrder(phone: phone).contains(LiveEngine.system)
+          (liveEngineOrder(
+                phone: phone,
+                appleSpeech: apple,
+              ).contains(LiveEngine.system)
               ? SystemSpeech()
               : null),
       locale: speechLocaleFor(language),
       vocabulary: vocabulary,
+      appleSpeech: apple,
     )..onSegments = _saveSessionSoon;
     live = lt;
     unawaited(

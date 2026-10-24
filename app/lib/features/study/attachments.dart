@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/attachment.dart';
@@ -142,10 +143,10 @@ Future<void> attachNoteToStudy(
     );
     return;
   }
-  final target = await showDialog<(int?, int?)>(
+  final target = await showAppDialog<(int?, int?)>(
     context: context,
     builder: (c) => SimpleDialog(
-      title: Text('Allega «${note.name}» a…'),
+      title: Text('Allega «${note.title}» a…'),
       children: [
         for (final m in modules) ...[
           SimpleDialogOption(
@@ -178,7 +179,7 @@ Future<void> attachNoteToStudy(
     Attachment(
       moduleId: target.$1,
       topicId: target.$2,
-      title: '${note.folder.dirName} – ${note.name}',
+      title: '${note.folder.dirName} – ${note.title}',
       path: note.file.path,
       createdAt: DateTime.now(),
     ),
@@ -199,32 +200,36 @@ Future<void> attachTo(
   int? topicId,
   required String targetName,
 }) async {
-  final source = await showModalBottomSheet<_Source>(
+  final source = await showAppSheet<_Source>(
     context: context,
     showDragHandle: true,
     builder: (c) => SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            title: Text('Allega a «$targetName»'),
-            subtitle: const Text('Uno o più file'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.mic_none),
-            title: const Text('Dagli appunti del corso'),
-            subtitle: const Text(
-              "Registrazioni, trascrizioni, riassunti, appunti, risposte dell'AI",
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: Text('Allega a «$targetName»'),
+              subtitle: const Text('Uno o più file'),
             ),
-            onTap: () => Navigator.pop(c, _Source.notes),
-          ),
-          ListTile(
-            leading: const Icon(Icons.upload_file),
-            title: const Text('File dal dispositivo'),
-            subtitle: const Text('PDF, immagini, documenti: copiati nell\'app'),
-            onTap: () => Navigator.pop(c, _Source.device),
-          ),
-        ],
+            ListTile(
+              leading: const Icon(Icons.mic_none),
+              title: const Text('Dagli appunti del corso'),
+              subtitle: const Text(
+                "Registrazioni, trascrizioni, riassunti, appunti, risposte dell'AI",
+              ),
+              onTap: () => Navigator.pop(c, _Source.notes),
+            ),
+            ListTile(
+              leading: const Icon(Icons.upload_file),
+              title: const Text('File dal dispositivo'),
+              subtitle: const Text(
+                'PDF, immagini, documenti: copiati nell\'app',
+              ),
+              onTap: () => Navigator.pop(c, _Source.device),
+            ),
+          ],
+        ),
       ),
     ),
   );
@@ -272,7 +277,7 @@ Future<void> attachTo(
   } else {
     final notes = await s.notes.list(course);
     if (!context.mounted) return;
-    final picked = await showDialog<List<NoteFile>>(
+    final picked = await showAppDialog<List<NoteFile>>(
       context: context,
       builder: (_) => _NotePicker(notes),
     );
@@ -280,7 +285,7 @@ Future<void> attachTo(
     final chosen = await chooseAttachmentKinds(
       context,
       count: picked.length,
-      name: picked.first.name,
+      name: picked.first.title,
     );
     if (chosen == null) return;
     kinds = chosen;
@@ -289,7 +294,7 @@ Future<void> attachTo(
         Attachment(
           moduleId: topicId == null ? moduleId : null,
           topicId: topicId,
-          title: '${n.folder.dirName} – ${n.name}',
+          title: '${n.folder.dirName} – ${n.title}',
           path: n.file.path,
           createdAt: DateTime.now(),
           kinds: kinds,
@@ -355,7 +360,7 @@ Future<Set<AttachmentKind>?> chooseAttachmentKinds(
       : AttachmentKind.parse(last);
   if (await s.settings.get(kAttachmentKindDontAskKey) == '1') return initial;
   if (!context.mounted) return null;
-  final r = await showDialog<(Set<AttachmentKind>, bool)>(
+  final r = await showAppDialog<(Set<AttachmentKind>, bool)>(
     context: context,
     builder: (_) => _KindDialog(initial: initial, count: count, name: name),
   );
@@ -391,6 +396,7 @@ class _KindDialogState extends State<_KindDialog> {
         ? '«${widget.name}»'
         : '${widget.count} file';
     return AlertDialog(
+      scrollable: true,
       key: const Key('attachment-kind-dialog'),
       title: Text(widget.count == 1 ? 'Che tipo di file è?' : 'Che file sono?'),
       content: SizedBox(
@@ -499,7 +505,7 @@ class _NotePickerState extends State<_NotePicker> {
                       CheckboxListTile(
                         dense: true,
                         value: _selected.contains(n),
-                        title: Text(n.name),
+                        title: Text(n.title),
                         secondary: Icon(
                           n.isAudio ? Icons.graphic_eq : Icons.article_outlined,
                         ),

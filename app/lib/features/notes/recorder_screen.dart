@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../widgets/app_snack_action.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
 import '../../core/router/safe_pop.dart';
@@ -20,6 +22,7 @@ import 'notes_screen.dart';
 import 'course_notes_screen.dart';
 import 'recorder/better_transcription.dart';
 import 'recorder/course_vocabulary.dart';
+import 'recorder/lecture_language.dart';
 import 'recorder/live_transcriber.dart';
 import 'recorder/live_transcript_editor.dart';
 import 'recorder/recording_meta.dart';
@@ -73,6 +76,10 @@ class _RecorderScreenState extends State<RecorderScreen> {
   /// «Formule (LaTeX)» nella trascrizione dal vivo.
   bool _formulas = false;
 
+  /// Lingua della lezione ('it' o 'en'): quella scelta per l'insegnamento,
+  /// altrimenti quella dell'onboarding (recorder/lecture_language.dart).
+  String _lang = 'it';
+
   /// Impostazione di «Formule (LaTeX)».
   static const formulasKey = 'live_formulas';
 
@@ -122,6 +129,33 @@ class _RecorderScreenState extends State<RecorderScreen> {
       _course =
           suggested ?? (catalog.courses.isEmpty ? null : catalog.courses.first);
     });
+    await _loadLanguage();
+  }
+
+  /// Lingua dell'insegnamento scelto (o di quello della registrazione in
+  /// corso, che non cambia più).
+  Future<void> _loadLanguage() async {
+    final live = _rec.live;
+    if (_rec.active && live != null) {
+      if (mounted) setState(() => _lang = live.language);
+      return;
+    }
+    final c = _course;
+    final lang = await lectureLanguageOf(_s.settings, c);
+    if (mounted && c == _course) setState(() => _lang = lang);
+  }
+
+  void _setLanguage(String lang) {
+    if (_rec.active || lang == _lang) return;
+    setState(() => _lang = lang);
+    final id = _course?.id;
+    if (id != null) {
+      unawaited(
+        setCourseLectureLanguage(_s.settings, id, lang).catchError(
+          (Object e) => debugPrint('Registra: lingua non salvata: $e'),
+        ),
+      );
+    }
   }
 
   Future<void> _start() async {
@@ -137,7 +171,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
         path,
         course: c.name,
         courseId: c.id,
-        language: c.examLanguage,
+        language: _lang,
         vocabulary: await loadCourseVocabulary(_s.study, c.id, c.name),
       );
       _rec.live?.formulas = _formulas;
@@ -243,7 +277,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
       ..showSnackBar(
         SnackBar(
           content: Text('Segnalibro a ${clockLabel(b.at)}'),
-          action: SnackBarAction(
+          action: AppSnackBarAction(
             label: 'Aggiungi nota',
             onPressed: () => unawaited(addRecorderBookmarkNote(_rec, b)),
           ),
@@ -254,26 +288,30 @@ class _RecorderScreenState extends State<RecorderScreen> {
   Future<void> _editMark(Bookmark b) async {
     final current = _rec.bookmarks.where((x) => x.at == b.at).firstOrNull;
     if (current == null) return;
-    final action = await showModalBottomSheet<String>(
+    final action = await showAppSheet<String>(
       context: context,
       showDragHandle: true,
       builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.edit_note),
-              title: Text(
-                current.note.isEmpty ? 'Aggiungi una nota' : 'Modifica la nota',
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: const Icon(Icons.edit_note),
+                title: Text(
+                  current.note.isEmpty
+                      ? 'Aggiungi una nota'
+                      : 'Modifica la nota',
+                ),
+                onTap: () => Navigator.pop(c, 'nota'),
               ),
-              onTap: () => Navigator.pop(c, 'nota'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.bookmark_remove_outlined),
-              title: const Text('Togli il segnalibro'),
-              onTap: () => Navigator.pop(c, 'togli'),
-            ),
-          ],
+              ListTile(
+                leading: const Icon(Icons.bookmark_remove_outlined),
+                title: const Text('Togli il segnalibro'),
+                onTap: () => Navigator.pop(c, 'togli'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -342,18 +380,26 @@ class _RecorderScreenState extends State<RecorderScreen> {
                               DropdownMenuItem(
                                 value: c.id,
                                 child: Text(
-                                  c.label,
+                                  c.name,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                           ],
                           onChanged: active
                               ? null
-                              : (id) => setState(
-                                  () => _course = _catalog!.byId[id],
-                                ),
+                              : (id) {
+                                  setState(() => _course = _catalog!.byId[id]);
+                                  unawaited(_loadLanguage());
+                                },
                         ),
-                        const SizedBox(height: 32),
+                        const SizedBox(height: 12),
+                        _LanguagePicker(
+                          value: active
+                              ? (_rec.live?.language ?? _lang)
+                              : _lang,
+                          onChanged: active ? null : _setLanguage,
+                        ),
+                        const SizedBox(height: 24),
                         Semantics(
                           label: 'Durata della registrazione',
                           child: Text(
@@ -410,16 +456,22 @@ class _RecorderScreenState extends State<RecorderScreen> {
                           ),
                         ),
                         const SizedBox(height: 28),
+                        // i due pulsanti laterali dividono lo spazio che resta
+                        // accanto a quello grande (con caratteri grandi la
+                        // scritta si accorcia, non esce dalla riga)
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            _SideButton(
-                              key: const Key('recorder-mark'),
-                              icon: Icons.bookmark_add_outlined,
-                              label: 'Segna',
-                              semantics:
-                                  'Aggiungi un segnalibro al tempo attuale',
-                              onPressed: active && !saving ? _mark : null,
+                            Expanded(
+                              child: Center(
+                                child: _SideButton(
+                                  key: const Key('recorder-mark'),
+                                  icon: Icons.bookmark_add_outlined,
+                                  label: 'Segna',
+                                  semantics:
+                                      'Aggiungi un segnalibro al tempo attuale',
+                                  onPressed: active && !saving ? _mark : null,
+                                ),
+                              ),
                             ),
                             _RecordButton(
                               active: active,
@@ -427,15 +479,19 @@ class _RecorderScreenState extends State<RecorderScreen> {
                               busy: _busy || saving,
                               onPressed: active ? _togglePause : _start,
                             ),
-                            _SideButton(
-                              key: const Key('recorder-save'),
-                              icon: Icons.check_rounded,
-                              label: 'Salva',
-                              semantics: 'Ferma e salva la registrazione',
-                              blue: true,
-                              onPressed: active && !_busy && !saving
-                                  ? _save
-                                  : null,
+                            Expanded(
+                              child: Center(
+                                child: _SideButton(
+                                  key: const Key('recorder-save'),
+                                  icon: Icons.check_rounded,
+                                  label: 'Salva',
+                                  semantics: 'Ferma e salva la registrazione',
+                                  blue: true,
+                                  onPressed: active && !_busy && !saving
+                                      ? _save
+                                      : null,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -641,6 +697,7 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
         ? null
         : speechNotice(
             live.systemUnavailable,
+            mac: Platform.isMacOS,
             languageMissing: live.systemLanguageMissing,
             locale: live.locale,
             whisper: live.engine == LiveEngine.whisper,
@@ -669,11 +726,12 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 if (state == LiveState.running || state == LiveState.lagging)
                   Text(
                     switch (live!.engine) {
+                      LiveEngine.system when live.appleSpeech =>
+                        'dal vivo · Apple, sul Mac',
                       LiveEngine.system =>
-                        (live.onDevice
-                                ? 'dal vivo · sul dispositivo'
-                                : 'dal vivo') +
-                            (live.secondPassActive ? ' + small' : ''),
+                        live.onDevice
+                            ? 'dal vivo · sul dispositivo'
+                            : 'dal vivo',
                       LiveEngine.parakeet => 'dal vivo · Parakeet',
                       _ when live.quick || live.modelId == null =>
                         live.secondPassActive
@@ -773,6 +831,59 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// «Lingua della lezione» sotto l'insegnamento: Italiano o Inglese (la
+/// scelta resta per l'insegnamento). Durante la registrazione si vede ma non
+/// si cambia.
+class _LanguagePicker extends StatelessWidget {
+  const _LanguagePicker({required this.value, this.onChanged});
+  final String value;
+  final ValueChanged<String>? onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final muted = theme.textTheme.bodySmall?.copyWith(
+      color: theme.colorScheme.onSurfaceVariant,
+    );
+    final words = value == 'en' ? 'in inglese' : 'in italiano';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Wrap(
+          alignment: WrapAlignment.spaceBetween,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 12,
+          runSpacing: 8,
+          children: [
+            Text('Lingua della lezione', style: theme.textTheme.bodyMedium),
+            SegmentedButton<String>(
+              key: const Key('recorder-language'),
+              showSelectedIcon: false,
+              segments: const [
+                ButtonSegment(value: 'it', label: Text('Italiano')),
+                ButtonSegment(value: 'en', label: Text('Inglese')),
+              ],
+              selected: {value},
+              onSelectionChanged: onChanged == null
+                  ? null
+                  : (v) {
+                      AppFeedback.of(context).toggle();
+                      onChanged!(v.first);
+                    },
+            ),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Text(
+          'La trascrizione usa solo parole $words, salvo nomi e termini '
+          'tecnici.',
+          style: muted,
+        ),
+      ],
     );
   }
 }
@@ -921,6 +1032,8 @@ class _SideButton extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: theme.textTheme.labelMedium?.copyWith(
               color: enabled
                   ? theme.colorScheme.onSurface
@@ -986,6 +1099,8 @@ class _RecordButton extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             !active ? 'Registra' : (paused ? 'Riprendi' : 'Pausa'),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.labelMedium,
           ),
         ],

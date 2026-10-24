@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 
 /// Impostazione «Non chiedere più» della conferma di «Elimina libri non
@@ -31,12 +32,13 @@ Future<bool> confirmDeleteUnsavedBooks(
             'vengono tolti dai tuoi libri: li ritrovi in «Libri rimossi», da '
             'dove puoi ripristinarli.';
   var dontAsk = false;
-  final ok = await showDialog<bool>(
+  final ok = await showAppDialog<bool>(
     context: context,
     builder: (c) {
       final scheme = Theme.of(c).colorScheme;
       return StatefulBuilder(
         builder: (c, setLocal) => AlertDialog(
+          scrollable: true,
           icon: Icon(Icons.delete_sweep_outlined, color: scheme.error),
           title: const Text('Elimina libri non salvati?'),
           content: Column(

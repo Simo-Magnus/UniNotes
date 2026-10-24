@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../core/academic/electives.dart';
 import '../../core/academic/plan_scope.dart';
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
@@ -52,19 +53,18 @@ const String kDontAskDeleteExamKey = 'dont_ask_delete_exam';
 
 /// Chiede conferma ed elimina l'esame: «Annulla» ed «Elimina», più la
 /// casella «Non chiedere più». Con la casella spuntata le eliminazioni
-/// successive non chiedono più, tranne quella dell'ultimo esame finale di un
-/// insegnamento a scelta o dell'ultima prova in itinere / esonero di uno senza
-/// esame finale, che tolgono l'insegnamento dal piano (stesso avviso, stesso
-/// «Annulla»). Restituisce true se eliminato.
+/// successive non chiedono più, tranne quella dell'ultima prova (esame
+/// finale, prova in itinere o esonero) di un insegnamento a scelta, che lo
+/// toglie dal piano (stesso avviso, stesso «Annulla»): finché gli resta
+/// un'altra prova l'insegnamento resta. Restituisce true se eliminato.
 Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
   final what = exam.kind == ExamKind.midterm
       ? 'la prova in itinere o l\'esonero'
       : 'l\'esame';
   final services = context.read<AppServices>();
   final course = await services.courses.byId(exam.courseId);
-  // l'eliminazione toglie l'insegnamento a scelta dal piano: vale per
-  // l'esame finale e anche per l'ultima prova in itinere o esonero di un
-  // insegnamento senza esame finale
+  // l'eliminazione toglie l'insegnamento a scelta dal piano solo se è la
+  // sua ultima prova (né esame finale né prove in itinere / esoneri dopo)
   final elective = await wouldDropElective(services, exam);
   var skip = false;
   if (!elective) {
@@ -83,10 +83,10 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
         'Vuoi eliminare $what «${exam.title ?? exam.kind.label}»'
         '${course == null ? '' : ' di «${course.name}»'}? Voto, data, '
         'argomenti e materiali della prova si perdono.'
-        '${elective ? '\n\n«${course!.name}» è un insegnamento a scelta: '
-                  'senza esame finale sparisce anche da Registra, Studio, '
-                  'Libri e Home (i dati restano; lo riprendi aggiungendo di '
-                  'nuovo l\'esame).' : ''}',
+        '${elective ? '\n\n«${course!.name}» è un insegnamento a scelta e '
+                  'questa è la sua ultima prova: senza prove sparisce anche '
+                  'da Registra, Studio, Libri e Home (i dati restano; lo '
+                  'riprendi aggiungendo di nuovo una prova).' : ''}',
       );
   if (!ok || !context.mounted || exam.id == null) return false;
   // stato dell'insegnamento prima dell'eventuale archiviazione: «Annulla»
@@ -105,11 +105,7 @@ Future<bool> deleteExamWithConfirm(BuildContext context, Exam exam) async {
       onUndo: () async {
         await services.database.db.insert('exams', exam.toMap());
         if (dropped) {
-          await restoreElective(
-            services,
-            exam.courseId,
-            status: statusBefore,
-          );
+          await restoreElective(services, exam.courseId, status: statusBefore);
         }
         services.revision.bump();
       },
@@ -125,12 +121,14 @@ Future<bool> _confirmDeleteExam(
   String message,
 ) async {
   var dontAsk = false;
-  final ok = await showDialog<bool>(
+  final ok = await showAppDialog<bool>(
     context: context,
     builder: (c) {
       final scheme = Theme.of(c).colorScheme;
       return StatefulBuilder(
         builder: (c, setLocal) => AlertDialog(
+          // scorre se lo spazio è poco (finestra bassa, caratteri grandi)
+          scrollable: true,
           icon: Icon(Icons.delete_outline, color: scheme.error),
           title: const Text('Eliminare la prova?'),
           content: Column(
@@ -386,7 +384,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
   /// Voce «Esame a scelta (fuori piano)»: nome e CFU dell'insegnamento che
   /// non è nel piano.
   Future<void> _pickExtra() async {
-    final r = await showDialog<(String, double?)>(
+    final r = await showAppDialog<(String, double?)>(
       context: context,
       builder: (c) => const _ExtraExamDialog(),
     );
@@ -437,7 +435,7 @@ class _ExamFormPageState extends State<ExamFormPage> {
         minute: (int.tryParse(parts[1]) ?? 0).clamp(0, 59),
       );
     }
-    final t = await showTimePicker(context: context, initialTime: initial);
+    final t = await showSafeTimePicker(context: context, initialTime: initial);
     if (t != null && mounted) {
       setState(
         () => _time =
@@ -678,7 +676,8 @@ class _ExamFormPageState extends State<ExamFormPage> {
             icon: narrow ? null : const Icon(Icons.flag_outlined),
             // esame finale e prova in itinere / esonero non si scambiano:
             // modificando una prova il tipo resta quello scelto
-            enabled: widget.exam == null || widget.exam!.kind == ExamKind.finalExam,
+            enabled:
+                widget.exam == null || widget.exam!.kind == ExamKind.finalExam,
           ),
           ButtonSegment(
             value: ExamKind.midterm,
@@ -686,7 +685,8 @@ class _ExamFormPageState extends State<ExamFormPage> {
               narrow ? 'Itinere o esonero' : 'Prova in itinere o Esonero',
             ),
             icon: narrow ? null : const Icon(Icons.timelapse),
-            enabled: widget.exam == null || widget.exam!.kind == ExamKind.midterm,
+            enabled:
+                widget.exam == null || widget.exam!.kind == ExamKind.midterm,
           ),
         ],
         selected: {_kind},
@@ -1052,9 +1052,10 @@ Future<void> offerExamCalendar(BuildContext context, AppServices s) async {
   if (await s.settings.get(kCalendarOfferedKey) != null) return;
   if (!context.mounted) return;
   final label = cal.backend?.label ?? 'calendario';
-  final yes = await showDialog<bool>(
+  final yes = await showAppDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       title: const Text('Vuoi le prove nel calendario?'),
       content: Text(
         'UniNotes può scrivere esami, prove in itinere ed esoneri come '
@@ -1120,6 +1121,7 @@ class _ExtraExamDialogState extends State<_ExtraExamDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: const Text('Esame a scelta'),
       content: Column(
         mainAxisSize: MainAxisSize.min,

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/loopback_oauth.dart';
 import '../../core/theme/app_tokens.dart';
@@ -30,12 +31,14 @@ Future<IncomingDestination?> showIncomingDestinationDialog(
       if (scope.inDegree(c)) c,
   ]..sort(_byStatusThenName);
   if (!context.mounted) return null;
-  return showDialog<IncomingDestination>(
+  return showAppDialog<IncomingDestination>(
     context: context,
     builder: (_) => _DestinationDialog(
       title:
           title ??
-          (count == 1 ? 'Dove salvare il file?' : 'Dove salvare i $count file?'),
+          (count == 1
+              ? 'Dove salvare il file?'
+              : 'Dove salvare i $count file?'),
       courses: courses,
     ),
   );
@@ -71,6 +74,7 @@ class _DestinationDialogState extends State<_DestinationDialog> {
       if (!unique.contains(o)) unique.add(o);
     }
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.title),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -85,9 +89,7 @@ class _DestinationDialogState extends State<_DestinationDialog> {
           DropdownButtonFormField<IncomingDestination>(
             isExpanded: true,
             initialValue: _dest,
-            decoration: const InputDecoration(
-              labelText: 'Insegnamento',
-            ),
+            decoration: const InputDecoration(labelText: 'Insegnamento'),
             items: [
               for (final o in unique)
                 DropdownMenuItem(
@@ -181,14 +183,18 @@ Future<String> _uploadMessage(
 /// dentro UniNotes da ora si sincronizzano. Senza chiave del Picker nella
 /// build si usa il selettore di file del sistema (Drive per desktop sul PC,
 /// l'app Drive sul telefono) e i file passano dall'app.
-Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async {
+Future<void> importFromDrive(
+  BuildContext context,
+  GoogleDriveService gd,
+) async {
   final picker = gd.picker();
   if (!picker.available) {
     // senza chiave API il selettore di Google non si apre: lo si spiega e
     // si propone la scelta dal dispositivo
-    final local = await showDialog<bool>(
+    final local = await showAppDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
+        scrollable: true,
         icon: const Icon(Icons.vpn_key_off_outlined),
         title: const Text('Selettore di Google Drive non disponibile'),
         content: const Text(DrivePicker.missingKeyMessage),
@@ -238,45 +244,46 @@ Future<void> importFromDrive(BuildContext context, GoogleDriveService gd) async 
   // (Android, Esc) o qui sotto alla fine dell'attesa; chiuderlo di nuovo
   // toglierebbe la pagina sotto (Collegamenti, l'insegnamento)
   var open = true;
-  final waiting = showDialog<void>(
-    context: context,
-    barrierDismissible: false,
-    builder: (c) => AlertDialog(
-      title: const Text('Scegli i file su Google Drive'),
-      content: const Row(
-        children: [
-          SizedBox(
-            width: 22,
-            height: 22,
-            child: CircularProgressIndicator(strokeWidth: 2.5),
+  final waiting =
+      showAppDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (c) => AlertDialog(
+          title: const Text('Scegli i file su Google Drive'),
+          content: const Row(
+            children: [
+              SizedBox(
+                width: 22,
+                height: 22,
+                child: CircularProgressIndicator(strokeWidth: 2.5),
+              ),
+              SizedBox(width: 16),
+              Expanded(
+                child: Text(
+                  'Il selettore è aperto nel browser: scegli i file, poi torna '
+                  'qui.',
+                ),
+              ),
+            ],
           ),
-          SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              'Il selettore è aperto nel browser: scegli i file, poi torna '
-              'qui.',
+          actions: [
+            TextButton(
+              onPressed: () {
+                if (!open) return;
+                open = false;
+                if (!cancel.isCompleted) cancel.complete();
+                Navigator.pop(c);
+              },
+              child: const Text('Annulla'),
             ),
-          ),
-        ],
-      ),
-      actions: [
-        TextButton(
-          onPressed: () {
-            if (!open) return;
-            open = false;
-            if (!cancel.isCompleted) cancel.complete();
-            Navigator.pop(c);
-          },
-          child: const Text('Annulla'),
+          ],
         ),
-      ],
-    ),
-  ).whenComplete(() {
-    open = false;
-    // chiuso con Indietro: l'attesa si ferma come con «Annulla» (prima
-    // restava aperta fino al tempo massimo e poi chiudeva la pagina sotto)
-    if (!cancel.isCompleted) cancel.complete();
-  });
+      ).whenComplete(() {
+        open = false;
+        // chiuso con Indietro: l'attesa si ferma come con «Annulla» (prima
+        // restava aperta fino al tempo massimo e poi chiudeva la pagina sotto)
+        if (!cancel.isCompleted) cancel.complete();
+      });
   final PickerResult result;
   try {
     result = await picker.pick(token, cancel: cancel.future);

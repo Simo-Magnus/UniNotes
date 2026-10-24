@@ -85,6 +85,7 @@ class RecordingMeta {
     List<Bookmark>? bookmarks,
     List<TranscriptSegment>? segments,
     this.transcriptSource,
+    this.language,
     this.peaks,
     this.peakEvery = const Duration(milliseconds: 100),
   }) : bookmarks = bookmarks ?? [],
@@ -100,6 +101,10 @@ class RecordingMeta {
 
   /// Chi ha prodotto i segmenti: `dal vivo` o `whisper <modello>`.
   String? transcriptSource;
+
+  /// Lingua della lezione scelta in Registra ('it' o 'en'): le
+  /// trascrizioni fatte dopo il salvataggio la usano di predefinito.
+  String? language;
 
   /// Forma d'onda: un livello 0–255 ogni [peakEvery].
   Uint8List? peaks;
@@ -123,6 +128,7 @@ class RecordingMeta {
       'segnalibri': [for (final b in bookmarks) b.toJson()],
     if (segments.isNotEmpty) 'segmenti': [for (final s in segments) s.toJson()],
     if (transcriptSource != null) 'trascrizione': transcriptSource,
+    if (language != null) 'lingua': language,
     if (peaks != null && peaks!.isNotEmpty) ...{
       'formaOnda': base64Encode(peaks!),
       'formaOndaMs': peakEvery.inMilliseconds,
@@ -153,6 +159,11 @@ class RecordingMeta {
       transcriptSource: j['trascrizione'] is String
           ? j['trascrizione'] as String
           : null,
+      language: switch (j['lingua']) {
+        'it' => 'it',
+        'en' => 'en',
+        _ => null,
+      },
       peaks: peaks,
       peakEvery: Duration(milliseconds: (peakMs ?? 100).clamp(10, 10000)),
     );
@@ -331,6 +342,7 @@ RecordingMeta cutMeta(RecordingMeta m, List<(Duration, Duration)> keep) {
     ],
     segments: segs,
     transcriptSource: m.transcriptSource,
+    language: m.language,
     peaks: peaks,
     peakEvery: m.peakEvery,
   );

@@ -84,7 +84,6 @@ void main() {
 
       final behind = SecondPassGovernor(probe: 0.3)..checkBehind(s(200), s(60));
       expect(behind.stopped, SecondPassStop.behind);
-      expect(secondPassStopLabel(SecondPassStop.battery), contains('20%'));
     });
   });
 }

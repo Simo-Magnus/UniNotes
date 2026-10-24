@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../pdf_highlights.dart';
 import '../reader_controller.dart';
 import '../reader_text.dart';
@@ -209,7 +210,7 @@ class _PdfViewState extends State<PdfView> {
   /// PDF protetto da password: la si chiede (null = annulla).
   Future<String?> _askPassword() async {
     if (!mounted) return null;
-    return showDialog<String>(
+    return showAppDialog<String>(
       context: context,
       builder: (_) => const _PasswordDialog(),
     );
@@ -281,6 +282,7 @@ class _PasswordDialogState extends State<_PasswordDialog> {
 
   @override
   Widget build(BuildContext context) => AlertDialog(
+    scrollable: true,
     title: const Text('PDF protetto da password'),
     content: TextField(
       controller: _ctrl,

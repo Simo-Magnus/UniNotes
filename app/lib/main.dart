@@ -73,8 +73,9 @@ Future<void> main(List<String> args) async {
   });
   // Modelli e librerie per la trascrizione inclusi nell'app (non sono
   // pacchetti Dart): Parakeet di NVIDIA (CC BY 4.0: attribuzione, modifiche,
-  // testo della licenza), Silero VAD (MIT) e ONNX Runtime (MIT, la DLL che
-  // arriva con sherpa-onnx, la cui licenza Apache-2.0 compare da sola).
+  // testo della licenza), Silero VAD (MIT), ONNX Runtime (MIT, la DLL che
+  // arriva con sherpa-onnx, la cui licenza Apache-2.0 compare da sola) e il
+  // modello Whisper small q5_1 (MIT).
   LicenseRegistry.addLicense(() async* {
     const parakeet = ['NVIDIA Parakeet TDT 0.6B v3'];
     yield LicenseEntryWithLineBreaks(
@@ -91,6 +92,11 @@ Future<void> main(List<String> args) async {
     yield LicenseEntryWithLineBreaks(const [
       'ONNX Runtime',
     ], await rootBundle.loadString('assets/licenses/onnxruntime_LICENSE.txt'));
+    // Whisper small q5_1 incluso nelle app per PC e Mac (pesi di OpenAI e
+    // conversione di whisper.cpp, MIT)
+    yield LicenseEntryWithLineBreaks(const [
+      'Whisper small q5_1 (OpenAI, whisper.cpp)',
+    ], await rootBundle.loadString('assets/licenses/whisper_LICENSE.txt'));
   });
   // Caratteri IBM Plex inclusi negli asset (non sono un pacchetto: la loro
   // licenza non compare da sola nella pagina delle licenze).
@@ -284,14 +290,27 @@ class UniversityNotesApp extends StatelessWidget {
             navigatorKey: appNavigatorKey,
             builder: (context, child) {
               final media = MediaQuery.of(context);
+              final reduce = media.disableAnimations || display.reduceMotion;
+              // «Riduci animazioni» anche per i riquadri che si aprono
+              // (ExpansionTile non guarda il MediaQuery)
+              final theme = Theme.of(context);
+              child = Theme(
+                data: reduce
+                    ? theme.copyWith(
+                        expansionTileTheme: theme.expansionTileTheme.copyWith(
+                          expansionAnimationStyle: AnimationStyle.noAnimation,
+                        ),
+                      )
+                    : theme,
+                child: child ?? const SizedBox(),
+              );
               return MediaQuery(
                 data: media.copyWith(
                   textScaler: AppTextScaler(
                     media.textScaler,
                     display.textFactor,
                   ),
-                  disableAnimations:
-                      media.disableAnimations || display.reduceMotion,
+                  disableAnimations: reduce,
                 ),
                 child: AnnotatedRegion<SystemUiOverlayStyle>(
                   value: AppTheme.overlayStyle(Theme.of(context).brightness),
@@ -299,9 +318,7 @@ class UniversityNotesApp extends StatelessWidget {
                     child: RecordingOverlayHost(
                       // Pagina giù/su con più liste nella pagina: niente
                       // errore (core/router/safe_scroll_action.dart)
-                      child: SafeScrollActions(
-                        child: child ?? const SizedBox(),
-                      ),
+                      child: SafeScrollActions(child: child),
                     ),
                   ),
                 ),

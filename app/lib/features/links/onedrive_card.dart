@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../cloud/microsoft_admin_consent.dart';
 import '../cloud/onedrive_folders.dart';
@@ -74,7 +75,7 @@ Future<String?> showOneDriveFolderPicker(
   BuildContext context,
   FolderBrowser browser, {
   String initialPath = '',
-}) => showDialog<String>(
+}) => showAppDialog<String>(
   context: context,
   builder: (_) =>
       OneDriveFolderDialog(browser: browser, initialPath: initialPath),

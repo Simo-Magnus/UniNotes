@@ -207,6 +207,55 @@ class _AiStep extends StatelessWidget {
   }
 }
 
+// ------------------------------------------------- lingua delle lezioni
+
+/// «In che lingua sono le tue lezioni?»: Italiano o Inglese (due opzioni,
+/// un tocco va avanti). La trascrizione delle registrazioni usa solo il
+/// vocabolario di questa lingua; in Registra si cambia prima di registrare
+/// e la scelta resta per quell'insegnamento.
+class _LectureLanguageStep extends StatelessWidget {
+  const _LectureLanguageStep({required this.onNext});
+  final VoidCallback onNext;
+
+  @override
+  Widget build(BuildContext context) {
+    final s = context.read<AppServices>();
+    Future<void> pick(String lang) async {
+      try {
+        await setGeneralLectureLanguage(s.settings, lang);
+      } catch (e) {
+        debugPrint('Onboarding: lingua delle lezioni: $e');
+      }
+      onNext();
+    }
+
+    return ListView(
+      padding: const EdgeInsets.only(bottom: 24),
+      children: [
+        const _StepHeader(
+          'In che lingua sono le tue lezioni?',
+          'Scegli la lingua della maggior parte delle lezioni che '
+              'registrerai: la trascrizione userà solo parole di questa lingua '
+              '(nomi e termini tecnici a parte). Puoi cambiarla in Registra '
+              'prima di ogni registrazione.',
+        ),
+        _OptionTile(
+          icon: Icons.record_voice_over_outlined,
+          title: 'Italiano',
+          subtitle: 'Quasi tutte le lezioni sono in italiano',
+          onTap: () => pick('it'),
+        ),
+        _OptionTile(
+          icon: Icons.translate,
+          title: 'Inglese',
+          subtitle: 'Quasi tutte le lezioni sono in inglese',
+          onTap: () => pick('en'),
+        ),
+      ],
+    );
+  }
+}
+
 // -------------------------------------------------------------- avvisi
 
 /// Permesso delle notifiche al primo ingresso, spiegato prima del dialogo

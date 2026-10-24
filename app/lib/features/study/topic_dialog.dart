@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/text_limits.dart';
+import '../../core/feedback/app_modals.dart';
 
 /// Nome e nota scelti nel dialogo «Nota».
 typedef NameNote = ({String name, String note});
@@ -13,7 +14,7 @@ Future<NameNote?> showNoteDialog(
   required String title,
   required String name,
   String? note,
-}) => showDialog<NameNote>(
+}) => showAppDialog<NameNote>(
   context: context,
   builder: (_) => _NoteDialog(title: title, name: name, note: note ?? ''),
 );

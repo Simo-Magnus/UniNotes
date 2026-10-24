@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/notes/recorder/recording_overlay.dart'
     show appNavigatorKey;
+import '../feedback/app_modals.dart';
 import '../services/error_log.dart';
 import '../theme/app_theme.dart';
 
@@ -246,7 +247,7 @@ Future<void> showDatabaseRecoveredNotice(
 }) async {
   final context = appNavigatorKey.currentContext;
   if (context == null || !context.mounted) return;
-  await showDialog<void>(
+  await showAppDialog<void>(
     context: context,
     builder: (c) => AlertDialog(
       title: const Text('Dati danneggiati'),

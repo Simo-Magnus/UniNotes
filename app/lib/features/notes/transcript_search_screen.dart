@@ -50,7 +50,7 @@ String transcriptBody(String md) => md
 class _Item {
   _Item(this.course, this.transcript, this.audio, this.text)
     : lower = text.toLowerCase(),
-      name = transcript.name.toLowerCase();
+      name = transcript.title.toLowerCase();
   final Course course;
   final NoteFile transcript;
   final NoteFile? audio;
@@ -201,9 +201,10 @@ class _TranscriptSearchScreenState extends State<TranscriptSearchScreen> {
                               : Icons.article_outlined,
                           color: theme.colorScheme.primary,
                         ),
-                        title: Text(it.transcript.name),
+                        title: Text(it.transcript.title),
                         subtitle: Text(
-                          [it.course.label, ?snip].join('\n'),
+                          // solo il nome dell'insegnamento
+                          [it.course.name, ?snip].join('\n'),
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                         ),

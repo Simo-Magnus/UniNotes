@@ -103,9 +103,9 @@ class Course {
   final bool? mandatory;
   final String? curriculum;
 
-  /// Nome mostrato in Registra e Studio: «Robotica (a scelta)» per gli
-  /// insegnamenti a scelta.
-  String get label => mandatory == false ? '$name (a scelta)' : name;
+  // Gli insegnamenti si mostrano sempre solo con [name]: quelli a scelta
+  // (mandatory == false) si riconoscono dal posto che hanno negli elenchi e
+  // dalla scheda dell'insegnamento, non da «(a scelta)» nel nome.
 
   /// Il catalogo non ha ancora i libri di questo insegnamento.
   bool get booksToAdd => booksStatus == 'da_aggiungere';

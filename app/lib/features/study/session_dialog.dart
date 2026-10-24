@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../models/study.dart';
 import 'course_catalog.dart';
 import 'study_stats.dart';
@@ -15,7 +16,7 @@ Future<StudySession?> showSessionDialog(
   BuildContext context, {
   required CourseCatalog catalog,
   StudySession? session,
-}) => showDialog<StudySession>(
+}) => showAppDialog<StudySession>(
   context: context,
   builder: (_) => _SessionDialog(catalog: catalog, session: session),
 );
@@ -91,7 +92,7 @@ class _SessionDialogState extends State<_SessionDialog> {
   }
 
   Future<void> _pickTime(bool start) async {
-    final t = await showTimePicker(
+    final t = await showSafeTimePicker(
       context: context,
       initialTime: start ? _start : _end,
     );

@@ -207,3 +207,72 @@ if(UNINOTES_PARAKEET)
     endif()
   endif()
 endif()
+
+# Whisper small q5_1 (ggml-small-q5_1.bin, 181 MiB, pesi di OpenAI e
+# conversione di whisper.cpp, MIT): INCLUSO nell'app desktop dal 24/10/2026
+# per ritrascrivere, fissato sulla lingua della lezione, le frasi che
+# Parakeet scrive in un'altra lingua (Parakeet non permette di fissarla) e
+# come ripiego quando Parakeet non può girare. Come Parakeet: si scarica una
+# volta da Hugging Face (ggerganov/whisper.cpp) nella cache app/build/whisper/
+# (fuori dal repository; la CI la conserva con actions/cache e la può
+# riempire prima con tool/prepara_modello_whisper_desktop.py), si controlla
+# lo SHA-256 e si installa in data/whisper/ accanto a uninotes.exe con il
+# testo delle licenze; lo prendono UniNotes_setup.exe, lo zip e l'MSIX. Lo
+# usa whisper.cpp dentro l'app (whisper_ggml) o whisper-cli, se scaricato.
+# Se il download non riesce la build continua senza (le frasi fuori lingua
+# si tolgono, come prima). -DUNINOTES_WHISPER=OFF per non includerlo.
+# Il vecchio modello base q5_1 (fino al 21/10/2026 in data/whisper/) non
+# c'è più: una copia rimasta da una build precedente si toglie.
+option(UNINOTES_WHISPER "Include il modello Whisper small q5_1 nell'app" ON)
+install(CODE "
+  file(REMOVE \"${INSTALL_BUNDLE_DATA_DIR}/whisper/ggml-base-q5_1.bin\")
+  " COMPONENT Runtime)
+if(UNINOTES_WHISPER)
+  set(WHISPER_NAME "ggml-small-q5_1.bin")
+  # SHA-256: impronta LFS di Hugging Face (la stessa di
+  # lib/features/links/whisper_models.dart)
+  set(WHISPER_SHA
+    "ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb")
+  set(WHISPER_CACHE "${CMAKE_CURRENT_SOURCE_DIR}/../build/whisper")
+  set(target "${WHISPER_CACHE}/${WHISPER_NAME}")
+  set(stamp "${target}.sha256")
+  set(have "")
+  if(EXISTS "${target}" AND EXISTS "${stamp}")
+    file(READ "${stamp}" have)
+    string(STRIP "${have}" have)
+  endif()
+  if(NOT have STREQUAL WHISPER_SHA)
+    if(EXISTS "${target}")
+      file(SHA256 "${target}" have)
+    endif()
+    if(NOT have STREQUAL WHISPER_SHA)
+      message(STATUS "Scarico Whisper: ${WHISPER_NAME}")
+      file(DOWNLOAD
+        "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/${WHISPER_NAME}"
+        "${target}.part" STATUS dl_status TLS_VERIFY ON TIMEOUT 1800)
+      list(GET dl_status 0 dl_code)
+      set(have "")
+      if(dl_code EQUAL 0)
+        file(SHA256 "${target}.part" have)
+      endif()
+      if(have STREQUAL WHISPER_SHA)
+        file(RENAME "${target}.part" "${target}")
+      else()
+        file(REMOVE "${target}.part")
+        message(WARNING "Whisper: ${WHISPER_NAME} non scaricato (${dl_status}): "
+          "l'app non ritrascriverà le frasi di Parakeet in un'altra lingua "
+          "senza un modello Whisper scaricato.")
+      endif()
+    endif()
+    if(have STREQUAL WHISPER_SHA)
+      file(WRITE "${stamp}" "${WHISPER_SHA}")
+    endif()
+  endif()
+  if(have STREQUAL WHISPER_SHA)
+    install(FILES "${target}"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/whisper" COMPONENT Runtime)
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/../assets/licenses/whisper_LICENSE.txt"
+      DESTINATION "${INSTALL_BUNDLE_DATA_DIR}/whisper" RENAME "LICENSE.txt"
+      COMPONENT Runtime)
+  endif()
+endif()

@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import 'app_snack_action.dart';
+
 /// Durata degli avvisi con «Annulla»: abbastanza per leggere e premere.
 const kUndoSnackDuration = Duration(seconds: 6);
 
@@ -56,7 +58,7 @@ void showUndoSnackBarOn(
       content: Text(message),
       duration: duration,
       persist: false,
-      action: SnackBarAction(
+      action: AppSnackBarAction(
         label: 'Annulla',
         onPressed: () async {
           undone = true;

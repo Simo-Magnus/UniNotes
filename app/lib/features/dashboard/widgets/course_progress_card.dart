@@ -43,10 +43,13 @@ class _CourseProgressCardState extends State<CourseProgressCard> {
     final d = widget.data;
     final manual = CourseProgressCard._manual;
     final last = d.lastTopicChange;
+    // scelta fatta con i nomi di una versione precedente («2° anno · 1°
+    // semestre»): vale il nome senza l'anno
+    final manualLabel = manual == null ? null : progressGroupName(manual.label);
     if (manual != null &&
-        groups.any((g) => g.label == manual.label) &&
+        groups.any((g) => g.label == manualLabel) &&
         (last == null || manual.at.isAfter(last.at))) {
-      return manual.label;
+      return manualLabel;
     }
     return initialProgressGroup(groups, last: last, now: d.now);
   }

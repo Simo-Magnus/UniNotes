@@ -5,6 +5,7 @@ import '../../core/academic/student_profile.dart';
 import '../../core/academic/year_completion.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
+import '../../widgets/adaptive_row.dart';
 import '../../widgets/glass.dart';
 import 'year_grades_screen.dart';
 
@@ -32,12 +33,15 @@ class MutedChip extends StatelessWidget {
             Icon(icon, size: 13, color: t.textMuted),
             const SizedBox(width: 4),
           ],
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-              color: t.textMuted,
+          Flexible(
+            child: Text(
+              label,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: t.textMuted,
+              ),
             ),
           ),
         ],
@@ -122,6 +126,7 @@ class _YearMenuButtonState extends State<YearMenuButton> {
                 Expanded(
                   child: Text(
                     p.yearChipLabel(y),
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: y == selected
                           ? FontWeight.w700
@@ -130,9 +135,12 @@ class _YearMenuButtonState extends State<YearMenuButton> {
                   ),
                 ),
                 const SizedBox(width: 12),
-                Text(
-                  _statusLabel(p, y),
-                  style: TextStyle(fontSize: 11, color: t.textMuted),
+                Flexible(
+                  child: Text(
+                    _statusLabel(p, y),
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 11, color: t.textMuted),
+                  ),
                 ),
               ],
             ),
@@ -216,38 +224,34 @@ class YearStatusBanner extends StatelessWidget {
     return GlassCard(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      // Azzurro: stato calcolato dall'app.
-                      color: past && d.status == PlanYearStatus.completato
-                          ? t.cyanSoft
-                          : t.textSecondary,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    text,
-                    style: TextStyle(fontSize: 13, color: t.textSecondary),
-                  ),
-                ],
+        child: AdaptiveActionRow(
+          actionLabel: action,
+          action: OutlinedButton(
+            key: const Key('year-banner-action'),
+            onPressed: () => openYearGrades(context, year),
+            child: Text(action),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  // Azzurro: stato calcolato dall'app.
+                  color: past && d.status == PlanYearStatus.completato
+                      ? t.cyanSoft
+                      : t.textSecondary,
+                ),
               ),
-            ),
-            const SizedBox(width: 8),
-            OutlinedButton(
-              key: const Key('year-banner-action'),
-              onPressed: () => openYearGrades(context, year),
-              child: Text(action),
-            ),
-          ],
+              const SizedBox(height: 4),
+              Text(
+                text,
+                style: TextStyle(fontSize: 13, color: t.textSecondary),
+              ),
+            ],
+          ),
         ),
       ),
     );

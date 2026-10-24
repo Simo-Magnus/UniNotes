@@ -1,12 +1,16 @@
+import 'dart:math' show max;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/academic/academic_year.dart';
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/motion.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
+import '../../widgets/adaptive_row.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../../widgets/undo_snack_bar.dart';
@@ -152,10 +156,12 @@ Future<bool> _confirmMarkAll(
   if (!context.mounted) return false;
   final n = y.toComplete;
   var dontAsk = false;
-  final ok = await showDialog<bool>(
+  final ok = await showAppDialog<bool>(
     context: context,
     builder: (c) => StatefulBuilder(
       builder: (c, setLocal) => AlertDialog(
+        // scorre se lo spazio è poco (finestra bassa, caratteri grandi)
+        scrollable: true,
         icon: const Icon(Icons.done_all_rounded),
         title: const Text('Segnare tutti come sostenuti?'),
         content: Column(
@@ -382,7 +388,7 @@ class _CourseRow extends StatelessWidget {
         await resetPreviousToComplete(s, entry);
         s.feedback.toggle();
       case PreviousChoice.taken:
-        final r = await showDialog<ExamOutcome>(
+        final r = await showAppDialog<ExamOutcome>(
           context: context,
           builder: (_) => GradeDialog(
             midterm: false,
@@ -484,7 +490,11 @@ class _CourseRow extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 12, 10),
         child: LayoutBuilder(
-          builder: (context, c) => c.maxWidth >= 560
+          // il selettore cresce con i caratteri: la soglia con lui
+          builder: (context, c) =>
+              c.maxWidth >=
+                  560 *
+                      max(1.0, MediaQuery.textScalerOf(context).scale(14) / 14)
               ? Row(
                   children: [
                     Expanded(child: info),
@@ -526,49 +536,45 @@ class PreviousYearsBanner extends StatelessWidget {
         onTap: () => openPreviousYears(context),
         child: Padding(
           padding: EdgeInsets.fromLTRB(16, done ? 8 : 12, 12, done ? 8 : 12),
-          child: Row(
-            children: [
-              Icon(
-                done ? Icons.check_circle_outline : Icons.history_edu_rounded,
-                color: t.cyanSoft,
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      done ? 'Anni precedenti completati' : 'Anni precedenti',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                        color: t.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      done
-                          ? '${d.taken} sostenuti · ${d.toTake} da sostenere'
-                          : '${examsCount(n)} ${d.yearsLabel} da completare: '
-                                'indica se ${n == 1 ? 'l\'hai già sostenuto' : 'li hai già sostenuti'}.',
-                      style: TextStyle(fontSize: 12.5, color: t.textSecondary),
-                    ),
-                  ],
+          child: AdaptiveActionRow(
+            leading: Icon(
+              done ? Icons.check_circle_outline : Icons.history_edu_rounded,
+              color: t.cyanSoft,
+            ),
+            gap: 12,
+            actionLabel: done ? 'Modifica' : 'Completa',
+            action: done
+                ? TextButton(
+                    key: const Key('previous-years-open'),
+                    onPressed: () => openPreviousYears(context),
+                    child: const Text('Modifica'),
+                  )
+                : FilledButton.tonal(
+                    key: const Key('previous-years-open'),
+                    onPressed: () => openPreviousYears(context),
+                    child: const Text('Completa'),
+                  ),
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  done ? 'Anni precedenti completati' : 'Anni precedenti',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                    color: t.textPrimary,
+                  ),
                 ),
-              ),
-              const SizedBox(width: 8),
-              done
-                  ? TextButton(
-                      key: const Key('previous-years-open'),
-                      onPressed: () => openPreviousYears(context),
-                      child: const Text('Modifica'),
-                    )
-                  : FilledButton.tonal(
-                      key: const Key('previous-years-open'),
-                      onPressed: () => openPreviousYears(context),
-                      child: const Text('Completa'),
-                    ),
-            ],
+                const SizedBox(height: 2),
+                Text(
+                  done
+                      ? '${d.taken} sostenuti · ${d.toTake} da sostenere'
+                      : '${examsCount(n)} ${d.yearsLabel} da completare: '
+                            'indica se ${n == 1 ? 'l\'hai già sostenuto' : 'li hai già sostenuti'}.',
+                  style: TextStyle(fontSize: 12.5, color: t.textSecondary),
+                ),
+              ],
+            ),
           ),
         ),
       ),

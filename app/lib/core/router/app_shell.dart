@@ -18,7 +18,9 @@ import '../../features/reader/files_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/study/focus/focus_screen.dart' show openFocusScreen;
 import '../../features/study/study_screen.dart';
+import '../feedback/app_modals.dart';
 import '../feedback/feedback_service.dart';
+import '../feedback/motion.dart' show motion;
 import '../reminders/notification_plan.dart';
 import '../services/app_services.dart';
 import '../theme/app_theme.dart';
@@ -150,7 +152,9 @@ class _AppShellState extends State<AppShell> {
       StudyScreen.initialTab = StudyScreen.focusTab;
       _select(byLabel('Studio'));
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted && _services.focus.active && !_services.focus.screenVisible) {
+        if (mounted &&
+            _services.focus.active &&
+            !_services.focus.screenVisible) {
           openFocusScreen(context);
         }
       });
@@ -281,21 +285,25 @@ class _AppShellState extends State<AppShell> {
   }
 
   Future<void> _openMore() async {
-    final i = await showModalBottomSheet<int>(
+    final i = await showAppSheet<int>(
       context: context,
       showDragHandle: true,
       builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var i = _mobilePrimary; i < kDestinations.length; i++)
-              ListTile(
-                leading: Icon(kDestinations[i].icon),
-                title: Text(kDestinations[i].label),
-                selected: i == _index,
-                onTap: () => Navigator.pop(c, i),
-              ),
-          ],
+        // scorre se la finestra è bassa (320 px in orizzontale) o i caratteri
+        // sono grandi: l'elenco non esce dal foglio
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (var i = _mobilePrimary; i < kDestinations.length; i++)
+                ListTile(
+                  leading: Icon(kDestinations[i].icon),
+                  title: Text(kDestinations[i].label),
+                  selected: i == _index,
+                  onTap: () => Navigator.pop(c, i),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -377,7 +385,8 @@ class _NavItem extends StatelessWidget {
           onTap();
         },
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: motion(context, const Duration(milliseconds: 200)),
+          curve: Curves.easeOutCubic,
           decoration: active
               ? BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
@@ -419,9 +428,8 @@ class _NavItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 // barra alta 58 (Design 3): con i caratteri grandi le voci
                 // crescono fino a 1,3×; il nome intero resta nella semantica
-                textScaler: MediaQuery.textScalerOf(
-                  context,
-                ).clamp(maxScaleFactor: 1.3),
+                textScaler: MediaQuery.textScalerOf(context)
+                    .clamp(maxScaleFactor: 1.3),
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: active ? FontWeight.w600 : FontWeight.w500,

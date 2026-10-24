@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
@@ -156,7 +157,7 @@ String _resultText(Exam e) {
 /// rileggono dal database.
 Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
   final steps = nextExamStatuses(exam.status);
-  final chosen = await showModalBottomSheet<ExamStatus>(
+  final chosen = await showAppSheet<ExamStatus>(
     context: context,
     showDragHandle: true,
     builder: (c) => SafeArea(
@@ -215,7 +216,7 @@ Future<bool> changeExamStatus(BuildContext context, Exam exam) async {
     final previous = exam.status.isToComplete;
     // «Cambia esito» di una prova superata: il menù parte dal voto attuale
     final change = exam.status == ExamStatus.passed;
-    final r = await showDialog<ExamOutcome>(
+    final r = await showAppDialog<ExamOutcome>(
       context: context,
       builder: (_) => GradeDialog(
         midterm: exam.kind == ExamKind.midterm,
@@ -322,6 +323,8 @@ class _GradeDialogState extends State<GradeDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      // scorre se lo spazio è poco (finestra bassa, caratteri grandi)
+      scrollable: true,
       title: Text(widget.title ?? (widget.midterm ? 'Punteggio' : 'Voto')),
       content: widget.midterm ? _midtermFields() : _finalFields(),
       actions: [

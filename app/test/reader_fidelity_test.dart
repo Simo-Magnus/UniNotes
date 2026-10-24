@@ -558,7 +558,7 @@ void main() {
       await t.tap(find.text('Non chiedere più'));
       await t.pump();
       await t.tap(find.text('Vedi anteprima semplificata'));
-      await settle(t, 4);
+      await settle(t, 12);
       expect(find.byType(ReaderScreen), findsOneWidget);
       expect(
         await t.runAsync(() => settings.get('${kReaderPartialPrefix}doc')),
@@ -566,7 +566,7 @@ void main() {
       );
       // riaperto: niente domanda
       await t.pageBack();
-      await settle(t, 4);
+      await settle(t, 12);
       await t.tap(find.text('apri'));
       await settle(t);
       expect(find.text('Anteprima semplificata'), findsNothing);
@@ -576,7 +576,7 @@ void main() {
         greaterThanOrEqualTo(1),
       );
       await t.pageBack();
-      await settle(t, 4);
+      await settle(t, 12);
       await t.tap(find.text('apri'));
       await settle(t);
       expect(find.text('Anteprima semplificata'), findsOneWidget);

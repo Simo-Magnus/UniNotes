@@ -1,6 +1,6 @@
 # Termini e condizioni d'uso di UniNotes
 
-Ultimo aggiornamento: 21 ottobre 2026
+Ultimo aggiornamento: 24 ottobre 2026
 
 Questi termini regolano l'uso di UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS. Sono scritti per essere letti da chi usa l'app, non solo da chi si occupa di diritto: dove una regola ha un motivo pratico, il motivo è spiegato.
 
@@ -143,7 +143,7 @@ I pagamenti sono gestiti dalle piattaforme indicate nella pagina «Sostieni», c
 
 Il codice dell'app è protetto dal diritto d'autore ed è concesso in uso alle condizioni della licenza dell'articolo 4. Il nome «UniNotes» identifica il progetto: le versioni modificate possono essere distribuite nel rispetto della licenza, ma non devono far credere di essere la versione originale o di essere approvate dallo sviluppatore.
 
-L'app include componenti di terzi con licenze proprie, elencate in Impostazioni → Privacy e informazioni → «Licenze»: tra gli altri i caratteri IBM Plex (SIL Open Font License 1.1), whisper.cpp (licenza MIT), sherpa-onnx (Apache-2.0), ONNX Runtime (MIT) e Silero VAD (MIT). I modelli Whisper sono distribuiti da OpenAI con licenza MIT e si scaricano a parte.
+L'app include componenti di terzi con licenze proprie, elencate in Impostazioni → Privacy e informazioni → «Licenze»: tra gli altri i caratteri IBM Plex (SIL Open Font License 1.1), whisper.cpp (licenza MIT), sherpa-onnx (Apache-2.0), ONNX Runtime (MIT) e Silero VAD (MIT). I modelli Whisper sono distribuiti da OpenAI con licenza MIT e si scaricano a parte; su Windows e Mac l'app include il modello Whisper small (convertito in formato ggml e quantizzato da whisper.cpp, licenza MIT), con il testo della licenza nella pagina «Licenze» e accanto al file del modello.
 
 Su Windows e Mac l'app include il modello NVIDIA Parakeet TDT 0.6B v3 di NVIDIA (<https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3>), distribuito con licenza Creative Commons Attribution 4.0 International (CC BY 4.0, <https://creativecommons.org/licenses/by/4.0/>). Il modello incluso è modificato: convertito in formato ONNX e quantizzato int8 da k2-fsa/sherpa-onnx. Il testo della licenza e l'avviso con l'attribuzione sono nella pagina «Licenze» dell'app e accanto ai file del modello (`LICENSE.txt` e `NOTICE.txt`). UniNotes non è affiliata a NVIDIA né approvata da NVIDIA; il modello è fornito così com'è, senza garanzie, come previsto dalla licenza, che non viene limitata in alcun modo.
 

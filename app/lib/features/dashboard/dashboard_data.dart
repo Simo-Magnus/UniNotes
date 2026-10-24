@@ -158,7 +158,9 @@ class DashboardData {
     final topicsOf = studied.isEmpty
         ? const <int, List<Topic>>{}
         : await s.study.topicsByCourse();
-    for (final g in groupStudyCourses(studied)) {
+    // senza l'anno nei nomi: l'anno si sceglie con la casella accanto al
+    // corso di laurea, qui solo 1° semestre, 2° semestre, Annuale…
+    for (final g in groupStudyCourses(studied, yearInLabel: false)) {
       final items = <CourseProgressInfo>[];
       for (final c in g.courses) {
         final topics = topicsOf[c.id!] ?? const <Topic>[];

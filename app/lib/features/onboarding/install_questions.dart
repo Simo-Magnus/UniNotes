@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/install_check.dart';
 import '../../core/services/local_data.dart';
 import '../../core/theme/app_theme.dart';
@@ -62,9 +63,10 @@ Future<void> askInstallQuestions(
   if (use == null) return;
   if (!use && (await setAside(st.sharedNotes)).isNotEmpty) {
     if (!context.mounted) return;
-    await showDialog<void>(
+    await showAppDialog<void>(
       context: context,
       builder: (c) => AlertDialog(
+        scrollable: true,
         title: const Text('Cartella in uso'),
         content: const Text(
           'La cartella è aperta in un altro programma e non si è potuta '

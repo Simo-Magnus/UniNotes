@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../widgets/app_snack_action.dart';
 import '../../core/academic/academic_year.dart';
 import '../../core/academic/year_transition.dart';
 import '../../core/catalog/catalog_service.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../repositories/settings_repository.dart';
 import '../../widgets/catalog_download.dart';
@@ -29,9 +31,10 @@ Future<NewYearAnswer?> checkNewAcademicYear(
   if (p == null) return null;
   final t = pendingTransition(p, now ?? DateTime.now());
   if (t == null) return null;
-  final answer = await showDialog<NewYearAnswer>(
+  final answer = await showAppDialog<NewYearAnswer>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       icon: const Icon(Icons.event_repeat_outlined),
       title: const Text('Nuovo anno accademico'),
       content: Text(
@@ -140,7 +143,7 @@ Future<void> checkCatalogUpdate(BuildContext context) async {
     SnackBar(
       content: Text('Nuova versione del database ($v).'),
       duration: const Duration(seconds: 8),
-      action: SnackBarAction(
+      action: AppSnackBarAction(
         label: 'Aggiorna',
         onPressed: () => _aggiorna(context),
       ),

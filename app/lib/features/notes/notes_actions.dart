@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/services/whisper_service.dart';
@@ -27,7 +28,9 @@ import 'recorder/better_transcription.dart' show recordWhisperSpeed;
 import 'recorder/course_vocabulary.dart';
 import 'recorder/recording_meta.dart';
 import 'recorder/recording_overlay.dart' show confirmDeleteRecording;
+import 'recorder/lecture_language.dart';
 import 'recorder/speech_language.dart';
+import 'recorder/live_transcript.dart' show TranscriptMerger;
 import 'recycle_bin.dart' show TrashEntry;
 import 'safe_files.dart';
 import '../links/link_settings.dart';
@@ -36,7 +39,7 @@ import '../links/link_settings.dart';
 bool get isDesktop =>
     Platform.isWindows || Platform.isLinux || Platform.isMacOS;
 
-String _date(NoteFile f) => f.name;
+String _date(NoteFile f) => f.title;
 
 /// Trascrizione locale con Whisper (PC, Mac e telefono), in background e
 /// annullabile. Se non riesce, l'errore non diventa una card a parte: la
@@ -66,9 +69,6 @@ void transcribeWithWhisper(
   String? language,
 }) {
   final s = context.read<AppServices>();
-  // lingua sempre fissata: quella scelta, altrimenti quella
-  // dell'insegnamento (inglese o, di predefinito, italiano)
-  final lang = lectureLanguage(language ?? course.examLanguage);
   final cancel = CancelToken();
   // un errore precedente sulla stessa registrazione si toglie
   for (final j in s.jobs.failedOn(rec.file.path, kind: JobKind.whisper)) {
@@ -77,7 +77,7 @@ void transcribeWithWhisper(
   final before = s.jobs.runningOn(rec.file.path);
   s.jobs.start(
     '${model == kParakeetId ? 'Trascrizione Parakeet' : 'Trascrizione Whisper'}'
-    ' · ${rec.name}',
+    ' · ${rec.title}',
     courseId: course.id,
     target: rec.file.path,
     kind: JobKind.whisper,
@@ -102,12 +102,18 @@ void transcribeWithWhisper(
                     'modello Whisper da Collegamenti → Whisper.',
         );
       }
+      // lingua sempre fissata: quella scelta, altrimenti quella della
+      // registrazione o della lezione (recorder/lecture_language.dart)
+      final lang = language == null
+          ? await recordingLanguageOf(s.settings, course, rec.file.path)
+          : lectureLanguage(language);
       // vocabolario del corso per Whisper (nome, moduli, argomenti)
-      final prompt = chosen.isParakeet
-          ? null
-          : buildWhisperPrompt(
-              await loadCourseVocabulary(s.study, course.id, course.name),
-            );
+      final vocabulary = await loadCourseVocabulary(
+        s.study,
+        course.id,
+        course.name,
+      );
+      final prompt = chosen.isParakeet ? null : buildWhisperPrompt(vocabulary);
       if (await Power.whisperOnlyCharging(s.settings) &&
           !await Power.charging()) {
         report('In attesa del caricabatterie…', null);
@@ -129,7 +135,17 @@ void transcribeWithWhisper(
         ),
       );
       took.stop();
-      final segs = result.segments;
+      // maiuscole a inizio pezzo senza punto prima (come dal vivo)
+      final raw = result.segments;
+      final texts = TranscriptMerger.recaseTexts(
+        [for (final x in raw) x.text],
+        english: lang == 'en',
+        names: vocabulary,
+      );
+      final segs = [
+        for (var i = 0; i < raw.length; i++)
+          WhisperSegment(raw[i].start, texts[i], end: raw[i].end),
+      ];
       final used = result.model.id;
       try {
         final audio = (await RecordingMeta.load(rec.file.path)).duration;
@@ -158,7 +174,7 @@ void transcribeWithWhisper(
         if (await old.exists()) {
           await s.trash.trash(
             [old],
-            title: 'Trascrizione – ${rec.name}',
+            title: 'Trascrizione – ${rec.title}',
             course: course.name,
           );
         }
@@ -230,10 +246,11 @@ Future<void> chooseWhisperModelAndTranscribe(
     );
     return;
   }
-  // lingua della lezione: quella dell'insegnamento, cambiabile qui (mai il
-  // rilevamento automatico)
-  var lang = lectureLanguage(course.examLanguage);
-  final picked = await showModalBottomSheet<String>(
+  // lingua della lezione: quella della registrazione o dell'insegnamento,
+  // cambiabile qui (mai il rilevamento automatico)
+  var lang = await recordingLanguageOf(s.settings, course, rec.file.path);
+  if (!context.mounted) return;
+  final picked = await showAppSheet<String>(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
@@ -516,7 +533,7 @@ Future<void> openNoteInAi(
   final s = context.read<AppServices>();
   final ai = await s.settings.referenceAi();
   if (!context.mounted) return;
-  final t = await showModalBottomSheet<AiTask>(
+  final t = await showAppSheet<AiTask>(
     context: context,
     showDragHandle: true,
     builder: (c) => SafeArea(
@@ -526,7 +543,7 @@ Future<void> openNoteInAi(
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
-              child: Text(note.name, style: Theme.of(c).textTheme.titleMedium),
+              child: Text(note.title, style: Theme.of(c).textTheme.titleMedium),
             ),
             for (final t in AiTask.values)
               ListTile(
@@ -566,7 +583,7 @@ Future<void> exportPdf(
     // trascrizioni del vecchio formato: senza gli orari delle frasi
     final bytes = await markdownToPdf(
       stripTranscriptTimes(await readTextLenient(note.file)),
-      title: note.name,
+      title: note.title,
       subtitle: subtitle,
     );
     if (isDesktop) {
@@ -608,7 +625,7 @@ Future<void> saveCopy(BuildContext context, NoteFile note) async {
 }
 
 Future<void> shareNote(BuildContext context, NoteFile note) =>
-    shareFiles(context, [note.file], subject: note.name);
+    shareFiles(context, [note.file], subject: note.title);
 
 /// Rinomina un file degli appunti. Una lezione si rinomina insieme a
 /// trascrizione, riassunto e PDF con lo stesso nome; gli allegati di Studio
@@ -634,7 +651,8 @@ Future<String?> renameNote(
     label: lesson
         ? 'Nuovo nome (anche per trascrizione e riassunto)'
         : 'Nuovo nome',
-    initial: f.name,
+    // il nome come lo vede l'utente (orario con «:»)
+    initial: f.title,
   );
   if (name == null || !context.mounted) return null;
   try {
@@ -643,12 +661,14 @@ Future<String?> renameNote(
     // il nome davvero dato ai file (ripulito e, su Windows, accorciato
     // perché il percorso non superi i 260 caratteri)
     final newName = moves[f.file.path] == null
-        ? NotesStore.safeName(name)
+        ? NotesStore.fileStem(name)
         : p.basenameWithoutExtension(moves[f.file.path]!);
     await s.study.renameAttachmentPaths(
       moves,
       oldName: f.name,
       newName: newName,
+      oldTitle: f.title,
+      newTitle: NotesStore.displayName(newName),
     );
     s.revision.bump();
     if (context.mounted) {
@@ -676,10 +696,10 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
     return false;
   }
   final ok = f.isAudio
-      ? await confirmDeleteRecording(context, name: f.name)
+      ? await confirmDeleteRecording(context, name: f.title)
       : await confirmDialog(
           context,
-          'Eliminare "${f.name}"?',
+          'Eliminare "${f.title}"?',
           'Il file va in «Eliminati di recente» per 30 giorni.',
         );
   if (!ok || !context.mounted) return false;
@@ -691,7 +711,7 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
   try {
     entry = await s.trash.trash(
       [f.file, if (f.isAudio) RecordingMeta.sidecarOf(f.file.path)],
-      title: f.name,
+      title: f.title,
       course: course.name,
     );
   } catch (e) {
@@ -708,7 +728,7 @@ Future<bool> trashNote(BuildContext context, Course course, NoteFile f) async {
       context,
       'Spostato in «Eliminati di recente».',
       messenger: messenger,
-      undoneMessage: '«${f.name}» ripristinato.',
+      undoneMessage: '«${f.title}» ripristinato.',
       onUndo: () async {
         await s.trash.restore(done);
         s.revision.bump();

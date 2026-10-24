@@ -19,7 +19,7 @@ import 'package:university_notes/utils/grade_math.dart';
 
 /// Prove in itinere ed esoneri: non contano nel voto, quindi non si
 /// trasformano in esame finale; eliminare l'ultima prova di un insegnamento a
-/// scelta senza esame finale avvisa come l'esame finale.
+/// scelta (nessun esame finale né altre prove dopo) avvisa e lo archivia.
 
 Future<AppServices> _empty() async {
   final db = await AppDatabase.openInMemory();
@@ -119,12 +119,7 @@ void main() {
       ))!;
       final id = (await tester.runAsync(
         () => s.exams.save(
-          Exam(
-            courseId: c,
-            status: ExamStatus.passed,
-            grade: 30,
-            laude: true,
-          ),
+          Exam(courseId: c, status: ExamStatus.passed, grade: 30, laude: true),
         ),
       ))!;
       await _pump(tester, s, ExamDetailScreen(examId: id));
@@ -141,9 +136,7 @@ void main() {
     });
 
     testWidgets('modulo di modifica: il tipo resta quello della prova; per una '
-        'prova nuova si sceglie', (
-      tester,
-    ) async {
+        'prova nuova si sceglie', (tester) async {
       tester.view.physicalSize = const Size(900, 1400);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.reset);
@@ -321,7 +314,10 @@ void main() {
       );
       expect(find.text('Eliminare la prova?'), findsOneWidget);
       expect(find.textContaining('è un insegnamento a scelta'), findsOneWidget);
-      expect(find.textContaining('senza esame finale sparisce'), findsOneWidget);
+      expect(
+        find.textContaining('questa è la sua ultima prova'),
+        findsOneWidget,
+      );
       // due soli pulsanti, più la casella
       expect(find.widgetWithText(TextButton, 'Annulla'), findsOneWidget);
       expect(find.byKey(const Key('exam-delete-confirm')), findsOneWidget);
@@ -404,7 +400,11 @@ void main() {
       ))!;
       // c'è un esame finale: eliminando la prova l'insegnamento resta
       expect(await wouldDropElective(s, mid), isFalse);
-      // l'esame finale è l'ultimo: eliminandolo si archivia
+      // resta la prova in itinere: eliminando l'esame finale l'insegnamento
+      // resta nel piano (si archivia solo senza nessuna prova)
+      expect(await wouldDropElective(s, fin), isFalse);
+      await s.exams.delete(mid.id!);
+      // l'esame finale è l'ultima prova: eliminandolo si archivia
       expect(await wouldDropElective(s, fin), isTrue);
     });
   });

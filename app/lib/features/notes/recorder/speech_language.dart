@@ -1,5 +1,7 @@
-/// Lingua delle frasi riconosciute: la trascrizione resta in italiano o, al
-/// massimo, in inglese (test in test/live_agreement_test.dart).
+/// Lingua delle frasi riconosciute: la trascrizione resta nella lingua
+/// della lezione scelta (italiano o inglese, recorder/lecture_language.dart),
+/// salvo nomi propri e termini tecnici dentro le frasi (test in
+/// test/live_agreement_test.dart).
 ///
 /// Whisper e il riconoscitore del sistema ricevono sempre la lingua della
 /// lezione (`-l it`/`-l en`, «it-IT»/«en-US») e non la cambiano mai.
@@ -7,10 +9,12 @@
 /// riconosce da solo la lingua fra 25 lingue europee e sherpa-onnx non
 /// permette di fissarla (le opzioni di lingua esistono solo per Whisper,
 /// SenseVoice e Canary): con audio lontano o rumoroso una frase in italiano
-/// può uscire in portoghese, spagnolo o inglese. Queste frasi si
+/// può uscire in portoghese, spagnolo o inglese (e una in inglese in
+/// italiano). Queste frasi si
 /// riconoscono qui ([outsideLecture]) e non entrano nella trascrizione
 /// (recorder/live_transcriber.dart le ritrascrive con Whisper nella lingua
-/// della lezione, se c'è un modello scaricato).
+/// della lezione: con Whisper small q5_1 incluso nell'app desktop o con un
+/// modello scaricato).
 library;
 
 /// Lingua di Whisper per la lezione: «en» per gli insegnamenti in inglese
@@ -26,7 +30,7 @@ final _otherScript = RegExp(r'[Ͱ-ϿЀ-ӿ]');
 
 /// Lettere che in italiano e in inglese non si usano (salvo nomi propri):
 /// contano come un indizio, non decidono da sole.
-const _otherLetters = 'ãõñßåøæœłąęśżźćńřěůčšžýőűșțăëïÿ';
+const _otherLetters = 'ãõñßåøæœłąęśżźćńřěůčšžýőűșțăëïÿáíóúçâêôû';
 
 const _it = {
   'il',
@@ -610,13 +614,55 @@ const _englishNoise = {
   'bye',
 };
 
-/// La frase [text] è in una lingua diversa dall'italiano e dall'inglese (o,
-/// in una lezione in italiano, è solo un intercalare inglese del rumore).
-/// Le frasi troppo corte o incerte restano (meglio non perdere testo).
+/// Parole che in italiano e in inglese si scrivono uguali («a», «in», «so»,
+/// «me», «do», «all'»…): non dicono quale delle due lingue è.
+const _itEnShared = {'a', 'i', 'in', 'so', 'me', 'do', 'all', 'no', 'or'};
+
+/// Finali di parola che l'italiano non ha (salvo nomi propri): un indizio
+/// per la lingua indicata, con il suo peso. L'inglese non ha finali qui:
+/// i termini tecnici inglesi («dataset», «training», «computer») in una
+/// lezione in italiano restano.
+const _otherEndings = <String, Map<String, double>>{
+  'pt': {
+    'ção': 1,
+    'ções': 1,
+    'ões': 1,
+    'dade': 1,
+    'dades': 1,
+    'agem': 1,
+    'inho': 1,
+    'inha': 1,
+    'os': 0.5,
+    'as': 0.5,
+    'ar': 0.5,
+  },
+  'es': {
+    'ción': 1,
+    'ciones': 1,
+    'dad': 1,
+    'dades': 1,
+    'idad': 1,
+    'os': 0.5,
+    'as': 0.5,
+    'ar': 0.5,
+  },
+  'fr': {'eux': 1, 'eaux': 1, 'oire': 0.5, 'ées': 1},
+  'de': {'ung': 1, 'heit': 1, 'keit': 1, 'lich': 1, 'chen': 0.5},
+};
+
+/// La frase [text] non è nella lingua della lezione [lecture] («it» o
+/// «en»): è chiaramente in un'altra lingua (anche l'altra fra italiano e
+/// inglese) o, in una lezione in italiano, è solo un intercalare inglese del
+/// rumore. Decide la frase intera, non le singole parole: nomi propri e
+/// termini tecnici in un'altra lingua dentro una frase della lezione
+/// restano. Le frasi troppo corte o incerte restano (meglio non perdere
+/// testo). Misure su audio vero e degradato in docs/registratore.md
+/// («Lingua della trascrizione»).
 bool outsideLecture(String text, {String lecture = 'it'}) {
   final t = text.toLowerCase().trim();
   if (t.isEmpty) return false;
-  if (lecture != 'en') {
+  final en = lecture == 'en';
+  if (!en) {
     final plain = t
         .replaceAll(RegExp(r'[^\p{L}\s]', unicode: true), ' ')
         .replaceAll(RegExp(r'\s+'), ' ')
@@ -626,22 +672,39 @@ bool outsideLecture(String text, {String lecture = 'it'}) {
   if (_otherScript.allMatches(t).length >= 3) return true;
   final words = [for (final m in _letters.allMatches(t)) m.group(0)!];
   if (words.isEmpty) return false;
-  var it = 0, en = 0;
-  final other = <String, double>{};
+  final mineSet = en ? _en : _it;
+  final otherMain = en ? _it : _en;
+  final otherKey = en ? 'it' : 'en';
+  var mine = 0;
+  final foreign = <String, double>{};
+  void add(String k, double v) => foreign[k] = (foreign[k] ?? 0) + v;
   for (final w in words) {
-    if (_it.contains(w)) it++;
-    if (_en.contains(w)) en++;
+    if (mineSet.contains(w)) {
+      // parola della lezione (quelle uguali in italiano e in inglese non
+      // dicono nulla): non conta per le altre lingue
+      if (!_itEnShared.contains(w)) mine++;
+      continue;
+    }
+    if (otherMain.contains(w) && !_itEnShared.contains(w)) add(otherKey, 1);
     for (final e in _others.entries) {
-      if (e.value.contains(w)) other[e.key] = (other[e.key] ?? 0) + 1;
+      if (e.value.contains(w)) add(e.key, 1);
     }
     if (w.split('').any(_otherLetters.contains)) {
       for (final k in _others.keys) {
-        other[k] = (other[k] ?? 0) + 0.5;
+        add(k, 0.5);
+      }
+    }
+    if (w.length >= 4 && !_itEnShared.contains(w)) {
+      for (final e in _otherEndings.entries) {
+        var best = 0.0;
+        for (final s in e.value.entries) {
+          if (w.endsWith(s.key) && s.value > best) best = s.value;
+        }
+        if (best > 0) add(e.key, best);
       }
     }
   }
-  final best = other.values.fold<double>(0, (a, b) => b > a ? b : a);
-  final mine = it > en ? it : en;
-  // almeno due indizi e chiaramente più di italiano e inglese
+  final best = foreign.values.fold<double>(0, (a, b) => b > a ? b : a);
+  // almeno due indizi e chiaramente più di quelli della lezione
   return best >= 2 && best >= mine * 1.5 + 1;
 }

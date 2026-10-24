@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
@@ -220,9 +221,10 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
   /// Dialogo «Collegamento non riuscito» con causa e azione; true =
   /// «Riprova».
   Future<bool> _failureDialog(LinkFailure f) async {
-    final r = await showDialog<bool>(
+    final r = await showAppDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
+        scrollable: true,
         icon: Icon(
           f.phase == LinkPhase.offline ? Icons.wifi_off : Icons.error_outline,
         ),
@@ -271,17 +273,21 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
     } else if (await _sv.connected() && mounted) {
       // un'altra sincronizzazione è in corso (anche quella in background
       // del telefono): questa non è partita
-      showSnack(context, '$name: sincronizzazione già in corso, riprova tra '
-          'poco.');
+      showSnack(
+        context,
+        '$name: sincronizzazione già in corso, riprova tra '
+        'poco.',
+      );
     }
   }
 
   /// Scollegato sul dispositivo, ma la revoca presso il servizio non è
   /// riuscita (senza rete, errore): la pagina dove togliere l'accesso.
   Future<void> _revokeFailed(String url) async {
-    final open = await showDialog<bool>(
+    final open = await showAppDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
+        scrollable: true,
         title: Text('${_sv.serviceName} scollegato'),
         content: Text(
           'Su questo dispositivo l\'accesso è tolto, ma non è stato possibile '

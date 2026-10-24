@@ -163,7 +163,7 @@ class _StatsTabState extends State<StatsTab> {
                 items: [
                   (null, 'Tutte le materie'),
                   // solo il nome dell'insegnamento
-                  for (final c in topicCourses) (c.id, c.label),
+                  for (final c in topicCourses) (c.id, c.name),
                 ],
                 onChanged: (v) => setState(() => _topicCourse = v),
               ),

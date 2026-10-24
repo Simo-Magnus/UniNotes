@@ -146,7 +146,22 @@ class StudyRepository {
     Map<String, String> moves, {
     required String oldName,
     required String newName,
+    String? oldTitle,
+    String? newTitle,
   }) async {
+    // [oldTitle]/[newTitle]: il nome come lo vede l'utente (orario con «:»),
+    // con cui si salvano i titoli degli allegati nuovi; i titoli di prima
+    // finiscono con il nome del file
+    String retitle(String title) {
+      for (final old in {oldName, ?oldTitle}) {
+        if (title.endsWith(old)) {
+          return title.substring(0, title.length - old.length) +
+              (newTitle ?? newName);
+        }
+      }
+      return title;
+    }
+
     for (final m in moves.entries) {
       final rows = await _db.db.query(
         'attachments',
@@ -157,12 +172,7 @@ class StudyRepository {
         final title = r['title'] as String;
         await _db.db.update(
           'attachments',
-          {
-            'path': m.value,
-            'title': title.endsWith(oldName)
-                ? title.substring(0, title.length - oldName.length) + newName
-                : title,
-          },
+          {'path': m.value, 'title': retitle(title)},
           where: 'id = ?',
           whereArgs: [r['id']],
         );

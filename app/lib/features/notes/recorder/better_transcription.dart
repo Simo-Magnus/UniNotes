@@ -4,6 +4,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/services/app_services.dart';
 import '../../../models/course.dart';
 import '../../../repositories/settings_repository.dart';
@@ -195,7 +196,11 @@ Future<void> offerBetterTranscription(
       model: label,
       eta: eta,
       again: again,
-      liveBy: live == kParakeetId ? 'di Parakeet' : 'del modello integrato',
+      liveBy: switch (live) {
+        kParakeetId => 'di Parakeet',
+        kSystemSpeechRank => 'del riconoscitore del sistema',
+        _ => 'del modello integrato',
+      },
     );
     if (choice == null || !choice.transcribe || !nav.mounted) return;
     if (choice.always) {
@@ -210,11 +215,20 @@ Future<void> offerBetterTranscription(
   }
 }
 
+/// Posto del riconoscitore del sistema (Google, Apple) nella classifica di
+/// precisione: come small.
+const kSystemSpeechRank = 'small';
+
 /// Modello che ha fatto il testo dal vivo (dai dati della registrazione).
 Future<String?> _liveModelOf(File saved) async {
   try {
     final src = (await RecordingMeta.load(saved.path)).transcriptSource ?? '';
     if (src.contains('Parakeet')) return kParakeetId;
+    // Google e Apple sul dispositivo: almeno precisi quanto small (si
+    // propone solo un modello più accurato, da medium in su)
+    if (src.contains('riconoscimento vocale del sistema')) {
+      return kSystemSpeechRank;
+    }
     return RegExp(r'Whisper (\S+)').firstMatch(src)?.group(1);
   } catch (_) {
     return null;
@@ -232,10 +246,11 @@ Future<({bool transcribe, bool always})?> showBetterTranscriptionDialog(
   String liveBy = 'del modello integrato',
 }) {
   var always = false;
-  return showDialog<({bool transcribe, bool always})>(
+  return showAppDialog<({bool transcribe, bool always})>(
     context: context,
     builder: (c) => StatefulBuilder(
       builder: (c, setLocal) => AlertDialog(
+        scrollable: true,
         icon: const Icon(Icons.graphic_eq),
         title: Text(
           again

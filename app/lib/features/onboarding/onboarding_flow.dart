@@ -23,6 +23,7 @@ import '../exams/exam_form.dart' show kCalendarOfferedKey;
 import '../exams/previous_years.dart' show PreviousYearsPrompt;
 import '../links/ai_assistants.dart';
 import '../links/link_settings.dart';
+import '../notes/recorder/lecture_language.dart' show setGeneralLectureLanguage;
 import '../settings/logic/exclusion_cleanup.dart';
 import '../settings/sections/appearance_section.dart';
 import 'percorso_field.dart';
@@ -53,6 +54,9 @@ enum OnboardingStep {
   /// avvisi (permesso delle notifiche), calendario del telefono, gruppi da
   /// nascondere.
   ai,
+
+  /// Lingua delle lezioni (italiano o inglese) per la trascrizione.
+  lingua,
   notifiche,
   calendario,
   esclusioni,
@@ -75,9 +79,9 @@ extension on OnboardingStep {
 /// Onboarding: aspetto (contrasto e caratteri) → tipo di università (o
 /// ricerca diretta) → regione → università → tipo di laurea → corso → anno
 /// frequentato → percorso (solo se il corso ne ha più d'uno) → riepilogo,
-/// import del piano
-/// → AI di riferimento → avvisi → calendario (telefono) → gruppi da
-/// nascondere (OFA, lingua, facoltativi). Ogni passo ha al massimo due
+/// import del piano → AI di riferimento → lingua delle lezioni → avvisi →
+/// calendario (telefono) → gruppi da nascondere (OFA, lingua,
+/// facoltativi). Ogni passo ha al massimo due
 /// pulsanti. Al primo avvio; da Impostazioni → «Cambia corso» si rifanno solo
 /// i passi del percorso (aspetto, AI, avvisi ed esclusioni restano).
 ///
@@ -132,6 +136,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
   /// Outlook si collega da Impostazioni o al primo esame con una data).
   List<OnboardingStep> _tail = const [
     OnboardingStep.ai,
+    OnboardingStep.lingua,
     OnboardingStep.esclusioni,
   ];
 
@@ -177,6 +182,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     setState(() {
       _tail = [
         OnboardingStep.ai,
+        OnboardingStep.lingua,
         if (notif) OnboardingStep.notifiche,
         if (cal) OnboardingStep.calendario,
         OnboardingStep.esclusioni,
@@ -480,6 +486,9 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
       onNext: () => _go(OnboardingStep.tipo),
     ),
     OnboardingStep.ai => _AiStep(onNext: () => _nextTail(OnboardingStep.ai)),
+    OnboardingStep.lingua => _LectureLanguageStep(
+      onNext: () => _nextTail(OnboardingStep.lingua),
+    ),
     OnboardingStep.notifiche => _NotificationsStep(
       onNext: () => _nextTail(OnboardingStep.notifiche),
     ),

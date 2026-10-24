@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../widgets/app_snack_action.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
 import '../../core/services/app_services.dart';
 import '../../core/services/external_launcher.dart';
@@ -310,7 +312,7 @@ class ReaderScreenState extends State<ReaderScreen> {
 
   Future<void> _goToDialog() async {
     if (!pane.canGoTo) return;
-    final u = await showDialog<int>(
+    final u = await showAppDialog<int>(
       context: context,
       builder: (_) => GoToDialog(
         label: pane.unitLabel,
@@ -353,7 +355,9 @@ class ReaderScreenState extends State<ReaderScreen> {
       'Segnalibro aggiunto: $label',
       onUndo: () async {
         var l = await store.removeBookmark(widget.path, pos);
-        if (replaced != null) l = await store.addBookmark(widget.path, replaced);
+        if (replaced != null) {
+          l = await store.addBookmark(widget.path, replaced);
+        }
         if (mounted) setState(() => _bookmarks = l);
       },
     );
@@ -426,7 +430,7 @@ class ReaderScreenState extends State<ReaderScreen> {
             'Per aprire OneNote collega l\'account Microsoft in '
             'Collegamenti → OneDrive.',
           ),
-          action: SnackBarAction(
+          action: AppSnackBarAction(
             label: 'Collega',
             onPressed: () {
               if (!mounted) return;
@@ -1119,6 +1123,7 @@ class _GoToDialogState extends State<GoToDialog> {
   Widget build(BuildContext context) {
     final label = widget.label;
     return AlertDialog(
+      scrollable: true,
       title: Text(
         label == 'Pagina' ? 'Vai alla pagina' : 'Vai a: ${label.toLowerCase()}',
       ),

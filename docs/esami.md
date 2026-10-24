@@ -181,12 +181,15 @@ legge come «Da prenotare».
 
 Dialogo «Eliminare la prova?» con «Annulla» ed «Elimina» e la casella «Non
 chiedere più» (impostazione `dont_ask_delete_exam`, si annulla da Impostazioni
-→ «Ripristina le domande»). L'esame finale di un insegnamento a scelta, che
-toglie l'insegnamento dal piano, chiede sempre; lo stesso vale per l'ultima
-prova in itinere o esonero di un insegnamento a scelta che non ha un esame
-finale (anche questo lo archivia): stesso avviso, stesso «Annulla» che lo
-riporta com'era (`wouldDropElective` in `core/academic/electives.dart`
-decide se avvisare, con la stessa condizione di `dropElectiveWithoutExam`).
+→ «Ripristina le domande»). Un insegnamento a scelta si archivia (toglie
+l'insegnamento dal piano) solo quando dopo l'eliminazione non gli resta
+NESSUNA prova: né esame finale né prove in itinere / esoneri. Eliminare
+l'esame finale con una prova in itinere ancora presente, o una di due prove
+in itinere, lo lascia nel piano. L'eliminazione dell'ultima prova chiede
+sempre (anche con «Non chiedere più»), con l'avviso «… è un insegnamento a
+scelta e questa è la sua ultima prova» e «Annulla» che lo riporta com'era
+(`wouldDropElective` in `core/academic/electives.dart` decide se avvisare,
+con la stessa condizione di `dropElectiveWithoutExam`).
 
 ## Prove in itinere ed esoneri non contano nel voto
 
@@ -233,3 +236,11 @@ docente, si indicano su ogni prova.
   sincronizzazione con OneDrive e Google Drive come gli altri dati.
 - Gli insegnamenti aggiunti a mano non hanno un nome ufficiale: cambiarne il
   nome cambia direttamente `name`.
+
+## Card delle prove nella Home: «Argomenti:» (24/10/2026)
+
+Nella card «Prossime prove» (`dashboard/widgets/upcoming_exams_card.dart`) la
+scritta **«Argomenti:»** sta su una riga e l'elenco degli argomenti va sempre
+a capo sotto (prima era «Argomenti: Limiti e derivate» sulla stessa riga; al
+massimo 4 righe in tutto). Il testo mandato al calendario e ai promemoria non
+cambia. Test: `dashboard_screen_test.dart`.

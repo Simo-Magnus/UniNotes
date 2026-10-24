@@ -807,6 +807,55 @@ String _short(String s) {
   return runes.length <= 60 ? one : '${String.fromCharCodes(runes.take(60))}…';
 }
 
+/// Un luogo dell'app da cui esce un elemento dal suo spazio («A RenderFlex
+/// overflowed by N pixels», quinto giro R5-B): widget dell'app responsabile
+/// (file:riga), lato, e in quali condizioni è successo.
+class OverflowSpot {
+  OverflowSpot(this.where, this.widget, this.edge);
+  final String where;
+  final String widget;
+  final String edge;
+  int count = 0;
+  double maxPx = 0;
+  final Set<String> windows = {};
+  final Set<String> scales = {};
+  final Set<String> themes = {};
+  final Set<String> screens = {};
+  String? firstAction;
+}
+
+final _overflowPx = RegExp(r'overflowed by ([\d.]+) pixels on the (\w+)');
+final _appLocation = RegExp(
+  r'file:///[A-Za-z]:/[^\s]*?/app/(lib/[^\s:]+\.dart):(\d+)',
+);
+
+/// Nomi dei widget dell'app sopra l'elemento che ha l'overflow, per capire in
+/// quale schermata si trova (il primo è il più vicino).
+String _screenOf(FlutterErrorDetails d) {
+  Element? element;
+  try {
+    for (final n in d.informationCollector?.call() ?? <DiagnosticsNode>[]) {
+      final Object? v = n.value;
+      if (v is DebugCreator) element = v.element;
+    }
+  } catch (_) {}
+  if (element == null) return '?';
+  final names = <String>[];
+  try {
+    element.visitAncestorElements((a) {
+      final n = a.widget.runtimeType.toString();
+      if (!n.startsWith('_') &&
+          RegExp(
+            r'(Screen|Page|Sheet|Dialog|Tab|Section|Card|Form|Panel|Tile|Bar|Row|Chip|Banner|Overlay)$',
+          ).hasMatch(n)) {
+        names.add(n);
+      }
+      return names.length < 4;
+    });
+  } catch (_) {}
+  return names.join(' < ');
+}
+
 class _Monkey {
   _Monkey(this.t, this.seed, this.setup)
     : rnd = Random(seed),
@@ -818,7 +867,7 @@ class _Monkey {
   final Random pickRnd;
   final List<String> actions = [];
   final List<String> errors = [];
-  final Map<String, int> overflows = {};
+  final Map<String, OverflowSpot> overflows = {};
 
   /// Errori noti di Flutter, non dell'app (vedi il filtro in [_run]).
   final Map<String, int> known = {};
@@ -828,6 +877,42 @@ class _Monkey {
   int done = 0;
   int empty = 0;
   int maxEmpty = 0;
+
+  /// Registra un overflow con il suo contesto (quinto giro, R5-B).
+  void noteOverflow(FlutterErrorDetails d) {
+    final full = d.toString();
+    final m = _overflowPx.firstMatch(full);
+    final loc = _appLocation.firstMatch(full);
+    final where = loc == null ? 'fuori dall\'app' : '${loc[1]}:${loc[2]}';
+    final lines = full.split('\n');
+    final i = lines.indexWhere((l) => l.contains('error-causing widget'));
+    final widget = i >= 0 && i + 1 < lines.length
+        ? lines[i + 1].trim().split(' ').first
+        : '?';
+    final edge = m?[2] ?? '?';
+    final spot = overflows.putIfAbsent(
+      '$where $edge',
+      () => OverflowSpot(where, widget, edge),
+    );
+    spot.count++;
+    spot.maxPx = max(spot.maxPx, double.tryParse(m?[1] ?? '') ?? 0);
+    final s = _screen;
+    spot.windows.add('${s.width.round()}×${s.height.round()}');
+    spot.scales.add('×${t.platformDispatcher.textScaleFactor}');
+    spot.themes.add(setup.services.themeMode.value.name);
+    spot.screens.add(_screenOf(d));
+    spot.firstAction ??= actions.isEmpty ? '(avvio)' : actions.last;
+    // dal quinto giro un overflow è un errore della prova (solo con
+    // CRASH_R5_COLLECT=1 si raccolgono senza fermarsi, per fare l'elenco)
+    if (!_collectOverflows) {
+      errors.add(
+        'testo o elemento fuori dal suo spazio: ${m?[0] ?? lines.first} '
+        '- $widget in $where; finestra ${spot.windows.last}, caratteri '
+        '${spot.scales.last}, tema ${spot.themes.last}, '
+        'schermata ${spot.screens.last}',
+      );
+    }
+  }
 
   void log(String s) {
     actions.add('${done + 1}: $s');
@@ -1094,6 +1179,10 @@ bool get _long => Platform.environment['CRASH_R4_MONKEY'] == '1';
 
 bool get _trace => Platform.environment['CRASH_R4_TRACE'] == '1';
 
+/// CRASH_R5_COLLECT=1: gli overflow si raccolgono e si riepilogano senza
+/// fermare la prova (altrimenti sono un errore).
+bool get _collectOverflows => Platform.environment['CRASH_R5_COLLECT'] == '1';
+
 /// Porta a termine [op] facendo avanzare il tempo finto e quello vero; se
 /// non finisce in ~40 s finti / 3 s veri è uno stallo, registrato come
 /// errore di [m].
@@ -1157,8 +1246,7 @@ Future<void> _run(
   FlutterError.onError = (d) {
     final text = d.exceptionAsString();
     if (text.contains('overflowed by')) {
-      final key = text.split('\n').first;
-      monkey.overflows[key] = (monkey.overflows[key] ?? 0) + 1;
+      monkey.noteOverflow(d);
       return;
     }
     // Asserzione nota di Flutter (solo debug, in release il volo prosegue
@@ -1212,9 +1300,11 @@ Future<void> _run(
           (l) =>
               l.contains('error-causing widget') ||
               l.contains('package:university_notes') ||
-              l.contains('file:///'),
+              l.contains('file:///') ||
+              l.contains('constraints:') ||
+              l.contains('creator:'),
         )
-        .take(12)
+        .take(16)
         .join('\n');
     monkey.errors.add(
       '${d.exceptionAsString()}\n$where\n'
@@ -1300,14 +1390,24 @@ Future<void> _run(
   print(
     'scimmia $name seme $seed: ${monkey.done} azioni, '
     '${monkey.errors.isEmpty ? 'nessun errore' : 'ERRORE'}; '
-    'testi fuori spazio ${monkey.overflows.values.fold(0, (a, b) => a + b)}'
-    '${monkey.overflows.isEmpty ? '' : ' (${monkey.overflows.keys.take(3).join('; ')})'}; '
+    'testi fuori spazio ${monkey.overflows.values.fold(0, (a, b) => a + b.count)} '
+    'in ${monkey.overflows.length} luoghi; '
     'schermate senza elementi toccabili per al massimo ${monkey.maxEmpty} passi; '
     'azioni lente: ${monkey.slow.isEmpty ? 'nessuna' : monkey.slow.join(', ')}; '
     'errori noti di Flutter: ${monkey.known.isEmpty ? 'nessuno' : monkey.known}; '
     'uscite finte: ${setup.channels.external.toSet().take(8).join(', ')}; '
     'canali senza plugin: ${setup.channels.seen.take(12).join(', ')}',
   );
+  for (final o in monkey.overflows.values) {
+    // una riga per luogo, da riepilogare con findstr/grep «OVERFLOW|»
+    // ignore: avoid_print
+    print(
+      'OVERFLOW|${o.where}|${o.widget}|${o.edge}|${o.count}|'
+      '${o.maxPx.toStringAsFixed(1)}|${o.windows.join(',')}|'
+      '${o.scales.join(',')}|${o.themes.join(',')}|${o.screens.join(' / ')}|'
+      '${o.firstAction}',
+    );
+  }
   if (total != null && monkey.errors.isEmpty) {
     total['azioni'] = (total['azioni'] ?? 0) + monkey.done;
   }

@@ -158,3 +158,34 @@ finiscono in un gruppo solo, così negli elenchi non ci sono chiavi doppie e
 il selettore della Home li raggiunge tutti. Dati limite (vuoti, enormi, fuori
 scala, caratteri ×3, 320 px, finestra ridimensionata a metà animazione):
 `app/test/crash_ui_test.dart`.
+
+## Home: card «Moduli e argomenti» (24/10/2026)
+
+Codice: `app/lib/features/dashboard/widgets/course_progress_card.dart`,
+`progress_groups.dart`, `dashboard_data.dart`. La casella accanto al titolo
+(selettore della suddivisione) ha **solo** «1° semestre», «2° semestre»,
+«Annuale» (più «OFA» e, per i nomi liberi, il nome stesso): **mai l'anno**. L'anno
+si sceglie con la casella accanto al nome del corso di laurea; la Home mostra
+già solo i corsi di quell'anno (più quelli senza anno, che compaiono in ogni
+anno). Per questo `groupStudyCourses(..., yearInLabel: false)` toglie l'anno
+dal nome **e** non divide più i gruppi per anno: con corsi di anni diversi
+(o uno senza anno) prima uscivano «1° anno · 1° semestre», «Anno non
+indicato · 1° semestre»…, ora un solo gruppo per semestre. Studio e Registra
+non cambiano (con più anni l'anno resta davanti).
+
+La scelta fatta a mano resta in memoria solo mentre l'app è aperta (non è
+salvata): non c'è niente da migrare. Per sicurezza `progressGroupName` toglie
+comunque l'anno davanti a un nome salvato da una versione precedente
+(«2° anno · 1° semestre» → «1° semestre»), così una scelta di quel tipo
+trova ancora il suo gruppo. Test: `home_progress_groups_test.dart`,
+`study_reorder_test.dart`.
+
+## Nome degli insegnamenti a scelta (24/10/2026)
+
+Gli insegnamenti si mostrano **sempre solo con il nome**, anche in Studio,
+Registra, Libri, statistiche e Sessione Focus: sparisce «(a scelta)». Il
+getter `Course.label` (che lo aggiungeva) è stato tolto e tutte le schermate
+usano `Course.name`. I dati non cambiano (`mandatory == false`): gli
+insegnamenti a scelta restano a scelta, vanno dopo gli obbligatori negli
+elenchi (`electivesLast`), sono sotto «A scelta» in Anni precedenti e si
+archiviano/ripristinano come prima. Test: `study_reorder_test.dart`.

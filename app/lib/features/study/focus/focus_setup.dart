@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/services/app_services.dart';
@@ -66,9 +67,8 @@ class _FocusTimerSetupState extends State<FocusTimerSetup> {
       if (mounted) setState(() => _starting = false);
     }
     if (!open || !mounted) return;
-    await Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));
+    await Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (_) => const FocusScreen()));
   }
 
   @override
@@ -240,9 +240,10 @@ Future<bool?> prepareSystemQuiet(
   if (focus.system.kind != FocusSystemKind.androidDnd) return true;
   if (await focus.system.hasDndAccess()) return true;
   if (!context.mounted) return null;
-  final grant = await showDialog<bool>(
+  final grant = await showAppDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       icon: const Icon(Icons.do_not_disturb_on_outlined),
       title: const Text('Silenziare il telefono?'),
       content: const Text(

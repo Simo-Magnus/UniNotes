@@ -236,7 +236,7 @@ void main() {
       expect(find.text('Dettaglio prova'), findsOneWidget);
       expect(find.byType(CourseFormPage), findsNothing);
       nav.pop();
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Pagina sotto'), findsOneWidget);
     },
   );
@@ -262,7 +262,7 @@ void main() {
     testWidgets('in cima: chiude la pagina', (tester) async {
       final page = await pushPage(tester);
       expect(popIfCurrent(page), isTrue);
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Modulo'), findsNothing);
       expect(find.text('Pagina sotto'), findsOneWidget);
     });
@@ -275,7 +275,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 16));
       expect(page.mounted, isTrue); // animazione d'uscita
       expect(popIfCurrent(page), isFalse);
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Pagina sotto'), findsOneWidget);
     });
 
@@ -288,12 +288,12 @@ void main() {
           ),
         ),
       );
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(popIfCurrent(page), isTrue);
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Sopra'), findsOneWidget);
       Navigator.of(tester.element(find.text('Sopra'))).pop();
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Modulo'), findsNothing);
       expect(find.text('Pagina sotto'), findsOneWidget);
     });
@@ -487,14 +487,14 @@ void main() {
           ),
         ),
       );
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       gate.complete(EraseReport());
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       await run;
       expect(tester.takeException(), isNull);
       expect(find.text('Dettaglio prova'), findsOneWidget);
       nav.pop();
-      await _settle(tester, 10);
+      await _settle(tester, 14);
       expect(find.text('Elimino i dati…'), findsNothing);
       expect(find.text('Pagina sotto'), findsOneWidget);
     },

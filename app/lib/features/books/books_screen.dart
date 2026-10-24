@@ -12,6 +12,7 @@ import '../../core/services/external_launcher.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/book.dart';
 import '../../models/course.dart';
+import '../../widgets/adaptive_row.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../../widgets/undo_snack_bar.dart';
@@ -506,23 +507,23 @@ class _MissingBooks extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                // Tinta d'area dei Libri: solo sull'icona.
-                Icon(Icons.menu_book_outlined, size: 18, color: t.tintBooks),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    none ? 'Nessun libro previsto' : 'Libri da aggiungere',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      color: t.textPrimary,
-                    ),
-                  ),
+            TrailingRow(
+              // Tinta d'area dei Libri: solo sull'icona.
+              leading: Icon(
+                Icons.menu_book_outlined,
+                size: 18,
+                color: t.tintBooks,
+              ),
+              body: Text(
+                none ? 'Nessun libro previsto' : 'Libri da aggiungere',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: t.textPrimary,
                 ),
-                if (!none) const MutedChip('Da aggiungere'),
-              ],
+              ),
+              gap: 0,
+              trailing: none ? null : const MutedChip('Da aggiungere'),
             ),
             const SizedBox(height: 4),
             Text(

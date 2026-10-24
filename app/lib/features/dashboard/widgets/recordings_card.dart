@@ -61,7 +61,11 @@ class _RecordingRow extends StatelessWidget {
     ];
     return ListTile(
       leading: Icon(Icons.play_circle_outline, color: t.tintNotes),
-      title: Text(item.file.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+      title: Text(
+        item.file.title,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

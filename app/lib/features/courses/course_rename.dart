@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/constants/text_limits.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../models/course.dart';
+import '../notes/notes_store.dart';
 import '../../widgets/undo_snack_bar.dart';
 
 /// Dà all'insegnamento il nome [name] scelto dallo studente (vuoto o uguale a
@@ -55,19 +57,25 @@ bool hasOfficialName(Course c) => c.externalId != null;
 /// Due soli pulsanti, «Annulla» e «Salva». Restituisce true se salvato.
 Future<bool> renameCourseDialog(BuildContext context, Course course) async {
   final s = context.read<AppServices>();
-  final name = await showDialog<String>(
+  final name = await showAppDialog<String>(
     context: context,
     builder: (_) => CourseRenameDialog(course: course),
   );
   if (name == null || !context.mounted) return false;
   final next = await applyCourseName(s, course, name);
   if (next != null && context.mounted) {
+    // cartella degli appunti in uso: l'app usa ancora quella col nome di
+    // prima e lo dice
+    final stuck = s.notes.hasPendingRename(next)
+        ? '\n${NotesStore.renamePendingNote}'
+        : '';
     // «Annulla»: torna il nome di prima (anche nelle cartelle degli appunti)
     showUndoSnackBar(
       context,
-      next.hasCustomName
-          ? 'Nome cambiato in tutta l\'app: «${next.name}»'
-          : 'Ripristinato il nome originale: «${next.name}»',
+      (next.hasCustomName
+              ? 'Nome cambiato in tutta l\'app: «${next.name}»'
+              : 'Ripristinato il nome originale: «${next.name}»') +
+          stuck,
       undoneMessage: 'Nome di nuovo «${course.name}».',
       onUndo: () => applyCourseName(s, next, course.name),
     );
@@ -97,6 +105,7 @@ class _CourseRenameDialogState extends State<CourseRenameDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      scrollable: true,
       title: const Text('Nome dell\'insegnamento'),
       content: CourseNameField(
         controller: _ctrl,
@@ -169,8 +178,7 @@ class _CourseNameFieldState extends State<CourseNameField> {
   Widget build(BuildContext context) {
     final official = widget.officialName;
     final custom =
-        official != null &&
-        cleanCourseName(widget.controller.text) != official;
+        official != null && cleanCourseName(widget.controller.text) != official;
     return TextFormField(
       key: const Key('course-name-field'),
       controller: widget.controller,

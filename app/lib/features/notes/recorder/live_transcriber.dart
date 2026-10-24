@@ -59,18 +59,28 @@ enum LiveEngine {
 /// sistema). Ogni motore che non può partire passa al successivo; Whisper
 /// è sempre l'ultimo (modello integrato o scaricato, altrimenti nessun
 /// testo).
-/// - PC e Mac: Parakeet, poi il modello Whisper scaricato a pezzi; niente
-///   riconoscitore del sistema (su Windows con «Riconoscimento vocale
-///   online» il testo non arrivava);
+/// - Mac con macOS 26 o successivo ([appleSpeech]): il riconoscitore nuovo
+///   di Apple (SpeechAnalyzer, sul Mac, nella lingua della lezione), poi
+///   Parakeet se non ha la lingua, il modello della lingua non è ancora sul
+///   Mac (si scarica in background per la volta dopo), non risponde o si
+///   ferma, infine il modello Whisper scaricato;
+/// - Windows, Linux e Mac precedenti: Parakeet, poi il modello Whisper
+///   scaricato a pezzi; niente riconoscitore del sistema (su Windows con
+///   «Riconoscimento vocale online» il testo non arrivava);
 /// - telefono (Android, iOS): il riconoscitore del sistema (Google/Apple,
 ///   sul dispositivo dove c'è, come nelle build fino al 19/10/2026), poi
 ///   Whisper base integrato migliorato (VAD, soppressione dei token non
 ///   verbali, vocabolario del corso) se il riconoscitore manca, non ha la
-///   lingua o si ferma; con tutti e due la seconda passata con small dove
+///   lingua o si ferma; con Whisper base la seconda passata con small dove
 ///   il telefono regge. Test: test/parakeet_live_test.dart («scelta del
 ///   motore per piattaforma»).
-List<LiveEngine> liveEngineOrder({required bool phone}) => phone
+List<LiveEngine> liveEngineOrder({
+  required bool phone,
+  bool appleSpeech = false,
+}) => phone
     ? const [LiveEngine.system, LiveEngine.whisper]
+    : appleSpeech
+    ? const [LiveEngine.system, LiveEngine.parakeet, LiveEngine.whisper]
     : const [LiveEngine.parakeet, LiveEngine.whisper];
 
 /// Trascrizione dal vivo durante la registrazione.
@@ -89,31 +99,35 @@ List<LiveEngine> liveEngineOrder({required bool phone}) => phone
 ///    ~0,75 s si decodifica la frase in corso (un'ipotesi); a una pausa (o
 ///    dopo ~18 s di parlato continuo) diventa definitiva; i silenzi non
 ///    producono testo ([VadLiveSegmenter]). Parakeet sceglie da solo la
-///    lingua: le frasi che escono in lingue diverse dall'italiano e
-///    dall'inglese si tolgono e si ritrascrivono con il modello Whisper
-///    scaricato, nella lingua della lezione ([language]), se c'è
-///    (speech_language.dart). Il modello (639
+///    lingua: le frasi che escono in una lingua diversa da quella della
+///    lezione ([language], anche l'inglese in una lezione in italiano e
+///    viceversa; nomi e termini tecnici dentro una frase restano) si
+///    tolgono e si ritrascrivono con il modello Whisper scaricato, fissato
+///    sulla lingua della lezione, se c'è (speech_language.dart). Il modello (639
 ///    MiB) è incluso nell'app e si usa subito; solo se manca (build fatta
 ///    a mano) si scarica alla prima registrazione, con la barra nella card:
 ///    intanto si registra e quei tratti si trascrivono con Parakeet dopo il
 ///    salvataggio ([recover]). Se Parakeet non può girare (RAM, file
 ///    mancante, errore) si usa il modello Whisper scaricato dall'utente a
 ///    pezzi, altrimenti niente testo dal vivo.
-/// 2. **Telefono: riconoscimento del sistema** (recorder/system_speech.dart,
-///    Google/Apple sul dispositivo dove c'è): riceve l'audio della
-///    registrazione man mano ([onPcm]); il testo provvisorio si aggiorna e
-///    diventa un segmento quando il sistema lo stabilizza.
+/// 2. **Telefono e Mac con macOS 26: riconoscimento del sistema**
+///    (recorder/system_speech.dart, Google/Apple sul dispositivo dove c'è;
+///    sul Mac solo SpeechAnalyzer, [appleSpeech], prima di Parakeet):
+///    riceve l'audio della registrazione man mano ([onPcm]); il testo
+///    provvisorio si aggiorna e diventa un segmento quando il sistema lo
+///    stabilizza.
 /// 3. **Telefono, ripiego: Whisper** con il modello integrato (base q5_1),
 ///    se il riconoscitore manca o si ferma: ogni ~2 s ritrascrive dal WAV
 ///    di lavoro il tratto non ancora definitivo ([LiveWindowPlanner]), con
 ///    il vocabolario del corso ([vocabulary]), il VAD di whisper.cpp e la
 ///    soppressione dei token non verbali.
 ///
-/// Sul telefono, dove regge, una **seconda passata** con small q5_1
-/// ritrascrive in background i tratti confermati a blocchi da ~30 s
-/// (second_pass.dart, anche sul testo del riconoscitore del sistema); si
-/// sospende se resta indietro, se il telefono rallenta (si scalda) o con la
-/// batteria sotto il 20%. L'ordine dei motori è in [liveEngineOrder].
+/// Sul telefono, con Whisper base e dove regge, una **seconda passata** con
+/// small q5_1 ritrascrive in background i tratti confermati a blocchi da
+/// ~30 s (second_pass.dart; non sul testo del riconoscitore del sistema,
+/// già preciso almeno quanto small); si ferma da sola se resta indietro, se
+/// il telefono rallenta (si scalda) o con la batteria sotto il 20%.
+/// L'ordine dei motori è in [liveEngineOrder].
 ///
 /// Non blocca mai la registrazione: ogni errore ferma solo la trascrizione
 /// (o fa passare al motore successivo).
@@ -131,6 +145,7 @@ class LiveTranscriber extends ChangeNotifier {
     this.speech,
     this.locale = 'it-IT',
     this.vocabulary = const [],
+    this.appleSpeech = false,
   }) : _customPlanner = planner,
        planner = planner ?? LiveWindowPlanner() {
     // maiuscole a inizio pezzo: restano solo per i nomi propri noti
@@ -142,9 +157,14 @@ class LiveTranscriber extends ChangeNotifier {
 
   final WhisperService? _whisper;
 
-  /// Riconoscimento vocale del sistema (telefono; null = solo i modelli
-  /// dell'app).
+  /// Riconoscimento vocale del sistema (telefono e Mac con macOS 26; null =
+  /// solo i modelli dell'app).
   final SystemSpeech? speech;
+
+  /// Mac con macOS 26 o successivo: prima il riconoscitore nuovo di Apple
+  /// (solo SpeechAnalyzer con il modello della lingua già sul Mac), poi
+  /// Parakeet ([liveEngineOrder]).
+  final bool appleSpeech;
   final LiveWindowPlanner? _customPlanner;
 
   /// Finestre di Whisper (scelte in base al modello all'avvio di Whisper).
@@ -169,7 +189,8 @@ class LiveTranscriber extends ChangeNotifier {
 
   /// Frasi di Parakeet in un'altra lingua: tolte ([foreignDropped]) e
   /// ritrascritte con Whisper nella lingua della lezione
-  /// ([foreignRescued]), se c'è un modello scaricato.
+  /// ([foreignRescued]): Whisper small q5_1 incluso nell'app desktop o un
+  /// modello scaricato (`WhisperService.liveEngine`).
   int foreignDropped = 0;
   int foreignRescued = 0;
   bool _rescueUnavailable = false;
@@ -181,7 +202,13 @@ class LiveTranscriber extends ChangeNotifier {
   /// confermano una alla volta si salva al massimo ogni 3 s.
   DateTime? _savedAt;
 
-  void _segmentsChanged({bool force = false}) {
+  void _segmentsChanged({bool force = false, int? recaseFrom}) {
+    // maiuscole a inizio pezzo senza punto prima, per tutti i motori: le
+    // parole confermate e il testo definitivo non passano da merger.add
+    merger.recase(
+      from: recaseFrom ?? merger.segments.length - 8,
+      skip: (s) => _edits.containsKey(s.start.inMilliseconds),
+    );
     final now = DateTime.now();
     final last = _savedAt;
     if (!force && last != null && now.difference(last).inSeconds < 3) return;
@@ -366,9 +393,6 @@ class LiveTranscriber extends ChangeNotifier {
 
   /// Fonte del testo, salvata con la trascrizione.
   String get sourceLabel => switch (engine) {
-    LiveEngine.system when secondPassBlocks > 0 =>
-      'trascrizione dal vivo con il riconoscimento vocale del sistema e '
-          'Whisper $kSecondPassModel',
     LiveEngine.system =>
       'trascrizione dal vivo con il riconoscimento vocale del sistema',
     LiveEngine.parakeet => 'trascrizione dal vivo con Parakeet',
@@ -378,14 +402,14 @@ class LiveTranscriber extends ChangeNotifier {
     _ => 'trascrizione dal vivo',
   };
 
-  /// Seconda passata con small in corso (telefono).
+  /// Seconda passata con small in corso (telefono, con Whisper base).
   bool get secondPassActive => _second != null && (_gov?.active ?? false);
 
-  /// Perché la seconda passata si è fermata (null = attiva o mai partita).
-  String? get secondPassNote {
-    final s = _gov?.stopped;
-    return _second == null || s == null ? null : secondPassStopLabel(s);
-  }
+  /// Perché la seconda passata si è fermata (null = attiva o mai partita):
+  /// solo per i registri, la card non lo scrive più (si ferma da sola e il
+  /// testo istantaneo resta).
+  SecondPassStop? get secondPassStopped =>
+      _second == null ? null : _gov?.stopped;
 
   /// Frasi di Parakeet in un'altra lingua, per la card «Trascrizione» (null
   /// se non ce ne sono).
@@ -405,11 +429,8 @@ class LiveTranscriber extends ChangeNotifier {
         'Whisper (Collegamenti → Whisper) si ritrascrivono in $lang.';
   }
 
-  /// Avvisi sotto il testo (seconda passata, lingua), null se nessuno.
-  String? get note {
-    final parts = [?secondPassNote, ?languageNote];
-    return parts.isEmpty ? null : parts.join(' ');
-  }
+  /// Avvisi sotto il testo (lingua), null se nessuno.
+  String? get note => languageNote;
 
   /// Avvia il riconoscitore: sistema (se c'è), Parakeet (PC e Mac),
   /// Whisper. Senza motori lo stato diventa [LiveState.unavailable].
@@ -427,9 +448,7 @@ class LiveTranscriber extends ChangeNotifier {
   }
 
   Future<void> _begin() async {
-    final order = liveEngineOrder(
-      phone: _whisper?.isPhone ?? (Platform.isAndroid || Platform.isIOS),
-    );
+    final order = liveEngineOrder(phone: _phone, appleSpeech: appleSpeech);
     // un riconoscitore del sistema passato da fuori (test) va per primo
     final engines = [
       if (speech != null && !order.contains(LiveEngine.system))
@@ -455,25 +474,42 @@ class LiveTranscriber extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool get _phone =>
+      _whisper?.isPhone ?? (Platform.isAndroid || Platform.isIOS);
+
+  /// Solo il riconoscitore nuovo di Apple (Mac con macOS 26): mai
+  /// SFSpeechRecognizer, che sul Mac chiede la Dettatura e può usare la rete.
+  bool get _analyzerOnly => appleSpeech && !_phone;
+
   Future<bool> _beginSystem() async {
     final sp = speech;
     if (sp == null) return false;
     try {
-      final sup = await sp.support(locale);
+      final sup = await sp.support(locale, prepare: _analyzerOnly);
       if (_closed) return false;
       systemLanguageMissing = !sup.languageOk;
       if (!sup.available) {
         systemUnavailable = sup.reason;
         return false;
       }
+      if (_analyzerOnly && sup.analyzer != 'installed') {
+        // modello della lingua non ancora sul Mac (si scarica adesso, in
+        // background, per la prossima registrazione) o lingua mancante:
+        // trascrive Parakeet
+        systemUnavailable = sup.analyzer == 'unsupported'
+            ? 'analyzer-unsupported'
+            : (sup.analyzer == null ? 'analyzer' : 'analyzer-downloading');
+        return false;
+      }
       _sub ??= sp.events.listen(_onSpeech);
-      final ok = await sp.start(locale: locale);
+      final ok = await sp.start(locale: locale, analyzerOnly: _analyzerOnly);
       if (_closed) {
         if (ok) unawaited(sp.stop());
         return false;
       }
       if (!ok) {
-        systemUnavailable = sp.lastStartError;
+        systemUnavailable =
+            sp.lastStartError ?? (_analyzerOnly ? 'analyzer' : null);
         return false;
       }
       _feeds = sup.feedsAudio;
@@ -481,19 +517,10 @@ class LiveTranscriber extends ChangeNotifier {
       engine = LiveEngine.system;
       state = LiveState.running;
       notifyListeners();
-      // telefono: seconda passata con small anche sul testo del sistema
-      final w = _whisper;
-      if (w != null && w.isPhone) {
-        unawaited(() async {
-          try {
-            final o = await w.optionsFor(
-              buildWhisperPrompt(vocabulary),
-              language: language,
-            );
-            await _beginSecondPass(w, o);
-          } catch (_) {}
-        }());
-      }
+      // niente seconda passata con small sul testo del riconoscitore del
+      // sistema: Google e Apple sul dispositivo sono già almeno precisi
+      // quanto small, che costerebbe batteria e calore per tutta la lezione
+      // (docs/registratore.md, «Seconda passata»)
       return true;
     } catch (e) {
       debugPrint('Riconoscimento vocale del sistema: $e');
@@ -507,7 +534,9 @@ class LiveTranscriber extends ChangeNotifier {
   /// accumula e i tratti saltati si recuperano alla fine) e lo avvia.
   /// false = non si usa (telefono, RAM, download non riuscito o annullato,
   /// errore all'avvio): si passa a Whisper.
-  Future<bool> _beginParakeet() async {
+  /// [fromNow]: il riconoscitore di Apple si è fermato a metà lezione, il
+  /// testo fin qui c'è già e Parakeet continua da adesso.
+  Future<bool> _beginParakeet({bool fromNow = false}) async {
     final w = _whisper;
     if (w == null) return false;
     final ParakeetService pk;
@@ -519,11 +548,16 @@ class LiveTranscriber extends ChangeNotifier {
     } catch (_) {
       return false;
     }
+    if (_closed) return false;
     engine = LiveEngine.parakeet;
     modelId = kParakeetId;
     _vadWanted = true;
-    // l'audio arrivato prima di adesso si recupera alla fine
-    if (_samples16k > 0) _skipSamples(0, _samples16k);
+    if (fromNow) {
+      _stable = samplesToDuration(_samples16k);
+    } else if (_samples16k > 0) {
+      // l'audio arrivato prima di adesso si recupera alla fine
+      _skipSamples(0, _samples16k);
+    }
     notifyListeners();
     try {
       if (!await pk.installed()) {
@@ -695,9 +729,10 @@ class LiveTranscriber extends ChangeNotifier {
     }
   }
 
-  /// Frasi di Parakeet nella lingua della lezione (o in inglese): le altre
+  /// Frasi di Parakeet nella lingua della lezione: le altre
   /// si tolgono e il loro tratto si ritrascrive con Whisper, nella lingua
-  /// della lezione, se c'è un modello scaricato ([_pumpRescue]).
+  /// della lezione, con il modello incluso nell'app desktop o uno scaricato
+  /// ([_pumpRescue]).
   List<TranscriptSegment> _inLanguage(
     List<TranscriptSegment> segs, {
     File? source,
@@ -966,7 +1001,8 @@ class LiveTranscriber extends ChangeNotifier {
           ..clear()
           ..addAll(next);
         secondPassBlocks++;
-        onSegments?.call();
+        final at = merger.segments.indexWhere((s) => s.end > start);
+        _segmentsChanged(force: true, recaseFrom: at < 0 ? 0 : at);
       }
       notifyListeners();
     } catch (err) {
@@ -1038,8 +1074,9 @@ class LiveTranscriber extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Il riconoscitore del sistema si è fermato: si continua con Whisper dal
-  /// punto attuale (il testo già riconosciuto resta).
+  /// Il riconoscitore del sistema si è fermato: si continua dal punto
+  /// attuale (il testo già riconosciuto resta) con Parakeet sul Mac,
+  /// altrimenti (o se Parakeet non parte) con Whisper.
   void _fallbackToWhisper() {
     if (engine != LiveEngine.system) return;
     engine = LiveEngine.none;
@@ -1049,7 +1086,14 @@ class LiveTranscriber extends ChangeNotifier {
     unawaited(speech?.stop());
     state = LiveState.starting;
     notifyListeners();
-    unawaited(_beginWhisper(_recorded));
+    final order = liveEngineOrder(phone: _phone, appleSpeech: appleSpeech);
+    unawaited(() async {
+      if (order.contains(LiveEngine.parakeet) &&
+          await _beginParakeet(fromNow: true)) {
+        return;
+      }
+      if (!_closed) await _beginWhisper(_recorded);
+    }());
   }
 
   // ------------------------------------------------------------- audio

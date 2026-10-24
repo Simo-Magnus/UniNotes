@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
-import '../../core/feedback/motion.dart';
 import '../../core/services/app_services.dart';
 import '../../models/study.dart';
 import '../../widgets/math_text.dart';
@@ -18,29 +18,14 @@ Future<void> showModuleOrderDialog(
   BuildContext context, {
   required List<StudyModule> modules,
   int? selectedId,
-}) {
-  final reduce = reduceMotion(context);
-  return showGeneralDialog<void>(
-    context: context,
-    barrierDismissible: true,
-    barrierLabel: 'Chiudi',
-    barrierColor: Theme.of(context).dialogTheme.barrierColor ?? Colors.black54,
-    transitionDuration: Duration(milliseconds: reduce ? 0 : 220),
-    pageBuilder: (c, _, _) =>
-        _ModuleOrderDialog(modules: modules, selectedId: selectedId),
-    // si apre «sollevandosi» dal centro: scala da 0,94 e dissolvenza
-    transitionBuilder: (c, a, _, child) {
-      final curved = CurvedAnimation(parent: a, curve: Curves.easeOutCubic);
-      return FadeTransition(
-        opacity: curved,
-        child: ScaleTransition(
-          scale: Tween(begin: reduce ? 1.0 : 0.94, end: 1.0).animate(curved),
-          child: child,
-        ),
-      );
-    },
-  );
-}
+}) =>
+    // come le altre finestre (molla di iOS); prima aveva una transizione
+    // propria che creava una curva nuova a ogni fotogramma
+    showAppDialog<void>(
+      context: context,
+      builder: (c) =>
+          _ModuleOrderDialog(modules: modules, selectedId: selectedId),
+    );
 
 class _ModuleOrderDialog extends StatefulWidget {
   const _ModuleOrderDialog({required this.modules, this.selectedId});

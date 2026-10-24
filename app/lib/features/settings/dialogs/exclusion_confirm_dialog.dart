@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../logic/exclusion_cleanup.dart';
 
 /// Conferma prima di nascondere gli elementi esclusi, con l'elenco completo.
-Future<bool> showExclusionConfirmDialog(BuildContext context, ExclusionMatches m) async {
+Future<bool> showExclusionConfirmDialog(
+  BuildContext context,
+  ExclusionMatches m,
+) async {
   final theme = Theme.of(context);
   Widget group(String title, Iterable<String> lines) => Padding(
     padding: const EdgeInsets.only(top: 12),
@@ -20,7 +24,7 @@ Future<bool> showExclusionConfirmDialog(BuildContext context, ExclusionMatches m
     ),
   );
 
-  final r = await showDialog<bool>(
+  final r = await showAppDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
       icon: const Icon(Icons.visibility_off_outlined),
@@ -37,7 +41,10 @@ Future<bool> showExclusionConfirmDialog(BuildContext context, ExclusionMatches m
                 'collegati saranno rimossi',
               ),
               if (m.courses.isNotEmpty)
-                group('Corsi (${m.courses.length})', m.courses.map((c) => c.label)),
+                group(
+                  'Corsi (${m.courses.length})',
+                  m.courses.map((c) => c.label),
+                ),
               if (m.events.isNotEmpty)
                 group(
                   'Eventi / lezioni (${m.events.length})',
@@ -46,13 +53,19 @@ Future<bool> showExclusionConfirmDialog(BuildContext context, ExclusionMatches m
                   ),
                 ),
               if (m.exams.isNotEmpty)
-                group('Esami / prove (${m.exams.length})', m.exams.map((x) => x.label)),
+                group(
+                  'Esami / prove (${m.exams.length})',
+                  m.exams.map((x) => x.label),
+                ),
             ],
           ),
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Annulla')),
+        TextButton(
+          onPressed: () => Navigator.pop(c, false),
+          child: const Text('Annulla'),
+        ),
         FilledButton(
           style: FilledButton.styleFrom(
             backgroundColor: theme.colorScheme.error,

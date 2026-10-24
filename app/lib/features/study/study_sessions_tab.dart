@@ -608,7 +608,7 @@ class _ClockCard extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
+              duration: motion(context, const Duration(milliseconds: 200)),
               child: switch (clock) {
                 StudyClock.stopwatch => const _StopwatchPanel(
                   key: ValueKey('stopwatch'),

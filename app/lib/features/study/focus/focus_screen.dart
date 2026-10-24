@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/feedback/app_modals.dart';
 import '../../../core/feedback/feedback_service.dart';
 import '../../../core/feedback/motion.dart';
 import '../../../core/router/safe_pop.dart';
@@ -49,9 +50,10 @@ enum FocusCloseChoice { save, discard, cancel }
 /// «Terminare la sessione?»: il tempo fatto si salva (o si scarta). Due
 /// sole scelte; toccando fuori (o Indietro) la sessione continua.
 Future<FocusCloseChoice> askFinishFocus(BuildContext context) async {
-  final r = await showDialog<FocusCloseChoice>(
+  final r = await showAppDialog<FocusCloseChoice>(
     context: context,
     builder: (c) => AlertDialog(
+      scrollable: true,
       title: const Text('Terminare la sessione?'),
       content: const Text(
         'Il tempo di concentrazione fatto finora si salva nelle sessioni di '

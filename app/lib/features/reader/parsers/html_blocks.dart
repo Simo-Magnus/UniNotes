@@ -110,9 +110,11 @@ int htmlNesting(String s) {
 /// visite ricorsive dell'albero finirebbero lo stack.
 dom.Document parseHtmlSafe(String source) {
   if (htmlNesting(source) <= kHtmlMaxNesting) return html.parse(source);
+  // le entità restano com'erano («&amp;», «&egrave;»): le traduce il parser
+  // (prima «&» diventava «&amp;» e il testo mostrava «&amp;» alla lettera);
+  // un «<» rimasto senza chiusura non deve aprire un tag
   final text = source
       .replaceAll(RegExp(r'<[^>]*>'), ' ')
-      .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;');
   return html.parse('<html><body><p>$text</p></body></html>');
 }

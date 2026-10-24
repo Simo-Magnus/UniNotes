@@ -60,7 +60,7 @@ Future<File> writeTranscriptFor(
   await dir.create(recursive: true);
   final md = segmentsToMarkdown(
     [for (final s in segments) WhisperSegment(s.start, s.text, end: s.end)],
-    title: 'Trascrizione – $name',
+    title: 'Trascrizione – ${NotesStore.displayName(name)}',
     subtitle: [if (course.isNotEmpty) course, source].join(' · '),
   );
   final f = File(p.join(dir.path, '$name.md'));
@@ -121,6 +121,7 @@ Future<File> finishTake(AppServices s, RecordingTake take) async {
     bookmarks: [...session.bookmarks],
     segments: segments,
     transcriptSource: segments.isEmpty ? null : liveSource,
+    language: live?.language,
     peaks: take.peaks.isEmpty ? null : take.peaks,
   );
   await meta.save(out.path);
@@ -270,7 +271,7 @@ Future<TrashEntry?> trashSession(
     // il ripristino la rimette nella cartella Registrazioni del corso
     entry = await s.trash.trash(
       [wav, RecordingMeta.sidecarOf(wav.path)],
-      title: session.baseName,
+      title: NotesStore.displayName(session.baseName),
       course: session.course,
       originDir: await currentTargetDir(s, session),
     );
@@ -306,10 +307,7 @@ Future<TrashEntry?> trashSession(
 /// salverebbe dove l'app non guarda (o non si salverebbe mai, a ogni avvio
 /// «Recupero non riuscito»). Si usa allora la cartella del corso in quella
 /// attuale. Senza poter leggere la cartella attuale resta il percorso scritto.
-Future<String> currentTargetDir(
-  AppServices s,
-  RecordingSession session,
-) async {
+Future<String> currentTargetDir(AppServices s, RecordingSession session) async {
   try {
     final root = (await s.notes.root()).path;
     if (p.isWithin(root, session.targetDir)) {

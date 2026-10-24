@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/enums.dart';
+import '../../core/feedback/app_modals.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
@@ -49,25 +50,28 @@ class _ExamsScreenState extends State<ExamsScreen>
   /// «Nuova prova»: due scelte. L'esame a scelta fuori piano si indica nel
   /// modulo dell'esame finale (ultima voce del menù del corso).
   Future<void> _add() async {
-    final kind = await showModalBottomSheet<ExamKind>(
+    final kind = await showAppSheet<ExamKind>(
       context: context,
       showDragHandle: true,
       builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.flag_outlined),
-              title: const Text('Esame finale'),
-              subtitle: const Text('Anche un esame a scelta fuori piano'),
-              onTap: () => Navigator.pop(c, ExamKind.finalExam),
-            ),
-            ListTile(
-              leading: const Icon(Icons.timelapse),
-              title: const Text('Prova in itinere o Esonero'),
-              onTap: () => Navigator.pop(c, ExamKind.midterm),
-            ),
-          ],
+        // scorre se lo spazio è poco (finestra bassa, caratteri grandi)
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: const Icon(Icons.flag_outlined),
+                title: const Text('Esame finale'),
+                subtitle: const Text('Anche un esame a scelta fuori piano'),
+                onTap: () => Navigator.pop(c, ExamKind.finalExam),
+              ),
+              ListTile(
+                leading: const Icon(Icons.timelapse),
+                title: const Text('Prova in itinere o Esonero'),
+                onTap: () => Navigator.pop(c, ExamKind.midterm),
+              ),
+            ],
+          ),
         ),
       ),
     );

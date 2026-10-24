@@ -186,11 +186,27 @@ class MainActivity : FlutterActivity() {
         setIntent(intent)
         val route = WidgetSupport.routeOf(intent) ?: return
         val ch = channel
-        if (ch != null) {
-            ch.invokeMethod("route", route)
-        } else {
+        if (ch == null) {
             pendingRoute = route
+            return
         }
+        // Durante l'avvio Dart può non ascoltare ancora (codice Dart non
+        // ancora partito: il motore scarta il messaggio e risponde «non
+        // gestito»): prima il tocco andava perso. Senza chi lo riceve resta
+        // in pendingRoute, che l'app legge con `takeRoute` all'avvio e a
+        // ogni ritorno in primo piano. (Con Dart avviato ma senza ascolto il
+        // messaggio resta in coda nel motore fino all'ascolto.)
+        ch.invokeMethod("route", route, object : MethodChannel.Result {
+            override fun success(result: Any?) {}
+
+            override fun error(code: String, message: String?, details: Any?) {
+                pendingRoute = route
+            }
+
+            override fun notImplemented() {
+                pendingRoute = route
+            }
+        })
     }
 
     override fun cleanUpFlutterEngine(flutterEngine: FlutterEngine) {

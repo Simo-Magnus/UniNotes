@@ -7,7 +7,6 @@ import '../../models/course.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
 import '../cloud/cloud_drive_service.dart';
-import '../cloud/onenote_screen.dart';
 import '../study/course_catalog.dart';
 import '../study/course_groups.dart' show groupStudyCourses;
 import 'course_notes_screen.dart';
@@ -16,21 +15,12 @@ import 'recorder_screen.dart';
 import 'transcript_search_screen.dart';
 
 class _NotesData {
-  _NotesData(
-    this.catalog,
-    this.counts,
-    this.suggested,
-    this.onedrive,
-    this.deleted,
-  );
+  _NotesData(this.catalog, this.counts, this.suggested, this.deleted);
   final CourseCatalog catalog;
   final Map<int, int> counts;
 
   /// Elementi in «Eliminati di recente».
   final int deleted;
-
-  /// Account OneDrive collegato (sincronizzazione e OneNote).
-  final bool onedrive;
 
   /// Corso della lezione in corso (o della prossima di oggi).
   final Course? suggested;
@@ -52,7 +42,6 @@ class NotesScreen extends StatelessWidget {
       catalog,
       counts,
       await suggestedCourse(s, catalog),
-      await s.onedrive.connected(),
       await _trashCount(s),
     );
   }
@@ -133,29 +122,11 @@ class NotesScreen extends StatelessWidget {
           return ListView(
             padding: const EdgeInsets.fromLTRB(12, 4, 12, 96),
             children: [
-              if (d.onedrive)
-                GlassCard(
-                  child: ListTile(
-                    leading: const Icon(Icons.menu_book_outlined),
-                    title: const Text('Blocchi appunti OneNote'),
-                    subtitle: const Text(
-                      'Leggi qui le pagine di OneNote del tuo account '
-                      'Microsoft (sola lettura) e aprile in OneNote per '
-                      'modificarle.',
-                    ),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => const OneNoteScreen(),
-                      ),
-                    ),
-                  ),
-                ),
               if (d.suggested != null)
                 GlassCard(
                   child: ListTile(
                     leading: const Icon(Icons.radio_button_checked),
-                    title: Text('Registra ${d.suggested!.label}'),
+                    title: Text('Registra ${d.suggested!.name}'),
                     subtitle: const Text('Lezione di oggi in calendario'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () => openRecorder(context, course: d.suggested),

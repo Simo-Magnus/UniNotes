@@ -128,7 +128,7 @@ class CourseCatalog {
 
   String nameOf(int? courseId) {
     if (courseId == null) return 'Senza materia';
-    return byId[courseId]?.label ?? 'Corso eliminato';
+    return byId[courseId]?.name ?? 'Corso eliminato';
   }
 
   String? universityShort(Course c) => universities[c.universityId]?.shortName;

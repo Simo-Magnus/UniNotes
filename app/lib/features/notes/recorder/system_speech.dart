@@ -84,11 +84,14 @@ class SystemSpeech {
     return null;
   }
 
-  /// Cosa offre il sistema per [locale] (es. «it-IT»).
-  Future<SpeechSupport> support(String locale) async {
+  /// Cosa offre il sistema per [locale] (es. «it-IT»). Con [prepare] (Mac)
+  /// il modello della lingua di SpeechAnalyzer, se manca, si scarica in
+  /// background per la registrazione dopo.
+  Future<SpeechSupport> support(String locale, {bool prepare = false}) async {
     try {
       final r = await _channel.invokeMethod<Object?>('support', {
         'locale': locale,
+        if (prepare) 'prepare': true,
       });
       if (r is! Map) return SpeechSupport.none;
       return SpeechSupport(
@@ -98,6 +101,7 @@ class SystemSpeech {
         engine: '${r['engine'] ?? ''}',
         reason: r['reason'] is String ? r['reason'] as String : null,
         languageOk: r['languageOk'] != false,
+        analyzer: r['analyzer'] is String ? r['analyzer'] as String : null,
       );
     } catch (e) {
       // MissingPluginException (piattaforma senza riconoscitore) o errore
@@ -110,8 +114,14 @@ class SystemSpeech {
   /// [sampleRate] Hz (passato con [feed] dove il sistema lo chiede). Su iOS
   /// e macOS la prima volta il sistema chiede il permesso. false se il
   /// riconoscitore non è partito ([lastStartError] dice perché, se il
-  /// sistema lo indica, es. «privacy» su Windows).
-  Future<bool> start({required String locale, int sampleRate = 16000}) async {
+  /// sistema lo indica, es. «privacy» su Windows). Con [analyzerOnly] (Mac)
+  /// solo SpeechAnalyzer con il modello già sul Mac, mai SFSpeechRecognizer
+  /// (risponde «analyzer» se non parte: l'app usa Parakeet).
+  Future<bool> start({
+    required String locale,
+    int sampleRate = 16000,
+    bool analyzerOnly = false,
+  }) async {
     _listen();
     _session++;
     _pending.clear();
@@ -123,6 +133,7 @@ class SystemSpeech {
             'locale': locale,
             'sampleRate': sampleRate,
             'session': session,
+            if (analyzerOnly) 'analyzerOnly': true,
           })
           .timeout(startTimeout);
       if (r is String) lastStartError = r;
@@ -208,9 +219,15 @@ class SpeechSupport {
     this.engine = '',
     this.reason,
     this.languageOk = true,
+    this.analyzer,
   });
 
   static const none = SpeechSupport(available: false);
+
+  /// iOS/macOS 26+: modello di SpeechAnalyzer per la lingua, `installed`
+  /// (pronto), `downloading` (si sta scaricando) o `unsupported`; null
+  /// prima del 26 e sugli altri sistemi.
+  final String? analyzer;
 
   final bool available;
 
@@ -272,8 +289,31 @@ String? speechUnavailableText(String? reason) => switch (reason) {
   'dictation' =>
     'Sul Mac il riconoscimento vocale richiede la Dettatura: attivala in '
         'Impostazioni di Sistema → Tastiera → Dettatura.',
+  'analyzer-downloading' =>
+    'Il riconoscitore di Apple sta scaricando la lingua della lezione (una '
+        'volta sola, serve internet): per questa registrazione trascrive '
+        'Parakeet.',
+  'analyzer-unsupported' =>
+    'Il riconoscitore di Apple non ha questa lingua: trascrive Parakeet.',
+  'analyzer' => 'Il riconoscitore di Apple non è partito: trascrive Parakeet.',
   final r => r,
 };
+
+/// Versione principale di macOS da [Platform.operatingSystemVersion] (es.
+/// «Version 26.0 (Build 25A354)» → 26); null se non si legge.
+int? macOSMajor(String operatingSystemVersion) {
+  final m = RegExp(r'(?:Version\s+)?(\d+)(?:\.\d+)*')
+      .firstMatch(operatingSystemVersion);
+  return m == null ? null : int.tryParse(m[1]!);
+}
+
+/// Il riconoscitore nuovo di Apple (SpeechAnalyzer, macOS 26 o successivo)
+/// è il primo motore del testo dal vivo sul Mac (vedi `liveEngineOrder`).
+bool macAppleSpeech({required bool macOS, required String osVersion}) {
+  if (!macOS) return false;
+  final v = macOSMajor(osVersion);
+  return v != null && v >= 26;
+}
 
 /// Avviso della card «Trascrizione» sul riconoscitore del sistema: cosa
 /// fare, eventuale nota sulla privacy e impostazioni da aprire.

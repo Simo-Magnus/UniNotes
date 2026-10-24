@@ -174,7 +174,11 @@ abstract class LiveWhisper {
 /// I modelli ggml si scaricano da Hugging Face (tabella [kWhisperModels]).
 /// Su PC e Mac c'è anche **Parakeet** ([parakeet]): fa il testo istantaneo
 /// e, scaricato, compare fra i motori di «Trascrivi con…» (id
-/// [kParakeetId]); il modello Whisper integrato resta solo sul telefono.
+/// [kParakeetId]); il modello Whisper integrato (base q5_1) resta solo sul
+/// telefono. Le app per PC e Mac includono invece **Whisper small q5_1**
+/// ([kDesktopWhisperModel], [includedModelFile]): ritrascrive nella lingua
+/// della lezione le frasi di Parakeet in un'altra lingua e fa da ripiego
+/// quando Parakeet non può girare, senza download.
 class WhisperService {
   WhisperService({
     this._settings,
@@ -197,6 +201,7 @@ class WhisperService {
     this._builtInAsset,
     this._deviceProbe,
     ParakeetService? parakeet,
+    this._includedBytes,
   }) : _parakeetOverride = parakeet,
        _bundledModels = bundledModels ?? _defaultBundledModels,
        _assetLoader = assetLoader ?? rootBundle.load,
@@ -238,9 +243,14 @@ class WhisperService {
   final Future<bool> Function(File input, File wav)? _nativeDecoder;
   final LiveWhisper Function(File model, String modelId)? _livePlugin;
 
-  /// Cartella dei modelli inclusi nell'app (Windows: `data/whisper/`
-  /// accanto a uninotes.exe, dall'installatore), null se non c'è.
+  /// Cartella dei modelli inclusi nell'app (PC e Mac: `data/whisper/`
+  /// accanto a uninotes.exe, `Contents/Resources/whisper/` sul Mac), null se
+  /// non c'è.
   final Directory? Function() _bundledModels;
+
+  /// Dimensione attesa del modello incluso nell'app desktop (null = quella
+  /// di [kDesktopWhisperModel]; sostituibile nei test).
+  final int? _includedBytes;
   final bool Function()? _cpuSupportsPlugin;
 
   /// Lettura dell'asset del modello integrato (sostituibile nei test).
@@ -274,10 +284,49 @@ class WhisperService {
     }
   }
 
-  /// Cartella di modelli inclusi accanto all'eseguibile (`data/whisper/`):
-  /// non la crea più nessuna build (il modello integrato è solo sul
-  /// telefono), resta per i test.
-  static Directory? _defaultBundledModels() => null;
+  /// Cartella dei modelli Whisper inclusi nell'app desktop: `data/whisper/`
+  /// accanto all'eseguibile (Windows, Linux: windows/CMakeLists.txt la
+  /// riempie durante la build), `Contents/Resources/whisper/` nel bundle
+  /// (macOS: tool/prepara_modello_whisper_desktop.py prima della firma).
+  /// null sul telefono, dove il modello integrato è un asset.
+  static Directory? _defaultBundledModels() {
+    try {
+      final exe = p.dirname(Platform.resolvedExecutable);
+      if (Platform.isMacOS) {
+        return Directory(
+          p.normalize(p.join(exe, '..', 'Resources', 'whisper')),
+        );
+      }
+      if (Platform.isWindows || Platform.isLinux) {
+        return Directory(p.join(exe, 'data', 'whisper'));
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  /// Il modello Whisper incluso nell'app desktop ([kDesktopWhisperModel],
+  /// small q5_1): il file con la dimensione giusta (lo SHA-256 si controlla
+  /// durante la build) e un modo per usarlo (whisper.cpp dentro l'app, che
+  /// su Windows vuole una CPU con AVX2, oppure `whisper-cli`). null sul
+  /// telefono, nelle build senza il modello e se non si può usare. Si legge
+  /// da lì, senza copiarlo: non si scarica né si elimina.
+  Future<File?> includedModelFile() async {
+    if (isPhone) return null;
+    final dir = _bundledModels();
+    if (dir == null) return null;
+    final m = whisperModelById(kDesktopWhisperModel)!;
+    final f = File(p.join(dir.path, m.fileName));
+    try {
+      if (!await f.exists() ||
+          await f.length() != (_includedBytes ?? m.approxBytes)) {
+        return null;
+      }
+    } catch (_) {
+      return null;
+    }
+    if (!liveModelSupported && await findCli() == null) return null;
+    return f;
+  }
 
   Future<bool> _decodeNative(File input, File wav) async {
     try {
@@ -507,7 +556,9 @@ class WhisperService {
           (f) => f.isFile && p.basename(f.name) == _ffmpegName,
         );
         if (entry.isEmpty) {
-          throw WhisperException('ffmpeg non trovato nell\'archivio scaricato.');
+          throw WhisperException(
+            'ffmpeg non trovato nell\'archivio scaricato.',
+          );
         }
         final out = OutputFileStream(tmp.path);
         try {
@@ -557,7 +608,10 @@ class WhisperService {
   /// Download di `whisper-cli` (solo Windows: binari ufficiali).
   Stream<WhisperProgress> installCli({CancelToken? cancel}) async* {
     for (var o = _cliInstall; o != null; o = _cliInstall) {
-      yield const WhisperProgress('Attendo l\'altro download di whisper.cpp…', null);
+      yield const WhisperProgress(
+        'Attendo l\'altro download di whisper.cpp…',
+        null,
+      );
       await o.future;
     }
     // (subito, prima di qualsiasi attesa: un'altra installazione partita
@@ -770,15 +824,20 @@ class WhisperService {
       whisperAccuracyRank(a.id).compareTo(whisperAccuracyRank(b.id));
 
   /// Motori con cui si può trascrivere adesso: i modelli scaricati (se il
-  /// programma c'è), Parakeet su PC e Mac (se scaricato) e il modello
-  /// integrato sul telefono, dal più accurato.
+  /// programma c'è), Parakeet su PC e Mac (se scaricato), Whisper small
+  /// q5_1 incluso nell'app desktop e il modello integrato sul telefono, dal
+  /// più accurato.
   Future<List<WhisperModelInfo>> availableModels({WhisperStatus? known}) async {
     final st = known ?? await status();
     final builtIn = await builtInModelFile() != null;
     final pk = await parakeetReady();
+    final downloaded = st.engineReady ? st.models : const <String>{};
+    final included =
+        !downloaded.contains(kDesktopWhisperModel) &&
+        await includedModelFile() != null;
     return [
-      if (st.engineReady)
-        for (final id in st.models) ?whisperModelById(id),
+      for (final id in downloaded) ?whisperModelById(id),
+      if (included) whisperModelById(kDesktopWhisperModel)!,
       if (pk) kParakeetModel,
       if (builtIn) kBuiltInWhisperModel,
     ]..sort(_byAccuracy);
@@ -798,6 +857,8 @@ class WhisperService {
   static const _livePreference = [
     'large-v3-turbo-q5_0',
     'small',
+    // incluso nell'app desktop (kDesktopWhisperModel)
+    'small-q5_1',
     'medium-q5_0',
     'large-v3-turbo',
     'large-v3-turbo-q8_0',
@@ -922,8 +983,11 @@ class WhisperService {
 
   /// Whisper per la trascrizione dal vivo: il modello dal vivo con
   /// whisper.cpp dentro l'app (telefono); senza (PC e Mac, dove il primo
-  /// motore è Parakeet), il modello scaricato dall'utente più adatto. null
-  /// se non c'è nessun modello. [options]: vocabolario del corso e VAD.
+  /// motore è Parakeet), il più adatto fra i modelli scaricati dall'utente
+  /// e Whisper small q5_1 incluso nell'app desktop ([includedModelFile]).
+  /// È anche il motore che ritrascrive le frasi di Parakeet in un'altra
+  /// lingua. null se non c'è nessun modello. [options]: vocabolario del
+  /// corso, VAD e lingua della lezione.
   Future<LiveWhisper?> liveEngine({
     WhisperOptions options = WhisperOptions.none,
   }) async {
@@ -936,12 +1000,29 @@ class WhisperService {
     }
     if (e == null) {
       final st = await status();
-      final m = pickLiveModel(st.models);
-      if (!st.engineReady || m == null) return null;
-      final model = await modelFile(m);
-      e = st.engine == WhisperEngineKind.plugin
-          ? (_livePlugin ?? PluginLiveWhisper.new)(model, m.id)
-          : _CliLiveWhisper(this, st.cli!, model, m.id);
+      final downloaded = st.engineReady ? st.models : const <String>{};
+      final included = downloaded.contains(kDesktopWhisperModel)
+          ? null
+          : await includedModelFile();
+      final m = pickLiveModel({
+        ...downloaded,
+        if (included != null) kDesktopWhisperModel,
+      });
+      if (m == null) return null;
+      final plugin = _livePlugin ?? PluginLiveWhisper.new;
+      final cli = st.cli;
+      if (downloaded.contains(m.id)) {
+        final model = await modelFile(m);
+        e = st.engine == WhisperEngineKind.plugin
+            ? plugin(model, m.id)
+            : _CliLiveWhisper(this, cli!, model, m.id);
+      } else {
+        // modello incluso nell'app desktop: whisper-cli se c'è, altrimenti
+        // whisper.cpp dentro l'app
+        e = cli != null
+            ? _CliLiveWhisper(this, cli, included!, m.id)
+            : plugin(included!, m.id);
+      }
     }
     return e..options = options;
   }
@@ -1099,8 +1180,8 @@ class WhisperService {
   /// [language]: lingua della lezione («it» se null, «en» per gli
   /// insegnamenti in inglese), sempre fissata. Parakeet non permette di
   /// fissarla: le sue frasi in altre lingue si ritrascrivono con Whisper
-  /// nella lingua della lezione, se c'è un modello scaricato, altrimenti si
-  /// tolgono (speech_language.dart).
+  /// nella lingua della lezione (small q5_1 incluso nell'app desktop o un
+  /// modello scaricato), altrimenti si tolgono (speech_language.dart).
   Future<WhisperResult> transcribeWith(
     File audio, {
     String? model,
@@ -1113,10 +1194,16 @@ class WhisperService {
     final st = await status();
     final builtIn = liveModelSupported ? await builtInModelFile() : null;
     final pk = await parakeetReady();
+    final downloaded = st.engineReady ? st.models : const <String>{};
+    // Whisper small q5_1 incluso nell'app desktop (se non è anche scaricato)
+    final included = downloaded.contains(kDesktopWhisperModel)
+        ? null
+        : await includedModelFile();
     final usable = {
-      if (st.engineReady) ...st.models,
+      ...downloaded,
       if (pk) kParakeetId,
       if (builtIn != null) kBuiltInWhisperModel.id,
+      if (included != null) kDesktopWhisperModel,
     };
     final m = await pickModel(usable, requested: model);
     if (m == null) {
@@ -1139,7 +1226,7 @@ class WhisperService {
           onProgress: onProgress,
           cancel: cancel,
           language: lang,
-          rescue: st.engineReady && st.models.isNotEmpty
+          rescue: downloaded.isNotEmpty || included != null
               ? (wav) async {
                   final w = whisper ??= await liveEngine(
                     options: await optionsFor(prompt, language: lang),
@@ -1154,13 +1241,16 @@ class WhisperService {
       }
     }
     final options = await optionsFor(prompt, language: lang);
-    // il modello integrato gira sempre con whisper.cpp dentro l'app
+    final useIncluded = m.id == kDesktopWhisperModel && included != null;
+    // il modello integrato gira sempre con whisper.cpp dentro l'app; quello
+    // incluso nell'app desktop con whisper-cli, se c'è
     final usesPlugin =
         st.engine == WhisperEngineKind.plugin ||
-        m.id == kBuiltInWhisperModel.id;
+        m.id == kBuiltInWhisperModel.id ||
+        (useIncluded && st.cli == null);
     final modelPath = m.id == kBuiltInWhisperModel.id
         ? builtIn!
-        : await modelFile(m);
+        : (useIncluded ? included : await modelFile(m));
     final segs = usesPlugin
         ? await _pluginEngine.transcribe(
             audio,
