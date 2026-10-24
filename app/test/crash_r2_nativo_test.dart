@@ -219,5 +219,31 @@ void main() {
       expect(i, greaterThan(0));
       expect(kt.substring(i - 200, i), contains('try {'));
     });
+
+    test('Android: dopo ogni scrittura o eliminazione nel calendario si chiede '
+        'il caricamento immediato sul server (senza, Google Calendar mostra '
+        '«Sync error» finché non sincronizza da solo)', () {
+      final kt = read(
+        'android/app/src/main/kotlin/io/github/simomagnus/universitynotes/'
+        'UniNotesCalendar.kt',
+      );
+      expect(kt, contains('ContentResolver.requestSync('));
+      expect(kt, contains('SYNC_EXTRAS_UPLOAD'));
+      // la sincronizzazione automatica dell'utente si rispetta
+      expect(
+        kt,
+        isNot(contains('putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL')),
+      );
+      final write = kt.substring(kt.indexOf('private fun write('));
+      expect(
+        write.substring(0, write.indexOf('return eventId.toString()')),
+        contains('requestUpload(calendarId)'),
+      );
+      final del = kt.substring(kt.indexOf('private fun delete('));
+      expect(
+        del.substring(0, del.indexOf('private fun requestUpload(')),
+        contains('requestUpload(calendarId)'),
+      );
+    });
   });
 }

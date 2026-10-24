@@ -268,12 +268,49 @@ class UniNotesCalendar(private val context: Context) {
                 },
             )
         }
+        requestUpload(calendarId)
         return eventId.toString()
     }
 
     private fun delete(eventId: String?) {
         val id = eventId?.toLongOrNull() ?: return
-        resolver.delete(ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, id), null, null)
+        val uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, id)
+        val calendarId = resolver.query(
+            uri, arrayOf(CalendarContract.Events.CALENDAR_ID), null, null, null,
+        )?.use { c -> if (c.moveToFirst()) c.getLong(0) else null }
+        resolver.delete(uri, null, null)
+        if (calendarId != null) requestUpload(calendarId)
+    }
+
+    /**
+     * Chiede al sistema di caricare subito sul server le modifiche del
+     * calendario [calendarId] (account Google, Samsung…): senza, l'evento
+     * resta «da sincronizzare» finché l'app del calendario non sincronizza
+     * da sola o a mano, e Google Calendar nel frattempo mostra «Sync error».
+     * Rispetta la sincronizzazione automatica dell'utente (niente
+     * SYNC_EXTRAS_MANUAL); i calendari locali non hanno un server.
+     */
+    private fun requestUpload(calendarId: Long) {
+        try {
+            val uri = ContentUris.withAppendedId(CalendarContract.Calendars.CONTENT_URI, calendarId)
+            resolver.query(
+                uri,
+                arrayOf(CalendarContract.Calendars.ACCOUNT_NAME, CalendarContract.Calendars.ACCOUNT_TYPE),
+                null, null, null,
+            )?.use { c ->
+                if (!c.moveToFirst()) return
+                val name = c.getString(0) ?: return
+                val type = c.getString(1) ?: return
+                if (type == CalendarContract.ACCOUNT_TYPE_LOCAL) return
+                val extras = android.os.Bundle().apply {
+                    putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true)
+                    putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
+                }
+                ContentResolver.requestSync(Account(name, type), CalendarContract.AUTHORITY, extras)
+            }
+        } catch (e: Exception) {
+            // la sincronizzazione arriverà comunque con quella periodica
+        }
     }
 
     /**
