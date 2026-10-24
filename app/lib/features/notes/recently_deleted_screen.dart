@@ -28,7 +28,9 @@ class _RecentlyDeletedScreenState extends State<RecentlyDeletedScreen> {
   /// Dopo un'operazione (anche a schermata già chiusa: niente setState).
   void _reload() {
     if (!mounted) return;
-    setState(() => _items = _s.trash.list());
+    setState(() {
+      _items = _s.trash.list();
+    });
   }
 
   /// Elementi in lavorazione (doppio tocco su «Ripristina»).

@@ -59,26 +59,63 @@ class AppDatabase {
     return p.join(dir.path, fileName);
   }
 
-  static OpenDatabaseOptions get _options => OpenDatabaseOptions(
-    version: kSchemaVersion,
-    onConfigure: _onConfigure,
-    onCreate: _onCreate,
-    onUpgrade: _onUpgrade,
-    onOpen: _onOpen,
-  );
+  static OpenDatabaseOptions get _options => optionsFor();
+
+  /// Opzioni di apertura. [rollbackOrphan] (Android): una transazione
+  /// rimasta aperta sulla connessione condivisa si annulla aprendo (vedi
+  /// [rollbackOrphanOnOpen]); null = predefinito del pacchetto.
+  @visibleForTesting
+  static OpenDatabaseOptions optionsFor({bool? rollbackOrphan}) =>
+      OpenDatabaseOptions(
+        version: kSchemaVersion,
+        onConfigure: _onConfigure,
+        onCreate: _onCreate,
+        onUpgrade: _onUpgrade,
+        onOpen: _onOpen,
+        rollbackActiveTransactionOnOpen: rollbackOrphan,
+      );
+
+  /// Android: un altro motore Flutter dello stesso processo sta lavorando
+  /// sul database adesso (il motore senza interfaccia della sincronizzazione
+  /// in background, BackgroundSync.kt). Impostato dall'app prima di aprire
+  /// il database; null = nessuno (motore senza interfaccia, test, PC).
+  static Future<bool> Function()? otherEngineWorking;
+
+  /// Android: sqflite tiene una sola connessione per file in tutto il
+  /// processo, condivisa fra i motori (app, sincronizzazione in background).
+  /// Se un motore viene chiuso a metà di una transazione (l'attività chiusa
+  /// con «Indietro» durante una sincronizzazione, il processo che resta
+  /// vivo) la transazione resta aperta e ogni lettura e scrittura del motore
+  /// successivo resta in coda per sempre: l'app riaperta restava bloccata
+  /// all'avvio. sqflite la annulla aprendo solo in debug: qui si annulla
+  /// sempre, tranne quando un altro motore vivo ci sta lavorando (la sua
+  /// transazione è vera e finisce da sola).
+  @visibleForTesting
+  static Future<bool> rollbackOrphanOnOpen() async {
+    final f = otherEngineWorking;
+    if (f == null) return true;
+    try {
+      return !await f();
+    } catch (_) {
+      return true;
+    }
+  }
 
   static Future<AppDatabase> open({String? path}) async {
     final dbPath = path ?? await defaultPath();
     final factory = _factory();
+    final options = _isDesktop
+        ? _options
+        : optionsFor(rollbackOrphan: await rollbackOrphanOnOpen());
     try {
       return AppDatabase._(
-        await factory.openDatabase(dbPath, options: _options),
+        await factory.openDatabase(dbPath, options: options),
       );
     } catch (e, st) {
       if (!isCorruptionError(e) || !await File(dbPath).exists()) rethrow;
       await ErrorLog.record(e, st, context: 'Database danneggiato');
       final aside = await _setAside(dbPath);
-      final fresh = await factory.openDatabase(dbPath, options: _options);
+      final fresh = await factory.openDatabase(dbPath, options: options);
       recoveredRows = await salvage(fresh, aside);
       recoveredCopy = aside;
       return AppDatabase._(fresh);

@@ -18,6 +18,19 @@ import 'catalog_models.dart';
 const String kDefaultCatalogBaseUrl =
     'https://raw.githubusercontent.com/Simo-Magnus/UniNotes/main/database';
 
+/// Indirizzi predefiniti delle versioni precedenti (fino all'11/10/2026: il
+/// repository privato di sviluppo, non più raggiungibile). Chi aveva aperto
+/// «Indirizzo del database» e salvato senza cambiare nulla se lo ritrovava
+/// scritto nelle impostazioni: vale come «predefinito».
+const List<String> kLegacyCatalogBaseUrls = [
+  'https://raw.githubusercontent.com/Simo-Magnus/University_Notes/main/database',
+];
+
+bool _isLegacyCatalogUrl(String v) {
+  final x = v.trim().replaceAll(RegExp(r'/+$'), '').toLowerCase();
+  return kLegacyCatalogBaseUrls.any((u) => u.toLowerCase() == x);
+}
+
 /// Cartella degli asset con la parte del database inclusa nell'app (solo i
 /// file comuni: atenei, indice dei corsi, meta, corsi sostituiti).
 const String kCatalogAssetDir = 'assets/database';
@@ -355,7 +368,9 @@ class CatalogService {
 
   Future<String> baseUrl() async {
     final v = (await _settings.get(SettingKeys.catalogBaseUrl))?.trim();
-    if (v == null || v.isEmpty) return kDefaultCatalogBaseUrl;
+    if (v == null || v.isEmpty || _isLegacyCatalogUrl(v)) {
+      return kDefaultCatalogBaseUrl;
+    }
     // un indirizzo non sicuro (es. arrivato da un backup) non si usa
     final uri = Uri.tryParse(v);
     return (uri != null && _secure(uri)) ? v : kDefaultCatalogBaseUrl;
@@ -376,9 +391,12 @@ class CatalogService {
         throw CatalogException('Indirizzo non valido: usa un URL https://…');
       }
     }
+    final clean = v.replaceAll(RegExp(r'/+$'), '');
+    // l'indirizzo predefinito non si scrive nelle impostazioni (se cambia in
+    // una versione nuova, chi lo aveva «salvato» resterebbe con il vecchio)
     await _settings.set(
       SettingKeys.catalogBaseUrl,
-      v.isEmpty ? null : v.replaceAll(RegExp(r'/+$'), ''),
+      clean.isEmpty || clean == kDefaultCatalogBaseUrl ? null : clean,
     );
   }
 

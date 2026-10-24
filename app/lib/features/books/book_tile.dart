@@ -45,7 +45,17 @@ class BookTile extends StatelessWidget {
   final ValueChanged<BookAction> onAction;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => LayoutBuilder(
+    // anche una scheda stretta in una finestra larga (caratteri grandi):
+    // «Aggiungi» e il menu a destra occupavano tutta la riga e ListTile
+    // falliva («Trailing widget consumes the entire tile width»)
+    builder: (context, c) => _build(
+      context,
+      narrow: MediaQuery.sizeOf(context).width < 600 || c.maxWidth < 480,
+    ),
+  );
+
+  Widget _build(BuildContext context, {required bool narrow}) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final downloaded = isDownloaded(book);
@@ -58,7 +68,6 @@ class BookTile extends StatelessWidget {
     // Telefono: «Aggiungi» sotto il testo insieme alle altre azioni, così il
     // titolo usa tutta la larghezza; senza il margine interno a sinistra,
     // l'icona parte dalla stessa distanza dal bordo del titolo.
-    final narrow = MediaQuery.sizeOf(context).width < 600;
     final attach = !isDownloaded(book) && !book.isRemoved
         ? TextButton.icon(
             key: ValueKey('attach-${book.id}'),

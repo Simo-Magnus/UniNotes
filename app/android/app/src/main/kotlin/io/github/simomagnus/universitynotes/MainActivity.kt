@@ -48,6 +48,10 @@ class MainActivity : FlutterActivity() {
     private var openWithChannel: MethodChannel? = null
     private var pendingRoute: String? = null
 
+    /** Avvisi verso il motore di questa attività (vedi cleanUpFlutterEngine). */
+    private var onAvailable: (() -> Unit)? = null
+    private var onCommand: ((String) -> Unit)? = null
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -123,7 +127,9 @@ class MainActivity : FlutterActivity() {
                 if (call.method == "take") result.success(IncomingShare.take())
                 else result.notImplemented()
             }
-            IncomingShare.onAvailable = { ch.invokeMethod("available", null) }
+            val notify: () -> Unit = { ch.invokeMethod("available", null) }
+            onAvailable = notify
+            IncomingShare.onAvailable = notify
         }
         // Notifica della registrazione (vedi RecordingNotification.kt).
         recordingChannel = MethodChannel(
@@ -133,7 +139,9 @@ class MainActivity : FlutterActivity() {
             ch.setMethodCallHandler { call, result ->
                 RecordingNotification.handle(applicationContext, call, result)
             }
-            RecordingNotification.onCommand = { ch.invokeMethod("command", it) }
+            val command: (String) -> Unit = { ch.invokeMethod("command", it) }
+            onCommand = command
+            RecordingNotification.onCommand = command
         }
         // Prove nel calendario del telefono (vedi UniNotesCalendar.kt).
         val cal = UniNotesCalendar(applicationContext)
@@ -192,10 +200,16 @@ class MainActivity : FlutterActivity() {
         focusChannel = null
         incomingChannel?.setMethodCallHandler(null)
         incomingChannel = null
-        IncomingShare.onAvailable = null
+        // solo gli avvisi di questa attività: una nuova attività (aperta
+        // prima che questa, già chiusa, venisse distrutta) ha messo i suoi,
+        // che devono restare (altrimenti file condivisi e pulsanti della
+        // notifica della registrazione non arrivavano più all'app aperta)
+        if (IncomingShare.onAvailable === onAvailable) IncomingShare.onAvailable = null
+        onAvailable = null
         recordingChannel?.setMethodCallHandler(null)
         recordingChannel = null
-        RecordingNotification.onCommand = null
+        if (RecordingNotification.onCommand === onCommand) RecordingNotification.onCommand = null
+        onCommand = null
         liveSpeech?.dispose()
         liveSpeech = null
         calendarChannel?.setMethodCallHandler(null)

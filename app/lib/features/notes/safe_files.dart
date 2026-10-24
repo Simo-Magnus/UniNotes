@@ -24,6 +24,9 @@ Future<void> _writeAtomic(File f, Future<void> Function(File tmp) write) {
   final before = _queues[key] ?? Future<void>.value();
   final next = before.catchError((Object _) {}).then((_) async {
     final tmp = File('${f.path}.part');
+    // l'originale è stato tolto per riprovare la rinomina: da lì la copia
+    // nuova (completa) è l'unica e non si cancella mai
+    var originalGone = false;
     try {
       await write(tmp);
       try {
@@ -31,14 +34,35 @@ Future<void> _writeAtomic(File f, Future<void> Function(File tmp) write) {
       } on FileSystemException {
         // file di arrivo bloccato su qualche sistema: si toglie e si riprova
         if (await f.exists()) await f.delete();
-        await tmp.rename(f.path);
+        originalGone = true;
+        try {
+          await tmp.rename(f.path);
+        } on FileSystemException {
+          // è la copia nuova a essere bloccata (antivirus, indicizzazione,
+          // client di sincronizzazione che la legge): si copia al suo posto
+          try {
+            await tmp.copy(f.path);
+          } catch (_) {
+            // copia a metà (disco pieno): resta solo la `.part` completa
+            try {
+              if (await f.exists()) await f.delete();
+            } catch (_) {}
+            rethrow;
+          }
+          try {
+            await tmp.delete();
+          } catch (_) {}
+        }
       }
     } catch (_) {
       // disco pieno o file in uso: la copia a metà non resta (riempirebbe
-      // ancora il disco e nessuno la ripulirebbe); il file vero non si tocca
-      try {
-        if (await tmp.exists()) await tmp.delete();
-      } catch (_) {}
+      // ancora il disco e nessuno la ripulirebbe); il file vero non si tocca.
+      // Con l'originale già tolto la copia resta (`.part`, completa).
+      if (!originalGone) {
+        try {
+          if (await tmp.exists()) await tmp.delete();
+        } catch (_) {}
+      }
       rethrow;
     }
   });

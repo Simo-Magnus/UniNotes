@@ -44,7 +44,13 @@ class _NotificationsSectionState extends State<NotificationsSection> {
   }
 
   void _reload() {
-    if (mounted) setState(() => _future = _load());
+    // corpo a blocchi: una freccia restituirebbe il Future a setState
+    // (errore «setState() callback argument returned a Future»)
+    if (mounted) {
+      setState(() {
+        _future = _load();
+      });
+    }
   }
 
   Future<_NotificationsData> _load() async {

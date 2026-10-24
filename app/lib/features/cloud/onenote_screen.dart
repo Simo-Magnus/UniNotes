@@ -44,7 +44,9 @@ class _OneNoteListState extends State<_OneNoteList> {
           IconButton(
             tooltip: 'Aggiorna',
             icon: const Icon(Icons.refresh),
-            onPressed: () => setState(() => _future = widget.load(_reader)),
+            onPressed: () => setState(() {
+              _future = widget.load(_reader);
+            }),
           ),
         ],
       ),

@@ -732,7 +732,9 @@ class _ParakeetSectionState extends State<_ParakeetSection> {
 
   void _reload() {
     if (!mounted) return;
-    setState(() => _future = _load());
+    setState(() {
+      _future = _load();
+    });
     widget.onChanged();
   }
 

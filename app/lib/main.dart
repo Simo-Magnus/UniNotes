@@ -15,6 +15,7 @@ import 'core/database/app_database.dart';
 import 'core/router/app_link_guard.dart';
 import 'core/router/app_shell.dart';
 import 'core/router/error_screens.dart';
+import 'core/router/safe_scroll_action.dart';
 import 'core/services/app_return.dart';
 import 'core/services/app_services.dart';
 import 'core/services/app_uninstall.dart';
@@ -23,6 +24,7 @@ import 'core/services/day_watcher.dart';
 import 'core/services/error_log.dart';
 import 'core/services/portable_path.dart';
 import 'core/services/install_check.dart';
+import 'core/services/legacy_data.dart';
 import 'core/services/temp_files.dart';
 import 'core/services/desktop_window.dart';
 import 'core/services/nudges.dart';
@@ -120,6 +122,17 @@ Future<void> _launch() async {
 
 /// Database, servizi e preferenze lette prima della prima schermata.
 Future<AppServices> _openServices() async {
+  // Android: il giro della sincronizzazione in background avviato ad app
+  // chiusa può essere ancora al lavoro sul database (connessione condivisa):
+  // la sua transazione non si annulla aprendo, quelle rimaste a metà da un
+  // motore già chiuso sì (vedi AppDatabase.rollbackOrphanOnOpen)
+  if (Platform.isAndroid) {
+    AppDatabase.otherEngineWorking = BackgroundSync.headlessBusy;
+  }
+  // Windows: i dati delle versioni con il nome vecchio (University Notes)
+  // passano alla cartella di UniNotes, prima del controllo dell'installazione
+  // (senza, l'app si vedrebbe vuota e il controllo la darebbe per nuova).
+  await LegacyData.migrateWindowsSupportDir();
   // Primo avvio dopo una (re)installazione: via le credenziali rimaste nel
   // portachiavi; i dati di un'installazione precedente non si rileggono
   // senza chiedere (usa / elimina, oppure usa / ignora per gli appunti in
@@ -284,7 +297,11 @@ class UniversityNotesApp extends StatelessWidget {
                   value: AppTheme.overlayStyle(Theme.of(context).brightness),
                   child: AppBackground(
                     child: RecordingOverlayHost(
-                      child: child ?? const SizedBox(),
+                      // Pagina giù/su con più liste nella pagina: niente
+                      // errore (core/router/safe_scroll_action.dart)
+                      child: SafeScrollActions(
+                        child: child ?? const SizedBox(),
+                      ),
                     ),
                   ),
                 ),

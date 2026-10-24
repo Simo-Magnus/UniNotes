@@ -220,7 +220,9 @@ class _NoteEditorScreenState extends State<NoteEditorScreen>
     final n = widget.note;
     try {
       if (n != null) {
-        await n.file.writeAsString(_body.text);
+        // scrittura sicura: con il disco pieno la nota di prima non resta
+        // troncata (il testo nuovo resta comunque nel campo)
+        await writeStringAtomic(n.file, _body.text);
       } else {
         await s.notes.writeText(
           widget.course,

@@ -73,9 +73,20 @@ class AppTextScaler extends TextScaler {
     return s.clamp(fontSize * kMinTextScale, fontSize * kMaxTextScale);
   }
 
+  /// Valore fisso, letto da [system] quando è stata creata la scala: Flutter
+  /// confronta i MediaQueryData con questo numero. Calcolato con [scale]
+  /// seguiva subito l'impostazione del sistema (la scala del sistema legge il
+  /// valore corrente): cambiando la grandezza del testo del sistema con l'app
+  /// aperta il vecchio e il nuovo MediaQuery risultavano uguali, i testi non
+  /// si reimpaginavano e al primo cambio di colore (tema, pulsante premuto)
+  /// si ridisegnavano con un'altra misura («debugSize == size»).
   @override
   // ignore: deprecated_member_use
-  double get textScaleFactor => scale(14) / 14;
+  double get textScaleFactor =>
+      // ignore: deprecated_member_use
+      (system.textScaleFactor * factor)
+          .clamp(kMinTextScale, kMaxTextScale)
+          .toDouble();
 
   @override
   bool operator ==(Object other) =>

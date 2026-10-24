@@ -267,7 +267,13 @@ class _CourseFormPageState extends State<CourseFormPage> {
         : null;
     // il nome scritto è quello dello studente: il nome ufficiale (database
     // dei corsi) resta accanto, così «Aggiorna database» non lo cancella
-    final typed = cleanCourseName(_name.text)!;
+    // il campo del nome fuori dallo schermo (modulo lungo scorso in basso)
+    // non c'è nella lista e validate() non lo controlla: nome vuoto qui
+    final typed = cleanCourseName(_name.text);
+    if (typed == null) {
+      showSnack(context, 'Inserisci il nome dell\'insegnamento.');
+      return;
+    }
     final official = _officialName();
     final course = Course(
       id: old?.id,

@@ -349,9 +349,21 @@ class _CourseBreakdown extends StatelessWidget {
           if (!graded) 'senza voto (non entra in media)',
         ].join(' · '),
       ),
-      trailing: Text(
-        gradeLabel(e) ?? 'Idoneo',
-        style: Theme.of(context).textTheme.titleMedium,
+      // voto largo al massimo 96 px (rimpicciolito se serve): in una colonna
+      // stretta con i caratteri grandi «30 e lode» occupava tutta la riga e
+      // ListTile non aveva più spazio per il nome («Trailing widget consumes
+      // the entire tile width»)
+      trailing: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 96),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerEnd,
+          child: Text(
+            gradeLabel(e) ?? 'Idoneo',
+            maxLines: 1,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
       ),
     );
   }

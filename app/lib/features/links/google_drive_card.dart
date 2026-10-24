@@ -98,7 +98,9 @@ class _DriveExtrasState extends State<_DriveExtras> {
                   onPressed: () async {
                     await widget.service.dismissNotice();
                     if (mounted) {
-                      setState(() => _notice = widget.service.notice());
+                      setState(() {
+                        _notice = widget.service.notice();
+                      });
                     }
                   },
                   child: const Text('Ho capito'),

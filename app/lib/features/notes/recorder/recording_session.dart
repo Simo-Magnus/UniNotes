@@ -49,6 +49,21 @@ class RecordingSession {
 
   File get file => File(p.setExtension(wav.path, '.json'));
 
+  /// La stessa registrazione da salvare in un'altra cartella.
+  RecordingSession withTargetDir(String dir) => RecordingSession(
+    wav: wav,
+    targetDir: dir,
+    baseName: baseName,
+    course: course,
+    started: started,
+    courseId: courseId,
+    sampleRate: sampleRate,
+    channels: channels,
+    bookmarks: bookmarks,
+    segments: segments,
+    savedAs: savedAs,
+  );
+
   Map<String, Object?> toJson() => {
     'cartella': targetDir,
     'nome': baseName,

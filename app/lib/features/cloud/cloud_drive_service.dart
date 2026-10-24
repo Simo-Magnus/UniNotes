@@ -266,7 +266,13 @@ abstract class CloudDriveService extends ChangeNotifier {
     try {
       refresh = await secrets.read(refreshKey);
     } catch (_) {}
-    await secrets.delete(refreshKey);
+    try {
+      await secrets.delete(refreshKey);
+    } catch (_) {
+      // portachiavi che non risponde (chiave del sistema cambiata, voce
+      // rovinata): il collegamento sul dispositivo si toglie lo stesso, non
+      // si resta «collegati» senza poter scollegare
+    }
     await settings.set(accountKey, null);
     tokens = null;
     notifyListeners();
@@ -394,8 +400,8 @@ abstract class CloudDriveService extends ChangeNotifier {
             !name.endsWith('.json')) {
           continue;
         }
-        final m = jsonDecode(await e.readAsString());
-        final remote = m is Map ? '${m['remoteFolder'] ?? ''}' : '';
+        final m = await _readState(e);
+        final remote = m == null ? '' : '${m['remoteFolder'] ?? ''}';
         if (remote == legacyFolder || remote.startsWith('$legacyFolder/')) {
           await settings.set(folderKey, legacyFolder);
           return legacyFolder;
@@ -452,6 +458,18 @@ abstract class CloudDriveService extends ChangeNotifier {
   /// ritrova (allora si ricrea come prima).
   Future<String?> locateMovedFolder(String base) async => null;
 
+  /// Il file di stato [f] come mappa; null se è illeggibile (scritto a metà,
+  /// di un'altra versione, non JSON): un file rovinato non deve fermare la
+  /// lettura degli altri, né far perdere la cartella con cui si sincronizzava.
+  static Future<Map<String, Object?>?> _readState(File f) async {
+    try {
+      final j = jsonDecode(await f.readAsString());
+      return j is Map ? j.cast<String, Object?>() : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   /// Stati della sincronizzazione di [old] spostati su [next] (stessi file,
   /// cartella con un altro nome): niente da rileggere né da ricaricare.
   Future<void> moveSyncStates(String old, String next) async {
@@ -464,8 +482,8 @@ abstract class CloudDriveService extends ChangeNotifier {
             !name.endsWith('.json')) {
           continue;
         }
-        final m = jsonDecode(await e.readAsString());
-        if (m is! Map) continue;
+        final m = await _readState(e);
+        if (m == null) continue;
         final rf = '${m['remoteFolder'] ?? ''}';
         if (rf != old && !rf.startsWith('$old/')) continue;
         m['remoteFolder'] = '$next${rf.substring(old.length)}';
@@ -486,8 +504,8 @@ abstract class CloudDriveService extends ChangeNotifier {
             !name.endsWith('.json')) {
           continue;
         }
-        final m = jsonDecode(await e.readAsString());
-        if (m is Map) out.add(m);
+        final m = await _readState(e);
+        if (m != null) out.add(m);
       }
     } catch (_) {}
     return out;
@@ -606,6 +624,10 @@ abstract class CloudDriveService extends ChangeNotifier {
 
   // ------------------------------------------------------------- sync
 
+  /// Motivo per cui l'ultima [targets] ha lasciato fuori appunti e
+  /// registrazioni (null = inclusi o non scelti).
+  String? notesSkipped;
+
   /// Parti da sincronizzare secondo le caselle scelte.
   Future<List<SyncTarget>> targets() async {
     final base = await folder();
@@ -617,9 +639,20 @@ abstract class CloudDriveService extends ChangeNotifier {
         sc.contains(SyncScope.recordings) &&
         (!await recordingsWifiOnly() || await Power.onWifi());
     final txt = sc.contains(SyncScope.notes);
-    if (rec || txt) {
+    notesSkipped = null;
+    final (root, fellBack) = rec || txt
+        ? await notes.rootWithFallback()
+        : (null, false);
+    if (fellBack) {
+      // cartella degli appunti scelta non raggiungibile (disco scollegato o
+      // che non risponde): con quella predefinita al suo posto i file che
+      // mancano lì sembrerebbero eliminati qui e si toglierebbero dal
+      // servizio e dagli altri dispositivi. Si salta, e lo si dice.
+      notesSkipped =
+          'Appunti e registrazioni non sincronizzati: la cartella degli '
+          'appunti scelta non è raggiungibile (disco scollegato?).';
+    } else if (root != null) {
       final recDir = NoteFolder.recordings.dirName;
-      final root = await notes.root();
       final recording = sources.recordingInProgress?.call();
       out.add(
         SyncTarget(
@@ -834,6 +867,8 @@ abstract class CloudDriveService extends ChangeNotifier {
         );
         total.add(r);
       }
+      final skipped = notesSkipped;
+      if (skipped != null) total.errors.add(skipped);
       final now = DateTime.now();
       String two(int v) => v.toString().padLeft(2, '0');
       await settings.set(lastSyncAtKey, now.toIso8601String());

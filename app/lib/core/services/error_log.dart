@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -102,7 +103,11 @@ abstract final class ErrorLog {
       final f = await file();
       if (f == null) return '';
       for (final x in [File('${f.path}.1'), f]) {
-        if (await x.exists()) out.write(await x.readAsString());
+        // (byte non UTF-8, es. una voce troncata dall'app chiusa a metà
+        // scrittura: si legge il resto invece di mostrare il registro vuoto)
+        if (await x.exists()) {
+          out.write(utf8.decode(await x.readAsBytes(), allowMalformed: true));
+        }
       }
     } catch (_) {}
     return out.toString();

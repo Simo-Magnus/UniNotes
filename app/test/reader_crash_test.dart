@@ -229,7 +229,9 @@ void main() {
         blocks.whereType<RPara>().any((b) => b.text.contains('dopo')),
         isTrue,
       );
-      expect(htmlNesting('<p>a<br><img src=x/><b>b</b></p>'), 2);
+      expect(htmlNesting('<div>a<br><img src=x/><b>b</b></div>'), 2);
+      // <p>, <li>, <td>… li chiude il parser da solo: non contano
+      expect(htmlNesting('<p>a<br><img src=x/><b>b</b></p>'), 1);
       // le pagine normali restano HTML vero
       final normal = htmlDoc('<html><body><h1>T</h1><p>x</p></body></html>');
       expect(normal.sections.single.blocks.first, isA<RPara>());

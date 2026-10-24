@@ -405,7 +405,9 @@ Future<void> _saveCaptured(
 ) async {
   final dir = await s.notes.courseDir(course, folder);
   final target = File(p.join(dir.path, '${NotesStore.safeName(name)}.md'));
-  final before = await target.exists() ? await readTextLenient(target) : null;
+  // i byte, non il testo: un file non in UTF-8 con «Annulla» torna identico
+  // (letto come testo diventava «�» al posto delle lettere accentate)
+  final before = await target.exists() ? await target.readAsBytes() : null;
   await s.notes.writeText(course, folder, name, text);
   s.revision.bump();
   // «Annulla»: il file torna com'era (o sparisce, se era nuovo)
@@ -418,7 +420,7 @@ Future<void> _saveCaptured(
       } else {
         // (scrittura sicura: con il disco pieno il testo di prima non si
         // perde troncando il file)
-        await writeStringAtomic(target, before);
+        await writeBytesAtomic(target, before);
       }
       s.revision.bump();
     },

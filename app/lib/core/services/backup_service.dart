@@ -234,8 +234,11 @@ class BackupService {
         whereArgs: keep.toList(),
       );
 
+      // solo le tabelle presenti nel file: un backup di una versione che non
+      // le aveva ancora (profilo e anni del piano mancano nei primi) non deve
+      // cancellare quelle di adesso
       for (final t in kPersonalTables.reversed) {
-        await txn.delete(t);
+        if (parsed.tables.containsKey(t)) await txn.delete(t);
       }
       await txn.delete(
         'places',

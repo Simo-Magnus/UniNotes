@@ -69,7 +69,8 @@ object RecordingNotification {
                 try {
                     show(
                         context,
-                        id = call.argument<Int>("id") ?: 0,
+                        // Number: un int di Dart arriva come Int o Long
+                        id = call.argument<Number>("id")?.toInt() ?: 0,
                         title = call.argument<String>("title") ?: "",
                         course = call.argument<String>("course") ?: "",
                         elapsedMs = call.argument<Number>("elapsedMs")?.toLong() ?: 0L,

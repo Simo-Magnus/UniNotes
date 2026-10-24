@@ -8,6 +8,7 @@ import '../../../core/feedback/feedback_service.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/audio_codec.dart';
 import '../../../core/services/whisper_service.dart';
+import '../../../models/course.dart';
 import '../notes_store.dart';
 import '../recycle_bin.dart';
 import '../safe_files.dart';
@@ -271,7 +272,7 @@ Future<TrashEntry?> trashSession(
       [wav, RecordingMeta.sidecarOf(wav.path)],
       title: session.baseName,
       course: session.course,
-      originDir: session.targetDir,
+      originDir: await currentTargetDir(s, session),
     );
   } catch (_) {
     // il cestino non è raggiungibile (disco pieno, cartella degli appunti
@@ -295,6 +296,55 @@ Future<TrashEntry?> trashSession(
   await session.delete();
   s.revision.bump();
   return entry;
+}
+
+/// Cartella «Registrazioni» in cui mettere una registrazione rimasta a metà.
+/// La sessione ricorda il percorso scritto dalla versione che l'aveva
+/// iniziata: se da allora la cartella degli appunti è cambiata (una versione
+/// più vecchia salvava altrove, l'unità non c'è più, l'utente ha scelto
+/// un'altra cartella) o quel percorso non si può usare, la registrazione si
+/// salverebbe dove l'app non guarda (o non si salverebbe mai, a ogni avvio
+/// «Recupero non riuscito»). Si usa allora la cartella del corso in quella
+/// attuale. Senza poter leggere la cartella attuale resta il percorso scritto.
+Future<String> currentTargetDir(
+  AppServices s,
+  RecordingSession session,
+) async {
+  try {
+    final root = (await s.notes.root()).path;
+    if (p.isWithin(root, session.targetDir)) {
+      try {
+        await Directory(session.targetDir).create(recursive: true);
+        return session.targetDir;
+      } on FileSystemException {
+        // percorso scritto che non si può creare: cartella attuale
+      }
+    }
+    Course? course;
+    final id = session.courseId;
+    if (id != null) course = await s.courses.byId(id);
+    if (course == null && session.course.isNotEmpty) {
+      for (final c in await s.courses.all()) {
+        if (c.name == session.course) course = c;
+      }
+    }
+    if (course != null) {
+      return (await s.notes.courseDir(course, NoteFolder.recordings)).path;
+    }
+    final dir = Directory(
+      p.join(
+        root,
+        NotesStore.safeName(
+          session.course.isEmpty ? 'Registrazioni recuperate' : session.course,
+        ),
+        NoteFolder.recordings.dirName,
+      ),
+    );
+    await dir.create(recursive: true);
+    return dir.path;
+  } catch (_) {
+    return session.targetDir;
+  }
 }
 
 /// Recupera una registrazione rimasta dopo una chiusura improvvisa.
@@ -337,8 +387,9 @@ Future<File?> recoverSession(AppServices s, RecordingSession session) async {
     debugPrint('Forma d\'onda non calcolata: $e');
     peaks = Uint8List(0);
   }
+  final dir = await currentTargetDir(s, session);
   final take = RecordingTake(
-    session: session,
+    session: dir == session.targetDir ? session : session.withTargetDir(dir),
     duration: info.duration,
     peaks: peaks,
   );

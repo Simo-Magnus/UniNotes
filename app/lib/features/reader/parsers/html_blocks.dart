@@ -16,33 +16,90 @@ const _voidTags = {
   'meta', 'param', 'source', 'track', 'wbr',
 };
 
+/// Elementi che il parser chiude da solo quando ne arriva un altro (`<p>`,
+/// `<li>`, `<td>`… senza la chiusura, normali nell'HTML scritto a mano o
+/// salvato dal browser): non aumentano l'annidamento vero.
+const _impliedEndTags = {
+  'p', 'li', 'dt', 'dd', 'tr', 'td', 'th', 'option', 'optgroup', 'thead', //
+  'tbody', 'tfoot', 'colgroup', 'caption', 'rb', 'rt', 'rtc', 'rp', 'html',
+  'head', 'body',
+};
+
+/// Elementi il cui contenuto è testo, non tag (il codice di uno script
+/// minimizzato è pieno di «i<n»).
+const _rawTextTags = {
+  'script', 'style', 'textarea', 'title', 'xmp', 'iframe', 'noembed', //
+  'noframes', 'plaintext',
+};
+
+bool _isAsciiLetter(int c) => (c | 0x20) >= 0x61 && (c | 0x20) <= 0x7A;
+
+/// Nome del tag che inizia in [s] a [from] (lettere e cifre), in minuscolo.
+String _tagName(String s, int from, int end) {
+  var j = from;
+  while (j < end) {
+    final k = s.codeUnitAt(j) | 0x20;
+    if (!((k >= 0x61 && k <= 0x7A) || (k >= 0x30 && k <= 0x39))) break;
+    j++;
+  }
+  return s.substring(from, j).toLowerCase();
+}
+
+/// Posizione di `</name` in [s] da [from] (maiuscole o minuscole), o -1.
+int _closingTag(String s, String name, int from) {
+  for (var i = s.indexOf('</', from); i >= 0; i = s.indexOf('</', i + 2)) {
+    if (i + 2 + name.length > s.length) return -1;
+    var same = true;
+    for (var k = 0; k < name.length && same; k++) {
+      same = (s.codeUnitAt(i + 2 + k) | 0x20) == name.codeUnitAt(k);
+    }
+    if (same) return i;
+  }
+  return -1;
+}
+
 /// Annidamento massimo stimato dei tag di [s] (scansione lineare, senza
-/// costruire l'albero).
+/// costruire l'albero). Non contano commenti, contenuto di script e stili,
+/// elementi vuoti e quelli che il parser chiude da solo: una pagina normale
+/// salvata dal browser non deve sembrare annidata migliaia di volte.
 int htmlNesting(String s) {
   var depth = 0, max = 0;
   var i = s.indexOf('<');
   while (i >= 0 && i + 1 < s.length) {
     final c = s.codeUnitAt(i + 1);
+    if (s.startsWith('<!--', i)) {
+      final end = s.indexOf('-->', i + 4);
+      if (end < 0) break;
+      i = s.indexOf('<', end + 3);
+      continue;
+    }
     final close = s.indexOf('>', i + 1);
     if (close < 0) break;
+    var next = close + 1;
     if (c == 0x2F) {
       // </tag>
-      if (depth > 0) depth--;
-    } else if ((c | 0x20) >= 0x61 && (c | 0x20) <= 0x7A) {
-      var j = i + 1;
-      while (j < close) {
-        final k = s.codeUnitAt(j) | 0x20;
-        if (!((k >= 0x61 && k <= 0x7A) || (k >= 0x30 && k <= 0x39))) break;
-        j++;
+      final name = _tagName(s, i + 2, close);
+      if (depth > 0 &&
+          !_voidTags.contains(name) &&
+          !_impliedEndTags.contains(name)) {
+        depth--;
       }
-      final name = s.substring(i + 1, j).toLowerCase();
+    } else if (_isAsciiLetter(c)) {
+      final name = _tagName(s, i + 1, close);
       final selfClosing = s.codeUnitAt(close - 1) == 0x2F;
-      if (!selfClosing && !_voidTags.contains(name)) {
+      if (!selfClosing && _rawTextTags.contains(name)) {
+        // fino alla sua chiusura il contenuto non ha tag
+        final end = _closingTag(s, name, close + 1);
+        if (end < 0) break;
+        next = end + 2;
+      } else if (!selfClosing &&
+          !_voidTags.contains(name) &&
+          !_impliedEndTags.contains(name)) {
         depth++;
         if (depth > max) max = depth;
       }
     }
-    i = s.indexOf('<', close + 1);
+    i = s.indexOf('<', next);
   }
   return max;
 }

@@ -497,9 +497,15 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     );
   }
 
-  Future<void> _seek(Duration d) async {
+  /// [d] entro l'inizio e la fine della registrazione.
+  Duration _clamp(Duration d) {
     var t = d < Duration.zero ? Duration.zero : d;
     if (_total > Duration.zero && t > _total) t = _total;
+    return t;
+  }
+
+  Future<void> _seek(Duration d) async {
+    final t = _clamp(d);
     _clock.jump(t);
     await _player?.seek(t);
   }
@@ -1005,6 +1011,14 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
             slider: true,
             label: 'Posizione nella registrazione',
             value: clockLabel(_pos),
+            // con «value» Flutter vuole anche i valori dopo l'azione
+            // (asserzione con il lettore di schermo attivo)
+            increasedValue: clockLabel(
+              _clamp(_pos + const Duration(seconds: 15)),
+            ),
+            decreasedValue: clockLabel(
+              _clamp(_pos - const Duration(seconds: 15)),
+            ),
             onIncrease: () => _skip(15),
             onDecrease: () => _skip(-15),
             child: GestureDetector(

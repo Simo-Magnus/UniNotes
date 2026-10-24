@@ -363,6 +363,10 @@ class _CourseContentState extends State<_CourseContent> {
   Future<void> _changeCourse() async {
     AppFeedback.of(context).tap();
     final id = await pickCourse(context, catalog, courseId);
+    // schermata ricostruita mentre il foglio era aperto (finestra
+    // ridimensionata da stretta a larga, tablet ruotato): Studio sotto non
+    // c'è più, setState su di lui chiuderebbe con un errore
+    if (!mounted) return;
     if (id != null && id != courseId) widget.onCourseChanged(id);
   }
 

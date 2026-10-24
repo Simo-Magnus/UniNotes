@@ -62,9 +62,17 @@ class NotesStore {
     '.mp3',
   };
 
-  Future<Directory> root() async {
+  Future<Directory> root() async => (await rootWithFallback()).$1;
+
+  /// Radice degli appunti e se è quella predefinita usata al posto della
+  /// cartella scelta dall'utente (unità scollegata o che non risponde,
+  /// cartella non scrivibile). La sincronizzazione non usa quella di
+  /// ripiego: i file della cartella scelta, che lì non ci sono, sembrerebbero
+  /// eliminati e si toglierebbero dal servizio e dagli altri dispositivi.
+  Future<(Directory, bool)> rootWithFallback() async {
     final override = _rootOverride;
     Directory dir;
+    var fellBack = false;
     if (override != null) {
       dir = await override();
     } else if (Platform.isWindows) {
@@ -91,6 +99,7 @@ class NotesStore {
         if (dir.path == fallback.path) rethrow;
         dir = fallback;
       }
+      fellBack = base.isNotEmpty && !p.equals(dir.path, p.join(base, 'Corsi'));
     } else {
       Directory base;
       try {
@@ -102,7 +111,7 @@ class NotesStore {
       dir = Directory(p.join(base.path, 'Appunti'));
     }
     await dir.create(recursive: true);
-    return dir;
+    return (dir, fellBack);
   }
 
   /// L'unità (o la cartella di rete) [prefix] risponde. Una condivisione di
@@ -165,12 +174,39 @@ class NotesStore {
   }
 
   /// La cartella delle risposte dell'AI si chiamava «Claude»: si rinomina in
-  /// «AI» la prima volta che serve (se «AI» non esiste già).
+  /// «AI» la prima volta che serve. Se «AI» esiste già (la sincronizzazione
+  /// ha riportato «Claude» da un dispositivo con l'app vecchia, o una copia
+  /// di appunti di prima) i file si portano dentro «AI» senza sovrascrivere
+  /// nulla, e «Claude» si toglie quando resta vuota: i file lì non si
+  /// vedrebbero in nessuna schermata.
   static Future<void> _migrateLegacy(String courseRoot) async {
     final old = Directory(p.join(courseRoot, 'Claude'));
     final now = Directory(p.join(courseRoot, NoteFolder.ai.dirName));
     try {
-      if (await old.exists() && !await now.exists()) await old.rename(now.path);
+      if (!await old.exists()) return;
+      if (!await now.exists()) {
+        await old.rename(now.path);
+        return;
+      }
+      await for (final e in old.list(followLinks: false)) {
+        final name = p.basename(e.path);
+        final target = p.join(now.path, name);
+        if (e is File) {
+          // un file con lo stesso nome già in «AI» non si sovrascrive
+          final base = p.basenameWithoutExtension(name);
+          final ext = p.extension(name);
+          var dest = target;
+          for (var i = 2; File(dest).existsSync(); i++) {
+            dest = p.join(now.path, '$base ($i)$ext');
+          }
+          await e.rename(dest);
+        } else if (e is Directory &&
+            await FileSystemEntity.type(target) ==
+                FileSystemEntityType.notFound) {
+          await e.rename(target);
+        }
+      }
+      if (await old.list(followLinks: false).isEmpty) await old.delete();
     } on FileSystemException {
       // cartella in uso (es. OneDrive): si riprova al prossimo accesso
     }
@@ -187,6 +223,7 @@ class NotesStore {
   Future<void> renameCourse(Course from, Course to) async {
     try {
       final base = (await root()).path;
+      await _adoptOldFolder(base, from);
       final src = Directory(p.join(base, folderName(from)));
       final dst = Directory(p.join(base, folderName(to)));
       if (src.path == dst.path || !await src.exists()) return;
@@ -219,14 +256,51 @@ class NotesStore {
     }
   }
 
+  /// Nome della cartella di [c] come lo calcolava [safeName] fino al terzo
+  /// giro della caccia ai crash (ottobre 2026): punto iniziale tenuto, punti
+  /// finali tolti prima del taglio a 90 caratteri e non dopo.
+  static String _oldFolderName(Course c) {
+    final uni = switch (c.universityId) {
+      'polito' => 'PoliTo',
+      'unito' => 'UniTO',
+      _ => null,
+    };
+    var v = [?uni, c.name]
+        .join(' - ')
+        .replaceAll(RegExp(r'[<>:"/\\|?*\x00-\x1F]'), '_')
+        .trim();
+    v = v.replaceAll(RegExp(r'[. ]+$'), '');
+    if (v.length > 90) v = v.substring(0, 90).trim();
+    return v.isEmpty ? 'Senza nome' : v;
+  }
+
+  /// La cartella di [c] con il nome di prima ([_oldFolderName]: per esempio
+  /// «… Private C.» di un insegnamento del database dei corsi, o «.NET …»)
+  /// prende il nome di adesso, se quella nuova non c'è ancora: senza,
+  /// registrazioni e appunti sparivano dall'app con l'aggiornamento (su
+  /// Windows i due nomi sono già la stessa cartella).
+  static Future<void> _adoptOldFolder(String base, Course c) async {
+    final now = folderName(c);
+    final old = _oldFolderName(c);
+    if (old == now) return;
+    try {
+      final from = Directory(p.join(base, old));
+      final to = Directory(p.join(base, now));
+      if (!await from.exists() || await to.exists()) return;
+      await from.rename(to.path);
+    } on FileSystemException {
+      // cartella in uso: si riprova al prossimo accesso
+    }
+  }
+
   Future<Directory> courseDir(Course c, [NoteFolder? folder]) async {
-    await _migrateLegacy(p.join((await root()).path, folderName(c)));
+    // la radice una volta sola (ogni lettura la crea se manca: un accesso
+    // al disco in più per volta)
+    final base = (await root()).path;
+    await _adoptOldFolder(base, c);
+    await _migrateLegacy(p.join(base, folderName(c)));
     final dir = Directory(
-      p.joinAll([
-        (await root()).path,
-        folderName(c),
-        if (folder != null) folder.dirName,
-      ]),
+      p.joinAll([base, folderName(c), if (folder != null) folder.dirName]),
     );
     await dir.create(recursive: true);
     return dir;
@@ -235,11 +309,11 @@ class NotesStore {
   /// File del corso per cartella, dal più recente.
   Future<Map<NoteFolder, List<NoteFile>>> list(Course c) async {
     final out = <NoteFolder, List<NoteFile>>{};
-    await _migrateLegacy(p.join((await root()).path, folderName(c)));
+    final base = (await root()).path;
+    await _adoptOldFolder(base, c);
+    await _migrateLegacy(p.join(base, folderName(c)));
     for (final f in NoteFolder.values) {
-      final dir = Directory(
-        p.join((await root()).path, folderName(c), f.dirName),
-      );
+      final dir = Directory(p.join(base, folderName(c), f.dirName));
       final items = <NoteFile>[];
       if (await dir.exists()) {
         try {
@@ -282,6 +356,7 @@ class NotesStore {
   /// dei dettagli rendeva lenta la schermata. Stessi file che mostra [list].
   Future<int> count(Course c) async {
     final base = (await root()).path;
+    await _adoptOldFolder(base, c);
     await _migrateLegacy(p.join(base, folderName(c)));
     var n = 0;
     for (final f in NoteFolder.values) {

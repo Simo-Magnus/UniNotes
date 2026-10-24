@@ -106,6 +106,12 @@ Future<void> notificationTapBackground(NotificationResponse r) async {
     final tap = NotificationTap.from(r.payload, r.actionId);
     if (tap == null) return;
     final prefs = await SharedPreferences.getInstance();
+    // il motore in background resta vivo fra un pulsante e l'altro (Android:
+    // flutter_local_notifications lo tiene finché vive il processo) e le
+    // preferenze lette la prima volta restano in memoria: senza rileggerle,
+    // dopo che l'app aveva preso la coda, il pulsante successivo rimetteva
+    // in coda anche quelli già eseguiti (azioni ripetute)
+    await prefs.reload();
     final list = [...?prefs.getStringList(_queueKey)];
     list.add(jsonEncode(tap.toJson()));
     await prefs.setStringList(_queueKey, list);

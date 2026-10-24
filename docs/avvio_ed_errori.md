@@ -327,3 +327,207 @@ Test in `app/test/crash_r3_file_test.dart`.
 - **Temporanei**: all'avvio si tolgono le cartelle di lavoro (`whisper_*`,
   `parakeet_*`, `uninotes_live_*`, `uninotes_onda_*`, `uninotes_taglio_*`)
   più vecchie di 6 ore; mai `uninotes_cestino_*` (contiene un audio).
+
+## Canali nativi e motori insieme (quarto giro, 24/10/2026)
+
+- **Contratto dei canali**: `test/crash_r4_canali_test.dart` tiene la tabella
+  di tutti i canali dell'app (widget, focus, speech, incoming,
+  registrazione, live_activity, calendario, sincronizzazione, apri_con,
+  audio, disinstalla, spellcheck, notifiche): per ogni metodo chiamato da
+  Dart controlla che il lato nativo di ogni piattaforma da cui la chiamata
+  parte lo gestisca (Kotlin, Swift di iOS e macOS, C++ di Windows), che gli
+  argomenti letti dal nativo abbiano gli stessi nomi, che i metodi mandati
+  dal nativo abbiano chi li riceve in Dart. Una chiamata nuova in Dart senza
+  la sua riga in tabella fa fallire il test. Controlla anche i tipi: su
+  Android i numeri si leggono come `Number` (un int di Dart arriva come Int
+  o Long), su Windows come int32 o int64, niente `as!`/`try!` in Swift.
+- **Database con due motori (Android)**: sqflite tiene una sola connessione
+  per file in tutto il processo, condivisa fra l'app e il motore senza
+  interfaccia della sincronizzazione in background. Un motore chiuso a metà
+  di una transazione (attività chiusa con «Indietro» durante una
+  sincronizzazione, processo ancora vivo) lasciava la transazione aperta e
+  ogni lettura del motore successivo in coda per sempre: l'app riaperta
+  restava ferma all'avvio (in release sqflite non la annulla da solo).
+  Ora aprendo si annulla, tranne quando il motore senza interfaccia è vivo e
+  ci sta lavorando (`AppDatabase.rollbackOrphanOnOpen`, chiesto con `busy`
+  sul canale della sincronizzazione).
+- **Pulsanti delle notifiche ad app chiusa**: il motore in background dei
+  pulsanti resta vivo finché vive il processo; la coda si rilegge prima di
+  aggiungere un pulsante (prima, dopo che l'app l'aveva presa, il pulsante
+  successivo rimetteva in coda anche quelli già eseguiti).
+- **Attività nuova prima della distruzione della vecchia (Android)**: la
+  vecchia toglie solo i suoi avvisi (file condivisi, pulsanti della notifica
+  della registrazione), non quelli appena messi dalla nuova.
+
+## Ricontrollo delle correzioni dei giri precedenti (quarto giro, 24/10/2026)
+
+Errori nuovi introdotti dalle correzioni dei primi tre giri. Test in
+`app/test/crash_r4_ricontrollo_test.dart`.
+
+- **Scrittura sicura con la copia nuova bloccata** (`writeStringAtomic`): se
+  la rinomina del `.part` falliva, l'originale si cancellava per riprovare e,
+  fallita anche la seconda rinomina (antivirus, indicizzazione o client di
+  sincronizzazione che tiene aperto il file appena scritto), si cancellava
+  anche il `.part`: file perso. Ora dopo aver tolto l'originale il `.part` si
+  copia al suo posto e non si cancella mai finché è l'unica copia.
+- **Cartella degli appunti di ripiego e sincronizzazione**
+  (`NotesStore.rootWithFallback`): con la cartella scelta non raggiungibile
+  (disco scollegato, unità di rete che non risponde entro 4 secondi,
+  cartella non creabile) si usa quella predefinita; la sincronizzazione
+  prendeva quella come radice e i file della cartella scelta, che lì non ci
+  sono, risultavano «eliminati qui»: finivano nel cestino del servizio e
+  sparivano dagli altri dispositivi. Ora appunti e registrazioni non si
+  sincronizzano finché la cartella scelta non torna, e l'esito lo dice.
+- **Nomi delle cartelle degli insegnamenti cambiati** (`safeName` del terzo
+  giro): punti iniziali tolti e punti finali tolti dopo il taglio a 90
+  caratteri davano un altro nome a cartelle già esistenti (22 insegnamenti
+  del database dei corsi, es. «… Pubbliche e Private C.I. …»; su Android,
+  iOS e macOS il punto finale resta nel nome): registrazioni e appunti
+  sparivano dall'app. La cartella col nome di prima prende quello nuovo al
+  primo accesso (se quella nuova non c'è ancora).
+- **Pagine HTML vere mostrate come testo** (`htmlNesting`): il conteggio
+  dell'annidamento contava i `<p>`/`<li>`/`<td>` senza chiusura (che il
+  parser chiude da solo) e i «i<n» dentro gli script; una pagina salvata dal
+  browser superava i 1000 livelli e diventava un unico paragrafo con il
+  codice. Ora non contano commenti, contenuto di script e stili ed elementi
+  a chiusura implicita; l'annidamento vero oltre il limite resta testo.
+- **Registro degli errori vuoto** (`ErrorLog.read`): una voce troncata a metà
+  di una lettera accentata rendeva illeggibile tutto il file; ora i byte non
+  validi diventano «�».
+- **«Annulla» del testo dell'AI**: il testo di prima si teneva decodificato
+  (un file non UTF-8 tornava con «�»); ora si tengono i byte. La nota
+  modificata nell'editor si salva con `writeStringAtomic`.
+
+## Aggiornamento dalle versioni precedenti (quarto giro, 24/10/2026)
+
+Ricostruito dalla storia di git (4–24 ottobre 2026: la versione indicata nel
+`pubspec.yaml` è sempre `2026.9.0`, quindi le versioni si distinguono solo per
+data e per commit). Test in `app/test/crash_r4_aggiornamento_test.dart`: ogni
+resto elencato sotto si ricostruisce nei test e si legge senza errori.
+
+- **Windows, cartella dei dati**: fino al 10/10 l'eseguibile era
+  `university_notes.exe` con azienda e prodotto «University Notes», quindi i
+  dati stavano in `%APPDATA%\University Notes\University Notes`; con il nome
+  UniNotes il sistema dà `%APPDATA%\UniNotes\UniNotes` e l'app si vedeva
+  vuota. Ora `LegacyData.migrateWindowsSupportDir`
+  (`lib/core/services/legacy_data.dart`, chiamata all'inizio di
+  `_openServices`, prima del controllo dell'installazione) sposta database,
+  libri, materiali, allegati, evidenziazioni, modelli, cache e stato della
+  sincronizzazione nella cartella nuova, se lì non c'è già un database (mai
+  due database insieme); il database passa per ultimo, così un'interruzione
+  si riprende al riavvio. Non si portano `flutter_secure_storage.dat`
+  (cifrato con una chiave che Windows tiene sotto il nome del vecchio
+  eseguibile: gli account cloud vanno ricollegati) e
+  `shared_preferences.json`.
+- **Appunti**: la cartella delle risposte dell'AI si chiamava `Claude`. Se
+  esistono sia `Claude` sia `AI` (la sincronizzazione riporta `Claude` da un
+  dispositivo con l'app vecchia) i file di `Claude` si portano in `AI` senza
+  sovrascrivere (` (2)` se il nome c'è già) e `Claude` si toglie quando
+  resta vuota; prima quei file non comparivano in nessuna schermata.
+  Registrazioni `.flac`/`.wav` senza dati accanto, dati accanto con solo
+  alcuni campi, residui `.part`, il manifesto `.appunti.json` e i cestini
+  `.cestino-onedrive`/`.cestino-googledrive`: elenchi, conteggi e
+  ridenominazione funzionano come prima.
+- **Registrazioni in corso**: la sessione ricorda il percorso assoluto della
+  cartella `Registrazioni` di allora. Se la cartella degli appunti è
+  cambiata (versione che salvava altrove, unità sparita, cartella scelta) la
+  registrazione si salvava dove l'app non guarda, o dava «Recupero non
+  riuscito» a ogni avvio. `currentTargetDir` (recording_save.dart) usa la
+  cartella del corso in quella attuale (il corso si trova per id o per
+  nome); vale anche per il ripristino dal cestino di una registrazione
+  rimasta.
+- **Cestino «Eliminati di recente»**: il formato di `info.json` non è mai
+  cambiato; voci senza elenco dei file, illeggibili o già scadute si
+  gestiscono (prova nel test).
+- **Sincronizzazione**: la cartella predefinita sul servizio era «University
+  Notes» e il file `onedrive_sync_state.json` della prima versione ha lo
+  stesso formato degli attuali. Un file di stato rovinato accanto agli altri
+  non ferma più la lettura degli altri (prima faceva scegliere la cartella
+  «UniNotes», vuota, e non seguiva la rinomina della cartella: tutti i file
+  diventavano conflitti). «Scollega» toglie il collegamento anche se il
+  portachiavi non risponde.
+- **Backup `.json`**: un backup di una versione senza profilo e anni del
+  piano (schema 5 o prima) non cancella più il percorso scelto adesso: si
+  svuotano solo le tabelle presenti nel file. Copie `.db` di ogni versione
+  dello schema (1–13) si convertono in backup e si ripristinano.
+- **Impostazioni**: tutte le chiavi del codice e quelle storiche (gruppi
+  degli studenti, Gemini e Antigravity, percorsi per ateneo, mappa offline…)
+  con ventidue forme di valore diverse non fanno lanciare nessun lettore e
+  non rompono le sezioni dell'app. Le chiavi tolte restano come righe
+  inerti.
+- **Resto verificato senza modifiche**: cache del catalogo (`meta.json` con
+  `community`, registro `ateneo.json` di altri formati, cartelle `corsi`,
+  `moduli`, `community`, altri corsi in `per_corso`), modelli Whisper con
+  nomi vecchi (`ggml-base.en`, `distil-large-v3`, il modello integrato di
+  Windows), archivi e cartelle a metà (`whisper.zip`, `bin.part`), posizione
+  e segnalibri del lettore con la chiave del percorso assoluto, file
+  recenti in altre forme, chiave di Gemini e impostazioni di Antigravity,
+  caselle di sincronizzazione scritte dalle prime versioni, controllo
+  dell'installazione con preferenze di altro tipo.
+- **Limiti noti**: sotto Windows, dopo il passaggio di cartella, posizione
+  del lettore, segnalibri ed evidenziazioni dei file dentro l'app (libri,
+  materiali) erano legati al vecchio percorso assoluto e non si ritrovano
+  (le chiavi sono un'impronta di quel percorso); un modello o una cache
+  rimasti con nomi non più usati occupano spazio ma non danno errori.
+
+## Prova a caso dell'interfaccia (quarto giro, 24/10/2026)
+
+`app/test/crash_r4_monkey_test.dart` apre l'app vera (`UniversityNotesApp`:
+onboarding o AppShell) con tre database preparati — vuoto (primo avvio),
+piano reale (PoliTO, esami finali, prove in itinere, Studio, libri con file,
+appunti, trascrizioni e registrazioni WAV finte), casi limite (nomi con
+emoji, destra-sinistra, righe enormi, CFU strani, date del 1970, file
+rovinati) — e con un generatore a seme fisso esegue azioni a caso: tocchi e
+pressioni lunghe sugli elementi toccabili davvero (prova del tocco), tocchi in
+punti a caso, scorrimenti e lanci, testo casuale nei campi (emoji, 20000
+caratteri, numeri strani, date impossibili), «Indietro», Esc, Tab, frecce,
+Pagina giù, finestra da 320×568 a 1920×1080, caratteri ×1/×1,3/×2, tema
+chiaro/scuro, attese. Dopo ogni azione raccoglie errori di Flutter ed
+eccezioni non gestite e si ferma con scenario, seme, passo e ultime 40 azioni.
+
+- **Niente risorse vere**: selettore dei file finto (annulla o dà file di
+  prova, anche vuoti o rovinati), percorsi di sistema in una cartella
+  temporanea, link, «Condividi», «Apri con», microfono, notifiche, calendario
+  e cloud finti. Si saltano i pulsanti che userebbero account o dati veri
+  («Accedi…», «Collega…», «Elimina tutti i dati», Esplora file, appunti di
+  sistema di Windows).
+- **Giri**: nella suite normale tre semi e 360 azioni (~20 s); giro lungo
+  con `CRASH_R4_MONKEY=1` (`CRASH_R4_SEEDS`, `CRASH_R4_ACTIONS`,
+  `CRASH_R4_SCENARIO`, `CRASH_R4_SEED` per riprodurre un seme,
+  `CRASH_R4_TRACE=1` per vedere ogni azione).
+- **Trovati e corretti** (prove mirate nello stesso file, gruppo «casi
+  trovati dalla scimmia»):
+  - grandezza del testo del sistema cambiata con l'app aperta: `AppTextScaler`
+    dava a Flutter un `textScaleFactor` che seguiva subito il sistema, il
+    MediaQuery vecchio e il nuovo risultavano uguali e i testi restavano
+    impaginati con la grandezza di prima («debugSize == size» al primo
+    cambio di colore); ora è il valore fisso del momento;
+  - `setState(() => _future = _load())` (la freccia restituisce il Future):
+    Impostazioni → Calendario e Notifiche, OneNote, Google Drive, Whisper,
+    Eliminati di recente;
+  - Pagina giù/su e frecce con il fuoco fuori dalle liste e più liste
+    verticali nella pagina (telefono e tablet con tastiera):
+    `SafeScrollAction` (`lib/core/router/safe_scroll_action.dart`);
+  - barra della posizione del lettore di una registrazione con il lettore
+    di schermo: mancavano `increasedValue`/`decreasedValue`;
+  - Studio → «Cambia insegnamento» aperto mentre la finestra passa da
+    stretta a larga (o il tablet ruota): la shell ricrea Studio e la scelta
+    chiamava `setState` su quello eliminato;
+  - Esami → Medie in colonna stretta con i caratteri grandi: «30 e lode»
+    occupava tutta la riga di ListTile (ora al massimo 96 px, rimpicciolito);
+    Libri: la scheda di un libro senza file decide dove mettere «Aggiungi»
+    anche dalla sua larghezza (sotto il testo se è sotto i 480 px), non solo
+    da quella della finestra;
+  - modulo dell'insegnamento con il nome cancellato e scorso in basso: il
+    campo fuori dalla lista non viene controllato da `validate()` e `_save`
+    finiva su un `!` nullo; ora un messaggio.
+- **Asserzioni di Flutter** (solo in debug, pila senza codice dell'app;
+  contate a parte dalla prova): volo di un Hero (SnackBar) deviato quando,
+  durante l'apertura di una pagina, un tocco arriva alla pagina sotto; TabBarView
+  che cambia scheda mentre si ricostruisce durante un lancio; DropdownButton
+  che chiude il menu mentre si ricostruisce o con un menu più alto della
+  finestra; riconoscitore del doppio tocco chiuso durante una ricostruzione
+  (selettore dell'ora); frecce su/giù e posizione del cursore di un campo
+  con l'impaginazione scaduta. In release non chiudono l'app.
+- I «testi fuori spazio» (RenderFlex overflowed) si contano e si stampano
+  ma non fermano la prova: non sono crash.
