@@ -32,9 +32,22 @@ const kTempWorkPrefixes = [
 /// chiusura improvvisa (nessun lavoro dura così a lungo).
 const kStaleTempAge = Duration(hours: 6);
 
+/// Cartelle temporanee con l'audio di una registrazione eliminata a metà
+/// (recording_save.dart): mai tolte dalla pulizia di ogni avvio, solo da
+/// «Elimina tutti i dati» con le registrazioni ([clearTempFiles] con
+/// `allWork`).
+const kTempTrashPrefix = 'uninotes_cestino_';
+
+/// Svuota le cartelle temporanee dell'app ([kTempFolders]) e le cartelle di
+/// lavoro rimaste da più di [kStaleTempAge]. Con [allWork] («Elimina tutti
+/// i dati» con le registrazioni) anche quelle recenti e quelle del cestino
+/// ([kTempTrashPrefix]): contengono l'audio delle lezioni e sul PC la
+/// cartella temporanea è quella di tutto il profilo, che resta dopo che
+/// l'app si chiude.
 Future<void> clearTempFiles({
   Directory? temp,
   DateTime Function()? now,
+  bool allWork = false,
 }) async {
   final root = temp ?? Directory.systemTemp;
   for (final name in kTempFolders) {
@@ -50,9 +63,10 @@ Future<void> clearTempFiles({
     await for (final e in root.list(followLinks: false)) {
       if (e is! Directory) continue;
       final name = p.basename(e.path);
-      if (!kTempWorkPrefixes.any(name.startsWith)) continue;
+      final trash = allWork && name.startsWith(kTempTrashPrefix);
+      if (!trash && !kTempWorkPrefixes.any(name.startsWith)) continue;
       try {
-        if ((await e.stat()).modified.isAfter(cutoff)) continue;
+        if (!allWork && (await e.stat()).modified.isAfter(cutoff)) continue;
         await e.delete(recursive: true);
       } catch (_) {
         // in uso o già tolta: si riprova al prossimo avvio

@@ -16,8 +16,14 @@ on:
     paths: ["app/**"]
   workflow_dispatch:
 
+# Permessi minimi: il token di ogni job legge soltanto il repository (anche
+# nelle pull request); scrivono solo «ultima-build» e «release», con i propri
+# permessi. Le azioni sono fissate allo SHA del commit (versione nel commento,
+# aggiornata da Dependabot) e checkout non lascia il token nella cartella .git.
+# I secret arrivano ai comandi come variabili d'ambiente, mai scritti nel testo
+# dello script del passo.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: app-${{ github.ref }}
@@ -50,8 +56,10 @@ jobs:
         run: |
           echo "version=$(date -u +%Y).$(date -u +%-m).${{ github.run_number }}" >> "$GITHUB_OUTPUT"
           echo "build=${{ github.run_number }}" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v7
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
@@ -77,12 +85,14 @@ jobs:
             /usr/local/share/boost /usr/local/lib/node_modules /opt/microsoft /usr/share/swift
           sudo docker image prune -af > /dev/null 2>&1 || true
           df -h /
-      - uses: actions/checkout@v7
-      - uses: actions/setup-java@v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
         with:
           distribution: temurin
           java-version: "17"
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
@@ -117,9 +127,19 @@ jobs:
       # APK per GitHub Releases (link alle donazioni), uno per processore così
       # ognuno contiene solo le sue librerie native; AAB per Google Play (senza):
       # lì è lo store a mandare a ogni telefono la parte giusta.
-      - run: flutter build apk --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --split-per-abi --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
-      - run: flutter build appbundle --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --target-platform android-arm,android-arm64,android-x64 --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_ANDROID_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }} --dart-define=STORE=play --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
-      - uses: actions/upload-artifact@v7
+      - env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_ANDROID_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build apk --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --split-per-abi --target-platform android-arm,android-arm64,android-x64 "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_ANDROID_CLIENT_ID=$GOOGLE_ANDROID_CLIENT_ID" --dart-define=DONATIONS=link "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
+      - env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_ANDROID_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build appbundle --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --target-platform android-arm,android-arm64,android-x64 "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_ANDROID_CLIENT_ID=$GOOGLE_ANDROID_CLIENT_ID" --dart-define=STORE=play "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-android
           retention-days: 3
@@ -138,8 +158,10 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v7
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
@@ -156,7 +178,7 @@ jobs:
       # cache (mai nel repository). Su Windows li installa CMake in
       # data/parakeet accanto a uninotes.exe.
       - name: Cache del modello Parakeet
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/parakeet
           key: parakeet-tdt-0.6b-v3-int8-acfc2b44
@@ -168,14 +190,20 @@ jobs:
       # scrive in un'altra lingua. 181 MiB, stessa cache e stesso controllo
       # dello SHA-256; CMake lo installa in data/whisper.
       - name: Cache del modello Whisper small q5_1
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/whisper
           key: whisper-small-q5_1-ae85e4a9
       - name: Modello Whisper small q5_1 (incluso nell'app, 181 MiB, non nel repository)
         shell: bash
         run: python3 tool/prepara_modello_whisper_desktop.py || python tool/prepara_modello_whisper_desktop.py
-      - run: flutter build windows --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      - env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build windows --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} "--dart-define=MS_CLIENT_ID=$env:MS_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_ID=$env:GOOGLE_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_SECRET=$env:GOOGLE_CLIENT_SECRET" --dart-define=DONATIONS=link "--dart-define=GOOGLE_PICKER_API_KEY=$env:GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$env:GOOGLE_CLOUD_PROJECT_NUMBER"
       # Firma facoltativa del programma (certificato di firma del codice .pfx
       # in base64 nei secret): senza, il passo non parte e SmartScreen avvisa
       # al primo avvio.
@@ -213,7 +241,7 @@ jobs:
         run: |
           $signtool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" | Select-Object -Last 1
           & $signtool.FullName sign /f "$env:RUNNER_TEMP\cert.pfx" /p $env:WINDOWS_CERT_PASSWORD /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 UniNotes_setup.exe
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-windows
           retention-days: 3
@@ -245,9 +273,11 @@ jobs:
         shell: bash
         run: |
           echo "::warning title=Microsoft Store::Mancano i secret MSSTORE_IDENTITY_NAME, MSSTORE_PUBLISHER o MSSTORE_PUBLISHER_DISPLAY_NAME (Partner Center → Gestione prodotti → Identità prodotto): pacchetto MSIX non creato."
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
         if: env.HAS_MSSTORE_IDENTITY == 'true'
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         if: env.HAS_MSSTORE_IDENTITY == 'true'
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
@@ -270,7 +300,7 @@ jobs:
       # data/parakeet accanto a uninotes.exe.
       - name: Cache del modello Parakeet
         if: env.HAS_MSSTORE_IDENTITY == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/parakeet
           key: parakeet-tdt-0.6b-v3-int8-acfc2b44
@@ -281,7 +311,7 @@ jobs:
       # Whisper small q5_1 incluso (181 MiB, MIT): CMake lo installa in data/whisper.
       - name: Cache del modello Whisper small q5_1
         if: env.HAS_MSSTORE_IDENTITY == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/whisper
           key: whisper-small-q5_1-ae85e4a9
@@ -291,7 +321,16 @@ jobs:
         run: python3 tool/prepara_modello_whisper_desktop.py || python tool/prepara_modello_whisper_desktop.py
       - name: Build Windows per lo Store
         if: env.HAS_MSSTORE_IDENTITY == 'true'
-        run: flutter build windows --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --dart-define=STORE=microsoft --dart-define=MSSTORE_ID=${{ secrets.MSSTORE_ID }} --dart-define=WINDOWS_FOCUS_LAF_TOKEN=${{ secrets.WINDOWS_FOCUS_LAF_TOKEN }} "--dart-define=WINDOWS_FOCUS_LAF_ATTESTATION=${{ secrets.WINDOWS_FOCUS_LAF_ATTESTATION }}" --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        env:
+          MSSTORE_ID: ${{ secrets.MSSTORE_ID }}
+          WINDOWS_FOCUS_LAF_TOKEN: ${{ secrets.WINDOWS_FOCUS_LAF_TOKEN }}
+          WINDOWS_FOCUS_LAF_ATTESTATION: ${{ secrets.WINDOWS_FOCUS_LAF_ATTESTATION }}
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build windows --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --dart-define=STORE=microsoft "--dart-define=MSSTORE_ID=$env:MSSTORE_ID" "--dart-define=WINDOWS_FOCUS_LAF_TOKEN=$env:WINDOWS_FOCUS_LAF_TOKEN" "--dart-define=WINDOWS_FOCUS_LAF_ATTESTATION=$env:WINDOWS_FOCUS_LAF_ATTESTATION" "--dart-define=MS_CLIENT_ID=$env:MS_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_ID=$env:GOOGLE_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_SECRET=$env:GOOGLE_CLIENT_SECRET" --dart-define=DONATIONS=link "--dart-define=GOOGLE_PICKER_API_KEY=$env:GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$env:GOOGLE_CLOUD_PROJECT_NUMBER"
       # Manifest (app/windows/msix/AppxManifest.xml) con identità e versione,
       # icone, resources.pri e makeappx del Windows SDK del runner.
       - name: Pacchetto UniNotes.msix (non firmato)
@@ -305,7 +344,7 @@ jobs:
           # nome prenotato in Partner Center (facoltativo: senza, «UniNotes»)
           MSSTORE_DISPLAY_NAME: ${{ secrets.MSSTORE_DISPLAY_NAME }}
         run: ./windows/msix/crea_msix.ps1 -Release build/windows/x64/runner/Release -Output UniNotes.msix
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: env.HAS_MSSTORE_IDENTITY == 'true'
         with:
           name: uninotes-microsoft-store
@@ -324,8 +363,10 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v7
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
@@ -342,7 +383,7 @@ jobs:
       # cache (mai nel repository). Sul Mac vanno in
       # UniNotes.app/Contents/Resources/parakeet, prima della firma.
       - name: Cache del modello Parakeet
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/parakeet
           key: parakeet-tdt-0.6b-v3-int8-acfc2b44
@@ -354,14 +395,20 @@ jobs:
       # scrive in un'altra lingua. Va in UniNotes.app/Contents/Resources/whisper,
       # prima della firma. (L'asset base q5_1 di Whisper è solo per Android e iOS.)
       - name: Cache del modello Whisper small q5_1
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: app/build/whisper
           key: whisper-small-q5_1-ae85e4a9
       - name: Modello Whisper small q5_1 (incluso nell'app, 181 MiB, non nel repository)
         shell: bash
         run: python3 tool/prepara_modello_whisper_desktop.py || python tool/prepara_modello_whisper_desktop.py
-      - run: flutter build macos --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }} --dart-define=GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }} --dart-define=DONATIONS=link --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      - env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_DESKTOP }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET_DESKTOP }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build macos --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID" "--dart-define=GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET" --dart-define=DONATIONS=link "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
       - name: Parakeet dentro UniNotes.app (modello, Silero VAD e licenze)
         shell: bash
         run: python3 tool/prepara_modello_parakeet.py --installa build/macos/Build/Products/Release/UniNotes.app/Contents/Resources/parakeet
@@ -425,7 +472,7 @@ jobs:
           xcrun notarytool submit UniNotes.dmg --apple-id "$APPLE_ID" --team-id "$APPLE_TEAM_ID" \
             --password "$APPLE_NOTARY_PASSWORD" --wait
           xcrun stapler staple UniNotes.dmg
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-macos
           retention-days: 3
@@ -441,8 +488,10 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v7
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
@@ -457,12 +506,17 @@ jobs:
       - name: Modello Whisper integrato (asset delle build Android e iOS, 57 MiB, non nel repository)
         shell: bash
         run: python3 tool/prepara_modello_whisper.py || python tool/prepara_modello_whisper.py
-      - run: flutter build ios --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --no-codesign --dart-define=MS_CLIENT_ID=${{ secrets.MS_CLIENT_ID }} --dart-define=GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }} --dart-define=GOOGLE_PICKER_API_KEY=${{ secrets.GOOGLE_PICKER_API_KEY }} --dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+      - env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          GOOGLE_IOS_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_IOS }}
+          GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
+          GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
+        run: flutter build ios --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --no-codesign "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_IOS_CLIENT_ID=$GOOGLE_IOS_CLIENT_ID" "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
       - name: Comprimi (IPA non firmato, da firmare con il proprio account Apple)
         run: |
           mkdir -p Payload && cp -R build/ios/iphoneos/Runner.app Payload/
           zip -qr uninotes-ios-unsigned.ipa Payload
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-ios-unsigned
           retention-days: 3
@@ -482,7 +536,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           path: dist
       - name: File con nomi chiari
@@ -499,7 +553,7 @@ jobs:
           cp dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa out/UniNotes-ios-non-firmata.ipa
       - name: Sostituisci la release «ultima-build»
         run: gh release delete ultima-build --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes || true
-      - uses: softprops/action-gh-release@v3
+      - uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           tag_name: ultima-build
           target_commitish: ${{ github.sha }}
@@ -540,10 +594,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           path: dist
-      - uses: softprops/action-gh-release@v3
+      - uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           # i tag con "-" (es. v2026.9.0-beta.1) sono versioni di prova
           prerelease: ${{ contains(github.ref_name, '-') }}

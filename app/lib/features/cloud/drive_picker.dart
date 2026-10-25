@@ -232,7 +232,16 @@ class DrivePicker {
     String state,
   ) async {
     await for (final req in server) {
-      if (req.uri.path != '/picker' || req.uri.queryParameters['state'] != state) {
+      String? got;
+      try {
+        got = req.uri.queryParameters['state'];
+      } on FormatException {
+        // query con byte non UTF-8 («?%FF»: un'altra pagina o un altro
+        // programma che bussa alla porta): richiesta estranea, l'attesa del
+        // ritorno giusto continua invece di finire con un errore
+        got = null;
+      }
+      if (req.uri.path != '/picker' || got != state) {
         // richiesta estranea (favicon…): se il browser ha già chiuso la
         // connessione l'errore non ferma l'attesa
         try {

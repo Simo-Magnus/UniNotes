@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'dart:io' show gzip;
+import 'dart:io' show RawZLibFilter, gzip;
 import 'dart:math' as math;
+import 'dart:typed_data';
 
 /// Registro dei dati dell'app di un dispositivo (file
 /// `Dati/<dispositivo>.json.gz` nella cartella cloud dell'app): per ogni
@@ -138,12 +139,44 @@ class SyncSnapshot {
   static SyncSnapshot? decode(List<int> bytes) {
     try {
       final raw = bytes.length > 2 && bytes[0] == 0x1f && bytes[1] == 0x8b
-          ? gzip.decode(bytes)
+          ? gunzipLimited(bytes, maxDecodedBytes)
           : bytes;
+      if (raw.length > maxDecodedBytes) return null;
       return fromJson(jsonDecode(utf8.decode(raw)));
     } catch (_) {
       return null;
     }
+  }
+
+  /// Dimensione massima di un registro decompresso. Quelli veri sono di
+  /// pochi MB; un file manipolato nella cartella cloud (pochi KB che
+  /// diventano GB, «gzip bomb») esaurirebbe la memoria e chiuderebbe l'app a
+  /// ogni sincronizzazione: oltre il limite il registro si ignora.
+  static int maxDecodedBytes = 256 * 1024 * 1024;
+
+  /// gzip decompresso a pezzi, fermandosi oltre [limit] byte
+  /// ([FormatException]): la memoria usata non supera mai il limite di molto.
+  static Uint8List gunzipLimited(List<int> data, int limit) {
+    final filter = RawZLibFilter.inflateFilter(gzip: true);
+    final out = BytesBuilder(copy: false);
+    void drain({bool end = false}) {
+      while (true) {
+        final part = filter.processed(end: end);
+        if (part == null) return;
+        out.add(part);
+        if (out.length > limit) {
+          throw const FormatException('registro troppo grande');
+        }
+      }
+    }
+
+    const chunk = 64 * 1024;
+    for (var o = 0; o < data.length; o += chunk) {
+      filter.process(data, o, o + chunk < data.length ? o + chunk : data.length);
+      drain();
+    }
+    drain(end: true);
+    return out.takeBytes();
   }
 
   static SyncSnapshot? fromJson(Object? j) {

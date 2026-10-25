@@ -82,6 +82,16 @@ class BackupService {
     'whisper_cli_path',
     'catalog_base_url',
     'update_url',
+    // cartella dell'app su OneDrive e Google Drive: un backup ricevuto da
+    // altri la spostava su un'altra cartella del proprio cloud (sincronizzata
+    // nei due sensi e svuotata da «Elimina tutti i dati»); come per gli altri
+    // dispositivi, che non la ricevono con la sincronizzazione dei dati
+    'onedrive_folder',
+    'gdrive_folder',
+    // account del calendario del dispositivo (indirizzo email) e dispositivi
+    // che scrivono in ogni account: come l'account OneDrive o Google
+    'syscal_calendar_account',
+    'syscal_writers',
   };
 
   // ---------------------------------------------------------------- export

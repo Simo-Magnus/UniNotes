@@ -144,6 +144,31 @@ object IncomingShare {
     }
 
     /**
+     * Autorità senza l'utente davanti: `content://0@autorità/…` (forma
+     * multiutente di Android) apre lo stesso fornitore di
+     * `content://autorità/…`, perché ContentResolver toglie «0@» prima di
+     * cercarlo.
+     */
+    fun authorityOf(uri: Uri): String? = uri.authority?.substringAfterLast('@')
+
+    /**
+     * Uri di un fornitore di questa app (FileProvider di open_filex con
+     * `root-path`, share_plus…): mai da copiare, anche scritto con l'utente
+     * davanti (`0@…`), che prima superava il controllo sul nome. Oltre al
+     * nome si guarda a quale pacchetto appartiene il fornitore.
+     */
+    fun isOwnProvider(context: Context, uri: Uri): Boolean {
+        val authority = authorityOf(uri) ?: return false
+        if (authority.startsWith(context.packageName)) return true
+        return try {
+            context.packageManager.resolveContentProvider(authority, 0)
+                ?.packageName == context.packageName
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    /**
      * Copia nella cache i file condivisi da [intent]. Solo `content://` di
      * altre app: niente `file://` né i provider di questa app (un'altra app
      * non deve poter far copiare all'app i suoi stessi file privati).
@@ -154,7 +179,7 @@ object IncomingShare {
         val stamp = System.currentTimeMillis()
         for ((i, uri) in urisOf(intent).withIndex()) {
             if (uri.scheme != "content") continue
-            if (uri.authority?.startsWith(context.packageName) == true) continue
+            if (isOwnProvider(context, uri)) continue
             val name = nameOf(context, uri, i)
             val target = File(dir, "${stamp}_${i}_$name")
             try {

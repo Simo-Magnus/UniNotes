@@ -87,14 +87,19 @@ class DataEraser {
     Future<List<Directory>> Function()? cacheDirs,
     Future<void> Function()? wipeSecrets,
     Future<void> Function()? clearPrefs,
+    Directory Function()? tempDir,
     this.syncWait = const Duration(seconds: 30),
   }) : _supportDir = supportDir ?? getApplicationSupportDirectory,
        _cacheDirs = cacheDirs ?? LocalData.cacheDirs,
        _wipeSecrets = wipeSecrets ?? LocalData.wipeSecrets,
-       _clearPrefs = clearPrefs ?? _clearSharedPreferences;
+       _clearPrefs = clearPrefs ?? _clearSharedPreferences,
+       _tempDir = tempDir ?? (() => Directory.systemTemp);
 
   final AppServices s;
   final Future<Directory> Function() _supportDir;
+
+  /// Cartella temporanea di sistema (nei test una cartella a parte).
+  final Directory Function() _tempDir;
   final Future<List<Directory>> Function() _cacheDirs;
   final Future<void> Function() _wipeSecrets;
   final Future<void> Function() _clearPrefs;
@@ -421,10 +426,17 @@ class DataEraser {
       for (final d in dirs) {
         await LocalData.deleteDirectory(d);
       }
+      if (recordings && !notes) await _deleteTrashedRecordings(root);
     }
     if (recordings) {
       // registrazione rimasta a metà (WAV di lavoro)
       await LocalData.deleteDirectory(await _sub('registrazioni_in_corso'));
+    }
+    if (profile || database) {
+      // copie dei dati fuori dal database: backup JSON di ogni dispositivo
+      // scaricati dalla sincronizzazione (`onedrive_backup`, `gdrive_backup`)
+      // e file .ics con le prove esportate nel calendario
+      await _deleteDatabaseCopies();
     }
     if (items.contains(EraseItem.books)) {
       for (final d in await _libraryDirs()) {
@@ -453,11 +465,63 @@ class DataEraser {
         items.contains(EraseItem.catalog)) {
       await LocalData.clearDirectory(await _supportDir());
     }
-    await clearTempFiles();
+    // con le registrazioni anche le cartelle di lavoro recenti (pezzi di
+    // audio della trascrizione, registrazione eliminata a metà): sul PC la
+    // cartella temporanea è del profilo e resta dopo la chiusura dell'app
+    await clearTempFiles(temp: _tempDir(), allWork: recordings);
     for (final d in await _cacheDirs()) {
       await LocalData.clearDirectory(d);
     }
     return report;
+  }
+
+  /// Voce «Registrazioni e trascrizioni» senza «Appunti»: dai cestini
+  /// nascosti della cartella degli appunti si tolgono anche registrazioni,
+  /// trascrizioni e riassunti eliminati di recente («Eliminati di recente»)
+  /// o eliminati su un altro dispositivo (`.cestino-onedrive`…); gli
+  /// appunti eliminati restano, con la loro voce.
+  Future<void> _deleteTrashedRecordings(Directory root) async {
+    final names = {for (final f in _recordingFolders) f.dirName};
+    final bin = RecycleBin(() async => root);
+    try {
+      for (final e in await bin.list()) {
+        if (e.isAudio ||
+            e.files.any((f) => names.contains(p.basename(p.dirname(f.$2))))) {
+          await bin.deleteForever(e);
+        }
+      }
+    } catch (_) {}
+    for (final d in await _hiddenTrash(root)) {
+      if (p.basename(d.path) == RecycleBin.dirName) continue;
+      try {
+        await for (final f in d.list(recursive: true, followLinks: false)) {
+          if (f is! File) continue;
+          if (!p.split(p.relative(f.path, from: d.path)).any(names.contains)) {
+            continue;
+          }
+          try {
+            await f.delete();
+          } catch (_) {}
+        }
+      } on FileSystemException {
+        // cestino illeggibile a metà: quanto si è potuto togliere basta
+      }
+    }
+  }
+
+  /// Copie dei dati del database fuori dal file del database: backup JSON
+  /// della sincronizzazione (`<servizio>_backup`, anche quelli degli altri
+  /// dispositivi) e file del calendario esportati (`calendario`).
+  Future<void> _deleteDatabaseCopies() async {
+    final dir = await _supportDir();
+    if (!await dir.exists()) return;
+    final found = await _dirsOf(dir, (e) {
+      final name = p.basename(e.path);
+      return name == 'calendario' || RegExp(r'^\w+_backup$').hasMatch(name);
+    });
+    for (final d in found) {
+      await LocalData.deleteDirectory(d);
+    }
   }
 
   /// Voce sola (profilo o database): si svuotano le sue tabelle. Il

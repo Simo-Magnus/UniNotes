@@ -7,6 +7,7 @@ import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
 import 'msix_paths.dart';
+import 'windows_tools.dart';
 
 /// Esito di un'apertura esterna, mostrabile all'utente senza crash.
 class LaunchResult {
@@ -75,7 +76,57 @@ class ExternalLauncher {
     '.command',
     '.sh',
     '.apk',
+    // altri tipi che Windows o macOS eseguono o installano all'apertura
+    '.msc',
+    '.msix',
+    '.msixbundle',
+    '.appx',
+    '.appxbundle',
+    '.appinstaller',
+    '.application',
+    '.appref-ms',
+    '.gadget',
+    '.inf',
+    '.jnlp',
+    '.library-ms',
+    '.ps1xml',
+    '.psc1',
+    '.scf',
+    '.sct',
+    '.search-ms',
+    '.searchconnector-ms',
+    '.settingcontent-ms',
+    '.shb',
+    '.ws',
+    '.wsc',
+    '.xbap',
+    '.xll',
+    '.diagcab',
+    '.desktop',
+    '.workflow',
+    '.terminal',
+    '.pkg',
+    '.run',
   };
+
+  /// Estensioni che il sistema può usare per [path]: quella scritta e quella
+  /// che resta togliendo ciò che Windows ignora (punti e spazi finali, come
+  /// in «setup.exe.», e il flusso NTFS dopo «:», come in «setup.exe::$DATA»).
+  static Set<String> _extensionsOf(String path) {
+    String ext(String name) {
+      final dot = name.lastIndexOf('.');
+      return dot < 0 ? '' : name.substring(dot).toLowerCase();
+    }
+
+    final name = path.replaceAll(r'\', '/').split('/').last;
+    final colon = name.indexOf(':');
+    return {
+      for (final n in [name, if (colon >= 0) name.substring(0, colon)]) ...{
+        ext(n),
+        ext(n.replaceAll(RegExp(r'[. ]+$'), '')),
+      },
+    };
+  }
 
   /// Percorso apribile: locale (non di rete, es. «\\server\cartella») e non
   /// un programma.
@@ -91,9 +142,7 @@ class ExternalLauncher {
       return 'Percorso incompleto (manca la cartella di partenza): non si '
           'può aprire.\n$path';
     }
-    final dot = t.lastIndexOf('.');
-    final ext = dot < 0 ? '' : t.substring(dot).toLowerCase();
-    if (blockedExtensions.contains(ext)) {
+    if (_extensionsOf(t).any(blockedExtensions.contains)) {
       return 'Per sicurezza i programmi non si aprono dall\'app:\n$path';
     }
     return null;
@@ -183,7 +232,7 @@ class ExternalLauncher {
       switch (platform()) {
         case TargetPlatform.windows:
           // OpenAs_RunDLL legge il resto della riga di comando come percorso
-          await Process.start('rundll32.exe', [
+          await Process.start(WindowsTools.rundll32, [
             'shell32.dll,OpenAs_RunDLL',
             path,
           ], mode: ProcessStartMode.detached);

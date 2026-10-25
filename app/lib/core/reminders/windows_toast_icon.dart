@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import '../services/windows_tools.dart';
 import 'windows_aumid.dart';
 
 /// Icona dell'app in cima ai toast di Windows (accanto a «UniNotes»).
@@ -48,11 +49,16 @@ abstract final class WindowsToastIcon {
     final key = keyFor(aumid);
     try {
       if (!await File(iconPath).exists()) return;
-      final q = await Process.run('reg', ['query', key, '/v', 'IconUri']);
+      final q = await Process.run(WindowsTools.reg, [
+        'query',
+        key,
+        '/v',
+        'IconUri',
+      ]);
       final current = q.exitCode == 0 ? iconUriOf('${q.stdout}') : null;
       final exists = current != null && await File(current).exists();
       if (!needsUpdate(current, iconPath, exists)) return;
-      await Process.run('reg', [
+      await Process.run(WindowsTools.reg, [
         'add',
         key,
         '/v',

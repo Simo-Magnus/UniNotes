@@ -60,8 +60,25 @@ void main() {
         binariesUrl: Uri.parse('http://127.0.0.1:$port/redirect'),
         modelUrl: (_) => Uri.parse('http://127.0.0.1:$port/model'),
       );
-      // Modello senza SHA pubblicato (il file finto non lo rispetterebbe).
-      final m = whisperModelById('large-v3-turbo-q8_0')!;
+      // Modello senza impronta (il file finto non la rispetterebbe): dal
+      // 25/10/2026 tutti i modelli dell'elenco ne hanno una, quindi se ne usa
+      // una copia senza.
+      final base = whisperModelById('large-v3-turbo-q8_0')!;
+      final m = WhisperModelInfo(
+        id: base.id,
+        params: base.params,
+        disk: base.disk,
+        approxBytes: base.approxBytes,
+        ram: base.ram,
+        gpu: base.gpu,
+        speed: base.speed,
+        italian: base.italian,
+        multilingual: base.multilingual,
+        italianOk: base.italianOk,
+        minHardware: base.minHardware,
+        platforms: base.platforms,
+        quantized: base.quantized,
+      );
       // Download del modello interrotto a metà: resta un .part da riprendere.
       final models = Directory(p.join(tmp.path, 'whisper', 'models'))
         ..createSync(recursive: true);

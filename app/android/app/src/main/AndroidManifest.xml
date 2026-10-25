@@ -1,6 +1,16 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- Link esterni, aggiornamento dati, OneDrive e Google Drive. -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Accesso a foto e video del telefono, aggiunto da open_filex: l'app
+         non lo usa (apre i file nelle sue cartelle, copie di ciò che scegli
+         o condividi, dove non serve alcun permesso) e Google Play lo
+         ammette solo alle app che lavorano sulla galleria. Tolto dal
+         manifest finale. Restano quelli di open_filex per l'archivio
+         condiviso (fino ad Android 12) e l'audio: chiesti solo aprendo un
+         «percorso originale» scritto a mano fuori dalle cartelle dell'app. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" tools:node="remove"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" tools:node="remove"/>
     <!-- Registratore delle lezioni: microfono e servizio in primo piano per
          continuare a registrare a schermo spento (notifica visibile). -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>

@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../core/feedback/app_modals.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/services/msix_paths.dart';
+import '../../core/services/windows_tools.dart';
 import '../../widgets/common.dart';
 import '../../widgets/copyable_text.dart';
 import '../../widgets/glass.dart';
@@ -30,7 +31,7 @@ Future<bool> copyFilesToClipboard(List<File> files) async {
       // del comando: nomi con apostrofi (’ ‘) non possono rompere il comando
       // né aggiungerne altri.
       final r = await Process.run(
-        'powershell',
+        WindowsTools.powershell,
         [
           '-NoProfile',
           '-NonInteractive',
@@ -85,7 +86,10 @@ Future<bool> copyFilesToClipboard(List<File> files) async {
 Future<void> revealInFolder(BuildContext context, String path) async {
   try {
     if (Platform.isWindows) {
-      await Process.run('explorer', ['/select,', MsixPaths.forOtherApps(path)]);
+      await Process.run(WindowsTools.explorer, [
+        '/select,',
+        MsixPaths.forOtherApps(path),
+      ]);
       return;
     }
     if (Platform.isMacOS) {

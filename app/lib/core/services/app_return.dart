@@ -4,6 +4,7 @@ import 'package:window_manager/window_manager.dart';
 
 import 'loopback_oauth.dart';
 import 'msix_paths.dart';
+import 'windows_tools.dart';
 
 /// Ritorno nell'app dopo l'accesso nel browser (OneDrive, Google Drive,
 /// calendario Outlook, Google Picker) su PC e Mac.
@@ -69,7 +70,7 @@ abstract final class AppReturn {
   /// comunque davanti.
   static Future<void> registerWindowsScheme(String exe) async {
     try {
-      final q = await Process.run('reg', [
+      final q = await Process.run(WindowsTools.reg, [
         'query',
         r'HKCR\uninotes\shell\open\command',
         '/ve',
@@ -77,7 +78,7 @@ abstract final class AppReturn {
       final current = q.exitCode == 0 ? registeredExe('${q.stdout}') : null;
       if (current != null && await File(current).exists()) return;
       for (final args in registerCommands(exe)) {
-        await Process.run('reg', args);
+        await Process.run(WindowsTools.reg, args);
       }
     } catch (_) {}
   }

@@ -186,7 +186,9 @@ class WhisperService {
     HttpClient Function()? httpClientFactory,
     Future<int?> Function(Directory dir)? freeSpace,
     Uri? binariesUrl,
+    String? binariesSha256,
     Uri? ffmpegUrl,
+    String? ffmpegSha256,
     Uri Function(WhisperModelInfo)? modelUrl,
     this.processStarter = Process.start,
     this.processRunner = _run,
@@ -212,7 +214,12 @@ class WhisperService {
        ),
        _freeSpace = freeSpace ?? FileDownloader.defaultFreeSpace,
        binariesUrl = binariesUrl ?? defaultBinariesUrl,
+       binariesSha256 =
+           binariesSha256 ??
+           (binariesUrl == null ? defaultBinariesSha256 : null),
        ffmpegUrl = ffmpegUrl ?? defaultFfmpegUrl,
+       ffmpegSha256 =
+           ffmpegSha256 ?? (ffmpegUrl == null ? defaultFfmpegSha256 : null),
        _modelUrl = modelUrl ?? ((m) => m.downloadUrl),
        host = host ?? currentHost,
        _plugin = pluginEngine,
@@ -223,7 +230,15 @@ class WhisperService {
   final Future<Directory> Function() _baseDir;
   final FileDownloader _downloader;
   final Uri binariesUrl;
+
+  /// Impronta SHA-256 attesa per l'archivio di [binariesUrl] (null = nessun
+  /// controllo, solo per un indirizzo scelto a mano, es. nei test).
+  final String? binariesSha256;
   final Uri ffmpegUrl;
+
+  /// Impronta SHA-256 attesa per l'archivio di [ffmpegUrl] (null = nessun
+  /// controllo, solo per un indirizzo scelto a mano, es. nei test).
+  final String? ffmpegSha256;
   final Uri Function(WhisperModelInfo) _modelUrl;
   final Future<Process> Function(String, List<String>) processStarter;
 
@@ -378,11 +393,28 @@ class WhisperService {
     'https://github.com/ggml-org/whisper.cpp/releases/download/v1.9.2/whisper-bin-x64.zip',
   );
 
+  /// SHA-256 di [defaultBinariesUrl] (impronta pubblicata da GitHub per
+  /// l'allegato della release v1.9.2): l'archivio contiene programmi che
+  /// l'app poi avvia, quindi un file diverso (allegato sostituito, rete
+  /// manipolata) non si estrae. Va aggiornata insieme alla versione.
+  static const defaultBinariesSha256 =
+      '49dcc16de826f20bd53d44f947a1ae49dfa81f86cad67a64d80820cb192d674a';
+
   /// ffmpeg per Windows (solo per convertire le registrazioni .m4a del
   /// telefono): build LGPL ufficiale di BtbN, ~170 MB, scaricata a richiesta.
+  /// Versione fissa (ffmpeg 9.0.2, build di fine mese del 30/09/2026, che
+  /// BtbN conserva nel tempo, al contrario di «latest» che cambia ogni
+  /// giorno), così l'archivio si controlla con [defaultFfmpegSha256].
   static final defaultFfmpegUrl = Uri.parse(
-    'https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-lgpl.zip',
+    'https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-09-30-13-08/ffmpeg-n9.0.2-17-g2a571b6068-win64-lgpl-9.0.zip',
   );
+
+  /// SHA-256 di [defaultFfmpegUrl] (impronta pubblicata da GitHub per
+  /// l'allegato, verificata sul file scaricato il 25/10/2026): ffmpeg è un
+  /// programma che l'app avvia, quindi un archivio diverso non si estrae. Va
+  /// aggiornata insieme all'indirizzo.
+  static const defaultFfmpegSha256 =
+      '6b264b9e6019103f601d98c292bd332fd87acf1c5e941ddff4fb71760fe63432';
 
   /// `whisper-cli` di Homebrew (Apple Silicon e Intel).
   static const defaultMacCliCandidates = [
@@ -543,6 +575,7 @@ class WhisperService {
         zip,
         'Scarico il convertitore ffmpeg',
         cancel: cancel,
+        sha256: ffmpegSha256,
       );
       yield const WhisperProgress('Estraggo ffmpeg…', null);
       // prima in un file temporaneo: un'estrazione interrotta (disco pieno,
@@ -628,7 +661,13 @@ class WhisperService {
       yield const WhisperProgress('Scarico whisper.cpp…', 0);
       final bin = await _dir('bin');
       final zip = File(p.join(bin.parent.path, 'whisper.zip'));
-      yield* _download(binariesUrl, zip, 'Scarico whisper.cpp', cancel: cancel);
+      yield* _download(
+        binariesUrl,
+        zip,
+        'Scarico whisper.cpp',
+        cancel: cancel,
+        sha256: binariesSha256,
+      );
       yield const WhisperProgress('Estraggo whisper.cpp…', null);
       // prima in una cartella a parte, poi al posto di «bin»: un'estrazione
       // interrotta (disco pieno, archivio troncato) non lascia un

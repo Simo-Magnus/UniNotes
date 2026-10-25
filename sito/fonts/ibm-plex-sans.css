@@ -1,0 +1,11 @@
+/* IBM Plex Sans (SIL Open Font License 1.1, vedi OFL.txt) servito dal sito
+   stesso: i visitatori non si collegano a Google Fonts (né a nessun altro
+   servizio) per scaricare il carattere. */
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 300; font-display: swap;
+             src: url("IBMPlexSans-Light.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400; font-display: swap;
+             src: url("IBMPlexSans-Regular.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 600; font-display: swap;
+             src: url("IBMPlexSans-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 700; font-display: swap;
+             src: url("IBMPlexSans-Bold.ttf") format("truetype"); }

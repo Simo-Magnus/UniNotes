@@ -31,13 +31,22 @@ bool FocusRunningWindow() {
   return true;
 }
 
-bool ReturnToRunningApp(const std::vector<std::string>& args) {
-  bool from_link = false;
-  for (const auto& a : args) {
-    if (a.rfind("uninotes:", 0) == 0) from_link = true;
+// Avvio dallo schema uninotes: (comando del registro `"uninotes.exe" "%1"`):
+// il primo argomento è l'indirizzo, scritto da chi apre il collegamento (una
+// pagina web, un'altra app). Lo schema si confronta senza distinguere le
+// maiuscole, come fa Windows.
+bool FromLink(const std::vector<std::string>& args) {
+  if (args.empty()) return false;
+  const std::string& a = args.front();
+  static const char kScheme[] = "uninotes:";
+  const size_t n = sizeof(kScheme) - 1;
+  if (a.size() < n) return false;
+  for (size_t i = 0; i < n; ++i) {
+    char c = a[i];
+    if (c >= 'A' && c <= 'Z') c = static_cast<char>(c - 'A' + 'a');
+    if (c != kScheme[i]) return false;
   }
-  if (!from_link) return false;
-  return FocusRunningWindow();  // app chiusa: si apre normalmente
+  return true;
 }
 
 bool HasArg(const std::vector<std::string>& args, const char* arg) {
@@ -60,10 +69,18 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   // finestre: per loro non cambia nulla.
   ApplyProcessAumid();
 
-  const std::vector<std::string> launch_args = GetCommandLineArguments();
-  if (ReturnToRunningApp(launch_args)) {
+  // Avviata da un collegamento uninotes: con l'app già aperta: torna in
+  // primo piano quella e questa copia si chiude; con l'app chiusa si apre
+  // normalmente, ma senza argomenti. Un indirizzo con le virgolette
+  // (`uninotes:x" --disinstalla`, aperto da un'app che non le codifica)
+  // diventerebbe più argomenti e avvierebbe la schermata di
+  // disinstallazione: l'app non usa mai gli argomenti di un collegamento.
+  const bool from_link = FromLink(GetCommandLineArguments());
+  if (from_link && FocusRunningWindow()) {
     return EXIT_SUCCESS;
   }
+  const std::vector<std::string> launch_args =
+      from_link ? std::vector<std::string>() : GetCommandLineArguments();
 
   // Una sola copia dell'app: una seconda (es. l'icona cliccata di nuovo
   // mentre UniNotes è nell'area di notifica) aprirebbe lo stesso database,
@@ -95,8 +112,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   flutter::DartProject project(L"data");
 
-  std::vector<std::string> command_line_arguments =
-      GetCommandLineArguments();
+  std::vector<std::string> command_line_arguments = launch_args;
 
   project.set_dart_entrypoint_arguments(std::move(command_line_arguments));
 

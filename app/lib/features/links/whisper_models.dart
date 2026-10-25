@@ -252,6 +252,7 @@ const List<WhisperModelInfo> kWhisperModels = [
     italianOk: true,
     minHardware: 'PC con 8 GB RAM; telefono di fascia alta (8 GB RAM, lento)',
     platforms: _all,
+    sha256: '19fea4b380c3a618ec4723c3eef2eb785ffba0d0538cf43f8f235e7b3b34220f',
     quantized: true,
   ),
   WhisperModelInfo(
@@ -267,6 +268,7 @@ const List<WhisperModelInfo> kWhisperModels = [
     italianOk: true,
     minHardware: 'PC con 8 GB RAM; Mac Apple Silicon',
     platforms: _desktop,
+    sha256: '42a1ffcbe4167d224232443396968db4d02d4e8e87e213d3ee2e03095dea6502',
     quantized: true,
   ),
   WhisperModelInfo(
@@ -328,6 +330,7 @@ const List<WhisperModelInfo> kWhisperModels = [
     italianOk: true,
     minHardware: 'PC con 8 GB RAM (16 consigliati); Mac Apple Silicon',
     platforms: _desktop,
+    sha256: 'fef54e6d898246a65c8285bfa83bd1807e27fadf54d5d4e81754c47634737e8c',
     quantized: true,
   ),
   WhisperModelInfo(
@@ -405,6 +408,7 @@ const List<WhisperModelInfo> kWhisperModels = [
     italianOk: true,
     minHardware: 'PC con 8 GB RAM; Mac Apple Silicon',
     platforms: _desktop,
+    sha256: '317eb69c11673c9de1e1f0d459b253999804ec71ac4c23c17ecf5fbe24e259a1',
     quantized: true,
   ),
 ];

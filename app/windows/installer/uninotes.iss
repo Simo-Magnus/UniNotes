@@ -116,8 +116,9 @@ Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilter
 ; Tutto quello che resta nella cartella del programma (file creati dopo
 ; l'installazione, modelli scaricati come ripiego): la cartella sparisce. I
 ; dati dello studente non sono qui (AppData\Roaming) e li gestisce la
-; schermata di disinstallazione dell'app.
-Type: filesandordirs; Name: "{app}"
+; schermata di disinstallazione dell'app. Solo se la cartella è davvero
+; quella di UniNotes (CartellaDelProgramma, controllata all'installazione).
+Type: filesandordirs; Name: "{app}"; Check: CartellaDelProgramma
 
 [Registry]
 ; Registrazione delle notifiche di Windows scritta dall'app al primo avvio
@@ -138,6 +139,22 @@ Root: HKCU; Subkey: "Software\Classes\uninotes\DefaultIcon"; ValueType: string; 
 Root: HKCU; Subkey: "Software\Classes\uninotes\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\uninotes.exe"" ""%1"""
 
 [Code]
+// La cartella del programma si toglie per intero (anche i file non
+// installati da qui) solo se si chiama «UniNotes» e non sta in Documenti.
+// La casella della cartella accetta qualsiasi percorso scritto a mano: con
+// «D:\Programmi» la disinstallazione avrebbe cancellato anche gli altri
+// programmi, con «Documenti\UniNotes» gli appunti e le registrazioni
+// dell'utente. In quei casi si tolgono solo i file installati.
+function CartellaDelProgramma(): Boolean;
+var
+  Cartella, Documenti: String;
+begin
+  Cartella := RemoveBackslashUnlessRoot(ExpandConstant('{app}'));
+  Documenti := RemoveBackslashUnlessRoot(ExpandConstant('{userdocs}'));
+  Result := (CompareText(ExtractFileName(Cartella), 'UniNotes') = 0) and
+    (Pos(Lowercase(Documenti + '\'), Lowercase(Cartella + '\')) <> 1);
+end;
+
 // UniNotes aperto (anche solo nell'area di notifica) blocca uninotes.exe e
 // le sue librerie: il disinstallatore non riuscirebbe a toglierli e l'app
 // resterebbe. Si chiude prima di iniziare e di nuovo prima di cancellare i
@@ -164,6 +181,8 @@ begin
   begin
     ChiudiUniNotes();
     // ultimo controllo: se qualcosa è rimasto, la cartella si toglie qui
-    DelTree(ExpandConstant('{app}'), True, True, True);
+    // (solo la cartella di UniNotes, vedi CartellaDelProgramma)
+    if CartellaDelProgramma() then
+      DelTree(ExpandConstant('{app}'), True, True, True);
   end;
 end;

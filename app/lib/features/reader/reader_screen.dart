@@ -32,6 +32,24 @@ import 'views/media_view.dart';
 import 'views/outline_view.dart';
 import 'views/pdf_view.dart';
 
+/// Collegamento [link] di un documento nella cartella [dir] che il lettore
+/// può seguire: un file relativo vicino al documento (nella sua cartella o in
+/// quella sopra), mai un indirizzo, un percorso assoluto o di rete
+/// («\\server\x», «//server/x»: aprirlo farebbe accedere il PC a un altro
+/// computer, che riceverebbe le credenziali di Windows).
+bool isNearbyLink(String dir, String link) {
+  if (link.trim().isEmpty ||
+      link.contains('://') ||
+      p.isAbsolute(link) ||
+      link.startsWith(r'\\') ||
+      link.startsWith('//') ||
+      link.startsWith(r'/\') ||
+      link.startsWith(r'\/')) {
+    return false;
+  }
+  return p.isWithin(p.dirname(dir), p.normalize(p.join(dir, link)));
+}
+
 /// Apre [path] nel lettore dell'app (qualsiasi formato: quelli non
 /// mostrabili hanno "Apri con…" e "Condividi").
 ///
@@ -465,6 +483,9 @@ class ReaderScreenState extends State<ReaderScreen> {
         name,
       ];
       for (final n in names) {
+        // come per i link ai file qui sotto: solo note vicine al documento
+        // (un «note:\\server\x» farebbe accedere il PC a un altro computer)
+        if (!isNearbyLink(dir, n)) continue;
         final f = File(p.join(dir, n));
         if (f.existsSync()) {
           target = f.path;
@@ -482,15 +503,10 @@ class ReaderScreenState extends State<ReaderScreen> {
       try {
         rel = Uri.decodeFull(rel);
       } catch (_) {}
-      final full = p.normalize(p.join(dir, rel));
       // solo file vicini al documento: niente percorsi di rete o assoluti
       // (un link «\\server\x» farebbe accedere il PC a un altro computer)
-      if (rel.isNotEmpty &&
-          !rel.contains('://') &&
-          !p.isAbsolute(rel) &&
-          !rel.startsWith(r'\\') &&
-          p.isWithin(p.dirname(dir), full)) {
-        final f = File(full);
+      if (isNearbyLink(dir, rel)) {
+        final f = File(p.normalize(p.join(dir, rel)));
         if (f.existsSync()) target = f.path;
       }
     }

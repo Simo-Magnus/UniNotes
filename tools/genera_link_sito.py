@@ -8,7 +8,8 @@
   store: installazioni per fonte), senza contare nulla nel sito.
 
 Statistiche: GoatCounter (senza cookie, nessun dato personale salvato). La pagina aggregatore conta le visite con
-lo script ufficiale (il percorso include ?s=<sigla>, quindi si vede da quale bio arriva la gente); ogni link corto
+una richiesta all'endpoint scritta nella pagina, senza script di terzi (il percorso include ?s=<sigla>, quindi si
+vede da quale bio arriva la gente; gli altri parametri dell'indirizzo non si inviano); ogni link corto
 conta se stesso con una richiesta all'endpoint e poi porta alla destinazione, così le visite a /go/<nome>/ sono i
 clic verso quella destinazione. I link della pagina aggregatore si aprono in una nuova scheda. Uso, dalla radice del
 repository:
@@ -27,6 +28,10 @@ ICONE = ROOT / "tools" / "icone_social"
 BASE = "https://simo-magnus.github.io/UniNotes/"
 GOATCOUNTER = "https://uninotes.goatcounter.com/count"
 NUOVA = 'target="_blank" rel="noopener"'  # nuova scheda; il referrer resta, per sapere da dove arriva il clic
+# le pagine caricano solo file del sito e parlano solo con il contatore di GoatCounter (come le altre pagine)
+CSP = ('<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\' \'unsafe-inline\'; '
+       'style-src \'self\' \'unsafe-inline\'; img-src \'self\' data:; font-src \'self\'; '
+       f'connect-src {GOATCOUNTER.rsplit("/", 1)[0]}; object-src \'none\'; base-uri \'none\'; form-action \'none\'">')
 
 # link corti: /go/<nome>/ → destinazione
 GO = {
@@ -104,6 +109,7 @@ def reindirizzo(dest: str, titolo: str, conta: bool = False) -> str:
 <html lang="it">
 <head>
 <meta charset="utf-8">
+{CSP}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>{html.escape(titolo)} · UniNotes</title>
@@ -135,6 +141,7 @@ def aggregatore() -> str:
 <html lang="it">
 <head>
 <meta charset="utf-8">
+{CSP}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>UniNotes · Link</title>
@@ -145,8 +152,29 @@ def aggregatore() -> str:
 <meta property="og:description" content="Download, community e social di UniNotes, l'app gratuita per organizzare l'università.">
 <meta property="og:image" content="{BASE}anteprima.png">
 <meta property="og:url" content="{BASE}link/">
-<script data-goatcounter="{GOATCOUNTER}"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- Visite contate in forma anonima con GoatCounter (senza cookie): una sola richiesta al contatore, nessuno
+     script di terzi nella pagina. Il percorso include ?s=<sigla> per sapere da quale bio arriva la visita. Con
+     #toggle-goatcounter in fondo all'indirizzo il conteggio si spegne o si riaccende su questo browser. -->
+<script>
+(function () {{
+  try {{
+    if (location.hash === '#toggle-goatcounter') {{
+      var spento = localStorage.getItem('skipgc') === 't';
+      if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
+      alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');
+    }}
+    if (navigator.sendBeacon && !navigator.webdriver && document.visibilityState !== 'prerender' &&
+        localStorage.getItem('skipgc') !== 't') {{
+      var e = encodeURIComponent;
+      // solo ?s=<sigla>: gli altri parametri (es. fbclid aggiunto dai social) non si inviano
+      var fonte = new URLSearchParams(location.search).get('s') || '';
+      var s = /^[a-z]{{1,4}}$/.test(fonte) ? '?s=' + fonte : '';
+      navigator.sendBeacon('{GOATCOUNTER}?p=' + e(location.pathname + s) + '&t=' + e(document.title) +
+        '&r=' + e(document.referrer) + '&s=' + screen.width + '&rnd=' + Math.random().toString(36).slice(2, 7));
+    }}
+  }} catch (err) {{}}
+}})();
+</script>
 <style>
   :root {{ --bg: #02060f; --card: rgba(255,255,255,.05); --line: rgba(255,255,255,.10); --text: #F3F7FB;
           --text2: rgba(235,245,255,.75); --muted: #8FA9C4; --blu: #1784FB; }}

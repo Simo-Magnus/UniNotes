@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src https://uninotes.goatcounter.com; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Scarica UniNotes</title>
@@ -16,9 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="fonts/ibm-plex-sans.css" rel="stylesheet">
 <style>
   /* Design 3 (docs/SPEC_DESIGN_3.md), tema scuro dell'app. */
   :root {
@@ -160,8 +159,26 @@
   }
   @media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
 </style>
-<script data-goatcounter="https://uninotes.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- Visite contate in forma anonima con GoatCounter (senza cookie, paragrafo 10.3 dell'informativa): una sola
+     richiesta al contatore, nessuno script di terzi nella pagina. Con #toggle-goatcounter in fondo all'indirizzo
+     il conteggio si spegne o si riaccende su questo browser. -->
+<script>
+(function () {
+  try {
+    if (location.hash === '#toggle-goatcounter') {
+      var spento = localStorage.getItem('skipgc') === 't';
+      if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
+      alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');
+    }
+    if (navigator.sendBeacon && !navigator.webdriver && document.visibilityState !== 'prerender' &&
+        localStorage.getItem('skipgc') !== 't') {
+      var e = encodeURIComponent;
+      navigator.sendBeacon('https://uninotes.goatcounter.com/count?p=' + e(location.pathname) + '&t=' + e(document.title) +
+        '&r=' + e(document.referrer) + '&s=' + screen.width + '&rnd=' + Math.random().toString(36).slice(2, 7));
+    }
+  } catch (err) {}
+})();
+</script>
 </head>
 <body>
 <main>

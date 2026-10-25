@@ -122,6 +122,9 @@ void main() {
     cacheDirs: () async => [dir('cache')],
     wipeSecrets: () async => secretsWiped = true,
     clearPrefs: () async => prefsCleared = true,
+    // mai la cartella temporanea vera: con le registrazioni si svuotano le
+    // cartelle di lavoro, anche quelle di altri test in corso
+    tempDir: () => dir('temp'),
     syncWait: Duration.zero,
   );
 

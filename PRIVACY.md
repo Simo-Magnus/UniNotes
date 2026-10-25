@@ -98,7 +98,7 @@ In Impostazioni → Il mio percorso → «Indirizzo del database» puoi indicare
 La trascrizione con Whisper avviene interamente sul dispositivo: l'audio non viene inviato a nessuno. Servono però dei file da scaricare, e lo fai tu da Collegamenti → Whisper:
 
 - i modelli di trascrizione, dal sito Hugging Face (`huggingface.co`), con dimensioni che vanno da circa 75 MB a circa 3 GB (sul telefono un modello piccolo per il testo dal vivo, circa 57 MB, è già incluso nell'app; su PC e Mac sono inclusi Parakeet e il modello Whisper small, circa 181 MB, vedi sotto);
-- solo su Windows, il programma whisper.cpp (versione 1.9.2, dal repository ufficiale `ggml-org/whisper.cpp` su GitHub) e, se ti serve per le registrazioni `.m4a` fatte con il telefono, il convertitore ffmpeg (build di BtbN su GitHub, circa 170 MB).
+- solo su Windows, il programma whisper.cpp (versione 1.9.2, dal repository ufficiale `ggml-org/whisper.cpp` su GitHub) e, se ti serve per le registrazioni `.m4a` fatte con il telefono, il convertitore ffmpeg (versione 9.0.2, build di BtbN su GitHub, circa 170 MB). Prima dell'uso l'app controlla che ogni file scaricato sia quello atteso (impronta SHA-256).
 
 Su Mac, Android e iOS whisper.cpp è già incluso nell'app. Su Mac puoi installare a parte la versione di Homebrew: in quel caso l'installazione avviene fuori dall'app e segue le regole di Homebrew.
 

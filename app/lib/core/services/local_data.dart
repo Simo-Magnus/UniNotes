@@ -4,6 +4,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import 'windows_tools.dart';
+
 /// Dove l'app tiene i suoi dati su ogni piattaforma, e come si eliminano.
 ///
 /// - Database SQLite, libri, materiali, allegati, modelli Whisper, dati
@@ -82,12 +84,12 @@ class LocalData {
       for (final b in windowsBinaryNames) 'key_${b}_$windowsCredentialMark',
     };
     try {
-      final r = await Process.run('cmdkey', ['/list']);
+      final r = await Process.run(WindowsTools.cmdkey, ['/list']);
       targets.addAll(windowsCredentialTargets('${r.stdout}'));
     } catch (_) {}
     for (final t in targets) {
       try {
-        await Process.run('cmdkey', ['/delete:$t']);
+        await Process.run(WindowsTools.cmdkey, ['/delete:$t']);
       } catch (_) {}
     }
   }

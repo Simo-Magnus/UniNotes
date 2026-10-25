@@ -743,7 +743,12 @@ class LiveTranscriber extends ChangeNotifier {
         out.add(s);
         continue;
       }
-      debugPrint('Parakeet, frase in un\'altra lingua: ${s.text}');
+      // il testo della lezione solo in debug: nelle build pubblicate
+      // debugPrint scrive nel registro del sistema (logcat, console di
+      // Apple), leggibile da altri strumenti e nelle segnalazioni di sistema
+      if (kDebugMode) {
+        debugPrint('Parakeet, frase in un\'altra lingua: ${s.text}');
+      }
       foreignDropped++;
       if (!_rescueUnavailable) {
         _rescueQueue.add(LiveChunk(_extraIndex++, s.start, s.end));

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 
 import '../../features/cloud/graph_client.dart' show networkIdleTimeout;
+import 'windows_tools.dart';
 
 class DownloadException implements Exception {
   DownloadException(this.message);
@@ -403,7 +404,7 @@ class FileDownloader {
     try {
       if (Platform.isWindows) {
         final root = dir.absolute.path.substring(0, 3);
-        final r = await Process.run('powershell', [
+        final r = await Process.run(WindowsTools.powershell, [
           '-NoProfile',
           '-Command',
           "([System.IO.DriveInfo]::new('$root')).AvailableFreeSpace",
