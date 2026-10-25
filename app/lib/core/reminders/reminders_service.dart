@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart' show AppLifecycleListener;
+import 'package:flutter/widgets.dart'
+    show AppLifecycleListener, AppLifecycleState, WidgetsBinding;
 
 import '../../features/cloud/cloud_drive_service.dart';
 import '../../features/exams/previous_years.dart';
@@ -45,6 +46,7 @@ class RemindersService extends ChangeNotifier {
     String? platformName,
     this.isRecording,
     this.focusQuietUntil,
+    this.isForeground,
   }) : platform = platform ?? LocalNotificationPlatform(),
        widgets = widgets ?? HomeWidgetBridge(),
        platformName = platformName ?? Platform.operatingSystem {
@@ -72,6 +74,20 @@ class RemindersService extends ChangeNotifier {
   /// Fine della sessione Focus in corso (nei test: finta); null = quella
   /// dell'app. Fino ad allora gli avvisi non urgenti aspettano.
   final DateTime? Function()? focusQuietUntil;
+
+  /// App in primo piano (nei test: finta); null = lo stato dell'app. La
+  /// conferma dell'account del calendario si propone da sola solo così.
+  final bool Function()? isForeground;
+  bool get _foreground {
+    if (isForeground != null) return isForeground!();
+    try {
+      return WidgetsBinding.instance.lifecycleState ==
+          AppLifecycleState.resumed;
+    } catch (_) {
+      return false;
+    }
+  }
+
   DateTime? get _quietUntil =>
       focusQuietUntil != null ? focusQuietUntil!() : _s.focus.quietUntil;
   final NotificationPlatform platform;
@@ -247,6 +263,19 @@ class RemindersService extends ChangeNotifier {
     } catch (e) {
       debugPrint('Calendario non aggiornato: $e');
       status = await _calendarStatus();
+    }
+    // prove appena scritte o tolte con l'app davanti: conferma dell'account
+    // del calendario, proposta una volta sola (anche a chi aveva scelto il
+    // calendario prima della conferma); mai durante una registrazione o una
+    // sessione Focus
+    if (calendar.changes > 0 &&
+        calendar.backend is AccountConfirmation &&
+        status.working &&
+        status.writtenBy == null &&
+        _foreground &&
+        !_recording &&
+        _quietUntil == null) {
+      unawaited(confirmCalendarAccount());
     }
     try {
       await reschedule(data, status, now: now);
@@ -766,6 +795,7 @@ class RemindersService extends ChangeNotifier {
     }
     await calendar.setEnabled(true);
     await refresh();
+    await confirmCalendarAccount();
     return calendar.status();
   }
 
@@ -798,7 +828,98 @@ class RemindersService extends ChangeNotifier {
   Future<CalendarStatus> chooseCalendar(String? id) async {
     await calendar.choose(id);
     await refresh();
+    await confirmCalendarAccount();
     return calendar.status();
+  }
+
+  // ------------------------------------------- conferma dell'account (Android)
+
+  Future<bool?>? _confirming;
+
+  /// Conferma dell'account in corso (per i test).
+  @visibleForTesting
+  Future<bool?>? get accountConfirmation => _confirming;
+
+  /// Calendario usato ora, se il suo account va confermato (Android 13+,
+  /// vedi [AccountConfirmation]); null altrimenti o se lo aggiorna un altro
+  /// dispositivo.
+  Future<CalendarChoice?> _accountToConfirm() async {
+    final b = calendar.backend;
+    if (b == null || b is! AccountConfirmation) return null;
+    try {
+      if (!await calendar.enabled() || !await b.hasAccess()) return null;
+      if (await _s.settings.get(CalendarKeys.writtenBy) != null) return null;
+      final id = await _s.settings.get(CalendarKeys.calendarId);
+      if (id == null) return null;
+      final c = (await b.calendars()).where((c) => c.id == id).firstOrNull;
+      if (c == null) return null;
+      return await (b as AccountConfirmation).accountAccessNeeded(c) ? c : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// L'account del calendario usato va confermato (riga «Conferma account
+  /// per il caricamento immediato» in Impostazioni → Calendario).
+  Future<bool> calendarAccountNeeded() async =>
+      await _accountToConfirm() != null;
+
+  static String _accountKey(CalendarChoice c) =>
+      '${c.accountType}:${(c.account ?? '').trim().toLowerCase()}';
+
+  Future<Set<String>> _declinedAccounts() async {
+    try {
+      final raw = await _s.settings.get(CalendarKeys.accountDeclined);
+      if (raw == null) return {};
+      return {for (final x in jsonDecode(raw) as List) '$x'};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  Future<void> _saveDeclined(Set<String> v) => _s.settings.set(
+    CalendarKeys.accountDeclined,
+    v.isEmpty ? null : jsonEncode(v.toList()..sort()),
+  );
+
+  /// Conferma dell'account del calendario usato con la finestra del sistema
+  /// (Android: senza, le prove arrivano su Google dopo qualche minuto e
+  /// intanto Google Calendar mostra «Sync error»). Si propone da sola una
+  /// volta sola per account: annullata, l'app non insiste (resta il
+  /// pulsante delle Impostazioni, [force]). true se l'account è confermato
+  /// o non serve, false se annullata o non proposta, null se la finestra non
+  /// si è aperta. Una sola finestra alla volta.
+  Future<bool?> confirmCalendarAccount({bool force = false}) {
+    final running = _confirming;
+    if (running != null) return running;
+    final run = _confirmAccount(force);
+    _confirming = run;
+    return run.whenComplete(() => _confirming = null);
+  }
+
+  Future<bool?> _confirmAccount(bool force) async {
+    try {
+      final c = await _accountToConfirm();
+      if (c == null) return true;
+      final key = _accountKey(c);
+      final declined = await _declinedAccounts();
+      if (!force && declined.contains(key)) return false;
+      final b = calendar.backend as AccountConfirmation;
+      final ok = await b.confirmAccount(c);
+      // finestra non aperta (app non in primo piano): si riproporrà
+      if (ok == null) return null;
+      if (ok) {
+        declined.remove(key);
+      } else {
+        declined.add(key);
+      }
+      await _saveDeclined(declined);
+      notifyListeners();
+      return ok;
+    } catch (e) {
+      debugPrint('Conferma dell\'account del calendario: $e');
+      return null;
+    }
   }
 
   /// «Aggiorna da questo dispositivo»: il calendario dell'account lo scrive

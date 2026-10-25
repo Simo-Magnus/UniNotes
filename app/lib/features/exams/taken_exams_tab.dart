@@ -148,15 +148,35 @@ class _OutcomeSummary extends StatelessWidget {
   final int awaiting;
   final int cancelled;
 
+  static const _labelStyle = TextStyle(fontSize: 12);
+
+  /// Larghezza che serve a un'etichetta intera, con i caratteri attuali.
+  static double _labelWidth(BuildContext context, String label) {
+    final p = TextPainter(
+      text: TextSpan(
+        text: label,
+        style: DefaultTextStyle.of(context).style.merge(_labelStyle),
+      ),
+      textDirection: Directionality.of(context),
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    final w = p.width;
+    p.dispose();
+    return w;
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget tile(String label, int n, ExamStatus s) {
       final color = examStatusColor(context, s);
-      return Expanded(
-        child: GlassCard(
-          color: color.withValues(alpha: 0.08),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+      return GlassCard(
+        color: color.withValues(alpha: 0.08),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          // a tutta larghezza: contenuto al centro anche con 2 colonne
+          child: SizedBox(
+            width: double.infinity,
             child: Column(
               children: [
                 Icon(examStatusIcon(s), color: color),
@@ -166,10 +186,18 @@ class _OutcomeSummary extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineSmall
                       ?.copyWith(color: color),
                 ),
-                Text(
-                  label,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 12),
+                // l'etichetta non va mai a capo: se la card è troppo stretta
+                // si cambia la griglia (sotto), come ultima risorsa si
+                // rimpicciolisce
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    softWrap: false,
+                    textAlign: TextAlign.center,
+                    style: _labelStyle,
+                  ),
                 ),
               ],
             ),
@@ -178,19 +206,36 @@ class _OutcomeSummary extends StatelessWidget {
       );
     }
 
-    // Card della stessa altezza anche quando un'etichetta va a capo.
+    final tiles = [
+      ('Superati', passed, ExamStatus.passed),
+      ('Non superati', failed, ExamStatus.failed),
+      ('In attesa', awaiting, ExamStatus.taken),
+      ('Annullati', cancelled, ExamStatus.cancelled),
+    ];
+    final widest = tiles
+        .map((t) => _labelWidth(context, t.$1))
+        .reduce((a, b) => a > b ? a : b);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            tile('Superati', passed, ExamStatus.passed),
-            tile('Non superati', failed, ExamStatus.failed),
-            tile('In attesa', awaiting, ExamStatus.taken),
-            tile('Annullati', cancelled, ExamStatus.cancelled),
-          ],
-        ),
+      child: LayoutBuilder(
+        builder: (context, c) {
+          // ogni card ha 12 + 12 di margine e 8 + 8 di margine interno
+          const extra = 24.0 + 16.0;
+          final w = c.hasBoundedWidth ? c.maxWidth : 1000.0;
+          // 4 colonne se l'etichetta più lunga ci sta intera, altrimenti
+          // 2 (due righe da due) o, con caratteri molto grandi, 1
+          final columns = widest + extra <= w / 4
+              ? 4
+              : widest + extra <= w / 2
+              ? 2
+              : 1;
+          return Wrap(
+            children: [
+              for (final t in tiles)
+                SizedBox(width: w / columns, child: tile(t.$1, t.$2, t.$3)),
+            ],
+          );
+        },
       ),
     );
   }

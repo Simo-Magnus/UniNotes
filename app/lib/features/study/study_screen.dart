@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/constants/enums.dart';
 import '../../core/feedback/feedback_service.dart';
 import '../../widgets/common.dart';
+import '../../widgets/tab_fit.dart';
 import 'course_catalog.dart';
 import 'course_groups.dart';
 import 'stats_tab.dart';
@@ -37,7 +38,15 @@ class _StudyScreenState extends State<StudyScreen> {
   @override
   Widget build(BuildContext context) {
     // caratteri grandi: le schede scorrono invece di tagliare il testo
-    final big = MediaQuery.textScalerOf(context).scale(13) > 13 * 1.15;
+    // (o quando una scritta non sta intera nella sua scheda, come «Sessioni
+    // Studio» a 360 dp)
+    final big =
+        MediaQuery.textScalerOf(context).scale(13) > 13 * 1.15 ||
+        tabsNeedScroll(context, const [
+          'Argomenti',
+          'Sessioni Studio',
+          'Statistiche',
+        ], MediaQuery.sizeOf(context).width);
     return DefaultTabController(
       length: 3,
       initialIndex: _initialTab,

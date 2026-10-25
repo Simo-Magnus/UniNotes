@@ -82,17 +82,17 @@ class _AppearanceStep extends StatelessWidget {
                 children: [
                   Text('Contrasto', style: theme.textTheme.titleSmall),
                   const SizedBox(height: 8),
-                  SegmentedButton<ContrastMode>(
+                  FitSegmentedButton<ContrastMode>(
                     key: const Key('onboarding-contrast'),
                     segments: const [
-                      ButtonSegment(
+                      FitSegment(
                         value: ContrastMode.standard,
-                        label: Text('Standard'),
+                        label: 'Standard',
                       ),
-                      ButtonSegment(
+                      FitSegment(
                         value: ContrastMode.high,
-                        label: Text('Alto contrasto'),
-                        icon: Icon(Icons.contrast),
+                        label: 'Alto contrasto',
+                        icon: Icons.contrast,
                       ),
                     ],
                     selected: {p.contrast},

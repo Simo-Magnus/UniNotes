@@ -4,6 +4,7 @@ import '../../core/constants/enums.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
+import '../../widgets/fit_segmented.dart';
 import '../academic/year_widgets.dart';
 import 'exam_stats.dart';
 import 'exam_tile.dart';
@@ -39,14 +40,14 @@ class KindFilterBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SegmentedButton<KindFilter>(
+    return FitSegmentedButton<KindFilter>(
       showSelectedIcon: false,
       emptySelectionAllowed: true,
       segments: [
-        const ButtonSegment(value: KindFilter.finals, label: Text('Esami')),
-        ButtonSegment(
+        const FitSegment(value: KindFilter.finals, label: 'Esami'),
+        FitSegment(
           value: KindFilter.midterms,
-          label: Text(narrow ? 'Itinere/esoneri' : 'In itinere/esoneri'),
+          label: narrow ? 'Itinere/esoneri' : 'In itinere/esoneri',
         ),
       ],
       selected: {?value},

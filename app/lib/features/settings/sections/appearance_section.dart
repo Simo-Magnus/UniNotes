@@ -6,6 +6,7 @@ import '../../../core/services/app_services.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/display_prefs.dart';
 import '../../../repositories/settings_repository.dart';
+import '../../../widgets/fit_segmented.dart';
 import '../../notes/spell_check.dart' show SpellCheckLanguagesNote;
 import '../widgets/settings_card.dart';
 import 'questions_reset.dart';
@@ -37,22 +38,22 @@ class AppearanceSection extends StatelessWidget {
       children: [
         ValueListenableBuilder<ThemeMode>(
           valueListenable: s.themeMode,
-          builder: (context, mode, _) => SegmentedButton<ThemeMode>(
+          builder: (context, mode, _) => FitSegmentedButton<ThemeMode>(
             segments: const [
-              ButtonSegment(
+              FitSegment(
                 value: ThemeMode.dark,
-                label: Text('Scuro'),
-                icon: Icon(Icons.dark_mode_outlined),
+                label: 'Scuro',
+                icon: Icons.dark_mode_outlined,
               ),
-              ButtonSegment(
+              FitSegment(
                 value: ThemeMode.light,
-                label: Text('Chiaro'),
-                icon: Icon(Icons.light_mode_outlined),
+                label: 'Chiaro',
+                icon: Icons.light_mode_outlined,
               ),
-              ButtonSegment(
+              FitSegment(
                 value: ThemeMode.system,
-                label: Text('Sistema'),
-                icon: Icon(Icons.settings_suggest_outlined),
+                label: 'Sistema',
+                icon: Icons.settings_suggest_outlined,
               ),
             ],
             selected: {mode},
@@ -75,16 +76,16 @@ class AppearanceSection extends StatelessWidget {
               const SizedBox(height: 16),
               Text('Contrasto', style: theme.textTheme.titleSmall),
               const SizedBox(height: 8),
-              SegmentedButton<ContrastMode>(
+              FitSegmentedButton<ContrastMode>(
                 segments: const [
-                  ButtonSegment(
+                  FitSegment(
                     value: ContrastMode.standard,
-                    label: Text('Standard'),
+                    label: 'Standard',
                   ),
-                  ButtonSegment(
+                  FitSegment(
                     value: ContrastMode.high,
-                    label: Text('Alto contrasto'),
-                    icon: Icon(Icons.contrast),
+                    label: 'Alto contrasto',
+                    icon: Icons.contrast,
                   ),
                 ],
                 selected: {p.contrast},

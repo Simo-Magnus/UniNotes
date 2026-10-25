@@ -18,6 +18,7 @@ import '../../core/theme/display_prefs.dart';
 import '../../repositories/settings_repository.dart';
 import '../../widgets/catalog_download.dart';
 import '../../widgets/common.dart';
+import '../../widgets/fit_segmented.dart';
 import '../../widgets/glass.dart';
 import '../exams/exam_form.dart' show kCalendarOfferedKey;
 import '../exams/previous_years.dart' show PreviousYearsPrompt;

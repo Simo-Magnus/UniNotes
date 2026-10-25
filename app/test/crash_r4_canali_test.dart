@@ -594,6 +594,9 @@ const _contracts = <_Contract>[
       'write': [_android, _ios, _macos],
       'delete': [_android, _ios, _macos],
       'deleteCalendarIfEmpty': [_android, _ios, _macos],
+      // conferma dell'account del calendario (solo Android 13+)
+      'accountAccess': [_android],
+      'confirmAccount': [_android],
     },
     args: {
       _android: [
@@ -607,6 +610,9 @@ const _contracts = <_Contract>[
         'endMs',
         'alarms',
         'name',
+        'account',
+        'accountType',
+        'description',
       ],
       _ios: [
         'calendarId',

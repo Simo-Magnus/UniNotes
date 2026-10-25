@@ -283,5 +283,14 @@
         <intent>
             <action android:name="android.speech.RecognitionService"/>
         </intent>
+        <!-- Caricamento immediato delle prove scritte nel calendario
+             (UniNotesCalendar.kt, requestUpload): da Android 14 il sistema
+             scarta in silenzio ContentResolver.requestSync se l'app non vede
+             il pacchetto dell'adattatore di sincronizzazione del calendario
+             (Google, Samsung…). Gli adattatori sono servizi con questa
+             azione: la forma generica vale per tutti i produttori. -->
+        <intent>
+            <action android:name="android.content.SyncAdapter"/>
+        </intent>
     </queries>
 </manifest>

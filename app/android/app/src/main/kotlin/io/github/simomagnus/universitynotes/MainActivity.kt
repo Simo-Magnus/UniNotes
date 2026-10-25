@@ -27,7 +27,8 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  * Quinto canale: notifica della registrazione con i pulsanti sempre
  * visibili (RecordingNotification.kt): `show`; verso Flutter, `command`.
  *
- * Sesto canale: prove nel calendario del telefono (UniNotesCalendar.kt).
+ * Sesto canale: prove nel calendario del telefono (UniNotesCalendar.kt),
+ * con la conferma dell'account del calendario (onActivityResult).
  *
  * Settimo canale: sincronizzazione con OneDrive e Google Drive in background
  * (BackgroundSync.kt, JobScheduler del sistema).
@@ -59,6 +60,25 @@ class MainActivity : FlutterActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         calendar?.onPermissionResult(requestCode)
+    }
+
+    /** Attività in primo piano (conferma dell'account del calendario). */
+    private var inForeground = false
+
+    override fun onResume() {
+        super.onResume()
+        inForeground = true
+    }
+
+    override fun onPause() {
+        inForeground = false
+        super.onPause()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        // conferma dell'account del calendario (UniNotesCalendar.confirmAccount)
+        calendar?.onActivityResult(requestCode)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -144,7 +164,7 @@ class MainActivity : FlutterActivity() {
             RecordingNotification.onCommand = command
         }
         // Prove nel calendario del telefono (vedi UniNotesCalendar.kt).
-        val cal = UniNotesCalendar(applicationContext)
+        val cal = UniNotesCalendar(applicationContext) { inForeground }
         calendar = cal
         calendarChannel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
@@ -230,7 +250,8 @@ class MainActivity : FlutterActivity() {
         liveSpeech = null
         calendarChannel?.setMethodCallHandler(null)
         calendarChannel = null
-        // richiesta del permesso ancora aperta: una risposta a Dart
+        // richiesta del permesso o conferma dell'account ancora aperta: una
+        // risposta a Dart
         calendar?.dispose()
         calendar = null
         openWithChannel?.setMethodCallHandler(null)

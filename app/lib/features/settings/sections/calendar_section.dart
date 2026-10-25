@@ -24,8 +24,13 @@ class _CalendarData {
     required this.choices,
     required this.chosen,
     required this.exact,
+    this.accountNeeded = false,
   });
   final CalendarStatus status;
+
+  /// Android: l'account del calendario usato va confermato perché le prove
+  /// arrivino subito sul server.
+  final bool accountNeeded;
   final bool ics;
 
   /// Windows: l'ateneo ha bloccato l'account universitario (consenso
@@ -95,10 +100,14 @@ class _CalendarSectionState extends State<CalendarSection> {
     final outlook = _s.reminders.outlook;
     final status = await _s.reminders.calendar.status();
     var choices = const <CalendarChoice>[];
+    var accountNeeded = false;
     if (status.enabled) {
       try {
         choices = await _s.reminders.calendarChoices();
       } catch (_) {}
+      if (status.working && status.writtenBy == null) {
+        accountNeeded = await _s.reminders.calendarAccountNeeded();
+      }
     }
     return _CalendarData(
       status: status,
@@ -110,7 +119,24 @@ class _CalendarSectionState extends State<CalendarSection> {
       choices: choices,
       chosen: await _s.reminders.calendar.chosen(),
       exact: await _s.reminders.exactAlarmsAllowed(),
+      accountNeeded: accountNeeded,
     );
+  }
+
+  /// «Conferma account per il caricamento immediato»: finestra del sistema
+  /// anche se la conferma era stata annullata.
+  Future<void> _confirmAccount() async {
+    final ok = await _s.reminders.confirmCalendarAccount(force: true);
+    if (!mounted) return;
+    if (ok == true) {
+      showSnack(
+        context,
+        'Account confermato: le prove arrivano subito sul calendario online.',
+      );
+    } else if (ok == null) {
+      showSnack(context, 'Finestra di conferma non disponibile: riprova.');
+    }
+    _reload();
   }
 
   Future<void> _toggle(bool on) async {
@@ -293,6 +319,28 @@ class _CalendarSectionState extends State<CalendarSection> {
                       status: st,
                       thisDevice: _s.onedrive.deviceName,
                     ),
+                    if (d.accountNeeded) ...[
+                      const SizedBox(height: 8),
+                      Text(
+                        'Le prove nuove arrivano sul calendario online dopo '
+                        'qualche minuto (intanto Google Calendar può mostrare '
+                        '«Sync error»). Conferma una volta l\'account del '
+                        'calendario e arrivano subito.',
+                        style: muted,
+                      ),
+                      ActionWrap(
+                        children: [
+                          AsyncActionButton(
+                            key: const Key('calendar-confirm-account'),
+                            label:
+                                'Conferma account per il caricamento immediato',
+                            icon: Icons.verified_user_outlined,
+                            errorTitle: 'Account non confermato',
+                            onPressed: _confirmAccount,
+                          ),
+                        ],
+                      ),
+                    ],
                     if (d.choices.isNotEmpty && st.writtenBy == null) ...[
                       const SizedBox(height: 8),
                       _CalendarPicker(

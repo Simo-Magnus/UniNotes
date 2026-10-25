@@ -2,6 +2,7 @@ package io.github.simomagnus.universitynotes
 
 import android.Manifest
 import android.accounts.Account
+import android.accounts.AccountManager
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.ContentUris
@@ -28,18 +29,37 @@ import java.util.TimeZone
  * - `write` {calendarId, eventId?, title, notes, location?, startMs, endMs,
  *   allDay, alarms} → id (promemoria METHOD_ALERT);
  * - `delete` {eventId}; `deleteCalendarIfEmpty` {calendarId, name}: solo il
- *   calendario locale dell'app, vuoto.
+ *   calendario locale dell'app, vuoto;
+ * - `accountAccess` {account, accountType} → {needed}: l'account del
+ *   calendario va confermato perché la richiesta di sincronizzazione arrivi
+ *   al sistema (vedi [accountNeeded]);
+ * - `confirmAccount` {account, accountType, calendarId, description} →
+ *   true (l'app ora vede l'account), false (annullata) o null (finestra non
+ *   aperta: app non in primo piano o sistema senza la finestra).
  * Le chiamate girano su un thread a parte (il Calendar Provider può essere
  * lento), le risposte tornano sul thread principale.
+ *
+ * [foreground]: l'attività è in primo piano (da dietro Android non apre la
+ * finestra di scelta dell'account e la risposta non arriverebbe).
  */
-class UniNotesCalendar(private val context: Context) {
+class UniNotesCalendar(
+    private val context: Context,
+    private val foreground: () -> Boolean = { true },
+) {
     companion object {
         const val CHANNEL = "io.github.simomagnus.universitynotes/calendario"
         const val REQUEST_CODE = 4711
+        const val ACCOUNT_REQUEST_CODE = 4712
         private const val MARKER = "Rif. UniNotes: "
     }
 
     private var pendingRequest: MethodChannel.Result? = null
+
+    /** Conferma dell'account aperta (una sola risposta, vedi dispose). */
+    private var pendingAccount: MethodChannel.Result? = null
+    private var pendingAccountName = ""
+    private var pendingAccountType = ""
+    private var pendingCalendarId: Long? = null
 
     private fun granted(): Boolean =
         context.checkSelfPermission(Manifest.permission.READ_CALENDAR) ==
@@ -68,6 +88,19 @@ class UniNotesCalendar(private val context: Context) {
                     arrayOf(Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR),
                     REQUEST_CODE,
                 )
+                return
+            }
+            // visibilità dell'account: non serve il permesso del calendario
+            "accountAccess" -> {
+                val needed = accountNeeded(
+                    call.argument<String>("account") ?: "",
+                    call.argument<String>("accountType") ?: "",
+                )
+                result.success(mapOf("needed" to needed))
+                return
+            }
+            "confirmAccount" -> {
+                confirmAccount(activity, call, result)
                 return
             }
         }
@@ -126,6 +159,15 @@ class UniNotesCalendar(private val context: Context) {
      * attuale.
      */
     fun dispose() {
+        val account = pendingAccount
+        pendingAccount = null
+        if (account != null) {
+            try {
+                account.success(!accountNeeded(pendingAccountName, pendingAccountType))
+            } catch (e: Exception) {
+                // motore già chiuso
+            }
+        }
         val pending = pendingRequest ?: return
         pendingRequest = null
         try {
@@ -133,6 +175,101 @@ class UniNotesCalendar(private val context: Context) {
         } catch (e: Exception) {
             // motore già chiuso
         }
+    }
+
+    /**
+     * L'account [name] del calendario va confermato dall'utente. Da Android
+     * 13 ContentService.requestSync scarta in silenzio la richiesta di
+     * un'app che non «vede» l'account (visibilità degli account di
+     * AccountManager: un'app senza GET_ACCOUNTS non vede gli account Google):
+     * l'evento arrivava sul server solo con il caricamento del fornitore del
+     * calendario (da 20 secondi a 2 minuti, Pixel 9a, 25/10/2026) e Google
+     * Calendar intanto mostrava «Sync error». getAccountsByType restituisce
+     * solo gli account visibili all'app. Fino ad Android 12 il controllo non
+     * c'è e requestSync funziona anche senza: nessuna conferma.
+     */
+    private fun accountNeeded(name: String, type: String): Boolean {
+        if (android.os.Build.VERSION.SDK_INT < 33) return false
+        if (name.isBlank() || type.isBlank() || type == CalendarContract.ACCOUNT_TYPE_LOCAL) {
+            return false
+        }
+        return try {
+            AccountManager.get(context).getAccountsByType(type).none { it.name == name }
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    /**
+     * Finestra del sistema per confermare l'account del calendario
+     * (AccountManager.newChooseAccountIntent, solo quell'account,
+     * preselezionato): scelto l'account, Android lo rende visibile all'app
+     * per sempre (VISIBILITY_USER_MANAGED_VISIBLE) e requestSync arriva al
+     * sistema. Nessun dato dell'account viene letto oltre a quelli che il
+     * calendario ha già (nome e tipo).
+     */
+    private fun confirmAccount(activity: Activity?, call: MethodCall, result: MethodChannel.Result) {
+        val name = call.argument<String>("account") ?: ""
+        val type = call.argument<String>("accountType") ?: ""
+        if (!accountNeeded(name, type)) {
+            result.success(true)
+            return
+        }
+        // da dietro Android non apre la finestra (avvio di attività in
+        // background) e onActivityResult potrebbe non arrivare mai
+        if (activity == null || activity.isFinishing || !foreground()) {
+            result.success(null)
+            return
+        }
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            val text = call.argument<String>("description")?.takeIf { it.isNotBlank() }
+                ?: "Conferma l'account del calendario: così UniNotes carica subito le prove che aggiungi."
+            val account = Account(name, type)
+            val intent = AccountManager.newChooseAccountIntent(
+                account,
+                listOf(account),
+                arrayOf(type),
+                text,
+                null,
+                null,
+                null,
+            )
+            // una sola conferma aperta: quella di prima risponde «non aperta»
+            pendingAccount?.success(null)
+            pendingAccount = result
+            pendingAccountName = name
+            pendingAccountType = type
+            pendingCalendarId = call.argument<String>("calendarId")?.toLongOrNull()
+            try {
+                activity.startActivityForResult(intent, ACCOUNT_REQUEST_CODE)
+            } catch (e: Exception) {
+                // finestra del sistema assente (sistemi modificati)
+                if (pendingAccount === result) {
+                    pendingAccount = null
+                    result.success(null)
+                }
+            }
+        } else {
+            result.success(null)
+        }
+    }
+
+    /**
+     * Esito della conferma dell'account (da MainActivity.onActivityResult):
+     * conta se ora l'app vede l'account, non il codice della finestra. Con
+     * l'account confermato si caricano subito le prove già scritte.
+     */
+    fun onActivityResult(requestCode: Int): Boolean {
+        if (requestCode != ACCOUNT_REQUEST_CODE) return false
+        val pending = pendingAccount ?: return true
+        pendingAccount = null
+        val ok = !accountNeeded(pendingAccountName, pendingAccountType)
+        pending.success(ok)
+        val calendarId = pendingCalendarId
+        if (ok && calendarId != null && granted()) {
+            Thread { requestUpload(calendarId) }.start()
+        }
+        return true
     }
 
     private class NotFound : Exception()
@@ -305,6 +442,11 @@ class UniNotesCalendar(private val context: Context) {
      * da sola o a mano, e Google Calendar nel frattempo mostra «Sync error».
      * Rispetta la sincronizzazione automatica dell'utente (niente
      * SYNC_EXTRAS_MANUAL); i calendari locali non hanno un server.
+     * Arriva al sistema solo se l'app vede l'account ([accountNeeded], la
+     * conferma la chiede l'app) e il pacchetto dell'adattatore (queries del
+     * manifest). Senza account visibile la chiamata si fa lo stesso: costa
+     * poco, fino ad Android 12 funziona comunque e da Android 13 il sistema
+     * la scarta senza errori.
      */
     private fun requestUpload(calendarId: Long) {
         try {

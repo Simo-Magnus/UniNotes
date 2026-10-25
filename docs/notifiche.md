@@ -127,6 +127,49 @@ account e colore; senza scelta il predefinito):
   eventi si spostano nel calendario scelto e il calendario si elimina (come
   sync adapter, solo se è dell'app e vuoto). Il pacchetto `device_calendar`
   non si usa più (si può togliere dal `pubspec.yaml`).
+
+  **Caricamento immediato e conferma dell'account (25/10/2026).** Dopo ogni
+  scrittura o eliminazione `requestUpload` chiede una sincronizzazione
+  urgente dell'account del calendario (`ContentResolver.requestSync`). Sul
+  Pixel 9a (Android 17) la richiesta non arrivava mai a SyncManager (nessuna
+  voce con l'uid dell'app in `adb shell dumpsys content`): `ContentService`
+  la scarta in silenzio se l'app non vede l'account (`hasAccountAccess`, da
+  Android 13 per le app che puntano ad Android 13+) o il pacchetto
+  dell'adattatore di sincronizzazione (`hasAuthorityAccess`, da Android 14).
+  Gli eventi arrivavano su Google solo con il caricamento del fornitore del
+  calendario (da 20 secondi a 2 minuti) e intanto Google Calendar mostrava
+  «Sync error». Correzione:
+  - manifest: `<queries>` con l'azione `android.content.SyncAdapter`
+    (servizi degli adattatori di tutti i produttori: Google, Samsung…);
+  - account: un'app senza `GET_ACCOUNTS` non vede gli account Google. Il
+    canale ha `accountAccess` {account, accountType} → {needed}
+    (`AccountManager.getAccountsByType` restituisce solo gli account visibili
+    all'app; sempre false fino ad Android 12, dove il controllo non c'è, e
+    per i calendari locali) e `confirmAccount` → true/false/null, che apre la
+    finestra del sistema `AccountManager.newChooseAccountIntent` con solo
+    l'account del calendario, preselezionato, e un testo dell'app («Conferma
+    l'account del calendario: così UniNotes carica subito su Google Calendar
+    le prove che aggiungi.»). Scelto l'account, Android lo rende visibile
+    all'app per sempre (`VISIBILITY_USER_MANAGED_VISIBLE`) e l'app carica
+    subito le prove già scritte. Una risposta sola anche con l'attività
+    chiusa (`dispose()`), null se l'app non è in primo piano (la finestra non
+    si aprirebbe).
+  - Quando si chiede (`RemindersService.confirmCalendarAccount`): subito dopo
+    l'attivazione del calendario o la scelta di un altro calendario e, per
+    chi l'aveva attivato prima di questa versione, alla prima
+    sincronizzazione che scrive o toglie eventi con l'app in primo piano (mai
+    durante una registrazione o una sessione Focus): la via meno invasiva,
+    perché la finestra compare proprio quando lo studente ha appena
+    cambiato una prova, non all'avvio. Nessun dialogo dell'app in più: il
+    testo è nella finestra del sistema. Annullata, l'account finisce in
+    `dont_ask_calendar_account` e l'app non la ripropone da sola; in
+    Impostazioni → Calendario resta la riga «Conferma account per il
+    caricamento immediato» (finché l'account non è confermato) e «Ripristina
+    le domande» azzera la scelta. Niente conferma se il calendario lo
+    aggiorna un altro dispositivo.
+  - `requestUpload` resta com'è e si chiama anche senza account visibile:
+    costa poco, fino ad Android 12 funziona comunque e da Android 13 il
+    sistema la scarta senza errori.
 - **iOS e macOS**: EventKit con codice nativo (`UniNotesCalendar` in
   `ios/Runner/AppDelegate.swift` e `macos/Runner/MainFlutterWindow.swift`,
   stesso canale, lato Dart `apple_calendar_backend.dart`): il calendario

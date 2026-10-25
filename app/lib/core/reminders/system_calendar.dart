@@ -50,6 +50,27 @@ class CalendarKeys {
   /// Nome del dispositivo che aggiorna il calendario al posto di questo
   /// (null = scrive questo dispositivo).
   static const writtenBy = 'syscal_written_by';
+
+  /// Account del calendario per cui la conferma dell'account (Android, vedi
+  /// [AccountConfirmation]) è già stata proposta e non data: JSON
+  /// ["tipo:nome", …]. L'app non la ripropone da sola; resta il pulsante in
+  /// Impostazioni → Calendario e «Ripristina le domande» la azzera
+  /// (prefisso `dont_ask_`).
+  static const accountDeclined = 'dont_ask_calendar_account';
+}
+
+/// Calendario il cui account va confermato dall'utente perché il sistema
+/// carichi subito sul server le prove scritte (Android 13+: senza la
+/// visibilità dell'account la richiesta di sincronizzazione dell'app viene
+/// scartata e gli eventi arrivano su Google dopo qualche minuto).
+abstract interface class AccountConfirmation {
+  /// L'account del calendario [c] non è ancora confermato.
+  Future<bool> accountAccessNeeded(CalendarChoice c);
+
+  /// Finestra del sistema per confermare l'account: true se ora l'app lo
+  /// vede, false se l'utente ha annullato, null se la finestra non si è
+  /// aperta (app non in primo piano, sistema senza la finestra).
+  Future<bool?> confirmAccount(CalendarChoice c);
 }
 
 /// Nome del calendario dedicato creato dalle versioni precedenti dell'app:
@@ -322,6 +343,10 @@ class SystemCalendarSync {
 
   bool get supported => backend != null;
 
+  /// Eventi scritti o tolti dall'ultima sincronizzazione (0 = calendario già
+  /// allineato).
+  int changes = 0;
+
   Future<bool> enabled() async =>
       supported && await _settings.get(CalendarKeys.enabled) == '1';
 
@@ -518,6 +543,7 @@ class SystemCalendarSync {
     DateTime? now,
   }) async {
     final b = backend;
+    changes = 0;
     if (b == null || !await enabled()) return CalendarStatus.off;
     final t = now ?? DateTime.now();
     final failures = <String>[];
@@ -605,6 +631,7 @@ class SystemCalendarSync {
         try {
           for (final dup in ids.where((x) => x != keep)) {
             await b.delete(target.id, dup);
+            changes++;
           }
           if (keep != null && prev?.id == keep && prev?.sig == sig) {
             next[item.key] = (id: keep, sig: sig);
@@ -620,6 +647,7 @@ class SystemCalendarSync {
             // evento tolto a mano nel frattempo: si ricrea
             id = await b.write(target.id, item, reminders);
           }
+          changes++;
           next[item.key] = (id: id, sig: sig);
         } on CalendarAccessException {
           rethrow;
@@ -632,6 +660,7 @@ class SystemCalendarSync {
         for (final id in e.value) {
           try {
             await b.delete(target.id, id);
+            changes++;
           } on CalendarAccessException {
             rethrow;
           } catch (err) {

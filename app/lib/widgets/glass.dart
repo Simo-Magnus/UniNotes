@@ -285,25 +285,40 @@ class ProgressRing extends StatelessWidget {
           track: t.textPrimary.withValues(alpha: 0.09),
           colors: [const Color(0xFF0EA5E9), t.cyanBright],
         ),
+        // Il testo sta in un riquadro dentro il bordo interno dell'anello
+        // (raggio interno = 39,5/104 della misura): le sue diagonali restano
+        // dentro il cerchio con un po' di margine. Se è più largo («100%»,
+        // «150%», «1000%», caratteri grandi) si rimpicciolisce, non esce.
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (icon != null) Icon(icon, size: 14, color: t.cyanSoft),
-              Text(
-                label,
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w700,
-                  color: t.textPrimary,
-                ),
+          child: SizedBox(
+            width: size * 0.56,
+            height: size * 0.46,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (icon != null) Icon(icon, size: 14, color: t.cyanSoft),
+                  Text(
+                    label,
+                    maxLines: 1,
+                    softWrap: false,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                      color: t.textPrimary,
+                    ),
+                  ),
+                  if (caption != null)
+                    Text(
+                      caption!,
+                      maxLines: 1,
+                      softWrap: false,
+                      style: TextStyle(fontSize: 11, color: t.textMuted),
+                    ),
+                ],
               ),
-              if (caption != null)
-                Text(
-                  caption!,
-                  style: TextStyle(fontSize: 11, color: t.textMuted),
-                ),
-            ],
+            ),
           ),
         ),
       ),

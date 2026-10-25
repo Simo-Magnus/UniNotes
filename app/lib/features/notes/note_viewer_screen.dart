@@ -68,49 +68,106 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
       readTextLenient(widget.note.file).then(stripTranscriptTimes);
   final _view = GlobalKey<SearchableMarkdownViewState>();
 
+  Future<void> _edit() async {
+    await openNoteEditor(context, widget.course, note: widget.note);
+    // il blocco non deve restituire il Future (setState lo rifiuta)
+    if (mounted) {
+      setState(() {
+        _text = _read();
+      });
+    }
+  }
+
+  /// Le azioni della barra, in ordine di importanza: le prime restano
+  /// sempre a vista, le altre vanno nel menu «⋯» quando il titolo non ci sta
+  /// (telefono stretto, caratteri grandi): il titolo deve leggersi intero.
+  List<({IconData icon, String label, VoidCallback onTap})> _actions() => [
+    (
+      icon: Icons.search,
+      label: 'Trova nel testo (Ctrl+F)',
+      onTap: () => _view.currentState?.openFind(),
+    ),
+    (icon: Icons.edit_outlined, label: 'Modifica', onTap: _edit),
+    // una risposta dell'AI non si rimanda all'AI
+    if (widget.note.folder != NoteFolder.ai)
+      (
+        icon: Icons.open_in_new,
+        label: 'Apri nell\'AI di riferimento',
+        onTap: () => openNoteInAi(context, widget.course, widget.note),
+      ),
+    (
+      icon: Icons.picture_as_pdf_outlined,
+      label: 'Esporta PDF',
+      onTap: () =>
+          exportPdf(context, widget.note, subtitle: widget.course.name),
+    ),
+    (
+      icon: Icons.ios_share,
+      label: 'Condividi',
+      onTap: () => shareNote(context, widget.note),
+    ),
+  ];
+
+  /// Quante azioni restano a vista: tutte se il titolo ci sta con tutte le
+  /// icone; altrimenti 2 (cerca, modifica) più «⋯», poi 1, poi solo «⋯».
+  int _visibleActions(BuildContext context, int total) {
+    final width = MediaQuery.sizeOf(context).width;
+    final style =
+        Theme.of(context).appBarTheme.titleTextStyle ??
+        Theme.of(context).textTheme.titleLarge;
+    final p = TextPainter(
+      text: TextSpan(text: widget.note.title, style: style),
+      textDirection: Directionality.of(context),
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    final titleWidth = p.width;
+    p.dispose();
+    // indietro (56) + distanza dal titolo (16) + un po' di margine
+    final room = width - 56 - 16 - 8;
+    bool fits(int visible, bool menu) =>
+        titleWidth <= room - 48.0 * (visible + (menu ? 1 : 0));
+    if (fits(total, false)) return total;
+    for (final v in [2, 1]) {
+      if (v < total && fits(v, true)) return v;
+    }
+    return 0;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final all = _actions();
+    final visible = _visibleActions(context, all.length);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.note.title, overflow: TextOverflow.ellipsis),
         actions: [
-          IconButton(
-            tooltip: 'Trova nel testo (Ctrl+F)',
-            icon: const Icon(Icons.search),
-            onPressed: () => _view.currentState?.openFind(),
-          ),
-          IconButton(
-            tooltip: 'Modifica',
-            icon: const Icon(Icons.edit_outlined),
-            onPressed: () async {
-              await openNoteEditor(context, widget.course, note: widget.note);
-              // il blocco non deve restituire il Future (setState lo rifiuta)
-              if (mounted) {
-                setState(() {
-                  _text = _read();
-                });
-              }
-            },
-          ),
-          // una risposta dell'AI non si rimanda all'AI
-          if (widget.note.folder != NoteFolder.ai)
+          for (final a in all.take(visible))
             IconButton(
-              tooltip: 'Apri nell\'AI di riferimento',
-              icon: const Icon(Icons.open_in_new),
-              onPressed: () =>
-                  openNoteInAi(context, widget.course, widget.note),
+              tooltip: a.label,
+              icon: Icon(a.icon),
+              onPressed: a.onTap,
             ),
-          IconButton(
-            tooltip: 'Esporta PDF',
-            icon: const Icon(Icons.picture_as_pdf_outlined),
-            onPressed: () =>
-                exportPdf(context, widget.note, subtitle: widget.course.name),
-          ),
-          IconButton(
-            tooltip: 'Condividi',
-            icon: const Icon(Icons.ios_share),
-            onPressed: () => shareNote(context, widget.note),
-          ),
+          if (visible < all.length)
+            PopupMenuButton<int>(
+              key: const Key('note-more'),
+              tooltip: 'Altre azioni',
+              icon: const Icon(Icons.more_horiz),
+              onSelected: (i) => all[i].onTap(),
+              itemBuilder: (_) => [
+                for (var i = visible; i < all.length; i++)
+                  PopupMenuItem<int>(
+                    value: i,
+                    child: Row(
+                      children: [
+                        Icon(all[i].icon, size: 20),
+                        const SizedBox(width: 12),
+                        Flexible(child: Text(all[i].label)),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
         ],
       ),
       body: FutureBuilder<String>(

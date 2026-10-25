@@ -357,21 +357,98 @@ class GlassNavBar extends StatelessWidget {
           boxShadow: t.floatShadows,
         ),
         padding: const EdgeInsets.all(5),
-        child: Row(
-          children: [
-            for (var i = 0; i < items.length; i++)
-              Expanded(
-                child: _NavItem(
-                  item: items[i],
-                  active: i == selectedIndex,
-                  onTap: () => onSelected(i),
-                ),
-              ),
-          ],
+        child: LayoutBuilder(
+          builder: (context, c) {
+            final widths = navItemWidths(context, items, c.maxWidth);
+            return Row(
+              children: [
+                for (var i = 0; i < items.length; i++)
+                  SizedBox(
+                    width: widths[i],
+                    child: _NavItem(
+                      item: items[i],
+                      active: i == selectedIndex,
+                      onTap: () => onSelected(i),
+                    ),
+                  ),
+              ],
+            );
+          },
         ),
       ),
     );
   }
+}
+
+/// Stile dell'etichetta di una voce della barra.
+TextStyle _navLabelStyle(BuildContext context, bool active, Color color) =>
+    DefaultTextStyle.of(context).style.merge(
+      TextStyle(
+        fontSize: 11,
+        fontWeight: active ? FontWeight.w600 : FontWeight.w500,
+        color: color,
+      ),
+    );
+
+/// Scala dei caratteri delle etichette: barra alta 58, le voci crescono
+/// fino a 1,3× con i caratteri grandi.
+TextScaler _navScaler(BuildContext context) =>
+    MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.3);
+
+/// Larghezze delle voci della barra: uguali finché ogni etichetta ci sta
+/// intera; se una è più lunga della sua parte («Impostazioni», «Collegamenti»
+/// sul telefono) prende il posto che le serve e le altre si dividono il
+/// resto. Se nemmeno così ci stanno tutte, le larghezze seguono la lunghezza
+/// delle etichette e il testo si rimpicciolisce (FittedBox) invece di
+/// troncarsi con i puntini.
+List<double> navItemWidths(
+  BuildContext context,
+  List<({IconData icon, IconData selectedIcon, String label})> items,
+  double total,
+) {
+  final n = items.length;
+  if (n == 0 || !total.isFinite || total <= 0) {
+    return List<double>.filled(n, 0);
+  }
+  final scaler = _navScaler(context);
+  final dir = Directionality.of(context);
+  // margine interno di ogni voce (4 + 4) e peso massimo (la voce attiva)
+  const pad = 8.0;
+  final need = <double>[
+    for (final it in items)
+      () {
+        final p = TextPainter(
+          text: TextSpan(
+            text: it.label,
+            style: _navLabelStyle(context, true, Colors.black),
+          ),
+          textDirection: dir,
+          textScaler: scaler,
+          maxLines: 1,
+        )..layout();
+        final w = p.width + pad;
+        p.dispose();
+        return w;
+      }(),
+  ];
+  final base = total / n;
+  if (need.every((w) => w <= base)) return List<double>.filled(n, base);
+  // le voci troppo lunghe prendono quanto serve, le altre dividono il resto
+  final long = [for (var i = 0; i < n; i++) if (need[i] > base) i];
+  final longSum = long.fold<double>(0, (a, i) => a + need[i]);
+  final others = n - long.length;
+  if (others > 0) {
+    final rest = (total - longSum) / others;
+    final maxOther = [
+      for (var i = 0; i < n; i++)
+        if (need[i] <= base) need[i],
+    ].fold<double>(0, (a, b) => b > a ? b : a);
+    if (rest >= maxOther) {
+      return [for (var i = 0; i < n; i++) need[i] > base ? need[i] : rest];
+    }
+  }
+  final sum = need.fold<double>(0, (a, b) => a + b);
+  return [for (final w in need) w * total / sum];
 }
 
 class _NavItem extends StatelessWidget {
@@ -436,18 +513,20 @@ class _NavItem extends StatelessWidget {
                     : null,
               ),
               const SizedBox(height: 2),
-              Text(
-                item.label,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                // barra alta 58 (Design 3): con i caratteri grandi le voci
-                // crescono fino a 1,3×; il nome intero resta nella semantica
-                textScaler: MediaQuery.textScalerOf(context)
-                    .clamp(maxScaleFactor: 1.3),
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: active ? FontWeight.w600 : FontWeight.w500,
-                  color: color,
+              // il nome si legge sempre intero: la voce è larga quanto serve
+              // (navItemWidths); se non c'è posto per tutti il testo si
+              // rimpicciolisce, mai puntini
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    item.label,
+                    maxLines: 1,
+                    softWrap: false,
+                    textScaler: _navScaler(context),
+                    style: _navLabelStyle(context, active, color),
+                  ),
                 ),
               ),
             ],

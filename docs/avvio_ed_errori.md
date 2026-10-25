@@ -758,6 +758,15 @@ riconoscitori lasciati aperti, lavoro pesante sul filo principale.
   `SyncRequest.Builder.build()` con combinazioni vietate
   (`SCHEDULE_AS_EXPEDITED_JOB` con `SYNC_EXTRAS_EXPEDITED`, con la ricarica o
   periodica), già dentro un `try`.
+- **Conferma dell'account del calendario (Android, 25/10/2026)**: la
+  finestra `newChooseAccountIntent` (vedi `docs/notifiche.md`, «Caricamento
+  immediato e conferma dell'account») risponde una volta sola: da
+  `onActivityResult` (esito letto dal sistema, non dal codice della
+  finestra), da `dispose()` con l'attività chiusa, subito con null se l'app
+  non è in primo piano o l'avvio della finestra fallisce; una seconda
+  richiesta fa rispondere la prima. Lato Dart una sola finestra alla volta
+  (`confirmCalendarAccount` restituisce quella in corso) e ogni errore del
+  canale vale «non aperta». Test: `test/crash_r6_calendario_account_test.dart`.
 
 **Test**: `test/crash_r6_nativo_test.dart` (`support` senza risposta, con
 `SystemSpeech` e con `LiveTranscriber`; controlli dei sorgenti Swift, Kotlin

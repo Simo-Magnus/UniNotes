@@ -286,6 +286,85 @@ void main() {
         expect(urgent.contains('REQUIRE_CHARGING'), isFalse);
       },
     );
+
+    test('requestSync arriva al sistema: adattatori di sincronizzazione '
+        'visibili (queries del manifest)', () {
+      final manifest = read('android/app/src/main/AndroidManifest.xml');
+      final queries = between(manifest, '<queries>', '</queries>');
+      expect(
+        queries,
+        contains('<action android:name="android.content.SyncAdapter"/>'),
+      );
+    });
+
+    test(
+      'conferma dell\'account del calendario: finestra del sistema solo '
+      'con quell\'account, una risposta sola anche con l\'attività chiusa',
+      () {
+        final cal = read('$kt/UniNotesCalendar.kt');
+        final confirm = between(
+          cal,
+          'private fun confirmAccount(',
+          'fun onActivityResult(',
+        );
+        expect(confirm, contains('AccountManager.newChooseAccountIntent('));
+        expect(confirm, contains('listOf(account)'));
+        expect(confirm, contains('arrayOf(type)'));
+        expect(
+          confirm,
+          contains('startActivityForResult(intent, ACCOUNT_REQUEST_CODE)'),
+        );
+        // API 26 e solo con l'app davanti (da dietro la finestra non si apre
+        // e la risposta non arriverebbe)
+        expect(confirm, contains('SDK_INT >= 26'));
+        expect(confirm, contains('!foreground()'));
+        // la richiesta di prima risponde prima di essere sostituita
+        expect(
+          confirm.indexOf('pendingAccount?.success(null)'),
+          lessThan(confirm.indexOf('pendingAccount = result')),
+        );
+        // avvio fallito: risposta subito
+        expect(confirm, contains('} catch (e: Exception) {'));
+
+        final result = between(
+          cal,
+          'fun onActivityResult(',
+          'private class NotFound',
+        );
+        expect(result, contains('pendingAccount = null'));
+        expect(result, contains('pending.success(ok)'));
+        final dispose = between(
+          cal,
+          'fun dispose() {',
+          'private fun accountNeeded',
+        );
+        expect(dispose, contains('pendingAccount = null'));
+        expect(dispose, contains('account.success('));
+
+        // controllo solo da Android 13 (prima requestSync funziona senza)
+        final needed = between(
+          cal,
+          'private fun accountNeeded(',
+          'private fun confirmAccount(',
+        );
+        expect(needed, contains('SDK_INT < 33'));
+        expect(needed, contains('getAccountsByType(type)'));
+        expect(needed, contains('ACCOUNT_TYPE_LOCAL'));
+
+        final main = read('$kt/MainActivity.kt');
+        final onResult = between(
+          main,
+          'override fun onActivityResult(',
+          'override fun onCreate(',
+        );
+        expect(onResult, contains('super.onActivityResult('));
+        expect(onResult, contains('calendar?.onActivityResult(requestCode)'));
+        expect(
+          main,
+          contains('UniNotesCalendar(applicationContext) { inForeground }'),
+        );
+      },
+    );
   });
 
   group('Windows: dettatura', () {

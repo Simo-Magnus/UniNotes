@@ -6,6 +6,7 @@ import '../../core/theme/app_theme.dart';
 import '../../models/exam.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/tab_fit.dart';
 import 'averages_tab.dart';
 import 'exam_detail.dart';
 import 'exam_form.dart';
@@ -83,11 +84,19 @@ class _ExamsScreenState extends State<ExamsScreen>
   Widget build(BuildContext context) {
     final wide = context.isWide;
     final showDetail = wide && _tabs.index != 2;
+    final scrollTabs = tabsNeedScroll(context, const [
+      'Da sostenere',
+      'Sostenuti',
+      'Medie',
+    ], MediaQuery.sizeOf(context).width);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Esami'),
         bottom: TabBar(
           controller: _tabs,
+          // le scritte restano intere: con poco spazio le schede scorrono
+          isScrollable: scrollTabs,
+          tabAlignment: scrollTabs ? TabAlignment.start : null,
           tabs: const [
             Tab(text: 'Da sostenere', icon: Icon(Icons.event_note_outlined)),
             Tab(

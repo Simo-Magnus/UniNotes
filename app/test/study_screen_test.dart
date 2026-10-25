@@ -77,6 +77,8 @@ Future<void> _run(WidgetTester tester, Size size) async {
   );
   expect(find.text('1 h'), findsWidgets);
 
+  // con le schede che scorrono (scritte larghe) l'ultima può stare fuori
+  await tester.ensureVisible(find.text('Statistiche'));
   await tester.tap(find.text('Statistiche'));
   await tester.pump();
   await tester.pump(const Duration(milliseconds: 400));
