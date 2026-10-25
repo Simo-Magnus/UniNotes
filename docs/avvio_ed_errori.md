@@ -961,6 +961,19 @@ contato a parte («errori noti di Flutter»). Non confermato come errore
 dell'app; se si ripresenta fuori dalla prova, il resoconto della prova ha già
 l'albero dei vincoli.
 
+**Spiegazione (25/10, sezioni persistenti)**: con le sezioni principali che
+restano vive nascoste (`SectionStack`, vedi `personalizzazione.md`) il caso
+si è ripresentato più spesso (Esami → Medie nascosta) e l'albero dei vincoli
+l'ha chiarito: la shell era coperta da un'altra pagina (registrazione aperta)
+quando la finestra è cambiata. L'`Overlay` non dispone le pagine coperte, che
+restano con le misure di prima ma si ricostruiscono con il `MediaQuery` nuovo;
+un pezzo che si ridispone da solo (elenco, scheda) usa allora i vincoli vecchi
+con i widget nuovi. Sono solo asserzioni di debug in una pagina che non si
+disegna: quando torna in cima si ridispone tutta con le misure giuste. La prova
+ora riconosce anche questo caso (`staleWindowConstraints`: la pagina sopra
+l'errore, figlia dell'`Overlay`, ha vincoli diversi dalla finestra) e lo conta
+fra gli errori noti.
+
 **Esito del giro finale** (dopo l'ultima correzione): per ogni scenario nuovo
 sei semi da 5000 azioni (Studio otto), finestre da 320×568 a 1920×1080, caratteri
 ×1, ×1,3 e ×2, tema chiaro e scuro, semi dispari con il lettore di schermo

@@ -6,6 +6,7 @@ import '../../core/feedback/app_modals.dart';
 import '../../core/services/external_launcher.dart';
 import '../../core/services/power.dart';
 import '../../widgets/common.dart';
+import '../../widgets/section_active.dart';
 import '../cloud/cloud_drive_service.dart';
 import '../study/study_widgets.dart' show promptText;
 import 'link_status.dart';
@@ -123,7 +124,8 @@ class CloudDriveCard extends StatefulWidget {
   State<CloudDriveCard> createState() => _CloudDriveCardState();
 }
 
-class _CloudDriveCardState extends State<CloudDriveCard> {
+class _CloudDriveCardState extends State<CloudDriveCard>
+    with SectionReturn<CloudDriveCard> {
   CloudDriveService get _sv => widget.service;
   late Future<_CloudState> _future = _load();
 
@@ -150,6 +152,13 @@ class _CloudDriveCardState extends State<CloudDriveCard> {
   void initState() {
     super.initState();
     _sv.addListener(_onService);
+  }
+
+  /// Ritorno in Collegamenti: stato, account e ultima sincronizzazione
+  /// riletti (la sezione resta viva nascosta).
+  @override
+  void onSectionReturn() {
+    _future = _load();
   }
 
   void _onService() {

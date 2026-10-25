@@ -67,7 +67,44 @@ oggi, settimana Focus), spunta con un piccolo rimbalzo nelle conferme
   fondo sotto si scurisce come prima, senza contenuti sovrapposti.
 - **Riquadri che si aprono** (`ExpansionTile`): la molla al posto di 200 ms che
   acceleravano verso la fine (`kIosExpansionAnimation` nel tema).
-- **Sezioni della barra in basso**: cambio immediato, come le schede di iOS.
+- **Sezioni principali** (barra in basso sul telefono, colonna di navigazione
+  su tablet e PC; `SectionStack` in `core/router/section_stack.dart`):
+  dissolvenza «fade through» di Material in 240 ms (curva easeOutCubic): la
+  sezione uscente sparisce nel primo terzo, poi la nuova compare con un
+  leggero ingrandimento (da 0,96 a 1). Le due non si vedono mai insieme, quindi
+  la sezione sotto non traspare attraverso quella nuova (fondo trasparente
+  sopra quello dell'app) e non c'è nessun lampo nel tema scuro.
+
+**Sezioni persistenti**: ogni sezione si costruisce la prima volta che si apre
+e poi resta viva nascosta (prima si ricostruiva da zero a ogni cambio, con il
+cerchio di caricamento). Tornandoci restano scheda interna, scorrimento,
+filtri e ricerca, e i dati si rileggono senza cerchio (`RevisionBuilder`
+mostra quelli di prima finché arrivano i nuovi; con la sezione nascosta un
+`revision.bump()` non ricarica niente, si rilegge al ritorno). Le sezioni
+nascoste non si disegnano, non ricevono tocchi, tasti né fuoco, il lettore
+dello schermo non le legge, le loro animazioni sono ferme (`TickerMode`), gli
+`Hero` spenti, e la sezione File nascosta non prende i file trascinati sulla
+finestra. `SectionActive` (in `widgets/section_active.dart`) dice ai widget se
+la loro sezione è visibile; il mixin `SectionReturn` rilegge al ritorno ciò
+che si leggeva a ogni apertura (stato di OneDrive, Google Drive e Whisper,
+permessi del calendario e delle notifiche). Dettagli:
+- dopo l'avvio (1,5 s, una alla volta) si preparano nascoste Registra, Studio
+  ed Esami: anche la prima apertura è senza attesa; le altre sezioni si
+  costruiscono alla prima apertura. Il cerchio di caricamento compare solo se
+  un caricamento dura più di 250 ms (`DelayedSpinner`);
+- corso, percorso o anno mostrato cambiati («Cambia corso», selettore
+  dell'anno, nuovo anno accademico): le sezioni nascoste si ricreano da zero
+  alla prossima apertura; con poca memoria (avviso del sistema) si buttano;
+- una richiesta di scheda di Studio (notifica Focus, «Avvia» nella Home) vale
+  anche con Studio già costruita (`StudyScreen.tabRequest`);
+- toccare la voce già attiva riporta la sezione in cima, come su iOS (anche il
+  tocco sulla barra di stato di iOS); ogni sezione ha il suo
+  `PrimaryScrollController`, quindi le liste delle sezioni nascoste non si
+  agganciano a quello della pagina;
+- passando dalla barra in basso alla colonna di navigazione (rotazione del
+  tablet, finestra ridimensionata) le sezioni restano le stesse.
+
+Test: `tab_switch_test.dart`.
 
 **Pagine opache durante le transizioni** (`PageBackdrop` in `motion.dart`): le
 schermate hanno lo Scaffold trasparente e le card sono di vetro traslucido.
@@ -85,8 +122,8 @@ creavano una curva nuova a ogni fotogramma (ascoltatori che si accumulavano),
 ora tolte. Il vetro non usa `BackdropFilter`. Le immagini del lettore sono già
 ridotte alla decodifica (`limitedImage`).
 
-**«Riduci animazioni»** (sistema o app): pagine, finestre, fogli e riquadri
-compaiono e scompaiono subito; durante un gesto «Indietro» la pagina segue
+**«Riduci animazioni»** (sistema o app): pagine, sezioni, finestre, fogli e
+riquadri compaiono e scompaiono subito; durante un gesto «Indietro» la pagina segue
 comunque il dito. Finché la route è in movimento la pagina resta opaca.
 Restano con le animazioni di Material i menu a tendina e i menu dei tre
 puntini (brevi).

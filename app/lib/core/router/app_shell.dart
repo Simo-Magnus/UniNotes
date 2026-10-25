@@ -25,6 +25,7 @@ import '../reminders/notification_plan.dart';
 import '../services/app_services.dart';
 import '../theme/app_theme.dart';
 import '../theme/app_tokens.dart';
+import 'section_stack.dart';
 
 class AppDestination {
   const AppDestination(this.label, this.icon, this.selectedIcon, this.builder);
@@ -106,22 +107,75 @@ class AppShell extends StatefulWidget {
     );
   }
 
+  /// Sezioni preparate nascoste dopo l'avvio (le altre della barra in basso,
+  /// vedi [SectionStack.prefetch]). Le prove possono spegnerlo.
+  @visibleForTesting
+  static bool prefetchSections = true;
+
   @override
   State<AppShell> createState() => _AppShellState();
 }
 
 class _AppShellState extends State<AppShell> {
   static const _mobilePrimary = 4; // Home, Registra, Studio, Esami
+
+  /// Preparate nascoste dopo l'avvio: le altre sezioni della barra in basso
+  /// (le più usate; le altre si costruiscono alla prima apertura).
+  static final List<int> _prefetch = [
+    for (var i = 1; i < _mobilePrimary; i++) i,
+  ];
   int _index = 0;
   late final AppServices _services = context.read<AppServices>();
 
-  void _select(int i) {
-    if (i >= 0) setState(() => _index = i);
+  /// La pila delle sezioni resta la stessa anche quando la finestra passa
+  /// dalla barra in basso alla colonna di navigazione (rotazione del tablet,
+  /// finestra ridimensionata): le sezioni non si ricostruiscono.
+  final _stack = GlobalKey<SectionStackState>();
+
+  /// Scorrimento principale di ogni sezione.
+  final List<ScrollController> _scrollers = [
+    for (var i = 0; i < kDestinations.length; i++) ScrollController(),
+  ];
+
+  /// Cambia quando cambiano corso, percorso o anno mostrato: le sezioni
+  /// nascoste si ricostruiscono da zero (filtri e scelte del corso di prima).
+  Object? _resetKey;
+
+  /// [user]: tocco sulla barra o sulla colonna; sulla voce già attiva riporta
+  /// la sezione in cima (come su iOS).
+  void _select(int i, {bool user = false}) {
+    if (i < 0) return;
+    if (i == _index) {
+      if (user) _stack.currentState?.scrollToTop();
+      return;
+    }
+    setState(() => _index = i);
+  }
+
+  Object _currentResetKey() {
+    final p = _services.profile.value;
+    return (
+      p?.universityId,
+      p?.degreeId,
+      p?.curriculum,
+      p?.currentYear,
+      p?.startYear,
+      p?.referenceAa.label,
+      _services.selectedYear.value,
+    );
+  }
+
+  void _onProfile() {
+    final k = _currentResetKey();
+    if (k != _resetKey && mounted) setState(() => _resetKey = k);
   }
 
   @override
   void initState() {
     super.initState();
+    _resetKey = _currentResetKey();
+    _services.profile.addListener(_onProfile);
+    _services.selectedYear.addListener(_onProfile);
     _services.openRoute.addListener(_openRequested);
     // richiesta arrivata prima della shell (app aperta da una notifica)
     WidgetsBinding.instance.addPostFrameCallback((_) => _openRequested());
@@ -130,6 +184,11 @@ class _AppShellState extends State<AppShell> {
   @override
   void dispose() {
     _services.openRoute.removeListener(_openRequested);
+    _services.profile.removeListener(_onProfile);
+    _services.selectedYear.removeListener(_onProfile);
+    for (final c in _scrollers) {
+      c.dispose();
+    }
     super.dispose();
   }
 
@@ -216,11 +275,28 @@ class _AppShellState extends State<AppShell> {
   }
 
   Widget _buildShell(BuildContext context) {
-    final body = KeyedSubtree(
-      key: ValueKey(_index),
-      child: kDestinations[_index].builder(context),
+    // sezioni persistenti con il passaggio animato (section_stack.dart): ogni
+    // sezione si costruisce alla prima apertura e poi resta viva nascosta,
+    // quindi tornandoci non riparte da zero (niente cerchio di caricamento)
+    final body = SectionStack(
+      key: _stack,
+      index: _index,
+      count: kDestinations.length,
+      builder: (context, i) => kDestinations[i].builder(context),
+      controllers: _scrollers,
+      resetKey: _resetKey,
+      prefetch: AppShell.prefetchSections ? _prefetch : const [],
     );
 
+    // tocco sulla barra di stato di iOS (lo gestisce lo Scaffold della
+    // shell): riporta in cima la sezione visibile
+    return PrimaryScrollController(
+      controller: _scrollers[_index],
+      child: _frame(context, body),
+    );
+  }
+
+  Widget _frame(BuildContext context, Widget body) {
     if (context.isWide) {
       final t = context.tokens;
       return Scaffold(
@@ -241,6 +317,9 @@ class _AppShellState extends State<AppShell> {
                 // schermo (la rail non scorre da sola)
                 child: LayoutBuilder(
                   builder: (context, constraints) => SingleChildScrollView(
+                    // non è la lista della sezione: fuori dallo scorrimento
+                    // principale (barra di stato, «torna in cima»)
+                    primary: false,
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                         minHeight: constraints.maxHeight,
@@ -248,7 +327,7 @@ class _AppShellState extends State<AppShell> {
                       child: IntrinsicHeight(
                         child: NavigationRail(
                           selectedIndex: _index,
-                          onDestinationSelected: _select,
+                          onDestinationSelected: (i) => _select(i, user: true),
                           labelType: NavigationRailLabelType.all,
                           minWidth: 84,
                           destinations: [
@@ -280,7 +359,7 @@ class _AppShellState extends State<AppShell> {
         selectedIndex: inMore ? _mobilePrimary : _index,
         onSelected: (i) {
           if (i < _mobilePrimary) {
-            _select(i);
+            _select(i, user: true);
           } else {
             _openMore();
           }
@@ -321,7 +400,7 @@ class _AppShellState extends State<AppShell> {
         ),
       ),
     );
-    if (i != null) _select(i);
+    if (i != null) _select(i, user: true);
   }
 }
 

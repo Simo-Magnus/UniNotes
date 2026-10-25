@@ -1364,17 +1364,39 @@ String constraintsChain(FlutterErrorDetails d) {
 /// si riproduce con un ridimensionamento isolato) e produce falsi errori
 /// («Trailing widget consumes…», overflow di una pagina schiacciata).
 bool staleWindowConstraints(FlutterErrorDetails d, Size window) {
+  bool stale(BoxConstraints c) =>
+      c.hasTightWidth &&
+      c.hasTightHeight &&
+      ((c.maxWidth - window.width).abs() > 1 ||
+          (c.maxHeight - window.height).abs() > 1);
   try {
     final root = RendererBinding.instance.renderViews.first.child;
-    if (root is! RenderBox) return false;
-    final c = root.constraints;
-    return c.hasTightWidth &&
-        c.hasTightHeight &&
-        ((c.maxWidth - window.width).abs() > 1 ||
-            (c.maxHeight - window.height).abs() > 1);
-  } catch (_) {
-    return false;
-  }
+    if (root is RenderBox && stale(root.constraints)) return true;
+  } catch (_) {}
+  // Pagina coperta da un'altra (l'Overlay non dispone le pagine sotto): dopo
+  // un ridimensionamento resta con le misure della finestra di prima, ma si
+  // ricostruisce con quelle nuove; un pezzo che si ridispone da solo (un
+  // elenco, una sezione nascosta della shell che resta viva) usa i vincoli
+  // vecchi con i widget nuovi (colonna di navigazione larga in 320 px). Solo
+  // asserzioni di debug in una pagina che non si disegna: alla prima
+  // apparizione si ridispone tutta con le misure giuste.
+  try {
+    Element? element;
+    for (final n in d.informationCollector?.call() ?? <DiagnosticsNode>[]) {
+      final Object? v = n.value;
+      if (v is DebugCreator) element = v.element;
+    }
+    RenderObject? ro = element?.renderObject;
+    RenderObject? below;
+    for (var i = 0; ro != null && i < 400; i++) {
+      if (ro.runtimeType.toString() == '_RenderTheater') {
+        return below is RenderBox && stale(below.constraints);
+      }
+      below = ro;
+      ro = ro.parent;
+    }
+  } catch (_) {}
+  return false;
 }
 
 /// Misura della colonna di navigazione (se c'è) e scala dei caratteri che
@@ -1987,8 +2009,12 @@ Future<void> runMonkey(
   final previous = FlutterError.onError;
   FlutterError.onError = (d) {
     final text = d.exceptionAsString();
+    // («hasSize»: la stessa riga che ha già dato «Trailing widget consumes…»
+    // nel fotogramma con i vincoli vecchi resta senza misura e lo dicono anche
+    // gli oggetti sopra)
     if ((text.contains('overflowed by') ||
-            text.contains('consumes the entire tile width')) &&
+            text.contains('consumes the entire tile width') ||
+            text.contains("'hasSize'")) &&
         staleWindowConstraints(d, monkey.screen)) {
       const why =
           'fotogramma con i vincoli della finestra di prima (flutter_test)';

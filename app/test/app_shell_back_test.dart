@@ -11,9 +11,14 @@ import 'package:university_notes/features/dashboard/dashboard_screen.dart';
 import 'package:university_notes/features/exams/exams_screen.dart';
 
 Future<void> _settle(WidgetTester tester) async {
-  await tester.runAsync(
-    () => Future<void>.delayed(const Duration(milliseconds: 300)),
-  );
+  // passaggio animato tra le sezioni (e caricamenti che partono) e poi le
+  // letture dal database finite
+  for (var i = 0; i < 2; i++) {
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 300)),
+    );
+  }
   await tester.pump();
 }
 

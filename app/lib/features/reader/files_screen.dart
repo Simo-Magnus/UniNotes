@@ -10,6 +10,7 @@ import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart';
+import '../../widgets/section_active.dart';
 import '../../widgets/undo_snack_bar.dart';
 import 'reader_formats.dart';
 import 'reader_screen.dart';
@@ -175,6 +176,9 @@ class _FilesScreenState extends State<FilesScreen> {
     );
     if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
       body = DropTarget(
+        // sezione nascosta (resta viva dietro le altre): il file trascinato
+        // va all'app (IncomingFilesHost), non a questa schermata
+        enable: SectionActive.of(context),
         onDragEntered: (_) => setState(() => _dragging = true),
         onDragExited: (_) => setState(() => _dragging = false),
         onDragDone: (d) {

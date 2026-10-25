@@ -26,8 +26,8 @@ class CoursesScreen extends StatefulWidget {
 class _CoursesScreenState extends State<CoursesScreen> {
   final _search = TextEditingController();
 
-  /// Si apre sempre con il solo filtro «In corso» (le scelte non si
-  /// salvano).
+  /// Si apre con il solo filtro «In corso» (le scelte non si salvano: restano
+  /// cambiando sezione, non al prossimo avvio).
   CourseFilter _filter = const CourseFilter();
   int? _selectedId;
 

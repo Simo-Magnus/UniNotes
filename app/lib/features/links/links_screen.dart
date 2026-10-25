@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/services/app_services.dart';
 import '../../core/theme/app_tokens.dart';
+import '../../widgets/section_active.dart';
 import 'ai_reference_card.dart';
 import 'google_drive_card.dart';
 import 'onedrive_card.dart';
@@ -20,7 +21,8 @@ class LinksScreen extends StatefulWidget {
   State<LinksScreen> createState() => _LinksScreenState();
 }
 
-class _LinksScreenState extends State<LinksScreen> {
+class _LinksScreenState extends State<LinksScreen>
+    with SectionReturn<LinksScreen> {
   late final AppServices _s = context.read<AppServices>();
   bool _onedrivePrimary = false;
 
@@ -29,6 +31,10 @@ class _LinksScreenState extends State<LinksScreen> {
     super.initState();
     _updatePrimary();
   }
+
+  /// Ritorno nella sezione (resta viva nascosta): collegamenti riletti.
+  @override
+  void onSectionReturn() => _updatePrimary();
 
   /// Il prossimo passo suggerito (azione arancione): collegare OneDrive,
   /// se non è collegato nessun servizio cloud.

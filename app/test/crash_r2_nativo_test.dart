@@ -234,6 +234,13 @@ void main() {
       // Android rimanda (quasi due minuti sul Pixel 9a)
       expect(kt, contains('val full = android.os.Bundle().apply'));
       expect(kt, contains('for (extras in listOf(full, upload))'));
+      // Android può annullare la richiesta: si ricontrolla che non restino
+      // eventi DIRTY e si richiede di nuovo, con un solo controllo per
+      // calendario e un numero finito di tentativi
+      expect(kt, contains('watchUpload(calendarId)'));
+      expect(kt, contains('CalendarContract.Events.DIRTY} = 1'));
+      expect(kt, contains('if (!watched.add(calendarId)) return'));
+      expect(kt, contains('if (step >= UPLOAD_CHECKS.size)'));
       // la sincronizzazione automatica dell'utente si rispetta
       expect(
         kt,

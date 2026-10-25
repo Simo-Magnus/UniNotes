@@ -9,6 +9,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../repositories/settings_repository.dart';
 import '../../widgets/common.dart';
 import '../../widgets/glass.dart' show kMissing;
+import '../../widgets/section_active.dart';
 import '../notes/background_jobs.dart';
 import 'link_status.dart' show whisperDownloadDone, whisperDownloadFailed;
 import 'links_widgets.dart';
@@ -67,7 +68,8 @@ class WhisperCard extends StatefulWidget {
   State<WhisperCard> createState() => _WhisperCardState();
 }
 
-class _WhisperCardState extends State<WhisperCard> {
+class _WhisperCardState extends State<WhisperCard>
+    with SectionReturn<WhisperCard> {
   late final AppServices _s = context.read<AppServices>();
   WhisperService get _w => _s.whisper;
   late Future<_WhisperState> _future = _load();
@@ -94,6 +96,13 @@ class _WhisperCardState extends State<WhisperCard> {
         _future = _load();
       });
     }
+  }
+
+  /// Ritorno in Collegamenti: modelli e stato riletti (la sezione resta
+  /// viva nascosta).
+  @override
+  void onSectionReturn() {
+    _future = _load();
   }
 
   Future<void> _download(WhisperModelInfo m) async {

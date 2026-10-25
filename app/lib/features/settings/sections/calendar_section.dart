@@ -8,6 +8,7 @@ import '../../../core/router/app_shell.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/calendar_export.dart';
 import '../../../widgets/common.dart';
+import '../../../widgets/section_active.dart';
 import '../../cloud/microsoft_admin_consent.dart';
 import '../../links/microsoft_consent_sheet.dart';
 import '../logic/formatting.dart';
@@ -67,7 +68,8 @@ class CalendarSection extends StatefulWidget {
   State<CalendarSection> createState() => _CalendarSectionState();
 }
 
-class _CalendarSectionState extends State<CalendarSection> {
+class _CalendarSectionState extends State<CalendarSection>
+    with SectionReturn<CalendarSection> {
   late final AppServices _s = context.read<AppServices>();
   late Future<_CalendarData> _future = _load();
   bool _busy = false;
@@ -77,6 +79,13 @@ class _CalendarSectionState extends State<CalendarSection> {
     super.initState();
     _s.reminders.addListener(_reload);
     _s.revision.addListener(_reload);
+  }
+
+  /// Ritorno in Impostazioni (la sezione resta viva nascosta): permesso e
+  /// calendari riletti, come a ogni apertura.
+  @override
+  void onSectionReturn() {
+    _future = _load();
   }
 
   @override

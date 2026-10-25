@@ -7,6 +7,7 @@ import '../core/feedback/app_modals.dart';
 import '../core/services/app_services.dart';
 import '../core/services/external_launcher.dart';
 import '../core/theme/app_tokens.dart';
+import 'section_active.dart';
 
 /// Stato vuoto con icona e messaggio.
 class EmptyState extends StatelessWidget {
@@ -105,10 +106,15 @@ class RevisionBuilder<T> extends StatefulWidget {
   State<RevisionBuilder<T>> createState() => _RevisionBuilderState<T>();
 }
 
-class _RevisionBuilderState<T> extends State<RevisionBuilder<T>> {
+class _RevisionBuilderState<T> extends State<RevisionBuilder<T>>
+    with SectionReturn<RevisionBuilder<T>> {
   late final AppServices _services = context.read<AppServices>();
   late Future<T> _future;
   T? _last;
+
+  /// Caricamenti in corso (per non ripartire al ritorno nella sezione se
+  /// quello di prima non è ancora finito).
+  int _loading = 0;
 
   @override
   void initState() {
@@ -128,17 +134,31 @@ class _RevisionBuilderState<T> extends State<RevisionBuilder<T>> {
   }
 
   Future<T> _load() async {
-    final v = await widget.load(_services);
-    _last = v;
-    return v;
+    _loading++;
+    try {
+      final v = await widget.load(_services);
+      _last = v;
+      return v;
+    } finally {
+      _loading--;
+    }
   }
 
   void _reload() {
-    if (mounted) {
+    // sezione nascosta (resta viva dietro quella visibile): niente lavoro
+    // inutile, i dati si rileggono quando torna visibile
+    if (mounted && sectionActive) {
       setState(() {
         _future = _run();
       });
     }
+  }
+
+  /// Ritorno nella sezione: si rileggono i dati (cambiati intanto nel
+  /// database o sul disco) mostrando quelli di prima finché arrivano.
+  @override
+  void onSectionReturn() {
+    if (_loading == 0) _future = _run();
   }
 
   @override
@@ -177,10 +197,60 @@ class _RevisionBuilderState<T> extends State<RevisionBuilder<T>> {
             ? snap.data
             : _last;
         if (data == null && snap.connectionState != ConnectionState.done) {
-          return const Center(child: CircularProgressIndicator());
+          // il cerchio solo se il primo caricamento dura (niente lampo per
+          // le letture brevi)
+          return const DelayedSpinner();
         }
         return widget.builder(context, (data ?? snap.data) as T);
       },
+    );
+  }
+}
+
+/// Cerchio di caricamento che compare solo dopo [delay] (con una breve
+/// dissolvenza): un caricamento più rapido non mostra niente invece di un
+/// lampo del cerchio. Il ritardo resta anche con «Riduci animazioni» (non è
+/// un'animazione); la dissolvenza no.
+class DelayedSpinner extends StatefulWidget {
+  const DelayedSpinner({
+    super.key,
+    this.delay = const Duration(milliseconds: 250),
+  });
+
+  final Duration delay;
+
+  @override
+  State<DelayedSpinner> createState() => _DelayedSpinnerState();
+}
+
+class _DelayedSpinnerState extends State<DelayedSpinner>
+    with SingleTickerProviderStateMixin {
+  static const _fade = Duration(milliseconds: 150);
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: widget.delay + _fade,
+  )..forward();
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final total = (widget.delay + _fade).inMicroseconds;
+    final start = total == 0 ? 0.0 : widget.delay.inMicroseconds / total;
+    final reduce = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+    return AnimatedBuilder(
+      animation: _c,
+      builder: (context, child) {
+        final v = _c.value;
+        if (v < start) return const SizedBox.shrink();
+        final o = reduce ? 1.0 : ((v - start) / (1 - start)).clamp(0.0, 1.0);
+        return Opacity(opacity: o, child: child);
+      },
+      child: const Center(child: CircularProgressIndicator()),
     );
   }
 }

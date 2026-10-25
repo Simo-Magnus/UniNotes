@@ -6,6 +6,7 @@ import '../../../core/reminders/notification_prefs.dart';
 import '../../../core/reminders/system_calendar.dart';
 import '../../../core/services/app_services.dart';
 import '../../../widgets/common.dart';
+import '../../../widgets/section_active.dart';
 import '../widgets/async_action_button.dart';
 import '../widgets/settings_card.dart';
 
@@ -26,7 +27,8 @@ class NotificationsSection extends StatefulWidget {
   State<NotificationsSection> createState() => _NotificationsSectionState();
 }
 
-class _NotificationsSectionState extends State<NotificationsSection> {
+class _NotificationsSectionState extends State<NotificationsSection>
+    with SectionReturn<NotificationsSection> {
   late final AppServices _s = context.read<AppServices>();
   late Future<_NotificationsData> _future = _load();
   bool _busy = false;
@@ -35,6 +37,13 @@ class _NotificationsSectionState extends State<NotificationsSection> {
   void initState() {
     super.initState();
     _s.reminders.addListener(_reload);
+  }
+
+  /// Ritorno in Impostazioni (la sezione resta viva nascosta): permesso
+  /// delle notifiche riletto (si può cambiare dalle impostazioni del sistema).
+  @override
+  void onSectionReturn() {
+    _future = _load();
   }
 
   @override

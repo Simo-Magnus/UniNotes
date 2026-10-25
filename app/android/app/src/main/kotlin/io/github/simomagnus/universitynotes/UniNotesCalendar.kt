@@ -13,7 +13,10 @@ import android.net.Uri
 import android.provider.CalendarContract
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import java.util.Collections
 import java.util.TimeZone
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 /**
  * Calendario del telefono per le prove dell'app (Calendar Provider), canale
@@ -51,6 +54,13 @@ class UniNotesCalendar(
         const val REQUEST_CODE = 4711
         const val ACCOUNT_REQUEST_CODE = 4712
         private const val MARKER = "Rif. UniNotes: "
+
+        /** Secondi dei controlli di [watchUpload], uno dopo l'altro. */
+        private val UPLOAD_CHECKS = longArrayOf(5, 10, 15, 30)
+        private val checker = Executors.newSingleThreadScheduledExecutor { r ->
+            Thread(r, "UniNotesCalendarUpload").apply { isDaemon = true }
+        }
+        private val watched: MutableSet<Long> = Collections.synchronizedSet(mutableSetOf())
     }
 
     private var pendingRequest: MethodChannel.Result? = null
@@ -267,7 +277,10 @@ class UniNotesCalendar(
         pending.success(ok)
         val calendarId = pendingCalendarId
         if (ok && calendarId != null && granted()) {
-            Thread { requestUpload(calendarId) }.start()
+            Thread {
+                requestUpload(calendarId)
+                watchUpload(calendarId)
+            }.start()
         }
         return true
     }
@@ -422,6 +435,7 @@ class UniNotesCalendar(
             )
         }
         requestUpload(calendarId)
+        watchUpload(calendarId)
         return eventId.toString()
     }
 
@@ -432,7 +446,53 @@ class UniNotesCalendar(
             uri, arrayOf(CalendarContract.Events.CALENDAR_ID), null, null, null,
         )?.use { c -> if (c.moveToFirst()) c.getLong(0) else null }
         resolver.delete(uri, null, null)
-        if (calendarId != null) requestUpload(calendarId)
+        if (calendarId != null) {
+            requestUpload(calendarId)
+            watchUpload(calendarId)
+        }
+    }
+
+    /**
+     * Ricontrolla dopo 5, 15, 30 e 60 secondi che le modifiche del calendario
+     * [calendarId] siano arrivate sul server (nessun evento DIRTY) e, se no,
+     * richiede di nuovo il caricamento: Android può annullare la richiesta
+     * quando parte un'altra sincronizzazione dello stesso account (Pixel 9a,
+     * 25/10/2026: caricamento annullato e prove ferme finché non si è
+     * aggiornato Google Calendar a mano). Un solo controllo per calendario.
+     */
+    private fun watchUpload(calendarId: Long) {
+        if (!watched.add(calendarId)) return
+        scheduleUploadCheck(calendarId, 0)
+    }
+
+    private fun scheduleUploadCheck(calendarId: Long, step: Int) {
+        if (step >= UPLOAD_CHECKS.size) {
+            watched.remove(calendarId)
+            return
+        }
+        try {
+            checker.schedule({
+                val dirty = try {
+                    resolver.query(
+                        CalendarContract.Events.CONTENT_URI,
+                        arrayOf(CalendarContract.Events._ID),
+                        "${CalendarContract.Events.CALENDAR_ID} = ? AND ${CalendarContract.Events.DIRTY} = 1",
+                        arrayOf(calendarId.toString()),
+                        null,
+                    )?.use { it.count } ?: 0
+                } catch (e: Exception) {
+                    0
+                }
+                if (dirty == 0) {
+                    watched.remove(calendarId)
+                } else {
+                    requestUpload(calendarId)
+                    scheduleUploadCheck(calendarId, step + 1)
+                }
+            }, UPLOAD_CHECKS[step], TimeUnit.SECONDS)
+        } catch (e: Exception) {
+            watched.remove(calendarId)
+        }
     }
 
     /**
