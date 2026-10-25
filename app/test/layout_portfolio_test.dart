@@ -57,16 +57,17 @@ Future<void> _caricaFont() async {
   ]);
   final flutterRoot =
       Platform.environment['FLUTTER_ROOT'] ?? r'D:\tools\flutter';
-  await famiglia('MaterialIcons', [
-    p.join(
-      flutterRoot,
-      'bin',
-      'cache',
-      'artifacts',
-      'material_fonts',
-      'materialicons-regular.otf',
-    ),
-  ]);
+  final icone = p.join(
+    flutterRoot,
+    'bin',
+    'cache',
+    'artifacts',
+    'material_fonts',
+    'materialicons-regular.otf',
+  );
+  // nella build automatica (flutter-action) il font delle icone non è nella
+  // cache: le icone hanno comunque una misura fissa e le misure non cambiano
+  if (File(icone).existsSync()) await famiglia('MaterialIcons', [icone]);
 }
 
 Future<void> _vista(
