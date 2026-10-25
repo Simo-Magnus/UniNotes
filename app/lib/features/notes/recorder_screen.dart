@@ -720,27 +720,34 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                 Expanded(
                   child: Text(
                     'Trascrizione',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.titleSmall,
                   ),
                 ),
+                // la sorgente cede spazio (puntini) con i caratteri grandi
                 if (state == LiveState.running || state == LiveState.lagging)
-                  Text(
-                    switch (live!.engine) {
-                      LiveEngine.system when live.appleSpeech =>
-                        'dal vivo · Apple, sul Mac',
-                      LiveEngine.system =>
-                        live.onDevice
-                            ? 'dal vivo · sul dispositivo'
-                            : 'dal vivo',
-                      LiveEngine.parakeet => 'dal vivo · Parakeet',
-                      _ when live.quick || live.modelId == null =>
-                        live.secondPassActive
-                            ? 'dal vivo · Whisper integrato + small'
-                            : 'dal vivo · Whisper integrato',
-                      _ => 'dal vivo · Whisper ${live.modelId}',
-                    },
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: context.tokens.cyanSoft,
+                  Flexible(
+                    child: Text(
+                      switch (live!.engine) {
+                        LiveEngine.system when live.appleSpeech =>
+                          'dal vivo · Apple, sul Mac',
+                        LiveEngine.system =>
+                          live.onDevice
+                              ? 'dal vivo · sul dispositivo'
+                              : 'dal vivo',
+                        LiveEngine.parakeet => 'dal vivo · Parakeet',
+                        _ when live.quick || live.modelId == null =>
+                          live.secondPassActive
+                              ? 'dal vivo · Whisper integrato + small'
+                              : 'dal vivo · Whisper integrato',
+                        _ => 'dal vivo · Whisper ${live.modelId}',
+                      },
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: context.tokens.cyanSoft,
+                      ),
                     ),
                   ),
               ],

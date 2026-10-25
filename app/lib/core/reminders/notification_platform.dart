@@ -458,7 +458,7 @@ class LocalNotificationPlatform implements NotificationPlatform {
     }
   }
 
-  /// Copia per iOS e macOS dell'immagine larga [name] da allegare: il
+  /// Copia per iOS e macOS dell'immagine [name] da allegare: il
   /// sistema sposta il file allegato nel suo archivio, quindi serve una
   /// copia per ogni notifica. Null se non riesce (notifica senza allegato).
   static Future<String?> _darwinArt(String name, int id) async {
@@ -484,19 +484,21 @@ class LocalNotificationPlatform implements NotificationPlatform {
       n,
       windowsLogo: _windowsArt('${t.artwork}.png'),
       windowsHero: t.hasHero ? _windowsArt('hero_${t.artwork}.png') : null,
-      darwinAttachment: t.hasHero
-          ? await _darwinArt('hero_${t.artwork}.png', n.id)
-          : null,
+      darwinAttachment: t.darwinAttachment == null
+          ? null
+          : await _darwinArt(t.darwinAttachment!, n.id),
     );
   }
 
   /// Aspetto della notifica [n] su ogni piattaforma (funzione pura, test in
   /// test/notification_design_test.dart):
   /// - Android: icona piccola monocromatica, azzurro dell'app, icona grande
-  ///   del tipo, sezione accanto al nome dell'app, testo esteso (le prove:
-  ///   una riga per data e luogo), pulsanti;
+  ///   = logo dell'app (come su iPhone; solo recensione e sostegno hanno
+  ///   stella e cuore), sezione accanto al nome dell'app, testo esteso (le
+  ///   prove: una riga per data e luogo), pulsanti;
   /// - iOS e macOS: sezione come sottotitolo, notifiche impilate per
-  ///   sezione, immagine larga allegata per le notifiche rare;
+  ///   sezione, allegato: immagine larga per l'inizio sessione, sola stella
+  ///   o solo cuore (quadrati) per recensione e sostegno;
   /// - Windows: logo del tipo al posto di quello dell'app, immagine larga
   ///   per le notifiche rare, intestazione della sezione nel Centro
   ///   notifiche, pulsanti.
@@ -533,7 +535,7 @@ class LocalNotificationPlatform implements NotificationPlatform {
         channelDescription: t.description,
         icon: _icon,
         color: _accent,
-        largeIcon: DrawableResourceAndroidBitmap('ic_notif_${t.artwork}'),
+        largeIcon: DrawableResourceAndroidBitmap(t.androidLargeIcon),
         subText: section,
         ticker: n.title,
         importance: _importance(t),

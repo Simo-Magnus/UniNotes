@@ -55,9 +55,12 @@ class _ModuleOrderDialogState extends State<_ModuleOrderDialog> {
     final scheme = theme.colorScheme;
     final size = MediaQuery.sizeOf(context);
     // altezza: tutti i moduli se ci stanno, altrimenti la lista scorre
-    final listHeight = (_modules.length * 60.0).clamp(60.0, size.height * 0.55);
+    final listHeight = (_modules.length * 60.0).clamp(60.0, size.height * 0.4);
     return AlertDialog(
       key: const Key('module-order-dialog'),
+      // la finestra scorre se è bassa o i caratteri sono grandi (la lista ha
+      // un'altezza propria e non deve spingere fuori il resto)
+      scrollable: true,
       title: const Text('Ordine dei moduli'),
       contentPadding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
       content: SizedBox(

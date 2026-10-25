@@ -88,15 +88,35 @@ enum NotificationType {
   /// Gruppo dei canali Android (Impostazioni del sistema → Notifiche).
   String get groupId => section?.toLowerCase() ?? 'uninotes';
 
-  /// Grafica del tipo (stesso nome per l'icona grande di Android,
-  /// `res/drawable-nodpi/ic_notif_<canale>.png`, e per le immagini dei
-  /// toast di Windows, `assets/notifiche/<canale>.png`; vedi
+  /// Grafica del tipo (quadrato blu con il simbolo: logo dei toast di
+  /// Windows, `assets/notifiche/<canale>.png`; per recensione e sostegno
+  /// anche icona grande di Android, `res/drawable-nodpi/ic_notif_<canale>.png`,
+  /// e miniatura allegata su iOS e macOS; vedi
   /// tool/genera_grafiche_notifiche.py).
   String get artwork => channelId;
 
+  /// Icona grande a destra su Android (risorsa in `res/drawable-nodpi`):
+  /// il logo dell'app (`ic_notif_uninotes`, come su iPhone e iPad) per tutti
+  /// i tipi, tranne recensione e sostegno, che hanno la propria (stella e
+  /// cuore). La registrazione in corso ha un layout proprio
+  /// (RecordingNotification.kt).
+  String get androidLargeIcon =>
+      promotional ? 'ic_notif_$artwork' : 'ic_notif_uninotes';
+
   /// Immagine larga (`assets/notifiche/hero_<canale>.png`) per le notifiche
-  /// rare: inizio della sessione d'esame, recensione, sostegno.
+  /// rare: inizio della sessione d'esame, recensione, sostegno (in cima al
+  /// toast di Windows).
   bool get hasHero => this == session || this == review || this == donation;
+
+  /// File in `assets/notifiche` allegato alle notifiche di iOS e macOS
+  /// (miniatura a destra): per l'inizio sessione l'immagine larga; per
+  /// recensione e sostegno la sola stella o il solo cuore, quadrati, senza
+  /// il logo dell'app (già a sinistra). Null per gli altri tipi.
+  String? get darwinAttachment => switch (this) {
+    session => 'hero_$artwork.png',
+    review || donation => '$artwork.png',
+    _ => null,
+  };
 
   /// Avvisi che arrivano anche durante una sessione Focus: prove, sessioni
   /// d'esame, registratore e la sessione stessa. Gli altri («Com'è

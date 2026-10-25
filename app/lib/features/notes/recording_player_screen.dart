@@ -1084,14 +1084,27 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
               builder: (context, _) {
                 final pos = shownPos();
                 // secondi interi: il testo cambia una volta al secondo
+                // le due durate si accorciano (puntini) con i caratteri
+                // grandi in 320 px, invece di uscire dalla riga
                 return Row(
                   children: [
-                    Text(clockLabel(pos), style: mono),
+                    Flexible(
+                      child: Text(
+                        clockLabel(pos),
+                        style: mono,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     const Spacer(),
-                    Text(
-                      '−${clockLabel(_total > pos ? _total - pos : Duration.zero)}',
-                      style: mono?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
+                    Flexible(
+                      child: Text(
+                        '−${clockLabel(_total > pos ? _total - pos : Duration.zero)}',
+                        style: mono?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
@@ -1110,45 +1123,50 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
               ),
             ),
           const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (final sec in const [-30, -15]) ...[
-                IconButton(
-                  tooltip: 'Indietro di ${-sec} secondi',
-                  iconSize: 32,
-                  onPressed: ready ? () => _skip(sec) : null,
-                  icon: _SkipIcon(seconds: -sec, forward: false),
-                ),
-                const SizedBox(width: 2),
-              ],
-              const SizedBox(width: 8),
-              SizedBox.square(
-                dimension: 72,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    shape: const CircleBorder(),
-                    padding: EdgeInsets.zero,
+          // i cinque pulsanti restano su una riga: in uno spazio stretto (320 px)
+          // si rimpiccioliscono invece di uscire dallo schermo
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (final sec in const [-30, -15]) ...[
+                  IconButton(
+                    tooltip: 'Indietro di ${-sec} secondi',
+                    iconSize: 32,
+                    onPressed: ready ? () => _skip(sec) : null,
+                    icon: _SkipIcon(seconds: -sec, forward: false),
                   ),
-                  onPressed: ready ? () => _player?.playOrPause() : null,
-                  child: Icon(
-                    _playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                    size: 40,
-                    semanticLabel: _playing ? 'Pausa' : 'Riproduci',
+                  const SizedBox(width: 2),
+                ],
+                const SizedBox(width: 8),
+                SizedBox.square(
+                  dimension: 72,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: EdgeInsets.zero,
+                    ),
+                    onPressed: ready ? () => _player?.playOrPause() : null,
+                    child: Icon(
+                      _playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                      size: 40,
+                      semanticLabel: _playing ? 'Pausa' : 'Riproduci',
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 8),
-              for (final sec in const [15, 30]) ...[
-                const SizedBox(width: 2),
-                IconButton(
-                  tooltip: 'Avanti di $sec secondi',
-                  iconSize: 32,
-                  onPressed: ready ? () => _skip(sec) : null,
-                  icon: _SkipIcon(seconds: sec, forward: true),
-                ),
+                const SizedBox(width: 8),
+                for (final sec in const [15, 30]) ...[
+                  const SizedBox(width: 2),
+                  IconButton(
+                    tooltip: 'Avanti di $sec secondi',
+                    iconSize: 32,
+                    onPressed: ready ? () => _skip(sec) : null,
+                    icon: _SkipIcon(seconds: sec, forward: true),
+                  ),
+                ],
               ],
-            ],
+            ),
           ),
           const SizedBox(height: 8),
           Wrap(
@@ -1264,97 +1282,123 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
         ? 'Trascrizione dal vivo'
         : 'Trascrizione con ${_kind.label}'
               '${model == null ? '' : ' · ${whisperModelLabel(model)}'}';
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 8, 0),
-          child: Row(
-            children: [
-              Icon(
-                _kind == TranscriptKind.gemini
-                    ? Icons.auto_awesome_outlined
-                    : Icons.graphic_eq,
-                size: 18,
-                color: color ?? theme.colorScheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  title,
-                  style: theme.textTheme.titleSmall?.copyWith(color: color),
-                ),
-              ),
-              IconButton(
-                tooltip: 'Cerca nel testo (Ctrl+F)',
-                icon: const Icon(Icons.search),
-                onPressed: _openSearch,
-              ),
-              IconButton(
-                tooltip: 'Copia il testo',
-                icon: const Icon(Icons.copy_outlined),
-                onPressed: _copyText,
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 6),
-          child: Wrap(
-            spacing: 8,
-            runSpacing: 6,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              if (both)
-                SegmentedButton<TranscriptKind>(
-                  showSelectedIcon: false,
-                  style: const ButtonStyle(
-                    visualDensity: VisualDensity.compact,
-                  ),
-                  segments: [
-                    for (final k in TranscriptKind.values)
-                      ButtonSegment(
-                        value: k,
-                        label: Text(
-                          k.label,
-                          style: TextStyle(color: transcriptColor(context, k)),
+    // intestazione, scelta del motore e ricerca: se lo spazio è poco (finestra
+    // bassa, caratteri grandi) occupano al massimo metà del riquadro e
+    // scorrono, così al testo resta posto (prima la colonna usciva dal
+    // riquadro)
+    return LayoutBuilder(
+      builder: (context, box) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: box.hasBoundedHeight ? box.maxHeight * 0.5 : 4000,
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 8, 0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          _kind == TranscriptKind.gemini
+                              ? Icons.auto_awesome_outlined
+                              : Icons.graphic_eq,
+                          size: 18,
+                          color: color ?? theme.colorScheme.onSurfaceVariant,
                         ),
-                      ),
-                  ],
-                  selected: {_kind},
-                  onSelectionChanged: (v) => _showKind(v.first),
-                ),
-              ReferenceAiButton(
-                onPressed: () {
-                  final n = _transcriptNote;
-                  if (n != null) openNoteInAi(context, widget.course, n);
-                },
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: theme.textTheme.titleSmall?.copyWith(
+                              color: color,
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          tooltip: 'Cerca nel testo (Ctrl+F)',
+                          icon: const Icon(Icons.search),
+                          onPressed: _openSearch,
+                        ),
+                        IconButton(
+                          tooltip: 'Copia il testo',
+                          icon: const Icon(Icons.copy_outlined),
+                          onPressed: _copyText,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 6),
+                    child: Wrap(
+                      spacing: 8,
+                      runSpacing: 6,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        if (both)
+                          SegmentedButton<TranscriptKind>(
+                            showSelectedIcon: false,
+                            style: const ButtonStyle(
+                              visualDensity: VisualDensity.compact,
+                            ),
+                            segments: [
+                              for (final k in TranscriptKind.values)
+                                ButtonSegment(
+                                  value: k,
+                                  label: Text(
+                                    k.label,
+                                    style: TextStyle(
+                                      color: transcriptColor(context, k),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                            selected: {_kind},
+                            onSelectionChanged: (v) => _showKind(v.first),
+                          ),
+                        ReferenceAiButton(
+                          onPressed: () {
+                            final n = _transcriptNote;
+                            if (n != null) {
+                              openNoteInAi(context, widget.course, n);
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (_searchOpen)
+                    FindBar(
+                      controller: _query,
+                      focusNode: _queryFocus,
+                      onChanged: (_) => _updateMatches(),
+                      onNext: () => _stepMatch(1),
+                      onPrevious: () => _stepMatch(-1),
+                      onClose: _closeSearch,
+                      total: _matches.length,
+                      current: _matches.isEmpty ? null : _match,
+                    ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-        if (_searchOpen)
-          FindBar(
-            controller: _query,
-            focusNode: _queryFocus,
-            onChanged: (_) => _updateMatches(),
-            onNext: () => _stepMatch(1),
-            onPrevious: () => _stepMatch(-1),
-            onClose: _closeSearch,
-            total: _matches.length,
-            current: _matches.isEmpty ? null : _match,
-          ),
-        const Divider(height: 1),
-        Expanded(child: _transcriptView(context)),
-      ],
+          const Divider(height: 1),
+          Expanded(child: _transcriptView(context)),
+        ],
+      ),
     );
   }
 
   /// Nessuna trascrizione: «Trascrivi con Whisper» e «Trascrivi con Gemini».
   Widget _noTranscript(BuildContext context) {
     final theme = Theme.of(context);
+    // scorre se il riquadro è basso (finestra di 320 px, caratteri grandi):
+    // la colonna con i due pulsanti non esce dal riquadro
     return Center(
-      child: Padding(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 420),

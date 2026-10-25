@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
+import '../../widgets/adaptive_row.dart';
 import '../../widgets/app_snack_action.dart';
 import '../../core/feedback/app_modals.dart';
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
@@ -716,36 +717,69 @@ class ReaderScreenState extends State<ReaderScreen> {
               searching: pane.searching,
             ),
           if (notice != null && !_fullscreen)
-            Material(
-              color: t.navActive.first.withValues(alpha: 0.18),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 4, 4, 4),
-                child: Row(
-                  children: [
-                    Icon(Icons.info_outline, size: 18, color: t.cyanSoft),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
+            // l'avviso non occupa più di un terzo dell'altezza: con la finestra
+            // bassa e i caratteri grandi scorre invece di spingere fuori il
+            // documento (Column senza spazio)
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height / 3,
+              ),
+              child: SingleChildScrollView(
+                child: Material(
+                  color: t.navActive.first.withValues(alpha: 0.18),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 4, 4, 4),
+                    // testo e pulsanti in una riga se c'è posto, altrimenti i
+                    // pulsanti vanno sotto (finestra stretta, caratteri grandi:
+                    // il testo non resta senza larghezza)
+                    child: AdaptiveActionRow(
+                      leading: Icon(
+                        Icons.info_outline,
+                        size: 18,
+                        color: t.cyanSoft,
+                      ),
+                      gap: 10,
+                      minBody: 160,
+                      body: Text(
                         notice,
                         style: TextStyle(fontSize: 12, color: t.textSecondary),
                       ),
-                    ),
-                    if (actions.contains(ReaderAction.oneNote))
-                      TextButton(
-                        onPressed: _openOneNote,
-                        child: const Text('OneNote'),
+                      actionLabel: [
+                        if (actions.contains(ReaderAction.oneNote)) 'OneNote',
+                        if (actions.contains(ReaderAction.openWith))
+                          'Apri con…',
+                      ].join(' '),
+                      actionExtra:
+                          40.0 +
+                          48.0 *
+                              [
+                                actions.contains(ReaderAction.oneNote),
+                                actions.contains(ReaderAction.openWith),
+                              ].where((x) => x).length,
+                      action: Wrap(
+                        alignment: WrapAlignment.end,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          if (actions.contains(ReaderAction.oneNote))
+                            TextButton(
+                              onPressed: _openOneNote,
+                              child: const Text('OneNote'),
+                            ),
+                          if (actions.contains(ReaderAction.openWith))
+                            TextButton(
+                              onPressed: _openWith,
+                              child: const Text('Apri con…'),
+                            ),
+                          IconButton(
+                            tooltip: 'Nascondi',
+                            icon: const Icon(Icons.close, size: 18),
+                            onPressed: () =>
+                                setState(() => _noticeHidden = true),
+                          ),
+                        ],
                       ),
-                    if (actions.contains(ReaderAction.openWith))
-                      TextButton(
-                        onPressed: _openWith,
-                        child: const Text('Apri con…'),
-                      ),
-                    IconButton(
-                      tooltip: 'Nascondi',
-                      icon: const Icon(Icons.close, size: 18),
-                      onPressed: () => setState(() => _noticeHidden = true),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

@@ -30,8 +30,11 @@ import 'package:flutter/services.dart';
 /// Dal sistema arrivano (metodi invocati su questo canale, con `session`):
 /// `partial` {text}, `result` {text}, `error` {message, fatal} ed `ended`.
 class SystemSpeech {
-  SystemSpeech({MethodChannel? channel, this.startTimeout = kStartTimeout})
-    : _channel = channel ?? const MethodChannel(channelName);
+  SystemSpeech({
+    MethodChannel? channel,
+    this.startTimeout = kStartTimeout,
+    this.supportTimeout = kSupportTimeout,
+  }) : _channel = channel ?? const MethodChannel(channelName);
 
   static const channelName = 'io.github.simomagnus.universitynotes/speech';
 
@@ -42,6 +45,14 @@ class SystemSpeech {
   /// tutta la lezione, senza mai passare a Whisper.
   static const kStartTimeout = Duration(seconds: 45);
   final Duration startTimeout;
+
+  /// Attesa massima della risposta a `support`. Da iOS/macOS 26 il lato
+  /// nativo chiede al sistema le lingue di SpeechAnalyzer (installate e
+  /// supportate), che può non rispondere: senza limite il testo dal vivo
+  /// restava «in avvio» e il recupero a fine lezione (che aspetta l'avvio)
+  /// non finiva mai.
+  static const kSupportTimeout = Duration(seconds: 15);
+  final Duration supportTimeout;
 
   final MethodChannel _channel;
   final _events = StreamController<SpeechEvent>.broadcast();
@@ -89,10 +100,12 @@ class SystemSpeech {
   /// background per la registrazione dopo.
   Future<SpeechSupport> support(String locale, {bool prepare = false}) async {
     try {
-      final r = await _channel.invokeMethod<Object?>('support', {
-        'locale': locale,
-        if (prepare) 'prepare': true,
-      });
+      final r = await _channel
+          .invokeMethod<Object?>('support', {
+            'locale': locale,
+            if (prepare) 'prepare': true,
+          })
+          .timeout(supportTimeout);
       if (r is! Map) return SpeechSupport.none;
       return SpeechSupport(
         available: r['available'] == true,
@@ -104,8 +117,8 @@ class SystemSpeech {
         analyzer: r['analyzer'] is String ? r['analyzer'] as String : null,
       );
     } catch (e) {
-      // MissingPluginException (piattaforma senza riconoscitore) o errore
-      // del sistema: si usa Whisper
+      // MissingPluginException (piattaforma senza riconoscitore), errore
+      // del sistema o nessuna risposta: si usa Whisper (o Parakeet)
       return SpeechSupport.none;
     }
   }

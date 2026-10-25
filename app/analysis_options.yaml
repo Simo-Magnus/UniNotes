@@ -17,6 +17,13 @@ analyzer:
     - linux/**
     - ios/**
     - macos/**
+  language:
+    # Caccia ai crash, sesto giro (docs/avvio_ed_errori.md, «Sesto giro:
+    # regole di analisi»): niente conversioni implicite da dynamic (JSON,
+    # canali nativi, messaggi degli isolate). Un valore del tipo sbagliato
+    # va controllato (is/as esplicito), non scoperto a runtime con un
+    # TypeError.
+    strict-casts: true
 
 linter:
   # The lint rules applied to this project can be customized in the
@@ -32,6 +39,21 @@ linter:
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+
+    # Caccia ai crash, sesto giro: regole contro le cause tipiche di crash e
+    # perdite (motivi ed esclusioni in docs/avvio_ed_errori.md). Un falso
+    # positivo si annota sulla riga con `// ignore: <regola>` e un motivo, o
+    # con unawaited(...) se l'attesa non serve davvero.
+    - unawaited_futures # Future dimenticato in una funzione async
+    - avoid_dynamic_calls # metodo o campo su dynamic (NoSuchMethodError)
+    - cancel_subscriptions # StreamSubscription mai chiusa
+    - throw_in_finally # eccezione nel finally che nasconde quella vera
+    - avoid_void_async # async void: errori che nessuno può attendere
+    - unnecessary_statements # es. `x.dispose;` senza parentesi
+    - no_self_assignments # `a = a` al posto di `a = b`
+    - invalid_case_patterns
+    - literal_only_boolean_expressions
+    - test_types_in_equals # == che lancia con un tipo diverso
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

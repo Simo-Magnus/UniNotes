@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -535,7 +537,8 @@ void main() {
           ),
         ),
       );
-      openFocusScreen(nav.currentContext!);
+      // (si completa solo alla chiusura della pagina)
+      unawaited(openFocusScreen(nav.currentContext!));
       await tester.pumpAndSettle();
       expect(find.byType(FocusScreen), findsOneWidget);
       // un file aperto sopra la sessione
@@ -546,7 +549,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(find.text('Lettore'), findsOneWidget);
-      openFocusScreen(nav.currentContext!);
+      unawaited(openFocusScreen(nav.currentContext!));
       await tester.pumpAndSettle();
       expect(find.text('Lettore'), findsNothing);
       expect(find.byType(FocusScreen), findsOneWidget);

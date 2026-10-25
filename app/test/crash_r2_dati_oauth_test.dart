@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -31,7 +32,8 @@ void main() {
         openBrowser: (url) async {
           final q = url.queryParameters;
           final back = Uri.parse(q['redirect_uri']!);
-          () async {
+          // il «browser» lavora mentre signIn aspetta il ritorno
+          unawaited(() async {
             // richiesta estranea con %FF nel codice (non è UTF-8 valido)
             final sock = await Socket.connect(back.host, back.port);
             sock.write(
@@ -49,7 +51,7 @@ void main() {
             )).close();
             await r.drain<void>();
             c.close();
-          }();
+          }());
           return true;
         },
       );

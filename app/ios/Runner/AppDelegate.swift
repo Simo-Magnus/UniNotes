@@ -35,6 +35,8 @@ import flutter_local_notifications
   /// Prove nel calendario del dispositivo (UniNotesCalendar, sotto).
   private var calendar: UniNotesCalendar?
   private var liveActivityChannel: FlutterMethodChannel?
+  /// Osservatore dei pulsanti della Live Activity (uno solo).
+  private var recordingObserver: NSObjectProtocol?
   /// Trascrizione istantanea delle lezioni (LiveSpeech.swift).
   private var liveSpeech: LiveSpeech?
   /// File aperti con «Apri in UniNotes» / «Condividi» (IncomingFiles, sotto).
@@ -192,7 +194,11 @@ import flutter_local_notifications
         self?.handleLiveActivity(call, result: result)
       }
       liveActivityChannel = channel
-      NotificationCenter.default.addObserver(
+      // un solo osservatore anche se il motore viene ricreato (scena chiusa
+      // dal sistema e riaperta): con due, ogni pulsante della Live Activity
+      // arrivava due volte a Flutter («Pausa» subito annullata)
+      if let old = recordingObserver { NotificationCenter.default.removeObserver(old) }
+      recordingObserver = NotificationCenter.default.addObserver(
         forName: AppDelegate.recordingCommandNotification, object: nil, queue: .main
       ) { [weak self] note in
         guard let command = note.userInfo?["command"] as? String else { return }
@@ -303,24 +309,44 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
     return receive(URLContexts)
   }
 
+  /// File ricevuti finora (numero nel nome della copia, sempre diverso).
+  private var received = 0
+
   private func receive(_ contexts: Set<UIOpenURLContext>) -> Bool {
-    var got = false
+    var files: [(url: URL, inPlace: Bool)] = []
     var linked = false
     for context in contexts {
       if context.url.isFileURL {
-        if let item = copy(context.url, inPlace: context.options.openInPlace) {
-          pending.append(item)
-          got = true
-        }
+        files.append((url: context.url, inPlace: context.options.openInPlace))
       } else if onAppLink?(context.url) == true {
         linked = true
       }
     }
-    if got { channel.invokeMethod("available", arguments: nil) }
-    return got || linked
+    guard !files.isEmpty else { return linked }
+    // La copia fuori dal filo principale: un file di iCloud Drive non
+    // ancora sul telefono si scarica durante la lettura coordinata, e un file
+    // grande richiede tempo; sul filo principale l'app restava bloccata e
+    // all'avvio (aperta da «Apri in UniNotes») iOS la chiudeva (watchdog).
+    // Flutter riceve `available` quando le copie sono pronte.
+    let first = received
+    received += files.count
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+      var items: [[String: Any]] = []
+      for (i, file) in files.enumerated() {
+        if let item = IncomingFiles.copy(file.url, inPlace: file.inPlace, index: first + i) {
+          items.append(item)
+        }
+      }
+      DispatchQueue.main.async {
+        guard let self = self, !items.isEmpty else { return }
+        self.pending.append(contentsOf: items)
+        self.channel.invokeMethod("available", arguments: nil)
+      }
+    }
+    return true
   }
 
-  private func copy(_ url: URL, inPlace: Bool) -> [String: Any]? {
+  private static func copy(_ url: URL, inPlace: Bool, index: Int) -> [String: Any]? {
     let scoped = url.startAccessingSecurityScopedResource()
     defer { if scoped { url.stopAccessingSecurityScopedResource() } }
     let fm = FileManager.default
@@ -329,7 +355,7 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
     let name = url.lastPathComponent
     let stamp = Int(Date().timeIntervalSince1970 * 1000)
     let target = dir.appendingPathComponent(
-      "\(stamp)_\(pending.count)_\(IncomingFiles.shortName(name))")
+      "\(stamp)_\(index)_\(IncomingFiles.shortName(name))")
     // lettura coordinata: file di iCloud Drive o di altri fornitori
     var coordError: NSError?
     var copyError: Error?

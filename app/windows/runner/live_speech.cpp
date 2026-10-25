@@ -483,6 +483,11 @@ bool LiveSpeechChannel::HandleMessage(UINT message, WPARAM wparam,
       }
       break;
     case EventKind::kCompiled:
+      // riconoscitore già chiuso (stop con StopAsync non riuscito): niente
+      if (!continuous_) {
+        ReplyStart(flutter::EncodableValue(false));
+        break;
+      }
       // «stop» arrivato mentre si preparava la dettatura: non si avvia più
       // (altrimenti il microfono restava in ascolto a registrazione finita)
       if (stopping_) {
@@ -502,6 +507,12 @@ bool LiveSpeechChannel::HandleMessage(UINT message, WPARAM wparam,
       StartContinuous();
       break;
     case EventKind::kStarted:
+      // riconoscitore già chiuso (stop, errore): StartAsync annullato o
+      // finito dopo, niente «error» dopo «ended» né running_ senza sessione
+      if (!continuous_) {
+        ReplyStart(flutter::EncodableValue(false));
+        break;
+      }
       if (FAILED(e->hr)) {
         if (pending_start_) {
           Release();
@@ -519,6 +530,8 @@ bool LiveSpeechChannel::HandleMessage(UINT message, WPARAM wparam,
       if (stopping_) {
         stopping_ = false;
         Release();
+        // «stop» mentre StartAsync era in corso: lo «start» ha la risposta
+        ReplyStart(flutter::EncodableValue(false));
         Send("ended", {});
         break;
       }

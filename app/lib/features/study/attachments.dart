@@ -672,7 +672,13 @@ class AttachmentTile extends StatelessWidget {
                             children: [
                               Icon(k.icon, size: 18, color: k.colorOn(context)),
                               const SizedBox(width: 8),
-                              Text(k.label),
+                              Flexible(
+                                child: Text(
+                                  k.label,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
                             ],
                           ),
                         ),

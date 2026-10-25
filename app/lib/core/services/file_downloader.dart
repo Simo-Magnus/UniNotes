@@ -141,6 +141,9 @@ class FileDownloader {
       );
       ok = true;
     } finally {
+      // remove() restituisce il Future tolto dalla mappa: chi l'aspetta lo
+      // aspetta già, qui non c'è niente da attendere
+      // ignore: unawaited_futures
       if (identical(_active[key], done.future)) _active.remove(key);
       done.complete(ok);
     }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -61,12 +62,13 @@ void main() {
         final back = Uri.parse(
           q['redirect_uri']!,
         ).replace(queryParameters: {'code': 'c1', 'state': q['state']!});
-        () async {
+        // il «browser» lavora mentre signIn aspetta il ritorno
+        unawaited(() async {
           final c = HttpClient();
           final r = await (await c.getUrl(back)).close();
           page = await r.transform(utf8.decoder).join();
           c.close();
-        }();
+        }());
         return true;
       },
     );

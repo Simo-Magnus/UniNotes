@@ -8,6 +8,7 @@ import '../../features/notes/lecture_recorder.dart';
 import '../../features/notes/notes_store.dart';
 import '../../features/notes/recycle_bin.dart';
 import '../../features/study/focus/focus_service.dart';
+import '../../features/study/focus/focus_timer.dart' show FocusTimer;
 import '../../repositories/book_repository.dart';
 import '../../repositories/calendar_repository.dart';
 import '../../repositories/course_repository.dart';
@@ -44,8 +45,10 @@ class AppServices {
     RemindersService Function(AppServices s)? reminders,
     LectureRecorder? recorder,
     AppFeedback? feedback,
+    FocusTimer Function()? focusTimer,
   }) : _remindersFactory = reminders,
        _feedbackOverride = feedback,
+       _focusTimerOverride = focusTimer,
        _recorderOverride = recorder,
        _notesOverride = notes,
        _catalogOverride = catalog,
@@ -266,5 +269,12 @@ class AppServices {
 
   /// Modalità Focus di Studio (una sola sessione, sopravvive al cambio
   /// schermata).
-  late final FocusService focus = FocusService(this);
+  late final FocusService focus = FocusService(
+    this,
+    timer: _focusTimerOverride?.call(),
+  );
+
+  /// Cronometro del Focus con un orologio proprio (la prova a caso fa passare
+  /// i minuti senza aspettarli).
+  final FocusTimer Function()? _focusTimerOverride;
 }

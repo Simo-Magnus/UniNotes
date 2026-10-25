@@ -119,6 +119,22 @@ class UniNotesCalendar(private val context: Context) {
         return true
     }
 
+    /**
+     * Motore staccato dall'attività (attività ricreata o chiusa con la
+     * richiesta del permesso aperta): l'esito non arriverebbe più a questo
+     * oggetto e Dart resterebbe in attesa per sempre. Risponde con lo stato
+     * attuale.
+     */
+    fun dispose() {
+        val pending = pendingRequest ?: return
+        pendingRequest = null
+        try {
+            pending.success(granted())
+        } catch (e: Exception) {
+            // motore già chiuso
+        }
+    }
+
     private class NotFound : Exception()
 
     private val resolver: ContentResolver get() = context.contentResolver
@@ -303,26 +319,43 @@ class UniNotesCalendar(private val context: Context) {
                 val type = c.getString(1) ?: return
                 if (type == CalendarContract.ACCOUNT_TYPE_LOCAL) return
                 val account = Account(name, type)
-                // Android 12+: come lavoro urgente («expedited job»), che parte
-                // subito se l'app è aperta; altrimenti Android la mette in coda
-                // con le altre sincronizzazioni (anche un minuto e più)
-                if (android.os.Build.VERSION.SDK_INT >= 31) {
-                    try {
-                        val urgent = android.os.Bundle().apply {
-                            putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true)
-                            putBoolean(ContentResolver.SYNC_EXTRAS_SCHEDULE_AS_EXPEDITED_JOB, true)
-                        }
-                        ContentResolver.requestSync(account, CalendarContract.AUTHORITY, urgent)
-                        return
-                    } catch (e: Exception) {
-                        // quota dei lavori urgenti finita o non ammesso: richiesta normale
-                    }
+                // Non solo «upload»: il fornitore del calendario chiede già un
+                // caricamento a ogni modifica, e una richiesta uguale si fonde
+                // con la sua, che Android rimanda di continuo (Pixel 9a,
+                // 25/10/2026: evento caricato dopo quasi due minuti). Una
+                // sincronizzazione completa e urgente, come il tasto «Aggiorna»
+                // di Google Calendar, resta separata, carica gli eventi nuovi e
+                // parte subito
+                val full = android.os.Bundle().apply {
+                    putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
                 }
-                val extras = android.os.Bundle().apply {
+                val upload = android.os.Bundle().apply {
                     putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true)
                     putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true)
                 }
-                ContentResolver.requestSync(account, CalendarContract.AUTHORITY, extras)
+                for (extras in listOf(full, upload)) {
+                    // Android 12+: come lavoro urgente («expedited job»), che
+                    // parte subito anche con l'app appena chiusa
+                    if (android.os.Build.VERSION.SDK_INT >= 31) {
+                        try {
+                            val urgent = android.os.Bundle(extras).apply {
+                                // un lavoro urgente non può essere anche «expedited»
+                                // (SyncRequest: IllegalArgumentException)
+                                remove(ContentResolver.SYNC_EXTRAS_EXPEDITED)
+                                putBoolean(ContentResolver.SYNC_EXTRAS_SCHEDULE_AS_EXPEDITED_JOB, true)
+                            }
+                            ContentResolver.requestSync(account, CalendarContract.AUTHORITY, urgent)
+                            continue
+                        } catch (e: Exception) {
+                            // quota dei lavori urgenti finita o non ammesso: richiesta normale
+                        }
+                    }
+                    try {
+                        ContentResolver.requestSync(account, CalendarContract.AUTHORITY, extras)
+                    } catch (e: Exception) {
+                        // la sincronizzazione arriverà comunque con quella periodica
+                    }
+                }
             }
         } catch (e: Exception) {
             // la sincronizzazione arriverà comunque con quella periodica

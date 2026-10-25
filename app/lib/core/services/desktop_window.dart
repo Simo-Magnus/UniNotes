@@ -150,7 +150,16 @@ class DesktopWindow with WindowListener, TrayListener {
   }
 
   Future<void> _show() async {
-    await _hideTray();
+    // un'icona che non si toglie (area di notifica bloccata, come in
+    // [_quit]) non deve impedire di riaprire la finestra: prima l'errore
+    // fermava tutto prima di show(), la finestra restava nascosta con la
+    // registrazione in corso e anche «Esci» dal menu non arrivava a
+    // chiedere cosa farne
+    try {
+      await _hideTray();
+    } catch (e) {
+      debugPrint('Icona dell\'area di notifica non tolta: $e');
+    }
     await windowManager.show();
     await windowManager.focus();
     _hidden = false;
@@ -209,14 +218,26 @@ class DesktopWindow with WindowListener, TrayListener {
         // con la finestra nascosta si salva senza aprirla
         if (_hidden) {
           unawaited(
-            saveRecording(_s).then((_) {
-              if (!_s.recorder.active) {
+            saveRecording(_s).then(
+              (_) {
+                if (!_s.recorder.active) {
+                  return _s.reminders.recordingNotice(
+                    'Registrazione salvata',
+                    'La trovi in Registra, nella pagina del corso.',
+                  );
+                }
+              },
+              // disco pieno, cartella non scrivibile: prima l'errore restava
+              // non gestito e, con la finestra nascosta, non si vedeva niente
+              onError: (Object e) {
+                debugPrint('Registrazione non salvata dall\'icona: $e');
                 return _s.reminders.recordingNotice(
-                  'Registrazione salvata',
-                  'La trovi in Registra, nella pagina del corso.',
+                  'Registrazione non salvata',
+                  'Il file audio non va perso: resta nell\'app e al prossimo '
+                      'avvio UniNotes ti propone di salvarlo.',
                 );
-              }
-            }),
+              },
+            ),
           );
         } else {
           _s.recorder.command(RecorderCommand.save);

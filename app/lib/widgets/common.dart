@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -115,7 +117,17 @@ class _RevisionBuilderState<T> extends State<RevisionBuilder<T>> {
     _services.revision.addListener(_reload);
   }
 
-  Future<T> _run() async {
+  Future<T> _run() {
+    final f = _load();
+    // l'errore lo mostra il FutureBuilder; due ricaricamenti nello stesso
+    // fotogramma (due `revision.bump()` di fila) sostituiscono il futuro
+    // prima che venga ascoltato e l'errore del primo restava senza
+    // ascoltatori (eccezione non gestita)
+    unawaited(f.then<void>((_) {}, onError: (Object _) {}));
+    return f;
+  }
+
+  Future<T> _load() async {
     final v = await widget.load(_services);
     _last = v;
     return v;

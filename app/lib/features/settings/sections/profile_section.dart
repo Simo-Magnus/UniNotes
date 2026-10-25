@@ -10,6 +10,7 @@ import '../../../core/feedback/app_modals.dart';
 import '../../../core/services/app_services.dart';
 import '../../../core/services/calendar_export.dart';
 import '../../../utils/dates.dart';
+import '../../../widgets/adaptive_row.dart';
 import '../../../widgets/catalog_download.dart';
 import '../../../widgets/common.dart';
 import '../../onboarding/onboarding_flow.dart' show showChangePath;
@@ -153,31 +154,51 @@ class ProfileSection extends StatelessWidget {
             );
           },
         ),
-        // «Aggiorna database» e «Indirizzo del database» sulla stessa riga
+        // «Aggiorna database» e «Indirizzo del database» sulla stessa riga se
+        // c'è posto per tutte e due le scritte, altrimenti una sotto l'altra
+        // (finestra stretta o caratteri grandi)
         Padding(
           padding: const EdgeInsets.only(top: 8),
-          child: Row(
-            children: [
-              Expanded(
-                child: AsyncActionButton(
-                  key: const Key('catalog-refresh'),
-                  label: 'Aggiorna database',
-                  icon: Icons.cloud_download_outlined,
-                  filled: true,
-                  errorTitle: 'Aggiornamento non riuscito',
-                  onPressed: () => _refresh(context),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: OutlinedButton.icon(
-                  key: const Key('catalog-url'),
-                  onPressed: () => _editUrl(context),
-                  icon: const Icon(Icons.link),
-                  label: const Text('Indirizzo del database'),
-                ),
-              ),
-            ],
+          child: LayoutBuilder(
+            builder: (context, c) {
+              final refresh = AsyncActionButton(
+                key: const Key('catalog-refresh'),
+                label: 'Aggiorna database',
+                icon: Icons.cloud_download_outlined,
+                filled: true,
+                errorTitle: 'Aggiornamento non riuscito',
+                onPressed: () => _refresh(context),
+              );
+              final url = OutlinedButton.icon(
+                key: const Key('catalog-url'),
+                onPressed: () => _editUrl(context),
+                icon: const Icon(Icons.link),
+                label: const Text('Indirizzo del database'),
+              );
+              // le scritte vanno a capo, ma una parola sola non si spezza: ogni
+              // pulsante deve avere posto per la sua parola più lunga, più
+              // l'icona, lo spazio e i margini interni (80 px)
+              final word = AdaptiveActionRow.measure(
+                context,
+                'Indirizzo',
+                80,
+                null,
+              );
+              final need = 2 * word + 8;
+              if (!c.hasBoundedWidth || c.maxWidth >= need) {
+                return Row(
+                  children: [
+                    Expanded(child: refresh),
+                    const SizedBox(width: 8),
+                    Expanded(child: url),
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [refresh, const SizedBox(height: 8), url],
+              );
+            },
           ),
         ),
         const CatalogDownloadProgress(),

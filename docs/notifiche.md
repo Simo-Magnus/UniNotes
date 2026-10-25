@@ -329,8 +329,9 @@ sul dispositivo che li scrive). Test: `app/test/calendar_sync_test.dart`,
 
 Ogni tipo ha una grafica con i colori del logo (quadrato blu con la zona in
 ombra in basso a destra come nella «U», simbolo bianco del tipo); il logo
-dell'app, su una tessera bianca, è il logo dei toast di Windows e sta a
-sinistra nelle immagini larghe (fondo dal blu notte al blu). Le genera
+dell'app, su una tessera bianca, è il logo dei toast di Windows, l'icona
+grande delle notifiche di Android e sta a sinistra nelle immagini larghe
+(fondo dal blu notte al blu). Le genera
 `python app/tool/genera_grafiche_notifiche.py`: calendario per le prove,
 tocco per le sessioni, spunta per gli esiti, catena spezzata per i
 collegamenti, microfono, cronometro e sveglia per Focus, stella e cuore
@@ -342,18 +343,26 @@ Il codice è in `LocalNotificationPlatform.detailsFor` (test in
 `app/test/notification_design_test.dart`).
 
 - **Android**: icona piccola monocromatica e azzurro dell'app; icona
-  grande del tipo a destra (`res/drawable-nodpi/ic_notif_<canale>.png`);
-  la sezione accanto al nome dell'app; testo esteso (le prove: elenco con
+  grande a destra = il logo dell'app (`res/drawable-nodpi/
+  ic_notif_uninotes.png`), come su iPhone e iPad: niente calendario,
+  microfono e simili. Fanno eccezione la richiesta di recensione e quella di
+  sostegno (stella e cuore, `ic_notif_recensione.png` e
+  `ic_notif_sostegno.png`) e la registrazione in corso, che ha un layout
+  proprio (`RecordingNotification.kt`); la sessione Focus in corso usa il
+  logo dell'app (`NotificationType.androidLargeIcon`); la accanto al nome dell'app; testo esteso (le prove: elenco con
   una riga per data e ora e una per il luogo); pulsanti. Nelle impostazioni
   del sistema i canali sono divisi nei gruppi Esami, Studio, Registra,
   Collegamenti e UniNotes. Il raggruppamento nella tendina lo fa il sistema
   (da 4 notifiche dell'app in su): una notifica di riepilogo per le
   notifiche pianificate richiederebbe codice al momento della consegna.
 - **iOS e macOS**: la sezione come sottotitolo, notifiche impilate per
-  sezione (`threadIdentifier` `uninotes_esami`, …); per inizio sessione,
-  recensione e sostegno l'immagine larga è allegata (miniatura a destra,
-  intera aprendo la notifica). Pulsanti dalle categorie registrate
-  all'avvio.
+  sezione (`threadIdentifier` `uninotes_esami`, …); per l'inizio sessione
+  l'immagine larga è allegata (miniatura a destra, intera aprendo la
+  notifica); per recensione e sostegno l'allegato è un quadrato con la sola
+  stella o il solo cuore (`recensione.png`, `sostegno.png`), così accanto al
+  logo dell'app a sinistra non se ne sovrappone un altro
+  (`NotificationType.darwinAttachment`). Pulsanti dalle categorie
+  registrate all'avvio.
 - **Windows**: logo dell'app registrato per i toast (`assets/notifiche/
   uninotes.png`, prima Windows mostrava un'icona vuota), logo del tipo al
   posto di quello dell'app nel toast, immagine larga in cima per inizio

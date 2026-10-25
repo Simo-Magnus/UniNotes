@@ -513,7 +513,7 @@ Future<T> runIsolated<T>(FutureOr<T> Function() f, {Duration? timeout}) async {
     if (response is List && response.length == 1) {
       done.complete(response[0] as T);
     } else if (response is List && response.length == 2) {
-      final error = response[0], stack = response[1];
+      final Object? error = response[0], stack = response[1];
       if (stack is StackTrace && error != null) {
         done.completeError(error, stack);
       } else {

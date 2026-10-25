@@ -135,7 +135,11 @@ final class LiveSpeech: NSObject {
     engine = nil
     session = ses
     authorize { [weak self] ok in
-      guard let self = self else { return }
+      // una risposta sempre, anche senza il canale (Dart non resta in attesa)
+      guard let self = self else {
+        result(false)
+        return
+      }
       guard ses == self.session else {
         result(false)
         return
@@ -161,7 +165,11 @@ final class LiveSpeech: NSObject {
               result(true)
               return
             }
-            guard ses == self.session else {
+            // nuova sessione o «stop» durante la preparazione (download del
+            // modello): niente riconoscitore di riserva a registrazione
+            // finita, che restava aperto senza più audio né «stop»
+            guard ses == self.session, !e.finishing else {
+              if self.engine === e { self.engine = nil }
               result(false)
               return
             }
@@ -406,7 +414,8 @@ private var analyzerPreparing = Set<String>()
     private var converter: AVAudioConverter?
     private var results: Task<Void, Never>?
     private var ready = false
-    private var finishing = false
+    /// Fermato («stop» o nuova sessione), anche durante [begin].
+    private(set) var finishing = false
     private let download: Bool
 
     init(locale: Locale, emit: @escaping (String, [String: Any]) -> Void, download: Bool = true) {
@@ -458,7 +467,9 @@ private var analyzerPreparing = Set<String>()
       Task { @MainActor in
         do {
           let supported = await SpeechTranscriber.supportedLocales
-          guard let loc = AnalyzerSpeechEngine.match(self.locale, in: supported) else {
+          guard !self.finishing,
+            let loc = AnalyzerSpeechEngine.match(self.locale, in: supported)
+          else {
             done(false)
             return
           }
@@ -477,9 +488,20 @@ private var analyzerPreparing = Set<String>()
             }
             try await request.downloadAndInstall()
           }
+          // fermato durante il download (stop, nuova registrazione, attesa
+          // scaduta in Dart): nessun analizzatore orfano che aspetta audio
+          // per sempre con il modello in memoria
+          guard !self.finishing else {
+            done(false)
+            return
+          }
           let analyzer = SpeechAnalyzer(modules: [transcriber])
           let format = await SpeechAnalyzer.bestAvailableAudioFormat(
             compatibleWith: [transcriber])
+          guard !self.finishing else {
+            done(false)
+            return
+          }
           let (stream, continuation) = AsyncStream<AnalyzerInput>.makeStream()
           self.analyzer = analyzer
           self.input = continuation
@@ -506,9 +528,23 @@ private var analyzerPreparing = Set<String>()
             self?.emit("ended", [:])
           }
           try await analyzer.start(inputSequence: stream)
+          if self.finishing {
+            // fermato mentre partiva: si chiude subito (la fine del flusso
+            // da sola non chiude l'analisi)
+            continuation.finish()
+            await analyzer.cancelAndFinishNow()
+            done(false)
+            return
+          }
           self.ready = true
           done(true)
         } catch {
+          // analisi non partita: niente flusso né attesa dei risultati
+          // lasciati aperti
+          self.input?.finish()
+          self.results?.cancel()
+          if let a = self.analyzer { await a.cancelAndFinishNow() }
+          self.analyzer = nil
           done(false)
         }
       }
@@ -553,6 +589,9 @@ private var analyzerPreparing = Set<String>()
       finishing = true
       input?.finish()
       results?.cancel()
+      // la fine dell'audio non chiude l'analisi: senza, l'analizzatore
+      // restava aperto (modello in memoria, risultati in attesa)
+      if let a = analyzer { Task { await a.cancelAndFinishNow() } }
       analyzer = nil
     }
   }

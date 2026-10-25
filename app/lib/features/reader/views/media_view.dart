@@ -343,7 +343,9 @@ class _MediaViewState extends State<MediaView> {
             aspectRatio: 16 / 9,
             child: _video == null
                 ? const ColoredBox(color: Colors.black)
-                : Video(controller: _video!, controls: NoVideoControls),
+                // nessun comando del pacchetto: ci sono i nostri sotto
+                // (NoVideoControls di media_kit vale null, senza tipo)
+                : Video(controller: _video!, controls: null),
           ),
         _controls(context),
       ],
@@ -412,7 +414,17 @@ class _MediaViewState extends State<MediaView> {
               )
             : Column(
                 children: [
-                  player,
+                  // i comandi non superano la metà dell'altezza: con la
+                  // finestra bassa e i caratteri grandi scorrono invece di
+                  // spingere fuori la trascrizione
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: c.hasBoundedHeight
+                          ? c.maxHeight * 0.5
+                          : double.infinity,
+                    ),
+                    child: SingleChildScrollView(child: player),
+                  ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),

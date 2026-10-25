@@ -158,6 +158,9 @@ class _SessionDialogState extends State<_SessionDialog> {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<ActivityType>(
+                // a tutta larghezza: con la finestra stretta o i caratteri
+                // grandi la scritta si accorcia invece di uscire dal riquadro
+                isExpanded: true,
                 style: Theme.of(context).textTheme.bodyLarge,
                 initialValue: _activity,
                 decoration: const InputDecoration(
@@ -172,7 +175,13 @@ class _SessionDialogState extends State<_SessionDialog> {
                         children: [
                           Icon(a.icon, size: 18),
                           const SizedBox(width: 8),
-                          Text(a.label),
+                          Flexible(
+                            child: Text(
+                              a.label,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                         ],
                       ),
                     ),

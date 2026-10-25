@@ -139,12 +139,18 @@ class FindBar extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                label,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: total > 0 ? t.cyanSoft : t.textMuted,
-                  fontWeight: total > 0 ? FontWeight.w600 : null,
-                  fontFeatures: const [FontFeature.tabularFigures()],
+              // con la finestra stretta o i caratteri grandi l'esito cede
+              // spazio (puntini) invece di spingere i pulsanti fuori
+              Flexible(
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: total > 0 ? t.cyanSoft : t.textMuted,
+                    fontWeight: total > 0 ? FontWeight.w600 : null,
+                    fontFeatures: const [FontFeature.tabularFigures()],
+                  ),
                 ),
               ),
               IconButton(

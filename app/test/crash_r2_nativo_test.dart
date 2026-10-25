@@ -229,6 +229,11 @@ void main() {
       );
       expect(kt, contains('ContentResolver.requestSync('));
       expect(kt, contains('SYNC_EXTRAS_UPLOAD'));
+      // anche una sincronizzazione completa urgente: la sola richiesta
+      // «upload» si fonde con quella del fornitore del calendario, che
+      // Android rimanda (quasi due minuti sul Pixel 9a)
+      expect(kt, contains('val full = android.os.Bundle().apply'));
+      expect(kt, contains('for (extras in listOf(full, upload))'));
       // la sincronizzazione automatica dell'utente si rispetta
       expect(
         kt,

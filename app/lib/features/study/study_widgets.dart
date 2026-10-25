@@ -206,35 +206,49 @@ class ChoiceBox<T> extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 44),
         child: Center(
           widthFactor: 1,
-          child: Container(
-            constraints: const BoxConstraints(minHeight: 36),
-            padding: const EdgeInsets.only(left: 12, right: 6),
-            decoration: BoxDecoration(
-              color: t.innerCard,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: theme.colorScheme.outline),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: Text(
-                    label,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.labelLarge?.copyWith(
-                      color: t.textPrimary,
+          // in una riga già piena (caratteri grandi, finestra stretta) resta
+          // solo la freccia: il contenuto fisso del riquadro (40 px) non
+          // esce dallo spazio che gli resta
+          child: LayoutBuilder(
+            builder: (context, c) {
+              final tiny = c.maxWidth < 48;
+              return Container(
+                constraints: const BoxConstraints(minHeight: 36),
+                padding: tiny
+                    ? EdgeInsets.zero
+                    : const EdgeInsets.only(left: 12, right: 6),
+                decoration: BoxDecoration(
+                  color: t.innerCard,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: theme.colorScheme.outline),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (!tiny) ...[
+                      Flexible(
+                        child: Text(
+                          label,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.labelLarge?.copyWith(
+                            color: t.textPrimary,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 2),
+                    ],
+                    Flexible(
+                      child: Icon(
+                        Icons.expand_more_rounded,
+                        size: 20,
+                        color: t.textSecondary,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                const SizedBox(width: 2),
-                Icon(
-                  Icons.expand_more_rounded,
-                  size: 20,
-                  color: t.textSecondary,
-                ),
-              ],
-            ),
+              );
+            },
           ),
         ),
       ),

@@ -96,6 +96,8 @@ Future<bool> removeTranscriptTimes(File md, {String? audioPath}) async {
   try {
     return await job;
   } finally {
+    // toglie dalla mappa il lavoro appena atteso (niente da attendere)
+    // ignore: unawaited_futures
     _cleaning.remove(md.path);
   }
 }

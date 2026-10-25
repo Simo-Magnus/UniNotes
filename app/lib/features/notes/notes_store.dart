@@ -224,6 +224,8 @@ class NotesStore {
       ok = false;
     }
     _reach[prefix] = (ok, clock());
+    // toglie dalla mappa questo stesso controllo (niente da attendere)
+    // ignore: unawaited_futures
     _checking.remove(prefix);
     return ok;
   }();

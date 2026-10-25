@@ -230,6 +230,8 @@ class MainActivity : FlutterActivity() {
         liveSpeech = null
         calendarChannel?.setMethodCallHandler(null)
         calendarChannel = null
+        // richiesta del permesso ancora aperta: una risposta a Dart
+        calendar?.dispose()
         calendar = null
         openWithChannel?.setMethodCallHandler(null)
         openWithChannel = null

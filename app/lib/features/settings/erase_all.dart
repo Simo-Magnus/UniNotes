@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -329,32 +330,35 @@ Future<EraseReport> runEraseWithProgress(
   // si è aperta un'altra pagina sopra (tocco su una notifica); un semplice
   // pop avrebbe tolto quella e lasciato il riquadro senza fine
   BuildContext? dialog;
-  showAppDialog<void>(
-    context: context,
-    barrierDismissible: false,
-    builder: (c) => PopScope(
-      canPop: false,
-      child: Builder(
-        builder: (c) {
-          dialog = c;
-          return AlertDialog(
-            content: Row(
-              children: [
-                const SizedBox.square(
-                  dimension: 28,
-                  child: CircularProgressIndicator(),
-                ),
-                const SizedBox(width: 20),
-                Expanded(
-                  child: ValueListenableBuilder(
-                    valueListenable: step,
-                    builder: (_, v, _) => Text(v),
+  // il riquadro resta aperto durante l'eliminazione: si chiude sotto
+  unawaited(
+    showAppDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (c) => PopScope(
+        canPop: false,
+        child: Builder(
+          builder: (c) {
+            dialog = c;
+            return AlertDialog(
+              content: Row(
+                children: [
+                  const SizedBox.square(
+                    dimension: 28,
+                    child: CircularProgressIndicator(),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
+                  const SizedBox(width: 20),
+                  Expanded(
+                    child: ValueListenableBuilder(
+                      valueListenable: step,
+                      builder: (_, v, _) => Text(v),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     ),
   );

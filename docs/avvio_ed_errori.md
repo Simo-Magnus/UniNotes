@@ -702,3 +702,273 @@ pulsante, intestazioni, riquadri degli anni, fogli, riquadri, selettore
 dell'ora, schede dei libri, formule), con 320×568, 568×320 e 1920×1080,
 caratteri ×1 e ×2 e tema chiaro e scuro (`CRASH_R5_FULL=1`: tutte le sei
 finestre e anche ×1,3).
+
+## Sesto giro: codice nativo cambiato di recente (25/10/2026)
+
+Ricontrollo di Swift (iOS e macOS), Kotlin e C++ del runner Windows
+cambiati dopo il quarto giro: risposte ai canali mancanti o doppie,
+riconoscitori lasciati aperti, lavoro pesante sul filo principale.
+
+- **Riconoscitore di Apple fermato durante la preparazione** (iOS/macOS 26,
+  `LiveSpeech.swift`, uguale nei due runner): se lo «stop» o una nuova
+  sessione arrivavano mentre il modello della lingua si scaricava (o Dart
+  smetteva di aspettare dopo 45 s), al termine del download partiva lo
+  stesso un `SpeechAnalyzer` con un flusso d'audio che nessuno chiudeva più
+  (modello in memoria, attesa dei risultati per sempre); su iPhone partiva
+  anche SFSpeechRecognizer di riserva, a registrazione già finita. Ora
+  `begin` ricontrolla lo stop dopo ogni attesa, chiude l'analisi se è stata
+  fermata mentre partiva e, se l'avvio fallisce, chiude flusso e risultati;
+  `cancel` chiama `cancelAndFinishNow()` (la fine del flusso da sola non
+  chiude l'analisi, dice la documentazione di Apple); niente riserva dopo
+  uno stop. `start` risponde sempre, anche senza l'oggetto del canale.
+- **`support` senza limite di tempo**: da iOS/macOS 26 chiede al sistema le
+  lingue di SpeechAnalyzer; senza risposta il testo dal vivo restava «in
+  avvio» e il recupero a fine lezione (che aspetta l'avvio) non finiva.
+  Ora `SystemSpeech.kSupportTimeout` (15 s): poi «non disponibile» e si
+  passa al motore successivo.
+- **Pulsanti della Live Activity doppi** (`AppDelegate.swift`): l'osservatore
+  dei comandi si aggiungeva a ogni motore creato senza togliere il
+  precedente (scena chiusa dal sistema e riaperta): «Pausa» arrivava due
+  volte e si annullava. Ora uno solo (token salvato e tolto).
+- **«Apri in UniNotes» con un file di iCloud Drive** (`IncomingFiles`): la
+  copia con la lettura coordinata (che scarica il file se non è sul
+  telefono) girava sul filo principale; all'avvio aperto dal file iOS
+  chiudeva l'app per il blocco (watchdog). Ora la copia è in background e
+  Flutter riceve `available` quando i file sono pronti (i messaggi arrivati
+  prima che Dart ascolti restano nel buffer del canale).
+- **Permesso del calendario chiesto con l'attività che si chiude (Android)**:
+  il `result` in attesa restava senza risposta (Dart in attesa per sempre).
+  Ora `UniNotesCalendar.dispose()` in `cleanUpFlutterEngine` risponde con lo
+  stato attuale.
+- **Dettatura di Windows** (`live_speech.cpp`): eventi arrivati dopo la
+  chiusura del riconoscitore (StartAsync o compilazione finiti dopo uno
+  stop) non segnano più «in esecuzione» senza sessione né mandano «error»
+  dopo «ended»; uno «stop» durante StartAsync risponde anche allo «start».
+- **Controllati senza difetti**: `notification_identity.cpp` (COM già
+  inizializzato dal filo principale, `HStringReference` valido per tutta la
+  chiamata, ogni HRESULT controllato), `main.cpp` (AUMID prima di ogni
+  finestra, mutex dell'istanza unica chiuso su ogni uscita),
+  `focus_session.cpp`, `open_with.cpp`, `spell_check.cpp`,
+  `flutter_window.cpp` (canali tolti prima del motore), `BackgroundSync.kt`,
+  `RecordingNotification.kt`, `IncomingShare.kt`, `LiveSpeech.kt`, la Live
+  Activity. `requestSync` urgente (`UniNotesCalendar.kt`): chiamata binder
+  valida da qualsiasi filo e anche dal motore senza interfaccia; la quota
+  dei lavori urgenti si applica nel sistema e non lancia nell'app; l'unica
+  eccezione possibile è `IllegalArgumentException` di
+  `SyncRequest.Builder.build()` con combinazioni vietate
+  (`SCHEDULE_AS_EXPEDITED_JOB` con `SYNC_EXTRAS_EXPEDITED`, con la ricarica o
+  periodica), già dentro un `try`.
+
+**Test**: `test/crash_r6_nativo_test.dart` (`support` senza risposta, con
+`SystemSpeech` e con `LiveTranscriber`; controlli dei sorgenti Swift, Kotlin
+e C++ per ogni caso sopra). Kotlin compilato con `kotlinc` e gli stub di R e
+AndroidX, i C++ toccati con MSVC (`/W4 /WX`); lo Swift va compilato su un Mac.
+
+## Sesto giro: regole di analisi (25/10/2026)
+
+Ricerca sistematica con regole dell'analizzatore più severe, provate prima
+su una copia di `lib/` e `test/` (avvisi in `lib` / `test`) e poi lasciate
+in `app/analysis_options.yaml` solo se senza rumore. Test in
+`app/test/crash_r6_lint_test.dart` (rossi sul codice del commit 259699fa,
+verdi dopo).
+
+**Attive da ora** (il codice è pulito; un falso positivo si annota sulla
+riga con `// ignore: <regola>` e un motivo, o con `unawaited(...)`):
+
+| Regola | Avvisi trovati | Esito |
+| --- | --- | --- |
+| `strict-casts` (opzione del linguaggio) | 2 / 0 | falsi positivi corretti con un tipo esplicito: `runIsolated` (errore dell'isolate già controllato `!= null`), `NoVideoControls` di media_kit (vale `null` senza tipo) |
+| `unawaited_futures` | 4 / 5 | falsi positivi: `Map.remove` di un Future già atteso (scaricamenti, pulizia delle trascrizioni, controllo delle unità), dialogo di avanzamento dell'eliminazione, «browser» finto nei test OAuth, `openFocusScreen` nei test, zona della prova a caso |
+| `avoid_dynamic_calls` | 0 / 4 | test: campi interni di sqflite (annotati), JSON dei test Outlook (tipizzato) |
+| `cancel_subscriptions`, `throw_in_finally`, `avoid_void_async`, `unnecessary_statements`, `no_self_assignments`, `invalid_case_patterns`, `literal_only_boolean_expressions`, `test_types_in_equals` | 0 | nessun avviso: restano come guardia |
+
+`use_build_context_synchronously`, `control_flow_in_finally`,
+`null_check_on_nullable_type_parameter`, `unrelated_type_equality_checks`,
+`collection_methods_unrelated_type` e `hash_and_equals` erano già attive
+(flutter_lints): 0 avvisi.
+
+**Provate e lasciate spente** (rumore senza casi veri, o casi veri già
+coperti):
+
+- `discarded_futures` (75 / 2): quasi tutti chiamate volute senza attesa
+  (navigazione, `_load()` in `initState` con il `try` dentro, `cancel()`
+  nei `dispose`, `.catchError` già presente). Ha trovato i due casi veri
+  qui sotto, corretti; tenerla obbligherebbe a un `unawaited` su ogni
+  apertura di pagina.
+- `cast_nullable_to_non_nullable` (51 / 48): `riga['colonna'] as String` su
+  colonne NOT NULL del database e JSON già controllato con `is`; i lettori di
+  file esterni (evidenziazioni, segnalibri, OneNote) hanno già il `try` per
+  voce.
+- `avoid_slow_async_io` (202 / 36): consiglio di prestazioni, non di
+  crash.
+- `no_adjacent_strings_in_list` (32 / 13): controllate tutte, nessuna
+  virgola mancante (testi lunghi a capo, migrazione v9 compresa).
+- `avoid_catching_errors` (11 / 4): `ArgumentError`/`RangeError`/
+  `StackOverflowError` presi apposta (fusi orari, ZIP, KFX, testo annidato).
+- `only_throw_errors` (2 / 2): si rilancia un errore già preso.
+- `unnecessary_null_checks` (3 / 5), `close_sinks` (0 / 6, StreamController
+  dei test), `unsafe_variance` (6 / 0, callback di widget generici mai
+  usati con un sottotipo), `avoid_futureor_void` (1 / 0),
+  `missing_whitespace_between_adjacent_strings` (15 / 134, SQL e CSS).
+- `strict-inference` e `strict-raw-types` (18 / 20): `const []`, `Map`
+  senza argomenti di tipo; i `.cast<Map>()` su JSON dei lettori (canvas,
+  Excalidraw, notebook) lanciano un TypeError già preso dal lettore («file
+  non leggibile», prova con byte casuali in `reader_fuzz_test`).
+- `avoid_returning_null_for_future`: tolta da Dart 3.3.
+
+**Casi veri corretti** (`core/services/desktop_window.dart`):
+
+- **Finestra che non si riapriva dall'icona dell'area di notifica**: con
+  una registrazione in corso e la finestra chiusa con la X, il tocco
+  sull'icona (o «Apri UniNotes») toglieva prima l'icona; se il sistema non
+  la toglieva (`destroy` con errore, il caso già gestito in `_quit`)
+  l'errore restava non gestito prima di `show()`, la finestra restava
+  nascosta e anche «Esci» dal menu non arrivava a chiedere cosa fare della
+  registrazione. Ora l'errore dell'icona si registra e la finestra si apre.
+- **«Salva la registrazione» dall'icona senza risposta**: con la finestra
+  nascosta un salvataggio non riuscito (disco pieno, cartella non
+  scrivibile) era un errore non gestito senza nessun avviso. Ora arriva la
+  notifica «Registrazione non salvata» (il file audio resta nell'app e al
+  prossimo avvio si propone di salvarlo).
+
+## Prova a caso estesa (sesto giro, R6-B, 25/10/2026)
+
+La prova a caso del quarto giro raggiungeva poco o niente delle parti più
+profonde (onboarding completo, lettore con i vari formati, registratore con un
+flusso audio, Focus, Impostazioni e Collegamenti con i servizi collegati).
+L'impianto ora sta in `test/support/monkey_harness.dart` (usato da
+`test/crash_r4_monkey_test.dart`, tre scenari, e da
+`test/crash_r6_monkey_test.dart`, nove scenari nuovi) e ogni scenario insiste su
+una parte dell'app.
+
+**Impianto** (`monkey_harness.dart`)
+- `MonkeyScenario` = dati di partenza + `MonkeyArea` + `MonkeyOptions`.
+  `MonkeyArea` dice da dove si parte (`sezione:Studio`, `registra`…), ci torna
+  da sola quando la scimmia ne esce (barra e colonna di navigazione evitate al
+  97%), preferisce certi pulsanti (`prefer`) e fa azioni sue con un peso
+  (`actions`: audio finto, eventi del riconoscitore, scorciatoie da tastiera,
+  minuti che passano, «Importa un backup», macro «registrazione completa»,
+  «sessione Focus completa», «compila i campi e conferma», «elimina e annulla»).
+  Aiuti per le azioni: `tapMatching`, `tapKey`, `tapIcon`, `tapAny`,
+  `typeInField`, `shortcut`, `shows<T>()`.
+- Finti che si rompono a comando (`MonkeyFakes`, `MonkeyChannels`): microfono
+  (`FakeMic`: audio di vari livelli, silenzio, pezzi di lunghezza dispari, flusso
+  che finisce, pausa del sistema, permesso negato, microfono occupato, ripresa che
+  non riesce), riconoscimento vocale del sistema (canale `speech`: testo
+  provvisorio e definitivo, errori, eventi di sessioni vecchie), Parakeet finto
+  con motore VAD, conversione audio (canale `audio`: copia il file, ogni tanto
+  `false` o un errore del sistema), `connectivity_plus`, OneDrive e Google Drive
+  in memoria (rete assente, errori 503, file «dal sito»), calendario di sistema
+  (accesso revocato, nessun calendario, scritture che falliscono), notifiche
+  (permesso negato), selettore dei file con una coda di file da dare (backup
+  validi, parziali, di versione futura), orologio del Focus
+  (`AppServices(focusTimer: …)`: i minuti passano senza aspettarli), database
+  azzerabile (primo avvio da capo nell'onboarding), file di prova di ogni formato
+  del lettore (`fuzzCorpus()` più due varianti rovinate per ognuno).
+- Ogni errore riporta ora il contesto (finestra, caratteri, tema, schermata,
+  vincoli degli oggetti sopra l'errore); a fine prova `TOCCHI|scenario|seme|azioni|
+  distinti|…` elenca quante volte è stato toccato ogni elemento, per vedere che
+  cosa raggiunge una prova.
+
+**Scenari** (`CRASH_R4_SCENARIO=<nome>`)
+
+| Scenario | Dati | Dove insiste |
+| --- | --- | --- |
+| `onboarding` | database vuoto | primo avvio completo (aspetto, ateneo, corso, anno, AI, lingua delle lezioni, avvisi, calendario, esclusioni); finito, database azzerato e di nuovo |
+| `cambio_corso` | piano reale | Impostazioni → «Cambia corso» e i passi del percorso |
+| `impostazioni` | piano (a volte con casi limite) + backup | tutte le sezioni e i dialoghi, calendario e notifiche finti, server finti, esporta/importa |
+| `collegamenti` | piano | OneDrive, Google Drive, Whisper, Parakeet, AI con accesso finto che riesce e server che vanno e vengono |
+| `lettore` | piano + file di prova di ogni formato (buoni e rovinati) | sezione File, apertura diretta, ricerca, pagine, zoom, segnalibri, «Apri con» |
+| `registratore` | piano | registrazione con audio e testo dal vivo finti, correzione del testo, lingua, salvataggio, lettore, «Trascrivi con…» |
+| `studio` | piano | Argomenti, cronometro, Focus (avvio, pausa, salta pausa, termina, minuti che passano), moduli, allegati |
+| `esami` | piano | prove (aggiunta, modifica, elimina con «Annulla»), Anni precedenti, Voti dell'anno |
+| `libri` | piano | elenco, schede, apertura nel lettore |
+
+**Giri**: la suite normale (`crash_r6_monkey_test.dart`) fa un seme da 35 azioni
+per scenario (circa 30 secondi); il giro lungo si lancia con
+`CRASH_R4_MONKEY=1` e `CRASH_R4_SEEDS`, `CRASH_R4_ACTIONS`, `CRASH_R4_SCENARIO`,
+`CRASH_R4_SEED`, `CRASH_R4_TRACE`, `CRASH_R5_COLLECT` come per il quarto giro.
+Più `flutter test` insieme nella stessa cartella si bloccano a vicenda
+(`build/native_assets/windows/sqlite3.dll`, cache del compilatore): per i giri
+lunghi in parallelo si usano copie della cartella `app` con le giunzioni di `lib`,
+`test` e `assets` (e il proprio `pub get --offline`).
+
+**Casi trovati e corretti** (prove mirate in `test/crash_r6_trovati_test.dart`,
+rosse sul codice del commit 259699fa, verdi dopo la correzione, salvo i due
+segnati «non rossa»)
+
+| Caso | Causa | Correzione | Test |
+| --- | --- | --- | --- |
+| Scelta della cartella di OneDrive/Google Drive senza rete, doppio tocco su una cartella: eccezione non gestita (`GraphException`) | `OneDriveFolderDialog` sostituiva il futuro dell'elenco prima che il `FutureBuilder` lo ascoltasse e l'errore di rete del primo restava senza ascoltatori | `_list()` aggancia un ascoltatore che ignora l'errore (lo mostra il `FutureBuilder`) | `scelta della cartella: doppio tocco senza rete` |
+| Stessa cosa in `RevisionBuilder` (la base di quasi tutte le schermate): due `revision.bump()` di fila con un errore di lettura | come sopra | `RevisionBuilder._run` aggancia lo stesso ascoltatore (`lib/widgets/common.dart`) | `RevisionBuilder: due ricaricamenti di fila con un errore` |
+| Lettore: avviso «Per la sezione completa usa OneNote» con «OneNote» e «Apri con…» sulla stessa riga: al testo restava larghezza 0, una lettera per riga, colonna alta 1547 px (overflow); a 320×568 ×2 l'avviso occupava tutta l'altezza | `Row` con testo `Expanded` e due `TextButton` senza limite | `AdaptiveActionRow` (i pulsanti vanno sotto il testo se non c'è posto) e l'avviso non supera un terzo dell'altezza (scorre) (`reader_screen.dart`) | `avviso del lettore con due pulsanti su un telefono` |
+| Lettore di un file audio/video con la trascrizione in una finestra bassa: i comandi del lettore non scorrevano e spingevano fuori la trascrizione (176 px) | `Column` con i comandi non scorrevoli | i comandi occupano al massimo metà altezza e scorrono (`media_view.dart`) | `registrazione con trascrizione in una finestra bassa` |
+| Lettore di una registrazione, 568×320 con i caratteri ×2: «Nessuna trascrizione» (158 px) e intestazione della trascrizione (19 px) più alte del riquadro; a 320 px i cinque pulsanti di avanti e indietro (8 px) e le due durate sotto la barra (0,75 px) uscivano | colonne e righe senza scorrimento né riduzione | `SingleChildScrollView`, intestazione al massimo metà del riquadro che scorre, `FittedBox(scaleDown)` per i pulsanti, durate con puntini (`recording_player_screen.dart`) | `registrazione con trascrizione in una finestra piccola` |
+| «Trova nel testo» (lettore, registrazioni, appunti): esito («Nessun risultato») spingeva i pulsanti fuori, 218 px a 360 px ×2 | testo senza limite nella riga | `Flexible` con puntini (`find_bar.dart`) | `barra «Trova nel testo» stretta con i caratteri grandi` |
+| Colonna di navigazione (nove voci) più alta della finestra con i caratteri ×2 (1280×800) o con finestre basse (70 e 38 px); la barra di «Registra» usciva di 8 px | `NavigationRail` non scorre | `LayoutBuilder` + `SingleChildScrollView` + `IntrinsicHeight` (`app_shell.dart`) | `sezioni con la colonna di navigazione e i caratteri grandi` |
+| Registratore con il testo dal vivo acceso, 768×1024 ×2: «Trascrizione · dal vivo · sul dispositivo» usciva dalla scheda (120 px) | etichetta senza `Flexible` | `Flexible` con puntini (`recorder_screen.dart`) | `scheda della trascrizione dal vivo con i caratteri grandi` |
+| Studio → «Nuova sessione», 320 px: menu «Attività» e le sue voci uscivano dal riquadro (63 e 196 px) | `DropdownButtonFormField` non espanso, voce con `Row` rigida | `isExpanded` e `Flexible` (`session_dialog.dart`) | `riquadro «Nuova sessione» in una finestra stretta` |
+| Studio → «Ordine dei moduli», 360×640 ×2: riquadro più alto della finestra (130 px) | lista alta il 55% dello schermo in un riquadro non scorrevole | `scrollable: true` e lista al massimo il 40% (`module_order_dialog.dart`) | `riquadro «Ordine dei moduli» in una finestra bassa` |
+| Scelta della cartella (OneDrive/Google Drive), 568×320 ×1,3: 4 px | altezza fissa di 420 px | `scrollable` e altezza al massimo metà schermo (`onedrive_card.dart`) | `scelta della cartella in una finestra bassa` |
+| Studio → Sessioni, 375 px ×2: la casella dell'intervallo restava con 39,5 px e il suo contenuto fisso ne chiede 40 | `ChoiceBox` con spazio fisso | in uno spazio stretto resta solo la freccia (`study_widgets.dart`) | `casella di scelta in uno spazio strettissimo` |
+| Impostazioni → Il mio percorso, 1280 px ×2: «Aggiorna database» e «Indirizzo del database» uscivano di 11 px dai pulsanti | due pulsanti `Expanded` con parole che non si spezzano | stanno su una riga solo se c'è posto per la parola più lunga di ognuno, altrimenti una sotto l'altra (`profile_section.dart`) | `«Il mio percorso» stretto con i caratteri grandi` (non rossa: non riprodotta a riposo) |
+| Studio → Sessioni, righe delle sessioni con durate lunghe («1 h 25 min» + cestino) e menu «Tipo del file e altro» degli allegati | `ListTile.trailing` e voci di menu senza limite (assertion «Trailing widget consumes the entire tile width», 19 px) | durata e cestino al massimo il 35% della larghezza con puntini, `Flexible` nelle voci (`sessions_tab.dart`, `attachments.dart`) | `sessioni di studio con i caratteri grandi` (non rossa: le righe lunghe non sono fra quelle costruite) |
+
+Cambi per le prove (non per l'utente): `AppServices(focusTimer: …)` per dare al
+Focus un orologio proprio.
+
+**Problemi dell'impianto di prova** (non crash, corretti nell'impianto)
+- canale `dev.fluttercommunity.plus/connectivity_status` (`listen`) senza plugin:
+  con l'accesso finto alle nuvole partiva la sincronizzazione e
+  `connectivity_plus` segnalava un `MissingPluginException` (ora finto);
+- timer periodici di sincronizzazione (`CloudDriveService.startAutoSync`) e
+  registrazione avviata all'ultimo passo che restavano vivi a fine prova (ora si
+  fermano e si aspetta che l'avvio in corso finisca);
+- il pulsante grande del registratore non ha testo né chiave: si trova dall'icona
+  (`tapIcon`); le etichette cercate salgono fino a 30 livelli di antenati.
+
+**Asserzioni di Flutter** (solo in debug, pila senza codice dell'app; contate a
+parte dalla prova, vedi il filtro in `runMonkey`), oltre a quelle del quarto
+giro: `InputDatePickerFormField` che riscrive il suo campo in
+`didChangeDependencies` mentre il tema o i caratteri cambiano (selettore della
+data a testo); barra di selezione del testo («Seleziona tutto», «Copia») con
+`RenderFollowerLayer` e con `size == theater.size` in
+`OverlayPortal.overlayChildLayoutBuilder`; albero semantico con un `!` nullo in
+`_updateSemanticsNodeGeometry` e con `offset.isFinite` (lettore di schermo
+acceso, solo dopo molte navigazioni); `SnackBar` mobile fuori schermo in una
+finestra alta 320 px.
+
+**Sospetti non spiegati**: dopo un ridimensionamento in mezzo ad altre azioni,
+con la finestra larga e i caratteri ×2, la prova ha segnalato (ogni 10-20 mila
+azioni nelle sezioni File e Libri) «Trailing widget consumes the entire tile
+width» e overflow di pagine schiacciate in 80-95 px. L'albero dei vincoli mostra
+che la schermata è costruita con le misure nuove (colonna di navigazione larga
+280 px) ma disposta con quelle della finestra di prima (375×812): la
+disposizione non ha ancora il vincolo nuovo. Con un ridimensionamento isolato
+(300 cambi di finestra, caratteri e tema consecutivi) non si riproduce mai, e
+l'app non decide la disposizione dal vincolo ma da `MediaQuery`: è stato
+classificato come fotogramma di flutter_test (`staleWindowConstraints`) e
+contato a parte («errori noti di Flutter»). Non confermato come errore
+dell'app; se si ripresenta fuori dalla prova, il resoconto della prova ha già
+l'albero dei vincoli.
+
+**Esito del giro finale** (dopo l'ultima correzione): per ogni scenario nuovo
+sei semi da 5000 azioni (Studio otto), finestre da 320×568 a 1920×1080, caratteri
+×1, ×1,3 e ×2, tema chiaro e scuro, semi dispari con il lettore di schermo
+acceso, senza errori e senza overflow:
+
+| Scenario | Semi × azioni | Azioni | Errori | Overflow |
+| --- | --- | --- | --- | --- |
+| `onboarding` | 6 × 5000 | 30.000 | 0 | 0 |
+| `cambio_corso` | 6 × 5000 | 30.000 | 0 | 0 |
+| `impostazioni` | 6 × 5000 | 30.000 | 0 | 0 |
+| `collegamenti` | 6 × 5000 | 30.000 | 0 | 0 |
+| `lettore` | 6 × 5000 | 30.000 | 0 | 0 |
+| `registratore` | 6 × 5000 | 30.000 | 0 | 0 |
+| `studio` | 8 × 5000 | 40.000 | 0 | 0 |
+| `esami` | 6 × 5000 | 30.000 | 0 | 0 |
+| `libri` | 6 × 5000 | 30.000 | 0 | 0 |
+
+In tutto 280.000 azioni; nei giri di ricerca prima delle correzioni ne sono state
+fatte circa altrettante. Le asserzioni di Flutter elencate sopra sono contate a
+parte e non fermano la prova. Suite completa: 1634 superati, 4 saltati, 0 falliti.

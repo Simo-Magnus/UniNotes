@@ -290,8 +290,13 @@ void main() {
     test('la scelta arriva a sqflite (in release il predefinito è «mai»)', () {
       final on = AppDatabase.optionsFor(rollbackOrphan: true) as dynamic;
       final off = AppDatabase.optionsFor(rollbackOrphan: false) as dynamic;
+      // campi della classe interna di sqflite, non dell'interfaccia
+      // pubblica: si leggono senza tipo apposta
+      // ignore: avoid_dynamic_calls
       expect(on.rollbackActiveTransactionOnOpen, isTrue);
+      // ignore: avoid_dynamic_calls
       expect(off.rollbackActiveTransactionOnOpen, isFalse);
+      // ignore: avoid_dynamic_calls
       expect(on.singleInstance, isTrue);
     });
 

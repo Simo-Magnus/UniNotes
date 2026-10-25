@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -100,7 +103,15 @@ class _OneDriveFolderDialogState extends State<OneDriveFolderDialog> {
 
   DriveFolder get _current => _stack.last;
 
-  Future<List<DriveFolder>> _list() => widget.browser.children(_current);
+  Future<List<DriveFolder>> _list() {
+    final f = widget.browser.children(_current);
+    // l'errore lo mostra il FutureBuilder; un doppio tocco su una cartella (o
+    // su «Su») sostituisce il futuro prima che il FutureBuilder lo ascolti e,
+    // senza rete, l'errore del primo restava senza ascoltatori (eccezione non
+    // gestita)
+    unawaited(f.then<void>((_) {}, onError: (Object _) {}));
+    return f;
+  }
 
   void _open(DriveFolder f) => setState(() {
     _stack.add(f);
@@ -115,10 +126,13 @@ class _OneDriveFolderDialogState extends State<OneDriveFolderDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      // scorre con la finestra bassa (320 px) o i caratteri grandi; l'elenco
+      // delle cartelle è alto al massimo metà schermo
+      scrollable: true,
       title: Text('Cartella su ${widget.browser.serviceName}'),
       content: SizedBox(
         width: 520,
-        height: 420,
+        height: math.min(420, MediaQuery.sizeOf(context).height * 0.5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

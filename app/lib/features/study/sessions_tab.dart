@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -403,16 +405,29 @@ class _SessionTile extends StatelessWidget {
         '${capitalize(formatShortWeekdayDmy(session.start))} · $range',
       ),
       subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(formatMinutes(session.durationMinutes)),
-          IconButton(
-            tooltip: 'Elimina',
-            icon: const Icon(Icons.delete_outline),
-            onPressed: onDelete,
-          ),
-        ],
+      // durata e cestino non occupano mai tutta la riga (finestra stretta,
+      // caratteri grandi): la durata si accorcia con i puntini
+      trailing: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: math.min(MediaQuery.sizeOf(context).width * 0.35, 200),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Text(
+                formatMinutes(session.durationMinutes),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            IconButton(
+              tooltip: 'Elimina',
+              icon: const Icon(Icons.delete_outline),
+              onPressed: onDelete,
+            ),
+          ],
+        ),
       ),
       onTap: onEdit,
     );

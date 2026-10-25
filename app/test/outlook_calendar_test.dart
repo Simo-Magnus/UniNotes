@@ -261,7 +261,7 @@ void main() {
       expect(st.calendarName, 'Calendario');
       expect(st.account, 'studente@outlook.it');
       final ev = outlook.events.values.firstWhere(
-        (e) => (e['ext'] as List).first['value'] == 'esame-1',
+        (e) => ((e['ext'] as List).first as Map)['value'] == 'esame-1',
       );
       expect(ev['isAllDay'], isTrue);
       expect(ev['reminderMinutesBeforeStart'], 900);

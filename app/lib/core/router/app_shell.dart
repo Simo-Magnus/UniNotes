@@ -236,19 +236,33 @@ class _AppShellState extends State<AppShell> {
                 border: Border(right: BorderSide(color: t.navBorder)),
               ),
               child: SafeArea(
-                child: NavigationRail(
-                  selectedIndex: _index,
-                  onDestinationSelected: _select,
-                  labelType: NavigationRailLabelType.all,
-                  minWidth: 84,
-                  destinations: [
-                    for (final d in kDestinations)
-                      NavigationRailDestination(
-                        icon: Icon(d.icon),
-                        selectedIcon: Icon(d.selectedIcon),
-                        label: Text(d.label),
+                // nove voci con le etichette: con i caratteri grandi o la
+                // finestra bassa la colonna scorre invece di uscire dallo
+                // schermo (la rail non scorre da sola)
+                child: LayoutBuilder(
+                  builder: (context, constraints) => SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
                       ),
-                  ],
+                      child: IntrinsicHeight(
+                        child: NavigationRail(
+                          selectedIndex: _index,
+                          onDestinationSelected: _select,
+                          labelType: NavigationRailLabelType.all,
+                          minWidth: 84,
+                          destinations: [
+                            for (final d in kDestinations)
+                              NavigationRailDestination(
+                                icon: Icon(d.icon),
+                                selectedIcon: Icon(d.selectedIcon),
+                                label: Text(d.label),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

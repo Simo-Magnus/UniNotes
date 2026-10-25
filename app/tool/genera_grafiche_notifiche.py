@@ -1,19 +1,24 @@
 """Genera le grafiche delle notifiche di UniNotes (nessuna immagine esterna).
 
-Colori del logo dell'app (docs/logo.svg): blu #1784FB → #0F72F2, ombra
-#0A54DA → #1A66D3, blu notte #0E3A7F, bianco. Ogni tipo di notifica ha un
+Colori del logo dell'app (docs/logo.svg): blu #1784FB -> #0F72F2, ombra
+#0A54DA -> #1A66D3, blu notte #0E3A7F, bianco. Ogni tipo di notifica ha un
 quadrato arrotondato blu con la zona in ombra in basso a destra (come nella
-«U» del logo) e il simbolo bianco del tipo; il logo dell'app, su una
-tessera bianca (tools/genera_icona.py), è il logo dei toast di Windows e
-sta a sinistra nelle immagini larghe:
+"U" del logo) e il simbolo bianco del tipo; il logo dell'app, su una
+tessera bianca (tools/genera_icona.py), è il logo dei toast di Windows,
+l'icona grande di Android e sta a sinistra nelle immagini larghe:
 
-- Android: res/drawable-nodpi/ic_notif_<canale>.png, icona grande (256 px)
-  a destra della notifica; l'icona piccola monocromatica resta
+- Android: res/drawable-nodpi/ic_notif_uninotes.png, icona grande (256 px)
+  a destra della notifica = logo dell'app, come su iPhone e iPad (tutte le
+  notifiche tranne la registrazione in corso, che ha un layout proprio);
+  ic_notif_recensione.png e ic_notif_sostegno.png (stella e cuore) per le
+  due notifiche promozionali. L'icona piccola monocromatica resta
   ic_stat_uninotes (tools/genera_icona.py --notifiche).
 - Windows, iOS, macOS: assets/notifiche/<canale>.png (logo del tipo nel
-  toast di Windows, miniatura allegata su iOS e macOS), assets/notifiche/
-  uninotes.png (logo dell'app registrato per i toast di Windows) e le
-  immagini larghe hero_<canale>.png (728×360, in cima al toast di Windows).
+  toast di Windows; su iOS e macOS la miniatura allegata a recensione e
+  sostegno: la sola stella o il solo cuore), assets/notifiche/uninotes.png
+  (logo dell'app registrato per i toast di Windows) e le immagini larghe
+  hero_<canale>.png (728x360: in cima al toast di Windows; su iOS e macOS
+  allegata solo per l'inizio della sessione d'esame).
 
 I nomi dei canali sono quelli di NotificationType (lib/core/reminders/
 notification_plan.dart). I simboli sono quelli di Material Icons (font del
@@ -89,6 +94,10 @@ SIMBOLI = {
     "sostegno": 0xF738,  # favorite_rounded
     "anni_precedenti": 0xF7EE,  # history_edu_rounded
 }
+
+# icona grande propria su Android solo per le notifiche promozionali (stella
+# e cuore); tutte le altre mostrano il logo dell'app
+ANDROID = ("recensione", "sostegno")
 
 # immagini larghe solo per le notifiche rare (inizio della sessione
 # d'esame, recensione, sostegno): sulle altre occuperebbero troppo spazio
@@ -186,9 +195,16 @@ def main() -> None:
     assets = APP / "assets/notifiche"
     for canale in SIMBOLI:
         b = badge(canale)
-        _salva(b, res / f"ic_notif_{canale}.png", (256, 256))
+        if canale in ANDROID:
+            _salva(b, res / f"ic_notif_{canale}.png", (256, 256))
         _salva(b, assets / f"{canale}.png", (256, 256))
+    # logo dell'app: icona grande di Android e logo dei toast di Windows
+    _salva(logo(), res / "ic_notif_uninotes.png", (256, 256))
     _salva(logo(), assets / "uninotes.png", (256, 256))
+    # le grafiche per tipo di Android non più usate (versioni precedenti)
+    for canale in SIMBOLI:
+        if canale not in ANDROID:
+            (res / f"ic_notif_{canale}.png").unlink(missing_ok=True)
     for canale in HERO:
         _salva(hero(canale), assets / f"hero_{canale}.png", (728, 360))
 
