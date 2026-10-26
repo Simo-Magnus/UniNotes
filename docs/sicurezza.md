@@ -912,3 +912,28 @@ Nessuna azione esterna. Restano da provare su un dispositivo vero le voci dei
 giri precedenti (FileProvider di open_filex, lettore multimediale, pulsanti
 delle notifiche); in più «Indietro» subito dopo il tocco sul widget
 «Registra lezione» con l'app aperta.
+
+## Build per App Store Connect (TestFlight, Mac App Store, notarizzazione)
+
+26/10/2026. Test: `app/test/testflight_ci_test.dart`. Job `testflight` e
+`mac-app-store` di `app.yml`, notarizzazione del DMG con la chiave API nel job
+`macos`, script `app/tool/app_store_connect.sh` (guida alla pubblicazione §6.4, §7.2,
+§7.5). Stesse regole dei giri precedenti:
+
+- solo push su `main` e avvio manuale (la notarizzazione anche i tag `v*`), mai
+  pull request; nessun permesso oltre `contents: read`; checkout senza token;
+  azioni fissate allo SHA;
+- i secret entrano solo come variabili d'ambiente dei passi che li usano (la
+  chiave `.p8` in due: controllo e scrittura del file), nessuna espressione nei
+  comandi; ogni passo dopo il controllo dipende da `testflight == 'si'`;
+- Key ID, Issuer ID, Team ID e Apple ID dell'app controllati con espressioni
+  esatte prima di entrare in un percorso o nel file delle opzioni di
+  esportazione;
+- chiave scritta con `umask 077` e permessi 600 in
+  `~/.appstoreconnect/private_keys`, mai stampata (niente `set -x`), cancellata
+  con le cartelle temporanee da un passo `if: always()` che non dipende dal
+  checkout; nel job `macos` lo stesso passo toglie anche certificato e
+  portachiavi temporaneo;
+- nessun certificato né profilo di distribuzione nei secret: la firma per l'App
+  Store la fa il cloud di Apple con la chiave API (ruolo Admin, necessario per i
+  certificati gestiti nel cloud).

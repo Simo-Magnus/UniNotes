@@ -33,6 +33,14 @@
 			</array>
 		</dict>
 	</array>
+	<!-- Solo crittografia del sistema (HTTPS/TLS, Portachiavi): esente dagli
+	     obblighi di esportazione (PUBBLICAZIONE.md §6.7). -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<!-- Categoria del Mac App Store (obbligatoria per il caricamento) e del
+	     Finder: Istruzione. -->
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>

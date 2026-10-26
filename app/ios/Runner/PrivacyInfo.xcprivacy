@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Privacy manifest dell'app (PUBBLICAZIONE.md §6.3 e §6.5): nessun
+     tracciamento, nessun dato raccolto dallo sviluppatore, API «required
+     reason» usate dall'app e dai plugin che non hanno un manifest proprio
+     (device_calendar, ffmpeg_kit, media_kit, open_filex, pdfium, whisper_ggml,
+     flutter_web_auth_2). Flutter e gli altri plugin includono il loro. -->
+<plist version="1.0">
+<dict>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<!-- coerente con le etichette «Dati non raccolti» di App Store Connect:
+	     se si sceglie l'opzione prudente (§6.5) vanno aggiunti qui gli stessi tipi -->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<!-- impostazioni dell'app (AppDelegate: intervallo della
+		     sincronizzazione) e dati dei widget nell'App Group -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+				<string>1C8F.1</string>
+			</array>
+		</dict>
+		<!-- date dei file nella cartella dell'app (registrazioni, modelli,
+		     database, ffmpeg e lettore) e dei file aperti o scelti dall'utente -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+				<string>3B52.1</string>
+			</array>
+		</dict>
+		<!-- spazio libero controllato prima di scaricare i modelli e i dati
+		     dell'ateneo, e mostrato quando non basta -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryDiskSpace</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>E174.1</string>
+				<string>85F4.1</string>
+			</array>
+		</dict>
+		<!-- tempo trascorso dentro l'app (durata delle registrazioni,
+		     riproduzione audio e video) -->
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>35F9.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

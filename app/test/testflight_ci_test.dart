@@ -1,0 +1,413 @@
+import 'dart:io';
+
+import 'package:flutter_test/flutter_test.dart';
+
+/// Caricamento su App Store Connect dalla build automatica, senza Mac
+/// (guida alla pubblicazione §6.4, §7.2 e §7.5): job «testflight» (iPhone e iPad) e
+/// «mac-app-store» (Mac), notarizzazione del DMG con la chiave API nel job
+/// «macos». Controlli statici sulle regole dei giri di sicurezza
+/// (docs/sicurezza.md): secret solo come variabili d'ambiente, chiave in un
+/// file temporaneo cancellato anche in caso di errore, job solo per main e
+/// l'avvio manuale, passi condizionati dai secret.
+void main() {
+  String read(String path) =>
+      File(path).readAsStringSync().replaceAll('\r\n', '\n');
+
+  final app = read('../.github/workflows/app.yml');
+  final script = read('tool/app_store_connect.sh');
+
+  /// Testo di un job (da «  nome:» al job successivo).
+  String job(String nome) {
+    final i = app.indexOf('\n  $nome:\n');
+    if (i < 0) throw StateError('job $nome assente in app.yml');
+    final dopo = RegExp(r'\n  [a-z][a-z-]*:\n')
+        .firstMatch(app.substring(i + 1));
+    return dopo == null
+        ? app.substring(i)
+        : app.substring(i, i + 1 + dopo.start);
+  }
+
+  /// Passi di un job, ognuno dal suo «      - ».
+  List<String> passi(String testo) {
+    final inizio = testo.indexOf('\n    steps:\n');
+    if (inizio < 0) throw StateError('job senza passi');
+    return testo
+        .substring(inizio)
+        .split(RegExp(r'\n(?=      - )'))
+        .skip(1)
+        .toList();
+  }
+
+  /// Testo dei comandi (righe «run: …» e blocchi «run: |»).
+  List<String> comandi(String testo) {
+    final out = <String>[];
+    final righe = testo.split('\n');
+    for (var i = 0; i < righe.length; i++) {
+      final m = RegExp(r'^( *)(?:- )?run: (.*)$').firstMatch(righe[i]);
+      if (m == null) continue;
+      if (m[2] != '|') {
+        out.add(m[2]!);
+        continue;
+      }
+      final rientro = m[1]!.length;
+      for (var j = i + 1; j < righe.length; j++) {
+        final r = righe[j];
+        if (r.trim().isNotEmpty && r.length - r.trimLeft().length <= rientro) {
+          break;
+        }
+        out.add(r);
+      }
+    }
+    return out;
+  }
+
+  const soloMain =
+      "    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')\n";
+  const conSecret = "if: steps.testflight.outputs.testflight == 'si'";
+
+  for (final nome in ['testflight', 'mac-app-store']) {
+    group('job $nome', () {
+      final testo = job(nome);
+      final elenco = passi(testo);
+
+      test('solo push su main e avvio manuale, mai pull request', () {
+        expect(testo, contains(soloMain));
+        expect(testo, isNot(contains('pull_request')));
+        // nessun permesso in più: vale contents: read del workflow
+        expect(testo, isNot(contains('    permissions:')));
+        expect(testo, contains('    needs: test\n'));
+        expect(
+          testo,
+          contains(
+            '      testflight: \${{ steps.testflight.outputs.testflight }}\n',
+          ),
+        );
+      });
+
+      test('i secret si controllano prima, poi ogni passo dipende da loro', () {
+        expect(elenco.first, contains('uses: actions/checkout@'));
+        expect(elenco.first, contains('persist-credentials: false'));
+        expect(elenco[1], contains('id: testflight'));
+        expect(
+          elenco[1],
+          contains('run: bash tool/app_store_connect.sh controlla testflight'),
+        );
+        for (final s in [
+          'ASC_KEY_ID',
+          'ASC_ISSUER_ID',
+          'ASC_KEY_P8_BASE64',
+          'APPLE_TEAM_ID',
+        ]) {
+          expect(elenco[1], contains('$s: \${{ secrets.$s }}'), reason: s);
+        }
+        final pulizia = elenco.last;
+        for (final p in elenco.sublist(2, elenco.length - 1)) {
+          expect(p, contains(conSecret), reason: p.split('\n').first);
+        }
+        expect(pulizia, contains('if: always()'));
+        expect(pulizia, isNot(contains(conSecret)));
+      });
+
+      test('secret solo come variabili d\'ambiente, nessuna espressione nei comandi', () {
+        for (final r in testo.split('\n')) {
+          if (!r.contains('secrets.')) continue;
+          expect(
+            r,
+            matches(
+              RegExp(
+                r'^          [A-Z0-9_]+: \$\{\{ secrets\.[A-Z0-9_]+ \}\}$',
+              ),
+            ),
+          );
+        }
+        final c = comandi(testo);
+        expect(c, isNotEmpty);
+        for (final r in c) {
+          expect(r, isNot(contains('\${{')), reason: r);
+        }
+        // la chiave entra solo nel passo che scrive il file
+        final conChiave = elenco
+            .where((p) => p.contains('ASC_KEY_P8_BASE64: '))
+            .map((p) => p.split('\n').first)
+            .toList();
+        expect(conChiave, hasLength(2));
+        expect(
+          elenco.where(
+            (p) =>
+                p.contains('ASC_KEY_P8_BASE64: ') &&
+                p.contains('run: bash tool/app_store_connect.sh chiave'),
+          ),
+          hasLength(1),
+        );
+      });
+
+      test('chiave cancellata alla fine, anche dopo un errore', () {
+        expect(
+          elenco.last,
+          contains(
+            'run: rm -rf "\$HOME/.appstoreconnect/private_keys" "\$RUNNER_TEMP/asc"',
+          ),
+        );
+        // senza dipendere dal checkout o dalla cartella app/
+        expect(elenco.last, contains('working-directory: .'));
+      });
+
+      test('firma nel cloud ed esportazione per l\'App Store', () {
+        expect(testo, contains('app_store_connect.sh esporta '));
+        expect(testo, contains(' app-store-connect\n'));
+        expect(testo, contains('--dart-define=STORE=appstore'));
+        expect(testo, contains('--dart-define=DONATIONS=none'));
+        expect(testo, contains('APP_BUILD: \${{ needs.test.outputs.build }}'));
+        expect(
+          testo,
+          contains('APP_VERSION: \${{ needs.test.outputs.version }}'),
+        );
+        expect(testo, contains('--config-only'));
+        expect(testo, contains('xcodebuild archive -quiet'));
+        // App Store Connect: solo Xcode 26 o successivo
+        expect(testo, contains(r'if [ "${major:-0}" -lt 26 ]; then'));
+      });
+    });
+  }
+
+  group('iPhone e iPad', () {
+    final testo = job('testflight');
+
+    test(
+      'archivio senza firma, team e firma automatica da riga di comando',
+      () {
+        expect(
+          testo,
+          contains(
+            '"DEVELOPMENT_TEAM=\$APPLE_TEAM_ID" CODE_SIGN_STYLE=Automatic CODE_SIGNING_ALLOWED=NO',
+          ),
+        );
+        expect(testo, contains("-destination 'generic/platform=iOS'"));
+        expect(
+          testo,
+          contains('flutter build ios --release --config-only --no-codesign'),
+        );
+        expect(testo, contains(r'"--build-number=$APP_BUILD"'));
+        expect(
+          testo,
+          contains('carica "\$ipa" ios io.github.simomagnus.universitynotes'),
+        );
+      },
+    );
+  });
+
+  group('Mac App Store', () {
+    final testo = job('mac-app-store');
+
+    test('firma locale con gli entitlement della sandbox, poi nel cloud', () {
+      expect(testo, contains('CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY=-'));
+      expect(
+        testo,
+        contains(
+          'codesign --force --sign - --entitlements macos/Runner/Release.entitlements "\$app"',
+        ),
+      );
+      expect(testo, contains("-destination 'generic/platform=macOS'"));
+      // numero di build diverso da quello dell'iPhone, sempre crescente
+      expect(testo, contains(r'"--build-number=$APP_BUILD.1"'));
+      expect(
+        testo,
+        contains('carica "\$pkg" macos io.github.simomagnus.universitynotes'),
+      );
+      // modelli inclusi prima della nuova firma
+      final modelli = testo.indexOf('prepara_modello_parakeet.py --installa');
+      expect(modelli, greaterThan(0));
+      expect(testo.indexOf('codesign --force --sign -'), greaterThan(modelli));
+    });
+
+    test(
+      'entitlement ammessi dal Mac App Store, niente eccezioni temporanee',
+      () {
+        final e = read('macos/Runner/Release.entitlements');
+        expect(
+          e,
+          contains('<key>com.apple.security.app-sandbox</key>\n\t<true/>'),
+        );
+        expect(e, isNot(contains('temporary-exception')));
+        expect(e, isNot(contains('com.apple.security.cs.allow-jit')));
+        expect(e, isNot(contains('get-task-allow')));
+      },
+    );
+  });
+
+  group('DMG notarizzato con la chiave API', () {
+    final testo = job('macos');
+
+    test('solo per main, tag v* e avvio manuale; chiave cancellata', () {
+      expect(
+        testo,
+        contains(
+          "RAMO_PUBBLICATO: \${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))) }}",
+        ),
+      );
+      final i = testo.indexOf('con la chiave API (solo con i secret)');
+      expect(i, greaterThan(0));
+      final passo = testo.substring(i, testo.indexOf('\n      - ', i));
+      expect(passo, contains("env.RAMO_PUBBLICATO == 'true'"));
+      expect(passo, contains("env.HAS_APPLE_NOTARY != 'true'"));
+      expect(
+        passo,
+        contains('bash tool/app_store_connect.sh notarizza UniNotes.dmg'),
+      );
+      final pulizia = testo.substring(
+        testo.indexOf('- name: Cancella la chiave API, il certificato'),
+      );
+      expect(pulizia, contains('if: always()'));
+      expect(pulizia, contains(r'"$HOME/.appstoreconnect/private_keys"'));
+    });
+  });
+
+  group('script della chiave (app/tool/app_store_connect.sh)', () {
+    test('valori controllati prima di entrare in percorsi e file', () {
+      expect(script, contains('set -euo pipefail'));
+      expect(script, contains(r'=~ ^[A-Z0-9]{10}$ ]]'));
+      expect(
+        script,
+        contains(
+          r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+        ),
+      );
+      expect(script, contains(r'=~ ^[0-9]{6,12}$ ]]'));
+    });
+
+    test('chiave con permessi ristretti, mai nel log', () {
+      expect(script, contains('umask 077'));
+      expect(script, contains(r'chmod 600 "$f"'));
+      expect(script, isNot(contains('set -x')));
+      expect(script, isNot(contains(r'echo "$ASC_KEY_P8_BASE64')));
+      expect(script, isNot(contains(r'echo $ASC_KEY_P8_BASE64')));
+      expect(
+        script,
+        contains(r'CARTELLA_CHIAVI="$HOME/.appstoreconnect/private_keys"'),
+      );
+      expect(script, contains(r'rm -rf "$CARTELLA_CHIAVI" "$TEMP_ASC"'));
+    });
+
+    test('firma nel cloud: chiave API e aggiornamento dei profili', () {
+      for (final a in [
+        '-allowProvisioningUpdates',
+        r'-authenticationKeyPath "$f"',
+        r'-authenticationKeyID "$ASC_KEY_ID"',
+        r'-authenticationKeyIssuerID "$ASC_ISSUER_ID"',
+        '<string>automatic</string>',
+        '<key>manageAppVersionAndBuildNumber</key>\n\t<false/>',
+      ]) {
+        expect(script, contains(a), reason: a);
+      }
+    });
+
+    test('caricamento: codice d\'uscita e testo di altool controllati', () {
+      expect(script, contains(r'local stato=${PIPESTATUS[0]}'));
+      expect(script, contains("grep -Eiq 'UPLOAD FAILED|(^|[^a-z])error[: ]'"));
+      expect(script, contains('--upload-package'));
+      expect(script, contains('--upload-app'));
+      expect(script, contains("grep -q 'status: Accepted'"));
+    });
+
+    test('a capo LF (gira su macOS)', () {
+      expect(
+        File('tool/app_store_connect.sh').readAsStringSync(),
+        isNot(contains('\r')),
+      );
+      expect(read('../.gitattributes'), contains('*.sh text eol=lf'));
+    });
+  });
+
+  group('requisiti di Apple al caricamento', () {
+    test('crittografia esente dichiarata (iPhone e Mac)', () {
+      for (final f in ['ios/Runner/Info.plist', 'macos/Runner/Info.plist']) {
+        expect(
+          read(f),
+          contains('<key>ITSAppUsesNonExemptEncryption</key>\n\t<false/>'),
+          reason: f,
+        );
+      }
+      expect(
+        read('macos/Runner/Info.plist'),
+        contains(
+          '<key>LSApplicationCategoryType</key>\n\t<string>public.app-category.education</string>',
+        ),
+      );
+    });
+
+    test(
+      'motivi d\'uso in italiano per microfono, voce, calendario e foto',
+      () {
+        final ios = read('ios/Runner/Info.plist');
+        for (final k in [
+          'NSMicrophoneUsageDescription',
+          'NSSpeechRecognitionUsageDescription',
+          'NSCalendarsUsageDescription',
+          'NSCalendarsFullAccessUsageDescription',
+          'NSPhotoLibraryAddUsageDescription',
+        ]) {
+          final m = RegExp('<key>$k</key>\\n\\t<string>([^<]+)</string>')
+              .firstMatch(ios);
+          expect(m, isNotNull, reason: k);
+          expect(
+            m![1],
+            matches(RegExp(r'\b(il|la|le|per|solo|quando)\b')),
+            reason: k,
+          );
+        }
+        expect(ios, contains('<string>LaunchScreen</string>'));
+        expect(
+          ios,
+          contains('<string>audio</string>\n\t\t<string>fetch</string>'),
+        );
+      },
+    );
+
+    test('privacy manifest dell\'app nel target (iPhone e Mac)', () {
+      for (final d in ['ios', 'macos']) {
+        final pbx = read('$d/Runner.xcodeproj/project.pbxproj');
+        expect(
+          RegExp(r'/\* PrivacyInfo\.xcprivacy in Resources \*/')
+              .allMatches(pbx)
+              .length,
+          2,
+          reason: '$d: file di build e fase Resources',
+        );
+        expect(
+          pbx,
+          contains('path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };'),
+        );
+        final m = read('$d/Runner/PrivacyInfo.xcprivacy');
+        expect(m, contains('<key>NSPrivacyTracking</key>\n\t<false/>'));
+        for (final r in [
+          'NSPrivacyAccessedAPICategoryUserDefaults',
+          'CA92.1',
+          'NSPrivacyAccessedAPICategoryFileTimestamp',
+          'C617.1',
+          'NSPrivacyAccessedAPICategoryDiskSpace',
+          'E174.1',
+          'NSPrivacyAccessedAPICategorySystemBootTime',
+          '35F9.1',
+        ]) {
+          expect(m, contains(r), reason: '$d: $r');
+        }
+      }
+    });
+
+    test('icone senza trasparenza (PNG RGB) e icona 1024 per l\'App Store', () {
+      final dir = Directory('ios/Runner/Assets.xcassets/AppIcon.appiconset');
+      final png = dir.listSync().whereType<File>().where(
+        (f) => f.path.endsWith('.png'),
+      );
+      expect(png, isNotEmpty);
+      for (final f in png) {
+        final b = f.readAsBytesSync();
+        // IHDR: larghezza (16), altezza (20), tipo di colore (25): 2 = RGB
+        expect(b[25], 2, reason: f.path);
+      }
+      final grande = File('${dir.path}/Icon-App-1024x1024@1x.png')
+          .readAsBytesSync();
+      expect((grande[18] << 8) | grande[19], 1024);
+    });
+  });
+}
