@@ -549,6 +549,16 @@ class _ExamFormPageState extends State<ExamFormPage> {
           Exam.fromMap({...exam.toMap(), 'id': id}),
         ], name: exam.title ?? 'esame');
         if (mounted) showLaunchResult(context, r);
+      } else if (_calendar &&
+          _icsOnly &&
+          old?.date != null &&
+          old!.status.isPending &&
+          exam.date == null) {
+        // «Rimuovi data» con il file .ics: stesso UID con STATUS:CANCELLED,
+        // il calendario che l'aveva importato toglie (annulla) l'evento
+        final r = await CalendarExport(services)
+            .open([old], name: old.title ?? 'esame', cancel: true);
+        if (mounted) showLaunchResult(context, r);
       }
       await shareExamMaterials(
         services,
@@ -774,9 +784,16 @@ class _ExamFormPageState extends State<ExamFormPage> {
               value: _date == null ? null : formatDate(_date!),
               icon: Icons.calendar_today,
               onTap: _pickDate,
+              // «Rimuovi data»: via anche l'orario (come una prova creata
+              // senza data); al salvataggio l'evento esce dal calendario
+              clearKey: const Key('exam-remove-date'),
+              clearTooltip: 'Rimuovi data',
               onClear: _date == null
                   ? null
-                  : () => setState(() => _date = null),
+                  : () => setState(() {
+                      _date = null;
+                      _time = null;
+                    }),
             ),
           ),
           const SizedBox(width: 12),
@@ -786,6 +803,9 @@ class _ExamFormPageState extends State<ExamFormPage> {
               value: _time,
               icon: Icons.schedule,
               onTap: _pickTime,
+              // «Rimuovi orario»: giornata intera, anche nel calendario
+              clearKey: const Key('exam-remove-time'),
+              clearTooltip: 'Rimuovi orario',
               onClear: _time == null
                   ? null
                   : () => setState(() => _time = null),
@@ -1006,13 +1026,20 @@ class _PickerField extends StatelessWidget {
     required this.icon,
     required this.onTap,
     this.onClear,
+    this.clearTooltip = 'Rimuovi',
+    this.clearKey,
   });
 
   final String label;
   final String? value;
   final IconData icon;
   final VoidCallback onTap;
+
+  /// Icona «x» (solo con un valore): etichetta per il lettore di schermo e
+  /// area di tocco di 48 dp dell'IconButton.
   final VoidCallback? onClear;
+  final String clearTooltip;
+  final Key? clearKey;
 
   @override
   Widget build(BuildContext context) {
@@ -1025,7 +1052,8 @@ class _PickerField extends StatelessWidget {
           suffixIcon: onClear == null
               ? null
               : IconButton(
-                  tooltip: 'Rimuovi',
+                  key: clearKey,
+                  tooltip: clearTooltip,
                   onPressed: onClear,
                   icon: const Icon(Icons.clear),
                 ),

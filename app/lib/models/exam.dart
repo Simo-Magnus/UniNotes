@@ -138,6 +138,7 @@ class Exam {
     DateTime? date,
     String? time,
     bool clearDate = false,
+    bool clearTime = false,
     String? location,
     String? title,
     String? examType,
@@ -152,7 +153,7 @@ class Exam {
     kind: kind ?? this.kind,
     title: title ?? this.title,
     date: clearDate ? null : (date ?? this.date),
-    time: clearDate ? null : (time ?? this.time),
+    time: clearDate || clearTime ? null : (time ?? this.time),
     location: location ?? this.location,
     examType: examType ?? this.examType,
     status: status ?? this.status,
@@ -164,4 +165,16 @@ class Exam {
     notes: notes ?? this.notes,
     source: source,
   );
+
+  /// «Rimuovi data»: la prova senza data e quindi senza orario, come una
+  /// prova creata senza data. Stato, prenotazione e voto non cambiano: una
+  /// prova prenotata resta prenotata (come con «Riprenota»), una sostenuta
+  /// resta sostenuta (come gli esami degli anni precedenti segnati senza
+  /// data). Calendario e promemoria la tolgono alla prossima
+  /// sincronizzazione (non è più nell'agenda).
+  Exam withoutDate() => copyWith(clearDate: true);
+
+  /// «Rimuovi orario»: stessa data, giornata intera (nel calendario un
+  /// evento di tutto il giorno, i promemoria della variante senza orario).
+  Exam withoutTime() => copyWith(clearTime: true);
 }

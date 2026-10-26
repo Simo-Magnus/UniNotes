@@ -45,6 +45,48 @@ nome degli insegnamenti. Codice in `app/lib/features/exams/`,
   delle Medie, non ha promemoria (che riguardano solo le prove da prenotare o
   prenotate).
 
+## Rimuovi data e Rimuovi orario (26/10/2026)
+
+Una data o un orario inseriti si possono togliere, su tutte le build
+(Android, iOS, macOS, Windows):
+
+- **Modulo** (nuova prova o modifica): nei campi «Data» e «Ora» l'icona «x»
+  compare solo quando c'è un valore, con l'etichetta «Rimuovi data» /
+  «Rimuovi orario» per il lettore di schermo (area di tocco di 48 dp).
+  Togliendo la data si toglie anche l'ora; vale al «Salva».
+- **Dettaglio**: accanto alla riga «Data e ora» (matita = cambia) c'è
+  l'icona del calendario barrato, solo con una data. Con l'orario apre un
+  foglio con due scelte, «Rimuovi orario» e «Rimuovi data»; senza orario
+  toglie subito la data. La modifica si salva subito e l'avviso in basso
+  («Data tolta», «Orario tolto: la prova è di tutto il giorno») ha
+  «Annulla», che rimette data e orario sulla prova com'è ora
+  (`restoreExamWhen`). Nessun dialogo in più: il foglio ha due voci.
+- **Cosa diventa la prova** (`Exam.withoutDate` / `withoutTime`): senza data
+  è come una prova creata senza data («Data da aggiungere», per l'esame
+  finale il suggerimento «Prossimo appello»). **Lo stato non cambia**: «Da
+  prenotare» resta tale e «Prenotato» resta prenotato, come con
+  «Riprenota», che già toglie la data (la prenotazione all'appello è un
+  fatto diverso dalla data, che spesso arriva dopo); lo stato si cambia
+  solo dall'icona. Tipo (esame finale o prova in itinere / esonero), voto,
+  luogo e il resto restano: il tipo non si tocca nemmeno qui.
+- **Prove già sostenute**: l'opzione c'è anche per loro, perché una prova
+  sostenuta senza data esiste già (anni precedenti, «Segna tutti come
+  sostenuti») e medie, CFU e voti non dipendono dalla data; il modulo la
+  permetteva già. Per loro cambia solo il dato dell'app: nel calendario e
+  nei promemoria ci sono soltanto le prove da sostenere (le spiegazioni
+  del foglio nominano il calendario solo per queste).
+- **Calendario e promemoria** (vedi [notifiche.md](notifiche.md)): data tolta
+  → l'evento si elimina e le notifiche dell'app (anche «Com'è andata?») si
+  cancellano; orario tolto → lo stesso evento diventa di tutto il giorno,
+  identico a quello di una prova creata senza orario, e le notifiche passano
+  alla regola senza orario (il giorno prima alle 9:00, niente «un'ora
+  prima»).
+- Limite: «Aggiorna database» rimette la data di una prova del database dei
+  corsi se il database ne indica una (come succede già a una data cambiata a
+  mano); senza data nel database la prova resta senza.
+
+Test: `test/crash_r6_rimuovi_data_test.dart`.
+
 ## Un esame, uno stato
 
 Lo stato è un solo dato, salvato sulla prova (tabella `exams`): «Da

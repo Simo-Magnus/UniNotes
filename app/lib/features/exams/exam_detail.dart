@@ -11,6 +11,7 @@ import '../../models/exam.dart';
 import '../../models/university.dart';
 import '../../widgets/common.dart';
 import '../../widgets/math_text.dart';
+import '../../widgets/undo_snack_bar.dart';
 import '../courses/course_rename.dart';
 import '../courses/course_ui.dart';
 import 'exam_form.dart';
@@ -212,6 +213,33 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
         date: d,
         time: t == null ? exam.time : '${two(t.hour)}:${two(t.minute)}',
       ),
+    );
+  }
+
+  /// «Rimuovi data» / «Rimuovi orario» (icona accanto a «Data e ora»): con
+  /// l'orario un foglio con le due scelte, senza orario si toglie subito la
+  /// data. Si salva subito, con «Annulla» nell'avviso in basso (un tocco
+  /// sbagliato non perde la data). Calendario e promemoria seguono alla
+  /// prossima sincronizzazione: evento tolto, o di tutto il giorno.
+  Future<void> _removeWhen() async {
+    if (exam.date == null) return;
+    var timeOnly = false;
+    if (exam.time != null) {
+      final choice = await showRemoveWhenSheet(context, exam);
+      if (choice == null || !mounted) return;
+      timeOnly = choice == RemoveWhen.time;
+    }
+    final before = exam;
+    final s = context.read<AppServices>();
+    if (!await _save(timeOnly ? before.withoutTime() : before.withoutDate())) {
+      return;
+    }
+    if (!mounted) return;
+    showUndoSnackBar(
+      context,
+      timeOnly ? 'Orario tolto: la prova è di tutto il giorno' : 'Data tolta',
+      undoneMessage: timeOnly ? 'Orario ripristinato.' : 'Data ripristinata.',
+      onUndo: () => restoreExamWhen(s, before),
     );
   }
 
@@ -455,14 +483,35 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
           ),
         ),
         const SectionHeader('Dettagli'),
-        editable(
-          InfoRow.text(
-            icon: Icons.event,
-            label: 'Data e ora',
-            value: examDateLabel(exam),
-          ),
-          _editWhen,
-          'Cambia data e ora',
+        Row(
+          children: [
+            Expanded(
+              child: editable(
+                InfoRow.text(
+                  icon: Icons.event,
+                  label: 'Data e ora',
+                  value: examDateLabel(exam),
+                ),
+                _editWhen,
+                'Cambia data e ora',
+              ),
+            ),
+            // solo con una data: toglie l'orario o la data (area di tocco
+            // di 48 dp, etichetta per il lettore di schermo)
+            if (exam.date != null)
+              IconButton(
+                key: const Key('detail-remove-when'),
+                tooltip: exam.time != null
+                    ? 'Rimuovi data o orario'
+                    : 'Rimuovi data',
+                onPressed: _removeWhen,
+                icon: Icon(
+                  Icons.event_busy_outlined,
+                  size: 20,
+                  color: theme.colorScheme.outline,
+                ),
+              ),
+          ],
         ),
         editable(
           InfoRow.text(
@@ -603,6 +652,77 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
       ],
     );
   }
+}
+
+/// Cosa togliere dalla riga «Data e ora» del dettaglio.
+enum RemoveWhen { time, date }
+
+/// Foglio della riga «Data e ora» di una prova con data e orario: due
+/// scelte, «Rimuovi orario» e «Rimuovi data» (null = chiuso senza scegliere).
+/// Le spiegazioni nominano calendario e promemoria solo per le prove da
+/// sostenere, le sole che ci sono.
+Future<RemoveWhen?> showRemoveWhenSheet(BuildContext context, Exam exam) {
+  final pending = exam.status.isPending;
+  return showAppSheet<RemoveWhen>(
+    context: context,
+    showDragHandle: true,
+    builder: (c) => SafeArea(
+      // scorre: con caratteri grandi il foglio non ha altezza per tutto
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+              child: Text(
+                examDateLabel(exam),
+                style: Theme.of(c).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              key: const Key('when-remove-time'),
+              leading: const Icon(Icons.timer_off_outlined),
+              title: const Text('Rimuovi orario'),
+              subtitle: Text(
+                pending
+                    ? 'Resta la data: la prova è di tutto il giorno, anche '
+                          'nel calendario'
+                    : 'Resta la data: la prova è di tutto il giorno',
+              ),
+              onTap: () => Navigator.pop(c, RemoveWhen.time),
+            ),
+            ListTile(
+              key: const Key('when-remove-date'),
+              leading: const Icon(Icons.event_busy_outlined),
+              title: const Text('Rimuovi data'),
+              subtitle: Text(
+                pending
+                    ? 'Si toglie anche l\'orario; la prova esce dal '
+                          'calendario e dai promemoria'
+                    : 'Si toglie anche l\'orario',
+              ),
+              onTap: () => Navigator.pop(c, RemoveWhen.date),
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+/// «Annulla» di «Rimuovi data» / «Rimuovi orario»: rimette data e orario di
+/// [before] sulla prova com'è ora (le altre modifiche fatte nel frattempo
+/// restano; se la prova è stata eliminata non fa nulla). Il calendario
+/// riscrive l'evento alla prossima sincronizzazione.
+Future<void> restoreExamWhen(AppServices s, Exam before) async {
+  final id = before.id;
+  if (id == null || before.date == null) return;
+  final now = await s.exams.byId(id);
+  if (now == null) return;
+  await s.exams.update(now.copyWith(date: before.date, time: before.time));
+  s.revision.bump();
 }
 
 /// Testo da modificare: «Annulla» e «Salva»; vuoto toglie il valore

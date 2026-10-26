@@ -44,8 +44,13 @@ class CalendarExport {
   }
 
   /// Scrive il file .ics con [exams] e lo apre nel calendario del sistema.
-  /// Restituisce l'esito dell'apertura.
-  Future<LaunchResult> open(List<Exam> exams, {String name = 'esami'}) async {
+  /// Restituisce l'esito dell'apertura. Con [cancel] il file annulla gli
+  /// eventi già importati di [exams] (data tolta, vedi [buildIcs]).
+  Future<LaunchResult> open(
+    List<Exam> exams, {
+    String name = 'esami',
+    bool cancel = false,
+  }) async {
     if (exams.isEmpty) {
       return const LaunchResult.error(
         'Nessuna prova con una data da aggiungere.',
@@ -55,7 +60,7 @@ class CalendarExport {
     final ics = buildIcs([
       for (final e in exams)
         (exam: e, course: courses[e.courseId]?.name ?? 'Esame'),
-    ]);
+    ], cancel: cancel);
     final dir = Directory(
       p.join((await getApplicationSupportDirectory()).path, 'calendario'),
     );
@@ -73,8 +78,16 @@ class CalendarExport {
 /// altrimenti di un giorno intero; promemoria il giorno prima. Orari nel fuso
 /// italiano (Europe/Rome, con la definizione VTIMEZONE), righe ripiegate a 75
 /// byte, SEQUENCE crescente perché un'esportazione successiva aggiorni
-/// l'evento già importato.
-String buildIcs(List<({Exam exam, String course})> items, {DateTime? now}) {
+/// l'evento già importato (anche da un'ora a una giornata intera, dopo
+/// «Rimuovi orario»). Con [cancel] («Rimuovi data») gli stessi eventi con
+/// `METHOD:CANCEL` e `STATUS:CANCELLED` (RFC 5546), senza promemoria: il
+/// calendario che li aveva importati li toglie. [items] con la data che
+/// avevano prima.
+String buildIcs(
+  List<({Exam exam, String course})> items, {
+  DateTime? now,
+  bool cancel = false,
+}) {
   String two(int v) => v.toString().padLeft(2, '0');
   // anno sempre di 4 cifre (RFC 5545), anche per date lontane
   String date(DateTime d) =>
@@ -123,6 +136,7 @@ String buildIcs(List<({Exam exam, String course})> items, {DateTime? now}) {
   line('VERSION:2.0');
   line('PRODID:-//UniNotes//Esami//IT');
   line('CALSCALE:GREGORIAN');
+  if (cancel) line('METHOD:CANCEL');
   for (final l in const [
     'BEGIN:VTIMEZONE',
     'TZID:Europe/Rome',
@@ -200,11 +214,15 @@ String buildIcs(List<({Exam exam, String course})> items, {DateTime? now}) {
       if (exam.notes != null) exam.notes!,
     ].join('\n');
     if (notes.isNotEmpty) line('DESCRIPTION:${esc(notes)}');
-    line('BEGIN:VALARM');
-    line('TRIGGER:-P1D');
-    line('ACTION:DISPLAY');
-    line('DESCRIPTION:${esc(title)}');
-    line('END:VALARM');
+    if (cancel) {
+      line('STATUS:CANCELLED');
+    } else {
+      line('BEGIN:VALARM');
+      line('TRIGGER:-P1D');
+      line('ACTION:DISPLAY');
+      line('DESCRIPTION:${esc(title)}');
+      line('END:VALARM');
+    }
     line('END:VEVENT');
   }
   line('END:VCALENDAR');

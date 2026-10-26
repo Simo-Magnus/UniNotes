@@ -112,6 +112,42 @@ eventi, li aggiorna, li cancella e toglie i doppioni. Promemoria nativi
 (predefiniti: il giorno prima e un'ora prima). Modifica della prova → evento
 aggiornato; prova sostenuta, annullata o eliminata → evento tolto.
 
+**Rimuovi data / Rimuovi orario (26/10/2026,** vedi
+[esami.md](esami.md#rimuovi-data-e-rimuovi-orario-26102026)**).** Non c'è
+un percorso a parte: la sincronizzazione confronta sempre il calendario con
+l'agenda (`SystemCalendarSync.sync`), quindi dopo la modifica (`revision.bump`,
+2 secondi di raggruppamento):
+
+- **data tolta** → la prova non è più nell'agenda e il suo evento (chiave
+  `esame-<id>`) si elimina, con i doppioni; le notifiche dell'app della prova
+  (anche «Com'è andata?») si cancellano alla ripianificazione. Nessun evento
+  orfano: anche un evento rimasto da un errore si toglie alla
+  sincronizzazione successiva, perché la chiave non è più voluta;
+- **orario tolto** → l'impronta dell'evento cambia e lo **stesso** evento si
+  aggiorna (stesso id) con gli argomenti di una prova creata senza orario:
+  Android `ALL_DAY=1`, mezzanotte UTC del giorno e del giorno dopo, fuso
+  `UTC`, promemoria riscritti (`UniNotesCalendar.kt`, poi `requestUpload` e
+  il controllo del caricamento come per ogni scrittura); iPhone, iPad e Mac
+  `isAllDay`, mezzanotte locale, `timeZone` nullo, `EKAlarm` riscritti;
+  Outlook `PATCH` con `isAllDay: true`, inizio e fine a mezzanotte UTC e un
+  promemoria. I promemoria sono quelli senza orario (il giorno prima alle
+  9:00 = 900 minuti prima della mezzanotte, niente «N ore prima»); le
+  notifiche dell'app (calendario interno) passano alla stessa regola;
+- **«Annulla»** nel dettaglio rimette data e orario: alla sincronizzazione
+  successiva l'evento si riscrive (se nel frattempo era stato eliminato ne
+  nasce uno nuovo, uno solo);
+- **un altro dispositivo aggiorna il calendario** (regola qui sotto): la
+  modifica arriva a lui con la sincronizzazione dei dati e la sua
+  sincronizzazione del calendario elimina o aggiorna l'evento; il
+  dispositivo che ha tolto la data non tocca il calendario;
+- **file .ics** (solo sui sistemi senza calendario collegabile, oggi nessuna
+  delle quattro build): togliendo la data dal modulo con «Aggiungi al
+  calendario» si apre un file con lo stesso UID, `METHOD:CANCEL` e
+  `STATUS:CANCELLED`; togliendo l'orario il nuovo file aggiorna l'evento a
+  giornata intera (`VALUE=DATE`, `SEQUENCE` più alta).
+
+Test: `app/test/crash_r6_rimuovi_data_test.dart`.
+
 **Dove: il calendario vero dello studente**, non più un calendario «UniNotes»
 a parte (scelta in Impostazioni → Calendario, «Calendario usato», con nome,
 account e colore; senza scelta il predefinito):
