@@ -549,6 +549,10 @@ def main() -> None:
         doc = {"schema": 1, "universita_id": uid, "anno_accademico": anno_acc,
                "aggiornato_il": date.today().isoformat(), "fonte": raw.get("fonte"), "corsi": corsi}
         path = DB / "corsi" / f"{uid}.json"
+        # niente link a file del computer di chi ha scritto la pagina né token e sessioni
+        # dentro i collegamenti (copiati dai programmi)
+        doc = pulizia.senza_percorsi_locali(doc)
+        doc = pulizia.senza_parametri_di_accesso(doc)
         # niente indirizzi email personali dei docenti (copiati dai programmi)
         doc = pulizia.senza_email_personali(doc)
         write_json(path, doc)

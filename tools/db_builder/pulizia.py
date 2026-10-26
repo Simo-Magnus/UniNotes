@@ -125,6 +125,165 @@ def ha_email_personali(o) -> bool:
     return False
 
 
+# Collegamenti a file sul computer di chi ha scritto la pagina dell'ateneo
+# (`file:///C:/Users/<nome>/Downloads/dispensa.pdf`, `C:\Users\<nome>\Desktop\…`):
+# nessuno può aprirli e contengono il nome di una persona (docs/sicurezza.md,
+# giro 4). Il percorso arriva fino all'estensione del file (può contenere spazi
+# prima di un `%20`), altrimenti fino al primo spazio. Il resto del testo (titolo,
+# autore, «disponibile su…») resta.
+_ESTENSIONE_FILE = (r"\.(?:pdf|docx?|pptx?|xlsx?|odt|ods|odp|rtf|txt|epub|zip|rar|7z|html?|png|jpe?g|gif|mp[34])"
+                    r"(?![A-Za-z0-9])")
+_CORPO_PERCORSO = r"(?:[^\s\"<>]| (?=%))"
+PERCORSO_LOCALE = re.compile(
+    r"(?<![A-Za-z0-9])(?:file:/{1,3}|[A-Za-z]:[\\/]{1,2}(?=(?:Users|Documents and Settings)[\\/]))"
+    r"(?:" + _CORPO_PERCORSO + r"{0,250}?" + _ESTENSIONE_FILE + r"|[^\s\"<>]*?(?=[)\].,;:]*(?:\s|$)))", re.I)
+# al posto del percorso nei testi: il resto della citazione resta leggibile
+PERCORSO_RIMANDO = "[link non disponibile]"
+_INDIZI_PERCORSO = ("ile:", "ILE:", ":\\", ":/")
+_RIMANDI_DI_FILA = re.compile(r"(\[link non disponibile\])(?:[ ,;]*\[link non disponibile\])+")
+
+
+def _ripulisci_percorsi(s: str) -> str:
+    return _RIMANDI_DI_FILA.sub(r"\1", PERCORSO_LOCALE.sub(PERCORSO_RIMANDO, s))
+
+
+def senza_percorsi_locali(o):
+    """Copia di `o` (JSON: dict, list, str) senza collegamenti a file del computer di chi ha scritto
+    la pagina (`file:///…`, `C:\\Users\\<nome>\\…`): nei testi diventano `PERCORSO_RIMANDO`."""
+    if isinstance(o, str):
+        return _ripulisci_percorsi(o) if any(i in o for i in _INDIZI_PERCORSO) else o
+    if isinstance(o, list):
+        return [senza_percorsi_locali(x) for x in o]
+    if isinstance(o, dict):
+        return {k: senza_percorsi_locali(v) for k, v in o.items()}
+    return o
+
+
+def ha_percorsi_locali(o) -> bool:
+    """Vero se nei testi di `o` c'è ancora un collegamento a un file locale."""
+    if isinstance(o, str):
+        return PERCORSO_LOCALE.search(o) is not None
+    if isinstance(o, list):
+        return any(ha_percorsi_locali(x) for x in o)
+    if isinstance(o, dict):
+        return any(ha_percorsi_locali(v) for v in o.values())
+    return False
+
+
+# Parametri di accesso e di sessione nei collegamenti copiati dalle pagine degli atenei
+# (`…?token=<JWT del proxy della biblioteca>`, `;jsessionid=…`, `&sid=<sessione EBSCO>`,
+# `…/j/123?pwd=<codice della riunione Zoom>`): sono credenziali o identificativi di
+# una sessione altrui e non servono a chi apre il link (docs/sicurezza.md, giro 4).
+# Si toglie solo il parametro, il resto del collegamento resta. Nomi di sessione e di
+# accesso: valore di almeno 16 caratteri (un `sid=12` qualunque non è una sessione);
+# password e codici di riunione: almeno 4.
+PARAMETRI_LUNGHI = frozenset({
+    "sid", "sessionid", "session_id", "phpsessid", "jsessionid", "token", "access_token", "id_token",
+    "refresh_token", "bdata", "authkey", "apikey", "api_key", "secret", "client_secret",
+})
+PARAMETRI_CORTI = frozenset({"pwd", "password", "passwd"})
+PARAMETRO_DI_ACCESSO = re.compile(
+    r"([?&;])(" + "|".join(sorted(PARAMETRI_LUNGHI | PARAMETRI_CORTI, key=len, reverse=True)) +
+    r")=([^&?\s\"<>#]+)(&?)", re.I)
+
+
+def _toglie_parametro(m: re.Match) -> str:
+    sep, nome, valore, dopo = m.groups()
+    minimo = 16 if nome.lower() in PARAMETRI_LUNGHI else 4
+    if len(valore) < minimo:
+        return m.group(0)
+    if sep == "?":
+        return "?" if dopo else ""
+    return sep if dopo else ""
+
+
+# «Password: <valore>» scritto nei testi (la parola d'ordine di un video riservato, la chiave di
+# iscrizione al corso su Moodle, lette dalla pagina dell'ateneo): il valore si toglie, solo con i
+# due punti («password è necessario…» e `password="…"` di un'immagine di laboratorio restano)
+TESTO_PASSWORD = re.compile(r"(?<![A-Za-z0-9])(password|passwd|psw|pwd)(\s*:\s*)([\"']?)([^\s\"'<>,;)]{4,})", re.I)
+PASSWORD_RIMOSSA = "[rimossa]"
+_SOLO_PASSWORD = re.compile(r"\s*password\s*:\s*\[rimossa\]\s*$", re.I)
+
+
+def _toglie_password(m: re.Match) -> str:
+    if m.group(4) == PASSWORD_RIMOSSA:
+        return m.group(0)
+    return f"{m.group(1)}{m.group(2)}{m.group(3)}{PASSWORD_RIMOSSA}"
+
+
+def senza_parametri_di_accesso(o, chiave: str | None = None):
+    """Copia di `o` (JSON: dict, list, str) senza i parametri di accesso e di sessione dei collegamenti
+    e senza i valori di «Password: …» nei testi (una voce di `argomenti` che era solo una password si toglie)."""
+    if isinstance(o, str):
+        if "=" in o:
+            # un parametro toglie anche l'«&» che lo segue: il successivo si trova al giro dopo
+            precedente = None
+            while precedente != o:
+                precedente, o = o, PARAMETRO_DI_ACCESSO.sub(_toglie_parametro, o)
+        if ":" in o:
+            o = TESTO_PASSWORD.sub(_toglie_password, o)
+        return o
+    if isinstance(o, list):
+        out = [senza_parametri_di_accesso(x, chiave) for x in o]
+        if chiave == "argomenti":
+            out = [x for x in out if not (isinstance(x, str) and _SOLO_PASSWORD.match(x))]
+        return out
+    if isinstance(o, dict):
+        return {k: senza_parametri_di_accesso(v, k) for k, v in o.items()}
+    return o
+
+
+def ha_parametri_di_accesso(o) -> bool:
+    """Vero se nei testi di `o` c'è ancora un parametro di accesso o di sessione da togliere."""
+    if isinstance(o, str):
+        return ("=" in o and any(
+            len(m.group(3)) >= (16 if m.group(2).lower() in PARAMETRI_LUNGHI else 4)
+            for m in PARAMETRO_DI_ACCESSO.finditer(o))) or (
+            ":" in o and any(m.group(4) != PASSWORD_RIMOSSA for m in TESTO_PASSWORD.finditer(o)))
+    if isinstance(o, list):
+        return any(ha_parametri_di_accesso(x) for x in o)
+    if isinstance(o, dict):
+        return any(ha_parametri_di_accesso(v) for v in o.values())
+    return False
+
+
+# parametri di accesso: una ricerca letterale (`bytes.find`, veloce) di `nome=` per ogni nome
+# sul testo in minuscolo; solo attorno a ogni trovato si guarda il separatore e il valore
+_NOMI_PARAMETRO = tuple(sorted((n.encode() + b"=" for n in PARAMETRI_LUNGHI | PARAMETRI_CORTI), key=len, reverse=True))
+
+
+def parametri_di_accesso_in(b: bytes):
+    """(posizione del separatore, testo del parametro) di ogni parametro di accesso da togliere."""
+    minuscolo = b.lower()
+    trovati = set()
+    for nome in _NOMI_PARAMETRO:
+        i = minuscolo.find(nome)
+        while i != -1:
+            if i > 0 and b[i - 1:i] in (b"?", b"&", b";"):
+                trovati.add(i - 1)
+            i = minuscolo.find(nome, i + 1)
+    for pos in sorted(trovati):
+        finestra = b[pos:pos + 400].decode("utf-8", errors="ignore")
+        m = PARAMETRO_DI_ACCESSO.match(finestra)
+        if m and ha_parametri_di_accesso(m.group(0)):
+            yield pos, m.group(2).lower() + "="
+    for nome in (b"password", b"passwd", b"psw", b"pwd"):
+        i = minuscolo.find(nome + b":")
+        while i != -1:
+            finestra = b[max(0, i - 1):i + 100].decode("utf-8", errors="ignore")
+            for m in TESTO_PASSWORD.finditer(finestra):
+                if m.group(4) != PASSWORD_RIMOSSA:
+                    yield i, nome.decode() + ":"
+                    break
+            i = minuscolo.find(nome + b":", i + 1)
+
+
+def senza_dati_personali(o):
+    """Tutti i filtri sui dati personali copiati dalle pagine degli atenei: email personali, percorsi
+    locali e parametri di accesso dei collegamenti."""
+    return senza_parametri_di_accesso(senza_percorsi_locali(senza_email_personali(o)))
+
+
 def isbn_valido(s: str) -> bool:
     d = re.sub(r"[^0-9Xx]", "", s or "")
     if len(d) == 13 and d.isdigit():

@@ -93,6 +93,9 @@ class BackupService {
     // che scrivono in ogni account: come l'account OneDrive o Google
     'syscal_calendar_account',
     'syscal_writers',
+    // codice delle notifiche (RemindersService.signedPayload): di questo
+    // dispositivo, come quello dei widget
+    'notif_code',
   };
 
   // ---------------------------------------------------------------- export

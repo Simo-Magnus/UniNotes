@@ -666,3 +666,170 @@ Dependabot, esito delle ultime esecuzioni dei workflow della repo pubblica.
   script (0 = pronta), senza pipe dopo il comando.
 - Nella repo pubblica tenere gli avvisi di Dependabot, non gli aggiornamenti
   automatici (le loro pull request verrebbero sovrascritte dall'esportazione).
+
+## Giro 4 — App
+
+26/10/2026, dopo il commit f633a4d6 (giro di conferma, con prove che
+tentano davvero l'aggiramento). Test: `app/test/sicurezza_g4_app_test.dart`;
+`IncomingShare.cleanName` provato anche sulla JVM (Kotlin compilato con
+`android.jar`).
+
+Controllati: tutte le azioni e i payload che l'app accetta da un tocco su
+una notifica (recensione, sostegno, «Com'è andata?», prove, sezioni,
+registratore, Focus, anni precedenti) e da dove possono arrivare su ogni
+sistema; codice dei widget e rotta `registra:avvia` dopo il giro 3;
+`ExclusionFilter.isSafePattern` con i casi noti di backtracking
+catastrofico misurati su testi di 10.000 caratteri; `MediaGuard` con
+scalette travestite (BOM UTF-8/16/32, spazi iniziali, `.m3u8` rinominati,
+intestazioni finte davanti) e le opzioni di mpv/FFmpeg in media_kit 1.2.6;
+nomi dei file condivisi (`IncomingShare.kt`, `IncomingFiles.parse`),
+percorsi degli allegati nei registri della sincronizzazione e
+`gunzipLimited`.
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Android: le azioni delle notifiche che cambiano dati («Più tardi», «Non chiedere più», «Recensisci», «Dona», «Non ricordarmelo per questa prova») si accettavano da qualsiasi intent con l'azione di flutter_local_notifications arrivato a MainActivity (esportata): un'altra app installata poteva spegnere le richieste di recensione e sostegno o i promemoria dell'esito di qualsiasi prova (gli id sono numeri in sequenza) | basso | Le notifiche di recensione, sostegno ed esito partono con un codice casuale di 128 bit nel payload (`RemindersService.signedPayload`, impostazione `notif_code`, mai nei backup né sincronizzata); le azioni che cambiano dati valgono solo con quel codice (confronto in tempo costante), altrimenti il tocco apre al massimo una schermata. Vale su ogni sistema e anche per i pulsanti premuti ad app chiusa | test gruppo 1 (14 prove rosse senza il controllo) |
+| Filtri delle esclusioni: espressioni ammesse da `isSafePattern` (due quantificatori, o tre ancorati) costano fino al cubo della lunghezza del testo: su 10.000 caratteri da 0,7 s a circa un minuto ciascuna (`.*a.*b`, `^.*.*.*x`, `[a-z]*[a-z]*!`), e gruppi con alternative in sequenza moltiplicano i percorsi (`.*(a\|a\|a\|a)(a\|a\|a\|a).*x`). Un nome lunghissimo in un data pack o in un backup bloccava l'app | basso | Testi confrontati sui primi 150 caratteri (`maxTextLength`; i nomi degli insegnamenti sono più corti), al massimo 2 percorsi di alternative con due o più quantificatori (30 senza), al massimo 12 filtri usati come espressioni (gli altri come testo) | test gruppo 2: ogni espressione ammessa sotto i 50 ms su 10.000 caratteri (misurato: al massimo pochi ms) |
+| Lettore multimediale: una scaletta di testo in UTF-16 o UTF-32 con il BOM superava `MediaGuard` (i byte zero dei caratteri sembrano un'intestazione binaria), e mpv può convertire questi testi e leggerli come scaletta | basso | Testo riconosciuto anche in UTF-16 e UTF-32 con il BOM; in più il lettore delle registrazioni e dei documenti (`MediaGuard.newPlayer`) ha `access-references=no` e `load-unsafe-playlists=no` (mpv non segue i riferimenti dei file, scalette comprese) e FFmpeg con il solo protocollo `file` | test gruppo 3 (BOM rossi prima); suoni WAV veri dell'app e intestazioni di M4A, MP4, MP3, OGG, FLAC e WebM ancora apribili |
+
+Corretto anche, senza essere una falla: il test «Whisper: Scarica due volte»
+(`crash_r2_async_test.dart`) aspettava un numero fisso di giri (120) per lo
+stato dei modelli, che si legge con un centinaio di operazioni sui file in
+fila (circa 92 giri a PC scarico): con il PC carico la sezione dei modelli
+non c'era ancora. Ora aspetta la sezione.
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Pulsanti delle notifiche ad app chiusa** (Android): passano dal
+  ricevitore non esportato di flutter_local_notifications; nessuna altra app
+  può mandarli. Gli altri tocchi aprono solo una schermata; `registra:avvia`
+  da una notifica resta `registra`, anche con un codice nel payload.
+- **iPhone, iPad, Mac e Windows**: i tocchi sulle notifiche arrivano solo
+  dal sistema (su Windows un programma dell'utente stesso potrebbe già fare
+  ogni cosa che fa l'app).
+- **Codice dei widget** (giro 3): 128 bit da `SecureRandom`, confronto in
+  tempo costante, rotta ridotta a `registra` dalle app recenti e
+  nell'attività ricreata: invariato.
+- **Intestazione binaria finta seguita da una scaletta**: mpv e FFmpeg
+  riconoscono le scalette solo all'inizio del file (dopo BOM e spazi);
+  con byte binari davanti il file si apre come audio o video o non si apre.
+  Le opzioni nuove del lettore coprono comunque i riferimenti.
+- **Opzioni del lettore e file veri**: il file aperto lo legge mpv con il
+  suo accesso ai file, quindi `protocol_whitelist=[file]` di FFmpeg riguarda
+  solo i file indicati dentro un altro; le registrazioni (`.m4a`, `.wav`,
+  `.mp3`) e i video locali non hanno riferimenti. I suoni dell'app usano un
+  altro lettore (asset dell'app).
+- **«Condividi → UniNotes» e «Apri con»**: nomi con `/`, `\`, `..`,
+  `%2e%2e`, caratteri di controllo e nomi riservati di Windows restano nella
+  cartella della cache (solo l'ultimo pezzo del nome, prefisso con l'ora);
+  `%2F` già decodificato da `Uri` si toglie con il resto del percorso;
+  autorità con «@», porta o maiuscole non arrivano ai fornitori dell'app
+  (Android li cerca con lo stesso nome); solo `content://`. In Dart il nome
+  diventa un nome valido su ogni sistema (`NotesStore.safeName`, nomi
+  riservati su Windows) e la sincronizzazione delle cartelle rifiuta quelli
+  riservati arrivati dal cloud.
+- **Percorsi degli allegati nei registri**: relativi con `..` o `\`, unità
+  (`C:`), UNC, `file:`, assoluti fuori dalla cartella degli appunti o con
+  `..` dentro: diventano vuoti; quelli codificati (`%2e%2e`) restano nomi di
+  cartella dentro gli appunti. I collegamenti simbolici non arrivano dalla
+  sincronizzazione (OneDrive e Google Drive non li portano).
+- **`gunzipLimited`**: bomba, membri concatenati, gzip dentro gzip e file
+  troncati restano entro il limite o si ignorano senza eccezioni.
+
+### Resti e cose da valutare nei giri successivi
+
+- FileProvider di open_filex (`root-path`): invariato, da provare su un
+  telefono (passi nel giro 2).
+- Le notifiche di recensione, sostegno ed esito già mostrate prima
+  dell'aggiornamento non hanno il codice: i loro pulsanti aprono solo
+  l'app (quelle future si ripianificano con il codice all'avvio).
+
+### Per l'utente
+
+Nessuna azione esterna. Da provare su un dispositivo vero: pulsanti
+«Più tardi», «Non chiedere più», «Recensisci» e «Non ricordarmelo per questa
+prova» su Android (app aperta e chiusa), iPhone e Windows dopo
+l'aggiornamento; riproduzione di una registrazione `.m4a` e `.wav` e di un
+video `.mp4` nel lettore su Windows, Android, iPhone e Mac.
+
+## Giro 4 — Database e strumenti
+
+26/10/2026, dopo il commit f633a4d6. Test: `app/test/sicurezza_g4_repo_test.dart`
+(controlli statici e prove che eseguono Python, saltate se `python` non c'è; i
+controlli sui file della sola repo privata si saltano nella copia pubblica).
+Script: `python tools/db_builder/togli_email.py --verifica` (ora controlla anche
+i link a file locali e i parametri di accesso) e il controllo della copia
+pubblica con `--verifica`.
+
+Cercati nel database pubblico (corsi, moduli, sessioni, argomenti: circa 3,4
+milioni di testi diversi): link a file del computer di chi ha scritto la pagina,
+numeri di cellulare, codici fiscali, matricole, indirizzi di casa, elenchi di
+studenti (graduatorie, esiti), parametri di accesso e di sessione nei link
+(`token`, `sid`, `jsessionid`, `pwd`, `key`, `sig`, `code`…), password scritte nei
+testi, link a Google Drive, OneDrive, Dropbox e simili, inviti a gruppi
+(WhatsApp, Telegram, Discord) e a riunioni, profili social, IBAN, carte,
+chiavi API, indirizzi IP.
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Link a file del computer di chi ha scritto la pagina dell'ateneo (`file:///…`) copiati nei testi dei libri: 12 testi diversi in 9 atenei, tre con il nome utente di una persona nel percorso (segnalati dal controllo della copia come avvisi, già nella copia pubblica) | basso | `pulizia.senza_percorsi_locali` nella build (`build_db.py`, `dividi_per_corso.py`, unione dei moduli) e in `togli_email.py` (file esistenti corretti, impronte di `meta.json` e file per corso rigenerati, `sync_assets.py` eseguito): il link diventa «[link non disponibile]» e il resto della citazione resta. Riconosce `file:` (anche maiuscolo), percorsi di disco con `Users` o `Documents and Settings`, percorsi con spazi prima di `%20`; non tocca i link web | test gruppo «link a file locali» (prove sul filtro e sul database) |
+| Controllo della copia pubblica: i percorsi con il nome dell'utente nel database erano solo un avviso | basso | Ora bloccano la pubblicazione (codice d'uscita 1), come ogni link `file:` nel database | test gruppo «controllo della copia pubblica»; esportazione di prova dell'ultimo commit: bloccata con i 70 problemi attesi |
+| Parametri di accesso nei link copiati dalle pagine degli atenei: il token (JWT, scaduto il 18/08/2025) del proxy di una biblioteca (Bologna), un `jsessionid` (Parthenope), due identificativi di sessione EBSCO con `bdata` (Politecnico di Milano, Pisa), il codice di una riunione Zoom `pwd` (Bologna) | basso | `pulizia.senza_parametri_di_accesso` (stesse tre posizioni della build): toglie solo il parametro, il collegamento resta. Nomi di sessione e accesso con valore da 16 caratteri, `pwd`, `password`, `passwd` da 4; `sid=12`, `code=`, `key=`, `sig=`, `auth=` e simili restano. Nel controllo della copia pubblica un parametro così nel database blocca | test gruppo «parametri di accesso e di sessione» |
+| Password scritte nei testi: la parola d'ordine di un video riservato (Bologna), la chiave di iscrizione al corso su Moodle (Torino) e un'altra password in un elenco di argomenti (Genova) | basso | Stesso filtro: «Password: …» (solo con i due punti) diventa «Password: [rimossa]», una voce di `argomenti` che era solo una password si toglie | test gruppo «parametri di accesso e di sessione» |
+| `togli_email.py --verifica` lento (38 s a file in cache, 95 s a freddo) | basso | Stessa tecnica del controllo della copia: ogni file letto una volta come byte, ricerca partendo da «@», dai prefissi dei percorsi e da `nome=` (testo in minuscolo, `bytes.find`), 8 processi: 9 s con in più i controlli nuovi (6 s solo email e percorsi) | test «controllo veloce del database» (prova su una cartella finta: trova gli indirizzi e i link, non i domini istituzionali, non ripete i dati) |
+
+Per misurare: `time python tools/db_builder/togli_email.py --verifica` (database
+pulito: 9 s, prima 38 s con i soli indirizzi email).
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Numeri di cellulare**: nessuno. Le 444 corrispondenze di un'espressione
+  larga (3xx seguito da 6 o 7 cifre) erano ISBN, indirizzi di riunioni Zoom,
+  identificativi (GUID) nei link; con prefisso +39/0039 o la parola
+  «tel/cell/whatsapp» vicino: zero.
+- **Codici fiscali, IBAN, carte, chiavi API, indirizzi IP privati**: zero veri
+  (due falsi allarmi: un DOI e un GUID).
+- **Matricole**: 1.919 testi con `MATRICOLA=` sono l'identificativo del docente
+  nell'indirizzo pubblico della pagina dell'ateneo (Università della Campania),
+  usato come fonte del programma; nessuna matricola di studenti.
+- **Indirizzi di casa**: sei testi sono sedi di corsi e indirizzi di case
+  editrici.
+- **Elenchi di studenti**: le liste di nomi sono gli autori delle bibliografie;
+  «graduatoria» compare nei requisiti di ammissione dei corsi.
+- **Link a Google Drive, OneDrive, fogli pubblicati sul web**: 53 testi in 18 file,
+  condivisi dai docenti per gli studenti e scritti nelle
+  pagine degli atenei (dispense, orari): informazione didattica, restano.
+- **Parametri `sig=` (Google Libri), `key=` (catalogo di Milano), `code=` (codice
+  insegnamento a Roma La Sapienza), `auth=LOCAL` (catalogo di Siena)**: non sono
+  credenziali.
+- **Credenziali dell'immagine di laboratorio** del corso di Roma Tor Vergata:
+  utente e password predefiniti di una macchina virtuale locale, parte
+  dell'istruzione.
+- **Inviti e riunioni**: nessun gruppo WhatsApp, Telegram o Discord; i link di
+  riunione Zoom (senza il codice), Meet, Teams e Webex sono scritti dagli atenei
+  nelle note degli esami (vedi i resti).
+
+### Resti e cose da valutare nei giri successivi
+
+- Due voci di `argomenti` in `moduli/unito.json` sono solo l'indirizzo della
+  stanza personale Webex di un docente (non sono argomenti); un indirizzo Meet
+  nel luogo di un esame (Cassino) e un link a un team di Teams in due libri
+  (Napoli): inviti a riunioni pubblicati dagli atenei, non credenziali; si
+  potrebbero togliere nella build.
+- Gli input della build (`database/contrib/auto`, fuori dal repository) hanno
+  ancora i testi originali; la build li filtra, quindi i file pubblici sono
+  puliti.
+- `argomenti.py` e il file delle sessioni non applicano i filtri (nessuna
+  occorrenza, ma il controllo del database e quello della copia pubblica li
+  guardano).
+- La cronologia della repo pubblica contiene ancora le versioni precedenti dei
+  file (dati già pubblicati dagli atenei, token scaduto): riscriverla non è
+  proporzionato.
+
+### Per l'utente
+
+- Dopo il commit, esportare la copia pubblica (senza pipe, controllando il
+  codice d'uscita): il controllo ora blocca con il database vecchio e passa
+  con quello corretto.
+- Per rifare la raccolta del database non serve altro: la build applica già i
+  filtri nuovi.

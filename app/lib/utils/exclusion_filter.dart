@@ -8,16 +8,30 @@
 /// espressioni solo quelle dal costo limitato ([isSafePattern]); le altre come
 /// testo semplice.
 class ExclusionFilter {
-  ExclusionFilter(List<String> patterns)
-    : _regexes = [
-        for (final p in patterns
-            .map((p) => p.trim())
-            .where((p) => p.isNotEmpty)
-            .take(maxPatterns))
-          _compile(p),
-      ];
+  ExclusionFilter(List<String> patterns) : _regexes = _compileAll(patterns);
 
   final List<RegExp> _regexes;
+
+  static List<RegExp> _compileAll(List<String> patterns) {
+    var regexes = 0;
+    final out = <RegExp>[];
+    for (final p
+        in patterns
+            .map((p) => p.trim())
+            .where((p) => p.isNotEmpty)
+            .take(maxPatterns)) {
+      // oltre [maxRegexPatterns] espressioni le altre valgono come testo
+      // (il costo di ogni testo si somma su tutti i filtri)
+      final r = regexes < maxRegexPatterns ? _compile(p) : null;
+      if (r != null) regexes++;
+      out.add(r ?? RegExp(RegExp.escape(p), caseSensitive: false));
+    }
+    return out;
+  }
+
+  /// Filtri usati come espressioni regolari al massimo (le caselle di
+  /// Impostazioni sono 6).
+  static const maxRegexPatterns = 12;
 
   /// Filtri letti al massimo (gli altri si ignorano): con le caselle delle
   /// esclusioni sono meno di dieci.
@@ -26,15 +40,29 @@ class ExclusionFilter {
   /// Lunghezza massima di un filtro usato come espressione regolare.
   static const maxRegexLength = 200;
 
-  static RegExp _compile(String p) {
-    if (isSafePattern(p)) {
-      try {
-        return RegExp(p, caseSensitive: false);
-      } on FormatException {
-        // espressione non valida: testo semplice
-      }
+  /// Caratteri di ogni testo confrontati con i filtri (i nomi degli
+  /// insegnamenti e dei moduli sono molto più corti). Anche un'espressione
+  /// ammessa da [isSafePattern] costa fino al cubo della lunghezza del testo
+  /// (`.*a.*b` su 10.000 caratteri: circa un minuto); su 150 caratteri resta
+  /// di pochi millisecondi.
+  static const maxTextLength = 150;
+
+  /// Prodotto massimo delle alternative dei gruppi in sequenza
+  /// (`(a|b)(c|d)` = 4): si moltiplicano i percorsi provati. Con due o più
+  /// quantificatori (ogni percorso si riprova per ogni loro combinazione)
+  /// al massimo [maxPathsWithQuantifiers].
+  static const maxAlternativePaths = 30;
+  static const maxPathsWithQuantifiers = 2;
+
+  /// Espressione di [p], o null se va usato come testo semplice.
+  static RegExp? _compile(String p) {
+    if (!isSafePattern(p)) return null;
+    try {
+      return RegExp(p, caseSensitive: false);
+    } on FormatException {
+      // espressione non valida: testo semplice
+      return null;
     }
-    return RegExp(RegExp.escape(p), caseSensitive: false);
   }
 
   /// Vero se [p] si può usare come espressione regolare senza rischio di
@@ -42,9 +70,10 @@ class ExclusionFilter {
   /// massimo 5), al massimo 30 alternative, nessun quantificatore su un
   /// gruppo con alternative o quantificatori dentro (`(a+)+`, `(a|aa)*`) e
   /// al massimo 2 quantificatori (3 se l'espressione parte da `^` senza
-  /// alternative fuori dai gruppi, che la provano da una posizione sola).
-  /// Così anche il caso peggiore su un titolo resta di poche migliaia di
-  /// passi per carattere.
+  /// alternative fuori dai gruppi, che la provano da una posizione sola),
+  /// e i gruppi con alternative in sequenza non oltre
+  /// [maxAlternativePaths] percorsi. Con i testi tagliati a [maxTextLength]
+  /// anche il caso peggiore resta sotto i 50 ms.
   static bool isSafePattern(String p) {
     if (p.length > maxRegexLength) return false;
     var quantifiers = 0;
@@ -55,6 +84,9 @@ class ExclusionFilter {
     var inClass = false;
     // gruppo aperto: contiene alternative o quantificatori
     var groupComplex = false;
+    // alternative del gruppo aperto e prodotto di quelle dei gruppi chiusi
+    var groupBranches = 1;
+    var paths = 1;
     // l'ultimo elemento chiuso è un gruppo complesso / semplice
     var afterComplexGroup = false;
     var afterAtom = false;
@@ -86,6 +118,7 @@ class ExclusionFilter {
           depth++;
           groups++;
           groupComplex = false;
+          groupBranches = 1;
           afterAtom = false;
           afterComplexGroup = false;
           // (?:…), (?=…), (?!…), (?<=…), (?<nome>…): il «?» non è un
@@ -94,12 +127,15 @@ class ExclusionFilter {
         case ')':
           if (depth == 0) return false;
           depth--;
+          paths *= groupBranches;
+          if (paths > maxAlternativePaths) return false;
           afterAtom = true;
           afterComplexGroup = groupComplex;
         case '|':
           alternatives++;
           if (depth > 0) {
             groupComplex = true;
+            groupBranches++;
           } else {
             topLevelAlternation = true;
           }
@@ -124,6 +160,7 @@ class ExclusionFilter {
     }
     if (inClass || depth != 0) return false;
     if (groups > 5 || alternatives > 30) return false;
+    if (quantifiers >= 2 && paths > maxPathsWithQuantifiers) return false;
     final anchored = p.startsWith('^') && !topLevelAlternation;
     return quantifiers <= (anchored ? 3 : 2);
   }
@@ -134,8 +171,11 @@ class ExclusionFilter {
   bool isExcluded(Iterable<String?> texts) {
     for (final t in texts) {
       if (t == null || t.isEmpty) continue;
+      // (testo lunghissimo da un data pack o da un backup: solo l'inizio,
+      // vedi [maxTextLength])
+      final s = t.length > maxTextLength ? t.substring(0, maxTextLength) : t;
       for (final r in _regexes) {
-        if (r.hasMatch(t)) return true;
+        if (r.hasMatch(s)) return true;
       }
     }
     return false;

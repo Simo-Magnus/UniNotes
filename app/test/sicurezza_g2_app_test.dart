@@ -531,7 +531,12 @@ void main() {
         final src = File(f).readAsStringSync();
         final guard = src.indexOf('MediaGuard.unsafeReason(');
         expect(guard, greaterThan(0), reason: f);
-        expect(guard, lessThan(src.indexOf('= Player();')), reason: f);
+        // (lettore protetto dal giro 4, sicurezza_g4_app_test.dart)
+        expect(
+          guard,
+          lessThan(src.indexOf('= await MediaGuard.newPlayer();')),
+          reason: f,
+        );
       }
     });
   });

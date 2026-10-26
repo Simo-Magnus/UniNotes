@@ -122,12 +122,13 @@ void main() {
     });
 
     test(
-      'percorsi con il nome dell\'utente: problema, nel database avviso',
+      'percorsi con il nome dell\'utente: problema (dal giro 4 anche nel database)',
       () {
         final s = script();
         if (s == null) return;
         expect(s, contains('PERCORSO_UTENTE = re.compile('));
-        expect(s, contains('(avvisi if dati else out).append('));
+        // nel giro 3 nel database era solo un avviso; ora blocca (sicurezza_g4_repo_test)
+        expect(s, isNot(contains('(avvisi if dati else out).append(')));
         expect(
           s,
           contains(': percorso con il nome dell\'utente del computer ('),
@@ -322,7 +323,9 @@ void main() {
           'PUBBLICHE = ("corsi", "moduli", "per_corso", "sessioni", "argomenti")',
         ),
       );
-      expect(s, contains('for cartella in PUBBLICHE + (".",):'));
+      // dal giro 4 il controllo lavora sui byte e in parallelo (stessi file)
+      expect(s, contains('for cartella in PUBBLICHE:'));
+      expect(s, contains('yield from sorted(db.glob("*.json"))'));
     });
   });
 }

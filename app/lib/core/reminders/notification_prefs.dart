@@ -36,6 +36,11 @@ class NotificationKeys {
   /// Notifiche pianificate dall'app: JSON {id notifica: istante}.
   static const scheduled = 'notif_scheduled';
 
+  /// Codice casuale di questo dispositivo nel payload delle notifiche i cui
+  /// pulsanti cambiano dati (recensione, sostegno, «Com'è andata?»): vedi
+  /// RemindersService.signedPayload. Mai nei backup né sincronizzato.
+  static const code = 'notif_code';
+
   // Recensione: una sola richiesta («Più tardi» la ripropone dopo 30
   // giorni, al massimo due volte).
   static const reviewState = 'notif_review_state'; // done | never

@@ -152,7 +152,7 @@ void main() {
     test(
       'il nome scelto dall\'altra app non esce dalla cartella condivisi',
       () {
-        final name = between(share, 'private fun nameOf(', 'fun collect(');
+        final name = between(share, 'fun cleanName(', 'fun collect(');
         expect(name, contains(".substringAfterLast('/')"));
         expect(name, contains('n == "." || n == ".."'));
       },

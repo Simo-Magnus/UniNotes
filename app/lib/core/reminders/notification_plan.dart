@@ -192,6 +192,21 @@ class PlannedNotification {
     silent: silent,
   );
 
+  /// Stessa notifica con il payload [p] (codice delle notifiche aggiunto,
+  /// vedi RemindersService.signedPayload).
+  PlannedNotification withPayload(String p) => PlannedNotification(
+    id: id,
+    type: type,
+    at: at,
+    title: title,
+    body: body,
+    payload: p,
+    actions: actions,
+    ongoing: ongoing,
+    countdownTo: countdownTo,
+    silent: silent,
+  );
+
   /// ID numerico stabile (vedi [notificationId]).
   final int id;
   final NotificationType type;

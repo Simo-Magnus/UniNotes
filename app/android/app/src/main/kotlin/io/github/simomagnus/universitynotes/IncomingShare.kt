@@ -111,6 +111,20 @@ object IncomingShare {
         return (if (cut.isEmpty()) "File condiviso" else cut) + ext
     }
 
+    /**
+     * Nome scelto dall'altra app ripulito: solo l'ultimo pezzo dopo «/»
+     * (anche dopo i «%2F» già decodificati da Uri), «\», «:», caratteri
+     * vietati su Windows e di controllo (anche DEL) sostituiti; mai vuoto,
+     * «.» o «..». Il file finisce poi in `cache/condivisi` con un prefisso.
+     */
+    fun cleanName(raw: String?, index: Int): String {
+        val n = (raw ?: "")
+            .substringAfterLast('/')
+            .replace(Regex("[\\\\:*?\"<>|\\u0000-\\u001f\\u007f]"), "_")
+            .trim()
+        return if (n.isEmpty() || n == "." || n == "..") "File condiviso ${index + 1}" else n
+    }
+
     /** Nome leggibile del file (DISPLAY_NAME, con estensione dal tipo). */
     private fun nameOf(context: Context, uri: Uri, index: Int): String {
         var name: String? = null
@@ -123,11 +137,7 @@ object IncomingShare {
         } catch (e: Exception) {
             name = null
         }
-        var n = (name ?: uri.lastPathSegment ?: "File condiviso ${index + 1}")
-            .substringAfterLast('/')
-            .replace(Regex("[\\\\:*?\"<>|\\u0000-\\u001f]"), "_")
-            .trim()
-        if (n.isEmpty() || n == "." || n == "..") n = "File condiviso ${index + 1}"
+        var n = cleanName(name ?: uri.lastPathSegment, index)
         if (!n.contains('.')) {
             // il fornitore dell'altra app può lanciare un'eccezione anche
             // qui (permesso scaduto, Uri sconosciuto): il file si copia lo

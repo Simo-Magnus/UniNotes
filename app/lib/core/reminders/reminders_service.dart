@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math' show Random;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart'
@@ -497,9 +498,14 @@ class RemindersService extends ChangeNotifier {
       }
     }
     final done = <int, DateTime>{};
+    final code = await _notificationCode();
     for (final n in plan) {
       try {
-        await platform.schedule(n);
+        await platform.schedule(
+          code != null && changesData(n.type)
+              ? n.withPayload(signedPayload(n.payload, code))
+              : n,
+        );
         done[n.id] = n.at;
       } catch (e) {
         debugPrint('Notifica non pianificata ($n): $e');
@@ -553,9 +559,20 @@ class RemindersService extends ChangeNotifier {
   /// Pulsanti e tocchi delle notifiche.
   Future<void> _applyAction(NotificationTap tap) async {
     final now = DateTime.now();
-    final p = tap.payload;
+    final (p, given) = splitPayload(tap.payload);
     final a = tap.action;
     final s = _s.settings;
+    // le azioni che cambiano dati valgono solo con il codice di questo
+    // dispositivo (solo nelle notifiche mostrate dall'app): senza, il tocco
+    // apre al massimo una schermata
+    final changes =
+        p == AppRoutes.review ||
+        p == AppRoutes.donate ||
+        a == NotificationActions.skipExam;
+    if (changes && !await _codeMatches(given)) {
+      _s.openRoute.call(notificationRoute(p));
+      return;
+    }
     if (p == AppRoutes.review) {
       switch (a) {
         case NotificationActions.later:
@@ -622,6 +639,75 @@ class RemindersService extends ChangeNotifier {
   @visibleForTesting
   static String notificationRoute(String payload) =>
       payload == AppRoutes.recordStart ? AppRoutes.record : payload;
+
+  // ------------------------------------------- codice delle notifiche
+
+  /// Notifiche i cui pulsanti (o il tocco) cambiano dati: «Più tardi» e
+  /// «Non chiedere più» della recensione e del sostegno, «Recensisci» e
+  /// «Dona» (segnano la richiesta come fatta), «Non ricordarmelo per questa
+  /// prova».
+  @visibleForTesting
+  static bool changesData(NotificationType t) =>
+      t == NotificationType.review ||
+      t == NotificationType.donation ||
+      t == NotificationType.outcome;
+
+  /// Payload `<rotta>#<codice>` delle notifiche che cambiano dati. Su
+  /// Android flutter_local_notifications legge payload e pulsante da
+  /// qualsiasi intent con la sua azione arrivato a MainActivity (esportata):
+  /// senza il codice un'altra app poteva spegnere le richieste di recensione
+  /// e sostegno o i promemoria «Com'è andata?». Il codice sta solo nelle
+  /// PendingIntent dell'app (immutabili, gli extra non si leggono da fuori)
+  /// e nelle sue impostazioni; le rotte non contengono «#».
+  @visibleForTesting
+  static String signedPayload(String route, String code) => '$route#$code';
+
+  /// (rotta, codice) di un payload; codice null se non c'è.
+  @visibleForTesting
+  static (String, String?) splitPayload(String payload) {
+    final i = payload.lastIndexOf('#');
+    if (i < 0) return (payload, null);
+    return (payload.substring(0, i), payload.substring(i + 1));
+  }
+
+  static const _codeLength = 32;
+
+  /// Codice di questo dispositivo (creato la prima volta); null se le
+  /// impostazioni non si leggono (le notifiche partono senza codice e i
+  /// loro pulsanti non cambiano nulla).
+  Future<String?> _notificationCode() async {
+    try {
+      final v = await _s.settings.get(NotificationKeys.code);
+      if (v != null && v.length == _codeLength) return v;
+      final r = Random.secure();
+      final c = [
+        for (var i = 0; i < _codeLength ~/ 2; i++)
+          r.nextInt(256).toRadixString(16).padLeft(2, '0'),
+      ].join();
+      await _s.settings.set(NotificationKeys.code, c);
+      return c;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// [given] è il codice di questo dispositivo (confronto in tempo
+  /// costante).
+  Future<bool> _codeMatches(String? given) async {
+    if (given == null || given.length != _codeLength) return false;
+    String? mine;
+    try {
+      mine = await _s.settings.get(NotificationKeys.code);
+    } catch (_) {
+      return false;
+    }
+    if (mine == null || mine.length != _codeLength) return false;
+    var diff = 0;
+    for (var i = 0; i < _codeLength; i++) {
+      diff |= mine.codeUnitAt(i) ^ given.codeUnitAt(i);
+    }
+    return diff == 0;
+  }
 
   // ------------------------------------------------- consenso e permessi
 

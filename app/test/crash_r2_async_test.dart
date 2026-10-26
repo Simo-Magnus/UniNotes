@@ -266,10 +266,21 @@ void main() {
       await tester.pumpWidget(
         _app(s, const Scaffold(body: SingleChildScrollView(child: WhisperCard()))),
       );
-      await _settle(tester, 120);
-      await tester.tap(find.byKey(const Key('whisper-models')));
-      await _settle(tester, 5);
+      // lo stato si legge con un centinaio di operazioni sui file in fila
+      // (16 modelli: cartella, file, «.part»…), ognuna finita solo durante
+      // un'attesa reale: ne servono circa 92 a PC scarico, quindi con il PC
+      // carico i 120 giri fissi non bastavano e la sezione dei modelli non
+      // c'era ancora. Si aspetta la sezione.
+      final models = find.byKey(const Key('whisper-models'));
+      for (var i = 0; i < 2000 && models.evaluate().isEmpty; i++) {
+        await _settle(tester, 1);
+      }
+      await tester.tap(models);
       final model = whisperModelById('large-v3-turbo-q5_0')!;
+      for (var i = 0; i < 200 && find.text(model.id).evaluate().isEmpty; i++) {
+        await _settle(tester, 1);
+      }
+      await _settle(tester, 5);
       expect(model.italianOk, isTrue);
       // il pulsante «Scarica» sulla riga del modello
       final y = tester.getCenter(find.text(model.id).first).dy;

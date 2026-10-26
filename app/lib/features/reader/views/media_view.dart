@@ -112,7 +112,12 @@ class _MediaViewState extends State<MediaView> {
     if (!mounted) return;
     try {
       MediaKit.ensureInitialized();
-      final player = Player();
+      // solo file locali, nessun riferimento seguito (MediaGuard)
+      final player = await MediaGuard.newPlayer();
+      if (!mounted) {
+        await player.dispose();
+        return;
+      }
       _player = player;
       if (widget.video) _video = VideoController(player);
       _subs

@@ -436,7 +436,12 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     }
     try {
       MediaKit.ensureInitialized();
-      final player = Player();
+      // solo file locali, nessun riferimento seguito (MediaGuard)
+      final player = await MediaGuard.newPlayer();
+      if (!mounted || gen != _playerGen) {
+        await player.dispose();
+        return;
+      }
       _player = player;
       _subs
         ..add(player.stream.position.listen(_onPosition))
