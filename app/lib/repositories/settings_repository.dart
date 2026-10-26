@@ -30,6 +30,10 @@ class SettingKeys {
 
   /// La pulizia di [legacyGemini] è già stata fatta.
   static const legacyGeminiRemoved = 'legacy_gemini_removed';
+
+  /// iPhone, iPad e Mac: token del portachiavi già riscritti «solo su questo
+  /// dispositivo» (`AppServices.migrateKeychainAccessibility`).
+  static const keychainThisDevice = 'keychain_this_device';
 }
 
 /// Esclusioni che lo studente può attivare in Impostazioni → Esclusioni

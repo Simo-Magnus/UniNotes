@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_background">#FF02060F</color>
-    <!-- Widget della schermata Home, tema scuro: vetro scuro semitrasparente,
-         testo chiaro, accento azzurro. -->
-    <color name="widget_background">#E6081221</color>
-    <color name="widget_border">#33A0CDFF</color>
+    <!-- Widget della schermata Home, tema scuro (docs/SPEC_DESIGN_3.md §4-§5):
+         vetro della sezione-card (dal bianco all'8,5% al blu notte al 34%)
+         su un fondo #081221 quasi opaco, bordo rgba(160,205,255,.11), filo
+         di luce in alto e faretto azzurro; testo chiaro, accento azzurro. -->
+    <color name="widget_bg_top">#EB1D2634</color>
+    <color name="widget_bg_mid">#EB0F1928</color>
+    <color name="widget_bg_bottom">#EB050F1D</color>
+    <color name="widget_border">#1CA0CDFF</color>
+    <color name="widget_light_line">#6BBEE4FF</color>
+    <color name="widget_spot">#2138BDF8</color>
+    <color name="widget_spot_end">#0038BDF8</color>
+    <!-- card interne: bianco al 5%, bordo al 10% -->
+    <color name="widget_inner">#0DFFFFFF</color>
+    <color name="widget_inner_border">#1AFFFFFF</color>
     <color name="widget_text">#FFF3F7FB</color>
+    <color name="widget_text_secondary">#BFEBF5FF</color>
     <color name="widget_text_muted">#FF8FA9C4</color>
     <color name="widget_accent">#FF38BDF8</color>
-    <color name="widget_badge">#2638BDF8</color>
+    <color name="widget_urgent">#FFF87171</color>
+    <color name="widget_chip">#1F38BDF8</color>
+    <color name="widget_chip_border">#8038BDF8</color>
+    <color name="widget_chip_urgent">#1FF87171</color>
+    <color name="widget_chip_urgent_border">#80F87171</color>
     <color name="widget_record_top">#FFFFB064</color>
+    <color name="widget_record_mid">#FFFF8A1F</color>
     <color name="widget_record_bottom">#FFE86F08</color>
+    <color name="widget_record_pressed">#FFD86408</color>
+    <color name="widget_record_highlight">#BFFFECD2</color>
     <color name="widget_on_record">#FF1A0B00</color>
+    <color name="widget_rec_dot">#FFEF4444</color>
+    <color name="widget_secondary_top">#1AFFFFFF</color>
+    <color name="widget_secondary_bottom">#08FFFFFF</color>
+    <color name="widget_secondary_border">#24FFFFFF</color>
+    <color name="widget_secondary_pressed">#2EFFFFFF</color>
+    <color name="widget_delete">#1AF87171</color>
+    <color name="widget_delete_border">#4DF87171</color>
+    <color name="widget_delete_armed">#FFF87171</color>
+    <color name="widget_on_delete_armed">#FF2A0606</color>
     <!-- Pulsanti della notifica della registrazione (RecordingNotification.kt) -->
     <color name="notifica_pulsante_fondo">#2E38BDF8</color>
     <color name="notifica_pulsante_premuto">#5238BDF8</color>

@@ -38,13 +38,10 @@ PAGINA = """<!doctype html>
   th, td {{ border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }}
   .torna {{ display: inline-block; margin-bottom: 20px; color: var(--muted); text-decoration: none; }}
 </style>
-<!-- Visite contate in forma anonima con GoatCounter (senza cookie, paragrafo 10.3 dell'informativa): una sola
-     richiesta al contatore, nessuno script di terzi nella pagina. Con #toggle-goatcounter in fondo all'indirizzo
-     il conteggio si spegne o si riaccende su questo browser. -->
 <script>
 (function () {{
   try {{
-    if (location.hash === '#toggle-goatcounter') {{
+    if (location.hash === '#toggle-conteggio') {{
       var spento = localStorage.getItem('skipgc') === 't';
       if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
       alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');

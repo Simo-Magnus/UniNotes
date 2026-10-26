@@ -14,14 +14,21 @@ import 'notification_plan.dart';
 /// (UpcomingExamsWidget.kt).
 const String kWidgetDataKey = 'uninotes_widget_data';
 
-/// Dati del widget «Prossime prove» (JSON): le prossime 3 prove con i
-/// giorni mancanti e dove porta il tocco. Funzione pura.
+/// Prove al massimo nel JSON dei widget: il widget più grande ne mostra 6
+/// (le altre come «+N», vedi WidgetPlan.kt e UpcomingExamsWidget.kt).
+const int kWidgetMaxExams = 6;
+
+/// Dati del widget «Prossime prove» (JSON): le prossime [kWidgetMaxExams]
+/// prove con i giorni mancanti, quante sono in tutto (`total`) e dove porta
+/// il tocco. Il widget ne mostra quante ne stanno (1 nel 2×2, 3 nel 4×2,
+/// fino a 6). Funzione pura.
 Map<String, Object?> widgetPayload(List<AgendaItem> agenda, DateTime now) {
   final today = DateTime(now.year, now.month, now.day);
-  final exams = [
+  final all = [
     for (final i in agenda)
       if (i.kind != AgendaKind.session && i.examId != null) i,
-  ].take(3);
+  ];
+  final exams = all.take(kWidgetMaxExams);
   String days(int n) => switch (n) {
     0 => 'Oggi',
     1 => 'Domani',
@@ -36,8 +43,9 @@ Map<String, Object?> widgetPayload(List<AgendaItem> agenda, DateTime now) {
     d.day,
   ).difference(DateTime.utc(today.year, today.month, today.day)).inDays;
   return {
-    'version': 1,
+    'version': 2,
     'updated': now.toIso8601String(),
+    'total': all.length,
     'exams': [
       for (final e in exams)
         {
@@ -60,6 +68,23 @@ Map<String, Object?> widgetPayload(List<AgendaItem> agenda, DateTime now) {
     'route': AppRoutes.exams,
   };
 }
+
+/// Stato della registrazione per il widget «Registra lezione» (Android).
+/// Viaggia con la notifica della registrazione (`show` e `stopped` sul
+/// canale `registrazione`, vedi background_controls.dart): un'unica fonte
+/// per notifica e widget (RecordingNotification.kt → RecordWidget.kt), qualunque
+/// sia il punto da cui la registrazione è partita o finita. Funzione pura.
+Map<String, Object?> recordingWidgetState({
+  required bool active,
+  bool paused = false,
+  Duration elapsed = Duration.zero,
+  String course = '',
+}) => {
+  'state': !active ? 'idle' : (paused ? 'paused' : 'recording'),
+  'paused': active && paused,
+  'elapsedMs': active && !elapsed.isNegative ? elapsed.inMilliseconds : 0,
+  'course': active ? course : '',
+};
 
 /// Ponte con i widget della schermata Home: Android (AppWidgetProvider in
 /// Kotlin), iOS e macOS (WidgetKit, App Group). Su Windows non ci sono
@@ -107,6 +132,21 @@ class HomeWidgetBridge {
       return await _channel.invokeMethod<String>('takeRoute');
     } catch (_) {
       return null;
+    }
+  }
+
+  /// Android: riporta l'utente alla schermata Home lasciando l'app aperta
+  /// in background (MainActivity.moveTaskToBack), dopo l'avvio della
+  /// registrazione dal widget. Altrove non fa nulla (false).
+  static Future<bool> moveTaskToBack([MethodChannel? channel]) async {
+    if (!Platform.isAndroid) return false;
+    try {
+      return await (channel ?? const MethodChannel(channelName))
+              .invokeMethod<bool>('moveToBack') ??
+          false;
+    } catch (e) {
+      debugPrint('Ritorno alla schermata Home non riuscito: $e');
+      return false;
     }
   }
 

@@ -111,6 +111,13 @@ class OAuthException implements Exception {
   String toString() => message;
 }
 
+/// Telefono: ritorno allo schema dell'app con uno `state` diverso da quello
+/// dell'accesso in corso (aperto da un'altra app, o da una pagina di accesso
+/// vecchia). Il testo è fisso: un errore scritto da altri non si mostra.
+String foreignReturnMessage(String provider) =>
+    'Accesso con $provider non riuscito: la risposta non viene dalla pagina '
+    'di accesso aperta da UniNotes. Riprova.';
+
 /// Accesso OAuth 2.0 per app installate: pagina di login del provider nel
 /// browser, ritorno su un server locale (loopback) e PKCE. L'app non vede mai
 /// la password; salva solo il refresh token (nel portachiavi del sistema).

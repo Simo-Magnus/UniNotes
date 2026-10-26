@@ -167,9 +167,40 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
         unawaited(_save());
       case RecorderCommand.open:
         _open();
+      case RecorderCommand.discard:
+        // «Elimina» del widget, già confermato con il secondo tocco
+        unawaited(_discard());
       default:
         break;
     }
+  }
+
+  /// Ferma la registrazione e la sposta in «Eliminati di recente» (con
+  /// «Annulla» nell'avviso).
+  Future<void> _discard() async {
+    if (!_rec.active || _rec.saving) return;
+    final TrashEntry? discarded;
+    try {
+      discarded = await discardRecording(_s);
+    } catch (e) {
+      _snack('Eliminazione non riuscita: $e');
+      return;
+    }
+    final entry = discarded;
+    final nav = _nav;
+    if (entry == null || nav == null || !nav.mounted) {
+      _snack('Registrazione spostata in «Eliminati di recente».');
+      return;
+    }
+    showUndoSnackBar(
+      nav,
+      'Registrazione spostata in «Eliminati di recente».',
+      undoneMessage: 'Registrazione ripristinata.',
+      onUndo: () async {
+        await _s.trash.restore(entry);
+        _s.revision.bump();
+      },
+    );
   }
 
   void _open() {
@@ -242,27 +273,7 @@ class _RecordingOverlayHostState extends State<RecordingOverlayHost>
       case RecordingCloseChoice.save:
         await _save();
       case RecordingCloseChoice.delete:
-        final TrashEntry? discarded;
-        try {
-          discarded = await discardRecording(_s);
-        } catch (e) {
-          _snack('Eliminazione non riuscita: $e');
-          break;
-        }
-        final entry = discarded;
-        if (entry == null || !nav.mounted) {
-          _snack('Registrazione spostata in «Eliminati di recente».');
-          break;
-        }
-        showUndoSnackBar(
-          nav,
-          'Registrazione spostata in «Eliminati di recente».',
-          undoneMessage: 'Registrazione ripristinata.',
-          onUndo: () async {
-            await _s.trash.restore(entry);
-            _s.revision.bump();
-          },
-        );
+        await _discard();
       case RecordingCloseChoice.cancel:
         break;
     }

@@ -463,7 +463,7 @@ class ParakeetService {
       throw WhisperException('File audio non trovato: ${audio.path}');
     }
     onProgress?.call(const WhisperProgress('Preparo l\'audio…', null));
-    final tmp = await Directory.systemTemp.createTemp('parakeet_');
+    final tmp = await Directory.systemTemp.createTemp('uninotes_parakeet_');
     try {
       var wav = audio;
       var info = p.extension(audio.path).toLowerCase() == '.wav'

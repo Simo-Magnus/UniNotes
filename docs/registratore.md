@@ -144,6 +144,11 @@ microfono, quindi al massimo se ne sente un accenno nei primi istanti.
   il tocco apre il registratore. I pulsanti funzionano anche ad app in
   background: il servizio (isolate separato di `flutter_foreground_task`)
   passa il comando all'app.
+- **Android, widget «Registra lezione»**: un tocco avvia la registrazione
+  (stesso percorso del pulsante «Registra») e riporta alla schermata Home;
+  poi il widget mostra il tempo con Pausa/Riprendi, Salva ed Elimina (con
+  il secondo tocco di conferma, poi in «Eliminati di recente»). Lo stato è
+  quello della notifica. Vedi [widget.md](widget.md#registra-lezione-avvio-con-un-tocco).
 - **iOS**: la registrazione continua in background (`UIBackgroundModes`
   `audio` nell'Info.plist); durante una telefonata va in pausa. La **Live
   Activity** (schermata di blocco e Dynamic Island, con cronometro e, da
@@ -1239,10 +1244,138 @@ Prova (22/10/2026, app di prova con lo stesso runner e una pagina con 20
 riquadri sfocati, build release, riduci/ripristina da script): prima, a ogni
 ripristino Flutter riceveva una nuova misura e rifaceva la pagina (layout
 ~18 ms + disegno 22–46 ms, con la superficie ricreata); dopo, nessuna
-nuova misura né ricostruzione, stati «hidden» → «resumed» corretti. Le
-catture di schermo (GDI, PrintWindow) non vedono il contenuto di Flutter
-(superficie DirectX), quindi il tempo di nero sullo schermo va controllato
-a occhio sull'app vera.
+nuova misura né ricostruzione, stati «hidden» → «resumed» corretti.
+
+### Secondo giro (25–26/10/2026): il nero misurato e tolto
+
+Il primo giro non bastava. Misurato sull'app vera (build release, PC con
+Intel Core Ultra 5 226V e grafica integrata) con uno script che riduce e
+ripristina la finestra in tutti i modi realistici (`ShowWindow`
+`SW_MINIMIZE`/`SW_RESTORE`, `WM_SYSCOMMAND` `SC_MINIMIZE`/`SC_RESTORE`
+come la barra delle applicazioni, `ShowWindowAsync` + `SetForegroundWindow`,
+nascondi/mostra come l'area di notifica), con pause di 0, 1, 10 e 60 s, e
+cattura l'area della finestra **dallo schermo** (BitBlt dal DC dello
+schermo, che vede la composizione di DWM compresa la superficie DirectX di
+Flutter) a raffica per 1,5 s dopo ogni ripristino. Conta come «nero» una
+cattura con più del 10% dei pixel neri puri o del colore di fondo della
+finestra (#02060F) che non lo erano prima della riduzione né nello sfondo
+dietro la finestra.
+
+Cause trovate:
+
+- `window_manager` ferma `WM_SIZE` con `SIZE_MINIMIZED` (restituisce 0
+  prima del runner): il codice del primo giro su quel messaggio (stato
+  «hidden» per le Sessioni Focus, vista che tiene la misura) non girava
+  mai. Ora il runner guarda i messaggi **prima** dei plugin.
+- Ridotta a icona (o nascosta), Windows libera la superficie DirectX della
+  vista di Flutter. Al ripristino il compositore mostra subito la finestra
+  (animazione dalla barra) con la superficie vuota: si vede il fondo
+  dipinto dal runner (#02060F, quasi nero) o il nero. Flutter presenta un
+  frame 12–30 ms dopo il ripristino, ma spesso troppo presto (finestra non
+  ancora visibile per il compositore: il frame va perso) e, con l'app
+  ferma, il successivo arrivava solo con un movimento del mouse. Nella
+  schermata iniziale (nulla che si muove) il nero restava anche **per
+  secondi**; nella Home, dove qualcosa ridisegna, 20–65 ms.
+
+Rimedi (`windows/runner/flutter_window.cpp`):
+
+- **ultima immagine**: appena prima di ridurre a icona
+  (`WM_WINDOWPOSCHANGING` verso la posizione delle finestre ridotte,
+  -32000) o di nascondere la finestra (`WM_SHOWWINDOW`), il runner copia
+  l'area client dalla superficie della finestra (BitBlt dal DC della
+  finestra, 4–13 ms; `PrintWindow` con `PW_RENDERFULLCONTENT` dava la stessa
+  immagine in 40–60 ms, troppo per una riduzione) e la dipinge nella
+  superficie GDI della finestra, che Windows conserva; al ripristino
+  `WM_ERASEBKGND` dipinge di nuovo quella invece del colore di fondo. Il
+  compositore mostra così l'ultimo frame finché Flutter non ripresenta
+  (stessa immagine, nessun salto). Se la copia risulta tutta nera (altra
+  scheda video o presentazione) si scarta e resta il colore di fondo;
+- **frame forzati** per circa un secondo dopo il ritorno (uno ogni 33 ms,
+  `StartRedraws`): uno arriva di sicuro a finestra visibile, anche con
+  l'app ferma; poi l'immagine si libera (non va ridipinta sotto la vista a
+  un ridimensionamento);
+- stato «hidden»/«inactive»/«resumed» di nuovo mandato a Flutter alla
+  riduzione e al ripristino.
+
+| Ripristini (build release) | Prima | Dopo |
+|---|---|---|
+| Home, tema scuro, pause 0/1 s (3 modi × 50) | nero in 86 su 150, fino a 65 ms (media ~22 ms), fino al 72% della finestra | nero in 0 su 150 (peggior cattura: 3% di pixel, bordi dell'animazione) |
+| Home, tema chiaro, pause 0/1 s (3 modi × 50) | — | nero in 0 su 150 (peggiore 0,1%) |
+| Nascondi/mostra (area di notifica), 20 | — | nero in 0 su 20 |
+| Ridotta 10 s e 60 s (4 modi × 4) | — | nero in 0 su 16 |
+| Schermata iniziale (app ferma), 4 + 4 + 8 ripristini | nero in tutti, ancora nero 5 s dopo il ripristino | — |
+
+In tutto, dopo: 0 catture nere in 366 ripristini. Le catture da script non
+passano dalla barra delle applicazioni vera: l'unica differenza è chi
+chiede la riduzione, i messaggi alla finestra sono gli stessi.
+
+## Windows: la X chiude subito (26/10/2026)
+
+Prima la finestra restava sullo schermo per **8–11 secondi** dopo la X
+(misure sotto). Causa: alla fine del ciclo dei messaggi il distruttore di
+`FlutterWindow` era vuoto e il motore si chiudeva con la distruzione
+implicita dei membri, cioè con `flutter_controller_` ancora impostato
+mentre veniva distrutto: i messaggi che la chiusura della vista manda alla
+finestra arrivavano ancora al motore a metà distruzione, e la chiusura
+durava secondi (con il distruttore che chiama `OnDestroy`, che azzera il
+puntatore prima, 15–40 ms: provato sulla stessa build cambiando solo
+quello). La finestra si distruggeva solo dopo, e intanto la copia unica era
+già libera: una nuova copia poteva partire con la vecchia ancora aperta.
+
+Ora (`windows/runner/flutter_window.cpp`, `main.cpp`,
+`lib/core/services/desktop_window.dart`):
+
+- alla **X** (anche dall'anteprima della barra con la finestra ridotta) il
+  runner **nasconde subito** la finestra, prima dei plugin e del motore, e
+  la segna con la proprietà `UniNotes.Chiusura` (1 = X premuta);
+- l'app decide: con una **registrazione in corso** resta nell'area di
+  notifica (canale `io.github.simomagnus.universitynotes/finestra`,
+  `nascosta`; prima, su Windows, la X passava dal motore a
+  `onExitRequested`, che salvava e fermava la registrazione invece di
+  lasciarla andare: ora risponde «cancel» e va nell'area di notifica); se
+  l'icona dell'area di notifica non si può mostrare la finestra torna
+  visibile. Altrimenti esce (`uscita`, proprietà = 2): salva la
+  registrazione se c'è (solo da «Esci»), toglie l'icona, aspetta le
+  scritture del database in corso (una transazione vuota dopo quelle
+  avviate, al massimo 5 s) e chiude;
+- senza risposta dall'app entro 10 s la finestra torna visibile (meglio di
+  un processo invisibile);
+- `~FlutterWindow` chiama `OnDestroy` (canali, poi motore con il puntatore
+  già azzerato); finestra e motore si chiudono in un blocco prima di
+  `CoUninitialize` e del rilascio della copia unica;
+- una **seconda copia** avviata mentre la prima si chiude (proprietà 1 o 2,
+  o finestra già distrutta con la copia unica ancora presa) non le passa il
+  primo piano e non sparisce: aspetta che la prima finisca (al massimo
+  15 s, controllando ogni 25 ms) e si apre al suo posto. Con la X appena
+  premuta e l'app che resta nell'area di notifica, la proprietà sparisce e
+  la seconda copia riporta in primo piano quella.
+
+| Chiusura (build release, Home con dati, OneDrive non collegato) | Prima | Dopo |
+|---|---|---|
+| Finestra non più visibile dopo `WM_CLOSE` / `SC_CLOSE` (21 chiusure: appena aperta, dopo 20 s di uso, ridotta a icona) | 7,8–10,9 s (media ~8,4 s) | 1–6 ms (i 4–5 ms in più quando era visibile: copia dell'ultima immagine) |
+| Processo finito | 8,0–10,9 s | 0,49–0,61 s |
+| Riapertura subito dopo la chiusura | 21 su 21 | 21 su 21 |
+| Riapertura mentre la prima si chiude (30 ms, 0,5 s, 2 s dopo la X) | la nuova partiva con la vecchia ancora aperta per secondi | 6 su 6, la nuova aspetta la fine della vecchia |
+
+I ~300 ms fra la fine di `wWinMain` e la fine del processo sono lo
+scaricamento delle librerie (motori di trascrizione, lettore): a finestra
+già sparita e copia unica già libera.
+
+### Strumenti per le misure
+
+- Build di prova con i dati in una cartella a parte:
+  `flutter build windows --release --dart-define=UNINOTES_CARTELLA_PROVA=<cartella>`
+  (`lib/core/services/test_data_dir.dart`): dati, Documenti, temporanei e
+  download dentro quella cartella, preferenze in memoria, niente
+  portachiavi, toast pianificati e registro dell'utente. Nelle build
+  normali la costante è vuota e non cambia nulla.
+- Traccia dei tempi: con la variabile d'ambiente
+  `UNINOTES_TRACCIA_FINESTRA=<file>` runner (`window_trace.h`) e app
+  (`DesktopWindow.trace`) scrivono nello stesso file i messaggi della
+  finestra, i frame presentati dopo un ripristino, i passi della chiusura.
+- Script (ctypes, nessun pacchetto) che riduce/ripristina e chiude la
+  finestra e cattura lo schermo: descritto sopra; i test statici del
+  runner sono in `app/test/crash_r6_finestra_test.dart`.
 
 ## Accessibilità
 

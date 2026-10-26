@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pulsante primario arancione «Registra lezione» (docs/SPEC_DESIGN_3.md
+     §7.3): sfumatura #FFB064 → #FF8A1F → #E86F08, raggio 14, rilievo chiaro
+     sul bordo alto, nessun alone; più scuro al tocco. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/widget_record_pressed" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <gradient
+                        android:angle="270"
+                        android:centerColor="@color/widget_record_mid"
+                        android:centerY="0.52"
+                        android:endColor="@color/widget_record_bottom"
+                        android:startColor="@color/widget_record_top" />
+                    <corners android:radius="14dp" />
+                </shape>
+            </item>
+            <item
+                android:height="1dp"
+                android:gravity="top|fill_horizontal"
+                android:left="10dp"
+                android:right="10dp"
+                android:top="1dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/widget_record_highlight" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

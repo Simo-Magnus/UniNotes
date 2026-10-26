@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Widget «Prossime prove»: 4×2 celle, ridimensionabile; i giorni mancanti
-     si ricalcolano ogni 12 ore e a ogni modifica nell'app. -->
+<!-- Widget «Prossime prove»: 4×2 celle, ridimensionabile da 2×2 (una prova
+     grande) a 4×1 (una riga) e oltre (fino a 6 prove). Il contenuto si adatta
+     alla misura vera (UpcomingExamsWidget.kt, WidgetPlan.kt); i giorni
+     mancanti si ricalcolano a mezzanotte (allarme non urgente), ogni 12 ore e
+     a ogni modifica nell'app. -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/widget_prossime_prove_descrizione"
     android:initialLayout="@layout/widget_prossime_prove"
     android:minWidth="250dp"
     android:minHeight="110dp"
-    android:minResizeWidth="180dp"
-    android:minResizeHeight="110dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="40dp"
     android:previewImage="@mipmap/ic_launcher"
     android:previewLayout="@layout/widget_prossime_prove_preview"
     android:resizeMode="horizontal|vertical"

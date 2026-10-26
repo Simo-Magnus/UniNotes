@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../widgets/app_snack_action.dart';
 import '../../core/feedback/app_modals.dart';
 import '../../core/feedback/feedback_service.dart';
+import '../../core/reminders/home_widgets.dart' show HomeWidgetBridge;
 import '../../core/reminders/notification_plan.dart' show AppRoutes;
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
@@ -63,6 +64,13 @@ class RecorderScreen extends StatefulWidget {
   /// Aperto dalla pagina di questo corso (id): dopo «Salva» si torna lì.
   final int? fromCourse;
 
+  /// Dopo l'avvio dal widget: ritorno alla schermata Home (Android) e
+  /// attesa prima del ritorno. Le prove li sostituiscono.
+  @visibleForTesting
+  static Future<bool> Function() toBackground = HomeWidgetBridge.moveTaskToBack;
+  @visibleForTesting
+  static Duration backgroundDelay = const Duration(milliseconds: 700);
+
   @override
   State<RecorderScreen> createState() => _RecorderScreenState();
 }
@@ -90,13 +98,46 @@ class _RecorderScreenState extends State<RecorderScreen> {
     super.initState();
     _course = widget.initialCourse;
     _rec.screenVisible = true;
+    _rec.addListener(_onRecorder);
     _load();
   }
 
   @override
   void dispose() {
+    _rec.removeListener(_onRecorder);
     _rec.screenVisible = false;
     super.dispose();
+  }
+
+  /// Richiesta d'avvio dal widget arrivata con il registratore già aperto.
+  void _onRecorder() {
+    if (_rec.quickStartPending) unawaited(_maybeQuickStart());
+  }
+
+  /// Avvio dal widget «Registra lezione» (rotta `registra:avvia`, una sola
+  /// volta): registra subito con lo stesso percorso del pulsante (corso
+  /// scelto qui, lingua delle lezioni, nome «AAAA-MM-GG HH:MM», permesso del
+  /// microfono) e, appena la registrazione è partita, torna alla schermata
+  /// Home lasciandola continuare in background. Se non parte (permesso
+  /// negato, nessun insegnamento) si resta qui con il motivo.
+  Future<void> _maybeQuickStart() async {
+    if (!mounted || _catalog == null || _busy || !_rec.quickStartPending) {
+      return;
+    }
+    if (!_rec.takeQuickStart() || _rec.active || _rec.saving) return;
+    if (_course == null) {
+      showSnack(
+        context,
+        'Nessun insegnamento: aggiungili in Insegnamenti per registrare.',
+      );
+      return;
+    }
+    if (!await _start()) return;
+    // un attimo per vedere che è partita (e il servizio in primo piano del
+    // microfono parte con l'app ancora davanti, come vuole Android 14+),
+    // poi la schermata Home
+    await Future<void>.delayed(RecorderScreen.backgroundDelay);
+    if (_rec.active) await RecorderScreen.toBackground();
   }
 
   Future<void> _load() async {
@@ -130,6 +171,8 @@ class _RecorderScreenState extends State<RecorderScreen> {
           suggested ?? (catalog.courses.isEmpty ? null : catalog.courses.first);
     });
     await _loadLanguage();
+    // aperto dal widget «Registra lezione»: si parte subito
+    await _maybeQuickStart();
   }
 
   /// Lingua dell'insegnamento scelto (o di quello della registrazione in
@@ -158,9 +201,10 @@ class _RecorderScreenState extends State<RecorderScreen> {
     }
   }
 
-  Future<void> _start() async {
+  /// «Registra»: true se la registrazione è partita.
+  Future<bool> _start() async {
     final c = _course;
-    if (c == null || _busy) return;
+    if (c == null || _busy) return false;
     setState(() => _busy = true);
     try {
       final ext = await _rec.extension(c);
@@ -175,6 +219,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
         vocabulary: await loadCourseVocabulary(_s.study, c.id, c.name),
       );
       _rec.live?.formulas = _formulas;
+      return true;
     } on RecorderException catch (e) {
       _s.feedback.warning();
       if (mounted) showSnack(context, e.message);
@@ -186,6 +231,7 @@ class _RecorderScreenState extends State<RecorderScreen> {
     } finally {
       if (mounted) setState(() => _busy = false);
     }
+    return false;
   }
 
   /// «Salva»: ferma, salva e porta alla pagina del corso (card

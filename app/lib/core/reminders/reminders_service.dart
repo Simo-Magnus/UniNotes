@@ -610,8 +610,18 @@ class RemindersService extends ChangeNotifier {
       }
       return;
     }
-    _s.openRoute.call(p);
+    _s.openRoute.call(notificationRoute(p));
   }
+
+  /// Schermata da aprire per il tocco su una notifica. `registra:avvia`
+  /// (avvio del microfono) vale solo dai widget dell'app, con il codice
+  /// segreto controllato dal lato nativo (WidgetSupport.routeOf): su Android
+  /// flutter_local_notifications legge il payload da qualsiasi intent con la
+  /// sua azione mandato a MainActivity (esportata), quindi da qui apre solo
+  /// il registratore. Nessuna notifica dell'app usa quella rotta.
+  @visibleForTesting
+  static String notificationRoute(String payload) =>
+      payload == AppRoutes.recordStart ? AppRoutes.record : payload;
 
   // ------------------------------------------------- consenso e permessi
 

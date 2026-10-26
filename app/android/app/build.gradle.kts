@@ -8,11 +8,30 @@ plugins {
 }
 
 // Firma di rilascio: android/key.properties (in CI lo scrive il job android di
-// app.yml dai secret). Senza il file si usa la chiave di debug, sufficiente per
-// provare l'APK.
+// app.yml dai secret). Senza il file si usa la chiave di debug, solo per
+// provare l'APK sul proprio telefono: un APK firmato con la chiave di debug non
+// si aggiorna con quello firmato con la chiave vera (e viceversa) senza
+// disinstallare l'app e perderne i dati. Per le build pubblicate (release v*,
+// AAB per Google Play) il workflow imposta UNINOTES_FIRMA_OBBLIGATORIA=1 (o
+// -Puninotes.firmaObbligatoria=true): senza una chiave valida la build si ferma.
 val keyProperties = Properties().apply {
     val f = rootProject.file("key.properties")
     if (f.exists()) f.inputStream().use { load(it) }
+}
+val firmaObbligatoria: Boolean =
+    System.getenv("UNINOTES_FIRMA_OBBLIGATORIA") == "1" ||
+        project.findProperty("uninotes.firmaObbligatoria")?.toString() == "true"
+// key.properties completo e keystore presente (percorso relativo ad android/app)
+val chiaveDiRilascio: Boolean =
+    listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
+        .all { !keyProperties.getProperty(it).isNullOrBlank() } &&
+        file(keyProperties.getProperty("storeFile") ?: "").isFile
+if (firmaObbligatoria && !chiaveDiRilascio) {
+    throw GradleException(
+        "Firma di rilascio obbligatoria: manca android/key.properties completo o il keystore " +
+            "(secret ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, " +
+            "ANDROID_KEY_PASSWORD). Una build pubblicata non va firmata con la chiave di debug."
+    )
 }
 
 // Schema di ritorno dell'accesso a Google Drive: l'ID client Android al
@@ -65,19 +84,20 @@ android {
     }
 
     signingConfigs {
-        if (keyProperties.isNotEmpty()) {
+        if (chiaveDiRilascio) {
             create("release") {
-                keyAlias = keyProperties["keyAlias"] as String
-                keyPassword = keyProperties["keyPassword"] as String
-                storeFile = file(keyProperties["storeFile"] as String)
-                storePassword = keyProperties["storePassword"] as String
+                keyAlias = keyProperties.getProperty("keyAlias")
+                keyPassword = keyProperties.getProperty("keyPassword")
+                storeFile = file(keyProperties.getProperty("storeFile"))
+                storePassword = keyProperties.getProperty("storePassword")
             }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = if (keyProperties.isNotEmpty()) signingConfigs.getByName("release")
+            // chiave di debug solo per le prove (vedi firmaObbligatoria sopra)
+            signingConfig = if (chiaveDiRilascio) signingConfigs.getByName("release")
                 else signingConfigs.getByName("debug")
         }
     }

@@ -443,6 +443,8 @@ const _contracts = <_Contract>[
     fromDart: {
       'update': [_android, _ios, _macos],
       'takeRoute': [_android, _ios, _macos],
+      // dopo l'avvio della registrazione dal widget (solo Android)
+      'moveToBack': [_android],
     },
     toDart: {
       'route': [_android, _ios, _macos],
@@ -529,12 +531,19 @@ const _contracts = <_Contract>[
   ),
   _Contract(
     'io.github.simomagnus.universitynotes/registrazione',
-    dart: ['lib/features/notes/recorder/background_controls.dart'],
+    // lo stato della registrazione (paused, elapsedMs, course) lo prepara
+    // recordingWidgetState, anche per il widget «Registra lezione»
+    dart: [
+      'lib/features/notes/recorder/background_controls.dart',
+      'lib/core/reminders/home_widgets.dart',
+    ],
     native: {
       _android: [_main, '$_kt/RecordingNotification.kt'],
     },
     fromDart: {
       'show': [_android],
+      // fine della registrazione: il widget torna fermo
+      'stopped': [_android],
     },
     toDart: {
       'command': [_android],

@@ -72,6 +72,15 @@ jobs:
     name: Android (APK + AAB)
     needs: test
     runs-on: ubuntu-latest
+    # «release» con la chiave dei secret, «debug» senza (solo prove): la
+    # descrizione dell'«ultima-build» lo dice, la release dei tag v* e l'AAB per
+    # Google Play non esistono senza la chiave vera
+    outputs:
+      firma: ${{ steps.firma.outputs.firma }}
+    env:
+      # build pubblicate (tag v*): senza la chiave vera Gradle si ferma
+      # (app/android/app/build.gradle.kts)
+      UNINOTES_FIRMA_OBBLIGATORIA: ${{ startsWith(github.ref, 'refs/tags/v') && '1' || '0' }}
     defaults:
       run:
         working-directory: app
@@ -112,17 +121,28 @@ jobs:
           SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
           yes | "$SDKM" --licenses > /dev/null || true
           "$SDKM" --install "ndk;29.0.13113456" > /dev/null
-      - name: Chiave di firma (se configurata nei secret)
+      # Senza i secret la build di prova usa la chiave di debug del runner,
+      # diversa a ogni esecuzione: quell'APK non si aggiorna con il successivo
+      # né con quello firmato con la chiave vera (va disinstallato, con i dati).
+      - name: Chiave di firma (obbligatoria per i tag v*)
+        id: firma
         env:
           KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
-          if [ -n "$KEYSTORE_B64" ]; then
+          if [ -n "$KEYSTORE_B64" ] && [ -n "$KEYSTORE_PASSWORD" ] && [ -n "$KEY_ALIAS" ] && [ -n "$KEY_PASSWORD" ]; then
             echo "$KEYSTORE_B64" | base64 -d > android/app/upload-keystore.jks
             printf "storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=upload-keystore.jks\n" \
               "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
+            echo "firma=release" >> "$GITHUB_OUTPUT"
+          elif [ "$UNINOTES_FIRMA_OBBLIGATORIA" = "1" ]; then
+            echo "::error title=Firma Android::Mancano i secret ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS o ANDROID_KEY_PASSWORD: una versione pubblicata (tag v*) non si firma con la chiave di debug."
+            exit 1
+          else
+            echo "::warning title=Firma Android::Secret della chiave di firma assenti: APK di prova firmati con la chiave di debug (non aggiornabili con la versione firmata), AAB per Google Play non creato."
+            echo "firma=debug" >> "$GITHUB_OUTPUT"
           fi
       # APK per GitHub Releases (link alle donazioni), uno per processore così
       # ognuno contiene solo le sue librerie native; AAB per Google Play (senza):
@@ -133,7 +153,12 @@ jobs:
           GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
           GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
         run: flutter build apk --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --split-per-abi --target-platform android-arm,android-arm64,android-x64 "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_ANDROID_CLIENT_ID=$GOOGLE_ANDROID_CLIENT_ID" --dart-define=DONATIONS=link "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
-      - env:
+      # AAB per Google Play solo con la chiave vera (Play rifiuta quelli
+      # firmati con la chiave di debug): Gradle lo controlla di nuovo
+      - name: AAB per Google Play (solo con la chiave di firma)
+        if: steps.firma.outputs.firma == 'release'
+        env:
+          UNINOTES_FIRMA_OBBLIGATORIA: "1"
           MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
           GOOGLE_ANDROID_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID_ANDROID }}
           GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
@@ -227,7 +252,33 @@ jobs:
         run: |
           $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
           if (-not (Test-Path $iscc)) {
-            choco install innosetup -y --no-progress
+            # versione fissa, installatore ufficiale (release di jrsoftware su
+            # GitHub) controllato con lo SHA-256 prima di avviarlo. Il pacchetto
+            # di Chocolatey non lo controlla: contiene l'installatore, e
+            # l'impronta è solo nel suo VERIFICATION.txt
+            $ProgressPreference = 'SilentlyContinue'
+            $setup = "$env:RUNNER_TEMP\innosetup-6.7.1.exe"
+            Invoke-WebRequest -Uri 'https://github.com/jrsoftware/issrc/releases/download/is-6_7_1/innosetup-6.7.1.exe' -OutFile $setup
+            $sha = (Get-FileHash -Algorithm SHA256 $setup).Hash
+            if ($sha -ne '4D11E8050B6185E0D49BD9E8CC661A7A59F44959A621D31D11033124C4E8A7B0') {
+              Write-Output "::error title=Inno Setup::impronta dell'installatore diversa da quella attesa ($sha)"
+              exit 1
+            }
+            $p = Start-Process -FilePath $setup -ArgumentList '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-', '/ALLUSERS' -Wait -PassThru
+            if ($p.ExitCode -ne 0) { exit $p.ExitCode }
+            if (-not (Test-Path $iscc)) {
+              Write-Output "::error title=Inno Setup::ISCC.exe non trovato dopo l'installazione"
+              exit 1
+            }
+          }
+          # il compilatore deve avere una firma digitale valida (solo un avviso
+          # se Windows non la riconosce: l'installatore preinstallato del runner
+          # resta usabile)
+          $firma = Get-AuthenticodeSignature $iscc
+          if ($firma.Status -ne 'Valid') {
+            Write-Output "::warning title=Inno Setup::firma di ISCC.exe non valida ($($firma.Status))"
+          } else {
+            Write-Output "ISCC.exe firmato da: $($firma.SignerCertificate.Subject)"
           }
           $version = '${{ needs.test.outputs.version }}'
           & $iscc "/DAppVersion=$version" windows\installer\uninotes.iss
@@ -557,12 +608,13 @@ jobs:
         with:
           tag_name: ultima-build
           target_commitish: ${{ github.sha }}
-          name: Ultima build (versione di prova)
+          name: ${{ needs.android.outputs.firma == 'release' && 'Ultima build (versione di prova)' || 'Ultima build (versione di prova, Android con chiave di prova)' }}
           prerelease: true
           make_latest: false
           body: |
             Versione di prova creata automaticamente dall'ultima modifica (commit ${{ github.sha }}).
             Non è firmata: Windows e macOS mostrano un avviso al primo avvio.
+            ${{ needs.android.outputs.firma != 'release' && '> **Android: APK firmati con una chiave di prova**, diversa a ogni build. Non si aggiornano con l''APK di un''altra build né con la versione definitiva: per installarne un altro bisogna prima disinstallare questo, e i dati dell''app sul telefono si perdono. Prima esporta i dati (UniNotes → Impostazioni → Esporta/importa dati) o usa la sincronizzazione con il cloud.' || '' }}
 
             - **Windows**: `UniNotes_setup.exe` → avvialo e segui l'installazione (senza permessi di amministratore; collegamento nel menu Start, disinstallazione da «App installate»). Alternativa senza installazione: `UniNotes-windows.zip` → estrai la cartella e apri `uninotes.exe`.
             - **macOS**: `UniNotes.dmg` → aprilo e trascina UniNotes in Applicazioni; al primo avvio Impostazioni di Sistema → Privacy e sicurezza → Apri comunque (l'app non è ancora firmata). Alternativa: `UniNotes-macos.zip`.
@@ -588,7 +640,8 @@ jobs:
 
   release:
     name: Release (solo tag v*)
-    if: startsWith(github.ref, 'refs/tags/v')
+    # mai con gli APK firmati con la chiave di debug (il job android si ferma già)
+    if: startsWith(github.ref, 'refs/tags/v') && needs.android.outputs.firma == 'release'
     needs: [android, windows, macos, ios]
     runs-on: ubuntu-latest
     permissions:

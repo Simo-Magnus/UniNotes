@@ -86,7 +86,7 @@ def reindirizzo(dest: str, titolo: str, conta: bool = False) -> str:
     """Pagina che porta subito a [dest] (anche senza JavaScript), con il link di riserva.
 
     Con [conta] la visita si registra su GoatCounter prima di partire (sendBeacon arriva anche se la pagina se ne va
-    subito); senza JavaScript, con un blocco dei tracciatori o con il conteggio spento (#toggle-goatcounter) si va
+    subito); senza JavaScript, con un blocco dei tracciatori o con il conteggio spento (#toggle-conteggio) si va
     alla destinazione senza contare."""
     d = html.escape(dest, quote=True)
     if conta:
@@ -152,13 +152,10 @@ def aggregatore() -> str:
 <meta property="og:description" content="Download, community e social di UniNotes, l'app gratuita per organizzare l'università.">
 <meta property="og:image" content="{BASE}anteprima.png">
 <meta property="og:url" content="{BASE}link/">
-<!-- Visite contate in forma anonima con GoatCounter (senza cookie): una sola richiesta al contatore, nessuno
-     script di terzi nella pagina. Il percorso include ?s=<sigla> per sapere da quale bio arriva la visita. Con
-     #toggle-goatcounter in fondo all'indirizzo il conteggio si spegne o si riaccende su questo browser. -->
 <script>
 (function () {{
   try {{
-    if (location.hash === '#toggle-goatcounter') {{
+    if (location.hash === '#toggle-conteggio') {{
       var spento = localStorage.getItem('skipgc') === 't';
       if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
       alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');

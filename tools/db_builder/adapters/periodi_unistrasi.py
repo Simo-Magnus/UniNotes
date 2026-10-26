@@ -19,7 +19,7 @@ import requests
 
 from . import periodi
 
-SP = os.environ.get("SEMESTRI_SP") or r"C:\Users\simon\AppData\Local\Temp\claude\D--University-Notes\0e1973a7-21aa-4a45-b9ef-77200eb6c84a\scratchpad"
+SP = periodi.cartella_lavoro()
 UA = "Mozilla/5.0 (UniversityNotes database builder; +https://github.com/Simo-Magnus/UniNotes)"
 SSD = re.compile(r"^\s*([A-Z]{3,4}-\d{2}/[A-Z]|[A-Z]+(?:-[A-Z]+)?/\d{2})\s*-?\s*")
 SOGLIA_X = 455  # le X del I semestre sono a x~390-420, quelle del II a x~495-505

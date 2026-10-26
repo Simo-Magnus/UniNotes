@@ -360,6 +360,18 @@ class DataSync {
         e.times[c] = b.times[c] ?? stamp;
         continue;
       }
+      if (bAlive &&
+          s.notePaths.contains(c) &&
+          v == null &&
+          b.values[c] is String &&
+          _importValue(s, c, b.values[c], ctx) == null) {
+        // percorso del registro che qui non si accetta (fuori dalla
+        // cartella degli appunti): vuoto qui, ma non è una modifica di
+        // questo dispositivo, che non lo toglie agli altri
+        e.values[c] = b.values[c];
+        e.times[c] = b.times[c] ?? stamp;
+        continue;
+      }
       e.values[c] = v;
       e.times[c] = stamp;
     }
@@ -463,7 +475,7 @@ class DataSync {
         var skip = false;
         for (final c in e.values.keys) {
           if (!data.contains(c)) continue;
-          final v = _importValue(s, c, e.values[c], ctx);
+          final v = _importValue(s, c, e.values[c], ctx, local?[c]);
           if (v is _Unresolved) {
             // riga puntata assente: colonna obbligatoria → la riga non si
             // importa (resta nel registro); facoltativa → vuota
@@ -530,7 +542,13 @@ class DataSync {
     return n;
   }
 
-  Object? _importValue(SyncTableSpec s, String c, Object? v, _Ctx ctx) {
+  Object? _importValue(
+    SyncTableSpec s,
+    String c,
+    Object? v,
+    _Ctx ctx, [
+    Object? localValue,
+  ]) {
     final ref = s.refs[c];
     if (ref != null) {
       if (v == null) return null;
@@ -545,6 +563,19 @@ class DataSync {
       if (rel.any((x) => x.isEmpty || x == '.' || x == '..')) return null;
       final full = p.joinAll([ctx.notesRoot!, ...rel]);
       return p.isWithin(ctx.notesRoot!, full) ? full : null;
+    }
+    if (s.notePaths.contains(c) && v is String && ctx.notesRoot != null) {
+      // percorso scritto per intero (file fuori dalla cartella degli appunti
+      // del dispositivo che l'ha esportato, o registro scritto a mano): solo
+      // se è già quello della riga su questo dispositivo o se sta nella sua
+      // cartella degli appunti; altrimenti l'allegato si aprirebbe (e come
+      // appunto si modificherebbe) su un file qualsiasi del disco
+      if (v == localValue) return v;
+      final full = p.normalize(v);
+      for (final root in [ctx.notesRoot!, ?ctx.fallbackRoot]) {
+        if (p.isAbsolute(full) && p.isWithin(root, full)) return full;
+      }
+      return null;
     }
     return v;
   }

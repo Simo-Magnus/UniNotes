@@ -1320,7 +1320,7 @@ class WhisperService {
     CancelToken? cancel,
     WhisperOptions options = WhisperOptions.none,
   }) async {
-    final out = await Directory.systemTemp.createTemp('whisper_');
+    final out = await Directory.systemTemp.createTemp('uninotes_whisper_');
     final ext = p.extension(audio.path).toLowerCase();
     if (!supportedAudio.contains(ext)) {
       // Es. registrazioni .m4a: conversione in WAV 16 kHz mono, prima con
@@ -1545,7 +1545,7 @@ class _CliLiveWhisper extends LiveWhisper {
 
   @override
   Future<List<WhisperSegment>> transcribeWav(File wav16k) async {
-    final out = await Directory.systemTemp.createTemp('whisper_live_');
+    final out = await Directory.systemTemp.createTemp('uninotes_whisper_live_');
     try {
       final threads = (Platform.numberOfProcessors ~/ 2).clamp(1, 4);
       final base = p.join(out.path, 'pezzo');

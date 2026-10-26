@@ -108,6 +108,55 @@ void main() {
     expect(recorderCommandFor(null), isNull);
   });
 
+  test('widget «Registra lezione»: «elimina» (dopo il secondo tocco) è un '
+      'comando, lo stato viaggia con la notifica', () async {
+    expect(recorderCommandFor(btnDiscard), RecorderCommand.discard);
+    expect(btnDiscard, 'elimina');
+    final args = recordingShowArgs(
+      recordingNotificationContent(course: 'Fisica', paused: true),
+      elapsed: const Duration(seconds: 75),
+      paused: true,
+    );
+    // stesso stato per notifica e widget (RecordingNotification.kt lo passa
+    // a RecordWidget.kt)
+    expect(args['state'], 'paused');
+    expect(args['paused'], isTrue);
+    expect(args['elapsedMs'], 75000);
+    expect(args['course'], 'Fisica');
+    expect(args['primaryId'], btnResume);
+    expect(args['id'], recordingNotificationId);
+
+    // fine della registrazione: il lato nativo riceve «stopped» (il widget
+    // torna fermo)
+    final calls = <MethodCall>[];
+    const channel = MethodChannel(
+      'io.github.simomagnus.universitynotes/registrazione',
+    );
+    final messenger =
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
+    messenger.setMockMethodCallHandler(channel, (call) async {
+      calls.add(call);
+      return true;
+    });
+    addTearDown(() => messenger.setMockMethodCallHandler(channel, null));
+    final n = AndroidRecordingNotification();
+    await n.stop();
+    final stopped = calls.where((c) => c.method == 'stopped').single;
+    expect((stopped.arguments as Map)['state'], 'idle');
+
+    // il comando del widget arriva al registratore
+    final got = <RecorderCommand>[];
+    n.onCommand = got.add;
+    await messenger.handlePlatformMessage(
+      channel.name,
+      const StandardMethodCodec().encodeMethodCall(
+        const MethodCall('command', btnDiscard),
+      ),
+      (_) {},
+    );
+    expect(got, [RecorderCommand.discard]);
+  });
+
   test('i pulsanti della notifica nativa arrivano al registratore', () async {
     final n = AndroidRecordingNotification();
     final got = <RecorderCommand>[];
@@ -222,6 +271,90 @@ void main() {
     );
     // nei test la compressione non c'è: resta il WAV, con il nome previsto
     expect(saved, contains('2026-10-21 09-00 Lezione.wav'));
+    await t.pump(const Duration(seconds: 5));
+  });
+
+  testWidgets('widget: «Elimina» confermato → la registrazione va in '
+      '«Eliminati di recente» (con Annulla), senza dialoghi', (t) async {
+    late Directory tmp;
+    late AppServices s;
+    final fake = _FakeRecorder();
+    final controls = _FakeControls();
+    await t.runAsync(() async {
+      tmp = await Directory.systemTemp.createTemp('un_widget_del_');
+      final db = await AppDatabase.openInMemory();
+      final store = NotesStore(
+        SettingsRepository(db),
+        root: () async => Directory(p.join(tmp.path, 'Appunti')),
+      );
+      s = AppServices(
+        db,
+        notes: store,
+        recorder: LectureRecorder(
+          recorder: () => fake,
+          workDir: () async => Directory(p.join(tmp.path, 'lavoro')),
+          controls: () => controls,
+        ),
+      );
+    });
+    addTearDown(() async {
+      await t.runAsync(() async {
+        await s.database.close();
+        if (await tmp.exists()) await tmp.delete(recursive: true);
+      });
+    });
+    await t.pumpWidget(
+      Provider<AppServices>.value(
+        value: s,
+        child: MaterialApp(
+          navigatorKey: appNavigatorKey,
+          builder: (context, child) => RecordingOverlayHost(child: child!),
+          home: const Scaffold(body: Text('Home')),
+        ),
+      ),
+    );
+    final dir = p.join(tmp.path, 'Appunti', 'Analisi', 'Registrazioni');
+    await t.runAsync(() async {
+      await s.recorder.start(
+        p.join(dir, '2026-10-21 09-00 Lezione.m4a'),
+        course: 'Analisi',
+      );
+      fake.pcm.add(Uint8List(32000));
+      await Future<void>.delayed(const Duration(milliseconds: 20));
+    });
+    await t.pump();
+    expect(s.recorder.active, isTrue);
+
+    controls.press(btnDiscard);
+    for (var i = 0; i < 100 && (s.recorder.active || s.recorder.saving); i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 20)),
+      );
+      await t.pump();
+    }
+    expect(s.recorder.active, isFalse);
+    expect(controls.shown, isFalse, reason: 'notifica e widget tornano fermi');
+    // nessuna domanda: la conferma è il secondo tocco sul widget
+    expect(find.byType(AlertDialog), findsNothing);
+    final trashed = (await t.runAsync(s.trash.list))!;
+    expect(trashed.single.isAudio, isTrue);
+    for (var i = 0; i < 10; i++) {
+      await t.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 20)),
+      );
+      await t.pump(const Duration(milliseconds: 100));
+    }
+    expect(
+      find.text('Registrazione spostata in «Eliminati di recente».'),
+      findsOneWidget,
+    );
+    // niente file salvati nel corso
+    final saved = await t.runAsync(
+      () async => await Directory(dir).exists()
+          ? await Directory(dir).list().toList()
+          : <FileSystemEntity>[],
+    );
+    expect(saved, isEmpty);
     await t.pump(const Duration(seconds: 5));
   });
 }

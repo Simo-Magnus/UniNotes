@@ -26,6 +26,7 @@ import 'core/services/portable_path.dart';
 import 'core/services/install_check.dart';
 import 'core/services/legacy_data.dart';
 import 'core/services/temp_files.dart';
+import 'core/services/test_data_dir.dart';
 import 'core/services/desktop_window.dart';
 import 'core/services/nudges.dart';
 import 'core/theme/app_theme.dart';
@@ -48,6 +49,9 @@ Future<void> backgroundSyncMain() => runBackgroundSync();
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  // solo nelle build di prova (--dart-define=UNINOTES_CARTELLA_PROVA): dati
+  // in una cartella a parte (core/services/test_data_dir.dart)
+  installTestDataDir();
   // errori non gestiti nel registro locale, schermata comprensibile al posto
   // di quella rossa/grigia (core/router/error_screens.dart)
   installGlobalErrorHandlers();
@@ -138,7 +142,7 @@ Future<AppServices> _openServices() async {
   // Windows: i dati delle versioni con il nome vecchio (University Notes)
   // passano alla cartella di UniNotes, prima del controllo dell'installazione
   // (senza, l'app si vedrebbe vuota e il controllo la darebbe per nuova).
-  await LegacyData.migrateWindowsSupportDir();
+  if (!testDataMode) await LegacyData.migrateWindowsSupportDir();
   // Primo avvio dopo una (re)installazione: via le credenziali rimaste nel
   // portachiavi; i dati di un'installazione precedente non si rileggono
   // senza chiedere (usa / elimina, oppure usa / ignora per gli appunti in
@@ -201,10 +205,22 @@ Future<AppServices> _openServices() async {
     }
     // dopo l'accesso nel browser (OneDrive, Google Drive) l'app torna in
     // primo piano; Windows: schema uninotes:// per l'utente
-    unawaited(AppReturn.init().catchError((Object _) {}));
+    // (non nelle build di prova: registro e portachiavi sono dell'utente)
+    if (!testDataMode) {
+      unawaited(AppReturn.init().catchError((Object _) {}));
+    }
   }
   // chiave API di Gemini e Antigravity tolti dall'app: valori salvati via
-  unawaited(services.removeLegacyGemini().catchError((Object _) {}));
+  if (!testDataMode) {
+    unawaited(services.removeLegacyGemini().catchError((Object _) {}));
+  }
+  // iPhone, iPad e Mac: token «solo su questo dispositivo», prima che la
+  // sincronizzazione possa rinnovarli
+  try {
+    await services.migrateKeychainAccessibility().timeout(
+      const Duration(seconds: 3),
+    );
+  } catch (_) {}
   return services;
 }
 
@@ -244,7 +260,9 @@ void _afterStart(AppServices services) {
   }
   // Calendario di sistema, notifiche pianificate e widget della Home
   // (nessuna richiesta di permessi all'avvio); poi la sessione Focus
-  // rimasta aperta da una chiusura dell'app, che riprende o si salva.
+  // rimasta aperta da una chiusura dell'app, che riprende o si salva. Non
+  // nelle build di prova: i toast pianificati sono quelli dell'utente.
+  if (testDataMode) return;
   step('Promemoria e sessione Focus', () {
     unawaited(
       services.reminders

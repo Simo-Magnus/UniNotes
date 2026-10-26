@@ -15,6 +15,7 @@ import '../../core/feedback/app_modals.dart';
 import '../../core/router/safe_pop.dart';
 import '../../core/services/app_services.dart';
 import '../../core/services/audio_codec.dart';
+import '../../core/services/media_guard.dart';
 import '../../core/services/whisper_service.dart'
     show WhisperModelInfo, whisperModelLabel;
 import '../../core/theme/app_theme.dart';
@@ -412,11 +413,25 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
 
   // ------------------------------------------------------------ lettore
 
+  /// Cresce a ogni chiusura del lettore: un'apertura iniziata prima non
+  /// continua.
+  int _playerGen = 0;
+
   Future<void> _initPlayer() async {
     if (!readerMediaEnabled) {
       setState(
         () => _playerError = 'Riproduzione non disponibile in questo ambiente.',
       );
+      return;
+    }
+    // scaletta di testo con indirizzi web al posto dell'audio (registrazione
+    // arrivata da un altro dispositivo): non si apre
+    final gen = _playerGen;
+    final unsafe = await MediaGuard.unsafeReason(_file.path);
+    // lettore chiuso nel frattempo (rinomina, spostamento, uscita)
+    if (!mounted || gen != _playerGen) return;
+    if (unsafe != null) {
+      setState(() => _playerError = unsafe);
       return;
     }
     try {
@@ -460,6 +475,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   /// Chiude il lettore (su Windows un file aperto non si rinomina né si
   /// sposta).
   Future<void> _closePlayer() async {
+    _playerGen++;
     _clock.playing = false;
     final subs = [..._subs];
     _subs.clear();

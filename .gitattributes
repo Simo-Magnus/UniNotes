@@ -1,0 +1,4 @@
+# La Content-Security-Policy di drive-picker.html ammette lo script in linea
+# per la sua impronta SHA-256, calcolata sul file con gli a capo LF (come lo
+# pubblica GitHub Pages): il file resta LF anche nelle copie di lavoro.
+sito/drive-picker.html text eol=lf

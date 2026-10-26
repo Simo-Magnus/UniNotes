@@ -79,6 +79,7 @@ class BackupService {
     // impostazioni dismesse (Antigravity) e pulizia una tantum del dispositivo
     'agy_path',
     'legacy_gemini_removed',
+    'keychain_this_device',
     'whisper_cli_path',
     'catalog_base_url',
     'update_url',

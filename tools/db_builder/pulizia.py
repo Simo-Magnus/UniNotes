@@ -74,6 +74,57 @@ def testo(s: str | None) -> str | None:
     return t
 
 
+# Indirizzi email di caselle personali (Gmail, Libero, Tiscali, …) copiati dalle
+# pagine degli atenei nei testi dei programmi e dei libri: nel database pubblico
+# non vanno (docs/sicurezza.md, giro 2). Le caselle istituzionali degli atenei
+# (@unixx.it, @studenti.…) restano. Stessi fornitori del controllo della copia
+# pubblica, più qualche altro fornitore italiano.
+EMAIL_PERSONALE = re.compile(
+    r"(?<![A-Za-z0-9._%+\-])[A-Za-z0-9._%+\-]{1,64}@(?:"
+    r"gmail\.com|googlemail\.com|hotmail\.[a-z]{2,3}|outlook\.[a-z]{2,3}|live\.[a-z]{2,3}|msn\.com|"
+    r"yahoo\.[a-z]{2,3}(?:\.[a-z]{2})?|ymail\.com|libero\.it|icloud\.com|me\.com|mac\.com|proton\.me|"
+    r"protonmail\.[a-z]{2,3}|pm\.me|virgilio\.it|tiscali\.it|alice\.it|tim\.it|tin\.it|email\.it|inwind\.it|"
+    r"iol\.it|fastwebnet\.it|katamail\.com|teletu\.it|gmx\.[a-z]{2,3}|aol\.com)(?![A-Za-z0-9\-])", re.I)
+# al posto dell'indirizzo nei testi (libri, note): il testo resta leggibile e la
+# pagina dell'insegnamento (fonte) ha il recapito
+EMAIL_RIMANDO = "[indirizzo nella pagina dell'ateneo]"
+
+
+def senza_email_personali(o, chiave: str | None = None):
+    """Copia di `o` (JSON: dict, list, str) senza indirizzi email personali.
+
+    Nei testi l'indirizzo diventa `EMAIL_RIMANDO`; negli elenchi dei moduli di
+    Studio (`moduli`, `programma`: voci con `nome`) e degli `argomenti` una voce
+    con un indirizzo personale si toglie (sono righe di contatto del docente
+    lette dal programma, non argomenti)."""
+    if isinstance(o, str):
+        return EMAIL_PERSONALE.sub(EMAIL_RIMANDO, o) if "@" in o else o
+    if isinstance(o, list):
+        out = []
+        for x in o:
+            if chiave == "argomenti" and isinstance(x, str) and EMAIL_PERSONALE.search(x):
+                continue
+            if (chiave in ("moduli", "programma") and isinstance(x, dict) and "argomenti" in x
+                    and EMAIL_PERSONALE.search(str(x.get("nome") or ""))):
+                continue
+            out.append(senza_email_personali(x, chiave))
+        return out
+    if isinstance(o, dict):
+        return {k: senza_email_personali(v, k) for k, v in o.items()}
+    return o
+
+
+def ha_email_personali(o) -> bool:
+    """Vero se nei testi di `o` c'è ancora un indirizzo email personale."""
+    if isinstance(o, str):
+        return "@" in o and EMAIL_PERSONALE.search(o) is not None
+    if isinstance(o, list):
+        return any(ha_email_personali(x) for x in o)
+    if isinstance(o, dict):
+        return any(ha_email_personali(v) for v in o.values())
+    return False
+
+
 def isbn_valido(s: str) -> bool:
     d = re.sub(r"[^0-9Xx]", "", s or "")
     if len(d) == 13 and d.isdigit():

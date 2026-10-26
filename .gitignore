@@ -7,6 +7,8 @@ __pycache__/
 .venv/
 .DS_Store
 database/contrib/auto/
+# percorso locale delle cache dei semestri (tools/db_builder/adapters/periodi.py)
+tools/db_builder/cartella_lavoro.txt
 data/raw/probe/
 # file per ateneo negli asset: solo nelle build locali (sync_assets.py --completo); le build pubblicate li scaricano nell'app
 app/assets/database/corsi/*.json*
@@ -18,3 +20,10 @@ data/verifica_fonti.json
 # tabella libri per insegnamento: oltre 100 MB, nel repository va la copia .csv.gz
 docs/libri/libri_obbligatori_per_insegnamento.csv
 database/.ricostruzione.lock
+
+# file di lavoro temporanei nella radice (mappe di id, prove, copie di riserva):
+# mai nel repository né nella copia pubblica
+/nuovi_ids.json
+/ct_mapping.json
+/x
+/red_backup/

@@ -151,7 +151,8 @@ class LectureRecorder extends ChangeNotifier {
   final List<Bookmark> bookmarks = [];
 
   /// Comandi da fuori dell'app che richiedono l'interfaccia (salvare,
-  /// aprire il registratore). Pausa e ripresa li esegue il registratore.
+  /// eliminare dal widget, aprire il registratore). Pausa e ripresa li
+  /// esegue il registratore.
   final _commands = StreamController<RecorderCommand>.broadcast();
   Stream<RecorderCommand> get commands => _commands.stream;
 
@@ -560,9 +561,33 @@ class LectureRecorder extends ChangeNotifier {
         unawaited(resume());
       case RecorderCommand.toggle:
         unawaited(togglePause());
-      case RecorderCommand.save || RecorderCommand.open:
+      case RecorderCommand.save ||
+          RecorderCommand.open ||
+          RecorderCommand.discard:
         _commands.add(c);
     }
+  }
+
+  /// Avvio chiesto dal widget «Registra lezione» (rotta `registra:avvia`):
+  /// lo esegue la schermata del registratore appena è pronta, con lo stesso
+  /// percorso del pulsante «Registra» (vedi RecorderScreen).
+  bool _quickStart = false;
+
+  /// C'è un avvio dal widget in attesa.
+  bool get quickStartPending => _quickStart;
+
+  /// Chiede l'avvio dal widget (niente se si registra già).
+  void requestQuickStart() {
+    if (active || saving) return;
+    _quickStart = true;
+    notifyListeners();
+  }
+
+  /// Prende la richiesta d'avvio dal widget, una sola volta.
+  bool takeQuickStart() {
+    final q = _quickStart;
+    _quickStart = false;
+    return q;
   }
 
   /// Comando dall'icona nell'area di notifica del PC.

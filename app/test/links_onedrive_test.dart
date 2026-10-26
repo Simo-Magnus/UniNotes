@@ -110,8 +110,10 @@ void main() {
           clientId: 'x',
           openBrowser: (_) async => false,
           mode: OAuthRedirectMode.customScheme,
+          // errore con lo stato giusto (uno diverso: sicurezza_g2_app_test)
           webAuthenticator: (url, s) async =>
-              '${MicrosoftOAuth.mobileRedirectUri}?error=access_denied&state=x',
+              '${MicrosoftOAuth.mobileRedirectUri}?error=access_denied'
+              '&state=${url.queryParameters['state']}',
         );
         await expectLater(
           oauth.signIn(),

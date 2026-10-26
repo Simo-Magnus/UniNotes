@@ -22,7 +22,7 @@ enum EraseItem {
   database('Database: insegnamenti, esami, studio'),
   recordings('Registrazioni e trascrizioni'),
   notes('Appunti'),
-  books('Libri e materiali scaricati'),
+  books('Libri e materiali scaricati, con le evidenziazioni'),
   whisper('Modelli di Whisper'),
   catalog('Dati dell\'ateneo scaricati (cache)'),
   onedrive('Cartelle UniNotes su OneDrive'),
@@ -136,6 +136,9 @@ class DataEraser {
       BookLibrary.booksFolder,
       BookLibrary.materialsFolder,
       BookLibrary.attachmentsFolder,
+      // evidenziazioni dei PDF: con i libri, come nella sincronizzazione
+      // (prima restavano finché non si sceglieva tutto)
+      BookLibrary.highlightsFolder,
     ])
       await _sub(f),
   ];

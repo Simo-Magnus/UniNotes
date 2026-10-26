@@ -1377,12 +1377,25 @@ void main() {
         expect(await s.settings.get('agy_path'), isNull);
         expect(await s.settings.get('gemini_model'), isNull);
         expect(await s.settings.get('links_reference_ai'), 'gemini');
-        expect(await s.settings.get('legacy_gemini_removed'), '1');
+        // portachiavi che lancia: la chiave può essere ancora lì, la pulizia
+        // non si segna come fatta e si riprova al prossimo avvio (sicurezza,
+        // giro 2: prima si segnava fatta e la chiave restava per sempre)
+        expect(
+          await s.settings.get('legacy_gemini_removed'),
+          broken ? isNull : '1',
+        );
         if (secrets is MemoryCloudSecrets) {
           expect(secrets.values.keys, ['onedrive.refreshToken']);
         }
-        // una seconda volta non fa niente
+        // una seconda volta non fa niente (o riprova senza errori)
         await s.removeLegacyGemini(secrets: secrets);
+        if (broken) {
+          // portachiavi tornato disponibile: si toglie e si segna
+          final ok = MemoryCloudSecrets()..values['gemini.apiKey'] = 'AIza-x';
+          await s.removeLegacyGemini(secrets: ok);
+          expect(ok.values, isEmpty);
+          expect(await s.settings.get('legacy_gemini_removed'), '1');
+        }
         await s.database.close();
       }
     });

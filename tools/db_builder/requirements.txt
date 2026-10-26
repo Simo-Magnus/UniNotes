@@ -1,3 +1,7 @@
-requests>=2.31
-pypdf>=4.0
-pdfplumber>=0.11
+# Versioni fissate (aggiornate da Dependabot). Python 3.12 nel workflow.
+# requests: quella in uso in locale. pypdf: 6.21.2 corregge le vulnerabilità
+# note delle versioni precedenti con PDF malformati (lettura dei PDF degli
+# atenei); stessa serie 6.x di quella in uso in locale (6.19).
+# pdfplumber tolto: nessuno strumento lo importa.
+requests==2.34.2
+pypdf==6.21.2

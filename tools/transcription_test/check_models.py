@@ -17,7 +17,10 @@ if not names:
     names = {"ggml-small.bin", "ggml-large-v3-turbo-q5_0.bin"}
 bad = []
 for n in sorted(names):
-    url = f"https://huggingface.co/ggerganov/whisper.cpp/resolve/main/{n}"
+    # il filtro dei silenzi (Silero VAD) è in un'altra repo di Hugging Face
+    # (nell'app è incluso fra gli asset, il nome compare nei commenti)
+    repo = "ggml-org/whisper-vad" if "silero" in n else "ggerganov/whisper.cpp"
+    url = f"https://huggingface.co/{repo}/resolve/main/{n}"
     req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "UniNotes-test"})
     try:
         r = urllib.request.urlopen(req, timeout=60)

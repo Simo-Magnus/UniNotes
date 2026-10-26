@@ -13,13 +13,10 @@
 <meta property="og:description" content="Download, community e social di UniNotes, l'app gratuita per organizzare l'università.">
 <meta property="og:image" content="https://simo-magnus.github.io/UniNotes/anteprima.png">
 <meta property="og:url" content="https://simo-magnus.github.io/UniNotes/link/">
-<!-- Visite contate in forma anonima con GoatCounter (senza cookie): una sola richiesta al contatore, nessuno
-     script di terzi nella pagina. Il percorso include ?s=<sigla> per sapere da quale bio arriva la visita. Con
-     #toggle-goatcounter in fondo all'indirizzo il conteggio si spegne o si riaccende su questo browser. -->
 <script>
 (function () {
   try {
-    if (location.hash === '#toggle-goatcounter') {
+    if (location.hash === '#toggle-conteggio') {
       var spento = localStorage.getItem('skipgc') === 't';
       if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
       alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');

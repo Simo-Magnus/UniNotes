@@ -36,13 +36,24 @@ jobs:
         run: |
           # versione fissata (non l'ultimo commit del ramo principale)
           git clone --depth 1 --branch v1.9.5 https://github.com/ggml-org/whisper.cpp /tmp/whisper.cpp
+          # il tag deve indicare ancora lo stesso commit
+          test "$(git -C /tmp/whisper.cpp rev-parse HEAD)" = d1be6fde11ac6e0407606b4e42fe72d34add8037
           cmake -S /tmp/whisper.cpp -B /tmp/whisper.cpp/build -DCMAKE_BUILD_TYPE=Release -DWHISPER_BUILD_TESTS=OFF
           cmake --build /tmp/whisper.cpp/build -j 4 --config Release
+      # modelli da una revisione fissata di Hugging Face, con lo SHA-256
+      # dell'archivio LFS controllato prima di usarli
       - name: Trascrizione con Whisper (small e large-v3-turbo q5_0)
+        env:
+          HF_REV: 5359861c739e955e79d9a303bcbc70fb988958b1
         run: |
           cd tools/transcription_test
           for m in small large-v3-turbo-q5_0; do
-            curl -sSL -o /tmp/ggml-$m.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-$m.bin
+            case "$m" in
+              small) sha=1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b ;;
+              large-v3-turbo-q5_0) sha=394221709cd5ad1f40c46e6031ca61bce88931e6e088c188294c6d5a55ffa7e2 ;;
+            esac
+            curl -sSfL --proto '=https' --proto-redir '=https' -o /tmp/ggml-$m.bin "https://huggingface.co/ggerganov/whisper.cpp/resolve/$HF_REV/ggml-$m.bin"
+            echo "$sha  /tmp/ggml-$m.bin" | sha256sum -c -
             for a in sintetico16k lezione; do
               [ -f audio/$a.wav ] || { echo "manca audio/$a.wav"; continue; }
               /tmp/whisper.cpp/build/bin/whisper-cli -m /tmp/ggml-$m.bin -l it -t 4 -otxt -of audio/$a.$m -f audio/$a.wav

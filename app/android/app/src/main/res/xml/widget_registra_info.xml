@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Widget «Registra lezione»: 1×1, ridimensionabile. -->
+<!-- Widget «Registra lezione»: 2×1 celle (c'è posto per Pausa, Salva ed
+     Elimina), ridimensionabile fino a 1×1 (solo Pausa/Riprendi durante la
+     registrazione). Nessun aggiornamento periodico: lo stato arriva
+     dall'app con la notifica della registrazione (RecordWidget.kt). -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/widget_registra_descrizione"
     android:initialLayout="@layout/widget_registra"
-    android:minWidth="40dp"
+    android:minWidth="110dp"
     android:minHeight="40dp"
     android:minResizeWidth="40dp"
     android:minResizeHeight="40dp"
     android:previewImage="@mipmap/ic_launcher"
-    android:previewLayout="@layout/widget_registra"
+    android:previewLayout="@layout/widget_registra_preview"
     android:resizeMode="horizontal|vertical"
-    android:targetCellWidth="1"
+    android:targetCellWidth="2"
     android:targetCellHeight="1"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen" />

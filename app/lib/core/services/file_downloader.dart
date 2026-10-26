@@ -400,15 +400,22 @@ class FileDownloader {
       (await sha256.bind(f.openRead()).first).toString();
 
   /// Spazio libero sul disco di [dir] (null = non determinabile).
+  /// Comando PowerShell dello spazio libero (Windows): l'unità arriva in
+  /// [freeSpaceVariable].
+  static const freeSpaceVariable = 'UNINOTES_DRIVE';
+  static const freeSpaceScript =
+      r'([System.IO.DriveInfo]::new($env:UNINOTES_DRIVE)).AvailableFreeSpace';
+
   static Future<int?> defaultFreeSpace(Directory dir) async {
     try {
       if (Platform.isWindows) {
         final root = dir.absolute.path.substring(0, 3);
+        // l'unità passa come variabile d'ambiente, mai nel testo del comando
         final r = await Process.run(WindowsTools.powershell, [
           '-NoProfile',
           '-Command',
-          "([System.IO.DriveInfo]::new('$root')).AvailableFreeSpace",
-        ]);
+          freeSpaceScript,
+        ], environment: {freeSpaceVariable: root});
         return int.tryParse('${r.stdout}'.trim());
       }
       if (Platform.isIOS) return null;

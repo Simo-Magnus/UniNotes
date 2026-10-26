@@ -2,7 +2,9 @@
 #define RUNNER_FLUTTER_WINDOW_H_
 
 #include <flutter/dart_project.h>
+#include <flutter/encodable_value.h>
 #include <flutter/flutter_view_controller.h>
+#include <flutter/method_channel.h>
 
 #include <memory>
 
@@ -13,6 +15,14 @@
 #include "open_with.h"
 #include "spell_check.h"
 #include "win32_window.h"
+
+// Proprietà della finestra principale letta da una seconda copia dell'app
+// (main.cpp): 1 = X premuta, l'app sta decidendo (area di notifica o
+// uscita); 2 = l'app si sta chiudendo. Senza: finestra aperta (o
+// nell'area di notifica).
+inline constexpr wchar_t kClosingProp[] = L"UniNotes.Chiusura";
+inline constexpr ULONG_PTR kClosingAsked = 1;
+inline constexpr ULONG_PTR kClosingQuit = 2;
 
 // A window that does nothing but host a Flutter view.
 class FlutterWindow : public Win32Window {
@@ -35,13 +45,6 @@ class FlutterWindow : public Win32Window {
   // The Flutter instance hosted by this window.
   std::unique_ptr<flutter::FlutterViewController> flutter_controller_;
 
-  // Finestra ridotta a icona (stato dell'app mandato da qui).
-  bool minimized_ = false;
-
-  // Manda a Flutter lo stato dell'app per la finestra [hwnd] (nascosta,
-  // in primo piano o no).
-  void SendLifecycleState(HWND hwnd);
-
   // Conversioni audio delle registrazioni (Media Foundation).
   std::unique_ptr<AudioTranscoderChannel> audio_channel_;
 
@@ -59,6 +62,35 @@ class FlutterWindow : public Win32Window {
 
   // Identità dei toast: passaggio una volta sola all'AUMID nuovo.
   std::unique_ptr<NotificationIdentityChannel> notification_identity_channel_;
+
+  // Chiusura dalla X: com'è finita (`nascosta` nell'area di notifica o
+  // `uscita`), detto dall'app (lib/core/services/desktop_window.dart).
+  std::unique_ptr<flutter::MethodChannel<flutter::EncodableValue>>
+      window_channel_;
+
+  // Finestra tornata visibile (ripristinata, mostrata, di nuovo in primo
+  // piano): frame forzati per un po' (vedi StartRedraws).
+  void StartRedraws(HWND hwnd);
+  int redraws_left_ = 0;
+
+  // Ultima immagine della finestra prima di ridurla a icona o nasconderla,
+  // mostrata al ritorno finché Flutter non ripresenta (vedi
+  // flutter_window.cpp).
+  void CaptureSnapshot(HWND hwnd);
+  void DropSnapshot();
+  bool PaintSnapshot(HWND hwnd, HDC dc);
+  void KeepLastFrame(HWND hwnd);
+  HBITMAP snapshot_ = nullptr;
+  int snapshot_w_ = 0;
+  int snapshot_h_ = 0;
+  bool show_snapshot_ = false;
+
+  // Finestra ridotta a icona (stato dell'app mandato da qui).
+  bool iconic_ = false;
+
+  // Manda a Flutter lo stato dell'app per la finestra [hwnd] (nascosta,
+  // in primo piano o no).
+  void SendLifecycleState(HWND hwnd);
 };
 
 #endif  // RUNNER_FLUTTER_WINDOW_H_

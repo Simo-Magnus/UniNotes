@@ -5,13 +5,17 @@ import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import io.github.simomagnus.universitynotes.widgets.RecordWidget
 import io.github.simomagnus.universitynotes.widgets.WidgetSupport
 
 /**
  * Attività di Flutter con il canale dei widget della schermata Home:
  * - `update`: ridisegna i widget con i dati appena scritti dall'app;
  * - `takeRoute`: schermata chiesta dal widget che ha aperto l'app
- *   (es. `registra`, `prova:12`), una sola volta;
+ *   (es. `registra`, `prova:12`), una sola volta (`registra:avvia` solo con
+ *   il codice segreto dei widget, vedi WidgetSupport.routeOf);
+ * - `moveToBack`: torna alla schermata Home dopo l'avvio della
+ *   registrazione dal widget «Registra lezione»;
  * - verso Flutter, `route`: tocco su un widget con l'app già aperta.
  *
  * Secondo canale: Non disturbare del telefono durante le sessioni Focus
@@ -82,7 +86,8 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        pendingRoute = WidgetSupport.routeOf(intent)
+        // ricreata (savedInstanceState): l'intent è quello già gestito
+        pendingRoute = WidgetSupport.routeOf(this, intent, fresh = savedInstanceState == null)
         super.onCreate(savedInstanceState)
     }
 
@@ -102,6 +107,10 @@ class MainActivity : FlutterActivity() {
                     result.success(pendingRoute)
                     pendingRoute = null
                 }
+                // registrazione avviata dal widget «Registra lezione»:
+                // si torna alla schermata Home (la registrazione continua
+                // nel servizio in primo piano)
+                "moveToBack" -> result.success(moveTaskToBack(true))
                 else -> result.notImplemented()
             }
         }
@@ -204,7 +213,7 @@ class MainActivity : FlutterActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        val route = WidgetSupport.routeOf(intent) ?: return
+        val route = WidgetSupport.routeOf(this, intent) ?: return
         val ch = channel
         if (ch == null) {
             pendingRoute = route
@@ -244,6 +253,9 @@ class MainActivity : FlutterActivity() {
         onAvailable = null
         recordingChannel?.setMethodCallHandler(null)
         recordingChannel = null
+        // senza questo motore la registrazione è finita: il widget «Registra
+        // lezione» torna fermo
+        if (RecordingNotification.onCommand === onCommand) RecordWidget.setLive(applicationContext, null)
         if (RecordingNotification.onCommand === onCommand) RecordingNotification.onCommand = null
         onCommand = null
         liveSpeech?.dispose()

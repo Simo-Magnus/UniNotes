@@ -25,7 +25,7 @@ import requests
 
 from . import periodi
 
-SP = os.environ.get("SEMESTRI_SP") or r"C:\Users\simon\AppData\Local\Temp\claude\D--University-Notes\0e1973a7-21aa-4a45-b9ef-77200eb6c84a\scratchpad"
+SP = periodi.cartella_lavoro()
 HEADERS = {"User-Agent": "Mozilla/5.0 (UniversityNotes database builder; +https://github.com/Simo-Magnus/UniNotes)"}
 LACUNE: dict[str, str] = {}  # id -> motivo, per il rapporto
 CAMPO = re.compile(r"(?:Periodo|Lesson period):?\s*(.{0,40}?)\s*(?:Orari delle lezioni|Lessons timetable|Modalit|Assessment|Syllabus|Programma)")

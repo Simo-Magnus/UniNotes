@@ -5,9 +5,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
-/// Comandi arrivati da fuori dell'app (notifica Android, Live Activity di
-/// iOS, icona nell'area di notifica del PC).
-enum RecorderCommand { pause, resume, toggle, save, open }
+import '../../../core/reminders/home_widgets.dart' show recordingWidgetState;
+
+/// Comandi arrivati da fuori dell'app (notifica e widget Android, Live
+/// Activity di iOS, icona nell'area di notifica del PC). [discard] arriva
+/// solo dal widget «Registra lezione», dopo il secondo tocco su «Elimina»:
+/// la registrazione va in «Eliminati di recente».
+enum RecorderCommand { pause, resume, toggle, save, open, discard }
 
 /// Controlli della registrazione con l'app in background:
 /// - **Android**: la notifica del servizio in primo piano mostra tempo
@@ -66,6 +70,10 @@ class NoBackgroundControls implements BackgroundControls {
 const btnPause = 'pausa';
 const btnResume = 'riprendi';
 const btnSave = 'salva';
+
+/// «Elimina» del widget «Registra lezione», già confermato con il secondo
+/// tocco (RecordWidget.kt).
+const btnDiscard = 'elimina';
 const _cmdOpen = 'apri';
 
 /// Il servizio è partito (la sua notifica va sostituita con la nostra).
@@ -113,15 +121,53 @@ RecordingNotificationContent recordingNotificationContent({
   saveText: 'Salva',
 );
 
+/// Argomenti di `show` per la notifica nativa (RecordingNotification.kt):
+/// testi, pulsanti, tempo e lo stato della registrazione che il lato nativo
+/// passa anche al widget «Registra lezione» (stessa fonte). Funzione pura.
+Map<String, Object?> recordingShowArgs(
+  RecordingNotificationContent c, {
+  required Duration elapsed,
+  required bool paused,
+}) => {
+  ...recordingWidgetState(
+    active: true,
+    paused: paused,
+    elapsed: elapsed,
+    course: c.course,
+  ),
+  'id': recordingNotificationId,
+  'title': c.title,
+  'primary': c.primaryText,
+  'primaryId': c.primaryId,
+  'save': c.saveText,
+};
+
 /// Comando del registratore per il pulsante [id] della notifica (null se
 /// non è un pulsante).
 RecorderCommand? recorderCommandFor(Object? id) => switch (id) {
   btnPause => RecorderCommand.pause,
   btnResume => RecorderCommand.resume,
   btnSave => RecorderCommand.save,
+  btnDiscard => RecorderCommand.discard,
   _cmdOpen => RecorderCommand.open,
   _ => null,
 };
+
+/// Comandi accettati dal servizio di flutter_foreground_task (porta dei
+/// dati). Su Android 7–12 il suo ricevitore dei pulsanti è registrato senza
+/// `RECEIVER_NOT_EXPORTED` (il flag esiste da Android 13) e controlla solo
+/// il pacchetto scritto nell'intent: un'altra app può mandargli un id
+/// qualsiasi. Da qui passano quindi solo gli eventi del servizio (pronto,
+/// notifica tolta, tocco che apre l'app) e i pulsanti della notifica di
+/// riserva solo mentre è davvero mostrata ([fallbackShown]); mai
+/// «Elimina», che arriva solo dal widget (ricevitore non esportato, doppio
+/// tocco) sul canale nativo.
+bool packageCommandAllowed(Object? id, {required bool fallbackShown}) =>
+    switch (id) {
+      _cmdReady || _cmdDismissed || _cmdOpen => true,
+      btnPause || btnResume || btnSave => fallbackShown,
+      _ => false,
+    };
 
 /// Avvio del servizio in primo piano (isolate separato): passa all'app i
 /// pulsanti della notifica di riserva e gli eventi del servizio. Il tempo
@@ -217,7 +263,11 @@ class AndroidRecordingNotification implements BackgroundControls {
   }
 
   void _onData(Object data) {
-    if (data is Map) _onButton(data['cmd']);
+    if (data is! Map) return;
+    final id = data['cmd'];
+    if (packageCommandAllowed(id, fallbackShown: _fallbackShown != null)) {
+      _onButton(id);
+    }
   }
 
   Future<void> _show() async {
@@ -225,22 +275,22 @@ class AndroidRecordingNotification implements BackgroundControls {
     bool ok;
     try {
       ok =
-          await _native.invokeMethod<bool>('show', {
-            'id': recordingNotificationId,
-            'title': c.title,
-            'course': c.course,
-            'elapsedMs': _now.inMilliseconds,
-            'paused': _paused,
-            'primary': c.primaryText,
-            'primaryId': c.primaryId,
-            'save': c.saveText,
-          }) ??
+          await _native.invokeMethod<bool>(
+            'show',
+            recordingShowArgs(c, elapsed: _now, paused: _paused),
+          ) ??
           false;
     } catch (e) {
       debugPrint('Notifica della registrazione non mostrata: $e');
       ok = false;
     }
-    if (ok || !_running) return;
+    if (ok) {
+      // la nostra ha sostituito quella del pacchetto (stesso id): i suoi
+      // pulsanti non si vedono più
+      _fallbackShown = null;
+      return;
+    }
+    if (!_running) return;
     // riserva: la notifica del pacchetto, con gli stessi pulsanti
     if (_fallbackShown?.primaryId == c.primaryId &&
         _fallbackShown?.title == c.title) {
@@ -336,6 +386,16 @@ class AndroidRecordingNotification implements BackgroundControls {
   Future<void> stop() async {
     _running = false;
     FlutterForegroundTask.removeTaskDataCallback(_onData);
+    // il widget «Registra lezione» torna fermo (anche se il servizio non
+    // si ferma bene)
+    try {
+      await _native.invokeMethod<bool>(
+        'stopped',
+        recordingWidgetState(active: false),
+      );
+    } catch (e) {
+      debugPrint('Widget della registrazione non aggiornato: $e');
+    }
     try {
       await FlutterForegroundTask.stopService();
     } catch (_) {}

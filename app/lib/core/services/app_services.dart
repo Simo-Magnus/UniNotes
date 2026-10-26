@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart' show ThemeMode, ValueNotifier;
 
 import '../../features/cloud/data_sync.dart';
@@ -221,9 +223,27 @@ class AppServices {
     try {
       await (secrets ?? SecureCloudSecrets()).delete('gemini.apiKey');
     } catch (_) {
-      // portachiavi non disponibile: non c'era niente da togliere
+      // portachiavi non disponibile (telefono bloccato, servizio del sistema
+      // fermo): la chiave può essere ancora lì, si riprova al prossimo avvio
+      return;
     }
     await settings.set(SettingKeys.legacyGeminiRemoved, '1');
+  }
+
+  /// iPhone, iPad e Mac, una volta: token del portachiavi delle versioni
+  /// precedenti riscritti «solo su questo dispositivo»
+  /// ([SecureCloudSecrets.migrateAppleAccessibility]); si riprova finché
+  /// non riesce. Da chiamare prima che parta la sincronizzazione (che può
+  /// rinnovare i token nello stesso momento).
+  Future<void> migrateKeychainAccessibility({
+    SecureCloudSecrets? secrets,
+    bool? apple,
+  }) async {
+    if (!(apple ?? (Platform.isIOS || Platform.isMacOS))) return;
+    if (await settings.get(SettingKeys.keychainThisDevice) == '1') return;
+    if (await (secrets ?? SecureCloudSecrets()).migrateAppleAccessibility()) {
+      await settings.set(SettingKeys.keychainThisDevice, '1');
+    }
   }
 
   /// Operazioni lunghe in corso (trascrizioni, riassunti, download).

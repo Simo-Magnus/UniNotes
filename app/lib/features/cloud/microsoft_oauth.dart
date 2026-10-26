@@ -141,7 +141,12 @@ class MicrosoftOAuth extends LoopbackOAuth {
     }
     final q = Uri.parse(result).queryParameters;
     final code = q['code'];
-    if (q['state'] != state || code == null) {
+    if (q['state'] != state) {
+      // ritorno che non viene dalla pagina di accesso aperta dall'app (un'altra
+      // app può aprire lo schema): niente codice né testo preso da lì
+      throw OAuthException(foreignReturnMessage('Microsoft'));
+    }
+    if (code == null) {
       throw OAuthException(
         'Accesso con Microsoft non riuscito: '
         '${explain(q['error_description'] ?? q['error'] ?? 'risposta non valida')}',

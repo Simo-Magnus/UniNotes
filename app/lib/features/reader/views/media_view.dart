@@ -7,6 +7,7 @@ import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:path/path.dart' as p;
 
+import '../../../core/services/media_guard.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../widgets/glass.dart';
 import '../parsers/text_formats.dart' show formatClock;
@@ -102,6 +103,13 @@ class _MediaViewState extends State<MediaView> {
       );
       return;
     }
+    // scaletta di testo con indirizzi web al posto dell'audio: non si apre
+    final unsafe = await MediaGuard.unsafeReason(widget.path);
+    if (unsafe != null) {
+      if (mounted) setState(() => _error = unsafe);
+      return;
+    }
+    if (!mounted) return;
     try {
       MediaKit.ensureInitialized();
       final player = Player();

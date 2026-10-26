@@ -27,6 +27,25 @@ NON = re.compile(r"prova finale|tesi|tirocini|stage|internship|altre attivit|ult
                  r"scelta libera|crediti liberi|attivit[aà] formative|seminari|laboratorio di tesi|final exam|thesis|"
                  r"elective|esame finale|abilit[aà] informatiche|ofa|corso zero|ADE\b", re.I)
 VALIDI = {"1", "2", "3", "4", "annuale"}
+# percorso locale della cartella di lavoro con le cache delle pagine (una riga):
+# non nel repository, perché contiene il nome dell'utente del computer
+CARTELLA_LAVORO = ROOT / "tools" / "db_builder" / "cartella_lavoro.txt"
+
+
+def cartella_lavoro() -> str:
+    """Cartella delle cache dei semestri (`SP` degli adattatori): la variabile
+    SEMESTRI_SP, altrimenti il percorso scritto in `cartella_lavoro.txt`,
+    altrimenti una cartella nella cartella temporanea."""
+    import os
+    import tempfile
+
+    if os.environ.get("SEMESTRI_SP"):
+        return os.environ["SEMESTRI_SP"]
+    try:
+        riga = CARTELLA_LAVORO.read_text(encoding="utf-8").strip()
+    except OSError:
+        riga = ""
+    return riga or os.path.join(tempfile.gettempdir(), "uninotes_semestri")
 
 
 def carica(uid: str) -> dict:

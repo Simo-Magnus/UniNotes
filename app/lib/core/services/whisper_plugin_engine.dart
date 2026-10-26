@@ -37,7 +37,7 @@ class WhisperPluginEngine implements WhisperEngine {
     CancelToken? cancel,
     WhisperOptions options = WhisperOptions.none,
   }) async {
-    final tmp = await Directory.systemTemp.createTemp('whisper_chunks_');
+    final tmp = await Directory.systemTemp.createTemp('uninotes_whisper_chunks_');
     try {
       onProgress?.call(const WhisperProgress('Preparo l\'audio…', null));
       final parts = Platform.isWindows || Platform.isLinux

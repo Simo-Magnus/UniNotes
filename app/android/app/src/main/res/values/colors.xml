@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_background">#FF02060F</color>
-    <!-- Widget della schermata Home, tema chiaro del sistema (vetro chiaro,
-         azzurro dell'app; i colori scuri sono in values-night). -->
-    <color name="widget_background">#F2F4F9FF</color>
-    <color name="widget_border">#1A0F2A4D</color>
-    <color name="widget_text">#FF0B1726</color>
-    <color name="widget_text_muted">#FF5B708A</color>
+    <!-- Widget della schermata Home, tema chiaro del sistema («mattina
+         limpida» di docs/SPEC_DESIGN_3.md §8: card di vetro bianca quasi
+         piena, bordo #DAE3ED, filo di luce azzurro, testi blu notte); i
+         colori scuri (§3-§5) sono in values-night. -->
+    <color name="widget_bg_top">#F7FFFFFF</color>
+    <color name="widget_bg_mid">#F7FDFEFF</color>
+    <color name="widget_bg_bottom">#F7FAFCFF</color>
+    <color name="widget_border">#FFDAE3ED</color>
+    <color name="widget_light_line">#8C38BDF8</color>
+    <color name="widget_spot">#0A38BDF8</color>
+    <color name="widget_spot_end">#0038BDF8</color>
+    <!-- card interne (righe delle prove): velo azzurro al 5%, bordo al 14% -->
+    <color name="widget_inner">#0D0369A1</color>
+    <color name="widget_inner_border">#240369A1</color>
+    <color name="widget_text">#FF0F172A</color>
+    <color name="widget_text_secondary">#FF334155</color>
+    <color name="widget_text_muted">#FF52627A</color>
     <color name="widget_accent">#FF0369A1</color>
-    <color name="widget_badge">#1F0369A1</color>
+    <!-- giorni mancanti come nell'app (SmallBadge di exam_tile.dart): rosso
+         entro 7 giorni, azzurro dopo; fondo al 12%, bordo al 50% -->
+    <color name="widget_urgent">#FFB91C1C</color>
+    <color name="widget_chip">#1F0369A1</color>
+    <color name="widget_chip_border">#800369A1</color>
+    <color name="widget_chip_urgent">#1FB91C1C</color>
+    <color name="widget_chip_urgent_border">#80B91C1C</color>
+    <!-- pulsante arancione (§7.3), uguale nei due temi -->
     <color name="widget_record_top">#FFFFB064</color>
+    <color name="widget_record_mid">#FFFF8A1F</color>
     <color name="widget_record_bottom">#FFE86F08</color>
+    <color name="widget_record_pressed">#FFD86408</color>
+    <color name="widget_record_highlight">#BFFFECD2</color>
     <color name="widget_on_record">#FF1A0B00</color>
+    <!-- pallino «in registrazione» e comandi secondari -->
+    <color name="widget_rec_dot">#FFDC2626</color>
+    <color name="widget_secondary_top">#170369A1</color>
+    <color name="widget_secondary_bottom">#080369A1</color>
+    <color name="widget_secondary_border">#330369A1</color>
+    <color name="widget_secondary_pressed">#2E0369A1</color>
+    <color name="widget_delete">#14B91C1C</color>
+    <color name="widget_delete_border">#4DB91C1C</color>
+    <color name="widget_delete_armed">#FFB91C1C</color>
+    <color name="widget_on_delete_armed">#FFFFFFFF</color>
     <!-- Pulsanti della notifica della registrazione (RecordingNotification.kt) -->
     <color name="notifica_pulsante_fondo">#1F0F72F2</color>
     <color name="notifica_pulsante_premuto">#3D0F72F2</color>

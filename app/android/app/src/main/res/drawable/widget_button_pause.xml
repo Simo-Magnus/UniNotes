@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- «Pausa»/«Riprendi»: l'azione arancione del widget (come il pulsante
+     grande del registratore), raggio 14. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/widget_record_pressed" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:centerColor="@color/widget_record_mid"
+                android:endColor="@color/widget_record_bottom"
+                android:startColor="@color/widget_record_top" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</selector>

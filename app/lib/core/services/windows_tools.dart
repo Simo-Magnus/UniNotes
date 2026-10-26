@@ -13,8 +13,14 @@ abstract final class WindowsTools {
   static String get windowsDir {
     final root =
         Platform.environment['SystemRoot'] ?? Platform.environment['windir'];
-    return (root == null || root.isEmpty) ? r'C:\Windows' : root;
+    // solo un percorso completo su un'unità locale («C:\Windows»): un valore
+    // relativo («.») o di rete riporterebbe la ricerca in cartelle altrui
+    return (root == null || !isLocalAbsolute(root)) ? r'C:\Windows' : root;
   }
+
+  /// Percorso completo su un'unità locale, come `C:\Windows`.
+  static bool isLocalAbsolute(String path) =>
+      RegExp(r'^[A-Za-z]:[\\/]').hasMatch(path);
 
   static String _system32(String exe) => '$windowsDir\\System32\\$exe';
 

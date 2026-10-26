@@ -112,6 +112,14 @@ class AppShell extends StatefulWidget {
   @visibleForTesting
   static bool prefetchSections = true;
 
+  /// `registra:avvia` avvia subito la registrazione solo su Android, dove il
+  /// lato nativo la accetta solo dai widget dell'app (codice segreto in
+  /// WidgetSupport.routeOf). Su iOS e macOS lo schema `uninotes://` lo può
+  /// aprire qualunque app o pagina web: lì la rotta apre solo il
+  /// registratore. Le prove lo accendono.
+  @visibleForTesting
+  static bool quickStartFromWidget = Platform.isAndroid;
+
   @override
   State<AppShell> createState() => _AppShellState();
 }
@@ -223,7 +231,12 @@ class _AppShellState extends State<AppShell> {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) openPreviousYears(context);
       });
-    } else if (route == AppRoutes.record) {
+    } else if (route == AppRoutes.record || route == AppRoutes.recordStart) {
+      // widget «Registra lezione» (Android): la schermata del registratore
+      // avvia subito la registrazione e poi torna alla schermata Home
+      if (route == AppRoutes.recordStart && AppShell.quickStartFromWidget) {
+        _services.recorder.requestQuickStart();
+      }
       _select(byLabel('Registra'));
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) openRecorder(context);

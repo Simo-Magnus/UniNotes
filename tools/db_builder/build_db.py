@@ -549,6 +549,8 @@ def main() -> None:
         doc = {"schema": 1, "universita_id": uid, "anno_accademico": anno_acc,
                "aggiornato_il": date.today().isoformat(), "fonte": raw.get("fonte"), "corsi": corsi}
         path = DB / "corsi" / f"{uid}.json"
+        # niente indirizzi email personali dei docenti (copiati dai programmi)
+        doc = pulizia.senza_email_personali(doc)
         write_json(path, doc)
         for c in corsi:
             indice.append([uid, c["id"], c["nome"], c["tipo"], c["classe"], c["durata_anni"], c["sede"], c["lingua"]])

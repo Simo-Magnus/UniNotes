@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.RemoteViews
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import io.github.simomagnus.universitynotes.widgets.RecordWidget
 import io.github.simomagnus.universitynotes.widgets.WidgetSupport
 
 /**
@@ -33,10 +34,14 @@ import io.github.simomagnus.universitynotes.widgets.WidgetSupport
  *
  * - `show {id, title, course, elapsedMs, paused, primary, primaryId, save}`:
  *   mostra o aggiorna la notifica;
+ * - `stopped`: registrazione finita (il widget torna fermo);
  * - verso Flutter, `command` con l'id del pulsante premuto (`pausa`,
- *   `riprendi`, `salva`) o `nascosta` se l'utente l'ha tolta dalla tendina
- *   (Android 14+ lo permette anche ai servizi in primo piano: l'app la
- *   rimette finché registra).
+ *   `riprendi`, `salva`, `elimina` dal widget dopo la conferma) o
+ *   `nascosta` se l'utente l'ha tolta dalla tendina (Android 14+ lo
+ *   permette anche ai servizi in primo piano: l'app la rimette finché
+ *   registra).
+ * Ogni `show` passa lo stesso stato al widget «Registra lezione»
+ * (widgets/RecordWidget.kt).
  * Il tocco sul corpo apre l'app nel registratore (percorso `registra`,
  * come il widget).
  */
@@ -63,10 +68,28 @@ object RecordingNotification {
     /** Comandi verso Flutter (null se l'app non ha un motore attivo). */
     var onCommand: ((String) -> Unit)? = null
 
+    /** Comandi validi verso Flutter (pulsanti di notifica e widget). */
+    val COMMANDS = setOf("pausa", "riprendi", "salva", "nascosta")
+
     fun handle(context: Context, call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
             "show" -> result.success(
                 try {
+                    // stesso stato al widget «Registra lezione» (un'unica
+                    // fonte: la notifica), anche se la notifica non si può
+                    // mostrare e resta quella di riserva
+                    try {
+                        RecordWidget.setLive(
+                            context,
+                            RecordWidget.Live(
+                                paused = call.argument<Boolean>("paused") ?: false,
+                                elapsedMs = maxOf(0L, call.argument<Number>("elapsedMs")?.toLong() ?: 0L),
+                                at = SystemClock.elapsedRealtime(),
+                                course = call.argument<String>("course") ?: "",
+                            ),
+                        )
+                    } catch (e: Exception) {
+                    }
                     show(
                         context,
                         // Number: un int di Dart arriva come Int o Long
@@ -84,6 +107,15 @@ object RecordingNotification {
                     false
                 },
             )
+            // registrazione finita (salvata, eliminata, non partita): il
+            // widget torna fermo
+            "stopped" -> {
+                try {
+                    RecordWidget.setLive(context, null)
+                } catch (e: Exception) {
+                }
+                result.success(true)
+            }
             else -> result.notImplemented()
         }
     }
@@ -190,10 +222,32 @@ object RecordingNotification {
     }
 }
 
-/** Pulsanti e chiusura della notifica della registrazione. */
+/**
+ * Pulsanti e chiusura della notifica della registrazione e comandi del
+ * widget «Registra lezione» (RecordWidget.kt). Non esportato: lo
+ * raggiungono solo le PendingIntent immutabili dell'app. I comandi sono
+ * validati: gli altri si ignorano.
+ */
 class RecordingCommandReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        val command = intent.getStringExtra(RecordingNotification.EXTRA_COMMAND) ?: return
-        RecordingNotification.onCommand?.invoke(command)
+        val command = try {
+            intent.getStringExtra(RecordingNotification.EXTRA_COMMAND)
+        } catch (e: Exception) {
+            null
+        } ?: return
+        when (command) {
+            RecordWidget.CMD_DELETE -> RecordWidget.onDeleteTap(context)
+            RecordWidget.CMD_VERIFY -> RecordWidget.verify(context)
+            in RecordingNotification.COMMANDS -> {
+                val forward = RecordingNotification.onCommand
+                if (forward == null) {
+                    // l'app non c'è più (chiusa dal sistema): niente da
+                    // comandare, il widget torna fermo
+                    RecordWidget.stale(context)
+                    return
+                }
+                forward(command)
+            }
+        }
     }
 }

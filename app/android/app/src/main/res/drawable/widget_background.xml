@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Vetro arrotondato dei widget (colori in values / values-night). -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="@color/widget_background" />
-    <stroke android:width="1dp" android:color="@color/widget_border" />
-    <corners android:radius="22dp" />
-</shape>
+<!-- Vetro dei widget (docs/SPEC_DESIGN_3.md §4, colori in values e
+     values-night): sfondo in verticale chiaro → scuro con bordo da 1dp e
+     raggio 22dp, faretto azzurro in alto al centro e filo di luce sul bordo
+     alto (dal 16% all'84% circa della larghezza). Il blur del vetro vero non
+     esiste nelle RemoteViews: lo sostituisce la trasparenza del fondo. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:centerColor="@color/widget_bg_mid"
+                android:centerY="0.34"
+                android:endColor="@color/widget_bg_bottom"
+                android:startColor="@color/widget_bg_top" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/widget_border" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.5"
+                android:centerY="0"
+                android:endColor="@color/widget_spot_end"
+                android:gradientRadius="150dp"
+                android:startColor="@color/widget_spot"
+                android:type="radial" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <item
+        android:height="1dp"
+        android:gravity="top|fill_horizontal"
+        android:left="36dp"
+        android:right="36dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:centerColor="@color/widget_light_line"
+                android:endColor="#00FFFFFF"
+                android:startColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

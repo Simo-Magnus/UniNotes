@@ -31,6 +31,7 @@ import sys
 import time
 
 from percorso_classico import scegli as percorso_classico
+from pulizia import senza_email_personali
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DB = ROOT / "database"
@@ -66,9 +67,12 @@ def dividi(uid: str) -> dict | None:
     src = DB / "corsi" / f"{uid}.json"
     if not src.exists():
         return None
-    doc = json.loads(src.read_text(encoding="utf-8"))
+    # niente indirizzi email personali nei file per corso, anche se corsi/ o
+    # moduli/ dell'ateneo non sono ancora stati ricostruiti con il filtro
+    doc = senza_email_personali(json.loads(src.read_text(encoding="utf-8")))
     mod_path = DB / "moduli" / f"{uid}.json"
     moduli = json.loads(mod_path.read_text(encoding="utf-8")).get("insegnamenti", {}) if mod_path.exists() else {}
+    moduli = {k: senza_email_personali(v) for k, v in moduli.items()}
     testa = {k: v for k, v in doc.items() if k != "corsi"}
     cartella = OUT / uid
     indice: dict[str, dict] = {}

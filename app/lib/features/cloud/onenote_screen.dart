@@ -170,6 +170,13 @@ class _OneNotePageScreenState extends State<OneNotePageScreen> {
     if (mounted) showLaunchResult(context, r);
   }
 
+  /// App OneNote (schema `onenote:`, solo da qui), o la pagina web se
+  /// l'app non c'è.
+  Future<void> _openClient(String url, String? web) async {
+    final r = await ExternalLauncher.openOneNote(url, fallbackWebUrl: web);
+    if (mounted) showLaunchResult(context, r);
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = widget.page;
@@ -187,7 +194,7 @@ class _OneNotePageScreenState extends State<OneNotePageScreen> {
                 children: [
                   if (p.clientUrl != null)
                     OutlinedButton.icon(
-                      onPressed: () => _open(p.clientUrl),
+                      onPressed: () => _openClient(p.clientUrl!, p.webUrl),
                       icon: const Icon(Icons.open_in_new),
                       label: const Text('Apri in OneNote'),
                     ),

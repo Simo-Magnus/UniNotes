@@ -26,7 +26,7 @@ import requests
 from . import periodi
 import pulizia
 
-SP = os.environ.get("SEMESTRI_SP") or r"C:\Users\simon\AppData\Local\Temp\claude\D--University-Notes\0e1973a7-21aa-4a45-b9ef-77200eb6c84a\scratchpad"
+SP = periodi.cartella_lavoro()
 HEADERS = {"User-Agent": "Mozilla/5.0 (UniversityNotes database builder; +https://github.com/Simo-Magnus/UniNotes)",
            "Accept": "application/json"}
 URL_RE = re.compile(r"/insegnamenti/(\d+)/([^/]+)/(\d+)/(\w+)\?coorte=(\d+)")

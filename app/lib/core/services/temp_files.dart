@@ -18,15 +18,42 @@ const kTempFolders = [
 /// di MB di audio non compresso ciascuna), la riempiono a ogni chiusura
 /// improvvisa. Non c'è `uninotes_cestino_`: ha dentro l'audio di una
 /// registrazione eliminata a metà, che non va mai buttato.
+///
+/// Tutte con il prefisso `uninotes_`: sul PC la cartella temporanea è di
+/// tutti i programmi dell'utente, e un nome generico come `whisper_` può
+/// essere di un altro programma.
 const kTempWorkPrefixes = [
-  'whisper_',
-  'whisper_chunks_',
-  'whisper_live_',
-  'parakeet_',
+  'uninotes_whisper_',
+  'uninotes_whisper_chunks_',
+  'uninotes_whisper_live_',
+  'uninotes_parakeet_',
   'uninotes_live_',
   'uninotes_onda_',
   'uninotes_taglio_',
 ];
+
+/// Prefissi delle versioni precedenti, senza `uninotes_`: una cartella si
+/// toglie solo se il resto del nome è quello che aggiunge
+/// `Directory.createTemp` ([isDartTempSuffix]), non per esempio
+/// `whisper_modelli` di un altro programma.
+const kLegacyTempWorkPrefixes = [
+  'whisper_',
+  'whisper_chunks_',
+  'whisper_live_',
+  'parakeet_',
+];
+
+/// Parte casuale aggiunta da `Directory.createTemp`: fino a 8 cifre
+/// esadecimali su Windows, 6 lettere o cifre su macOS e Linux.
+bool isDartTempSuffix(String s) =>
+    RegExp(r'^(?:[0-9a-f]{1,8}|[A-Za-z0-9]{6})$').hasMatch(s);
+
+/// Cartella di lavoro dell'app (di questa versione o delle precedenti).
+bool isAppTempWorkDir(String name) =>
+    kTempWorkPrefixes.any(name.startsWith) ||
+    kLegacyTempWorkPrefixes.any(
+      (x) => name.startsWith(x) && isDartTempSuffix(name.substring(x.length)),
+    );
 
 /// Le cartelle di lavoro più vecchie di questo tempo sono rimaste da una
 /// chiusura improvvisa (nessun lavoro dura così a lungo).
@@ -64,7 +91,7 @@ Future<void> clearTempFiles({
       if (e is! Directory) continue;
       final name = p.basename(e.path);
       final trash = allWork && name.startsWith(kTempTrashPrefix);
-      if (!trash && !kTempWorkPrefixes.any(name.startsWith)) continue;
+      if (!trash && !isAppTempWorkDir(name)) continue;
       try {
         if (!allWork && (await e.stat()).modified.isAfter(cutoff)) continue;
         await e.delete(recursive: true);

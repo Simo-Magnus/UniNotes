@@ -47,6 +47,46 @@ class ExternalLauncher {
     }
   }
 
+  /// «Apri in OneNote» di una pagina letta da Microsoft Graph
+  /// (`oneNoteClientUrl`, come `onenote:https://d.docs.live.net/…`): lo
+  /// schema `onenote:` non è fra quelli di [openUrl] e si apre solo da qui,
+  /// solo seguito da un indirizzo `https:` (mai `onenote:` con un file
+  /// locale o di rete). Se l'app OneNote non c'è e [fallbackWebUrl] è
+  /// dato, si apre la pagina nel browser.
+  static Future<LaunchResult> openOneNote(
+    String url, {
+    String? fallbackWebUrl,
+  }) async {
+    if (!isOneNoteClientUrl(url)) {
+      return LaunchResult.error('Link non consentito: $url');
+    }
+    try {
+      if (await launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.externalApplication,
+      )) {
+        return const LaunchResult.ok();
+      }
+    } catch (_) {}
+    if (fallbackWebUrl != null) return openUrl(fallbackWebUrl);
+    return const LaunchResult.error(
+      'Impossibile aprire l\'app OneNote: è installata? Prova «Apri nel '
+      'browser».',
+    );
+  }
+
+  /// Indirizzo `onenote:https://…` senza spazi né caratteri di controllo.
+  static bool isOneNoteClientUrl(String url) {
+    if (!url.toLowerCase().startsWith('onenote:https://')) return false;
+    if (url.codeUnits.any((c) => c <= 0x20 || c == 0x7F)) return false;
+    try {
+      final inner = Uri.parse(url.substring('onenote:'.length));
+      return inner.scheme == 'https' && inner.host.isNotEmpty;
+    } on FormatException {
+      return false;
+    }
+  }
+
   /// Estensioni di programmi e script: non si avviano mai dall'app (un
   /// percorso arrivato da un file importato potrebbe puntare a un eseguibile).
   static const blockedExtensions = {
@@ -107,6 +147,35 @@ class ExternalLauncher {
     '.terminal',
     '.pkg',
     '.run',
+    // Windows Sandbox con comando d'avvio; macOS: script come .command e
+    // collegamenti che aprono un file o un'app; Linux: AppImage
+    '.wsb',
+    '.tool',
+    '.fileloc',
+    '.inetloc',
+    '.appimage',
+  };
+
+  /// Script che sul PC e sul Mac si eseguono con un doppio clic se è
+  /// installato il loro interprete (Python con il suo «launcher», Perl,
+  /// Ruby, Tcl, AutoHotkey, AutoIt) e la Guida HTML compilata (`.chm`, che
+  /// può avviare script): con «Apri» non si aprono, con «Apri con…» sì,
+  /// perché l'app la sceglie lo studente (un editor). Il lettore di UniNotes
+  /// li mostra come testo. Sul telefono nessuno di questi si esegue.
+  static const scriptExtensions = {
+    '.py',
+    '.pyw',
+    '.pyz',
+    '.pyzw',
+    '.pyc',
+    '.pyo',
+    '.pl',
+    '.rb',
+    '.rbw',
+    '.tcl',
+    '.ahk',
+    '.au3',
+    '.chm',
   };
 
   /// Estensioni che il sistema può usare per [path]: quella scritta e quella
@@ -130,7 +199,9 @@ class ExternalLauncher {
 
   /// Percorso apribile: locale (non di rete, es. «\\server\cartella») e non
   /// un programma.
-  static String? unsafePathReason(String path) {
+  /// Con [explicitChoice] («Apri con…», l'app la sceglie lo studente) gli
+  /// [scriptExtensions] sono ammessi.
+  static String? unsafePathReason(String path, {bool explicitChoice = false}) {
     final t = path.trim();
     if (t.startsWith(r'\\') || t.startsWith('//')) {
       return 'I percorsi di rete non si aprono dall\'app:\n$path';
@@ -145,8 +216,20 @@ class ExternalLauncher {
     if (_extensionsOf(t).any(blockedExtensions.contains)) {
       return 'Per sicurezza i programmi non si aprono dall\'app:\n$path';
     }
+    if (!explicitChoice &&
+        _desktop(platform()) &&
+        _extensionsOf(t).any(scriptExtensions.contains)) {
+      return 'Questo script si eseguirebbe aprendolo con il programma '
+          'predefinito: usa «Apri con…» e scegli un editor, oppure leggilo '
+          'nel lettore di UniNotes.\n$path';
+    }
     return null;
   }
+
+  static bool _desktop(TargetPlatform t) =>
+      t == TargetPlatform.windows ||
+      t == TargetPlatform.macOS ||
+      t == TargetPlatform.linux;
 
   /// Apre un file locale; se il file non esiste prova ad aprire la cartella
   /// che dovrebbe contenerlo.
@@ -194,7 +277,7 @@ class ExternalLauncher {
   ///   tutti i desktop).
   /// Se l'utente chiude la scelta l'esito è ok, senza messaggi.
   static Future<LaunchResult> openWith(String path) async {
-    final unsafe = unsafePathReason(path);
+    final unsafe = unsafePathReason(path, explicitChoice: true);
     if (unsafe != null) return LaunchResult.error(unsafe);
     final String target;
     try {
@@ -238,6 +321,10 @@ class ExternalLauncher {
           ], mode: ProcessStartMode.detached);
           return const LaunchResult.ok();
         case TargetPlatform.linux:
+          // `gio open` usa l'app predefinita, non una scelta: per gli script
+          // vale il controllo di «Apri»
+          final unsafe = unsafePathReason(path);
+          if (unsafe != null) return LaunchResult.error(unsafe);
           await Process.start('gio', [
             'open',
             path,

@@ -12,6 +12,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../core/services/loopback_oauth.dart';
 import '../../core/services/power.dart';
+import '../../core/services/test_data_dir.dart';
 import '../../repositories/settings_repository.dart';
 import '../notes/notes_store.dart';
 import 'data_sync.dart';
@@ -25,9 +26,68 @@ abstract class CloudSecrets {
 }
 
 class SecureCloudSecrets implements CloudSecrets {
-  SecureCloudSecrets([FlutterSecureStorage? s])
-    : _s = s ?? const FlutterSecureStorage();
+  SecureCloudSecrets([FlutterSecureStorage? s, FlutterSecureStorage? legacy])
+    : _s = s ?? storage,
+      _legacy = legacy ?? const FlutterSecureStorage();
   final FlutterSecureStorage _s;
+
+  /// Opzioni predefinite del pacchetto, usate dalle versioni precedenti: su
+  /// iPhone, iPad e Mac voci «quando sbloccato», che entrano nei backup del
+  /// dispositivo (iCloud, Finder) e passano a un altro con il ripristino.
+  final FlutterSecureStorage _legacy;
+
+  /// iPhone, iPad e Mac: token leggibili dopo il primo sblocco (anche dalla
+  /// sincronizzazione in background) e solo su questo dispositivo, quindi
+  /// esclusi dai backup ripristinabili su un altro. Il pacchetto (dalla
+  /// 0.4.3 di flutter_secure_storage_darwin) trova in lettura anche le voci
+  /// scritte con un'altra accessibilità; in scrittura toglie quella vecchia e
+  /// aggiunge la nuova. Android e Windows non usano queste opzioni.
+  static const appleAccessibility =
+      KeychainAccessibility.first_unlock_this_device;
+  static const storage = FlutterSecureStorage(
+    iOptions: IOSOptions(accessibility: appleAccessibility),
+    mOptions: MacOsOptions(accessibility: appleAccessibility),
+  );
+
+  /// Voci scritte dall'app nel portachiavi (refresh token di OneDrive,
+  /// Google Drive e del calendario di Outlook).
+  static const tokenKeys = [
+    'onedrive.refreshToken',
+    'gdrive.refreshToken',
+    'outlook_calendar.refreshToken',
+  ];
+
+  /// Riscrive con [appleAccessibility] le voci delle versioni precedenti.
+  /// Vero se non resta niente da fare; falso se va riprovata (portachiavi
+  /// non disponibile, scrittura fallita). Un token non si perde: se la
+  /// scrittura nuova fallisce dopo che il pacchetto ha tolto la voce vecchia,
+  /// si rimette com'era.
+  Future<bool> migrateAppleAccessibility({
+    Iterable<String> keys = tokenKeys,
+  }) async {
+    var done = true;
+    for (final key in keys) {
+      String? value;
+      try {
+        value = await _s.read(key: key);
+      } catch (_) {
+        done = false;
+        continue;
+      }
+      if (value == null || value.isEmpty) continue;
+      try {
+        await _s.write(key: key, value: value);
+      } catch (_) {
+        done = false;
+        try {
+          if (await _s.read(key: key) == null) {
+            await _legacy.write(key: key, value: value);
+          }
+        } catch (_) {}
+      }
+    }
+    return done;
+  }
   @override
   Future<String?> read(String key) => _s.read(key: key);
   @override
@@ -158,7 +218,10 @@ abstract class CloudDriveService extends ChangeNotifier {
     Future<Directory> Function()? stateDir,
     this.sources = const SyncSources(),
     String? deviceName,
-  }) : secrets = secrets ?? SecureCloudSecrets(),
+  }) : // build di prova: niente portachiavi dell'utente (test_data_dir.dart)
+       secrets =
+           secrets ??
+           (testDataMode ? MemoryCloudSecrets() : SecureCloudSecrets()),
        stateDir = stateDir ?? getApplicationSupportDirectory,
        deviceName = deviceName ?? _defaultDevice();
 

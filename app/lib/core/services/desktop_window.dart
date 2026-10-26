@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui' show AppExitResponse;
 
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tray_manager/tray_manager.dart';
 import 'package:window_manager/window_manager.dart';
@@ -20,9 +21,24 @@ import 'app_services.dart';
 /// - «Esci» con una registrazione in corso chiede Salva / Elimina / Annulla;
 /// - se il sistema chiude l'app (spegnimento, disconnessione) la
 ///   registrazione in corso si salva prima di uscire.
+///
+/// Windows: la finestra sparisce appena si preme la X (la nasconde il
+/// runner, `windows/runner/flutter_window.cpp`), il resto della chiusura
+/// (salvataggi, icona dell'area di notifica, database, motore) continua
+/// dietro. L'app dice al runner com'è finita ([finestraChannel]):
+/// `nascosta` (resta nell'area di notifica) o `uscita` (si chiude: una copia
+/// avviata intanto aspetta che finisca invece di passarle gli argomenti).
+/// Vedi docs/registratore.md.
 class DesktopWindow with WindowListener, TrayListener {
-  DesktopWindow(this._s);
+  DesktopWindow(this._s, {bool? windows, MethodChannel? channel})
+    : _windows = windows ?? Platform.isWindows,
+      _channel = channel ?? const MethodChannel(finestraChannel);
   final AppServices _s;
+  final bool _windows;
+  final MethodChannel _channel;
+
+  /// Canale della finestra nel runner di Windows.
+  static const finestraChannel = 'io.github.simomagnus.universitynotes/finestra';
 
   static bool get supported =>
       Platform.isWindows || Platform.isMacOS || Platform.isLinux;
@@ -31,6 +47,7 @@ class DesktopWindow with WindowListener, TrayListener {
   bool _inTray = false;
   bool _hidden = false;
   bool? _menuPaused;
+  bool _quitting = false;
 
   Future<void> init() async {
     await windowManager.ensureInitialized();
@@ -39,17 +56,58 @@ class DesktopWindow with WindowListener, TrayListener {
     trayManager.addListener(this);
     _s.recorder.addListener(_recorderChanged);
     _lifecycle = AppLifecycleListener(
-      onExitRequested: () async {
-        await _saveRecording();
-        return AppExitResponse.exit;
-      },
+      onExitRequested: onExitRequested,
       // tornando in primo piano si disegna subito un frame (niente nero)
       onShow: _redraw,
       onResume: _redraw,
     );
   }
 
+  /// Il motore chiede se uscire. Su Windows arriva da qui la X della
+  /// finestra (il motore la intercetta e la rimanda a [onWindowClose] solo
+  /// con «exit»): con una registrazione in corso la finestra va nell'area di
+  /// notifica e l'app resta aperta, come con [onWindowClose]. Sugli altri
+  /// sistemi è l'uscita dall'app (Cmd+Q, spegnimento): la registrazione si
+  /// salva prima.
+  @visibleForTesting
+  Future<AppExitResponse> onExitRequested() async {
+    trace('onExitRequested');
+    if (_windows && _s.recorder.active && !_quitting) {
+      await _toTray();
+      return AppExitResponse.cancel;
+    }
+    await _saveRecording();
+    return AppExitResponse.exit;
+  }
+
+  /// Avviso al runner di Windows (nessun effetto altrove e nei test).
+  Future<void> _tellRunner(String method) async {
+    if (!_windows) return;
+    try {
+      await _channel
+          .invokeMethod<void>(method)
+          .timeout(const Duration(seconds: 2));
+    } catch (e) {
+      debugPrint('Finestra: «$method» non arrivato al runner: $e');
+    }
+  }
+
   void _redraw() => WidgetsBinding.instance.scheduleForcedFrame();
+
+  /// Traccia dei tempi per le misure (stesso file del runner di Windows,
+  /// solo con la variabile d'ambiente UNINOTES_TRACCIA_FINESTRA).
+  static void trace(String what) {
+    final path = Platform.environment['UNINOTES_TRACCIA_FINESTRA'];
+    if (path == null || path.isEmpty) return;
+    try {
+      final ms = DateTime.now().microsecondsSinceEpoch / 1000;
+      File(path).writeAsStringSync(
+        '${ms.toStringAsFixed(3)} $pid dart: $what\n',
+        mode: FileMode.append,
+        flush: true,
+      );
+    } catch (_) {}
+  }
 
   @override
   void onWindowRestore() => _redraw();
@@ -81,18 +139,36 @@ class DesktopWindow with WindowListener, TrayListener {
 
   @override
   Future<void> onWindowClose() async {
-    if (_s.recorder.active) {
-      await _showTray();
-      await windowManager.hide();
-      _hidden = true;
-      await _s.reminders.recordingNotice(
-        'UniNotes continua a registrare',
-        'La registrazione di ${_s.recorder.courseName ?? 'questa lezione'} '
-            'va avanti: trovi UniNotes nell\'area di notifica.',
-      );
+    trace('onWindowClose');
+    if (_s.recorder.active && !_quitting) {
+      await _toTray();
     } else {
       await _quit();
     }
+  }
+
+  /// X con una registrazione in corso: finestra nascosta, icona nell'area di
+  /// notifica e avviso.
+  Future<void> _toTray() async {
+    try {
+      await _showTray();
+    } catch (e) {
+      // niente icona (area di notifica non disponibile): senza la finestra
+      // non si potrebbe più tornare alla registrazione, quindi resta (su
+      // Windows il runner l'ha già nascosta alla X: si rimostra)
+      debugPrint('Icona dell\'area di notifica non mostrata: $e');
+      await _tellRunner('nascosta');
+      await windowManager.show();
+      return;
+    }
+    await windowManager.hide();
+    _hidden = true;
+    await _tellRunner('nascosta');
+    await _s.reminders.recordingNotice(
+      'UniNotes continua a registrare',
+      'La registrazione di ${_s.recorder.courseName ?? 'questa lezione'} '
+          'va avanti: trovi UniNotes nell\'area di notifica.',
+    );
   }
 
   Future<void> _setMenu() async {
@@ -185,7 +261,13 @@ class DesktopWindow with WindowListener, TrayListener {
   }
 
   /// Uscita definitiva: la registrazione ancora in corso si salva prima.
+  /// Su Windows la finestra sparisce subito ([_tellRunner] `uscita`) e il
+  /// resto continua dietro.
   Future<void> _quit() async {
+    if (_quitting) return;
+    _quitting = true;
+    trace('_quit');
+    await _tellRunner('uscita');
     await _saveRecording();
     // un'icona che non si toglie (area di notifica del sistema bloccata)
     // non deve impedire l'uscita: con la chiusura bloccata la finestra non
@@ -197,6 +279,17 @@ class DesktopWindow with WindowListener, TrayListener {
     }
     _s.recorder.removeListener(_recorderChanged);
     _lifecycle?.dispose();
+    // scritture del database ancora in corso (sincronizzazione, salvataggi)
+    // finite prima di chiudere: le operazioni sulla connessione vanno in
+    // fila, quindi una transazione vuota arriva dopo tutte quelle avviate
+    try {
+      await _s.database.db
+          .transaction<void>((_) async {})
+          .timeout(const Duration(seconds: 5));
+    } catch (e) {
+      debugPrint('Database non svuotato in uscita: $e');
+    }
+    trace('_quit: destroy');
     await windowManager.setPreventClose(false);
     await windowManager.destroy();
   }

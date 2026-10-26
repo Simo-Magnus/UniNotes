@@ -304,7 +304,7 @@ void main() {
   group('file temporanei rimasti', () {
     test('le cartelle di lavoro vecchie si tolgono, quelle recenti e quella '
         'dell\'audio eliminato a metà no', () async {
-      final stale = Directory(p.join(tmp.path, 'whisper_old'))..createSync();
+      final stale = Directory(p.join(tmp.path, 'whisper_a1b2c3d4'))..createSync();
       File(p.join(stale.path, 'audio.wav')).writeAsStringSync('x');
       final live = Directory(p.join(tmp.path, 'uninotes_live_old'))
         ..createSync();
@@ -323,7 +323,7 @@ void main() {
       expect(trash.existsSync(), isTrue);
       expect(other.existsSync(), isTrue);
       // e quelle appena create restano (un lavoro in corso)
-      final fresh = Directory(p.join(tmp.path, 'whisper_fresh'))..createSync();
+      final fresh = Directory(p.join(tmp.path, 'whisper_f2e5d6c7'))..createSync();
       await clearTempFiles(temp: tmp);
       expect(fresh.existsSync(), isTrue);
     });

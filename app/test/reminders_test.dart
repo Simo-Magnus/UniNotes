@@ -515,6 +515,92 @@ void main() {
     });
   });
 
+  test('dati del widget: fino a 6 prove, quante sono in tutto', () {
+    final agenda = [
+      for (var i = 1; i <= 9; i++)
+        examItem(i, DateTime(2027, 1, 4 + i * 2), subject: 'Corso $i'),
+    ];
+    final p = widgetPayload(agenda, now);
+    final exams = p['exams'] as List;
+    // il widget grande ne mostra 6, gli altri quante ne stanno (1 nel 2×2,
+    // 3 nel 4×2): nel JSON ce ne sono sempre fino a 6, più il totale per il
+    // «+N»
+    expect(exams.length, kWidgetMaxExams);
+    expect(kWidgetMaxExams, 6);
+    expect(p['total'], 9);
+    expect(p['version'], 2);
+    expect(exams.map((e) => (e as Map)['route']), [
+      for (var i = 1; i <= 6; i++) 'prova:$i',
+    ]);
+    // in ordine di data, con i giorni mancanti (oggi è il 5 gennaio 2027)
+    expect(exams.map((e) => (e as Map)['days']), [1, 3, 5, 7, 9, 11]);
+    expect((exams[3] as Map)['daysLabel'], 'Tra 7 giorni');
+    // due prove: niente righe vuote, totale 2
+    final two = widgetPayload(agenda.take(2).toList(), now);
+    expect((two['exams'] as List).length, 2);
+    expect(two['total'], 2);
+    // le sessioni d'esame non contano
+    final withSession = widgetPayload([
+      AgendaItem(
+        key: 'sessione-y',
+        kind: AgendaKind.session,
+        title: 'Inizio sessione',
+        subject: 'Sessione',
+        date: DateTime(2027, 1, 6),
+      ),
+      ...agenda.take(1),
+    ], now);
+    expect(withSession['total'], 1);
+  });
+
+  test('stato della registrazione per il widget «Registra lezione»', () {
+    expect(recordingWidgetState(active: false), {
+      'state': 'idle',
+      'paused': false,
+      'elapsedMs': 0,
+      'course': '',
+    });
+    expect(
+      recordingWidgetState(
+        active: true,
+        elapsed: const Duration(minutes: 3, seconds: 2),
+        course: 'Analisi I',
+      ),
+      {
+        'state': 'recording',
+        'paused': false,
+        'elapsedMs': 182000,
+        'course': 'Analisi I',
+      },
+    );
+    final paused = recordingWidgetState(
+      active: true,
+      paused: true,
+      elapsed: const Duration(seconds: 5),
+      course: 'Fisica',
+    );
+    expect(paused['state'], 'paused');
+    expect(paused['paused'], isTrue);
+    // un tempo negativo (orologio cambiato) non arriva al cronometro
+    expect(
+      recordingWidgetState(
+        active: true,
+        elapsed: const Duration(seconds: -4),
+      )['elapsedMs'],
+      0,
+    );
+    // ferma: niente corso né tempo, anche se passati
+    expect(
+      recordingWidgetState(
+        active: false,
+        paused: true,
+        elapsed: const Duration(hours: 1),
+        course: 'Fisica',
+      ),
+      {'state': 'idle', 'paused': false, 'elapsedMs': 0, 'course': ''},
+    );
+  });
+
   test('dati del widget: prossime 3 prove con i giorni mancanti', () {
     final agenda = [
       AgendaItem(
@@ -531,11 +617,14 @@ void main() {
     ];
     final p = widgetPayload(agenda, now);
     final exams = p['exams'] as List;
-    expect(exams.length, 3);
+    // la sessione non conta: le 4 prove, tutte nel JSON (fino a 6)
+    expect(exams.length, 4);
+    expect(p['total'], 4);
     expect(exams.map((e) => (e as Map)['daysLabel']), [
       'Oggi',
       'Domani',
       'Tra 10 giorni',
+      'Tra 15 giorni',
     ]);
     final first = exams.first as Map;
     expect(first['route'], 'prova:1');

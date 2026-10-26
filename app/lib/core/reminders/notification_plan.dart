@@ -444,6 +444,11 @@ class AppRoutes {
   static const links = 'sezione:Collegamenti';
   static const settings = 'sezione:Impostazioni';
   static const record = 'registra';
+
+  /// Widget «Registra lezione» (Android): apre il registratore e avvia
+  /// subito la registrazione, poi torna alla schermata Home. Il lato nativo
+  /// la accetta solo dai widget dell'app (WidgetSupport.routeOf).
+  static const recordStart = 'registra:avvia';
   static const focus = 'focus';
   static const review = 'recensione';
   static const donate = 'sostegno';

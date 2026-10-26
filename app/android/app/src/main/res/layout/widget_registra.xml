@@ -1,34 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Widget «Registra lezione» (1×1): apre l'app nel registratore. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget_record_root"
+<!-- Widget «Registra lezione», fermo: il pulsante arancione dell'app (tondo
+     con il microfono nel riquadro stretto, pillola «Registra lezione» negli
+     altri). Il tocco avvia subito la registrazione (RecordWidget.kt). -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/widget_background"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="6dp">
+    android:clipToOutline="true"
+    android:contentDescription="@string/widget_registra_avvia"
+    android:padding="8dp">
 
-    <FrameLayout
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/widget_record_button">
-
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/widget_registra_nome"
-            android:src="@drawable/ic_widget_mic" />
-    </FrameLayout>
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/record_icon_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:fontFamily="sans-serif-medium"
-        android:maxLines="1"
-        android:text="@string/widget_registra_testo"
-        android:textColor="@color/widget_text"
-        android:textSize="11sp" />
-</LinearLayout>
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/record_icon_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/widget_record_button"
+            android:contentDescription="@string/widget_registra_avvia">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_widget_mic" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/record_icon_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/widget_registra_testo"
+            android:textColor="@color/widget_text"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/record_pill"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/widget_record_pill"
+        android:contentDescription="@string/widget_registra_avvia"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="14dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_widget_mic" />
+
+        <TextView
+            android:id="@+id/record_pill_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/widget_registra_nome"
+            android:textColor="@color/widget_on_record"
+            android:textSize="14sp" />
+    </LinearLayout>
+</FrameLayout>

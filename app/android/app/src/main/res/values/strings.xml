@@ -2,9 +2,24 @@
 <resources>
     <!-- Widget della schermata Home -->
     <string name="widget_prossime_prove_nome">Prossime prove</string>
-    <string name="widget_prossime_prove_descrizione">Le prossime tre prove con i giorni che mancano. Tocca una prova per aprirla.</string>
+    <string name="widget_prossime_prove_descrizione">Le prossime prove con i giorni che mancano (da una a sei, secondo la misura del widget). Tocca una prova per aprirla.</string>
     <string name="widget_prossime_prove_vuoto">Nessuna prova in programma</string>
+    <string name="widget_prossima_prova">Prossima prova</string>
     <string name="widget_registra_nome">Registra lezione</string>
-    <string name="widget_registra_descrizione">Apre UniNotes direttamente nella registrazione della lezione.</string>
+    <string name="widget_registra_descrizione">Un tocco avvia subito la registrazione della lezione; mentre registri mostra il tempo con Pausa, Salva ed Elimina.</string>
     <string name="widget_registra_testo">Registra</string>
+    <string name="widget_registra_avvia">Avvia la registrazione della lezione</string>
+    <string name="widget_registra_in_corso">In registrazione</string>
+    <string name="widget_registra_in_pausa">In pausa</string>
+    <string name="widget_registra_pausa">Pausa</string>
+    <string name="widget_registra_riprendi">Riprendi</string>
+    <string name="widget_registra_salva">Salva</string>
+    <string name="widget_registra_salva_descrizione">Ferma e salva la registrazione</string>
+    <string name="widget_registra_elimina">Elimina</string>
+    <string name="widget_registra_elimina_descrizione">Elimina la registrazione: va in Eliminati di recente</string>
+    <string name="widget_registra_conferma">Tocca di nuovo «Elimina» per eliminare</string>
+    <string name="widget_registra_conferma_breve">Tocca di nuovo per eliminare</string>
+    <string name="widget_registra_conferma_tasto">Conferma</string>
+    <string name="widget_registra_conferma_descrizione">Tocca di nuovo per spostare la registrazione in Eliminati di recente</string>
+    <string name="widget_registra_apri">Apri il registratore</string>
 </resources>

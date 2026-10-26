@@ -20,7 +20,8 @@ pluginManagement {
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
     id("com.android.application") version "9.1.0" apply false
-    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
+    // 2.4.20+: corregge GHSA-r937-wjx7-w2jp (cache di build di Kotlin)
+    id("org.jetbrains.kotlin.android") version "2.4.21" apply false
 }
 
 include(":app")

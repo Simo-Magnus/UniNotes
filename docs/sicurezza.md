@@ -364,3 +364,305 @@ resoconto del giro): protezione del ramo principale della repo pubblica,
 scansione dei segreti con push protection, avvisi e aggiornamenti di
 sicurezza di Dependabot, segnalazione privata delle vulnerabilità,
 restrizioni della chiave API di Google, regole dell'ambiente `github-pages`.
+
+## Giro 2 — App e codice nativo
+
+25/10/2026, dopo il commit 622300d5. Test: `app/test/sicurezza_g2_app_test.dart`.
+
+Ricontrollati i resti del giro 1 sull'app e sul codice nativo e, a occhi
+nuovi, le parti cambiate di recente: pila delle sezioni principali
+(`section_stack.dart`, `section_active.dart`), conferma dell'account del
+calendario e ricontrollo del caricamento su Android
+(`UniNotesCalendar.kt`), «Condividi → UniNotes» dopo la correzione del giro
+1 (`IncomingShare.kt`), programmi di Windows (`windows_tools.dart`).
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| iPhone, iPad e Mac: i refresh token di OneDrive, Google Drive e Outlook stavano nel portachiavi con l'accessibilità predefinita del pacchetto («quando sbloccato»), che li include nei backup del dispositivo ripristinabili su un altro iPhone o Mac | basso | Accessibilità «dopo il primo sblocco, solo questo dispositivo» per tutte le voci (`SecureCloudSecrets.storage`); al primo avvio le voci esistenti si riscrivono con lo stesso valore (`migrateAppleAccessibility`, prima che parta la sincronizzazione). Il pacchetto (flutter_secure_storage_darwin ≥ 0.4.3) legge le voci con qualsiasi accessibilità e, scrivendo, toglie la vecchia e aggiunge la nuova: se l'aggiunta fallisce il token si rimette com'era; con il portachiavi bloccato non cambia nulla e si riprova al prossimo avvio. Segno della migrazione fra le impostazioni del dispositivo (`keychain_this_device`, non nei backup) | test gruppo 1 (canale finto con il comportamento del pacchetto, versione minima nel `pubspec.lock`) |
+| Telefono: il ritorno dall'accesso a Microsoft o Google arriva a un'attività esportata, che qualsiasi app può aprire. Lo `state` sbagliato faceva già fallire l'accesso, ma il messaggio d'errore mostrava il testo `error_description` scritto da chi aveva aperto il ritorno (testo ingannevole dentro l'app) | basso | Con uno `state` diverso messaggio fisso (`foreignReturnMessage`), senza codice né testo presi dal ritorno | test gruppo 3 |
+| Sincronizzazione dei dati: un registro con un percorso assoluto nella colonna degli allegati collegati agli appunti si applicava così com'era: l'allegato apriva (e, come appunto, modificava) un file qualsiasi del disco | basso | Ammesso solo un percorso dentro la cartella degli appunti (o di ripiego) o uguale a quello che la riga ha già su questo dispositivo; altrimenti vuoto, senza toglierlo agli altri dispositivi | test gruppo 4 |
+| Filtri delle esclusioni arrivati dalla sincronizzazione o da un backup: il controllo dei giri sui crash fermava solo le forme più note di espressione regolare lenta (`(a+)+`, `(a\|aa)*`); altre (gruppi annidati, sequenze di gruppi con alternative, molti quantificatori, riferimenti all'indietro, testi lunghissimi) potevano bloccare l'app a ogni lettura del piano | basso | Si usano come espressioni solo quelle dal costo limitato (`ExclusionFilter.isSafePattern`: al massimo 200 caratteri, 2 quantificatori — 3 se ancorata all'inizio —, 5 gruppi non annidati, 30 alternative, nessun quantificatore su un gruppo complesso, nessun riferimento all'indietro); le altre come testo semplice; al massimo 100 filtri. Le caselle di Impostazioni e i filtri semplici restano espressioni | test gruppo 5 e test dei giri sui crash |
+| Le evidenziazioni dei PDF restavano dopo «Elimina tutti i dati» se non si sceglieva tutto | basso | Tolte con la voce «Libri e materiali scaricati, con le evidenziazioni», come nella sincronizzazione (casella «Libri e materiale didattico… con le evidenziazioni») | test gruppo 6 |
+| Pulizia delle cartelle temporanee: sul PC la cartella temporanea è di tutti i programmi dell'utente, e le cartelle `whisper_…` e `parakeet_…` di un altro programma si cancellavano come quelle dell'app | basso | Cartelle nuove con il prefisso `uninotes_`; quelle delle versioni precedenti si tolgono solo se il resto del nome è la parte casuale di `Directory.createTemp` (`isAppTempWorkDir`) | test gruppo 7 (anche un controllo su tutto `lib/`) |
+| Spazio libero su Windows: l'unità finiva nel testo del comando PowerShell | basso (3 caratteri, non sfruttabile in pratica) | Passata come variabile d'ambiente | test gruppo 8 (anche il comando vero sul PC) |
+| Lettore multimediale (media_kit, mpv): un file con estensione audio o video che in realtà è una scaletta di testo (M3U, PLS, CUE, EDL, ASX, XSPF, DASH, elenco di FFmpeg) si apriva come elenco e mpv seguiva gli indirizzi web che contiene, anche da un file locale: aprendo un allegato o una registrazione arrivati da altri l'app si collegava a un server scelto da chi aveva scritto il file | medio | Prima di aprire il lettore (registrazioni e lettore dei documenti) si guardano i primi 1024 byte: un testo non si apre (`MediaGuard`), un audio o video vero ha sempre byte di controllo nell'intestazione. FFmpeg da riga di comando (forma d'onda, conversioni) limita già gli indirizzi annidati ai file locali | test gruppo 9 |
+| «Apri in OneNote» non funzionava: lo schema `onenote:` non è fra quelli ammessi | — (funzione) | Apertura dedicata solo dalla pagina OneNote (`ExternalLauncher.openOneNote`): solo `onenote:` seguito da un indirizzo `https:` senza spazi; senza l'app OneNote si apre la pagina nel browser. L'elenco degli schemi di `openUrl` non cambia | test gruppo 10 |
+| La pulizia della chiave di Gemini delle versioni precedenti si segnava fatta anche con il portachiavi che non rispondeva: la chiave poteva restare per sempre | basso | Si segna solo dopo la cancellazione riuscita; altrimenti si riprova al prossimo avvio | test gruppo 11 e test aggiornato in `crash_r4_aggiornamento_test.dart` |
+| Script aperti con il programma predefinito: su Windows (e sul Mac con il «Python Launcher») un `.py` si esegue con un doppio clic se Python è installato; lo stesso per Perl, Ruby, Tcl, AutoHotkey, AutoIt, e la Guida HTML `.chm` può avviare script | medio | «Apri» rifiuta questi tipi sul PC e sul Mac, con un messaggio che indica «Apri con…» (l'app la sceglie lo studente, per esempio un editor) o il lettore di UniNotes, che li mostra come testo; nessun dialogo in più. Sul telefono nessuno si esegue e restano apribili. Aggiunti ai tipi sempre bloccati `.wsb`, `.tool`, `.fileloc`, `.inetloc`, `.appimage` | test gruppo 12 |
+| `WindowsTools`: una variabile `SystemRoot` relativa o di rete riportava la ricerca dei programmi in cartelle altrui | basso | Solo un percorso completo su un'unità locale, altrimenti `C:\Windows` | test gruppo 13 |
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Ritorno dell'accesso sul telefono** (`CallbackActivity` di
+  flutter_web_auth_2, esportata per forza perché la apre il browser): un
+  ritorno falso con l'accesso in corso lo fa fallire (lo `state` è casuale e
+  non lascia mai l'app, il `code` senza il verificatore PKCE non serve) e
+  l'app non resta bloccata (l'attesa finisce con l'errore, si riprova); senza
+  un accesso in corso non succede niente. L'attività non ha il filtro per i
+  testi condivisi.
+- **Sezioni nascoste**: restano in memoria ma non si disegnano (nemmeno
+  nell'anteprima delle app recenti), non sono lette dal lettore dello
+  schermo e non ricevono tocchi; cambiando corso, anno o profilo (anche con
+  «Elimina tutti i dati») si buttano.
+- **Conferma dell'account del calendario**: nome e tipo dell'account vengono
+  dal calendario scelto, letto dal fornitore del calendario di Android (il
+  backup salva solo l'id); la finestra è quella del sistema e il testo è
+  fisso. Il ricontrollo del caricamento richiede solo la sincronizzazione
+  dell'account del calendario e legge solo quanti eventi restano da caricare.
+- **«Condividi → UniNotes»**: il controllo dei fornitori dell'app toglie la
+  parte prima di «@» come Android e guarda il pacchetto del fornitore; un
+  fornitore con lo stesso prefisso di un'altra app si salta (nessun danno).
+- **Copia di file negli appunti di sistema su Windows**: i percorsi passano
+  già in una variabile d'ambiente.
+
+### Resti e cose da valutare nei giri successivi
+
+- **FileProvider di open_filex (`root-path`) non ristretto.** I file che
+  l'app apre su Android stanno in `app_flutter` (appunti e registrazioni),
+  `files` (libri, materiali, allegati) e `cache`. `app_flutter` non è sotto
+  nessuno dei percorsi standard di FileProvider: si raggiunge solo con
+  `root-path` (percorso fisso con il nome del pacchetto e l'utente 0, che non
+  vale nei profili di lavoro) o con `files-path path="../app_flutter"` (si
+  appoggia alla normalizzazione dei percorsi di androidx). Nessuna delle due
+  si può provare senza un telefono, e un errore renderebbe impossibile
+  aprire appunti e registrazioni con altre app. Il fornitore non è esportato
+  e dà accesso solo agli indirizzi concessi per un file scelto dallo
+  studente. Passi per chi lo prova: `app/android/app/src/main/res/xml/filepaths.xml`
+  con `files-path`, `cache-path` e `files-path name="flutter"
+  path="../app_flutter"` (stesso nome di risorsa, sostituisce quella del
+  pacchetto); in `OpenWith.kt` l'indirizzo con
+  `androidx.core.content.FileProvider.getUriForFile` invece di `/root…`;
+  provare «Apri» e «Apri con…» di un PDF dei libri, di un appunto e di una
+  registrazione, anche in un profilo di lavoro, e «Condividi».
+- Lettore multimediale: in più si potrebbero passare a mpv le opzioni
+  `access-references=no` e un elenco di protocolli di FFmpeg con il solo
+  `file` per i file locali (da provare sui dispositivi: cambia la
+  configurazione del lettore).
+- I tipi di script già bloccati del tutto (`.js`, `.sh`, `.bat`, `.ps1`…)
+  potrebbero seguire la stessa regola dei `.py` («Apri con…» ammesso), utile
+  per i corsi di programmazione: decisione da prendere.
+
+### Per l'utente
+
+Nessuna azione esterna. Da provare su un dispositivo vero: su iPhone e Mac
+con OneDrive o Google Drive già collegati, aggiornare l'app e controllare
+che resti collegata (anche dopo un riavvio del telefono, prima e dopo lo
+sblocco, e con la sincronizzazione in background); «Apri in OneNote» su
+Windows, Mac, iPhone e Android con e senza l'app OneNote; aprire una
+registrazione e un video nel lettore; «Apri» e «Apri con…» di un `.py` su
+Windows.
+
+## Giro 2 — Repository, build, sito e database
+
+25/10/2026, dopo il commit 49f94255. Test: `app/test/sicurezza_g2_repo_test.dart`
+(controlli statici; quelli sui file della sola repo privata si saltano nella
+copia pubblica). Script: `python tools/db_builder/togli_email.py --verifica`
+(nessun indirizzo email personale nel database) e il controllo della copia
+pubblica con `--verifica` (repo privata).
+
+Ricontrollati: firma della build Android, download e dipendenze dei
+workflow, pagine del sito (anche quelle generate), testi del database
+copiati dalle pagine degli atenei, controllo della copia pubblica (falsi
+negativi), sintassi dei workflow dopo il giro 1 (PyYAML) ed espressioni
+`${{ }}` rimaste nei comandi.
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Build Android: senza la chiave nei secret (o con `key.properties` incompleto) la build di rilascio si firmava in silenzio con la chiave di debug, anche per la release dei tag `v*` e per l'AAB di Google Play. La chiave di debug del runner cambia a ogni esecuzione: un APK così non si aggiorna né con la build successiva né con quello firmato con la chiave vera (bisogna disinstallare e si perdono i dati dell'app sul telefono); una versione pubblicata così non avrebbe potuto ricevere aggiornamenti firmati | medio | Gradle si ferma se `UNINOTES_FIRMA_OBBLIGATORIA=1` e manca una chiave completa (alias, password, keystore esistente). Il workflow la rende obbligatoria per i tag `v*`, crea l'AAB solo con la chiave vera e pubblica la release solo con `firma=release`; l'«ultima-build» di prova resta possibile con la chiave di debug ma il titolo e la descrizione lo dicono, con l'avviso di esportare i dati prima di reinstallare | test gruppo «firma Android»; configurazione Gradle provata in locale con e senza firma obbligatoria |
+| Pagina per gli amministratori: il testo `error_description` del ritorno dal consenso Microsoft si mostrava così com'era nell'indirizzo; chiunque poteva mandare un link al sito del progetto con un messaggio a scelta (es. un finto invito a scrivere a un indirizzo) | basso | Si mostrano solo i codici di errore OAuth noti e il codice `AADSTS` (sole cifre) | test «amministratori» |
+| Selettore di Google Drive senza Content-Security-Policy (la pagina riceve il token di accesso nel frammento) | basso | Policy dedicata: script solo per impronta SHA-256 (quello della pagina) e da `apis.google.com`, riquadri, immagini e richieste solo verso Google, niente plugin, `base-uri` e moduli; a capo LF fissati in `.gitattributes` perché l'impronta resti valida | test «selettore di Google Drive»; in un browser il caricatore di Google e il riquadro del selettore si aprono senza violazioni della policy |
+| Testi del database con indirizzi email personali (caselle Gmail, Libero, Tiscali di docenti e copisterie) copiati dalle pagine degli atenei, nei file pubblici `corsi/`, `moduli/` e `per_corso/` | basso | Filtro nella build (`pulizia.senza_email_personali`: in `build_db.py`, `dividi_per_corso.py` e nell'unione dei moduli): nei testi dei libri l'indirizzo diventa «[indirizzo nella pagina dell'ateneo]», le righe di contatto lette come moduli o argomenti si tolgono; le caselle istituzionali restano. File esistenti corretti con `tools/db_builder/togli_email.py` (impronte di `meta.json` e file per corso rigenerati); nel controllo della copia pubblica un indirizzo personale nel database ora blocca la pubblicazione | test gruppo «database»; `togli_email.py --verifica` |
+| Controllo della copia pubblica: leggeva solo i file con un'estensione di testo nota; non vedeva SVG e altri testi con estensioni nuove, metadati di immagini e PDF, autore e testo dentro documenti Office/OpenDocument/EPUB, copie di database o registri (`.sqlite`, `.log`, …) e cartelle private dentro altre cartelle | basso | Ogni file si legge (i binari byte per byte, per i metadati in chiaro), le voci degli archivi ZIP si controllano, nuovi nomi vietati; un file troppo grande per il controllo blocca la copia | test «controllo della copia pubblica»; copia finta con 9 falle note (tutte trovate) e copia pubblica attuale (solo gli indirizzi del database, già corretti) |
+| `choco install innosetup` senza versione; modelli Whisper della prova di trascrizione scaricati dal ramo principale senza impronta; whisper.cpp della prova clonato per tag senza controllo del commit; `requirements.txt` del database senza versioni (pypdf con vulnerabilità note per PDF malformati, letti dalle pagine degli atenei) | basso | Inno Setup 6.7.1 fissato (avviso se la firma di `ISCC.exe` non è valida); modelli da una revisione fissa di Hugging Face con SHA-256 controllato e solo HTTPS; commit di whisper.cpp controllato; `requests==2.34.2`, `pypdf==6.21.2`, tolto `pdfplumber` (non usato) | test gruppo «download nei workflow» |
+| Plugin Gradle di Kotlin 2.4.0 (vulnerabilità della cache di build, GHSA-r937-wjx7-w2jp) | basso | 2.4.21 (stessa versione del linguaggio); la build Android la prova la build automatica | test «plugin Gradle di Kotlin» |
+| Pagine del sito: commenti nel sorgente che nominavano e descrivevano il servizio del contatore delle visite | basso | Commenti tolti dai modelli (`pagine_legali.py`, `genera_link_sito.py`) e dalle pagine scritte a mano; interruttore del conteggio rinominato `#toggle-conteggio` (l'indirizzo tecnico del contatore resta nel codice) | test «il sito non nomina il contatore» |
+
+Aggiunti anche `SECURITY.md` (segnalazioni private con GitHub, niente
+indirizzi personali) e, nel `.gitignore`, i file di lavoro della radice della
+repo privata.
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Espressioni `${{ }}` nei comandi dei workflow**: restano solo valori
+  interni (numero dell'esecuzione, versione calcolata dal job di test,
+  `matrix.shard`, `github.event_name`), non testi scelti da altri.
+- **Sintassi dei workflow**: i quattro file si leggono con PyYAML.
+- **Documenti di prova Office e OpenDocument** nella copia pubblica: autore
+  «UniNotes», nessun dato personale.
+- **Inno Setup preinstallato** nel runner di Windows: si usa quello, la
+  versione fissa vale solo quando manca.
+- **Numeri di telefono nel database**: sono di uffici e copisterie, scritti
+  dagli atenei nelle pagine degli insegnamenti; restano avvisi del controllo.
+
+### Resti e cose da valutare nei giri successivi
+
+- La cronologia della repo pubblica contiene ancora le versioni precedenti
+  dei file del database con quegli indirizzi (dati già pubblicati dagli
+  atenei): riscriverla non è proporzionato.
+- Il controllo dei binari cerca i metadati in chiaro: quelli compressi dentro
+  un PDF non si vedono.
+
+### Per l'utente
+
+- Secret della chiave di firma Android nella repo pubblica (vedi resoconto):
+  senza, l'«ultima-build» per Android usa una chiave di prova e una versione
+  `v*` non si pubblica.
+- Attivare la segnalazione privata delle vulnerabilità (Settings → Security)
+  perché il link di `SECURITY.md` funzioni.
+- Provare «Importa da Drive» dal telefono e dal PC dopo la pubblicazione del
+  sito (policy nuova del selettore).
+
+## Giro 3 — App e codice nativo
+
+26/10/2026, dopo i commit 2117650e e f8880f97 (giro di verifica). Test:
+`app/test/sicurezza_g3_app_test.dart` (Kotlin compilato a parte).
+
+Controllati: avvio della registrazione dal widget «Registra lezione» (rotta
+`registra:avvia` con il codice segreto, tutte le strade da cui una rotta
+arriva all'app su Android), ricevitore dei comandi della notifica e dei
+widget, ricevitori dei pacchetti registrati a runtime, allarmi e
+`PendingIntent` dei widget; finestra di Windows (canale `finestra`,
+proprietà `UniNotes.Chiusura`, attesa della copia precedente, copia
+dell'ultima immagine, traccia dei tempi, modalità di prova); migrazione del
+portachiavi; controllo delle impronte dei download; «Apri in OneNote».
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Android: la rotta `registra:avvia` (avvio del microfono) era protetta dal codice segreto solo sulla strada dei widget. flutter_local_notifications legge il «payload» di una notifica da qualsiasi intent con la sua azione arrivato a MainActivity, che è esportata (icona dell'app): un'altra app installata poteva far partire la registrazione senza il codice (notifica e indicatore del microfono visibili, app subito in background) | medio | Il tocco su una notifica non avvia mai il microfono: `registra:avvia` diventa `registra` (`RemindersService.notificationRoute`); nessuna notifica dell'app usa quella rotta | test gruppo 1 (rosso prima della correzione) |
+| Android: riaprendo UniNotes dalle app recenti dopo che il sistema aveva chiuso il processo, l'attività riceve di nuovo l'intent del tocco sul widget (con il codice giusto): la registrazione ripartiva da sola | medio | Con un intent riaperto dalle app recenti (`FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY`) o un'attività ricreata (`savedInstanceState`) la rotta diventa `registra` (`WidgetSupport.routeOf`, parametro `fresh`) | test gruppo 1 (controllo sul sorgente), Kotlin compilato |
+| Android 7–12: il ricevitore dei pulsanti di flutter_foreground_task è registrato senza `RECEIVER_NOT_EXPORTED` (esiste da Android 13) e controlla solo il pacchetto scritto nell'intent: un'altra app poteva mettere in pausa, salvare o eliminare (in «Eliminati di recente», senza il doppio tocco del widget) la registrazione in corso | basso | Dalla porta dei dati del servizio passano solo gli eventi del servizio e i pulsanti della notifica di riserva quando è davvero mostrata; «Elimina» solo dal canale nativo (ricevitore non esportato, doppio tocco) (`packageCommandAllowed`) | test gruppo 2 |
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Codice segreto dei widget**: 128 bit da `SecureRandom`, nelle
+  preferenze private dell'app (escluse da backup e trasferimento),
+  confrontato in tempo costante. Un'altra app non può leggere gli extra di
+  una `PendingIntent` (serve un permesso di sistema) né crearne una uguale a
+  nome dell'app; le `PendingIntent` sono immutabili, quindi chi le usa non
+  può cambiarle. Il launcher (scelto dallo studente come schermata Home) o
+  un'app a cui lo studente permette di ospitare widget può «toccare» il
+  widget come farebbe lo studente: è il funzionamento dei widget di
+  Android, e la registrazione resta visibile (notifica, indicatore del
+  microfono). Ruotare il codice non cambierebbe questo.
+- **Ricevitore della notifica e dei widget** (`RecordingCommandReceiver`):
+  dichiarato nel manifest non esportato, accetta solo comandi noti; nessun
+  ricevitore registrato a runtime dal codice dell'app. Gli allarmi dei
+  widget sono non urgenti, con `PendingIntent` immutabili ed esplicite.
+- **Dati dei widget sulla schermata Home**: nome delle prove e del corso in
+  registrazione, come già dichiarato; nessun voto o testo degli appunti.
+- **Windows, attesa della copia precedente**: un processo che tiene aperto il
+  mutex senza finestra ritarda l'avvio di al massimo 15 secondi, poi l'app
+  parte; bloccarla del tutto richiede un programma dell'utente stesso (che
+  potrebbe comunque chiuderla). Il canale `finestra` accetta solo `uscita`
+  e `nascosta` dall'app.
+- **Ultima immagine della finestra**: solo in memoria (bitmap GDI), tolta
+  dopo il ridisegno e alla chiusura; nulla su disco.
+- **Traccia `UNINOTES_TRACCIA_FINESTRA`**: scritta solo se la variabile
+  indica un file; contiene tempi, numero del processo e nomi degli eventi
+  della finestra, nessun dato dell'utente.
+- **Modalità di prova** (`UNINOTES_CARTELLA_PROVA`): costante di
+  compilazione (`String.fromEnvironment`), non leggibile da variabili
+  d'ambiente o argomenti; nessuna build automatica la imposta.
+- **Download** (whisper.cpp, ffmpeg, modelli): l'impronta si controlla sul
+  file completo `.part`, anche dopo una ripresa, prima di rinominarlo; un
+  file già presente è uno scaricato e controllato prima (o di una versione
+  precedente nella cartella dell'app, che solo l'utente può scrivere).
+- **Migrazione del portachiavi**: ripetibile senza danni (riscrive lo stesso
+  valore); il limite di 3 secondi non la interrompe, che finisce in
+  background. Un rinnovo del token nello stesso istante potrebbe al massimo
+  riportare il token precedente, che i due servizi accettano ancora.
+- **«Apri in OneNote»**: solo `onenote:https://…` senza spazi; il ripiego
+  nel browser passa dal controllo dei link.
+
+### Resti e cose da valutare nei giri successivi
+
+- FileProvider di open_filex (`root-path`) e opzioni più restrittive per il
+  lettore multimediale: invariati, da provare su un dispositivo vero (passi
+  nel giro 2). Il controllo dei file prima del lettore resta un controllo
+  sull'inizio del file: le opzioni del lettore sarebbero la seconda difesa.
+- `ExclusionFilter.isSafePattern`, `IncomingShare.kt`, percorsi di
+  `data_sync.dart` e `gunzipLimited` non sono cambiati dal giro 2 e qui
+  non sono stati ricontrollati a fondo.
+
+### Per l'utente
+
+Nessuna azione esterna. Da provare sul telefono (Android 12 e 14): avvio
+dal widget «Registra lezione», poi app chiusa dal sistema e riaperta dalle
+app recenti (deve aprire il registratore senza registrare); pulsanti della
+notifica della registrazione e del widget (Pausa, Salva, Elimina con doppio
+tocco); tocco sulle notifiche delle prove.
+
+## Giro 3 — Repository, build e resti
+
+26/10/2026, dopo i commit 2117650e e f8880f97 (giro di verifica). Test:
+`app/test/sicurezza_g3_repo_test.dart` (controlli statici; quelli sui file
+della sola repo privata si saltano nella copia pubblica). Prova del controllo
+della copia pubblica con una copia finta con 11 falle note (PDF con XMP e
+flusso di oggetti compressi, `.gz`, foglio Office con autore e cartella,
+percorsi personali, token): tutte trovate, nessun falso allarme sui casi
+ammessi.
+
+Ricontrollati: esportazione e controllo della copia pubblica (tempi e
+blocchi), workflow (espressioni nei comandi, Inno Setup, firma Android),
+Content-Security-Policy del selettore di Google Drive dopo l'esportazione,
+filtro degli indirizzi email del database, `SECURITY.md`, configurazione di
+Dependabot, esito delle ultime esecuzioni dei workflow della repo pubblica.
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Esportazione della copia pubblica ferma per ore a estrazione finita: `git archive` scriveva l'archivio in una pipe letta da `tarfile` e i due processi sono rimasti ad aspettarsi (git sull'ultimo blocco, Python in attesa della fine di git). Chi lanciava l'esportazione con una pipe dopo lo script (`… \| tail`) avrebbe pubblicato la copia anche dopo un errore, perché conta il codice d'uscita dell'ultimo comando | medio | L'archivio va in un file temporaneo (`git archive -o`) con un limite di tempo e si estrae da lì; git che fallisce o si blocca dà un errore. Codice d'uscita 1 anche per i riferimenti a file privati rimasti (prima solo stampati); il codice d'uscita è descritto nello script, da usare senza pipe | test «git archive in un file», «codice d'uscita 1»; esportazione completa in una cartella di prova: 66 s |
+| Controllo della copia pubblica lento (55 s solo il controllo, quasi tutto nelle espressioni sui circa 2 GB del database) | basso | Ogni file letto una volta e controllato sui byte (niente decodifica, niente seconda lettura dei binari), espressioni senza `\b` iniziale, indirizzi email cercati dalla «@», numeri di riga contati una volta, file controllati in parallelo: 7,5 s, stessi risultati | test «controllo veloce»; confronto prima/dopo sulla copia pubblica |
+| Metadati compressi dei PDF non controllati (XMP, autore nei flussi di oggetti) | basso | Flussi FlateDecode decompressi con zlib (limite per flusso e per file), contenuto dei `.gz`; autore di PDF, XMP, Office e OpenDocument ammesso solo vuoto, «UniNotes» o «Simo-Magnus» | test «metadati compressi dei PDF»; copia finta |
+| Percorsi con il nome dell'utente del computer dello sviluppatore nella copia pubblica (già pubblicati): la cartella di lavoro predefinita di tre adattatori dei semestri e la cartella del file salvata da Excel in due fogli di prova | basso | Adattatori: cartella dalla variabile `SEMESTRI_SP` o da un file locale escluso dal repository (`tools/db_builder/cartella_lavoro.txt`), altrimenti la cartella temporanea. Fogli di prova senza il percorso (`absPath`). Il controllo della copia blocca un percorso `Users`/`home` con un nome non generico (nel database solo avviso: link copiati dalle pagine degli atenei) | test «nessun percorso con il nome dell'utente», «fogli di prova»; controllo della copia |
+| Inno Setup scaricato in CI con Chocolatey: il pacchetto contiene l'installatore e non ne controlla l'impronta (scritta solo nel suo file di verifica) | basso | Installatore ufficiale della versione fissa dalla release di jrsoftware su GitHub, SHA-256 controllato prima di avviarlo (stesso valore pubblicato da GitHub per l'allegato e dal file di verifica del pacchetto) | test «Inno Setup» |
+| Workflow del database: numero dello shard e tipo di evento ancora scritti nel testo dei comandi | basso (valori interni) | Variabili d'ambiente del passo, come gli altri valori | test «database: valori interni» |
+| Controllo degli indirizzi email del database (`togli_email.py --verifica`) limitato a corsi, moduli e file per corso | basso | Anche sessioni, argomenti e file della cartella (il controllo della copia li vedeva già) | test «controllo del database» |
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Firma Android**: i nomi dei quattro secret coincidono nel controllo e
+  nella scrittura della chiave; con un tag `v*` senza secret il passo esce
+  con errore (e la release non parte, dipende dal job Android), un push
+  normale prosegue con la chiave di prova e lo dichiara. I filtri sui
+  percorsi non valgono per i tag.
+- **Selettore di Google Drive**: l'esportazione lascia il file con gli a capo
+  LF (attributo `eol=lf`, mentre gli altri file escono con CRLF per
+  l'impostazione di git del PC) e la repo pubblica salva LF; l'impronta dello
+  script coincide nel file del repository, nella copia esportata e nella
+  cartella pubblica. Le altre pagine usano `'unsafe-inline'` (nessun dato
+  preso dall'indirizzo finisce nel codice).
+- **Filtro degli indirizzi email**: nessun dominio istituzionale tolto per
+  errore (sono stati tolti solo indirizzi Gmail, Libero e Tiscali); il filtro
+  lavora su tutti i campi dei file, anche quelli nuovi; nei file pubblici
+  del database restano solo domini di atenei, ospedali ed editori.
+- **`SECURITY.md`**: link corretti, unico indirizzo quello pubblico
+  dell'assistenza.
+- **Dependabot**: è configurato solo nella repo privata, da cui vengono le
+  modifiche esportate: le sue pull request si uniscono lì e arrivano alla
+  pubblica con l'esportazione. Nella pubblica gli avvisi funzionano senza la
+  configurazione.
+- **Ultime esecuzioni della repo pubblica** (commit 49f94255): «App» e
+  «Pagina di download» riuscite; «Test trascrizione» fallita nel controllo
+  dei link dei modelli (il filtro dei silenzi è in un'altra repo di Hugging
+  Face), già corretto nel giro 2 e non ancora pubblicato; nessun errore dovuto
+  alle modifiche di sicurezza.
+- **Espressioni `${{ }}` rimaste nei comandi del workflow dell'app**: numero
+  dell'esecuzione e versione calcolata dal job di test (valori interni).
+
+### Resti e cose da valutare nei giri successivi
+
+- Database: una decina di link copiati dalle pagine degli atenei puntano a
+  file sul PC di chi ha scritto la pagina e ne contengono il nome utente
+  (avvisi del controllo della copia); si potrebbero togliere nella build.
+- La cronologia della repo pubblica contiene ancora i percorsi tolti in
+  questo giro (non sfruttabili; riscriverla non è proporzionato).
+- `togli_email.py --verifica` impiega più di un minuto (espressione con
+  ricerca all'indietro su tutto il testo): stessa tecnica del controllo della
+  copia se serve più veloce.
+
+### Per l'utente
+
+- Esportare la copia pubblica solo controllando il codice d'uscita dello
+  script (0 = pronta), senza pipe dopo il comando.
+- Nella repo pubblica tenere gli avvisi di Dependabot, non gli aggiornamenti
+  automatici (le loro pull request verrebbero sovrascritte dall'esportazione).

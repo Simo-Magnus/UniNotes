@@ -135,14 +135,10 @@
   }
   @media (prefers-reduced-motion: reduce) { summary::after { transition: none; } }
 </style>
-<!-- Visite contate in forma anonima con GoatCounter (senza cookie, paragrafo 10.3 dell'informativa): una sola
-     richiesta al contatore, nessuno script di terzi nella pagina. Si conta solo il percorso: i parametri del
-     ritorno dal consenso Microsoft (tenant, esito) non escono dalla pagina. Con #toggle-goatcounter in fondo
-     all'indirizzo il conteggio si spegne o si riaccende su questo browser. -->
 <script>
 (function () {
   try {
-    if (location.hash === '#toggle-goatcounter') {
+    if (location.hash === '#toggle-conteggio') {
       var spento = localStorage.getItem('skipgc') === 't';
       if (spento) localStorage.removeItem('skipgc'); else localStorage.setItem('skipgc', 't');
       alert(spento ? 'Conteggio delle visite riattivato su questo browser.' : 'Conteggio delle visite spento su questo browser.');
@@ -299,8 +295,16 @@
     document.getElementById("esito-testo").textContent = ok
       ? "Consenso concesso: gli studenti dell'ateneo possono collegare UniNotes al proprio account Microsoft. Grazie!"
       : "Consenso non concesso. Puoi riprovare con un account amministratore o usare Entra admin center (passo 2).";
-    document.getElementById("esito-dettaglio").textContent =
-      ok ? "" : (q.get("error_description") || q.get("error") || "").slice(0, 400);
+    // Solo codici noti: il testo di error_description lo sceglie chi ha creato
+    // il link (un messaggio inventato mostrato dal sito); dal testo si prende al
+    // massimo il codice AADSTS (solo cifre).
+    var noti = ["access_denied", "consent_required", "interaction_required", "invalid_request",
+      "invalid_client", "invalid_resource", "unauthorized_client", "server_error", "temporarily_unavailable"];
+    var codice = (q.get("error") || "").toLowerCase();
+    var aadsts = /^AADSTS(\d{5,7})\b/.exec(q.get("error_description") || "");
+    var dettaglio = noti.indexOf(codice) >= 0 ? "Codice: " + codice : "";
+    if (aadsts) dettaglio += (dettaglio ? " · " : "Codice: ") + "AADSTS" + aadsts[1];
+    document.getElementById("esito-dettaglio").textContent = ok ? "" : dettaglio;
     if (history.replaceState) history.replaceState(null, "", location.pathname);
   })();
 </script>
