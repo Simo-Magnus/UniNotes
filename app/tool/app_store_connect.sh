@@ -14,6 +14,13 @@
 #   chiave                        scrive la chiave .p8 (permessi 600) e la controlla
 #   esporta <archivio> <uscita> <metodo>
 #                                 firma nel cloud ed esporta (.ipa, .pkg, .app)
+#                                 (app-store-connect o release-testing, cioè
+#                                 «ad hoc» da Xcode 15.3)
+#   profilo <ipa>                 tipo, scadenza e numero di dispositivi del
+#                                 profilo incluso nell'IPA (senza gli UDID)
+#   manifesto <file> <bundle id> <versione> <build> <url ipa>
+#                                 manifest.plist per l'installazione da Safari
+#                                 (itms-services) di un IPA ad hoc
 #   carica <file> <ios|macos> <bundle id> <versione> <build>
 #                                 caricamento su App Store Connect (TestFlight)
 #   notarizza <file>              notarizzazione con la chiave API e staple
@@ -96,14 +103,37 @@ chiave() {
 esporta() {
   local archivio="$1" uscita="$2" metodo="$3"
   valida team
+  # nomi di Xcode 15.3 e successivi: app-store-connect (prima «app-store»),
+  # release-testing (prima «ad-hoc»)
+  case "$metodo" in
+    app-store-connect | release-testing) ;;
+    *)
+      errore "metodo di esportazione non previsto: $metodo"
+      exit 1
+      ;;
+  esac
   local f
   f="$(file_chiave)"
   [ -f "$f" ] || { errore "chiave API assente: manca il passo «chiave»"; exit 1; }
   mkdir -p "$TEMP_ASC"
   local opzioni="$TEMP_ASC/ExportOptions-$metodo.plist"
+  # Solo per App Store Connect: numero di build deciso dalla build
+  # (manageAppVersionAndBuildNumber falso) e simboli per i rapporti di crash.
+  # L'ad hoc (release-testing) non passa da App Store Connect: il profilo
+  # «ad hoc» gestito da Xcode contiene tutti i dispositivi registrati nel
+  # team, e senza dispositivi l'esportazione non riesce.
+  local solo_app_store=""
+  if [ "$metodo" = "app-store-connect" ]; then
+    solo_app_store="$(cat << 'SOLO'
+	<key>manageAppVersionAndBuildNumber</key>
+	<false/>
+	<key>uploadSymbols</key>
+	<true/>
+SOLO
+)"
+  fi
   # firma automatica con i certificati gestiti nel cloud di Apple: nessun
-  # certificato né profilo nei secret. Numero di build deciso dalla build
-  # (manageAppVersionAndBuildNumber falso), simboli per i rapporti di crash.
+  # certificato né profilo nei secret
   cat > "$opzioni" << FINE
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -117,10 +147,7 @@ esporta() {
 	<string>$APPLE_TEAM_ID</string>
 	<key>signingStyle</key>
 	<string>automatic</string>
-	<key>manageAppVersionAndBuildNumber</key>
-	<false/>
-	<key>uploadSymbols</key>
-	<true/>
+$solo_app_store
 </dict>
 </plist>
 FINE
@@ -133,6 +160,86 @@ FINE
     -authenticationKeyPath "$f" \
     -authenticationKeyID "$ASC_KEY_ID" \
     -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+}
+
+# Profilo incluso in un IPA: nome, scadenza e quanti dispositivi contiene
+# (un iPhone non incluso dà «Impossibile installare l'app»). Gli UDID non si
+# stampano: si contano soltanto.
+profilo() {
+  local ipa="$1"
+  [ -f "$ipa" ] || { errore "IPA non trovato: $ipa"; exit 1; }
+  local tmp="$TEMP_ASC/profilo"
+  rm -rf "$tmp"
+  mkdir -p "$tmp"
+  unzip -q -o "$ipa" 'Payload/*.app/embedded.mobileprovision' -d "$tmp"
+  local mp
+  mp="$(ls "$tmp"/Payload/*.app/embedded.mobileprovision | head -n 1)"
+  security cms -D -i "$mp" > "$tmp/profilo.plist"
+  local pb=/usr/libexec/PlistBuddy n
+  n="$("$pb" -c 'Print :ProvisionedDevices' "$tmp/profilo.plist" 2> /dev/null | grep -c '^ ' || true)"
+  echo "Profilo: $("$pb" -c 'Print :Name' "$tmp/profilo.plist" 2> /dev/null || echo '(senza nome)')"
+  echo "Scadenza del profilo: $("$pb" -c 'Print :ExpirationDate' "$tmp/profilo.plist" 2> /dev/null || echo '(assente)')"
+  echo "Dispositivi nel profilo: ${n:-0}"
+  if [ "${n:-0}" -eq 0 ]; then
+    echo "::warning title=Ad hoc::il profilo non contiene dispositivi: registra l'UDID dell'iPhone in developer.apple.com → Devices e rifai la build."
+  fi
+  rm -rf "$tmp"
+}
+
+# manifest.plist per itms-services: Safari lo legge e scarica l'IPA da <url
+# ipa> (HTTPS obbligatorio). Valori controllati prima di entrare nel file.
+manifesto() {
+  local file="$1" bundle="$2" versione="$3" url="$4"
+  if ! [[ "$bundle" =~ ^[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$ ]]; then
+    errore "bundle ID non valido per il manifest: $bundle"
+    exit 1
+  fi
+  if ! [[ "$versione" =~ ^[0-9]+(\.[0-9]+){0,2}$ ]]; then
+    errore "versione non valida per il manifest: $versione"
+    exit 1
+  fi
+  if ! [[ "$url" =~ ^https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~-]+)+\.ipa$ ]]; then
+    errore "indirizzo dell'IPA non valido per il manifest (serve https://…/….ipa): $url"
+    exit 1
+  fi
+  mkdir -p "$(dirname "$file")"
+  cat > "$file" << FINE
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>$url</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>$bundle</string>
+				<key>bundle-version</key>
+				<string>$versione</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>title</key>
+				<string>UniNotes</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
+FINE
+  if command -v plutil > /dev/null; then
+    plutil -lint "$file" > /dev/null
+  fi
+  echo "Manifest per l'installazione da Safari: $(basename "$file") → $url"
 }
 
 carica() {
@@ -210,11 +317,13 @@ case "$comando" in
   controlla) controlla "$@" ;;
   chiave) chiave ;;
   esporta) esporta "$@" ;;
+  profilo) profilo "$@" ;;
+  manifesto) manifesto "$@" ;;
   carica) carica "$@" ;;
   notarizza) notarizza "$@" ;;
   pulisci) pulisci ;;
   *)
-    echo "uso: $0 controlla|chiave|esporta|carica|notarizza|pulisci" >&2
+    echo "uso: $0 controlla|chiave|esporta|profilo|manifesto|carica|notarizza|pulisci" >&2
     exit 2
     ;;
 esac

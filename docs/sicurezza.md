@@ -937,3 +937,35 @@ delle notifiche); in più «Indietro» subito dopo il tocco sul widget
 - nessun certificato né profilo di distribuzione nei secret: la firma per l'App
   Store la fa il cloud di Apple con la chiave API (ruolo Admin, necessario per i
   certificati gestiti nel cloud).
+
+Ad hoc da Safari per gli iPhone registrati (26/10/2026, per gli iPhone fermi a
+iOS 15, dove l'app TestFlight non si installa): nel job `testflight`, dallo
+stesso archivio, un secondo `-exportArchive` con il metodo `release-testing`
+(nome di «ad-hoc» da Xcode 15.3) e il profilo ad hoc gestito da Xcode nel cloud,
+che contiene i dispositivi registrati nel team. Regole:
+
+- nessun secret in più (gli stessi tre del passo di esportazione, come
+  variabili d'ambiente); passo dentro `testflight == 'si'`, chiave cancellata
+  dallo stesso passo `if: always()`;
+- non bloccante: tutta la catena (esportazione, copia, manifest) sta nella
+  condizione di un `if` e un errore dà solo un avviso (`adhoc=no`); l'artefatto
+  si carica con `continue-on-error`, prima del caricamento su TestFlight, che
+  non ne dipende;
+- `manifesto` dello script controlla bundle ID, versione e indirizzo
+  (`https://…/….ipa`) prima di scriverli nel plist; `profilo` stampa nome,
+  scadenza e *numero* di dispositivi del profilo, mai gli UDID;
+- il job «ultima-build» aspetta `testflight` con `!cancelled()` ma richiede il
+  successo solo di Android, Windows, macOS e iOS non firmata: la release esce
+  anche senza IPA ad hoc; nessun permesso nuovo;
+- la pagina `sito/ios-prova/` non ha script (`script-src 'none'`), è `noindex` e
+  non è collegata dalla home; il suo manifest (`sito/ios-prova/manifest.plist`,
+  servito da GitHub Pages senza reindirizzamenti) punta all'indirizzo fisso
+  `releases/download/ultima-build/UniNotes-ios-adhoc.ipa`, che GitHub
+  reindirizza al file della release corrente. Il manifest della build
+  (`UniNotes-ios-adhoc-manifest.plist`, con la versione esatta) è un allegato
+  della release e serve come collegamento alternativo.
+
+Da sapere: un IPA ad hoc contiene il profilo con gli UDID dei dispositivi
+registrati e il certificato di distribuzione (nome del titolare dell'account
+sviluppatore); gli allegati della release sono pubblici, quindi chi scarica
+l'IPA può leggerli. Un UDID non dà accesso al telefono.

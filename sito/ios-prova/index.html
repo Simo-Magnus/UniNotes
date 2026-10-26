@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src https://uninotes.goatcounter.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<title>UniNotes per iPhone (versione di prova)</title>
+<meta name="description" content="Installazione da Safari della versione di prova di UniNotes, solo per gli iPhone registrati dallo sviluppatore.">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../fonts/ibm-plex-sans.css">
+<style>
+  :root { --bg: #02060f; --card: #0a1628; --text: #dcebf7; --muted: #9db4c8; --c2: #38BDF8; --line: #16304a; --o: #FF8A1F; }
+  html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.6 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: var(--c2); }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+  ol, ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  .torna { display: inline-block; margin-bottom: 20px; color: var(--muted); text-decoration: none; }
+  .riquadro { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 16px 0; }
+  .riquadro p { margin: 0 0 12px; }
+  .bottone { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 22px; border-radius: 22px;
+             background: linear-gradient(180deg, #FFB064 0%, #FF8A1F 52%, #E86F08 100%); color: #2a1300;
+             font-weight: 600; text-decoration: none; }
+  .nota { color: var(--muted); font-size: .95rem; }
+  details { margin: 12px 0; }
+  summary { cursor: pointer; color: var(--c2); }
+</style>
+</head>
+<body>
+<main>
+<a class="torna" href="../">← UniNotes</a>
+<h1>UniNotes per iPhone: versione di prova</h1>
+<p>Questa pagina installa l'ultima build di prova di UniNotes direttamente da Safari, senza TestFlight (utile per gli iPhone fermi a iOS 15, come l'iPhone 6s). UniNotes richiede iOS 15.6 o successivo.</p>
+
+<div class="riquadro">
+  <p><strong>Funziona solo sugli iPhone registrati dallo sviluppatore</strong> e solo aprendo questa pagina con <strong>Safari</strong>. Sugli altri iPhone l'installazione non riesce: per loro arriverà la versione su TestFlight e sull'App Store.</p>
+  <a class="bottone" href="itms-services://?action=download-manifest&amp;url=https://simo-magnus.github.io/UniNotes/ios-prova/manifest.plist">Installa UniNotes</a>
+</div>
+
+<h2>Come si installa</h2>
+<ol>
+<li>Apri questa pagina con <strong>Safari</strong> sull'iPhone (non con Chrome né dall'anteprima dei link di un'altra app).</li>
+<li>Tocca <strong>Installa UniNotes</strong> e conferma con <strong>Installa</strong>. L'icona compare nella schermata Home e si riempie mentre l'app si scarica (serve un po' di spazio libero e una connessione stabile).</li>
+<li><strong>iOS 15</strong>: non serve altro, apri l'app.<br>
+<strong>iOS 16 o successivo</strong>: le app di prova come questa si aprono solo con la <strong>Modalità sviluppatore</strong> attiva: <em>Impostazioni → Privacy e sicurezza → Modalità sviluppatore</em>, attivala e riavvia l'iPhone quando lo chiede. Se la voce non c'è ancora, prova prima ad aprire l'app: dopo l'avviso di iOS la voce compare.</li>
+</ol>
+<p class="nota">Non serve autorizzare lo sviluppatore in <em>Impostazioni → Generali → VPN e gestione dispositivi</em>: l'app è firmata con il certificato di distribuzione dell'Apple Developer Program, non con un Apple ID personale.</p>
+
+<h2>Aggiornare</h2>
+<p>Per avere una build più recente riapri questa pagina e tocca di nuovo <strong>Installa UniNotes</strong>: la nuova versione sostituisce quella installata e i dati dell'app restano. La firma di prova scade dopo circa un anno: a quel punto l'app non si apre più finché non installi una build più recente.</p>
+
+<h2>Se qualcosa non va</h2>
+<ul>
+<li><strong>«Impossibile installare l'app»</strong> (o «Impossibile scaricare l'app»): di solito l'iPhone non è tra i dispositivi registrati nella build. Se è stato registrato da poco, l'installazione funziona dalla build successiva alla registrazione.</li>
+<li><strong>Il pulsante non fa niente</strong>: la pagina non è aperta in Safari, oppure in questo momento la build di prova non è disponibile (si sta pubblicando quella nuova). Riprova tra qualche minuto.</li>
+<li><strong>«Impossibile connettersi a simo-magnus.github.io»</strong> o errori di rete: prova il collegamento alternativo qui sotto, che legge le stesse informazioni dalla pagina della release su GitHub.</li>
+</ul>
+<details>
+<summary>Collegamento alternativo</summary>
+<p><a href="itms-services://?action=download-manifest&amp;url=https://github.com/Simo-Magnus/UniNotes/releases/download/ultima-build/UniNotes-ios-adhoc-manifest.plist">Installa UniNotes (dalla release su GitHub)</a></p>
+</details>
+<details>
+<summary>Come trovare l'UDID dell'iPhone (per farlo registrare)</summary>
+<p>Collega l'iPhone al computer con il cavo. Su Windows apri l'app <em>Dispositivi Apple</em> (o iTunes), su Mac il Finder, e seleziona l'iPhone; tocca più volte la riga sotto il nome dell'iPhone (in iTunes il numero di serie) finché compare l'<strong>UDID</strong>, poi copialo con il tasto destro. L'UDID va registrato dallo sviluppatore nel suo account Apple Developer.</p>
+</details>
+</main>
+</body>
+</html>

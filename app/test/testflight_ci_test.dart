@@ -5,7 +5,9 @@ import 'package:flutter_test/flutter_test.dart';
 /// Caricamento su App Store Connect dalla build automatica, senza Mac
 /// (guida alla pubblicazione §6.4, §7.2 e §7.5): job «testflight» (iPhone e iPad) e
 /// «mac-app-store» (Mac), notarizzazione del DMG con la chiave API nel job
-/// «macos». Controlli statici sulle regole dei giri di sicurezza
+/// «macos», IPA ad hoc da installare con Safari sugli iPhone registrati
+/// (manifest itms-services, release «ultima-build», pagina sito/ios-prova/).
+/// Controlli statici sulle regole dei giri di sicurezza
 /// (docs/sicurezza.md): secret solo come variabili d'ambiente, chiave in un
 /// file temporaneo cancellato anche in caso di errore, job solo per main e
 /// l'avvio manuale, passi condizionati dai secret.
@@ -196,6 +198,161 @@ void main() {
     );
   });
 
+  group('ad hoc da Safari (iPhone registrati, sito/ios-prova/)', () {
+    final testo = job('testflight');
+    final elenco = passi(testo);
+    const ipaFisso =
+        'releases/download/ultima-build/UniNotes-ios-adhoc.ipa';
+    const bundle = 'io.github.simomagnus.universitynotes';
+
+    int indice(String s) => elenco.indexWhere((p) => p.contains(s));
+
+    test('stesso archivio, metodo release-testing, dopo l\'export per l\'App '
+        'Store e prima del caricamento', () {
+      final i = indice('id: adhoc');
+      expect(i, greaterThan(0));
+      final passo = elenco[i];
+      expect(
+        passo,
+        contains(
+          'esporta "\$RUNNER_TEMP/asc/Runner.xcarchive" "\$RUNNER_TEMP/asc/ios-adhoc" release-testing',
+        ),
+      );
+      expect(i, greaterThan(indice(' app-store-connect\n')));
+      expect(i, lessThan(indice('Caricamento su App Store Connect (TestFlight)')));
+      // un solo archivio: nessuna seconda compilazione
+      expect('xcodebuild archive -quiet'.allMatches(testo), hasLength(1));
+      expect(passo, contains(conSecret));
+      // nessun secret in più: la chiave .p8 resta solo nei due passi previsti
+      expect(passo, isNot(contains('ASC_KEY_P8_BASE64')));
+    });
+
+    test('export ad hoc non bloccante: senza dispositivi solo un avviso', () {
+      final passo = elenco[indice('id: adhoc')];
+      expect(passo, contains('if bash tool/app_store_connect.sh esporta '));
+      expect(passo, contains('echo "adhoc=si" >> "\$GITHUB_OUTPUT"'));
+      expect(passo, contains('echo "adhoc=no" >> "\$GITHUB_OUTPUT"'));
+      expect(passo, contains('::warning title=Ad hoc::'));
+      expect(passo, isNot(contains('exit 1')));
+      expect(passo, isNot(contains('::error')));
+      // ogni passaggio dentro la condizione di if (catena con &&)
+      final condizione = passo.substring(
+        passo.indexOf('if bash tool/app_store_connect.sh esporta '),
+        passo.indexOf('; then'),
+      );
+      for (final r in condizione.split('\n').skip(1)) {
+        expect(r.trimLeft(), startsWith('&& '), reason: r);
+      }
+      final artefatto = elenco[indice('name: uninotes-ios-adhoc')];
+      expect(
+        artefatto,
+        contains(
+          "if: steps.testflight.outputs.testflight == 'si' && steps.adhoc.outputs.adhoc == 'si'",
+        ),
+      );
+      expect(artefatto, contains('continue-on-error: true'));
+      expect(artefatto, contains('uses: actions/upload-artifact@'));
+      // la chiave si cancella dopo, sempre
+      expect(elenco.last, contains('if: always()'));
+    });
+
+    test('manifest della build: bundle ID e IPA fisso in HTTPS', () {
+      final passo = elenco[indice('id: adhoc')];
+      expect(
+        passo,
+        contains(
+          'manifesto "\$uscita/UniNotes-ios-adhoc-manifest.plist" $bundle "\$APP_VERSION" "https://github.com/\$GITHUB_REPOSITORY/$ipaFisso"',
+        ),
+      );
+      expect(passo, contains('cp "\$ipa" "\$uscita/UniNotes-ios-adhoc.ipa"'));
+      // diagnosi: tipo, scadenza e numero di dispositivi del profilo
+      expect(passo, contains('app_store_connect.sh profilo '));
+    });
+
+    test('«ultima-build» pubblica IPA e manifest senza dipendere da '
+        'TestFlight', () {
+      final ultima = job('ultima-build');
+      expect(
+        ultima,
+        contains('    needs: [android, windows, macos, ios, testflight]\n'),
+      );
+      expect(ultima, contains('!cancelled()'));
+      for (final j in ['android', 'windows', 'macos', 'ios']) {
+        expect(ultima, contains("needs.$j.result == 'success'"), reason: j);
+      }
+      expect(ultima, isNot(contains("needs.testflight.result == 'success'")));
+      expect(
+        ultima,
+        contains(
+          'cp dist/uninotes-ios-adhoc/UniNotes-ios-adhoc.ipa out/UniNotes-ios-adhoc.ipa',
+        ),
+      );
+      expect(
+        ultima,
+        contains(
+          'cp dist/uninotes-ios-adhoc/UniNotes-ios-adhoc-manifest.plist out/UniNotes-ios-adhoc-manifest.plist',
+        ),
+      );
+      expect(
+        ultima,
+        contains('          TESTFLIGHT_ESITO: \${{ needs.testflight.result }}\n'),
+      );
+      // l'ad hoc non entra nella release dei tag v*
+      expect(job('release'), isNot(contains('adhoc')));
+    });
+
+    test('manifest del sito: bundle ID, IPA in HTTPS, nessun reindirizzamento '
+        'per il manifest', () {
+      final m = read('../sito/ios-prova/manifest.plist');
+      String valore(String chiave) {
+        final r = RegExp(
+          '<key>$chiave</key>\\s*<string>([^<]+)</string>',
+        ).allMatches(m).map((x) => x[1]!).toList();
+        expect(r, hasLength(1), reason: chiave);
+        return r.single;
+      }
+
+      expect(valore('bundle-identifier'), bundle);
+      expect(valore('url'), 'https://github.com/Simo-Magnus/UniNotes/$ipaFisso');
+      expect(valore('title'), 'UniNotes');
+      expect(valore('bundle-version'), isNotEmpty);
+      expect(m, contains('<string>software-package</string>'));
+      expect(m, contains('<string>software</string>'));
+      // tutti gli indirizzi in HTTPS (il DOCTYPE di Apple non è un valore)
+      expect(m, isNot(contains('<string>http://')));
+    });
+
+    test('pagina di installazione: link itms-services, solo Safari, '
+        'non collegata dalla home', () {
+      final p = read('../sito/ios-prova/index.html');
+      expect(
+        p,
+        contains(
+          'href="itms-services://?action=download-manifest&amp;url=https://simo-magnus.github.io/UniNotes/ios-prova/manifest.plist"',
+        ),
+      );
+      // alternativa: il manifest della release, con la versione della build
+      expect(
+        p,
+        contains(
+          'href="itms-services://?action=download-manifest&amp;url=https://github.com/Simo-Magnus/UniNotes/releases/download/ultima-build/UniNotes-ios-adhoc-manifest.plist"',
+        ),
+      );
+      // ogni itms-services punta a un manifest in HTTPS
+      for (final l in RegExp(r'itms-services://[^"]*').allMatches(p)) {
+        expect(l[0], contains('&amp;url=https://'), reason: l[0]);
+        expect(l[0], endsWith('.plist'), reason: l[0]);
+      }
+      expect(p, contains('Safari'));
+      expect(p, contains('Modalità sviluppatore'));
+      expect(p, contains('iOS 15'));
+      expect(p, contains('<meta name="robots" content="noindex">'));
+      expect(p.toLowerCase(), isNot(contains('goatcounter.com/count')));
+      expect(read('../sito/index.html'), isNot(contains('ios-prova')));
+      expect(read('../sito/link/index.html'), isNot(contains('ios-prova')));
+    });
+  });
+
   group('Mac App Store', () {
     final testo = job('mac-app-store');
 
@@ -299,6 +456,42 @@ void main() {
       ]) {
         expect(script, contains(a), reason: a);
       }
+    });
+
+    test('esportazione: solo i metodi previsti, opzioni dell\'App Store '
+        'solo per l\'App Store', () {
+      expect(script, contains('    app-store-connect | release-testing) ;;'));
+      expect(script, contains('if [ "\$metodo" = "app-store-connect" ]; then'));
+      expect(script, contains('\$solo_app_store\n</dict>'));
+    });
+
+    test('manifest e profilo dell\'ad hoc: valori controllati, UDID mai '
+        'stampati', () {
+      expect(
+        script,
+        contains(r'[[ "$url" =~ ^https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~-]+)+\.ipa$ ]]'),
+      );
+      expect(
+        script,
+        contains(r'[[ "$bundle" =~ ^[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$ ]]'),
+      );
+      expect(script, contains(r'[[ "$versione" =~ ^[0-9]+(\.[0-9]+){0,2}$ ]]'));
+      for (final k in [
+        '<string>software-package</string>',
+        '<key>bundle-identifier</key>',
+        '<key>bundle-version</key>',
+        '<string>software</string>',
+        '<key>title</key>\n\t\t\t\t<string>UniNotes</string>',
+      ]) {
+        expect(script, contains(k), reason: k);
+      }
+      // gli UDID del profilo si contano soltanto
+      expect(
+        script,
+        contains(
+          "\"\$pb\" -c 'Print :ProvisionedDevices' \"\$tmp/profilo.plist\" 2> /dev/null | grep -c '^ '",
+        ),
+      );
     });
 
     test('caricamento: codice d\'uscita e testo di altool controllati', () {

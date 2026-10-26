@@ -610,7 +610,8 @@ jobs:
   # pull request; senza i quattro secret il job si ferma con un avviso. Build
   # per l'App Store: STORE=appstore e DONATIONS=none (linea guida 3.1.1).
   # Chiave, firma e caricamento: app/tool/app_store_connect.sh; passi per
-  # l'utente in guida alla pubblicazione §6.4.
+  # l'utente in guida alla pubblicazione §6.4. Dallo stesso archivio anche
+  # l'IPA ad hoc per gli iPhone registrati (installazione da Safari, facoltativa).
   testflight:
     name: iOS (TestFlight)
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -719,6 +720,52 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: bash tool/app_store_connect.sh esporta "$RUNNER_TEMP/asc/Runner.xcarchive" "$RUNNER_TEMP/asc/ios" app-store-connect
+      # Ad hoc per gli iPhone registrati nel team (developer.apple.com →
+      # Devices), da installare con Safari senza TestFlight (per gli iPhone
+      # fermi a iOS 15, dove l'app TestFlight non si installa): stesso
+      # archivio (stesse --dart-define, STORE=appstore: niente controllo degli
+      # aggiornamenti dal sito, che su iPhone non servirebbe), stessa versione
+      # e stesso numero di build (l'ad hoc non va su App Store Connect, nessun
+      # conflitto). Metodo «release-testing» (nome di «ad-hoc» da Xcode 15.3):
+      # firma nel cloud con il profilo ad hoc gestito da Xcode, che contiene i
+      # dispositivi registrati. Senza dispositivi l'esportazione non riesce:
+      # solo un avviso, il caricamento su TestFlight va avanti. IPA e manifest
+      # vanno nella release «ultima-build»; pagina di installazione
+      # sito/ios-prova/.
+      - name: Firma nel cloud di Apple (UniNotes-ios-adhoc.ipa per gli iPhone registrati, facoltativa)
+        id: adhoc
+        if: steps.testflight.outputs.testflight == 'si'
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APP_VERSION: ${{ needs.test.outputs.version }}
+        run: |
+          uscita="$RUNNER_TEMP/asc/adhoc"
+          # nella condizione di if ogni errore porta all'avviso, mai al
+          # fallimento del job
+          if bash tool/app_store_connect.sh esporta "$RUNNER_TEMP/asc/Runner.xcarchive" "$RUNNER_TEMP/asc/ios-adhoc" release-testing \
+            && ipa=$(ls "$RUNNER_TEMP"/asc/ios-adhoc/*.ipa | head -n 1) && [ -n "$ipa" ] \
+            && mkdir -p "$uscita" && cp "$ipa" "$uscita/UniNotes-ios-adhoc.ipa" \
+            && bash tool/app_store_connect.sh manifesto "$uscita/UniNotes-ios-adhoc-manifest.plist" io.github.simomagnus.universitynotes "$APP_VERSION" "https://github.com/$GITHUB_REPOSITORY/releases/download/ultima-build/UniNotes-ios-adhoc.ipa"; then
+            bash tool/app_store_connect.sh profilo "$uscita/UniNotes-ios-adhoc.ipa" || echo "::warning title=Ad hoc::profilo dell'IPA ad hoc non leggibile"
+            ls -l "$uscita"
+            echo "adhoc=si" >> "$GITHUB_OUTPUT"
+          else
+            rm -rf "$uscita"
+            echo "::warning title=Ad hoc::IPA ad hoc non creato (di solito nessun iPhone registrato in developer.apple.com → Devices: leggi l'errore di xcodebuild qui sopra). TestFlight non cambia; la pagina di installazione da Safari resta senza l'app di questa build."
+            echo "adhoc=no" >> "$GITHUB_OUTPUT"
+          fi
+      # l'artefatto lo pubblica il job «ultima-build»; un problema qui non
+      # ferma il caricamento su TestFlight
+      - name: IPA ad hoc e manifest per la release «ultima-build»
+        if: steps.testflight.outputs.testflight == 'si' && steps.adhoc.outputs.adhoc == 'si'
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: uninotes-ios-adhoc
+          retention-days: 3
+          path: ${{ runner.temp }}/asc/adhoc/
       - name: Caricamento su App Store Connect (TestFlight)
         if: steps.testflight.outputs.testflight == 'si'
         env:
@@ -890,11 +937,19 @@ jobs:
 
   # «Ultima build»: a ogni modifica del ramo principale una release di prova
   # (sempre la stessa, sostituita) con i file di tutte le piattaforme,
-  # scaricabili da chiunque senza account GitHub.
+  # scaricabili da chiunque senza account GitHub. Aspetta anche il job
+# «testflight» per l'IPA ad hoc (installazione da Safari sugli iPhone
+# registrati), ma non dipende dal suo esito: senza secret, senza dispositivi
+# registrati o con un errore di TestFlight la release esce lo stesso, senza
+# quell'IPA. Le altre build invece devono essere riuscite.
   ultima-build:
     name: Ultima build (release scaricabile)
-    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-    needs: [android, windows, macos, ios]
+    if: >-
+      !cancelled() && github.event_name != 'pull_request'
+      && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+      && needs.android.result == 'success' && needs.windows.result == 'success'
+      && needs.macos.result == 'success' && needs.ios.result == 'success'
+    needs: [android, windows, macos, ios, testflight]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -906,6 +961,8 @@ jobs:
         with:
           path: dist
       - name: File con nomi chiari
+        env:
+          TESTFLIGHT_ESITO: ${{ needs.testflight.result }}
         run: |
           mkdir out
           # arm64: quasi tutti i telefoni (stesso nome di prima, i link restano validi)
@@ -917,6 +974,15 @@ jobs:
           cp dist/uninotes-macos/uninotes-macos.zip out/UniNotes-macos.zip
           cp dist/uninotes-macos/UniNotes.dmg out/UniNotes.dmg
           cp dist/uninotes-ios-unsigned/uninotes-ios-unsigned.ipa out/UniNotes-ios-non-firmata.ipa
+          # ad hoc (job «testflight»): l'URL dell'IPA nei manifest è fisso,
+          # releases/download/ultima-build/UniNotes-ios-adhoc.ipa, e porta
+          # sempre all'IPA di questa release
+          if [ -f dist/uninotes-ios-adhoc/UniNotes-ios-adhoc.ipa ] && [ -f dist/uninotes-ios-adhoc/UniNotes-ios-adhoc-manifest.plist ]; then
+            cp dist/uninotes-ios-adhoc/UniNotes-ios-adhoc.ipa out/UniNotes-ios-adhoc.ipa
+            cp dist/uninotes-ios-adhoc/UniNotes-ios-adhoc-manifest.plist out/UniNotes-ios-adhoc-manifest.plist
+          else
+            echo "::warning title=Ad hoc::nessun IPA ad hoc in questa build (esito del job TestFlight: $TESTFLIGHT_ESITO): la pagina di installazione da Safari non funziona fino alla prossima build con l'IPA."
+          fi
       - name: Sostituisci la release «ultima-build»
         run: gh release delete ultima-build --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes || true
       - uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
@@ -936,6 +1002,7 @@ jobs:
             - **Android**: `UniNotes-android.apk` (quasi tutti i telefoni, processore a 64 bit) → apri il file sul telefono e consenti l'installazione.
               Telefoni vecchi a 32 bit: `UniNotes-android-32bit.apk`; Chromebook ed emulatori x86: `UniNotes-android-x86_64.apk`.
             - **iPhone/iPad**: `UniNotes-ios-non-firmata.ipa` → va firmata con il proprio account Apple (es. Sideloadly o AltStore).
+              `UniNotes-ios-adhoc.ipa` (se c'è) è firmata solo per gli iPhone di prova registrati dallo sviluppatore: sugli altri non si installa.
 
             Per togliere l'app con tutti i suoi dati (anche nel cloud e nel calendario): prima in UniNotes *Impostazioni → Privacy e informazioni → Elimina tutti i dati*, poi disinstalla l'app con il sistema.
 
