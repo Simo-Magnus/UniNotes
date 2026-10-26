@@ -209,7 +209,10 @@ class ExternalLauncher {
     // percorso relativo (libro con un percorso scritto a mano, arrivato da
     // un backup o da un'altra versione): si risolverebbe rispetto alla
     // cartella di lavoro del programma e «Apri cartella» aprirebbe quella
-    if (t.isEmpty || p.isRelative(t)) {
+    // (con le regole del sistema su cui gira l'app, che è quello che apre il
+    // file: «C:\…» arrivato da un PC è relativo su Android, Mac e Linux e lì
+    // aprirebbe la cartella di lavoro; «/…» su Windows è sull'unità corrente)
+    if (t.isEmpty || pathContext().isRelative(t)) {
       return 'Percorso incompleto (manca la cartella di partenza): non si '
           'può aprire.\n$path';
     }
@@ -225,6 +228,11 @@ class ExternalLauncher {
     }
     return null;
   }
+
+  /// Regole dei percorsi del sistema che apre i file (sostituibili nei test
+  /// per provare quelle dell'altro sistema).
+  @visibleForTesting
+  static p.Context Function() pathContext = () => p.context;
 
   static bool _desktop(TargetPlatform t) =>
       t == TargetPlatform.windows ||

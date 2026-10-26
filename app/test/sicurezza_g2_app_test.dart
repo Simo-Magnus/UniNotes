@@ -592,15 +592,24 @@ void main() {
   });
 
   group('12. script aperti con il programma predefinito', () {
-    tearDown(
-      () => ExternalLauncher.platform = () => defaultTargetPlatform,
-    );
+    tearDown(() {
+      ExternalLauncher.platform = () => defaultTargetPlatform;
+      ExternalLauncher.pathContext = () => p.context;
+    });
+
+    // regole dei percorsi del sistema simulato, non di quello che esegue i
+    // test (su Linux «C:\…» è un percorso relativo)
+    void simula(TargetPlatform t) {
+      ExternalLauncher.platform = () => t;
+      ExternalLauncher.pathContext =
+          () => t == TargetPlatform.windows ? p.windows : p.posix;
+    }
 
     test('sul PC e sul Mac «Apri» no, «Apri con…» sì; sul telefono sì', () {
       for (final t in [TargetPlatform.windows, TargetPlatform.macOS]) {
-        ExternalLauncher.platform = () => t;
+        simula(t);
         for (final f in [
-          r'C:\Corsi\Python\esercizio.py',
+          if (t == TargetPlatform.windows) r'C:\Corsi\Python\esercizio.py',
           '/Users/x/Corsi/esercizio.pyw',
           '/Users/x/Corsi/guida.chm',
           '/Users/x/Corsi/script.rb',
@@ -614,14 +623,14 @@ void main() {
           );
         }
       }
-      ExternalLauncher.platform = () => TargetPlatform.android;
+      simula(TargetPlatform.android);
       expect(
         ExternalLauncher.unsafePathReason('/data/x/esercizio.py'),
         isNull,
       );
       // i programmi veri restano bloccati anche con «Apri con…»
       for (final t in [TargetPlatform.windows, TargetPlatform.android]) {
-        ExternalLauncher.platform = () => t;
+        simula(t);
         for (final f in [
           r'C:\x\avvio.wsb',
           '/Users/x/a.tool',

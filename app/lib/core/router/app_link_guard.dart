@@ -12,11 +12,17 @@ const String kAppLinkScheme = 'uninotes';
 /// degli errori. Questo osservatore li dichiara gestiti: va aggiunto prima
 /// di `runApp`, perché gli osservatori sono interrogati in ordine e il primo
 /// che risponde sì ferma gli altri.
+///
+/// Anche tutti gli altri indirizzi: su Android un'altra app può aprire
+/// l'attività principale (esportata) con un indirizzo qualsiasi
+/// (`https://…/testo`), che Flutter passa al Navigator come percorso; l'app
+/// non ne ha, quindi l'unico effetto era un errore con il testo scelto da
+/// quell'app nel registro degli errori.
 class AppLinkGuard with WidgetsBindingObserver {
   @override
   Future<bool> didPushRouteInformation(
     RouteInformation routeInformation,
-  ) async => routeInformation.uri.scheme == kAppLinkScheme;
+  ) async => true;
 }
 
 final AppLinkGuard _guard = AppLinkGuard();

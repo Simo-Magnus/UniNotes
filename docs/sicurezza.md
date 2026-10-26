@@ -833,3 +833,82 @@ pulito: 9 s, prima 38 s con i soli indirizzi email).
   con quello corretto.
 - Per rifare la raccolta del database non serve altro: la build applica già i
   filtri nuovi.
+
+## Giro 5 — Conferma finale
+
+26/10/2026, dopo il commit 3ac0d823 (un solo controllo, con prove di
+aggiramento vere). Test: `app/test/sicurezza_g5_test.dart`.
+
+Prima la build automatica su Linux, ferma in due test che sul PC passavano;
+poi ricontrollate a occhi nuovi le correzioni del giro 4 (codice delle
+notifiche, limite dei testi dei filtri delle esclusioni, opzioni del lettore
+multimediale, nomi dei file condivisi) e guardate a fondo le parti che nessun
+giro aveva preso insieme: indirizzi e collegamenti verso l'app su tutti i
+sistemi, condivisione verso altre app e file temporanei, PDF esportati,
+appunti di sistema, lettore dello schermo nelle sezioni nascoste, notifiche e
+Live Activity sulla schermata di blocco.
+
+| Falla | Rischio | Correzione | Verifica |
+|---|---|---|---|
+| Build su Linux, test «script aperti con il programma predefinito»: il test usava un percorso di Windows (`C:\…`) anche simulando il Mac, e su Linux quel percorso è relativo. Una prima correzione nell'app (percorso completo «per Windows o per Unix») avrebbe riaperto un difetto già corretto: su Android, Mac e Linux un libro con un percorso del PC arrivato da un backup passava il controllo e «Apri» apriva la cartella di lavoro dell'app | basso (non pubblicata) | Il controllo resta con le regole del sistema su cui gira l'app, che è quello che apre il file (`ExternalLauncher.pathContext`, sostituibile nelle prove); il test simula le regole del sistema che prova | test gruppo 1 (`C:\…`, `D:x`, `C:relativo`, `\?\`, `\.\`, `//server` su ognuno dei due sistemi) e `sicurezza_g2_app_test.dart` gruppo 12 |
+| Build su Linux, prova a caso del registratore: «Indietro» arrivato quando la pagina in cima era stata appena aperta e non ancora disegnata (una pagina aperta dopo un fotogramma, come il registratore aperto da un widget o da una notifica, resta così fino al fotogramma dopo). In debug l'asserzione di Flutter `scope != null` (`ModalRoute.willPop`) ferma l'app; nella build pubblicata la pagina si chiudeva senza sentire i suoi `PopScope` | basso | `BackGuard` (installato prima di `runApp`, anche nella prova a caso): con la pagina in cima non ancora costruita l'«Indietro» passa al fotogramma successivo (al massimo 3 volte di fila) | test gruppo 2: lo stesso errore senza la guardia; con la guardia la pagina si chiude al fotogramma dopo e un `PopScope` che non vuole chiudersi viene rispettato |
+| Filtri delle esclusioni (giro 4): i testi si confrontavano solo sui primi 150 caratteri anche con i filtri delle Impostazioni (`inglese`, `\bOFA\b`, `facoltativ`…), che non hanno quantificatori e costano poco: un insegnamento con il nome lungo (nel database circa 190 nomi su 270.000 superano i 150 caratteri) e «Inglese» in fondo non era più escluso | basso (funzione) | Filtri senza quantificatori (testo semplice o espressioni come quelle delle Impostazioni) su tutto il testo, fino a 2.000 caratteri; quelli con quantificatori restano sui primi 150 (su 200 il caso peggiore supera già i 70 ms) | test gruppo 3; test del giro 4 sui tempi invariato (sotto i 50 ms) |
+| Su Android un'altra app può aprire l'attività principale (esportata) con un indirizzo qualsiasi: Flutter lo passava al Navigator come percorso e, non essendoci percorsi con nome, l'unico effetto era un errore con il testo scelto da quell'app nel registro degli errori (che ha un limite di dimensione e resta sul dispositivo) | basso | `AppLinkGuard` dichiara gestiti tutti gli indirizzi, non solo `uninotes://` (quelli veri li gestisce il codice nativo) | test gruppo 4 |
+
+### Falsi allarmi (controllati, nessuna correzione)
+
+- **Codice delle notifiche** (giro 4): 128 bit da `Random.secure`, nel
+  database dell'app, fra le impostazioni mai esportate né ripristinate e
+  fuori dall'elenco di quelle sincronizzate; su Android sta solo negli extra
+  delle `PendingIntent` (non negli extra della notifica, che le app con
+  l'accesso alle notifiche possono leggere) e nelle preferenze private del
+  pacchetto delle notifiche. Tocco all'avvio, tocco con l'app aperta e
+  pulsanti premuti ad app chiusa passano tutti dallo stesso controllo; senza
+  il codice si apre al massimo una schermata (prova, sezione, registratore
+  senza avviarlo).
+- **Lettore multimediale** (giro 4): l'app passa sempre un percorso locale
+  (`Uri.file`, con spazi e accenti codificati), mai un `content://`: i file
+  arrivati da altre app sono già copiati nell'app. Il file aperto lo legge
+  mpv, quindi l'elenco dei protocolli di FFmpeg non lo riguarda (da provare
+  comunque sui dispositivi, come scritto nel giro 4).
+- **Nomi dei file condivisi** (giro 4): un nome con caratteri di direzione del
+  testo (es. `U+202E`) può sembrare un PDF, ma «Apri» guarda i caratteri veri
+  e blocca i programmi.
+- **Collegamenti `uninotes://` su iPhone, iPad e Mac**: una pagina web o
+  un'altra app può aprirli, ma portano solo a una schermata; l'avvio della
+  registrazione dal widget c'è solo su Android, con il codice segreto; l'esito
+  del comando Focus cambia solo il messaggio mostrato. Windows: avviata da un
+  collegamento l'app parte senza argomenti (giro 1).
+- **Condivisione verso altre app**: si condividono solo i file scelti
+  (appunto, registrazione, trascrizione, file del lettore) con il loro titolo.
+  Su Android il pacchetto copia il file nella cache dell'app fino alla
+  condivisione successiva; «Elimina tutti i dati» svuota la cache.
+- **PDF esportati**: autore «UniNotes», titolo dell'appunto, nessun nome
+  utente né percorso.
+- **Appunti di sistema**: si scrivono solo su richiesta (Copia, prompt per
+  l'AI) e si leggono solo con la finestra della richiesta all'AI aperta.
+- **Lettore dello schermo**: le sezioni nascoste sono fuori dall'albero
+  dell'accessibilità (`Offstage`).
+- **Live Activity e notifiche sulla schermata di blocco**: nome
+  dell'insegnamento, tempo e stato della registrazione (indicatore voluto);
+  «Pausa» e «Salva» funzionano senza sbloccare come i pulsanti della notifica
+  di Android; le Live Activity non sono ancora nel progetto di Xcode.
+- **Altri percorsi da un altro sistema** (sincronizzazione, backup, cestino,
+  cartelle remote): si controllano con le regole del sistema su cui gira
+  l'app o senza dipendere dal sistema (nomi con `/`, `\` e `:` rifiutati), e
+  un percorso del PC sul telefono non è mai completo.
+
+### Esito
+
+Nessuna falla vera trovata in questo giro: i difetti corretti sono una
+regressione non pubblicata, un caso limite di Flutter, una regressione di
+funzione e un irrobustimento. Nessuna azione non voluta possibile per un'app
+terza, nessun file o dato manipolato che cambi qualcosa, nessun dato
+personale esposto: la caccia si chiude.
+
+### Per l'utente
+
+Nessuna azione esterna. Restano da provare su un dispositivo vero le voci dei
+giri precedenti (FileProvider di open_filex, lettore multimediale, pulsanti
+delle notifiche); in più «Indietro» subito dopo il tocco sul widget
+«Registra lezione» con l'app aperta.

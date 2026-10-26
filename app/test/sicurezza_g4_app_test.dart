@@ -357,10 +357,18 @@ void main() {
       for (final c in [...costly, ...evil]) {
         final f = ExclusionFilter([c]);
         for (final t in texts) {
-          final sw = Stopwatch()..start();
-          f.isExcluded([t]);
+          // il migliore di tre: la prima volta l'espressione si compila per
+          // il testo e con la suite completa in parallelo il PC è carico
+          // (una volta 62 ms per «.*(a|a).*x», poi pochi ms); il blocco che
+          // si cerca qui dura secondi a ogni confronto
+          var best = 1 << 30;
+          for (var i = 0; i < 3; i++) {
+            final sw = Stopwatch()..start();
+            f.isExcluded([t]);
+            best = best < sw.elapsedMilliseconds ? best : sw.elapsedMilliseconds;
+          }
           expect(
-            sw.elapsedMilliseconds,
+            best,
             lessThan(50),
             reason: '$c su «${t.substring(0, 3)}…»',
           );

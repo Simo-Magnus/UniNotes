@@ -18,6 +18,7 @@ import 'package:university_notes/core/catalog/path_setup.dart';
 import 'package:university_notes/core/constants/enums.dart';
 import 'package:university_notes/core/database/app_database.dart';
 import 'package:university_notes/core/reminders/reminders_service.dart';
+import 'package:university_notes/core/router/back_guard.dart';
 import 'package:university_notes/core/services/app_services.dart';
 import 'package:university_notes/core/services/book_library.dart';
 import 'package:university_notes/core/services/whisper_service.dart';
@@ -1993,6 +1994,9 @@ Future<void> runMonkey(
   final setup = (await t.runAsync(() => prepareScenario(sc, Random(seed))))!;
   final s = setup.services;
   final monkey = Monkey(t, seed, setup);
+  // come in main(): «Indietro» su una pagina non ancora disegnata
+  installBackGuard(appNavigatorKey);
+  addTearDown(removeBackGuard);
   final messenger =
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
   messenger.allMessagesHandler = setup.channels.handle;
