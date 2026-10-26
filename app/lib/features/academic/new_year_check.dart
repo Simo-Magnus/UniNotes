@@ -8,6 +8,7 @@ import '../../core/catalog/catalog_service.dart';
 import '../../core/feedback/app_modals.dart';
 import '../../core/services/app_services.dart';
 import '../../repositories/settings_repository.dart';
+import '../../utils/dates.dart';
 import '../../widgets/catalog_download.dart';
 import '../../widgets/common.dart';
 import 'year_grades_screen.dart';
@@ -141,7 +142,7 @@ Future<void> checkCatalogUpdate(BuildContext context) async {
   if (!context.mounted) return;
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text('Nuova versione del database ($v).'),
+      content: Text('Nuova versione del database (${formatDmyString(v)}).'),
       duration: const Duration(seconds: 8),
       action: AppSnackBarAction(
         label: 'Aggiorna',

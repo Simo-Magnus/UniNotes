@@ -31,7 +31,7 @@ import sys
 import time
 
 from percorso_classico import scegli as percorso_classico
-from pulizia import senza_email_personali, senza_parametri_di_accesso, senza_percorsi_locali
+from pulizia import nomi_insegnamenti, senza_email_personali, senza_parametri_di_accesso, senza_percorsi_locali
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DB = ROOT / "database"
@@ -73,6 +73,9 @@ def dividi(uid: str) -> dict | None:
     doc = senza_email_personali(json.loads(src.read_text(encoding="utf-8")))
     doc = senza_percorsi_locali(doc)
     doc = senza_parametri_di_accesso(doc)
+    # nomi degli insegnamenti senza CFU e codici (come l'ultimo passo di build_db.py), anche se
+    # corsi/<ateneo>.json non è ancora stato ricostruito con la pulizia: cambia solo il testo
+    nomi_insegnamenti(doc.get("corsi") or [])
     mod_path = DB / "moduli" / f"{uid}.json"
     moduli = json.loads(mod_path.read_text(encoding="utf-8")).get("insegnamenti", {}) if mod_path.exists() else {}
     moduli = {k: senza_email_personali(v) for k, v in moduli.items()}

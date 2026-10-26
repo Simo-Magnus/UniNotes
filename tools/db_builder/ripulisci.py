@@ -121,11 +121,14 @@ def main() -> int:
             continue
         corsi = d.get("corsi") or []
         esiti: list = []
+        # insegnamenti già nel file: restano distinti anche se hanno lo stesso nome (l'app collega i
+        # dati dello studente al loro id); si uniscono solo quelli ricreati qui dalle varianti
+        esistenti = {i.get("id") for c in corsi for i in c.get("insegnamenti") or []}
         r = pulizia.rivedi_varianti(corsi, originali(uid), esiti)
         v = pulizia.varianti_lingua(corsi, esiti)
         v += pulizia.varianti_lingua_gemelli(corsi, esiti)
         v += pulizia.varianti_lingua_scelta(corsi, esiti)
-        u = pulizia.unisci_omonimi(corsi)
+        u = pulizia.unisci_omonimi(corsi, esistenti)
         sc = pulizia.segna_a_scelta(corsi)
         lb = pulizia.scomponi_citazioni(corsi)
         for tipo, cid, it, var, s, nota in esiti:
@@ -163,7 +166,9 @@ def main() -> int:
               f"{sc} segnati a scelta, {lb} libri scomposti")
     if tot_v or tot_u or tot_s or tot_r or tot_l:
         now = datetime.now(timezone.utc)
-        meta["versione"] = now.strftime("%Y.%m.%d")
+        from ricostruisci import versione_nuova
+
+        meta["versione"] = versione_nuova(meta.get("versione"), now.strftime("%Y.%m.%d"))
         meta["generato_il"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     if (tot_v or tot_r) and not solo:

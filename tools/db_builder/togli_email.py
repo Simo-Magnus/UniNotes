@@ -149,7 +149,7 @@ def main(argv: list[str]) -> int:
     if "--verifica" in argv:
         return verifica()
     solo = set(argv)
-    from ricostruisci import LOCK, _blocca  # lo stesso lucchetto delle ricostruzioni
+    from ricostruisci import LOCK, _blocca, versione_nuova  # lo stesso lucchetto delle ricostruzioni
 
     fd = _blocca()
     toccati: set[str] = set()
@@ -180,7 +180,7 @@ def main(argv: list[str]) -> int:
                     m["sha256"] = hashlib.sha256(f.read_bytes()).hexdigest()
         if toccati:
             now = datetime.now(timezone.utc)
-            meta["versione"] = now.strftime("%Y.%m.%d")
+            meta["versione"] = versione_nuova(meta.get("versione"), now.strftime("%Y.%m.%d"))
             meta["generato_il"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
             meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1) + "\n", encoding="utf-8",
                                  newline="\n")

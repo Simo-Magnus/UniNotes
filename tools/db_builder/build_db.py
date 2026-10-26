@@ -543,6 +543,9 @@ def main() -> None:
         pulizia.unisci_omonimi(corsi, esistenti)  # stesso insegnamento per più canali/sedi: uno solo (id già esistenti prima)
         pulizia.segna_a_scelta(corsi)  # segnaposto «a scelta» (es. «Esame a scelta 1»): a scelta
         pulizia.repliche(corsi)  # repliche di sede vuote: struttura del piano del corso principale
+        # nomi degli insegnamenti senza CFU e codici («Analisi I (10 CFU) (16ACFYO)» → «Analisi I»):
+        # per ultimo, dopo gli id e le unioni (che usano i nomi della fonte); omonimi distinti
+        pulizia.nomi_insegnamenti(corsi)
         for c in corsi:
             c["stato"] = stato_corso(c)
         corsi.sort(key=lambda c: (c["tipo"], norm(c["nome"])))
@@ -567,7 +570,10 @@ def main() -> None:
         }
     write_json(DB / "indice_corsi.json", {"schema": 1, "anno_accademico": anno_acc, "corsi": indice})
     now = datetime.now(timezone.utc)
-    write_json(DB / "meta.json", {"schema": 1, "anno_accademico": anno_acc, "versione": now.strftime("%Y.%m.%d"),
+    from ricostruisci import versione_nuova  # stessa data già pubblicata: «AAAA.MM.GG.2»
+
+    versione = versione_nuova(load_json(DB / "meta.json", {}).get("versione"), now.strftime("%Y.%m.%d"))
+    write_json(DB / "meta.json", {"schema": 1, "anno_accademico": anno_acc, "versione": versione,
                                   "generato_il": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "atenei": meta_atenei})
     write_json(REPORT, unmatched)
     tot = sum(m["corsi"] for m in meta_atenei.values())

@@ -78,7 +78,9 @@ Regole generali:
 {
   "schema": 1,
   "anno_accademico": "2026/27",
-  "versione": "2026.10.04",          // AAAA.MM.GG della generazione
+  "versione": "2026.10.04",          // AAAA.MM.GG della generazione; una seconda generazione lo
+                                     // stesso giorno «AAAA.MM.GG.2», «.3»… (ricostruisci.versione_nuova):
+                                     // l'app confronta per uguaglianza e mostra la data
   "generato_il": "2026-10-04T18:00:00Z",
   "atenei": {
     "polito": { "corsi": 120, "insegnamenti": 3400, "libri": 900,
@@ -263,6 +265,32 @@ nell'onboarding senza scaricare i file dei corsi.
   ]
 }
 ```
+
+### Nomi degli insegnamenti
+
+`nome` (anche nelle `varianti`, in `modulo_di` e nei `titolo` degli appelli) è solo
+il nome dell'insegnamento: niente CFU («(6 CFU)», «- 6 Cfu», «CFU 6») e niente codice
+dell'insegnamento («(01RKCPL)», «[GIU0123]», «(cod. 12345)», «A422439 - …», le sigle di
+Roma Tre «Am110 - …»), che hanno i loro campi `cfu` e `codice` (se il campo è vuoto
+si riempie con il valore tolto dal nome). Restano le parti con un significato:
+moduli («(modulo A)», «(mod. 1)»), canali («(A-L)»), livelli («(livello B1)»,
+«(corso avanzato)»), numeri romani, «(c.i.)», «(integrato)», lingue, anni e sedi,
+i CFU che descrivono una regola («(fra 6 e 12 CFU)», «Gruppo OPZIONALI DA 8 CFU») e i
+numeri senza unità («(2)»). Il settore (SSD) tra parentesi si toglie solo se è
+uguale al campo `ssd`. Omonimi (stesso corso e anno, percorsi in comune o non
+indicati): con CFU diversi il nome riprende i CFU del campo nel formato «(N CFU)»
+(«Inglese (3 CFU)», «Inglese (6 CFU)»), perché nell'app gli insegnamenti si mostrano
+solo con il nome; con gli stessi CFU tengono il codice («Core Abroad (ECO1)», «Core
+Abroad (ECO2)»). Con percorsi diversi (es. PoliTO Torino e Mondovì) lo studente ne
+vede uno solo e il nome resta pulito. Lo fa l'ultimo passo di `build_db.py`
+(`pulizia.nomi_insegnamenti`, dopo gli id), di nuovo `dividi_per_corso.py`; per il
+database già costruito `tools/db_builder/nomi_insegnamenti.py` (`--verifica` per
+controllare). Id e ordine degli insegnamenti non cambiano. Nell'app, «Aggiorna
+database» rinomina gli insegnamenti importati; per quelli con la versione in
+inglese o modificati dallo studente (che l'aggiornamento non rinomina) toglie dal
+nome ufficiale solo CFU e codice; un insegnamento modificato prende il nome del
+database se è lo stesso a meno di CFU e codice, così «(N CFU)» degli omonimi resta
+(`core/catalog/nome_insegnamento.dart`; il nome scelto dallo studente resta).
 
 ### Tipi di corso di studio (`tipo`)
 

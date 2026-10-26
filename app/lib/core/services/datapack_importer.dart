@@ -4,6 +4,7 @@ import 'package:sqflite/sqflite.dart';
 
 import '../../utils/exclusion_filter.dart';
 import '../../utils/parse.dart';
+import '../catalog/nome_insegnamento.dart';
 import '../constants/enums.dart';
 import '../database/app_database.dart';
 import '../theme/university_colors.dart';
@@ -288,7 +289,7 @@ class DataPackImporter {
         data.removeWhere((_, v) => v == null);
         final row = (await txn.query(
           'courses',
-          columns: ['user_edited', 'exam_language'],
+          columns: ['user_edited', 'exam_language', 'name', 'code'],
           where: 'id = ?',
           whereArgs: [existing],
         )).first;
@@ -307,6 +308,23 @@ class DataPackImporter {
             'syllabus_url',
           ]) {
             data.remove(k);
+          }
+          // nome ufficiale importato prima della pulizia del database, con i
+          // CFU o il codice («Business law (8 CFU) (03KYJYC)»): resta il solo
+          // nome. Il nome scelto dallo studente è in `custom_name` e non si
+          // tocca. Un insegnamento modificato a mano prende il nome del
+          // database se è lo stesso a meno di CFU e codice (anche «Inglese
+          // (6 CFU)», che il database tiene per distinguere due omonimi).
+          final vecchio = asString(row['name']);
+          if (vecchio != null && vecchio != name) {
+            final codici = [asString(row['code']), asString(c['code'])];
+            final pulito = nomeInsegnamentoPulito(vecchio, codici: codici);
+            if (!english &&
+                pulito == nomeInsegnamentoPulito(name, codici: codici)) {
+              data['name'] = name;
+            } else if (english && pulito != vecchio) {
+              data['name'] = pulito;
+            }
           }
         }
         await txn.update(

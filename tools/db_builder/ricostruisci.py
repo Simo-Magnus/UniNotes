@@ -20,6 +20,21 @@ ROOT = QUI.parents[1]
 LOCK = ROOT / "database" / ".ricostruzione.lock"
 
 
+def versione_nuova(precedente: str | None, oggi: str) -> str:
+    """`meta.json.versione` di una nuova generazione: la data «AAAA.MM.GG» (`oggi`); se quella data
+    è già stata usata (una correzione lo stesso giorno) un numero in più, «AAAA.MM.GG.2»,
+    «AAAA.MM.GG.3»… L'app confronta le versioni solo per uguaglianza (propone «Aggiorna database»
+    quando è diversa da quella importata) e ne mostra la data (i primi dieci caratteri)."""
+    p = precedente or ""
+    if p == oggi:
+        return f"{oggi}.2"
+    if p.startswith(oggi + "."):
+        coda = p[len(oggi) + 1:]
+        if coda.isdigit():
+            return f"{oggi}.{int(coda) + 1}"
+    return oggi
+
+
 def _blocca():
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     inizio = time.time()

@@ -7,7 +7,8 @@ va verificato sulla fonte), `info` (normalizzazione o completezza).
 Controlli:
 - corsi: senza insegnamenti, durata non coerente con il tipo, doppioni, senza fonte;
 - insegnamenti: nome non valido, anno mancante o oltre la durata, CFU mancanti/anomali,
-  periodo non normalizzato, SSD non valido, doppioni nello stesso anno, testo con
+  periodo non normalizzato, SSD non valido, doppioni nello stesso anno (stesso nome con CFU
+  diversi a parte, `omonimo_cfu_diversi`: i nomi non hanno più «(N CFU)»), testo con
   caratteri rovinati (mojibake), docenti non validi, obbligatorietà mancante;
 - libri: ISBN non valido, anno impossibile, titolo mancante o sospetto, doppioni;
 - appelli: data non valida, appelli vecchi (prima dell'anno accademico precedente),
@@ -38,7 +39,7 @@ GRAVITA = {
     "corso_vuoto": "avviso", "durata_tipo": "avviso", "corso_doppione": "avviso", "corso_senza_fonte": "info",
     "nome_non_valido": "errore", "anno_mancante": "avviso", "anno_oltre_durata": "errore",
     "cfu_mancanti": "avviso", "cfu_anomali": "avviso", "periodo_non_normalizzato": "info",
-    "ssd_non_valido": "info", "doppione_anno": "avviso", "mojibake": "errore",
+    "ssd_non_valido": "info", "doppione_anno": "avviso", "omonimo_cfu_diversi": "info", "mojibake": "errore",
     "docente_non_valido": "avviso", "obbligatorio_mancante": "info",
     "isbn_non_valido": "errore", "libro_anno_impossibile": "errore", "libro_titolo": "avviso",
     "libro_doppione": "info", "appello_data_non_valida": "errore", "appello_vecchio": "info",
@@ -177,7 +178,14 @@ def controlla_ateneo(uid: str, doc: dict, r: Risultati) -> None:
         for (a, nome, _), g in per_anno.items():
             codici = {x.get("codice") for x in g}
             if len(g) > 1 and len(codici) > 1 and nome:
-                r.add("doppione_anno", uid, f"{c.get('id')} anno {a}: «{g[0].get('nome')}» ×{len(g)} ({', '.join(sorted(str(x) for x in codici))})")
+                testo = f"{c.get('id')} anno {a}: «{g[0].get('nome')}» ×{len(g)} ({', '.join(sorted(str(x) for x in codici))})"
+                cfu = [x.get("cfu") for x in g]
+                if None not in cfu and len(set(cfu)) == len(cfu):
+                    # stesso nome con CFU diversi (es. «Inglese» da 3 e da 6 CFU, nomi senza «(N CFU)»):
+                    # insegnamenti diversi, l'app li distingue dai CFU
+                    r.add("omonimo_cfu_diversi", uid, testo)
+                else:
+                    r.add("doppione_anno", uid, testo)
 
 
 def coerenza(uids: list[str], docs: dict, r: Risultati) -> None:

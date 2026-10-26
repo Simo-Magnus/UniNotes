@@ -15,7 +15,10 @@ scartano ciò che è certamente sbagliato (vedi verifica_db.py per i controlli).
   chiara (`_scomponi`);
 - esami: date ripetute nello stesso insegnamento tolte;
 - anno di corso oltre la durata (piani part-time del Course Catalogue): l'insegnamento si toglie se
-  c'è già lo stesso insegnamento con un anno valido, altrimenti l'anno diventa null.
+  c'è già lo stesso insegnamento con un anno valido, altrimenti l'anno diventa null;
+- nomi degli insegnamenti: solo il nome, senza i CFU («(6 CFU)», «- 6 CFU») e senza il codice
+  dell'insegnamento («(01RKCPL)», «(cod. 12345)», «A422439 - …») (`nome_insegnamento_pulito`,
+  `nomi_insegnamenti`, ultimo passo della build).
 """
 from __future__ import annotations
 
@@ -1533,9 +1536,24 @@ def unisci_omonimi(corsi: list[dict], esistenti: set[str] | None = None) -> int:
                 continue
             visti.add(k)
             for g in _per_obbligo(gruppi[k]):
-                n += _unisci_gruppo(g, nuovi, esistenti)
+                for g2 in _gia_distinti(g, esistenti):
+                    n += _unisci_gruppo(g2, nuovi, esistenti)
         c["insegnamenti"] = nuovi
     return n
+
+
+def _gia_distinti(g: list[dict], esistenti: set[str] | None) -> list[list[dict]]:
+    """Insegnamenti che nel database erano già distinti (tutti e due gli id già presenti) restano
+    distinti anche se ora hanno lo stesso nome (es. i nomi ripuliti da CFU e codici di
+    `nomi_insegnamenti`, «Analisi matematica I» a Torino e a Mondovì): l'app collega a quegli id
+    i dati dello studente. Le righe nuove si uniscono al primo, come prima."""
+    if not esistenti or len(g) < 2:
+        return [g]
+    gia = [x for x in g if x.get("id") in esistenti]
+    if len(gia) < 2:
+        return [g]
+    altri = [x for x in g if x.get("id") not in esistenti]
+    return [[gia[0], *altri]] + [[x] for x in gia[1:]]
 
 
 def _per_obbligo(g: list[dict]) -> list[list[dict]]:
@@ -1647,3 +1665,383 @@ def ssd(s: str | None) -> str | None:
     if not out:
         return "NN" if re.search(r"\bNN\b", t) else None
     return "; ".join(out)
+
+
+# --- nomi degli insegnamenti: solo il nome, senza CFU e codici ----------------------------------
+# Le fonti scrivono nel nome i CFU («Analisi matematica I (10 CFU) (16ACFYO)», «Business Plan -
+# 6 Cfu», «(6 Cfu) - Demografia») e il codice dell'insegnamento («Arabo (IARA)», «Storia
+# contemporanea (cod. 120851)», «A422439 - Economics», «Fs110 - Fisica 1»): l'app mostra gli
+# insegnamenti solo con il nome, CFU e codice hanno i loro campi. Restano le parti tra parentesi
+# con un significato («(modulo A)», «(A-L)», «(livello B1)», «(c.i.)», «(I)», «(2° anno)»,
+# «(in inglese)», «(fra 6 e 12 CFU)», «(internato da 1 Cfu)») e i numeri senza unità («(2)»:
+# non si sa se sono CFU o un numero d'ordine).
+_NUM = r"\d+(?:[.,]\d+)?"
+_UNITA_CFU = r"(?:c\.\s?f\.\s?u\.?|cfu|crediti|credits?|ects)"
+# una parte che è solo un numero di CFU: «6 CFU», «7.5 cfu», «20cfu», «CFU 6», «CFU: 6», «6 crediti»
+_CFU_SOLO = re.compile(rf"(?i)^\s*(?:({_NUM})\s*{_UNITA_CFU}|(?:cfu|crediti)\s*[:=]?\s*({_NUM}))\s*$")
+# CFU in coda senza parentesi («Idoneità 9 Cfu», «… CFU12»), non dopo «da», «fra», … («Gruppo
+# OPZIONALI DA 8 CFU», «a scelta fra 6 e 12 CFU»: dicono quale gruppo o quanti crediti scegliere)
+_CFU_CODA = re.compile(rf"(?i)(?<=\S)\s+(?:({_NUM})\s*{_UNITA_CFU}|cfu\s*({_NUM}))\s*$")
+# altri CFU nel nome: «… modulo 6 cfu … modulo 3 cfu» descrive i moduli, la coda non si toglie
+_CFU_NEL_TESTO = re.compile(rf"(?i)\b{_NUM}\s*{_UNITA_CFU}(?![a-z])")
+_PREPOSIZIONE_FINALE = re.compile(r"(?i)(?:^|\s)(?:da|di|fra|tra|e|ed|a|ai|al|per|con|su|of|from|to|and|or|o)\s*$")
+# «cod. 12345», «codice A000123», «code 12345»: un codice dichiarato come tale (con almeno una cifra)
+_CODICE_ESPLICITO = re.compile(r"(?i)^\s*(?:cod(?:ice)?|code)\s*[.:]?\s*([A-Za-z0-9][A-Za-z0-9/._-]{1,24})\s*$")
+# sigla dell'insegnamento prima del nome (Roma Tre, Matematica: «Am110 - Analisi Matematica 1»,
+# «Ch410- Elementi di Chimica»): una o tre lettere e tre cifre
+_SIGLA = re.compile(r"^[A-Z][a-z]{0,2}\d{3}$")
+_SSD_INTERO = re.compile(r"(?i)^\s*(?:[A-Z]{1,4}(?:-[A-Z]{1,5}){0,2}/\d{2}|[A-Z]{3,5}-\d{2}/[A-Z])\s*$")
+_GRUPPO = re.compile(r"\s*\(([^()\[\]]*)\)|\s*\[([^()\[\]]*)\]")
+_SEPARATORE_PARTI = re.compile(r"(\s*[,;]\s*|\s+[-–—]\s+)")
+_PREFISSO = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9/._]{1,24})\s*[-–—]\s*(?=\S)")
+_CODA_CODICE = re.compile(r"(?<=\S)\s+([A-Za-z0-9][A-Za-z0-9/._-]{3,24})\s*$")
+
+
+def _numero(s: str) -> float | int:
+    v = float(s.replace(",", "."))
+    return int(v) if v.is_integer() else v
+
+
+def _codice_uguale(s: str, codici) -> bool:
+    """`s` è uno dei codici dell'insegnamento (almeno 3 caratteri). Un codice senza cifre conta
+    solo scritto in maiuscolo come il codice («Arabo (IARA)»): «Tirocinio - Stage» con il codice
+    STAGE resta com'è."""
+    t = re.sub(r"\s+", "", s or "")
+    if len(t) < 3:
+        return False
+    for c in codici:
+        c = re.sub(r"\s+", "", str(c or ""))
+        if re.search(r"\d", c) and t.lower() == c.lower():
+            return True
+        if not re.search(r"\d", c) and t == c and t.isupper():
+            return True
+    return False
+
+
+def _rumore(parte: str, codici, ssd_campo: set[str], solo_cfu: bool, info: dict) -> bool:
+    """La parte (di un gruppo tra parentesi o del nome tra trattini) è solo CFU o un codice
+    dell'insegnamento: si toglie (e `info` ricorda cosa)."""
+    m = _CFU_SOLO.match(parte)
+    if m:
+        info["cfu"].append(_numero(m.group(1) or m.group(2)))
+        return True
+    if solo_cfu:
+        return False
+    if _codice_uguale(parte, codici):
+        info["codici"].append(parte.strip())
+        return True
+    m = _CODICE_ESPLICITO.match(parte)
+    if m and re.search(r"\d", m.group(1)):
+        info["codici"].append(m.group(1))
+        info["espliciti"].append(m.group(1))
+        return True
+    if _SSD_INTERO.match(parte) and parte.strip().upper() in ssd_campo:
+        info["ssd"].append(parte.strip())
+        return True
+    return False
+
+
+def _senza_parti(contenuto: str, codici, ssd_campo, solo_cfu: bool, info: dict) -> str | None:
+    """Contenuto di un gruppo tra parentesi senza le parti di rumore («gruppo a scelta, 20 CFU»
+    → «gruppo a scelta»); None se il gruppo era solo rumore."""
+    pezzi = _SEPARATORE_PARTI.split(contenuto)
+    parti = [("", pezzi[0])] + [(pezzi[k], pezzi[k + 1]) for k in range(1, len(pezzi) - 1, 2)]
+    tenute = [(sep, p) for sep, p in parti if not (p.strip() and _rumore(p, codici, ssd_campo, solo_cfu, info))]
+    tenute = [(sep, p) for sep, p in tenute if p.strip()]
+    if not tenute:
+        return None
+    if len(tenute) == len([p for _, p in parti if p.strip()]):
+        return contenuto
+    return tenute[0][1].strip() + "".join(sep + p for sep, p in tenute[1:])
+
+
+def _segmenti(s: str) -> list[str]:
+    """Parti del nome separate da « - » (o «–», «—») fuori dalle parentesi."""
+    out, prof, inizio, k = [], 0, 0, 0
+    while k < len(s):
+        ch = s[k]
+        if ch in "([":
+            prof += 1
+        elif ch in ")]" and prof:
+            prof -= 1
+        elif prof == 0 and ch in "-–—" and k > 0 and s[k - 1] == " " and k + 1 < len(s) and s[k + 1] == " ":
+            out.append(s[inizio:k - 1])
+            inizio = k + 2
+            k += 1
+        k += 1
+    out.append(s[inizio:])
+    return out
+
+
+def _pulisci_nome(nome: str, codici=(), ssd_campo: str | None = None, solo_cfu: bool = False) -> tuple[str, dict]:
+    """(nome pulito, info): info con i CFU, i codici e i settori tolti."""
+    info: dict = {"cfu": [], "codici": [], "espliciti": [], "ssd": [], "sigla": []}
+    if not isinstance(nome, str) or not nome.strip():
+        return nome, info
+    codici = {str(c).strip() for c in codici or () if c}
+    ssd_set = set(SSD_VECCHIO.findall((ssd_campo or "").upper()) + SSD_NUOVO.findall((ssd_campo or "").upper()))
+    if ";" in nome:  # elenchi di insegnamenti tra cui scegliere (UniPegaso): il settore distingue le voci
+        ssd_set = set()
+    s = nome
+
+    def gruppo(m: re.Match) -> str:
+        contenuto = m.group(1) if m.group(1) is not None else m.group(2)
+        resto = _senza_parti(contenuto, codici, ssd_set, solo_cfu, info)
+        if resto is None:
+            return ""
+        if resto == contenuto:
+            return m.group(0)
+        apri, chiudi = ("(", ")") if m.group(1) is not None else ("[", "]")
+        spazio = m.group(0)[:len(m.group(0)) - len(m.group(0).lstrip())]
+        return f"{spazio}{apri}{resto}{chiudi}"
+
+    s = _GRUPPO.sub(gruppo, s)
+    # parti tra trattini: «Business Plan - 6 Cfu», «A422439 - Economics», «Analisi - 12345»
+    seg = _segmenti(s)
+    if len(seg) > 1:
+        tenuti = []
+        for k, x in enumerate(seg):
+            if not x.strip():
+                continue
+            if _rumore(x, codici, ssd_set, solo_cfu, info):
+                continue
+            if not solo_cfu and k == 0 and _SIGLA.match(x.strip()):
+                info["sigla"].append(x.strip())
+                continue
+            tenuti.append(x.strip())
+        if tenuti and len(tenuti) < len([x for x in seg if x.strip()]):
+            s = " - ".join(tenuti)
+    if not solo_cfu:
+        # codice o sigla attaccati al trattino: «Ch410- Elementi di Chimica», «A422439- …»
+        m = _PREFISSO.match(s)
+        if m and (_codice_uguale(m.group(1), codici) or _SIGLA.match(m.group(1))) and s[m.end():].strip():
+            (info["codici"] if _codice_uguale(m.group(1), codici) else info["sigla"]).append(m.group(1))
+            s = s[m.end():]
+            s = s[:1].upper() + s[1:]  # «Al110-algebra 1» → «Algebra 1»
+        # codice in coda senza trattino: «Analisi A000123» (solo il codice dell'insegnamento, con una cifra)
+        m = _CODA_CODICE.search(s)
+        if m and re.search(r"\d", m.group(1)) and _codice_uguale(m.group(1), codici):
+            info["codici"].append(m.group(1))
+            s = s[:m.start()]
+    m = _CFU_CODA.search(s)
+    if (m and not _PREPOSIZIONE_FINALE.search(s[:m.start()]) and len(s[:m.start()].strip()) >= 3
+            and not _CFU_NEL_TESTO.search(s[:m.start()])):
+        info["cfu"].append(_numero(m.group(1) or m.group(2)))
+        s = s[:m.start()]
+    if s != nome:
+        s = re.sub(r"\s+", " ", s)
+        s = re.sub(r"\s+([,;:.)\]])", r"\1", s)
+        s = re.sub(r"^[\s\-–—,;:]+|[\s\-–—,;:]+$", "", s)
+        if len(s) < 2 or not re.search(r"[A-Za-zÀ-ÿ]", s):
+            return nome, {"cfu": [], "codici": [], "espliciti": [], "ssd": [], "sigla": []}
+    return s, info
+
+
+def nome_insegnamento_pulito(nome: str | None, codici=(), ssd: str | None = None, solo_cfu: bool = False) -> str | None:
+    """Nome dell'insegnamento senza i CFU e senza il codice dell'insegnamento.
+
+    `codici`: codici dell'insegnamento (codice, codici alternativi, codice del corso integrato):
+    un gruppo tra parentesi o una parte tra trattini uguale a uno di questi si toglie; «cod.
+    12345» si toglie sempre. `ssd`: settore dell'insegnamento, tolto dal nome solo se è uguale
+    (il campo lo conserva). `solo_cfu`: toglie solo i CFU (per gli omonimi, vedi
+    `nomi_insegnamenti`)."""
+    if nome is None:
+        return None
+    return _pulisci_nome(nome, codici, ssd, solo_cfu)[0]
+
+
+def _codici_di(i: dict) -> set[str]:
+    out = {i.get("codice"), i.get("codice_ci"), *(i.get("codici_alternativi") or [])}
+    out |= {v.get("codice") for v in i.get("varianti") or []}
+    return {str(x) for x in out if x}
+
+
+def _si_scontrano(a: dict, b: dict) -> bool:
+    """Due insegnamenti dello stesso anno con lo stesso nome che i CFU non distinguono (gli
+    stessi, o uno dei due senza CFU) e che lo stesso studente può vedere insieme (percorsi in
+    comune o non indicati): nell'app sembrerebbero lo stesso. Con percorsi diversi (PoliTO:
+    «Analisi matematica I» a Torino e nel «Primo anno sede di Mondovì») lo studente ne vede uno
+    solo; `unisci_omonimi` non unisce due insegnamenti già distinti nel database."""
+    pa, pb = set(percorsi(a.get("curriculum"))), set(percorsi(b.get("curriculum")))
+    if pa and pb and not (pa & pb):
+        return False
+    return a.get("cfu") is None or b.get("cfu") is None or a.get("cfu") == b.get("cfu")
+
+
+def nomi_insegnamenti(corsi: list[dict], esiti: list | None = None) -> int:
+    """`nome_insegnamento_pulito` su tutti gli insegnamenti (anche varianti, titoli degli appelli e
+    `modulo_di`), modificando i corsi sul posto. Cambia solo il testo dei nomi: id, ordine e numero
+    degli insegnamenti restano.
+
+    - CFU tolti dal nome: se il campo `cfu` è vuoto si riempie (un solo valore), se è diverso resta
+      il campo e il caso va in `esiti` («cfu_diverso»; più valori: «cfu_parti»);
+    - «cod. 12345» tolto: se il campo `codice` è vuoto si riempie, se è diverso va in `esiti`;
+    - omonimi: due insegnamenti dello stesso corso e anno che dopo la pulizia avrebbero lo stesso
+      nome senza CFU diversi a distinguerli (es. «Core Abroad (ECO1)» e «Core Abroad (ECO2)»)
+      tengono il codice (si tolgono solo i CFU) o, se non basta, il nome com'era («omonimo»);
+      con CFU diversi il nome riprende i CFU del campo nel formato «(N CFU)» («Inglese (3 CFU)» e
+      «Inglese (6 CFU)», `_cfu_agli_omonimi`).
+
+    `esiti`: (tipo, id corso, id insegnamento, nome prima, nome dopo, dettaglio).
+    Restituisce il numero di nomi cambiati (insegnamenti e varianti).
+
+    Un giro può cambiare i nomi su cui il giro dopo decide gli omonimi (es. «Stage» che diventa
+    «Stage (6 CFU)»): si ripete finché non cambia più nulla, così una seconda pulizia (la
+    ricostruzione successiva, dividi_per_corso.py) non cambia niente."""
+    prima = {}
+    for c in corsi:
+        for i in c.get("insegnamenti") or []:
+            prima[id(i)] = (c.get("id"), i.get("nome"), [v.get("nome") for v in i.get("varianti") or []])
+    visti = set()
+    for _ in range(5):
+        giro: list = []
+        cambiati = _nomi_un_giro(corsi, giro)
+        if esiti is not None:
+            for e in giro:
+                if e[0] not in ("nome", "variante") and (e[0], e[2]) not in visti:
+                    visti.add((e[0], e[2]))
+                    esiti.append(e)
+        if not cambiati:
+            break
+    n = 0
+    for c in corsi:
+        for i in c.get("insegnamenti") or []:
+            cid, nome, varianti = prima[id(i)]
+            if i.get("nome") != nome:
+                n += 1
+                if esiti is not None:
+                    esiti.append(("nome", cid, i.get("id"), nome, i.get("nome"), ""))
+            for v, vn in zip(i.get("varianti") or [], varianti):
+                if v.get("nome") != vn:
+                    n += 1
+                    if esiti is not None:
+                        esiti.append(("variante", cid, i.get("id"), vn, v.get("nome"), ""))
+    return n
+
+
+def _nomi_un_giro(corsi: list[dict], esiti: list) -> int:
+    """Un giro di `nomi_insegnamenti`: nomi cambiati in questo giro."""
+    n = 0
+    for c in corsi:
+        ins = c.get("insegnamenti") or []
+        prop = []
+        for i in ins:
+            nome = i.get("nome")
+            if not isinstance(nome, str):
+                prop.append(None)
+                continue
+            cod = _codici_di(i)
+            tutto = _pulisci_nome(nome, cod, i.get("ssd"))
+            cfu = _pulisci_nome(nome, cod, i.get("ssd"), solo_cfu=True)
+            prop.append([(nome, {}), cfu, tutto])
+        livello = [2 if p else 0 for p in prop]
+        for _ in range(4):
+            gruppi: dict[tuple, list[int]] = {}
+            for k, p in enumerate(prop):
+                if p:
+                    gruppi.setdefault((ins[k].get("anno"), _norm_nome(p[livello[k]][0])), []).append(k)
+            cambiati = False
+            for g in gruppi.values():
+                if len(g) < 2:
+                    continue
+                for a in g:
+                    if livello[a] == 0:
+                        continue
+                    if any(_norm_nome(prop[a][0][0]) != _norm_nome(prop[b][0][0]) and _si_scontrano(ins[a], ins[b])
+                           for b in g if b != a):
+                        livello[a] -= 1
+                        while livello[a] and prop[a][livello[a]][0] == prop[a][livello[a] + 1][0]:
+                            livello[a] -= 1
+                        cambiati = True
+            if not cambiati:
+                break
+        for k, i in enumerate(ins):
+            p = prop[k]
+            if not p:
+                continue
+            nome = p[0][0]
+            nuovo, info = p[livello[k]]
+            if livello[k] < 2 and p[2][0] != nome and esiti is not None:
+                esiti.append(("omonimo", c.get("id"), i.get("id"), nome, nuovo,
+                              "tiene il codice" if livello[k] == 1 else "nome com'era"))
+            if nuovo != nome:
+                i["nome"] = nuovo
+            valori = info.get("cfu") or []
+            if len(valori) == 1:
+                if i.get("cfu") is None:
+                    i["cfu"] = valori[0]
+                    if esiti is not None:
+                        esiti.append(("cfu_riempito", c.get("id"), i.get("id"), nome, nuovo, str(valori[0])))
+                elif isinstance(i["cfu"], (int, float)) and float(i["cfu"]) != float(valori[0]) and esiti is not None:
+                    esiti.append(("cfu_diverso", c.get("id"), i.get("id"), nome, nuovo,
+                                  f"nome {valori[0]}, campo {i['cfu']}"))
+            elif len(valori) > 1 and esiti is not None:
+                esiti.append(("cfu_parti", c.get("id"), i.get("id"), nome, nuovo,
+                              f"nome {valori}, campo {i.get('cfu')}"))
+            for x in info.get("espliciti") or []:
+                if not i.get("codice"):
+                    i["codice"] = x
+                    if esiti is not None:
+                        esiti.append(("codice_riempito", c.get("id"), i.get("id"), nome, nuovo, x))
+                elif not _codice_uguale(x, _codici_di(i)) and esiti is not None:
+                    esiti.append(("codice_diverso", c.get("id"), i.get("id"), nome, nuovo,
+                                  f"nome {x}, campo {i.get('codice')}"))
+            cod = _codici_di(i)
+            for v in i.get("varianti") or []:
+                if isinstance(v.get("nome"), str):
+                    vn = nome_insegnamento_pulito(v["nome"], cod | {v.get("codice") or ""}, i.get("ssd"))
+                    if vn != v["nome"]:
+                        if esiti is not None:
+                            esiti.append(("variante", c.get("id"), i.get("id"), v["nome"], vn, ""))
+                        v["nome"] = vn
+                        n += 1
+            for e in i.get("esami") or []:
+                if isinstance(e.get("titolo"), str):
+                    t = nome_insegnamento_pulito(e["titolo"], cod, i.get("ssd"))
+                    if t != e["titolo"]:
+                        e["titolo"] = t
+            if isinstance(i.get("modulo_di"), str):
+                i["modulo_di"] = nome_insegnamento_pulito(i["modulo_di"], {i.get("codice_ci")} - {None})
+        _cfu_agli_omonimi(ins)
+        for k, i in enumerate(ins):
+            if prop[k] and i.get("nome") != prop[k][0][0]:
+                n += 1
+                if esiti is not None:
+                    esiti.append(("nome", c.get("id"), i.get("id"), prop[k][0][0], i["nome"], ""))
+    return n
+
+
+def _fmt_cfu(x) -> str:
+    return f"{float(x):g}"
+
+
+def _cfu_agli_omonimi(ins: list[dict]) -> int:
+    """Insegnamenti dello stesso anno con lo stesso nome e CFU diversi che lo stesso studente può
+    vedere insieme (percorsi in comune o non indicati), es. «Inglese» da 3 e da 6 CFU: il nome
+    diventa «Inglese (3 CFU)» e «Inglese (6 CFU)», con i CFU del campo (decisione dell'utente:
+    nell'app gli insegnamenti si mostrano solo con il nome). Un nome che parla già di CFU resta.
+    Restituisce i nomi cambiati."""
+    gruppi: dict[tuple, list[dict]] = {}
+    for i in ins:
+        if isinstance(i.get("nome"), str):
+            gruppi.setdefault((i.get("anno"), _norm_nome(i["nome"])), []).append(i)
+    n = 0
+    for g in gruppi.values():
+        if len(g) < 2:
+            continue
+        segnati = []
+        for a in g:
+            if not isinstance(a.get("cfu"), (int, float)) or _CFU_NEL_TESTO.search(a["nome"]):
+                continue
+            for b in g:
+                if b is a or not isinstance(b.get("cfu"), (int, float)) or float(b["cfu"]) == float(a["cfu"]):
+                    continue
+                pa, pb = set(percorsi(a.get("curriculum"))), set(percorsi(b.get("curriculum")))
+                if pa and pb and not (pa & pb):
+                    continue
+                segnati.append(a)
+                break
+        for a in segnati:
+            a["nome"] = f"{a['nome']} ({_fmt_cfu(a['cfu'])} CFU)"
+            n += 1
+    return n
