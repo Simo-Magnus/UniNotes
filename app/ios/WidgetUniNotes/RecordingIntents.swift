@@ -1,4 +1,5 @@
-// In ENTRAMBI i target: Runner e LiveActivityUniNotes.
+// In ENTRAMBI i target: Runner e WidgetUniNotes (li aggiunge
+// app/tool/aggiungi_estensioni_ios.rb).
 //
 // Pulsanti della Live Activity (iOS 17+). Con il file anche nel target
 // dell'app, il sistema esegue l'intento nel processo dell'app (anche in

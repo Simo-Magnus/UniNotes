@@ -15,7 +15,20 @@
 #   esporta <archivio> <uscita> <metodo>
 #                                 firma nel cloud ed esporta (.ipa, .pkg, .app)
 #                                 (app-store-connect o release-testing, cioè
-#                                 «ad hoc» da Xcode 15.3)
+#                                 «ad hoc» da Xcode 15.3); se un archivio con
+#                                 estensioni (widget) non si esporta, riprova
+#                                 da una copia senza estensioni (avviso)
+#   firma-locale <archivio> <versione> <build>
+#                                 firma locale «-» (senza certificati) di app
+#                                 ed estensione WidgetUniNotes di un archivio
+#                                 non firmato, con gli entitlement dell'App
+#                                 Group, dopo il controllo di bundle ID,
+#                                 versione e numero di build dell'estensione
+#   collegamenti <eseguibile>     ActivityKit e AppIntents collegati come
+#                                 facoltativi (l'app parte su iOS 15)
+#   senza-estensioni <archivio> [<copia>]
+#                                 toglie le estensioni (e la firma locale)
+#                                 dall'archivio o da una sua copia
 #   profilo <ipa>                 tipo, scadenza e numero di dispositivi del
 #                                 profilo incluso nell'IPA (senza gli UDID)
 #   manifesto <file> <bundle id> <versione> <build> <url ipa>
@@ -31,8 +44,15 @@ set -euo pipefail
 
 CARTELLA_CHIAVI="$HOME/.appstoreconnect/private_keys"
 TEMP_ASC="${RUNNER_TEMP:-${TMPDIR:-/tmp}}/asc"
+# cartella app/ (entitlement dell'app e dell'estensione dei widget)
+CARTELLA_APP="$(cd "$(dirname "$0")/.." && pwd)"
+BUNDLE_APP="io.github.simomagnus.universitynotes"
+ESTENSIONE="WidgetUniNotes"
+APP_GROUP="group.io.github.simomagnus.universitynotes"
 
 errore() { echo "::error title=App Store Connect::$1"; }
+# problemi dei widget: la build ricade senza estensioni, quindi solo un avviso
+avviso_widget() { echo "::warning title=Widget iOS::$1"; }
 
 # Key ID (10 caratteri), Issuer ID (UUID), Team ID (10 caratteri), Apple ID
 # numerico dell'app: un valore sbagliato si ferma qui con un messaggio chiaro,
@@ -152,6 +172,28 @@ $solo_app_store
 </plist>
 FINE
   plutil -lint "$opzioni" > /dev/null
+  if esporta_da "$archivio" "$uscita" "$opzioni" "$f"; then
+    estensioni_esportate "$uscita"
+    return 0
+  fi
+  # Archivio con i widget (WidgetUniNotes.appex) che non si esporta, di
+  # solito per l'App Group non registrato nel portale: si riprova senza le
+  # estensioni, come le build precedenti, e la build va avanti.
+  if ! ls -d "$archivio"/Products/Applications/*.app/PlugIns/*.appex > /dev/null 2>&1; then
+    return 1
+  fi
+  echo "::warning title=Widget iOS::esportazione «$metodo» con i widget non riuscita (errore di xcodebuild qui sopra): rifatta senza widget e Live Activity, come le build precedenti. Di solito manca l'App Group: developer.apple.com → Certificates, Identifiers & Profiles → Identifiers → + → App Groups → $APP_GROUP; poi negli App ID $BUNDLE_APP e $BUNDLE_APP.$ESTENSIONE (crealo se manca: + → App IDs → App) spunta App Groups → Configure → quel gruppo → Save (docs/widget.md, «Portale Apple»)."
+  local copia="${archivio%.xcarchive}-senza-estensioni.xcarchive"
+  if [ ! -d "$copia" ]; then
+    senza_estensioni "$archivio" "$copia"
+  fi
+  rm -rf "$uscita"
+  esporta_da "$copia" "$uscita" "$opzioni" "$f"
+  estensioni_esportate "$uscita"
+}
+
+esporta_da() {
+  local archivio="$1" uscita="$2" opzioni="$3" f="$4"
   xcodebuild -exportArchive \
     -archivePath "$archivio" \
     -exportPath "$uscita" \
@@ -160,6 +202,107 @@ FINE
     -authenticationKeyPath "$f" \
     -authenticationKeyID "$ASC_KEY_ID" \
     -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+}
+
+# Nel log: l'IPA esportato contiene i widget e la Live Activity?
+estensioni_esportate() {
+  local ipa contenuto
+  for ipa in "$1"/*.ipa; do
+    [ -f "$ipa" ] || continue
+    contenuto="$(unzip -l "$ipa" 2> /dev/null || true)"
+    case "$contenuto" in
+      *"PlugIns/$ESTENSIONE.appex/"*) echo "$(basename "$ipa"): con $ESTENSIONE.appex (widget e Live Activity)." ;;
+      *) echo "$(basename "$ipa"): senza estensioni (niente widget né Live Activity)." ;;
+    esac
+  done
+}
+
+# Firma locale «-» dell'archivio non firmato (CODE_SIGNING_ALLOWED=NO), come
+# la build per il Mac App Store: -exportArchive legge gli entitlement dalla
+# firma dell'archivio (qui l'App Group di app ed estensione) e firma di nuovo
+# tutto con i certificati del cloud. Prima il codice annidato (framework,
+# estensione), poi l'app. Nessun certificato, niente da cancellare.
+firma_locale() {
+  local archivio="$1" versione="$2" build="$3"
+  local app="$archivio/Products/Applications/Runner.app"
+  local estensione="$app/PlugIns/$ESTENSIONE.appex"
+  local pb=/usr/libexec/PlistBuddy
+  if [ ! -d "$estensione" ]; then
+    avviso_widget "$ESTENSIONE.appex non è nell'archivio (Runner.app/PlugIns)"
+    return 1
+  fi
+  local plist="$estensione/Info.plist" k
+  for k in CFBundleIdentifier CFBundleShortVersionString CFBundleVersion MinimumOSVersion NSExtension:NSExtensionPointIdentifier; do
+    echo "$ESTENSIONE.appex: $k = $("$pb" -c "Print :$k" "$plist" 2> /dev/null || echo '(assente)')"
+  done
+  # stessa versione e stesso numero di build dell'app (Apple rifiuta il
+  # caricamento con valori diversi)
+  if [ "$("$pb" -c 'Print :CFBundleIdentifier' "$plist" 2> /dev/null)" != "$BUNDLE_APP.$ESTENSIONE" ] \
+    || [ "$("$pb" -c 'Print :CFBundleShortVersionString' "$plist" 2> /dev/null)" != "$versione" ] \
+    || [ "$("$pb" -c 'Print :CFBundleVersion' "$plist" 2> /dev/null)" != "$build" ] \
+    || [ "$("$pb" -c 'Print :NSExtension:NSExtensionPointIdentifier' "$plist" 2> /dev/null)" != "com.apple.widgetkit-extension" ]; then
+    avviso_widget "$ESTENSIONE.appex: bundle ID, versione, numero di build ($versione, $build) o tipo di estensione non previsti"
+    return 1
+  fi
+  # su iOS 15 (deployment 15.6) ActivityKit e AppIntents non esistono:
+  # collegati in modo obbligatorio, app o widget non partirebbero
+  collegamenti "$app/Runner" || return 1
+  collegamenti "$estensione/$ESTENSIONE" || return 1
+  local x
+  for x in "$app"/Frameworks/*; do
+    case "$x" in
+      *.framework | *.dylib) codesign --force --sign - --timestamp=none "$x" ;;
+    esac
+  done
+  codesign --force --sign - --timestamp=none \
+    --entitlements "$CARTELLA_APP/ios/$ESTENSIONE/$ESTENSIONE.entitlements" "$estensione"
+  codesign --force --sign - --timestamp=none \
+    --entitlements "$CARTELLA_APP/ios/Runner/Runner.entitlements" "$app"
+  local b ent
+  for b in "$estensione" "$app"; do
+    ent="$(codesign -d --entitlements - "$b" 2>&1 || true)"
+    case "$ent" in
+      *"$APP_GROUP"*) echo "$(basename "$b"): firma locale con l'App Group $APP_GROUP." ;;
+      *)
+        avviso_widget "$(basename "$b"): App Group assente nella firma locale"
+        return 1
+        ;;
+    esac
+  done
+}
+
+# ActivityKit e AppIntents (iOS 16+) devono essere collegati come facoltativi
+# (LC_LOAD_WEAK_DYLIB, -weak_framework negli xcconfig di Flutter): con un
+# collegamento obbligatorio l'eseguibile non parte su iOS 15.
+collegamenti() {
+  local bin="$1" righe
+  [ -f "$bin" ] || { avviso_widget "eseguibile non trovato: $bin"; return 1; }
+  righe="$(otool -l "$bin" | awk '$1 == "cmd" { c = $2 } $1 == "name" && $2 ~ /\/(ActivityKit|AppIntents)\.framework\// { print c, $2 }')"
+  echo "$(basename "$bin"): ${righe:-nessun collegamento ad ActivityKit o AppIntents}"
+  case "$righe" in
+    *"LC_LOAD_DYLIB "*)
+      avviso_widget "$(basename "$bin") collega ActivityKit o AppIntents in modo obbligatorio: non partirebbe su iOS 15"
+      return 1
+      ;;
+  esac
+}
+
+# Archivio (o sua copia) senza estensioni: niente PlugIns e niente firma
+# locale con gli entitlement, cioè l'archivio delle build senza widget.
+senza_estensioni() {
+  local origine="$1" dest="${2:-$1}"
+  if [ "$dest" != "$origine" ]; then
+    rm -rf "$dest"
+    ditto "$origine" "$dest"
+  fi
+  local app x
+  app="$(ls -d "$dest"/Products/Applications/*.app | head -n 1)"
+  rm -rf "$app/PlugIns"
+  rm -rf "$dest"/dSYMs/*.appex.dSYM
+  for x in "$app"/Frameworks/* "$app"; do
+    codesign --remove-signature "$x" 2> /dev/null || true
+  done
+  echo "Archivio senza estensioni: $(basename "$dest")"
 }
 
 # Profilo incluso in un IPA: nome, scadenza e quanti dispositivi contiene
@@ -317,13 +460,16 @@ case "$comando" in
   controlla) controlla "$@" ;;
   chiave) chiave ;;
   esporta) esporta "$@" ;;
+  firma-locale) firma_locale "$@" ;;
+  collegamenti) collegamenti "$@" ;;
+  senza-estensioni) senza_estensioni "$@" ;;
   profilo) profilo "$@" ;;
   manifesto) manifesto "$@" ;;
   carica) carica "$@" ;;
   notarizza) notarizza "$@" ;;
   pulisci) pulisci ;;
   *)
-    echo "uso: $0 controlla|chiave|esporta|profilo|manifesto|carica|notarizza|pulisci" >&2
+    echo "uso: $0 controlla|chiave|esporta|firma-locale|collegamenti|senza-estensioni|profilo|manifesto|carica|notarizza|pulisci" >&2
     exit 2
     ;;
 esac

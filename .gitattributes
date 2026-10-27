@@ -3,6 +3,7 @@
 # pubblica GitHub Pages): il file resta LF anche nelle copie di lavoro.
 sito/drive-picker.html text eol=lf
 
-# Script bash della build automatica (runner macOS): sempre LF, anche se
-# modificati da Windows.
+# Script bash e Ruby della build automatica (runner macOS): sempre LF, anche
+# se modificati da Windows.
 *.sh text eol=lf
+*.rb text eol=lf

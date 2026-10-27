@@ -3,7 +3,8 @@
 // NON è agganciato alla build: va aggiunto in Xcode come target «Widget
 // Extension» seguendo docs/widget.md (App Group
 // group.io.github.simomagnus.universitynotes su app ed estensione).
-// Lo stesso file è in app/macos/WidgetUniNotes_da_aggiungere/.
+// Su iPhone l'estensione è in app/ios/WidgetUniNotes/ (stessi widget più la
+// Live Activity) e la aggiunge la build automatica.
 //
 // Dati: JSON scritto dall'app nella chiave «uninotes_widget_data» delle
 // UserDefaults dell'App Group (AppDelegate.swift / MainFlutterWindow.swift,
@@ -86,7 +87,9 @@ func daysLabel(_ n: Int) -> String {
   }
 }
 
-func widgetURL(_ route: String) -> URL {
+/// Non si chiama «widgetURL»: dentro una View il nome indicherebbe il
+/// modificatore View.widgetURL(_:) e non compilerebbe.
+func uninotesURL(_ route: String) -> URL {
   var c = URLComponents()
   c.scheme = "uninotes"
   c.host = "widget"
@@ -228,7 +231,7 @@ struct ExamRow: View {
   let rich: Bool
   let p: Palette
   var body: some View {
-    Link(destination: widgetURL(exam.route ?? "prova:\(exam.id)")) {
+    Link(destination: uninotesURL(exam.route ?? "prova:\(exam.id)")) {
       HStack(alignment: .center, spacing: 8) {
         VStack(alignment: .leading, spacing: 1) {
           Text(exam.title)
@@ -308,7 +311,7 @@ struct ExamsView: View {
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-    .widgetURL(widgetURL(route))
+    .widgetURL(uninotesURL(route))
     .widgetGlass(p)
   }
 
@@ -420,7 +423,7 @@ struct RecordView: View {
         .minimumScaleFactor(0.8)
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .widgetURL(widgetURL("registra"))
+    .widgetURL(uninotesURL("registra"))
     .widgetGlass(p)
   }
 }

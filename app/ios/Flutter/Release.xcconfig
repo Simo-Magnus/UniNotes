@@ -1,1 +1,7 @@
 #include "Generated.xcconfig"
+
+// ActivityKit (iOS 16.1+) e AppIntents (iOS 16+) collegati come facoltativi:
+// l'app e l'estensione WidgetUniNotes (deployment iOS 15.6) partono anche su
+// iOS 15, dove i due framework non esistono (il codice che li usa è sotto
+// #available). Vale anche per l'estensione, che usa questi file come base.
+OTHER_LDFLAGS = $(inherited) -weak_framework ActivityKit -weak_framework AppIntents

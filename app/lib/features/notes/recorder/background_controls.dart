@@ -18,8 +18,8 @@ enum RecorderCommand { pause, resume, toggle, save, open, discard }
 ///   (cronometro del sistema) e corso con i pulsanti «Pausa»/«Riprendi» e
 ///   «Salva» sempre visibili, anche a schermo bloccato; il tocco apre il
 ///   registratore;
-/// - **iOS**: Live Activity (schermata di blocco e Dynamic Island), se
-///   l'estensione è stata aggiunta in Xcode (docs/widget.md);
+/// - **iOS**: Live Activity (schermata di blocco e Dynamic Island, iOS
+///   16.2+), con l'estensione aggiunta dalla build automatica (docs/widget.md);
 /// - altrove: niente (sul PC c'è l'icona nell'area di notifica).
 abstract class BackgroundControls {
   factory BackgroundControls.forPlatform() {
@@ -404,9 +404,9 @@ class AndroidRecordingNotification implements BackgroundControls {
 // ----------------------------------------------------------------- iOS
 
 /// Live Activity della registrazione (iOS 16.2+, pulsanti da iOS 17). Il
-/// lato nativo è in `ios/Runner/AppDelegate.swift`; l'estensione con la
-/// grafica va aggiunta in Xcode (`ios/LiveActivity_da_aggiungere/`,
-/// docs/widget.md). Senza estensione le chiamate non fanno nulla.
+/// lato nativo è in `ios/Runner/AppDelegate.swift`; la grafica è
+/// nell'estensione `ios/WidgetUniNotes/`, che aggiunge la build automatica
+/// (docs/widget.md). Senza estensione le chiamate non fanno nulla.
 class IosLiveActivity implements BackgroundControls {
   IosLiveActivity() {
     _channel.setMethodCallHandler((call) async {

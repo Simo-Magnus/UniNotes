@@ -26,7 +26,7 @@ import flutter_local_notifications
   static let liveActivityChannelName =
     "io.github.simomagnus.universitynotes/live_activity"
   /// Comandi dei pulsanti della Live Activity (App Intents eseguiti
-  /// nell'app, ios/LiveActivity_da_aggiungere/RecordingIntents.swift).
+  /// nell'app, ios/WidgetUniNotes/RecordingIntents.swift).
   static let recordingCommandNotification = Notification.Name(
     "io.github.simomagnus.universitynotes.recordingCommand")
 
@@ -208,8 +208,9 @@ import flutter_local_notifications
   }
 
   /// Avvio, aggiornamento e chiusura della Live Activity. Senza l'estensione
-  /// (target «LiveActivityUniNotes» aggiunto in Xcode) o con le Live
-  /// Activity disattivate non fa nulla e risponde false.
+  /// (target «WidgetUniNotes», aggiunto dalla build automatica con
+  /// tool/aggiungi_estensioni_ios.rb), sotto iOS 16.2 o con le Live Activity
+  /// disattivate non fa nulla e risponde false.
   private func handleLiveActivity(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     #if canImport(ActivityKit)
       if #available(iOS 16.2, *), RecordingLiveActivity.available {
@@ -398,7 +399,7 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
 
 #if canImport(ActivityKit)
   /// Dati della Live Activity della registrazione. Deve restare identico a
-  /// ios/LiveActivity_da_aggiungere/RecordingActivityAttributes.swift
+  /// ios/WidgetUniNotes/RecordingActivityAttributes.swift
   /// (stesso nome e stessi campi: il sistema li confronta così).
   @available(iOS 16.1, *)
   struct RecordingActivityAttributes: ActivityAttributes {
@@ -420,8 +421,8 @@ final class IncomingFiles: NSObject, FlutterSceneLifeCycleDelegate {
   enum RecordingLiveActivity {
     static var current: Activity<RecordingActivityAttributes>?
 
-    /// Nome del target dell'estensione (docs/widget.md).
-    static let extensionName = "LiveActivityUniNotes.appex"
+    /// Estensione con i widget e la Live Activity (docs/widget.md).
+    static let extensionName = "WidgetUniNotes.appex"
 
     /// L'estensione c'è e l'utente non ha disattivato le Live Activity.
     static var available: Bool {

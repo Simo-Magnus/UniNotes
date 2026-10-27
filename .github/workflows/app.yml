@@ -612,6 +612,9 @@ jobs:
   # Chiave, firma e caricamento: app/tool/app_store_connect.sh; passi per
   # l'utente in guida alla pubblicazione §6.4. Dallo stesso archivio anche
   # l'IPA ad hoc per gli iPhone registrati (installazione da Safari, facoltativa).
+  # Widget e Live Activity (estensione WidgetUniNotes) aggiunti al progetto
+  # durante la build; con un problema in qualsiasi passo (aggiunta, archivio,
+  # firma) la build ricade senza estensioni, con un avviso.
   testflight:
     name: iOS (TestFlight)
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
@@ -683,23 +686,69 @@ jobs:
           GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
           GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
         run: flutter build ios --release --config-only --no-codesign "--build-name=$APP_VERSION" "--build-number=$APP_BUILD" "--dart-define=APP_VERSION=$APP_VERSION" --dart-define=STORE=appstore --dart-define=DONATIONS=none "--dart-define=APPSTORE_ID=$APPSTORE_ID" "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_IOS_CLIENT_ID=$GOOGLE_IOS_CLIENT_ID" "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
+      # Widget della schermata Home e Live Activity della registrazione:
+      # estensione WidgetKit «WidgetUniNotes» aggiunta qui al progetto Xcode
+      # (app/tool/aggiungi_estensioni_ios.rb, gemma xcodeproj di versione
+      # fissa con lo SHA-256 controllato), mai nel project.pbxproj del
+      # repository. Facoltativa: se non riesce, la build va avanti senza
+      # estensioni come prima (solo un avviso). docs/widget.md.
+      - name: Widget e Live Activity nel progetto Xcode (estensione WidgetUniNotes, facoltativa)
+        id: estensioni
+        if: steps.testflight.outputs.testflight == 'si'
+        run: |
+          copia="$RUNNER_TEMP/estensioni"
+          rm -rf "$copia" && mkdir -p "$copia"
+          # progetto senza estensioni, per la ricaduta anche dopo l'archivio
+          cp ios/Runner.xcodeproj/project.pbxproj "$copia/project.pbxproj"
+          gemma="$copia/xcodeproj-1.28.1.gem"
+          # nella condizione di if ogni errore porta all'avviso, mai al
+          # fallimento del job
+          if (cd "$copia" && gem fetch xcodeproj -v 1.28.1 --clear-sources --source https://rubygems.org/) \
+            && echo "6f12670f00739d9817ca27ac89d6ef01cc86050e22a0bc08a3131487e5b5cddc  $gemma" | shasum -a 256 -c - \
+            && gem install "$gemma" --user-install --no-document \
+            && ruby tool/aggiungi_estensioni_ios.rb; then
+            echo "estensioni=si" >> "$GITHUB_OUTPUT"
+          else
+            cp "$copia/project.pbxproj" ios/Runner.xcodeproj/project.pbxproj
+            echo "::warning title=Widget iOS::estensione WidgetUniNotes non aggiunta al progetto (leggi l'errore qui sopra): build senza widget né Live Activity, come le precedenti. TestFlight e ad hoc non cambiano."
+            echo "estensioni=no" >> "$GITHUB_OUTPUT"
+          fi
       # Archivio senza firma: la firma la fa -exportArchive con i certificati
       # gestiti nel cloud. Un archivio firmato con la firma automatica
       # creerebbe a ogni esecuzione un certificato «Apple Development» nuovo
       # (runner sempre pulito) e dalla seconda si fermerebbe («private key is
-      # not installed»). L'app per iPhone non ha entitlement da conservare.
+      # not installed»). Con l'estensione dei widget, app ed estensione si
+      # firmano poi in locale con «-» (senza certificati) per conservare gli
+      # entitlement dell'App Group, che -exportArchive legge dalla firma
+      # dell'archivio (come la build per il Mac App Store). Se l'archivio con
+      # l'estensione non riesce si rifà con il progetto senza estensioni
+      # (unica seconda compilazione, solo in caso di errore).
       - name: Archivio dell'app (xcodebuild archive)
+        id: archivio
         if: steps.testflight.outputs.testflight == 'si'
         env:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           APP_VERSION: ${{ needs.test.outputs.version }}
           APP_BUILD: ${{ needs.test.outputs.build }}
+          ESTENSIONI: ${{ steps.estensioni.outputs.estensioni }}
         run: |
           archivio="$RUNNER_TEMP/asc/Runner.xcarchive"
-          xcodebuild archive -quiet \
-            -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release \
-            -destination 'generic/platform=iOS' -archivePath "$archivio" \
-            "DEVELOPMENT_TEAM=$APPLE_TEAM_ID" CODE_SIGN_STYLE=Automatic CODE_SIGNING_ALLOWED=NO
+          archivia() {
+            rm -rf "$archivio"
+            xcodebuild archive -quiet \
+              -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release \
+              -destination 'generic/platform=iOS' -archivePath "$archivio" \
+              "DEVELOPMENT_TEAM=$APPLE_TEAM_ID" CODE_SIGN_STYLE=Automatic CODE_SIGNING_ALLOWED=NO
+          }
+          estensioni="${ESTENSIONI:-no}"
+          if [ "$estensioni" != "si" ]; then
+            archivia
+          elif ! archivia; then
+            echo "::warning title=Widget iOS::archivio con i widget non riuscito (errore di xcodebuild qui sopra, di solito nel codice Swift di ios/WidgetUniNotes): rifatto senza widget né Live Activity, come le build precedenti."
+            cp "$RUNNER_TEMP/estensioni/project.pbxproj" ios/Runner.xcodeproj/project.pbxproj
+            estensioni=no
+            archivia
+          fi
           plist="$archivio/Products/Applications/Runner.app/Info.plist"
           for k in CFBundleIdentifier CFBundleShortVersionString CFBundleVersion MinimumOSVersion ITSAppUsesNonExemptEncryption; do
             echo "$k = $(/usr/libexec/PlistBuddy -c "Print :$k" "$plist" 2> /dev/null || echo '(assente)')"
@@ -713,6 +762,20 @@ jobs:
             echo "::error title=TestFlight::PrivacyInfo.xcprivacy non incluso nell'app"
             exit 1
           fi
+          # ActivityKit e AppIntents facoltativi (l'app parte su iOS 15): qui
+          # solo nel log, per l'estensione lo controlla anche firma-locale
+          bash tool/app_store_connect.sh collegamenti "$archivio/Products/Applications/Runner.app/Runner" || true
+          # estensione: bundle ID, stessa versione e build dell'app, firma
+          # locale con l'App Group; se qualcosa non va, archivio senza
+          # estensioni (come le build precedenti)
+          if [ "$estensioni" = "si" ] \
+            && ! bash tool/app_store_connect.sh firma-locale "$archivio" "$APP_VERSION" "$APP_BUILD"; then
+            echo "::warning title=Widget iOS::estensione WidgetUniNotes non pronta per la firma nel cloud (qui sopra il motivo): archivio senza widget né Live Activity, come le build precedenti."
+            bash tool/app_store_connect.sh senza-estensioni "$archivio"
+            estensioni=no
+          fi
+          echo "Estensioni nell'archivio (widget e Live Activity): $estensioni"
+          echo "estensioni=$estensioni" >> "$GITHUB_OUTPUT"
       - name: Firma nel cloud di Apple (UniNotes.ipa per l'App Store)
         if: steps.testflight.outputs.testflight == 'si'
         env:

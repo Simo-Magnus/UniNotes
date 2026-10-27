@@ -969,3 +969,26 @@ Da sapere: un IPA ad hoc contiene il profilo con gli UDID dei dispositivi
 registrati e il certificato di distribuzione (nome del titolare dell'account
 sviluppatore); gli allegati della release sono pubblici, quindi chi scarica
 l'IPA può leggerli. Un UDID non dà accesso al telefono.
+
+Widget e Live Activity su iPhone (26/10/2026, test
+`app/test/ios_estensioni_ci_test.dart`, docs/widget.md): nel job `testflight`
+l'estensione `WidgetUniNotes` si aggiunge al progetto Xcode durante la build
+(`app/tool/aggiungi_estensioni_ios.rb`). Regole:
+
+- nessun secret e nessun permesso in più; i passi nuovi stanno dentro
+  `testflight == 'si'`, nessuna espressione nei comandi (l'esito passa come
+  variabile d'ambiente `ESTENSIONI`);
+- gemma `xcodeproj` di versione fissa: il file `.gem` si scarica da
+  rubygems.org, si controlla con lo SHA-256 pubblicato e si installa da quel
+  file nella cartella dell'utente (niente `sudo`); le sue dipendenze arrivano
+  da rubygems.org con i vincoli della gemma (non fissate: girano solo sul
+  runner, prima dell'archivio, senza secret nell'ambiente del passo);
+- lo script Ruby esegue i comandi senza shell (`IO.popen` con un elenco di
+  argomenti) e non riceve valori esterni;
+- firma locale «-» senza certificati (come il Mac App Store): niente
+  portachiavi né file da cancellare; gli entitlement sono solo l'App Group;
+- nessun peggioramento: ogni errore (aggiunta, archivio, firma locale,
+  esportazione) dà un avviso e la build ricade senza estensioni, con lo
+  stesso caricamento su TestFlight e lo stesso ad hoc di prima;
+- il `project.pbxproj` del repository non cambia (la build non firmata resta
+  quella di prima).

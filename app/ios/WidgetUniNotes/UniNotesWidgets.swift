@@ -1,9 +1,15 @@
-// Widget della schermata Home di UniNotes (WidgetKit, iOS 15.6+ e macOS 12+).
+// Estensione WidgetKit «WidgetUniNotes» di UniNotes per iPhone e iPad
+// (iOS 15.6+): i widget della schermata Home e, da iOS 16.2, la Live
+// Activity della registrazione (RecordingLiveActivity.swift), nello stesso
+// pacchetto di widget (@main qui sotto, l'unico dell'estensione).
 //
-// NON è agganciato alla build: va aggiunto in Xcode come target «Widget
-// Extension» seguendo docs/widget.md (App Group
-// group.io.github.simomagnus.universitynotes su app ed estensione).
-// Lo stesso file è in app/macos/WidgetUniNotes_da_aggiungere/.
+// Il target lo aggiunge la build automatica con
+// app/tool/aggiungi_estensioni_ios.rb (docs/widget.md): file di questa
+// cartella, App Group group.io.github.simomagnus.universitynotes su app ed
+// estensione. Il codice non usa nulla dell'app Flutter: solo i dati
+// nell'App Group e gli URL uninotes://.
+// Il Mac ha una copia dei widget in app/macos/WidgetUniNotes_da_aggiungere/
+// (senza Live Activity), ancora da agganciare in Xcode.
 //
 // Dati: JSON scritto dall'app nella chiave «uninotes_widget_data» delle
 // UserDefaults dell'App Group (AppDelegate.swift / MainFlutterWindow.swift,
@@ -30,6 +36,7 @@ import WidgetKit
 
 // MARK: - Dati condivisi
 
+/// Stesso valore di AppDelegate.appGroup e degli entitlement.
 private let appGroup = "group.io.github.simomagnus.universitynotes"
 private let dataKey = "uninotes_widget_data"
 
@@ -86,7 +93,9 @@ func daysLabel(_ n: Int) -> String {
   }
 }
 
-func widgetURL(_ route: String) -> URL {
+/// uninotes://widget/<route>. Non si chiama «widgetURL»: dentro una View il
+/// nome indicherebbe il modificatore View.widgetURL(_:) e non compilerebbe.
+func uninotesURL(_ route: String) -> URL {
   var c = URLComponents()
   c.scheme = "uninotes"
   c.host = "widget"
@@ -118,32 +127,34 @@ struct Palette {
   let accent: Color
   let urgent: Color
 
+  static let dark = Palette(
+    top: hex(0x1D2634, 0.92),
+    mid: hex(0x0F1928, 0.92),
+    bottom: hex(0x050F1D, 0.92),
+    border: hex(0xA0CDFF, 0.11),
+    inner: Color.white.opacity(0.05),
+    innerBorder: Color.white.opacity(0.10),
+    text: hex(0xF3F7FB),
+    secondary: hex(0xEBF5FF, 0.75),
+    muted: hex(0x8FA9C4),
+    accent: hex(0x38BDF8),
+    urgent: hex(0xF87171))
+
+  static let light = Palette(
+    top: hex(0xFFFFFF),
+    mid: hex(0xFDFEFF),
+    bottom: hex(0xFAFCFF),
+    border: hex(0xDAE3ED),
+    inner: hex(0x0369A1, 0.05),
+    innerBorder: hex(0x0369A1, 0.14),
+    text: hex(0x0F172A),
+    secondary: hex(0x334155),
+    muted: hex(0x52627A),
+    accent: hex(0x0369A1),
+    urgent: hex(0xB91C1C))
+
   static func of(_ scheme: ColorScheme) -> Palette {
-    scheme == .dark
-      ? Palette(
-        top: hex(0x1D2634, 0.92),
-        mid: hex(0x0F1928, 0.92),
-        bottom: hex(0x050F1D, 0.92),
-        border: hex(0xA0CDFF, 0.11),
-        inner: Color.white.opacity(0.05),
-        innerBorder: Color.white.opacity(0.10),
-        text: hex(0xF3F7FB),
-        secondary: hex(0xEBF5FF, 0.75),
-        muted: hex(0x8FA9C4),
-        accent: hex(0x38BDF8),
-        urgent: hex(0xF87171))
-      : Palette(
-        top: hex(0xFFFFFF),
-        mid: hex(0xFDFEFF),
-        bottom: hex(0xFAFCFF),
-        border: hex(0xDAE3ED),
-        inner: hex(0x0369A1, 0.05),
-        innerBorder: hex(0x0369A1, 0.14),
-        text: hex(0x0F172A),
-        secondary: hex(0x334155),
-        muted: hex(0x52627A),
-        accent: hex(0x0369A1),
-        urgent: hex(0xB91C1C))
+    scheme == .dark ? dark : light
   }
 
   var glass: LinearGradient {
@@ -168,11 +179,10 @@ let orangeGradient = LinearGradient(
 let onOrange = hex(0x1A0B00)
 
 extension View {
-  /// Sfondo di vetro del widget (iOS 17 / macOS 14 vogliono
-  /// containerBackground).
+  /// Sfondo di vetro del widget (iOS 17 vuole containerBackground).
   @ViewBuilder
   func widgetGlass(_ p: Palette) -> some View {
-    if #available(iOS 17.0, macOS 14.0, *) {
+    if #available(iOS 17.0, *) {
       self.containerBackground(for: .widget) { p.glass }
     } else {
       self.padding().background(p.glass)
@@ -228,7 +238,7 @@ struct ExamRow: View {
   let rich: Bool
   let p: Palette
   var body: some View {
-    Link(destination: widgetURL(exam.route ?? "prova:\(exam.id)")) {
+    Link(destination: uninotesURL(exam.route ?? "prova:\(exam.id)")) {
       HStack(alignment: .center, spacing: 8) {
         VStack(alignment: .leading, spacing: 1) {
           Text(exam.title)
@@ -254,6 +264,12 @@ struct ExamRow: View {
 }
 
 // MARK: - «Prossime prove»
+
+/// Una prova ancora da sostenere con i giorni mancanti.
+struct UpcomingExam {
+  let exam: WidgetExam
+  let days: Int
+}
 
 struct ExamsEntry: TimelineEntry {
   let date: Date
@@ -285,20 +301,24 @@ struct ExamsView: View {
   @Environment(\.colorScheme) var scheme
   @Environment(\.widgetFamily) var family
 
+  /// Prove non ancora passate, con i giorni ricalcolati da isoDate.
+  var upcoming: [UpcomingExam] {
+    (entry.data?.exams ?? []).compactMap { e -> UpcomingExam? in
+      let d = daysUntil(e.isoDate, from: entry.date) ?? e.days ?? 0
+      return d < 0 ? nil : UpcomingExam(exam: e, days: d)
+    }
+  }
+
   var body: some View {
     let p = Palette.of(scheme)
-    let all = (entry.data?.exams ?? [])
-      .compactMap { e -> (WidgetExam, Int)? in
-        let d = daysUntil(e.isoDate, from: entry.date) ?? e.days ?? 0
-        return d < 0 ? nil : (e, d)
-      }
+    let all = upcoming
     let past = (entry.data?.exams.count ?? 0) - all.count
     let total = max(all.count, (entry.data?.total ?? all.count) - past)
     let listRoute = entry.data?.route ?? "sezione:Esami"
     // piccolo: il tocco apre la prova mostrata; altrimenti la pagina Esami
     // (le righe hanno i loro Link)
     let route = family == .systemSmall
-      ? (all.first.map { $0.0.route ?? "prova:\($0.0.id)" } ?? listRoute)
+      ? (all.first.map { $0.exam.route ?? "prova:\($0.exam.id)" } ?? listRoute)
       : listRoute
     Group {
       if family == .systemSmall {
@@ -308,17 +328,18 @@ struct ExamsView: View {
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-    .widgetURL(widgetURL(route))
+    .widgetURL(uninotesURL(route))
     .widgetGlass(p)
   }
 
   /// Piccolo: la prossima prova, grande.
   @ViewBuilder
-  func single(_ item: (WidgetExam, Int)?, p: Palette) -> some View {
+  func single(_ item: UpcomingExam?, p: Palette) -> some View {
     VStack(alignment: .leading, spacing: 6) {
       CardTitle(text: "Prossima prova", p: p)
-      if let e = item?.0, let days = item?.1 {
-        DaysChip(days: days, p: p)
+      if let item = item {
+        let e = item.exam
+        DaysChip(days: item.days, p: p)
           .padding(.top, 2)
         Text(e.title)
           .font(.system(size: e.title.count > 28 ? 15 : 17, weight: .semibold))
@@ -341,7 +362,7 @@ struct ExamsView: View {
 
   /// Medio: 3 righe compatte; grande: 5 con la data.
   @ViewBuilder
-  func list(_ all: [(WidgetExam, Int)], total: Int, p: Palette) -> some View {
+  func list(_ all: [UpcomingExam], total: Int, p: Palette) -> some View {
     let large = family == .systemLarge
     // grande: 5 righe con la data entrano anche negli iPhone più piccoli
     // (widget grande da 292×311 pt, margini compresi)
@@ -363,8 +384,8 @@ struct ExamsView: View {
           .foregroundColor(p.muted)
           .padding(.top, 4)
       }
-      ForEach(rows, id: \.0.id) { item in
-        ExamRow(exam: item.0, days: item.1, rich: large, p: p)
+      ForEach(rows.indices, id: \.self) { i in
+        ExamRow(exam: rows[i].exam, days: rows[i].days, rich: large, p: p)
       }
       Spacer(minLength: 0)
     }
@@ -420,7 +441,7 @@ struct RecordView: View {
         .minimumScaleFactor(0.8)
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .widgetURL(widgetURL("registra"))
+    .widgetURL(uninotesURL("registra"))
     .widgetGlass(p)
   }
 }
@@ -438,10 +459,16 @@ struct RecordWidget: Widget {
 
 // MARK: - Pacchetto dei widget
 
+/// Unico punto d'ingresso dell'estensione. Su iOS 15 e 16.0-16.1 ci sono
+/// solo i due widget; la Live Activity della registrazione si aggiunge da
+/// iOS 16.2 (stessa versione minima di ActivityContent nell'app).
 @main
 struct UniNotesWidgets: WidgetBundle {
   var body: some Widget {
     UpcomingExamsWidget()
     RecordWidget()
+    if #available(iOS 16.2, *) {
+      RecordingLiveActivity()
+    }
   }
 }

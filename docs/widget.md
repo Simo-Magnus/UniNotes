@@ -1,6 +1,8 @@
 # Widget della schermata Home
 
-Due widget con la grafica di Design 3 (docs/SPEC_DESIGN_3.md): vetro scuro
+Android e iPhone/iPad (su iPhone con la Live Activity della registrazione,
+aggiunti dalla build automatica: sezione «iOS e macOS»; sul Mac ancora da
+agganciare). Due widget con la grafica di Design 3 (docs/SPEC_DESIGN_3.md): vetro scuro
 o chiaro secondo il tema del sistema (sfumatura della sezione-card, bordo
 sottile, filo di luce in alto, faretto azzurro, raggio 22), titolo piccolo
 in maiuscolo nel testo secondario, righe come card interne (raggio 16),
@@ -214,31 +216,109 @@ anche il widget torna fermo (`MainActivity.cleanUpFlutterEngine`).
 
 ## iOS e macOS (WidgetKit)
 
-WidgetKit richiede un target di estensione creato in Xcode, che non si può
-creare da Windows senza toccare `project.pbxproj` (romperebbe la build della
-CI). Il codice Swift dei due widget è pronto, ma **non è agganciato alla
-build**:
+Su **iPhone e iPad** widget e Live Activity sono un'unica estensione
+WidgetKit, `WidgetUniNotes` (bundle ID
+`io.github.simomagnus.universitynotes.WidgetUniNotes`), che **aggiunge la
+build automatica**: niente passi in Xcode e niente Mac. Sul **Mac** i widget
+vanno ancora agganciati a mano (sezione «macOS» più sotto).
 
-- `app/ios/WidgetUniNotes_da_aggiungere/UniNotesWidgets.swift` e
-  `WidgetUniNotes.entitlements`
-- `app/macos/WidgetUniNotes_da_aggiungere/` (stessi file; l'entitlement del
-  Mac ha anche la sandbox)
+Codice dell'estensione, in `app/ios/WidgetUniNotes/`:
+
+- `UniNotesWidgets.swift`: i due widget e il `WidgetBundle` con l'unico
+  `@main` dell'estensione; la Live Activity entra nel pacchetto con
+  `if #available(iOS 16.2, *)`, quindi l'estensione (iOS 15.6, come l'app)
+  si installa anche su iOS 15 con i soli widget;
+- `RecordingLiveActivity.swift`, `RecordingActivityAttributes.swift` e
+  `RecordingIntents.swift` (anche in Runner): Live Activity, sotto;
+- `Info.plist` (`NSExtensionPointIdentifier` = `com.apple.widgetkit-extension`,
+  versione e numero di build dell'app: `FLUTTER_BUILD_NAME` e
+  `FLUTTER_BUILD_NUMBER`), `WidgetUniNotes.entitlements` (App Group) e
+  `PrivacyInfo.xcprivacy` (UserDefaults dell'App Group, motivo `1C8F.1`).
 
 La parte dell'app è già pronta: `ios/Runner/AppDelegate.swift` e
 `macos/Runner/MainFlutterWindow.swift` ricevono il JSON sul canale
 `io.github.simomagnus.universitynotes/widgets`, lo scrivono nelle
 UserDefaults dell'App Group `group.io.github.simomagnus.universitynotes`
 (chiave `uninotes_widget_data`) e chiamano
-`WidgetCenter.shared.reloadAllTimelines()`.
+`WidgetCenter.shared.reloadAllTimelines()`. L'App Group dell'app è in
+`ios/Runner/Runner.entitlements`.
 
 Grafica e contenuto come su Android (stessi colori, card interne,
 etichette dei giorni rosse entro 7 giorni): «Prossime prove» in tre misure,
 piccolo (la prossima prova, grande), medio (3 righe compatte) e grande (5
 righe con la data, quante ne entrano anche nell'iPhone più piccolo), con il
 «+N»; «Registra lezione» piccolo con il tondo arancione. Il codice non si
-può compilare da Windows: va controllato in Xcode quando si aggancia.
+può compilare da Windows: lo compila la build automatica (job
+«testflight»), e un errore di compilazione fa solo ricadere la build senza
+widget (sotto).
 
-### Avviare la registrazione dal widget su iOS (da fare dopo l'aggancio)
+### Come la build automatica aggiunge l'estensione (iPhone e iPad)
+
+Il `project.pbxproj` del repository resta **senza** estensioni: build non
+firmata, `flutter run` e ricaduta restano quelli di prima. Nel job
+«testflight» di `.github/workflows/app.yml`, dopo `flutter build ios
+--config-only`:
+
+1. **Aggiunta al progetto** (passo «Widget e Live Activity nel progetto
+   Xcode»): gemma `xcodeproj` di versione fissa (1.28.1, file `.gem`
+   scaricato da rubygems.org e controllato con lo SHA-256) e
+   `app/tool/aggiungi_estensioni_ios.rb`, che aggiunge il gruppo e il target
+   `WidgetUniNotes` (app extension, iOS 15.6, firma automatica, Swift e
+   famiglie di dispositivi come Runner, stessi file xcconfig di Flutter di
+   Runner, quindi stessa versione e stesso numero di build dell'app),
+   `RecordingIntents.swift` anche in Runner, in Runner la dipendenza
+   dall'estensione, la fase **«Embed Foundation Extensions»** (PlugIns)
+   **prima di «Thin Binary»** di Flutter (dopo darebbe «Cycle inside
+   Runner») e `CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements`. Lo
+   script è idempotente e alla fine rilegge il progetto salvato (target,
+   fasi, impostazioni, `xcodebuild -list`, `plutil` e PlistBuddy su
+   Info.plist ed entitlement, App Group uguale in AppDelegate e nei widget,
+   un solo `@main`): se qualcosa non torna esce con il motivo nel log.
+2. **Archivio** non firmato come prima (`CODE_SIGNING_ALLOWED=NO`), poi
+   controllo di bundle ID, versione, build e tipo dell'estensione
+   (`app_store_connect.sh firma-locale`) e **firma locale «-»** (senza
+   certificati) di framework, estensione e app con i loro entitlement:
+   `xcodebuild -exportArchive` legge gli entitlement (l'App Group) dalla
+   firma dell'archivio e rifirma tutto con i certificati del cloud, come per
+   il Mac App Store.
+3. **Esportazione** App Store e ad hoc con la firma automatica nel cloud e
+   `-allowProvisioningUpdates`: Xcode crea o aggiorna i profili di app ed
+   estensione (l'ad hoc anche per l'estensione, con i dispositivi
+   registrati). Nel log, dopo ogni esportazione: «UniNotes.ipa: con
+   WidgetUniNotes.appex (widget e Live Activity)» oppure «senza estensioni».
+
+**Ricaduta.** Ogni passo che non riesce dà un avviso «Widget iOS» e la build
+continua senza estensioni, come prima (TestFlight e ad hoc escono comunque):
+aggiunta non riuscita → progetto originale; archivio non riuscito (di
+solito un errore nel codice Swift) → progetto originale e secondo archivio
+(l'unica seconda compilazione, solo in caso di errore); firma locale o
+controllo dell'estensione non riusciti → archivio senza PlugIns e senza
+firma locale; esportazione non riuscita → nuova esportazione da una copia
+dell'archivio senza estensioni (`Runner-senza-estensioni.xcarchive`).
+
+### Portale Apple (una volta, dal browser)
+
+`-allowProvisioningUpdates` crea e aggiorna profili e App ID, ma Apple non
+documenta che registri anche un **App Group** nuovo con la chiave API: va
+fatto una volta a mano su developer.apple.com → *Certificates, Identifiers
+& Profiles* → *Identifiers* (se manca, l'esportazione con i widget non
+riesce e la build ricade senza, con un avviso che ripete questi passi):
+
+1. **+** → *App Groups* → *Continue*; descrizione «UniNotes», identificativo
+   `group.io.github.simomagnus.universitynotes` → *Register*.
+2. App ID dell'app `io.github.simomagnus.universitynotes` → *Capabilities*:
+   spunta **App Groups** → *Configure* → scegli il gruppo → *Continue* →
+   *Save* (conferma il messaggio sui profili: Xcode li rifà alla build).
+3. **+** → *App IDs* → *App* → descrizione «UniNotes Widget», *Explicit*
+   `io.github.simomagnus.universitynotes.WidgetUniNotes`; nelle capability
+   spunta **App Groups**, *Continue* → *Register*; poi aprilo, *App Groups*
+   → *Configure* → lo stesso gruppo → *Save*.
+
+Niente notifiche push: la Live Activity si aggiorna dall'app
+(`pushType: nil`). Nessun profilo da creare a mano: li fa Xcode, anche
+quello ad hoc dell'estensione con i dispositivi registrati.
+
+### Avviare la registrazione dal widget su iOS (ancora da fare)
 
 Oggi il widget «Registra lezione» di iOS e macOS apre il registratore
 (`uninotes://widget/registra`): serve un tocco su «Registra». Avviare
@@ -249,8 +329,7 @@ begin the audio recording and keep it active as long as you record audio.
 If you don't start a Live Activity, the audio recording stops». Le
 discussioni sui forum Apple riportano anche che la registrazione deve
 partire con l'app in primo piano (errore «Target is not foreground» se
-parte da sola in background). Quindi, dopo aver agganciato in Xcode sia i
-widget sia la Live Activity (sezioni qui sopra e sotto):
+parte da sola in background). Quindi, con l'estensione già nella build:
 
 1. un `AudioRecordingIntent` (iOS 18+) con `openAppWhenRun = true`, nel
    target Runner (come `RecordingIntents.swift`), che apre l'app con la
@@ -266,54 +345,29 @@ widget sia la Live Activity (sezioni qui sopra e sotto):
    che con la Live Activity disattivata nelle Impostazioni l'avvio dal
    widget si rifiuti in modo chiaro.
 
-Nulla di questo è implementato: senza un Mac non si può né compilare né
-provare, e i comportamenti sopra (in particolare l'avvio dal background)
-vanno verificati su un iPhone vero.
+Nulla di questo è implementato: va provato su un iPhone vero con iOS 18
+(in particolare l'avvio dal background).
 
-### Passo per passo, su un Mac (iOS)
+### Tocchi e prova sull'iPhone
 
-1. Apri `app/ios/Runner.xcworkspace` in Xcode (dopo `flutter build ios
-   --config-only` o `pod install`).
-2. **File → New → Target… → Widget Extension**. Nome: `WidgetUniNotes`;
-   togli le spunte «Include Live Activity» e «Include Configuration App
-   Intent». Bundle identifier:
-   `io.github.simomagnus.universitynotes.WidgetUniNotes`. Alla domanda
-   «Activate scheme?» rispondi *Cancel* (resta lo schema Runner).
-3. Nel nuovo gruppo `WidgetUniNotes` cancella i file Swift generati da Xcode
-   e trascina dentro `UniNotesWidgets.swift` da
-   `app/ios/WidgetUniNotes_da_aggiungere/` (spunta solo il target
-   `WidgetUniNotes`).
-4. Target `WidgetUniNotes` → *General*: **Minimum Deployments** iOS 15.6
-   (come l'app).
-5. **Signing & Capabilities**, sia per il target **Runner** sia per
-   **WidgetUniNotes**: *+ Capability → App Groups* e aggiungi
-   `group.io.github.simomagnus.universitynotes` (stesso team). In alternativa
-   imposta *Code Signing Entitlements* del widget su
-   `WidgetUniNotes_da_aggiungere/WidgetUniNotes.entitlements` e aggiungi la
-   stessa chiave a `Runner/Runner.entitlements` (Xcode la crea attivando la
-   capability).
-6. Target **Runner** → *Build Phases*: verifica che ci sia *Embed Foundation
-   Extensions* con `WidgetUniNotes.appex` e sposta la fase **prima** di
-   *Thin Binary* / *Run Script* di Flutter (altrimenti l'errore «Cycle inside
-   Runner»).
-7. Tocchi sui widget: **già pronto nel codice**. Lo schema `uninotes` è in
-   `CFBundleURLTypes` dell'Info.plist (iOS e macOS); su iOS i collegamenti
-   arrivano alla scena tramite `IncomingFiles` e `AppDelegate.openAppURL`
-   (`uninotes://widget/<schermata>` → `openWidgetURL`), sul Mac tramite
-   `AppDelegate.application(_:open:)` e `AppLinks` in
-   `MainFlutterWindow.swift` (anche `takeRoute` all'avvio). Non serve
-   toccare `SceneDelegate.swift`. Lo stesso schema riporta nell'app l'esito
-   del comando «UniNotes Focus» (`uninotes://focus/…`, vedi focus.md).
-8. Compila ed esegui su un iPhone o sul simulatore, poi aggiungi i widget
-   dalla schermata Home (pressione lunga → +). Prova: aggiungi una prova con
-   una data nell'app, torna alla Home e controlla il widget.
-9. Pubblicazione: nel portale Apple Developer registra anche l'App ID
-   dell'estensione e l'App Group, e rigenera i profili di provisioning di
-   app ed estensione.
+Tocchi sui widget: lo schema `uninotes` è in `CFBundleURLTypes`
+dell'Info.plist (iOS e macOS); su iOS i collegamenti arrivano alla scena
+tramite `IncomingFiles` e `AppDelegate.openAppURL`
+(`uninotes://widget/<schermata>` → `openWidgetURL`), sul Mac tramite
+`AppDelegate.application(_:open:)` e `AppLinks` in `MainFlutterWindow.swift`
+(anche `takeRoute` all'avvio). Non serve toccare `SceneDelegate.swift`. Lo
+stesso schema riporta nell'app l'esito del comando «UniNotes Focus»
+(`uninotes://focus/…`, vedi focus.md).
 
-### macOS
+Prova (build ad hoc o TestFlight con «con WidgetUniNotes.appex» nel log):
+aggiungi una prova con una data nell'app, poi nella schermata Home
+pressione lunga → **+** → UniNotes → «Prossime prove» (tre misure) o
+«Registra lezione»; tocca una prova e il widget di registrazione. Su iOS 15
+ci sono i widget ma non la Live Activity.
 
-Come sopra, con `app/macos/Runner.xcworkspace`:
+### macOS (ancora a mano, su un Mac)
+
+Con `app/macos/Runner.xcworkspace` in Xcode:
 
 1. *File → New → Target… → macOS → Widget Extension*, nome
    `WidgetUniNotes`, bundle id
@@ -333,6 +387,14 @@ Come sopra, con `app/macos/Runner.xcworkspace`:
    `application(_:open urls:)` che passa la rotta (il percorso dopo
    `uninotes://widget/`) a Flutter sul canale dei widget con
    `invokeMethod("route", …)`; finché non c'è, il tocco apre solo l'app.
+5. *Embed Foundation Extensions* in Runner prima delle fasi di script di
+   Flutter (altrimenti «Cycle inside Runner») e, per il Mac App Store,
+   App ID dell'estensione e App Group nel portale Apple come per l'iPhone.
+
+In alternativa si può estendere `app/tool/aggiungi_estensioni_ios.rb` al
+progetto `macos/` (sandbox nell'entitlement dell'estensione, deployment
+macOS 12.0, gruppo con il prefisso del team se serve) e richiamarlo nel job
+«mac-app-store».
 
 ## Live Activity della registrazione (iOS)
 
@@ -343,15 +405,25 @@ e, da iOS 17, i pulsanti **Pausa/Riprendi** e **Salva** (App Intents). Il
 tocco apre il registratore (`uninotes://widget/registra`). È l'equivalente
 della notifica con il tempo e i pulsanti di Android (docs/registratore.md).
 
-Come per i widget, ActivityKit richiede un target di estensione creato in
-Xcode: il codice è pronto ma **non è agganciato alla build** (nessuna
-modifica a `project.pbxproj`):
+Come vuole Apple, la Live Activity (`ActivityConfiguration`) sta
+nell'estensione WidgetKit, nello **stesso** pacchetto dei widget
+(`WidgetUniNotes`, aggiunta dalla build automatica, vedi sopra), solo da
+iOS 16.2 (`if #available(iOS 16.2, *)` nel `WidgetBundle`). File in
+`app/ios/WidgetUniNotes/`:
 
-- `app/ios/LiveActivity_da_aggiungere/RecordingLiveActivity.swift`: grafica
-  (schermata di blocco, Dynamic Island) e `@main` dell'estensione;
+- `RecordingLiveActivity.swift`: grafica (schermata di blocco, Dynamic
+  Island), senza `@main` (è in `UniNotesWidgets.swift`);
 - `RecordingActivityAttributes.swift`: dati della Live Activity (solo
-  nell'estensione: l'app ha la stessa struttura in `AppDelegate.swift`);
-- `RecordingIntents.swift`: i pulsanti (in **entrambi** i target).
+  nell'estensione: l'app ha la stessa struttura, stesso nome e stessi campi,
+  in `AppDelegate.swift`, così compila anche senza l'estensione);
+- `RecordingIntents.swift`: i pulsanti (iOS 17+), in **entrambi** i target,
+  così girano nel processo dell'app anche in background.
+
+`NSSupportsLiveActivities` = `YES` è nell'Info.plist dell'app. ActivityKit
+e AppIntents sono collegati come facoltativi (`-weak_framework` in
+`ios/Flutter/Debug.xcconfig` e `Release.xcconfig`, usati anche
+dall'estensione): l'app e i widget partono anche su iOS 15, dove i due
+framework non esistono.
 
 Il lato app è già pronto: `ios/Runner/AppDelegate.swift` riceve sul canale
 `io.github.simomagnus.universitynotes/live_activity` i comandi `start`
@@ -359,47 +431,13 @@ Il lato app è già pronto: `ios/Runner/AppDelegate.swift` riceve sul canale
 (`lib/features/notes/recorder/background_controls.dart`) e rimanda a Flutter
 `command` (`toggle`, `save`) quando si preme un pulsante. Il codice è
 protetto da `#if canImport(ActivityKit)`, `#available(iOS 16.2, *)` e dal
-controllo che `LiveActivityUniNotes.appex` sia dentro l'app: finché
-l'estensione non c'è le chiamate non fanno nulla e la build si comporta
-come prima.
+controllo che `WidgetUniNotes.appex` sia dentro l'app: in una build senza
+estensione (build non firmata, ricaduta) le chiamate non fanno nulla.
 
-### Passo per passo, su un Mac
-
-1. Apri `app/ios/Runner.xcworkspace` in Xcode.
-2. **File → New → Target… → Widget Extension**. Nome:
-   `LiveActivityUniNotes` (il nome conta: l'app cerca
-   `LiveActivityUniNotes.appex`); spunta **Include Live Activity**, togli
-   «Include Configuration App Intent». Bundle identifier:
-   `io.github.simomagnus.universitynotes.LiveActivityUniNotes`. Alla
-   domanda «Activate scheme?» rispondi *Cancel*.
-3. Nel gruppo `LiveActivityUniNotes` cancella i file Swift generati da Xcode
-   e trascina dentro i tre file di `app/ios/LiveActivity_da_aggiungere/`:
-   - `RecordingLiveActivity.swift` e `RecordingActivityAttributes.swift`:
-     spunta **solo** `LiveActivityUniNotes`;
-   - `RecordingIntents.swift`: spunta **sia** `Runner` **sia**
-     `LiveActivityUniNotes` (così i pulsanti girano nel processo dell'app,
-     anche in background).
-4. Target `LiveActivityUniNotes` → *General* → **Minimum Deployments**:
-   iOS 16.2 (l'app resta a 15.6: sotto iOS 16.2 la Live Activity
-   semplicemente non c'è).
-5. Target **Runner** → *Info*: aggiungi la chiave
-   `NSSupportsLiveActivities` (*Supports Live Activities*) = `YES`.
-6. Target **Runner** → *Build Phases*: controlla che in *Embed Foundation
-   Extensions* ci sia `LiveActivityUniNotes.appex` e che la fase stia
-   **prima** di *Thin Binary* / *Run Script* di Flutter (altrimenti «Cycle
-   inside Runner»).
-7. Tocco sulla Live Activity: serve lo schema URL `uninotes` e la
-   `SceneDelegate` del punto 7 dei widget qui sopra (se li hai già fatti per
-   i widget, niente da aggiungere).
-8. Se Xcode, con l'app ancora a iOS 15.6, collega `ActivityKit` in modo
-   obbligatorio (errore all'avvio su iOS 15), in *Runner → Build Phases →
-   Link Binary With Libraries* imposta `ActivityKit.framework` come
-   *Optional*.
-9. Prova su un iPhone (le Live Activity nel simulatore funzionano, la
-   Dynamic Island solo sui modelli che l'hanno): avvia una registrazione,
-   blocca lo schermo, premi Pausa e Salva.
-10. Pubblicazione: registra anche l'App ID dell'estensione nel portale Apple
-    Developer e rigenera i profili di provisioning.
+Prova su un iPhone con iOS 16.2 o successivo (la Dynamic Island solo sui
+modelli che l'hanno; i pulsanti da iOS 17): avvia una registrazione,
+blocca lo schermo, premi Pausa e Salva. Il tocco apre il registratore con
+lo schema `uninotes` dei widget.
 
 Le impostazioni dell'utente (*Impostazioni → UniNotes → Live Activity*)
 possono disattivarle: l'app lo controlla

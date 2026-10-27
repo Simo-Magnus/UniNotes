@@ -91,6 +91,11 @@
 	     senza questa chiave iOS chiude l'app appena si tocca l'opzione. -->
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Serve solo quando scegli «Salva immagine» o «Salva video» dal menu Condividi, per salvare il file nelle Foto.</string>
+	<!-- Live Activity della registrazione (iOS 16.2+, estensione
+	     WidgetUniNotes aggiunta dalla build automatica, docs/widget.md). Su
+	     iOS 15 e senza l'estensione la chiave non ha effetto. -->
+	<key>NSSupportsLiveActivities</key>
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

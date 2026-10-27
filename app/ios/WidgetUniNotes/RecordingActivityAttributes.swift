@@ -1,8 +1,10 @@
-// Solo nel target dell'estensione «LiveActivityUniNotes» (NON in Runner:
-// l'app ha già la stessa struttura in Runner/AppDelegate.swift).
+// Estensione «WidgetUniNotes» (solo lì: Runner ha la stessa struttura in
+// Runner/AppDelegate.swift, compilata anche senza l'estensione).
 //
 // Dati della Live Activity della registrazione: deve restare identico alla
-// copia in AppDelegate.swift (stesso nome, stessi campi).
+// copia in AppDelegate.swift (stesso nome, stessi campi): ActivityKit
+// riconosce la Live Activity avviata dall'app dal nome del tipo e ne decodifica
+// lo stato con questi campi.
 
 import ActivityKit
 import Foundation
