@@ -130,6 +130,7 @@ class Exam {
   };
 
   Exam copyWith({
+    int? courseId,
     ExamStatus? status,
     int? grade,
     bool clearGrade = false,
@@ -149,7 +150,7 @@ class Exam {
   }) => Exam(
     id: id,
     externalId: externalId,
-    courseId: courseId,
+    courseId: courseId ?? this.courseId,
     kind: kind ?? this.kind,
     title: title ?? this.title,
     date: clearDate ? null : (date ?? this.date),

@@ -419,7 +419,17 @@ class _RecorderScreenState extends State<RecorderScreen> {
                         DropdownButtonFormField<int>(
                           style: theme.textTheme.bodyLarge,
                           isExpanded: true,
-                          initialValue: active ? _rec.courseId : _course?.id,
+                          // insegnamento della registrazione non più nella
+                          // lista (es. eliminato mentre si registra): menù
+                          // vuoto invece dell'errore
+                          initialValue: switch (active
+                              ? _rec.courseId
+                              : _course?.id) {
+                            final id?
+                                when _catalog!.courses.any((c) => c.id == id) =>
+                              id,
+                            _ => null,
+                          },
                           decoration: const InputDecoration(labelText: 'Corso'),
                           items: [
                             for (final c in _catalog!.courses)

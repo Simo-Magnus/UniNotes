@@ -124,10 +124,15 @@ void main() {
       ))!;
       await _pump(tester, s, ExamDetailScreen(examId: id));
       expect(find.byTooltip('Cambia tipo'), findsNothing);
-      await tester.tap(find.byType(ExamKindChip));
+      // la tipologia è sotto il nome dell'insegnamento: toccandola si
+      // cambia solo il titolo
+      expect(find.byType(ExamKindChip), findsNothing);
+      await tester.tap(find.byKey(const Key('detail-title')));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 600));
       expect(find.text('Prova in itinere o esonero'), findsNothing);
+      expect(find.text('Titolo'), findsOneWidget);
+      await tester.tap(find.text('Annulla'));
       await _settle(tester, 4);
       final e = (await tester.runAsync(() => s.exams.byId(id)))!;
       expect(e.kind, ExamKind.finalExam);

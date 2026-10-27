@@ -199,6 +199,40 @@ bool offeredInExamForm(
   return y < current && !passed && !toComplete;
 }
 
+/// Insegnamenti del menù «Corso» del modulo e della scelta dell'insegnamento
+/// di una prova in itinere o esonero dal dettaglio: quelli proposti da
+/// [offeredInExamForm] (anche quelli aggiunti dallo studente) più quelli di
+/// [keep]. Insieme l'esame finale «principale» di ogni insegnamento.
+Future<(List<Course>, Map<int, Exam>)> examCourseChoices(
+  AppServices s, {
+  Set<int?> keep = const {},
+}) async {
+  final scope = s.scope;
+  final exclusions = ExclusionFilter(await s.settings.exclusionPatterns());
+  final finals = <int, List<Exam>>{};
+  for (final e in await s.exams.all()) {
+    if (e.kind == ExamKind.finalExam) {
+      finals.putIfAbsent(e.courseId, () => []).add(e);
+    }
+  }
+  final finalByCourse = {
+    for (final f in finals.entries) f.key: primaryFinal(f.value)!,
+  };
+  final courses = [
+    for (final c in await s.courses.all())
+      if (keep.contains(c.id) ||
+          offeredInExamForm(
+            c,
+            scope: scope,
+            exclusions: exclusions,
+            passed: finalByCourse[c.id]?.status == ExamStatus.passed,
+            toComplete: finalByCourse[c.id]?.status.isToComplete ?? false,
+          ))
+        c,
+  ];
+  return (courses, finalByCourse);
+}
+
 /// Esame finale nuovo [typed] salvato sull'esame finale già presente
 /// [existing] dello stesso insegnamento: stato, voto e lode sono quelli
 /// scelti ora; gli altri campi lasciati vuoti tengono il valore di prima (id
@@ -250,31 +284,12 @@ class _ExamFormPageState extends State<ExamFormPage> {
   /// modulo ci sono sempre. Insieme si legge l'esame finale di ogni
   /// insegnamento, che una prova nuova aggiorna invece di farne un doppione.
   late final Future<List<Course>> _courses = () async {
-    final s = context.read<AppServices>();
-    final scope = s.scope;
-    final exclusions = ExclusionFilter(await s.settings.exclusionPatterns());
-    final finals = <int, List<Exam>>{};
-    for (final e in await s.exams.all()) {
-      if (e.kind == ExamKind.finalExam) {
-        finals.putIfAbsent(e.courseId, () => []).add(e);
-      }
-    }
-    _finalByCourse = {
-      for (final f in finals.entries) f.key: primaryFinal(f.value)!,
-    };
-    final keep = {widget.exam?.courseId, widget.initialCourseId};
-    return [
-      for (final c in await s.courses.all())
-        if (keep.contains(c.id) ||
-            offeredInExamForm(
-              c,
-              scope: scope,
-              exclusions: exclusions,
-              passed: _finalByCourse[c.id]?.status == ExamStatus.passed,
-              toComplete: _finalByCourse[c.id]?.status.isToComplete ?? false,
-            ))
-          c,
-    ];
+    final (courses, finals) = await examCourseChoices(
+      context.read<AppServices>(),
+      keep: {widget.exam?.courseId, widget.initialCourseId},
+    );
+    _finalByCourse = finals;
+    return courses;
   }();
 
   /// Esame finale di ogni insegnamento (id → esame).

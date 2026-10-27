@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/academic/electives.dart';
+
 import '../../core/constants/enums.dart';
 import '../../core/constants/text_limits.dart';
 import '../../core/feedback/app_modals.dart';
@@ -182,6 +184,42 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
     );
     if (v == null || !mounted) return;
     await _save(_withText(title: v));
+  }
+
+  /// Insegnamento di una prova in itinere o esonero: solo uno di quelli del
+  /// corso (anche quelli aggiunti dallo studente), come nel modulo. Il nome
+  /// libero si scrive nel titolo; il nome dell'insegnamento si cambia dalla
+  /// sua scheda o dal suo esame finale.
+  Future<void> _pickCourse() async {
+    final s = context.read<AppServices>();
+    final (courses, _) = await examCourseChoices(s, keep: {exam.courseId});
+    if (!mounted) return;
+    final id = await showAppDialog<int>(
+      context: context,
+      builder: (c) => SimpleDialog(
+        title: const Text('Insegnamento'),
+        children: [
+          for (final course in courses)
+            ListTile(
+              key: Key('pick-course-${course.id}'),
+              leading: Icon(
+                course.id == exam.courseId
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_unchecked,
+              ),
+              title: Text(course.name),
+              onTap: () => Navigator.pop(c, course.id),
+            ),
+        ],
+      ),
+    );
+    if (id == null || id == exam.courseId || !mounted) return;
+    if (!await _save(exam.copyWith(courseId: id))) return;
+    // insegnamento a scelta tolto dal piano: con la prova torna nel piano
+    try {
+      await restoreElective(s, id);
+      s.revision.bump();
+    } catch (_) {}
   }
 
   /// Data e ora direttamente dalla card.
@@ -410,43 +448,49 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
-                  children: [
-                    InkWell(
-                      key: const Key('detail-title'),
-                      onTap: _editTitle,
-                      borderRadius: BorderRadius.circular(4),
-                      child: Text(
-                        exam.title ?? exam.kind.label,
-                        style: theme.textTheme.titleLarge,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    // solo il nome dell'insegnamento: toccandolo lo si
-                    // cambia, in tutta l'app
-                    if (course == null)
-                      const Text('Corso sconosciuto')
-                    else
-                      Tooltip(
-                        message: 'Cambia il nome dell\'insegnamento',
-                        child: InkWell(
-                          key: const Key('detail-course-name'),
-                          borderRadius: BorderRadius.circular(4),
-                          onTap: () => renameCourseDialog(context, course!),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Flexible(child: Text(course!.name)),
-                              const SizedBox(width: 4),
-                              Icon(
-                                Icons.edit_outlined,
-                                size: 14,
-                                color: theme.colorScheme.outline,
-                              ),
-                            ],
+                  // esame finale: il nome dell'insegnamento è il titolo
+                  // (toccandolo lo si cambia, in tutta l'app) e sotto la
+                  // tipologia con il titolo scelto dallo studente; prova in
+                  // itinere o esonero: il suo titolo e sotto l'insegnamento,
+                  // scelto tra quelli del corso
+                  children: _midterm
+                      ? [
+                          _HeaderLine(
+                            key: const Key('detail-title'),
+                            text: exam.title ?? exam.kind.label,
+                            style: theme.textTheme.titleLarge,
+                            tooltip: 'Cambia il titolo',
+                            onTap: _editTitle,
                           ),
-                        ),
-                      ),
-                  ],
+                          const SizedBox(height: 4),
+                          _HeaderLine(
+                            key: const Key('detail-course-name'),
+                            text: course?.name ?? 'Corso sconosciuto',
+                            tooltip: 'Cambia insegnamento',
+                            onTap: _pickCourse,
+                          ),
+                        ]
+                      : [
+                          _HeaderLine(
+                            key: const Key('detail-course-name'),
+                            text: course?.name ?? 'Corso sconosciuto',
+                            style: theme.textTheme.titleLarge,
+                            tooltip: 'Cambia il nome dell\'insegnamento',
+                            onTap: course == null
+                                ? null
+                                : () => renameCourseDialog(context, course!),
+                          ),
+                          const SizedBox(height: 4),
+                          _HeaderLine(
+                            key: const Key('detail-title'),
+                            text: [
+                              exam.kind.label,
+                              if (exam.title case final t? when t.isNotEmpty) t,
+                            ].join(' · '),
+                            tooltip: 'Cambia il titolo',
+                            onTap: _editTitle,
+                          ),
+                        ],
                 ),
               ),
             ],
@@ -461,7 +505,8 @@ class _ExamDetailBodyState extends State<_ExamDetailBody> {
             children: [
               // esame finale e prova in itinere / esonero non si scambiano:
               // si aggiungono e si eliminano, il tipo resta quello scelto
-              ExamKindChip(exam.kind),
+              // (l'esame finale lo dice già sotto il nome)
+              if (_midterm) ExamKindChip(exam.kind),
               Tooltip(
                 message: 'Cambia stato',
                 child: InkWell(
@@ -784,6 +829,48 @@ class _TextEditDialogState extends State<_TextEditDialog> {
         ),
         FilledButton(onPressed: _ok, child: const Text('Salva')),
       ],
+    );
+  }
+}
+
+/// Riga dell'intestazione del dettaglio che si tocca per cambiarla (titolo,
+/// insegnamento), con la matita accanto; senza [onTap] solo il testo.
+class _HeaderLine extends StatelessWidget {
+  const _HeaderLine({
+    super.key,
+    required this.text,
+    required this.tooltip,
+    this.style,
+    this.onTap,
+  });
+
+  final String text;
+  final String tooltip;
+  final TextStyle? style;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final label = Text(text, style: style);
+    if (onTap == null) return label;
+    return Tooltip(
+      message: tooltip,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(4),
+        onTap: onTap,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(child: label),
+            const SizedBox(width: 4),
+            Icon(
+              Icons.edit_outlined,
+              size: style == null ? 14 : 18,
+              color: Theme.of(context).colorScheme.outline,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

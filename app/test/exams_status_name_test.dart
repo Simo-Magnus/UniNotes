@@ -532,5 +532,63 @@ void main() {
       expect(find.text('Fisica I'), findsNothing);
       await tester.runAsync(() => s.database.close());
     });
+
+    testWidgets('esame finale: titolo il nome, sotto la tipologia', (
+      tester,
+    ) async {
+      final (s, cid) = (await tester.runAsync(_services))!;
+      final id = (await tester.runAsync(
+        () => s.exams.save(
+          Exam(courseId: cid, status: ExamStatus.booked, title: 'Gennaio'),
+        ),
+      ))!;
+      await _pump(tester, s, Scaffold(body: ExamDetailView(examId: id)));
+      final name = tester.getTopLeft(find.text('Fisica I'));
+      final kind = tester.getTopLeft(find.text('Esame finale · Gennaio'));
+      expect(name.dy, lessThan(kind.dy));
+      await tester.runAsync(() => s.database.close());
+    });
+
+    testWidgets('prova in itinere: insegnamento solo tra quelli del corso', (
+      tester,
+    ) async {
+      final (s, cid) = (await tester.runAsync(_services))!;
+      final other = (await tester.runAsync(
+        () => s.courses.save(
+          const Course(name: 'Analisi I', year: 1, semester: '1', cfu: 10),
+        ),
+      ))!;
+      final id = (await tester.runAsync(
+        () => s.exams.save(
+          Exam(
+            courseId: cid,
+            kind: ExamKind.midterm,
+            status: ExamStatus.planned,
+            title: 'Prima prova',
+          ),
+        ),
+      ))!;
+      await _pump(tester, s, Scaffold(body: ExamDetailView(examId: id)));
+      final title = tester.getTopLeft(find.text('Prima prova'));
+      final course = tester.getTopLeft(find.text('Fisica I'));
+      expect(title.dy, lessThan(course.dy));
+      await tester.tap(find.byKey(const Key('detail-course-name')));
+      await _settle(tester);
+      // una scelta tra gli insegnamenti, nessun campo per scrivere un nome
+      expect(find.text('Insegnamento'), findsOneWidget);
+      expect(find.byType(TextField), findsNothing);
+      await tester.tap(find.byKey(Key('pick-course-$other')));
+      await _settle(tester);
+      final saved = (await tester.runAsync(() => s.exams.byId(id)))!;
+      expect(saved.courseId, other);
+      expect(saved.title, 'Prima prova');
+      // il nome dell'insegnamento di prima non è cambiato
+      expect(
+        (await tester.runAsync(() => s.courses.byId(cid)))!.name,
+        'Fisica I',
+      );
+      expect(find.text('Analisi I'), findsOneWidget);
+      await tester.runAsync(() => s.database.close());
+    });
   });
 }
