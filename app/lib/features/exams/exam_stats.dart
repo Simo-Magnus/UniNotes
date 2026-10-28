@@ -187,7 +187,8 @@ class AverageSummary {
        // prove in itinere ed esoneri non contano nel voto: nemmeno qui
        failed = exams
            .where(
-             (e) => e.kind == ExamKind.finalExam && e.status == ExamStatus.failed,
+             (e) =>
+                 e.kind == ExamKind.finalExam && e.status == ExamStatus.failed,
            )
            .length;
 

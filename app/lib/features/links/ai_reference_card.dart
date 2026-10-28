@@ -10,9 +10,11 @@ import 'link_status.dart' show aiChosenMessage;
 import 'links_widgets.dart';
 import 'link_settings.dart';
 
-/// Pagina dell'offerta Google AI Pro per gli studenti (gratuita per un
-/// periodo, con verifica dello status di studente). Offerta e durata possono
-/// cambiare: la pagina ufficiale è la fonte.
+/// Pagina dell'offerta di Google per gli studenti (piano, prezzo e durata
+/// cambiano: a ottobre 2026 Google AI Plus, gratis per un periodo con la
+/// verifica dello status e poi a pagamento). La pagina ufficiale è la fonte:
+/// la nota non nomina piano né costi e non dice che ci sia di sicuro,
+/// così non diventa falsa quando l'offerta finisce.
 const kGoogleStudentOffer = 'https://gemini.google/students/';
 
 /// «AI di riferimento»: l'assistente con cui lo studente lavora sul
@@ -86,23 +88,24 @@ class _AiReferenceCardState extends State<AiReferenceCard> {
                         ),
                     ],
                   ),
-                  StatusLine(
-                    'In uso: ${ai.label}. ${ai.hint}',
-                    ok: true,
-                  ),
+                  StatusLine('In uso: ${ai.label}. ${ai.hint}', ok: true),
                   // Gemini (ex card «Gemini»): offerta studenti e
                   // trascrizione delle lezioni con l'account universitario
                   if (ai == ReferenceAi.gemini) ...[
                     const NoteText(
-                      'Con l\'account universitario puoi attivare l\'offerta '
-                      'studenti di Google AI Pro, senza chiavi API né costi. '
+                      'Google a volte ha offerte per gli studenti '
+                      'universitari: se ce ne sono, piano, durata ed '
+                      'eventuali costi sono nella pagina di Google. '
                       'Sulle registrazioni «Trascrivi con Gemini» apre Gemini '
                       'con il file e il prompt pronti.',
                       icon: Icons.school_outlined,
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: LinkText('Offerta studenti', kGoogleStudentOffer),
+                      child: LinkText(
+                        'Offerte di Google per studenti',
+                        kGoogleStudentOffer,
+                      ),
                     ),
                   ] else
                     const NoteText(

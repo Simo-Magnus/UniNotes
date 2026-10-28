@@ -753,7 +753,7 @@ class MonkeyFakes {
 final kNavigationLabels = [
   RegExp(
     r'^(\S+ \| )?(home|registra|studio|esami|libri|insegnamenti|file|'
-    r'collegamenti|impostazioni|altro)$',
+    r'collegamenti|vantaggi|impostazioni|altro)$',
   ),
 ];
 

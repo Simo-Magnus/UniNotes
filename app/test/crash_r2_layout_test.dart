@@ -34,6 +34,7 @@ import 'package:university_notes/features/notes/notes_store.dart';
 import 'package:university_notes/features/notes/recently_deleted_screen.dart';
 import 'package:university_notes/features/notes/transcript_search_screen.dart';
 import 'package:university_notes/features/onboarding/onboarding_flow.dart';
+import 'package:university_notes/features/perks/perks_screen.dart';
 import 'package:university_notes/features/reader/files_screen.dart';
 import 'package:university_notes/features/settings/settings_screen.dart';
 import 'package:university_notes/features/study/focus/focus_screen.dart';
@@ -572,6 +573,7 @@ void main() {
             ('Cerca trascrizioni', () => const TranscriptSearchScreen()),
             ('File', () => const FilesScreen()),
             ('Collegamenti', () => const LinksScreen()),
+            ('Vantaggi', () => const PerksScreen()),
             ('Impostazioni', () => const SettingsScreen()),
             ('Anni precedenti', () => const PreviousYearsScreen()),
             ('Focus', () => const FocusScreen()),

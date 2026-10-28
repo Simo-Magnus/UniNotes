@@ -1,6 +1,6 @@
 # Informativa sulla privacy di UniNotes
 
-Ultimo aggiornamento: 25 ottobre 2026
+Ultimo aggiornamento: 28 ottobre 2026
 
 Questa informativa spiega quali dati personali entrano in gioco quando usi UniNotes, l'app per studenti universitari disponibile per Windows, macOS, Android e iOS, dove finiscono e chi ne risponde. È resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (di seguito «GDPR») e del Codice in materia di protezione dei dati personali (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018). Vale per la versione 2026.9 dell'app e per le successive, finché non viene sostituita da una versione più recente di questo documento.
 
@@ -169,7 +169,7 @@ Gli avvisi delle prove, dell'inizio delle sessioni, dell'esito da registrare, de
 
 ### 6.9 Link esterni
 
-Alcuni pulsanti aprono pagine nel browser o in un'altra app: le pagine ufficiali dei calendari d'esame («Calendario ufficiale»), le pagine dei modelli Whisper, l'offerta di Google per gli studenti, il sito del progetto, le pagine degli store o di GitHub per lasciare una recensione o una stella e, solo nelle versioni che lo mostrano, la pagina «Sostieni il progetto». Anche i link presenti nei documenti aperti con il lettore si aprono nel browser quando li tocchi. L'app non aggiunge a questi indirizzi dati che ti riguardano. Il sito del progetto e la pagina delle donazioni sono pubblicati su GitHub Pages e non sono parte dell'app. Le loro visite sono contate in forma anonima (paragrafo 10.3).
+Alcuni pulsanti aprono pagine nel browser o in un'altra app: le pagine ufficiali dei calendari d'esame («Calendario ufficiale»), le pagine dei modelli Whisper, l'offerta di Google per gli studenti, il sito del progetto, le pagine degli store o di GitHub per lasciare una recensione o una stella e, solo nelle versioni che lo mostrano, la pagina «Sostieni il progetto». Anche i link presenti nei documenti aperti con il lettore si aprono nel browser quando li tocchi. Nella sezione «Vantaggi da studente» il pulsante sotto un'offerta apre, solo quando lo tocchi, la pagina del fornitore, quella della piattaforma che verifica lo status di studente (UNiDAYS, Student Beans, SheerID, ISIC) oppure, per alcune offerte che dipendono dall'ateneo, la pagina di esempio di un ateneo o di un ente: il pulsante dice quale. L'eventuale verifica dell'iscrizione avviene su quel sito, secondo le sue condizioni. L'elenco delle offerte è dentro l'app e si consulta senza connessione a internet. L'app non aggiunge a questi indirizzi dati che ti riguardano. Il sito del progetto e la pagina delle donazioni sono pubblicati su GitHub Pages e non sono parte dell'app. Le loro visite sono contate in forma anonima (paragrafo 10.3).
 
 ## 7. Cosa l'app non fa
 

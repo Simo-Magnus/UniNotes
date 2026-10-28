@@ -14,6 +14,7 @@ import '../../features/exams/previous_years_screen.dart' show openPreviousYears;
 import '../../features/links/links_screen.dart';
 import '../../features/notes/notes_screen.dart';
 import '../../features/notes/recorder/overlay_logic.dart';
+import '../../features/perks/perks_screen.dart';
 import '../../features/reader/files_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/study/focus/focus_screen.dart' show openFocusScreen;
@@ -86,6 +87,13 @@ final List<AppDestination> kDestinations = [
     Icons.hub_outlined,
     Icons.hub,
     (_) => const LinksScreen(),
+  ),
+  // offerte per studenti con l'email universitaria
+  AppDestination(
+    'Vantaggi',
+    Icons.local_offer_outlined,
+    Icons.local_offer,
+    (_) => const PerksScreen(),
   ),
   AppDestination(
     'Impostazioni',
@@ -325,7 +333,7 @@ class _AppShellState extends State<AppShell> {
                 border: Border(right: BorderSide(color: t.navBorder)),
               ),
               child: SafeArea(
-                // nove voci con le etichette: con i caratteri grandi o la
+                // dieci voci con le etichette: con i caratteri grandi o la
                 // finestra bassa la colonna scorre invece di uscire dallo
                 // schermo (la rail non scorre da sola)
                 child: LayoutBuilder(
@@ -526,7 +534,10 @@ List<double> navItemWidths(
   final base = total / n;
   if (need.every((w) => w <= base)) return List<double>.filled(n, base);
   // le voci troppo lunghe prendono quanto serve, le altre dividono il resto
-  final long = [for (var i = 0; i < n; i++) if (need[i] > base) i];
+  final long = [
+    for (var i = 0; i < n; i++)
+      if (need[i] > base) i,
+  ];
   final longSum = long.fold<double>(0, (a, i) => a + need[i]);
   final others = n - long.length;
   if (others > 0) {

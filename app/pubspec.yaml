@@ -118,6 +118,8 @@ flutter:
     - assets/fonts/
     - assets/licenses/
     - assets/tray/
+    # Vantaggi da studente (offerte controllate a mano, con la data).
+    - assets/vantaggi/
     # Grafiche delle notifiche (logo dell'app e dei tipi, immagini larghe)
     # per Windows, iOS e macOS; tool/genera_grafiche_notifiche.py.
     - assets/notifiche/

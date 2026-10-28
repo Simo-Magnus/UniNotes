@@ -4,7 +4,7 @@ Schermata Collegamenti, card in quest'ordine: **OneDrive**, **Google Drive**,
 **Whisper**, **AI di riferimento** (`lib/features/links/links_screen.dart`).
 La card «Gemini» non c'è più: non aveva impostazioni (nessuna chiave API dal
 2026, la vecchia chiave è già stata tolta da `removeLegacyGemini`); Gemini resta
-fra le AI di riferimento, con l'offerta studenti di Google AI Pro quando è
+fra le AI di riferimento, con il link all'offerta di Google per gli studenti quando è
 scelto, e «Trascrivi con Gemini» resta sulle registrazioni.
 
 Testi e regole: `lib/features/links/link_status.dart` (`cloudStatus`,
@@ -94,5 +94,5 @@ Nessun accesso: l'AI si apre con l'account che lo studente ha già.
 |---|---|
 | Scelta | «In uso: *AI*. *cosa fare dopo l'apertura*» |
 | Cambio di AI | snackbar «AI di riferimento: *AI*. In Studio e Registra l'app aprirà *AI* con il prompt pronto.» |
-| Gemini scelto | nota sull'offerta studenti di Google AI Pro e su «Trascrivi con Gemini», link «Offerta studenti» |
+| Gemini scelto | nota sull'offerta di Google per gli studenti (piano e costi nella pagina di Google) e su «Trascrivi con Gemini», link «Offerte di Google per studenti» |
 | Sito o app non apribile | messaggio di `showLaunchResult` (nessun browser / app non installata) |
