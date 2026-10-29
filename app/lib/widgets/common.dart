@@ -102,6 +102,14 @@ class RevisionBuilder<T> extends StatefulWidget {
   final Widget Function(BuildContext context, T data) builder;
   final List<Object?> deps;
 
+  static int _pending = 0;
+
+  /// Caricamenti in corso in tutti i RevisionBuilder, anche in quelli già
+  /// smontati (il loro [load] va avanti fino in fondo): le prove li lasciano
+  /// finire prima di chiudere il database.
+  @visibleForTesting
+  static int get pendingLoads => _pending;
+
   @override
   State<RevisionBuilder<T>> createState() => _RevisionBuilderState<T>();
 }
@@ -135,12 +143,14 @@ class _RevisionBuilderState<T> extends State<RevisionBuilder<T>>
 
   Future<T> _load() async {
     _loading++;
+    RevisionBuilder._pending++;
     try {
       final v = await widget.load(_services);
       _last = v;
       return v;
     } finally {
       _loading--;
+      RevisionBuilder._pending--;
     }
   }
 

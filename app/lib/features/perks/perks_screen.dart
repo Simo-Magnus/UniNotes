@@ -55,6 +55,27 @@ class _PerksScreenState extends State<PerksScreen>
     onToggle: () => setState(() => _open.remove(p.name) || _open.add(p.name)),
   );
 
+  /// Offerte da confermare: in fondo a ogni elenco, oppure nascoste.
+  bool _showUnconfirmed = true;
+
+  /// Prima le offerte confermate, poi quelle da confermare (nello stesso
+  /// ordine di prima); senza [_showUnconfirmed] solo le confermate.
+  PerksData _ordered(PerksData d) {
+    List<Perk> order(List<Perk> l) => [
+      for (final p in l)
+        if (p.official) p,
+      if (_showUnconfirmed)
+        for (final p in l)
+          if (!p.official) p,
+    ];
+    return PerksData(
+      updated: d.updated,
+      categories: d.categories,
+      forAll: order(d.forAll),
+      university: order(d.university),
+    );
+  }
+
   /// Ritorno nella sezione (resta viva nascosta anche per giorni, con l'app
   /// aperta): la ricostruzione rifà il filtro delle offerte scadute.
   @override
@@ -110,9 +131,14 @@ class _PerksScreenState extends State<PerksScreen>
   }
 
   List<Widget> _content(BuildContext context, PerksData all) {
-    final d = all.activeOn(
+    final active = all.activeOn(
       DateUtils.dateOnly(widget.clock?.call() ?? DateTime.now()),
     );
+    final unconfirmed = [
+      ...active.forAll,
+      ...active.university,
+    ].where((p) => !p.official).length;
+    final d = _ordered(active);
     final t = context.tokens;
     final category = _category ?? d.categories.first.id;
     final forAll = d.forAll.where((p) => p.matches(_query)).toList();
@@ -163,6 +189,24 @@ class _PerksScreenState extends State<PerksScreen>
           ),
         ),
       ),
+      // offerte da confermare: in fondo a ogni elenco, si possono nascondere
+      if (unconfirmed > 0)
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 4, 12, 0),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: FilterChip(
+              key: const Key('perks-show-unconfirmed'),
+              avatar: Icon(Icons.info_outline, size: 16, color: t.warning),
+              label: Text('Anche da confermare ($unconfirmed)'),
+              tooltip:
+                  'Condizioni non lette tutte sulla pagina del fornitore o '
+                  'da controllare con il tuo ateneo: compaiono in fondo',
+              selected: _showUnconfirmed,
+              onSelected: (v) => setState(() => _showUnconfirmed = v),
+            ),
+          ),
+        ),
       if (_view == PerksView.forAll)
         ..._forAll(context, d, forAll, category)
       else

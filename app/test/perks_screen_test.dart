@@ -352,7 +352,54 @@ void main() {
         d.forAll.firstWhere((p) => p.name.startsWith('JetBrains')).official,
         isFalse,
       );
+      // le offerte da confermare sono in fondo all'elenco
+      await tester.scrollUntilVisible(
+        find.text('JetBrains licenza educativa'),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(priceOf('JetBrains licenza educativa'), contains('da confermare'));
+    });
+
+    testWidgets('prima le confermate, in fondo quelle da confermare', (
+      tester,
+    ) async {
+      await _pump(tester, d, size: const Size(412, 20000));
+      final names = d.forAll
+          .where((p) => p.category == 'A1')
+          .map((p) => p.name)
+          .toList();
+      final shown = [
+        for (final n in names)
+          if (find.text(n).evaluate().isNotEmpty)
+            (n, tester.getTopLeft(find.text(n)).dy),
+      ]..sort((a, b) => a.$2.compareTo(b.$2));
+      expect(shown.length, names.length);
+      final official = {for (final p in d.forAll) p.name: p.official};
+      final flags = shown.map((s) => official[s.$1]!).toList();
+      // nessuna confermata dopo la prima da confermare
+      final firstUnconfirmed = flags.indexOf(false);
+      expect(firstUnconfirmed, greaterThan(0));
+      expect(flags.sublist(firstUnconfirmed).contains(true), isFalse);
+    });
+
+    testWidgets('si possono nascondere le offerte da confermare', (
+      tester,
+    ) async {
+      await _pump(tester, d, size: const Size(412, 20000));
+      expect(find.text('JetBrains licenza educativa'), findsOneWidget);
+      await tester.tap(find.byKey(const Key('perks-show-unconfirmed')));
+      await tester.pumpAndSettle();
+      expect(find.text('JetBrains licenza educativa'), findsNothing);
+      expect(find.text('GitHub Student Developer Pack'), findsOneWidget);
+      // anche nella ricerca e nell'altra scheda
+      await tester.tap(find.text('Dal tuo ateneo'));
+      await tester.pumpAndSettle();
+      expect(find.text('Overleaf (licenza istituzionale)'), findsNothing);
+      // di nuovo visibili
+      await tester.tap(find.byKey(const Key('perks-show-unconfirmed')));
+      await tester.pumpAndSettle();
+      expect(find.text('Overleaf (licenza istituzionale)'), findsOneWidget);
     });
 
     testWidgets('lettore di schermo: i dettagli non sono nel pulsante', (
@@ -557,8 +604,14 @@ void main() {
       await tester.tap(find.text('Dal tuo ateneo'));
       await tester.pumpAndSettle();
       expect(find.textContaining('solo se ha un accordo'), findsOneWidget);
-      expect(find.text('Microsoft 365 dell\'ateneo'), findsOneWidget);
       expect(find.byKey(const Key('perks-cat-A1')), findsNothing);
+      // da confermare: in fondo all'elenco dell'ateneo
+      await tester.scrollUntilVisible(
+        find.text('Microsoft 365 dell\'ateneo'),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('Microsoft 365 dell\'ateneo'), findsOneWidget);
       await tester.tap(find.text('Microsoft 365 dell\'ateneo'));
       await tester.pumpAndSettle();
       expect(find.text('DOVE C\'È'), findsOneWidget);

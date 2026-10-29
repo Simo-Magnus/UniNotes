@@ -39,6 +39,7 @@ import 'package:university_notes/models/study.dart';
 import 'package:university_notes/features/notes/recorder/recording_overlay.dart';
 import 'package:university_notes/features/study/study_timer.dart';
 import 'package:university_notes/repositories/settings_repository.dart';
+import 'package:university_notes/widgets/common.dart' show RevisionBuilder;
 
 import 'catalog_fixtures.dart';
 import 'fake_parakeet.dart';
@@ -1991,6 +1992,9 @@ Future<void> runMonkey(
   t.view.devicePixelRatio = 1;
   addTearDown(t.view.reset);
   addTearDown(t.platformDispatcher.clearTextScaleFactorTestValue);
+  // caricamenti rimasti a metà nelle prove di prima dello stesso file (il loro
+  // tempo finto non va più avanti, non finiranno mai): non sono di questo giro
+  final loadsBefore = RevisionBuilder.pendingLoads;
   final setup = (await t.runAsync(() => prepareScenario(sc, Random(seed))))!;
   final s = setup.services;
   final monkey = Monkey(t, seed, setup);
@@ -2297,6 +2301,27 @@ Future<void> runMonkey(
     c.stopAutoSync();
   }
   await t.pump(const Duration(seconds: 1));
+  // caricamenti di un RevisionBuilder ancora in corso (un `revision.bump()`
+  // degli ultimi passi o del salvataggio qui sopra, widget già smontato):
+  // ogni lettura torna con il tempo vero (isolate di sqflite) e il seguito
+  // riparte solo con un pump, e chiede la lettura dopo. Con la macchina
+  // carica i pochi ms veri di sopra non bastano: chiuso il database, la
+  // lettura dopo falliva con «database_closed», e il FutureBuilder iscritto
+  // durante un pump di questa chiusura (fuori dalla zona della scimmia) non
+  // la riceveva (eccezione non gestita)
+  int pending() => RevisionBuilder.pendingLoads - loadsBefore;
+  for (var i = 0; i < 400 && pending() > 0; i++) {
+    await t.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 5)),
+    );
+    await t.pump(const Duration(milliseconds: 100));
+  }
+  if (pending() > 0) {
+    monkey.errors.add(
+      'stallo: ${pending()} caricamenti mai finiti prima della chiusura del '
+      'database',
+    );
+  }
   await driveOp(t, s.database.close, 'chiusura del database', monkey);
   FlutterError.onError = previous;
   handle?.dispose();
