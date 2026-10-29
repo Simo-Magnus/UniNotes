@@ -732,8 +732,9 @@ Parakeet è fra i motori di «Trascrivi con…» / «Trascrivi di nuovo con…»
 (etichetta «Parakeet», sottotitolo «NVIDIA, veloce, 639 MiB»), insieme ai
 modelli Whisper scaricati; i modelli Whisper scaricabili restano. Con
 «Automatico» si usa il più accurato che il dispositivo regge
-(`kWhisperAccuracy`: large-v3 … large-v1, **Parakeet**, medium, small,
-base): senza modelli Whisper scaricati (o con solo small, base, tiny) è
+(`kWhisperAccuracy`: large-v3 … large-v1, medium, **Parakeet**, small,
+base; Parakeet sotto medium dal 29/10/2026, vedi «Trascrizione a pezzi
+brevi»): senza modelli Whisper scaricati (o con solo small, base, tiny) è
 Parakeet. Un'ora di lezione in ~4 minuti (stima 0,06 s per secondo). La
 trascrizione si salva come «trascritta con Parakeet».
 
@@ -845,6 +846,67 @@ core e 2,5 volte sul telefono, più il caricamento del modello. Dopo la
 prima trascrizione con un modello si usa la velocità **misurata su quel
 dispositivo** (media con le precedenti, impostazione
 `whisper_speed_<modello>`), quindi la stima migliora con l'uso.
+
+### Trascrizione a pezzi brevi (29/10/2026)
+
+**Problema** (lezione vera registrata da lontano su PC, 29/10/2026): il
+testo dal vivo di Parakeet era quasi tutto in inglese inventato dal brusio
+(«Okay.», «Mm-hmm.», «No, I know.»: 57 frasi, metà passava il filtro della
+lingua) e large-v3-turbo sul file intero si fermava su una frase ripetuta
+per minuti («Non è un'imposte.» ×60).
+
+**Cosa cambia**:
+
+- «Trascrivi con Whisper» (whisper-cli e whisper.cpp nell'app, telefono
+  compreso) non trascrive più il file intero o pezzi da 10 minuti ma **pezzi
+  di al massimo 25 s tagliati alle pause** (`whisper_chunks.dart`: livello
+  ogni 30 ms, pausa = almeno 360 ms sotto il livello medio del file meno
+  12 dB), ognuno **da solo** (`-mc 0` / `no_context`): un errore resta nel
+  suo pezzo. I pezzi di solo silenzio o fondo non vanno a Whisper. Un pezzo
+  che esce **a ciclo** (la stessa frase 3 volte in più o la stessa sequenza
+  di 4 parole 3 volte, `looksLooped`) si ritrascrive in due metà; se resta a
+  ciclo si tiene una copia sola (`withoutLoops`). Le frasi intere del
+  silenzio («Grazie.», «Grazie a tutti.») si tolgono (`withoutFillers`).
+  `whisper-cli` trascrive 20 pezzi per processo (`-f`/`-of` per pezzo, il
+  modello si carica una volta). Solo i WAV si dividono (le registrazioni
+  dell'app e l'audio convertito); `.flac`, `.mp3`, `.ogg` letti direttamente
+  da whisper-cli restano interi.
+- Nelle lezioni in italiano una **frase breve** (fino a 6 parole) di
+  Parakeet senza parole italiane e con almeno una parola inglese è fuori
+  lingua (`outsideLecture`, con le parole di `_englishShort` e i versi
+  «Oh.», «Mm-hmm.», «Sorry.» fra gli intercalari): nella lezione vera le
+  frasi tolte passano da 27 a 47 su 57, nelle 33 frasi di prova se ne tolgono
+  solo 1–2 (tutte inventate dal rumore; con molto rumore 13, tutte inglesi).
+- `kWhisperAccuracy`: Parakeet sotto medium (prima era sopra).
+
+**Misure** (Intel Core Ultra 5 226V, 8 core, solo CPU; le 33 frasi di prova
+in fila con 2 s di pausa, 393 s; degrado simulato come il 24/10:
+riverbero e rumore; percentuale di parole sbagliate):
+
+| Motore | pulito | lontano | molto lontano | lontano + rumore |
+|---|---|---|---|---|
+| Parakeet dal vivo (com'era) | 6,6% | 13,2% | 31,4% | 69,5% |
+| Whisper small q5_1 (incluso), frase per frase | 12,4% | 23,4% | 38,0% | 53,9% |
+| Whisper medium q5_0, frase per frase | 5,4% | 16,4% | 21,7% | 37,5% |
+| large-v3-turbo q5_0, frase per frase | 4,4% | 8,3% | 19,7% | 27,1% |
+| **large-v3-turbo q5_0 a pezzi brevi** | – | **8,0%** | – | **24,4%** |
+| turbo a pezzi con il codice dell'app (`transcribeInChunks`, tagli un po' diversi; con o senza i tempi delle frasi) | – | 9,8% | – | – |
+| turbo a pezzi + VAD sui pezzi | – | 9,0% | – | 30,2% |
+| turbo a pezzi + VAD + riduzione del rumore (ffmpeg `afftdn`, `dynaudnorm`) | – | – | – | 32,5% |
+
+A pezzi brevi nessun pezzo è uscito a ciclo e turbo va a ~0,8 volte la
+durata dell'audio (un'ora in ~50 minuti, solo CPU). Il VAD sui pezzi e la
+riduzione del rumore peggiorano: non si usano. Sulla lezione vera il testo
+a pezzi non ha più cicli ma resta poco leggibile: l'audio era troppo
+lontano dal docente per qualunque modello. Con un microfono vicino (o il
+telefono sulla cattedra) l'errore scende verso quello della colonna
+«pulito». 99,9% di parole giuste non è raggiungibile con modelli aperti in
+italiano (i migliori ~2,5–5% con audio pulito).
+
+Gli strumenti delle misure con i modelli veri stanno fuori dalla repo e si
+usano a mano; i test della repo (`whisper_chunks_test.dart`,
+`live_agreement_test.dart`) controllano pause, cicli, frasi del silenzio e
+lingua senza modelli.
 
 ### Modificare il testo mentre si registra
 
@@ -1144,7 +1206,7 @@ Con più modelli scaricati (Collegamenti → Whisper):
 3. se è «Automatico» (il valore iniziale; scaricare un modello non lo
    cambia più), il **più accurato fra quelli scaricati che il dispositivo
    regge**: ordine di accuratezza in italiano `kWhisperAccuracy` (large-v3,
-   large-v3-turbo, … large-v1, Parakeet, medium, small, small q5_1, base,
+   large-v3-turbo, … large-v1, medium, Parakeet, small, small q5_1, base,
    modello integrato, tiny) e RAM necessaria al massimo il 60% di quella del
    PC/Mac o il 40% di quella del telefono (`deviceCanRun`); se nessuno
    regge, il più accurato comunque;

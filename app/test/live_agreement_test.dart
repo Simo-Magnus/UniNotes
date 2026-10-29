@@ -279,6 +279,52 @@ void main() {
         isTrue,
       );
     });
+
+    test('frasi brevi inglesi dal brusio di una lezione in italiano', () {
+      // Parakeet vero su una lezione registrata da lontano (29/10/2026):
+      // prima metà di queste passava
+      for (final t in [
+        'No, I know.',
+        'That\'',
+        'Please.',
+        'Oh my god.',
+        'I said.',
+        'Wait, uh',
+        'I\'m just',
+        'Oh.',
+        'The front.',
+        'Mm-hmm.',
+        'Yes. Um',
+        'Okay. Well.',
+        'Sorry.',
+        'I got that.',
+        'Because uh',
+      ]) {
+        expect(outsideLecture(t), isTrue, reason: t);
+      }
+      // frasi brevi italiane, anche con termini inglesi: restano
+      for (final t in [
+        'Ok.',
+        'No.',
+        'Come?',
+        'Non so.',
+        'Va bene.',
+        'Sono costruito.',
+        'Machine learning.',
+        'Big data e cloud computing.',
+        'Il dataset.',
+        'Open source.',
+        'Feedback.',
+        'Deep learning.',
+        'Esatto, il training set.',
+      ]) {
+        expect(outsideLecture(t), isFalse, reason: t);
+      }
+      // in una lezione in inglese le stesse frasi restano
+      for (final t in ['No, I know.', 'I got that.', 'The front.']) {
+        expect(outsideLecture(t, lecture: 'en'), isFalse, reason: t);
+      }
+    });
   });
 
   test('parole di Parakeet con i tempi dei pezzi', () {

@@ -612,6 +612,45 @@ const _englishNoise = {
   'well',
   'you',
   'bye',
+  // intercalari e versi (lezione vera del 29/10/2026, microfono lontano)
+  'oh',
+  'uh',
+  'um',
+  'mm',
+  'hmm',
+  'mm hmm',
+  'wow',
+  'please',
+  'sorry',
+  'alright',
+};
+
+/// Parole inglesi frequenti nelle frasi brevi che Parakeet scrive dal brusio
+/// di una lezione in italiano («Wait, uh», «I said.», «Sorry.»): contano
+/// solo per le frasi brevi senza parole italiane ([outsideLecture]), non
+/// per le frasi lunghe con termini tecnici. Nessuna si scrive uguale in
+/// italiano («come», «no», «so» restano fuori).
+const _englishShort = {
+  'said',
+  'say',
+  'got',
+  'wait',
+  'sorry',
+  'please',
+  'oh',
+  'god',
+  'good',
+  'mind',
+  'see',
+  'make',
+  'want',
+  'need',
+  'uh',
+  'um',
+  'hmm',
+  'mm',
+  'wow',
+  'alright',
 };
 
 /// Parole che in italiano e in inglese si scrivono uguali («a», «in», «so»,
@@ -705,6 +744,16 @@ bool outsideLecture(String text, {String lecture = 'it'}) {
     }
   }
   final best = foreign.values.fold<double>(0, (a, b) => b > a ? b : a);
+  // in una lezione in italiano una frase breve senza parole italiane e con
+  // almeno una parola inglese è brusio scritto in inglese («No, I know.»,
+  // «The front.», «Wait, uh»): nella lezione vera del 29/10/2026 metà di
+  // queste frasi passava con la regola dei due indizi
+  if (!en &&
+      mine == 0 &&
+      words.length <= 6 &&
+      (foreign['en'] ?? 0) + words.where(_englishShort.contains).length >= 1) {
+    return true;
+  }
   // almeno due indizi e chiaramente più di quelli della lezione
   return best >= 2 && best >= mine * 1.5 + 1;
 }

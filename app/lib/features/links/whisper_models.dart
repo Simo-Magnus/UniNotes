@@ -489,10 +489,11 @@ const kSecondPassMaxRtf = 0.5;
 
 /// Motori dal più accurato in italiano al meno accurato (WER indicativi
 /// della tabella): a parità di famiglia la versione non quantizzata viene
-/// prima, i distillati inglesi non ci sono. Parakeet (WER ~5% misurato su
-/// frasi vere, molto più veloce di medium su CPU) sta fra large e medium:
-/// con «Automatico» un large scaricato resta la prima scelta, Parakeet
-/// prende il posto dei modelli più piccoli.
+/// prima, i distillati inglesi non ci sono. Parakeet (WER ~5% su frasi
+/// vere vicine al microfono, molto più veloce di medium su CPU) sta fra
+/// medium e small: con il microfono lontano o rumore medium sbaglia molto
+/// meno (29/10/2026, 33 frasi in fila: lontano con rumore 21,7% contro
+/// 31,4%, con molto rumore 37,5% contro 69,5%; docs/registratore.md).
 const kWhisperAccuracy = [
   'large-v3',
   'large-v3-turbo',
@@ -503,10 +504,10 @@ const kWhisperAccuracy = [
   'large-v3-turbo-q5_0',
   'large-v2-q5_0',
   'large-v1',
-  kParakeetId,
   'medium',
   'medium-q8_0',
   'medium-q5_0',
+  kParakeetId,
   'small',
   'small-q5_1',
   'base',

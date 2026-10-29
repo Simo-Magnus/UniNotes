@@ -11,11 +11,13 @@ import 'package:path_provider/path_provider.dart';
 import '../../features/links/whisper_device.dart';
 import '../../features/links/whisper_models.dart';
 import '../../features/notes/recorder/speech_language.dart';
+import '../../features/notes/recorder/wav.dart';
 import '../../repositories/settings_repository.dart';
 import 'audio_codec.dart';
 import 'file_downloader.dart';
 import 'parakeet_service.dart';
 import 'power.dart';
+import 'whisper_chunks.dart';
 import 'whisper_plugin_engine.dart';
 import 'whisper_prompt.dart';
 
@@ -1391,6 +1393,37 @@ class WhisperService {
     CancelToken? cancel,
     WhisperOptions options = WhisperOptions.none,
   }) async {
+    // un WAV (registrazioni dell'app, audio convertito) si trascrive a pezzi
+    // brevi tagliati alle pause (whisper_chunks.dart); gli altri formati
+    // che whisper-cli legge da solo (.flac, .mp3, .ogg) tutti in una volta
+    final info = p.extension(audio.path).toLowerCase() == '.wav'
+        ? await readWavInfo(audio)
+        : null;
+    if (info != null && info.dataLength > 0) {
+      try {
+        return await transcribeInChunks(
+          audio,
+          info,
+          out,
+          (parts, report) => _runCliParts(
+            cli,
+            model,
+            parts,
+            options: options,
+            cancel: cancel,
+            onFraction: report,
+          ),
+          onProgress: onProgress,
+          cancel: cancel,
+        );
+      } on DownloadCancelled {
+        throw WhisperException('Trascrizione annullata.');
+      } finally {
+        try {
+          await out.delete(recursive: true);
+        } catch (_) {}
+      }
+    }
     final outBase = p.join(out.path, 'trascrizione');
     final threads = (Platform.numberOfProcessors - 1).clamp(1, 16);
     final args = [
@@ -1460,6 +1493,97 @@ class WhisperService {
     } finally {
       await out.delete(recursive: true);
     }
+  }
+
+  /// Un gruppo di pezzi brevi ([transcribeInChunks]) con un solo processo
+  /// `whisper-cli` (il modello si carica una volta): un `-f`/`-of` per
+  /// pezzo, `-mc 0` perché nessun pezzo riceva il testo del precedente,
+  /// senza VAD (sui pezzi brevi peggiorava).
+  Future<List<List<WhisperSegment>>> _runCliParts(
+    File cli,
+    File model,
+    List<File> parts, {
+    required WhisperOptions options,
+    CancelToken? cancel,
+    void Function(double fraction)? onFraction,
+  }) async {
+    final threads = (Platform.numberOfProcessors - 1).clamp(1, 16);
+    final args = [
+      '-m',
+      model.path,
+      '-t',
+      '$threads',
+      '-pp',
+      '-oj',
+      '-mc',
+      '0',
+      for (final f in parts) ...['-f', f.path, '-of', f.path],
+      ...WhisperOptions(
+        prompt: options.prompt,
+        language: options.language,
+      ).cliArgs,
+    ];
+    final Process proc;
+    try {
+      proc = await processStarter(cli.path, args);
+    } on ProcessException catch (e) {
+      throw WhisperException('Impossibile avviare Whisper: ${e.message}');
+    }
+    void kill() => proc.kill();
+    cancel?.addListener(kill);
+    final tail = <String>[];
+    final progress = RegExp(r'progress\s*=\s*(\d+)%');
+    // un avanzamento per pezzo: quando la percentuale torna indietro è
+    // iniziato il pezzo dopo
+    var done = 0;
+    var last = -1;
+    void onLine(String line) {
+      final mm = progress.firstMatch(line);
+      if (mm != null) {
+        final pct = int.parse(mm.group(1)!);
+        if (pct < last) done++;
+        last = pct;
+        onFraction?.call(
+          ((done + pct / 100) / parts.length).clamp(0.0, 1.0).toDouble(),
+        );
+      } else if (line.trim().isNotEmpty) {
+        tail.add(line);
+        if (tail.length > 8) tail.removeAt(0);
+      }
+    }
+
+    final readers = Future.wait([
+      proc.stderr
+          .transform(const Utf8Decoder(allowMalformed: true))
+          .transform(const LineSplitter())
+          .forEach(onLine),
+      proc.stdout
+          .transform(const Utf8Decoder(allowMalformed: true))
+          .transform(const LineSplitter())
+          .forEach(onLine),
+    ]);
+    final code = await proc.exitCode;
+    await readers;
+    cancel?.removeListener(kill);
+    if (cancel?.isCancelled ?? false) throw DownloadCancelled();
+    final out = <List<WhisperSegment>>[];
+    for (final f in parts) {
+      final json = File('${f.path}.json');
+      if (code != 0 || !await json.exists()) {
+        throw WhisperException(
+          'Whisper si è fermato (codice $code)'
+          '${tail.isEmpty ? '' : ': ${tail.last.trim()}'}',
+        );
+      }
+      out.add([
+        for (final s in parseSegments(await _readOutput(json)))
+          if (!isPromptEcho(s.text, options.prompt)) s,
+      ]);
+      try {
+        await json.delete();
+      } catch (_) {}
+    }
+    return out;
   }
 
   /// Testo dell'output di whisper-cli: whisper.cpp a volte divide un

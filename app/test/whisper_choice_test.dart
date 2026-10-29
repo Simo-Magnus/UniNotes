@@ -226,10 +226,13 @@ void main() {
       expect(transcriptionEngineLabel('small'), 'Whisper small');
       // un modello Whisper large scaricato resta la prima scelta
       expect((await w.pickModel({kParakeetId, 'large-v3'}))!.id, 'large-v3');
+      // medium è più accurato di Parakeet con audio lontano o rumoroso
+      // (misure del 29/10/2026); Parakeet resta prima di small
       expect(
         (await w.pickModel({kParakeetId, 'small', 'medium'}))!.id,
-        kParakeetId,
+        'medium',
       );
+      expect((await w.pickModel({kParakeetId, 'small'}))!.id, kParakeetId);
     });
 
     test('modelli scaricati e integrato: dal più accurato', () async {

@@ -8,6 +8,7 @@ import 'package:whisper_ggml/whisper_ggml.dart' as wg;
 
 import '../../features/notes/recorder/wav.dart';
 import 'audio_codec.dart';
+import 'whisper_chunks.dart';
 import 'whisper_service.dart';
 
 /// Whisper dentro l'app (pacchetto `whisper_ggml`, whisper.cpp v1.9 incluso,
@@ -16,15 +17,96 @@ import 'whisper_service.dart';
 ///
 /// Le lezioni durano ore: whisper.cpp tiene in memoria tutto l'audio
 /// (3 h a 16 kHz ≈ 700 MB), troppo per un telefono. Per questo l'audio viene
-/// prima convertito e diviso con ffmpeg in pezzi WAV da [chunk] e trascritto
-/// un pezzo alla volta, tenendo il modello caricato tra un pezzo e l'altro;
-/// gli orari dei segmenti vengono riportati alla registrazione intera. Su
-/// Windows e Linux (niente ffmpeg nell'app) l'audio si converte in WAV con
-/// gli strumenti del sistema (Media Foundation) e si divide in Dart.
+/// prima convertito in WAV (ffmpeg dell'app; su Windows e Linux, senza
+/// ffmpeg, gli strumenti del sistema) e trascritto a pezzi brevi tagliati
+/// alle pause, ognuno da solo ([shortChunks], whisper_chunks.dart), tenendo
+/// il modello caricato tra un pezzo e l'altro; gli orari dei segmenti
+/// vengono riportati alla registrazione intera.
 class WhisperPluginEngine implements WhisperEngine {
-  WhisperPluginEngine({this.chunk = const Duration(minutes: 10)});
+  WhisperPluginEngine({
+    this.chunk = const Duration(minutes: 10),
+    this.shortChunks = true,
+  });
 
+  /// Pezzi da [chunk] (solo con [shortChunks] spento).
   final Duration chunk;
+
+  /// Pezzi brevi tagliati alle pause, ognuno da solo (whisper_chunks.dart):
+  /// niente frasi ripetute per minuti con audio lontano o rumoroso.
+  final bool shortChunks;
+
+  /// Un pezzo breve: modello tenuto in memoria fino alla fine, nessun testo
+  /// dal pezzo prima.
+  Future<List<WhisperSegment>> _transcribePart(
+    wg.Whisper whisper,
+    File part,
+    File model,
+    int threads,
+    WhisperOptions options, {
+    void Function(int pct)? onPart,
+  }) async {
+    final res = await whisper.transcribe(
+      transcribeRequest: wg.TranscribeRequest(
+        audio: part.path,
+        language: options.whisperLanguage,
+        threads: threads,
+        isNoTimestamps: false,
+        noContext: true,
+        keepModelLoaded: true,
+        initialPrompt: options.prompt,
+        suppressNonSpeechTokens: true,
+      ),
+      modelPath: model.path,
+      onProgress: onPart,
+    );
+    return [
+      for (final s in res.segments ?? const <wg.WhisperTranscribeSegment>[])
+        if (s.text.trim().isNotEmpty && !isPromptEcho(s.text, options.prompt))
+          WhisperSegment(s.fromTs, s.text.trim(), end: s.toTs),
+    ];
+  }
+
+  /// Tutto l'audio in un WAV (telefono, Mac: ffmpeg dell'app).
+  Future<File> _wavFfmpeg(File audio, Directory tmp) async {
+    final out = File(p.join(tmp.path, 'audio.wav'));
+    final session = await FFmpegKit.executeWithArguments([
+      '-y',
+      '-i',
+      audio.path,
+      '-ar',
+      '16000',
+      '-ac',
+      '1',
+      '-c:a',
+      'pcm_s16le',
+      out.path,
+    ]);
+    if (!ReturnCode.isSuccess(await session.getReturnCode())) {
+      final log = (await session.getOutput())?.trim() ?? '';
+      throw WhisperException(
+        'Conversione dell\'audio non riuscita'
+        '${log.isEmpty ? '' : ': ${log.split('\n').last}'}',
+      );
+    }
+    return out;
+  }
+
+  /// L'audio come WAV (Windows, Linux): i WAV così come sono, gli altri
+  /// formati convertiti con gli strumenti del sistema.
+  Future<File> _wavNative(File audio, Directory tmp) async {
+    if (p.extension(audio.path).toLowerCase() == '.wav' &&
+        await readWavInfo(audio) != null) {
+      return audio;
+    }
+    final wav = File(p.join(tmp.path, 'audio.wav'));
+    if (!await AudioCodec.instance.toWav(audio, wav)) {
+      throw WhisperException(
+        'Conversione dell\'audio non riuscita: prova a trascrivere con '
+        'Gemini.',
+      );
+    }
+    return wav;
+  }
 
   @override
   String get name => 'whisper.cpp nell\'app';
@@ -37,18 +119,59 @@ class WhisperPluginEngine implements WhisperEngine {
     CancelToken? cancel,
     WhisperOptions options = WhisperOptions.none,
   }) async {
-    final tmp = await Directory.systemTemp.createTemp('uninotes_whisper_chunks_');
+    final tmp = await Directory.systemTemp.createTemp(
+      'uninotes_whisper_chunks_',
+    );
     try {
       onProgress?.call(const WhisperProgress('Preparo l\'audio…', null));
+      final whisper = const wg.Whisper(model: wg.WhisperModel.base);
+      final threads = math.max(1, math.min(Platform.numberOfProcessors - 1, 8));
+      if (shortChunks) {
+        final wav = Platform.isWindows || Platform.isLinux
+            ? await _wavNative(audio, tmp)
+            : await _wavFfmpeg(audio, tmp);
+        final info = await readWavInfo(wav);
+        if (info == null || info.dataLength == 0) {
+          throw WhisperException('Audio vuoto o non leggibile.');
+        }
+        try {
+          return await transcribeInChunks(
+            wav,
+            info,
+            tmp,
+            (parts, report) async => [
+              for (var i = 0; i < parts.length; i++)
+                await _transcribePart(
+                  whisper,
+                  parts[i],
+                  model,
+                  threads,
+                  // VAD no: sui pezzi brevi peggiorava (whisper_chunks.dart)
+                  WhisperOptions(
+                    prompt: options.prompt,
+                    language: options.language,
+                  ),
+                  onPart: (pct) => report((i + pct / 100) / parts.length),
+                ),
+            ],
+            onProgress: onProgress,
+            cancel: cancel,
+          );
+        } finally {
+          try {
+            await whisper.releaseModel();
+          } catch (_) {
+            // nessun modello in memoria
+          }
+        }
+      }
       final parts = Platform.isWindows || Platform.isLinux
           ? await _splitWav(audio, tmp)
           : await _splitFfmpeg(audio, tmp);
       if (parts.isEmpty) {
         throw WhisperException('Audio vuoto o non leggibile.');
       }
-      final whisper = const wg.Whisper(model: wg.WhisperModel.base);
       final out = <WhisperSegment>[];
-      final threads = math.max(1, math.min(Platform.numberOfProcessors - 1, 8));
       try {
         for (var i = 0; i < parts.length; i++) {
           if (cancel?.isCancelled ?? false) throw DownloadCancelled();
