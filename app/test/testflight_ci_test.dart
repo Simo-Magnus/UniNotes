@@ -353,6 +353,36 @@ void main() {
     });
   });
 
+  group('macOS (DMG e zip)', () {
+    final testo = job('macos');
+
+    test('nuova firma dopo i modelli, poi controllo di app, zip e DMG', () {
+      // fino al 30/10/2026 i modelli entravano dopo la firma di flutter build
+      // e, senza certificato, nessuno firmava di nuovo: «app danneggiata»
+      final modelli = testo.indexOf(
+        'prepara_modello_whisper_desktop.py --installa',
+      );
+      final firma = testo.indexOf(
+        'codesign --force --sign - --entitlements macos/Runner/Release.entitlements "\$app"',
+      );
+      final certificato = testo.indexOf('--sign "\$MACOS_SIGN_IDENTITY"');
+      final controllo = testo.indexOf('controlla_build_macos.sh app ');
+      final zip = testo.indexOf('ditto -c -k --keepParent');
+      expect(modelli, greaterThan(0));
+      expect(firma, greaterThan(modelli));
+      expect(certificato, greaterThan(modelli));
+      expect(controllo, greaterThan(firma));
+      expect(zip, greaterThan(controllo));
+      expect(testo, contains("if: env.HAS_MACOS_CERT != 'true'"));
+      expect(testo, contains('controlla_build_macos.sh zip uninotes-macos.zip'));
+      expect(testo, contains('controlla_build_macos.sh dmg UniNotes.dmg'));
+      final s = read('tool/controlla_build_macos.sh');
+      expect(s, contains('codesign --verify --deep --strict'));
+      expect(s, contains('kill -0'));
+      expect(s, contains('Contents/Resources/'));
+    });
+  });
+
   group('Mac App Store', () {
     final testo = job('mac-app-store');
 

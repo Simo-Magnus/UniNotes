@@ -164,6 +164,26 @@ jobs:
           GOOGLE_PICKER_API_KEY: ${{ secrets.GOOGLE_PICKER_API_KEY }}
           GOOGLE_CLOUD_PROJECT_NUMBER: ${{ secrets.GOOGLE_CLOUD_PROJECT_NUMBER }}
         run: flutter build appbundle --release --build-name=${{ needs.test.outputs.version }} --build-number=${{ needs.test.outputs.build }} --dart-define=APP_VERSION=${{ needs.test.outputs.version }} --target-platform android-arm,android-arm64,android-x64 "--dart-define=MS_CLIENT_ID=$MS_CLIENT_ID" "--dart-define=GOOGLE_ANDROID_CLIENT_ID=$GOOGLE_ANDROID_CLIENT_ID" --dart-define=STORE=play "--dart-define=GOOGLE_PICKER_API_KEY=$GOOGLE_PICKER_API_KEY" "--dart-define=GOOGLE_CLOUD_PROJECT_NUMBER=$GOOGLE_CLOUD_PROJECT_NUMBER"
+      # ogni APK: firma valida (con la chiave vera quando c'è, mai quella di
+      # debug), codice dell'app e modello Whisper integrato dentro
+      - name: Controllo degli APK (firma e contenuto)
+        env:
+          FIRMA: ${{ steps.firma.outputs.firma }}
+        run: |
+          signer=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -n 1)
+          for apk in build/app/outputs/flutter-apk/app-*-release.apk; do
+            echo "== $apk"
+            certs=$("$signer" verify --print-certs "$apk") || { echo "::error title=APK::firma non valida in $apk"; exit 1; }
+            grep -E "Signer #1 certificate (DN|SHA-256)" <<< "$certs" || true
+            if [ "$FIRMA" = "release" ] && grep -q "CN=Android Debug" <<< "$certs"; then
+              echo "::error title=APK::$apk firmato con la chiave di debug"
+              exit 1
+            fi
+            elenco=$(unzip -l "$apk")
+            for f in libapp.so libflutter.so flutter_assets/assets/whisper/; do
+              grep -q "$f" <<< "$elenco" || { echo "::error title=APK::manca $f in $apk"; exit 1; }
+            done
+          done
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-android
@@ -292,6 +312,11 @@ jobs:
         run: |
           $signtool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" | Select-Object -Last 1
           & $signtool.FullName sign /f "$env:RUNNER_TEMP\cert.pfx" /p $env:WINDOWS_CERT_PASSWORD /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 UniNotes_setup.exe
+      # come la usa chi la scarica: zip estratto e installatore installato in
+      # silenzio, file e modelli presenti, UniNotes avviata per 25 s
+      - name: Controllo di uninotes-windows.zip e UniNotes_setup.exe (file e avvio)
+        shell: pwsh
+        run: ./tool/controlla_build_windows.ps1 -Zip uninotes-windows.zip -Setup UniNotes_setup.exe
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-windows
@@ -492,6 +517,19 @@ jobs:
           codesign --force --deep --options runtime --timestamp \
             --entitlements macos/Runner/Release.entitlements \
             --sign "$MACOS_SIGN_IDENTITY" build/macos/Build/Products/Release/UniNotes.app
+      # Senza certificato: firma locale «-» DOPO aver aggiunto Parakeet e
+      # Whisper. flutter build firma il pacchetto prima che entrino i modelli
+      # e i file in più rompono il sigillo: su un Mac con Apple Silicon
+      # l'app risultava «danneggiata» e non si apriva neanche con «Apri
+      # comunque» (build fino al 30/10/2026). Con la firma locale valida
+      # resta solo l'avviso dell'app non notarizzata.
+      - name: Firma locale di UniNotes.app (senza certificato)
+        if: env.HAS_MACOS_CERT != 'true'
+        run: |
+          app=build/macos/Build/Products/Release/UniNotes.app
+          codesign --force --sign - --entitlements macos/Runner/Release.entitlements "$app"
+      - name: Controllo di UniNotes.app (firma intera e avvio)
+        run: bash tool/controlla_build_macos.sh app build/macos/Build/Products/Release/UniNotes.app
       - name: Comprimi
         run: |
           cd build/macos/Build/Products/Release
@@ -544,6 +582,12 @@ jobs:
           codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" UniNotes.dmg
           bash tool/app_store_connect.sh chiave
           bash tool/app_store_connect.sh notarizza UniNotes.dmg
+      # i file che si scaricano: l'app dentro lo zip e dentro il DMG deve
+      # avere la firma intera come quella appena costruita
+      - name: Controllo di uninotes-macos.zip e UniNotes.dmg
+        run: |
+          bash tool/controlla_build_macos.sh zip uninotes-macos.zip
+          bash tool/controlla_build_macos.sh dmg UniNotes.dmg
       - name: Cancella la chiave API, il certificato e i file temporanei
         if: always()
         working-directory: .
@@ -596,6 +640,13 @@ jobs:
         run: |
           mkdir -p Payload && cp -R build/ios/iphoneos/Runner.app Payload/
           zip -qr uninotes-ios-unsigned.ipa Payload
+      - name: Controllo dell'IPA non firmato (contenuto)
+        run: |
+          elenco=$(unzip -l uninotes-ios-unsigned.ipa)
+          for f in Payload/Runner.app/Info.plist Payload/Runner.app/Runner Payload/Runner.app/Frameworks/App.framework/App Payload/Runner.app/Frameworks/Flutter.framework/Flutter Payload/Runner.app/Frameworks/App.framework/flutter_assets/assets/whisper/; do
+            grep -q "$f" <<< "$elenco" || { echo "::error title=IPA::manca $f"; exit 1; }
+          done
+          plutil -lint Payload/Runner.app/Info.plist
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: uninotes-ios-unsigned
