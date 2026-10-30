@@ -110,7 +110,10 @@ Filename: "{app}\uninotes.exe"; Description: "Avvia UniNotes"; Flags: nowait pos
 
 [UninstallRun]
 ; Schermata di disinstallazione dell'app (scelta dei dati da eliminare).
-Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilterminated; RunOnceId: "DisinstallaUniNotes"
+; Non nelle disinstallazioni silenziose (/SILENT, /VERYSILENT: script,
+; winget, controllo della build in CI): nessuno risponderebbe alla schermata
+; e il disinstallatore aspetterebbe per sempre; i dati dello studente restano.
+Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilterminated; RunOnceId: "DisinstallaUniNotes"; Check: not UninstallSilent
 
 [UninstallDelete]
 ; Tutto quello che resta nella cartella del programma (file creati dopo

@@ -257,6 +257,17 @@ void main() {
       );
       expect(RegExp('DelTree\\(').allMatches(iss).length, 1);
     });
+
+    test('disinstallazione silenziosa senza la schermata dell\'app', () {
+      // con /VERYSILENT nessuno risponde alla scelta dei dati: il
+      // disinstallatore aspettava per sempre (controllo della build in CI,
+      // 30/10/2026)
+      final line = iss
+          .split('\n')
+          .firstWhere((l) => l.contains('Parameters: "--disinstalla"'));
+      expect(line, contains('waituntilterminated'));
+      expect(line, contains('Check: not UninstallSilent'));
+    });
   });
 
   group('pacchetti per Microsoft Store e macOS', () {

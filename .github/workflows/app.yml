@@ -315,6 +315,7 @@ jobs:
       # come la usa chi la scarica: zip estratto e installatore installato in
       # silenzio, file e modelli presenti, UniNotes avviata per 25 s
       - name: Controllo di uninotes-windows.zip e UniNotes_setup.exe (file e avvio)
+        timeout-minutes: 20
         shell: pwsh
         run: ./tool/controlla_build_windows.ps1 -Zip uninotes-windows.zip -Setup UniNotes_setup.exe
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -529,6 +530,7 @@ jobs:
           app=build/macos/Build/Products/Release/UniNotes.app
           codesign --force --sign - --entitlements macos/Runner/Release.entitlements "$app"
       - name: Controllo di UniNotes.app (firma intera e avvio)
+        timeout-minutes: 10
         run: bash tool/controlla_build_macos.sh app build/macos/Build/Products/Release/UniNotes.app
       - name: Comprimi
         run: |
@@ -585,6 +587,7 @@ jobs:
       # i file che si scaricano: l'app dentro lo zip e dentro il DMG deve
       # avere la firma intera come quella appena costruita
       - name: Controllo di uninotes-macos.zip e UniNotes.dmg
+        timeout-minutes: 15
         run: |
           bash tool/controlla_build_macos.sh zip uninotes-macos.zip
           bash tool/controlla_build_macos.sh dmg UniNotes.dmg
