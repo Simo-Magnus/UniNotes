@@ -129,10 +129,32 @@ class WhisperProgress {
 /// Segmento della trascrizione con l'istante d'inizio (e di fine, se il
 /// motore lo indica).
 class WhisperSegment {
-  const WhisperSegment(this.start, this.text, {this.end});
+  const WhisperSegment(
+    this.start,
+    this.text, {
+    this.end,
+    this.tokens = const [],
+  });
   final Duration start;
   final Duration? end;
   final String text;
+
+  /// Token di Whisper con i loro tempi (output `-ojf` di whisper-cli; vuoto
+  /// per gli altri motori): servono a dividere un segmento lungo alle fine
+  /// delle frasi ([splitSentences] in whisper_chunks.dart).
+  final List<WhisperToken> tokens;
+}
+
+/// Un token di Whisper (pezzo di parola, punteggiatura o token speciale
+/// come «[_TT_150]») con i tempi, nella stessa scala del segmento.
+class WhisperToken {
+  const WhisperToken(this.text, this.start, this.end);
+  final String text;
+  final Duration start;
+  final Duration end;
+
+  /// Token speciale («[_BEG_]», «[_TT_…]»): non è testo.
+  bool get special => text.startsWith('[_') && text.endsWith(']');
 }
 
 /// Trascrizione finita: segmenti e modello usato davvero (può essere il
@@ -1425,7 +1447,7 @@ class WhisperService {
       }
     }
     final outBase = p.join(out.path, 'trascrizione');
-    final threads = (Platform.numberOfProcessors - 1).clamp(1, 16);
+    final threads = fileWhisperThreads();
     final args = [
       '-m',
       model.path,
@@ -1435,6 +1457,7 @@ class WhisperService {
       '$threads',
       '-pp',
       '-oj',
+      '-ojf',
       '-of',
       outBase,
       ...options.cliArgs,
@@ -1447,6 +1470,7 @@ class WhisperService {
       await out.delete(recursive: true);
       throw WhisperException('Impossibile avviare Whisper: ${e.message}');
     }
+    lowerProcessPriority(proc);
     void kill() => proc.kill();
     cancel?.addListener(kill);
     final tail = <String>[];
@@ -1489,7 +1513,7 @@ class WhisperService {
           '${tail.isEmpty ? '' : ': ${tail.last.trim()}'}',
         );
       }
-      return parseSegments(await _readOutput(json));
+      return splitSentences(parseSegments(await _readOutput(json)));
     } finally {
       await out.delete(recursive: true);
     }
@@ -1498,7 +1522,9 @@ class WhisperService {
   /// Un gruppo di pezzi brevi ([transcribeInChunks]) con un solo processo
   /// `whisper-cli` (il modello si carica una volta): un `-f`/`-of` per
   /// pezzo, `-mc 0` perché nessun pezzo riceva il testo del precedente,
-  /// senza VAD (sui pezzi brevi peggiorava).
+  /// senza VAD (sui pezzi brevi peggiorava), `-ojf` per i tempi dei token
+  /// (i segmenti lunghi si dividono alle fine delle frasi; il testo non
+  /// cambia).
   Future<List<List<WhisperSegment>>> _runCliParts(
     File cli,
     File model,
@@ -1507,7 +1533,7 @@ class WhisperService {
     CancelToken? cancel,
     void Function(double fraction)? onFraction,
   }) async {
-    final threads = (Platform.numberOfProcessors - 1).clamp(1, 16);
+    final threads = fileWhisperThreads();
     final args = [
       '-m',
       model.path,
@@ -1515,6 +1541,7 @@ class WhisperService {
       '$threads',
       '-pp',
       '-oj',
+      '-ojf',
       '-mc',
       '0',
       for (final f in parts) ...['-f', f.path, '-of', f.path],
@@ -1529,6 +1556,7 @@ class WhisperService {
     } on ProcessException catch (e) {
       throw WhisperException('Impossibile avviare Whisper: ${e.message}');
     }
+    lowerProcessPriority(proc);
     void kill() => proc.kill();
     cancel?.addListener(kill);
     final tail = <String>[];
@@ -1592,7 +1620,8 @@ class WhisperService {
   static Future<String> _readOutput(File json) async =>
       utf8.decode(await json.readAsBytes(), allowMalformed: true);
 
-  /// Legge l'output `-oj` di whisper-cli.
+  /// Legge l'output `-oj` di whisper-cli (con `-ojf` anche i token con i
+  /// loro tempi, [WhisperSegment.tokens]).
   static List<WhisperSegment> parseSegments(String json) {
     final Object? d;
     try {
@@ -1604,23 +1633,31 @@ class WhisperService {
     if (list is! List) return const [];
     Map<Object?, Object?>? offsets(Map<Object?, Object?> s) =>
         s['offsets'] is Map ? s['offsets'] as Map<Object?, Object?> : null;
+    Duration? ms(Object? v) => switch (v) {
+      final num n when n.isFinite => Duration(milliseconds: n.toInt()),
+      _ => null,
+    };
+    List<WhisperToken> tokens(Map<Object?, Object?> s) {
+      final t = s['tokens'];
+      if (t is! List) return const [];
+      final out = <WhisperToken>[];
+      for (final k in t.whereType<Map<Object?, Object?>>()) {
+        final from = ms(offsets(k)?['from']);
+        final to = ms(offsets(k)?['to']);
+        if (from == null || to == null) return const [];
+        out.add(WhisperToken('${k['text'] ?? ''}', from, to));
+      }
+      return out;
+    }
+
     return [
       for (final s in list.whereType<Map<Object?, Object?>>())
         if ('${s['text'] ?? ''}'.trim().isNotEmpty)
           WhisperSegment(
-            Duration(
-              milliseconds: switch (offsets(s)?['from']) {
-                final num from when from.isFinite => from.toInt(),
-                _ => 0,
-              },
-            ),
+            ms(offsets(s)?['from']) ?? Duration.zero,
             '${s['text']}'.trim(),
-            end: switch (offsets(s)?['to']) {
-              final num to when to.isFinite => Duration(
-                milliseconds: to.toInt(),
-              ),
-              _ => null,
-            },
+            end: ms(offsets(s)?['to']),
+            tokens: tokens(s),
           ),
     ];
   }
@@ -1705,4 +1742,54 @@ class _CliLiveWhisper extends LiveWhisper {
 
   @override
   Future<void> close() async {}
+}
+
+/// Thread di Whisper per la trascrizione di un file: due core restano
+/// liberi per l'interfaccia (con tutti i core meno uno le animazioni
+/// dell'app andavano a scatti durante la trascrizione con large-v3-turbo,
+/// 30/10/2026); con 4 core o meno se ne lascia uno.
+int fileWhisperThreads([int? cores]) {
+  final n = cores ?? Platform.numberOfProcessors;
+  return (n <= 4 ? n - 1 : n - 2).clamp(1, 16);
+}
+
+/// Priorità «sotto il normale» per il processo [proc] (whisper-cli): il
+/// sistema dà la precedenza all'app e al disegno delle animazioni, la
+/// trascrizione usa il tempo di calcolo che resta. Errori ignorati (la
+/// trascrizione va avanti con la priorità normale).
+void lowerProcessPriority(Process proc) {
+  try {
+    final pid = proc.pid;
+    if (Platform.isWindows) {
+      final k32 = DynamicLibrary.open('kernel32.dll');
+      final open = k32
+          .lookupFunction<
+            IntPtr Function(Uint32, Int32, Uint32),
+            int Function(int, int, int)
+          >('OpenProcess');
+      final setPriority = k32
+          .lookupFunction<
+            Int32 Function(IntPtr, Uint32),
+            int Function(int, int)
+          >('SetPriorityClass');
+      final close = k32
+          .lookupFunction<Int32 Function(IntPtr), int Function(int)>(
+            'CloseHandle',
+          );
+      // PROCESS_SET_INFORMATION, BELOW_NORMAL_PRIORITY_CLASS
+      final h = open(0x0200, 0, pid);
+      if (h == 0) return;
+      setPriority(h, 0x00004000);
+      close(h);
+    } else if (Platform.isMacOS || Platform.isLinux) {
+      unawaited(
+        Process.run('/usr/bin/renice', [
+          '-n',
+          '10',
+          '-p',
+          '$pid',
+        ]).then((_) {}, onError: (_) {}),
+      );
+    }
+  } catch (_) {}
 }

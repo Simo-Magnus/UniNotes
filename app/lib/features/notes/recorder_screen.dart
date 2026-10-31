@@ -781,10 +781,14 @@ class _LiveTranscriptCardState extends State<_LiveTranscriptCard> {
                     style: theme.textTheme.titleSmall,
                   ),
                 ),
-                // la sorgente cede spazio (puntini) con i caratteri grandi
+                // la sorgente cede spazio (puntini) con i caratteri grandi;
+                // allineata a destra nella sua metà della riga: con Flexible
+                // e il testo a sinistra finiva a metà della scheda
                 if (state == LiveState.running || state == LiveState.lagging)
-                  Flexible(
+                  Expanded(
                     child: Text(
+                      key: const Key('live-engine'),
+                      textAlign: TextAlign.end,
                       switch (live!.engine) {
                         LiveEngine.system when live.appleSpeech =>
                           'dal vivo · Apple, sul Mac',

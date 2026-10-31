@@ -335,7 +335,19 @@ class LiveAgreement {
 
   /// Nuova ipotesi [words] del tratto in corso (tutto, dall'inizio della
   /// frase), con l'audio fino a [now]. true se i segmenti sono cambiati.
-  bool hypothesis(List<HypWord> words, {required Duration now}) {
+  ///
+  /// Con [restart] falso un'ipotesi molto diversa dalle parole confermate
+  /// non chiude la frase: Parakeet ridecodifica sempre dallo stesso inizio
+  /// del parlato, e su un audio difficile un'ipotesi può cambiare quasi
+  /// tutta senza essere ripartita da capo. Chiudere lasciava le parole
+  /// confermate accanto al testo definitivo, che poi arrivava per tutto il
+  /// tratto: frasi doppie e sovrapposte (30/10/2026). Il testo definitivo
+  /// a fine frase sostituisce comunque tutte le parole confermate.
+  bool hypothesis(
+    List<HypWord> words, {
+    required Duration now,
+    bool restart = true,
+  }) {
     _validate();
     List<HypWord> clean() {
       final h = [
@@ -351,7 +363,9 @@ class LiveAgreement {
       return false;
     }
     var a = alignWords(_norms(_words), _norms(h));
-    if (_words.isNotEmpty && a.cost > math.max(2.0, 0.6 * _words.length)) {
+    if (restart &&
+        _words.isNotEmpty &&
+        a.cost > math.max(2.0, 0.6 * _words.length)) {
       // il riconoscitore è ripartito da capo: le parole confermate restano
       // e questa è una frase nuova
       close();
@@ -420,6 +434,23 @@ class LiveAgreement {
     return Duration(milliseconds: ms);
   }
 
+  /// Nessuna frase finisce dopo l'inizio della seguente, dalla frase prima
+  /// di [from] in poi: i tempi del testo definitivo e quelli delle parole
+  /// confermate vengono da decodifiche diverse (e le parole confermate di
+  /// un tratto senza testo definitivo restano). Si accorcia la fine,
+  /// l'inizio (la chiave della frase) resta.
+  void _clampEnds(Duration from) {
+    var i = _segs.length - 1;
+    while (i > 0 && _segs[i].start >= from) {
+      i--;
+    }
+    for (; i + 1 < _segs.length; i++) {
+      final s = _segs[i];
+      final next = _segs[i + 1].start;
+      if (s.end > next && next > s.start) _segs[i] = s.copyWith(end: next);
+    }
+  }
+
   void _insert(TranscriptSegment seg) {
     var i = _segs.length;
     while (i > 0 && _segs[i - 1].start > seg.start) {
@@ -465,6 +496,7 @@ class LiveAgreement {
         _segs[i] = s.copyWith(text: text, end: end);
       }
     }
+    if (_live.isNotEmpty) _clampEnds(Duration(milliseconds: _live.first.key));
   }
 
   /// Fine della frase: [finals] è il testo definitivo del riconoscitore
@@ -489,6 +521,7 @@ class LiveAgreement {
       close();
       if (f.isEmpty) return false;
       merger.add(f);
+      _clampEnds(f.first.start);
       return true;
     }
     if (f.isEmpty) {
@@ -654,6 +687,7 @@ class LiveAgreement {
     }
     _segs.addAll(emitted);
     _segs.sort((x, y) => x.start.compareTo(y.start));
+    if (emitted.isNotEmpty) _clampEnds(emitted.first.start);
 
     if (carry && a.cEnd < _words.length) {
       final rest = _words.sublist(a.cEnd);

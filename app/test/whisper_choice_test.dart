@@ -33,6 +33,23 @@ class _FakeEngine implements WhisperEngine {
 }
 
 void main() {
+  test('trascrizione di un file: due core liberi per l\'interfaccia', () {
+    // con tutti i core meno uno le animazioni andavano a scatti (30/10/2026)
+    expect(fileWhisperThreads(8), 6);
+    expect(fileWhisperThreads(16), 14);
+    expect(fileWhisperThreads(4), 3);
+    expect(fileWhisperThreads(2), 1);
+    expect(fileWhisperThreads(1), 1);
+    expect(fileWhisperThreads(64), 16);
+    final src = File('lib/core/services/whisper_service.dart')
+        .readAsStringSync();
+    // ogni whisper-cli avviato parte con la priorità più bassa
+    expect(
+      'processStarter(cli.path, args)'.allMatches(src).length,
+      'lowerProcessPriority(proc)'.allMatches(src).length,
+    );
+  });
+
   group('consiglio del modello per il dispositivo', () {
     WhisperRecommendation rec(
       WhisperPlatform pl, {

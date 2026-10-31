@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:media_kit/media_kit.dart';
@@ -468,7 +469,7 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
             (e) => mounted ? setState(() => _playerError = e) : null,
           ),
         );
-      await player.open(Media(Uri.file(_file.path).toString()), play: false);
+      await MediaGuard.openLocal(player, _file.path);
       if (_rate != 1) await player.setRate(_rate);
     } catch (e) {
       if (mounted) {
@@ -507,14 +508,20 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
   void _onClock() {
     final i = segmentIndexAt(_segs, _clock.value);
     if (i == _current) return;
+    final before = _current;
     setState(() => _current = i);
-    if (i >= 0 && !_searchOpen) _showSegment(i);
+    // si scorre solo passando a un altro paragrafo
+    if (i >= 0 &&
+        !_searchOpen &&
+        (before < 0 || _paraOf(i) != _paraOf(before))) {
+      _showSegment(i);
+    }
   }
 
   void _showSegment(int i) {
     if (!_list.isAttached || !_scroll.hasClients) return;
     _list.animateToItem(
-      index: i,
+      index: _paraOf(i),
       scrollController: _scroll,
       alignment: 0.3,
       duration: (_) => const Duration(milliseconds: 300),
@@ -1106,10 +1113,12 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
                 final pos = shownPos();
                 // secondi interi: il testo cambia una volta al secondo
                 // le due durate si accorciano (puntini) con i caratteri
-                // grandi in 320 px, invece di uscire dalla riga
+                // grandi in 320 px, invece di uscire dalla riga; il tempo
+                // che manca sta sotto la fine della forma d'onda, speculare
+                // a quello trascorso (con Flexible + Spacer finiva a 2/3)
                 return Row(
                   children: [
-                    Flexible(
+                    Expanded(
                       child: Text(
                         clockLabel(pos),
                         style: mono,
@@ -1117,10 +1126,11 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    const Spacer(),
-                    Flexible(
+                    Expanded(
                       child: Text(
                         '−${clockLabel(_total > pos ? _total - pos : Duration.zero)}',
+                        key: const Key('player-remaining'),
+                        textAlign: TextAlign.end,
                         style: mono?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),
@@ -1478,50 +1488,66 @@ class _RecordingPlayerScreenState extends State<RecordingPlayerScreen>
     }
     final q = _searchOpen ? _query.text.trim() : '';
     final active = _matches.isEmpty ? -1 : _matches[_match];
+    final paras = _paras;
+    final style = theme.textTheme.bodyLarge?.copyWith(height: 1.55);
+    // testo che scorre a paragrafi (come sul telefono), non una frase per
+    // riga; la frase in ascolto e il risultato della ricerca hanno lo
+    // sfondo colorato, un tocco su una frase salta a quel punto dell'audio
     return SuperListView.builder(
       controller: _scroll,
       listController: _list,
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 32),
-      itemCount: _segs.length,
-      itemBuilder: (context, i) {
-        final s = _segs[i];
-        final current = i == _current;
-        final style = theme.textTheme.bodyLarge?.copyWith(
-          height: 1.4,
-          fontWeight: current ? FontWeight.w600 : null,
-        );
-        return Semantics(
-          button: true,
-          label: 'Vai a ${clockLabel(s.start)}',
-          child: InkWell(
-            borderRadius: BorderRadius.circular(12),
-            onTap: () => _seek(s.start),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-              constraints: const BoxConstraints(minHeight: 44),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: current
-                    ? theme.colorScheme.primary.withValues(alpha: 0.14)
-                    : (i == active
-                          ? context.tokens.orangeGradient.first.withValues(
-                              alpha: 0.14,
-                            )
-                          : null),
-              ),
-              // senza l'orario di ogni frase: un tocco salta comunque a quel
-              // punto dell'audio; le formule ($…$) si disegnano
-              child: q.isEmpty && mayContainMath(s.text)
-                  ? MathText(s.text, style: style)
-                  : Text.rich(
-                      _highlight(s.text, q, theme, _spell.errorsOf(s.text)),
-                      style: style,
-                    ),
+      padding: const EdgeInsets.fromLTRB(18, 12, 18, 32),
+      itemCount: paras.length,
+      itemBuilder: (context, k) {
+        final (from, to) = paras[k];
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 14),
+          child: _TranscriptParagraph(
+            segments: _segs,
+            from: from,
+            to: to,
+            style: style,
+            current: _current,
+            active: active,
+            currentColor: theme.colorScheme.primary.withValues(alpha: 0.16),
+            activeColor: context.tokens.orangeGradient.first.withValues(
+              alpha: 0.2,
             ),
+            spanOf: (text) => _highlight(text, q, theme, _spell.errorsOf(text)),
+            math: q.isEmpty,
+            onSeek: (i) => _seek(_segs[i].start),
           ),
         );
       },
     );
+  }
+
+  List<TranscriptSegment>? _parasFor;
+  List<(int, int)> _parasCache = const [];
+  List<int> _paraOfCache = const [];
+
+  /// Paragrafi di [_segs] ([transcriptParagraphs]), ricalcolati solo
+  /// quando cambiano i segmenti.
+  List<(int, int)> get _paras {
+    if (!identical(_parasFor, _segs)) {
+      _parasFor = _segs;
+      _parasCache = transcriptParagraphs(_segs);
+      final of = List<int>.filled(_segs.length, 0);
+      for (var k = 0; k < _parasCache.length; k++) {
+        final (from, to) = _parasCache[k];
+        for (var i = from; i < to; i++) {
+          of[i] = k;
+        }
+      }
+      _paraOfCache = of;
+    }
+    return _parasCache;
+  }
+
+  /// Paragrafo che contiene il segmento [i].
+  int _paraOf(int i) {
+    _paras;
+    return i >= 0 && i < _paraOfCache.length ? _paraOfCache[i] : 0;
   }
 
   /// Frase con i risultati della ricerca evidenziati e le parole errate
@@ -1859,6 +1885,138 @@ class _SkipIcon extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Paragrafo della trascrizione nel lettore: le frasi [from]..[to] di
+/// [segments] in un unico testo che va a capo da solo. La frase in ascolto
+/// ([current]) e il risultato attivo della ricerca ([active]) hanno lo
+/// sfondo colorato (senza grassetto: il testo non si reimpagina a ogni
+/// frase); un tocco su una frase chiama [onSeek] con il suo indice.
+class _TranscriptParagraph extends StatefulWidget {
+  const _TranscriptParagraph({
+    required this.segments,
+    required this.from,
+    required this.to,
+    required this.style,
+    required this.current,
+    required this.active,
+    required this.currentColor,
+    required this.activeColor,
+    required this.spanOf,
+    required this.math,
+    required this.onSeek,
+  });
+  final List<TranscriptSegment> segments;
+  final int from;
+  final int to;
+  final TextStyle? style;
+  final int current;
+  final int active;
+  final Color currentColor;
+  final Color activeColor;
+
+  /// Testo di una frase con ricerca e parole errate evidenziate.
+  final TextSpan Function(String text) spanOf;
+
+  /// Formule ($…$) disegnate (non durante la ricerca).
+  final bool math;
+  final void Function(int index) onSeek;
+
+  @override
+  State<_TranscriptParagraph> createState() => _TranscriptParagraphState();
+}
+
+class _TranscriptParagraphState extends State<_TranscriptParagraph> {
+  final _text = GlobalKey();
+
+  /// Inizio di ogni frase nel testo del paragrafo (una formula conta un
+  /// carattere, il segnaposto del WidgetSpan).
+  List<int> _starts = const [];
+
+  RenderParagraph? _paragraph() {
+    RenderParagraph? found;
+    void visit(RenderObject o) {
+      if (found != null) return;
+      if (o is RenderParagraph) {
+        found = o;
+        return;
+      }
+      o.visitChildren(visit);
+    }
+
+    final ro = _text.currentContext?.findRenderObject();
+    if (ro != null) visit(ro);
+    return found;
+  }
+
+  void _tap(TapUpDetails d) {
+    final para = _paragraph();
+    if (para == null || _starts.isEmpty) return;
+    final at = para
+        .getPositionForOffset(para.globalToLocal(d.globalPosition))
+        .offset;
+    var k = 0;
+    while (k + 1 < _starts.length && _starts[k + 1] <= at) {
+      k++;
+    }
+    widget.onSeek(widget.from + k);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final w = widget;
+    final spans = <InlineSpan>[];
+    final starts = <int>[];
+    var len = 0;
+    for (var i = w.from; i < w.to; i++) {
+      final s = w.segments[i];
+      if (i > w.from) {
+        spans.add(const TextSpan(text: ' '));
+        len += 1;
+      }
+      starts.add(len);
+      final bg = i == w.current
+          ? w.currentColor
+          : (i == w.active ? w.activeColor : null);
+      if (w.math && mayContainMath(s.text)) {
+        spans.add(
+          WidgetSpan(
+            alignment: PlaceholderAlignment.baseline,
+            baseline: TextBaseline.alphabetic,
+            child: Container(
+              color: bg,
+              child: MathText(s.text, style: w.style),
+            ),
+          ),
+        );
+        len += 1;
+      } else {
+        spans.add(
+          TextSpan(
+            style: bg == null ? null : TextStyle(backgroundColor: bg),
+            children: [w.spanOf(s.text)],
+          ),
+        );
+        len += s.text.length;
+      }
+    }
+    _starts = starts;
+    return Semantics(
+      hint: 'Tocca una frase per ascoltarla da quel punto',
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTapUp: _tap,
+          child: Text.rich(
+            key: _text,
+            TextSpan(children: spans),
+            style: w.style,
+          ),
+        ),
       ),
     );
   }

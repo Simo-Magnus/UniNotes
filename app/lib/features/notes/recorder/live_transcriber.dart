@@ -97,7 +97,8 @@ List<LiveEngine> liveEngineOrder({
 ///    core/services/parakeet_service.dart). L'audio della registrazione
 ///    ([onPcm]) passa dal rilevatore di voce Silero: mentre si parla, ogni
 ///    ~0,75 s si decodifica la frase in corso (un'ipotesi); a una pausa (o
-///    dopo ~18 s di parlato continuo) diventa definitiva; i silenzi non
+///    dopo ~12 s di parlato continuo, nel punto più silenzioso) diventa
+///    definitiva; i silenzi non
 ///    producono testo ([VadLiveSegmenter]). Parakeet sceglie da solo la
 ///    lingua: le frasi che escono in una lingua diversa da quella della
 ///    lezione ([language], anche l'inglese in una lezione in italiano e
@@ -683,14 +684,21 @@ class LiveTranscriber extends ChangeNotifier {
       if (step.stableUntil > _stable) _stable = step.stableUntil;
       final now = samplesToDuration(start + s.length);
       if (step.committed.isNotEmpty) {
-        // fine frase: il testo definitivo sostituisce le parole confermate
+        // fine frase: il testo definitivo sostituisce le parole confermate.
+        // Anche a un taglio nel punto più silenzioso (~12 s di parlato
+        // continuo): le parole confermate dopo il taglio spariscono e le
+        // ipotesi dal taglio in poi le confermano di nuovo (passarle alla
+        // frase dopo, come con Whisper, dava frasi con l'inizio sbagliato)
         _agree.finish(_inLanguage(step.committed), now: now);
         _segmentsChanged(force: true);
       }
       final pt = step.partial;
       if (pt != null) {
         if (pt.isEmpty) {
-          if (step.committed.isEmpty) _agree.close();
+          // fine del parlato senza testo definitivo: le parole confermate
+          // restano. Mentre si parla ancora (ipotesi vuota) la frase resta
+          // aperta: il testo definitivo deve sostituirne le parole
+          if (step.committed.isEmpty && !step.speaking) _agree.close();
           partial = '';
         } else if (outsideLecture(pt, lecture: language)) {
           // ipotesi in un'altra lingua: non si conferma e non si mostra
@@ -699,7 +707,9 @@ class LiveTranscriber extends ChangeNotifier {
           final words = step.partialWords.isEmpty
               ? wordsOfText(pt)
               : step.partialWords;
-          if (_agree.hypothesis(words, now: now)) _segmentsChanged();
+          if (_agree.hypothesis(words, now: now, restart: false)) {
+            _segmentsChanged();
+          }
           partial = _agree.pending;
         }
       }

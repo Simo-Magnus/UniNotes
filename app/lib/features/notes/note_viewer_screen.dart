@@ -182,21 +182,25 @@ class _NoteViewerScreenState extends State<NoteViewerScreen> {
           if (!snap.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
-          return Align(
-            alignment: Alignment.topCenter,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 820),
-              child: SearchableMarkdownView(
+          // il testo resta in una colonna di 820 px al centro, ma la vista
+          // che scorre occupa tutta la larghezza: la rotellina funziona in
+          // qualunque punto della finestra e la barra di scorrimento sta sul
+          // bordo destro (prima stava accanto alla colonna, a metà schermo)
+          return LayoutBuilder(
+            builder: (context, box) {
+              final side = box.maxWidth > 820 ? (box.maxWidth - 820) / 2 : 0.0;
+              return SearchableMarkdownView(
                 snap.data!,
                 key: _view,
                 initialQuery: widget.query,
+                padding: EdgeInsets.fromLTRB(20 + side, 12, 20 + side, 40),
                 // linea rossa sulle parole errate anche in lettura (non
                 // nelle risposte dell'AI: non sono testi dell'utente)
                 spellLanguage: widget.note.folder == NoteFolder.ai
                     ? null
                     : spellLanguageOf(widget.course.examLanguage),
-              ),
-            ),
+              );
+            },
           );
         },
       ),

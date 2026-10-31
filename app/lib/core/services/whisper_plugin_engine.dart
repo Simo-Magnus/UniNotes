@@ -125,7 +125,8 @@ class WhisperPluginEngine implements WhisperEngine {
     try {
       onProgress?.call(const WhisperProgress('Preparo l\'audio…', null));
       final whisper = const wg.Whisper(model: wg.WhisperModel.base);
-      final threads = math.max(1, math.min(Platform.numberOfProcessors - 1, 8));
+      // due core liberi per l'interfaccia (vedi fileWhisperThreads)
+      final threads = math.min(fileWhisperThreads(), 8);
       if (shortChunks) {
         final wav = Platform.isWindows || Platform.isLinux
             ? await _wavNative(audio, tmp)

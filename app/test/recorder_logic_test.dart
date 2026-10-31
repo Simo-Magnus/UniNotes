@@ -469,6 +469,24 @@ void main() {
       expect(segmentIndexAt([seg(2, 3, 'x')], sec(1)), -1);
     });
 
+    test('paragrafi del lettore: testo che scorre, a capo alle pause lunghe '
+        'o dopo ~700 caratteri', () {
+      final s = [
+        seg(0, 4, 'a'),
+        seg(4, 9, 'b'),
+        // pausa di 5 s: paragrafo nuovo
+        seg(14, 16, 'c'),
+        seg(16.5, 18, 'd'),
+      ];
+      expect(transcriptParagraphs(s), [(0, 2), (2, 4)]);
+      expect(transcriptParagraphs(const []), isEmpty);
+      // senza pause: a capo solo fra una frase e l'altra, dopo 700 caratteri
+      final long = [
+        for (var i = 0; i < 6; i++) seg(i * 10.0, i * 10.0 + 10, 'x' * 300),
+      ];
+      expect(transcriptParagraphs(long), [(0, 3), (3, 6)]);
+    });
+
     test('«Salta silenzi»', () {
       // 1 s di voce, 3 s di silenzio, voce
       final peaks = Uint8List.fromList([

@@ -255,6 +255,31 @@ int segmentIndexAt(List<TranscriptSegment> segments, Duration t) {
   return found;
 }
 
+/// Paragrafi della trascrizione nel lettore: intervalli [inizio, fine) di
+/// [segments] mostrati come un unico testo che scorre (come sul telefono),
+/// non una frase per riga. Un paragrafo nuovo dopo una pausa di almeno
+/// [pause] o quando il paragrafo ha già almeno [maxChars] caratteri.
+List<(int, int)> transcriptParagraphs(
+  List<TranscriptSegment> segments, {
+  Duration pause = const Duration(seconds: 4),
+  int maxChars = 700,
+}) {
+  final out = <(int, int)>[];
+  var from = 0, chars = 0;
+  for (var i = 0; i < segments.length; i++) {
+    if (i > from &&
+        (segments[i].start - segments[i - 1].end >= pause ||
+            chars >= maxChars)) {
+      out.add((from, i));
+      from = i;
+      chars = 0;
+    }
+    chars += segments[i].text.length + 1;
+  }
+  if (from < segments.length) out.add((from, segments.length));
+  return out;
+}
+
 /// «Salta silenzi»: se [pos] cade in un tratto silenzioso lungo almeno
 /// [minRun] (livelli sotto [threshold]), restituisce dove riprendere (poco
 /// prima della fine del silenzio); altrimenti null.

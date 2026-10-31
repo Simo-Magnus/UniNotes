@@ -125,8 +125,27 @@ abstract final class MediaGuard {
     }
   }
 
+  /// Apre il file locale [path] in [player] in pausa. Non con
+  /// `player.open`: media_kit scrive l'elenco in un file temporaneo senza
+  /// estensione e lo carica con `loadlist`, cioè come scaletta, che
+  /// `access-references=no` ([mpvOptions]) rifiuta («Unable to load playlist
+  /// C:\…\Temp\<uuid>», nessun audio, 30/10/2026). Con `add` media_kit usa
+  /// `loadfile` sul file stesso e tiene il suo elenco interno (serve agli
+  /// eventi di inizio file); `playlist-pos` lo carica senza avviarlo.
+  static Future<void> openLocal(Player player, String path) async {
+    final media = Media(Uri.file(path).toString());
+    final native = player.platform;
+    if (native is! NativePlayer) {
+      await player.open(media, play: false);
+      return;
+    }
+    await player.pause();
+    await player.add(media);
+    await native.setProperty('playlist-pos', '0');
+  }
+
   /// Lettore per un file locale, con [configuration] e [mpvOptions]
-  /// (prima di `open`).
+  /// (prima di [openLocal]).
   static Future<Player> newPlayer() async {
     final player = Player(configuration: configuration);
     final native = player.platform;

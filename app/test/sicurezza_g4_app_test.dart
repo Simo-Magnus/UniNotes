@@ -365,13 +365,11 @@ void main() {
           for (var i = 0; i < 3; i++) {
             final sw = Stopwatch()..start();
             f.isExcluded([t]);
-            best = best < sw.elapsedMilliseconds ? best : sw.elapsedMilliseconds;
+            best = best < sw.elapsedMilliseconds
+                ? best
+                : sw.elapsedMilliseconds;
           }
-          expect(
-            best,
-            lessThan(50),
-            reason: '$c su «${t.substring(0, 3)}…»',
-          );
+          expect(best, lessThan(50), reason: '$c su «${t.substring(0, 3)}…»');
         }
       }
     });
@@ -512,9 +510,11 @@ void main() {
         if (f is! File || !f.path.endsWith('.dart')) continue;
         final src = f.readAsStringSync();
         if (!src.contains('Media(')) continue;
+        // media_guard.dart apre i file nei lettori di newPlayer (openLocal)
         final ok =
             src.contains('MediaGuard.newPlayer()') ||
-            src.contains("Media('asset:///");
+            src.contains("Media('asset:///") ||
+            f.path.endsWith('media_guard.dart');
         expect(ok, isTrue, reason: f.path);
       }
     });

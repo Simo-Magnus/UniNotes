@@ -150,7 +150,7 @@ class _MediaViewState extends State<MediaView> {
             (e) => mounted ? setState(() => _error = e) : null,
           ),
         );
-      await player.open(Media(Uri.file(widget.path).toString()), play: false);
+      await MediaGuard.openLocal(player, widget.path);
       final start = widget.initialSeconds;
       if (start != null && start > 0) {
         // Si aspetta la durata prima di saltare (il file deve essere aperto).

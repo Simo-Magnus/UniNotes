@@ -12,7 +12,7 @@ import 'erase_all.dart';
 import 'logic/data_eraser.dart';
 
 /// Argomento con cui il disinstallatore di Windows avvia l'app
-/// (app/windows/installer/uninotes.iss, sezione [UninstallRun]).
+/// (app/windows/installer/uninotes.iss, SchermataDisinstallazione in [Code]).
 const String kUninstallArg = '--disinstalla';
 
 /// Windows: il disinstallatore di Inno Setup, avviato da «App installate»,

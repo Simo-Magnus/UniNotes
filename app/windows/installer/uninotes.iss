@@ -12,7 +12,8 @@
 ;   AppId); i dati dell'utente non sono nella cartella del programma e
 ;   restano.
 ; - Disinstallazione: il disinstallatore standard di Inno Setup. Avviato da
-;   «App installate» lancia prima `uninotes.exe --disinstalla`, che apre la
+;   «App installate» lancia prima ([Code], SchermataDisinstallazione)
+;   `uninotes.exe --disinstalla`, che apre la
 ;   schermata di disinstallazione dell'app (scelta dei dati da eliminare,
 ;   anche nel cloud e nel calendario) e aspetta che si chiuda; poi toglie i
 ;   file del programma. L'app non ha un tasto per disinstallarsi: la
@@ -108,13 +109,6 @@ Name: "{autodesktop}\UniNotes"; Filename: "{app}\uninotes.exe"; AppUserModelID: 
 ; da sola. Testo scritto qui, senza dipendere dalla traduzione di Inno Setup.
 Filename: "{app}\uninotes.exe"; Description: "Avvia UniNotes"; Flags: nowait postinstall skipifsilent
 
-[UninstallRun]
-; Schermata di disinstallazione dell'app (scelta dei dati da eliminare).
-; Non nelle disinstallazioni silenziose (/SILENT, /VERYSILENT: script,
-; winget, controllo della build in CI): nessuno risponderebbe alla schermata
-; e il disinstallatore aspetterebbe per sempre; i dati dello studente restano.
-Filename: "{app}\uninotes.exe"; Parameters: "--disinstalla"; Flags: waituntilterminated; RunOnceId: "DisinstallaUniNotes"; Check: not UninstallSilent
-
 [UninstallDelete]
 ; Tutto quello che resta nella cartella del programma (file creati dopo
 ; l'installazione, modelli scaricati come ripiego): la cartella sparisce. I
@@ -176,10 +170,32 @@ begin
   Result := True;
 end;
 
+// Schermata di disinstallazione dell'app (scelta dei dati da eliminare):
+// `uninotes.exe --disinstalla`, e il disinstallatore aspetta che si chiuda.
+// Non nelle disinstallazioni silenziose (/SILENT, /VERYSILENT: script,
+// winget, controllo della build in CI): nessuno risponderebbe alla
+// schermata e il disinstallatore aspetterebbe per sempre; i dati dello
+// studente restano. Qui e non in [UninstallRun]: lì il «Check:» si valuta
+// durante l'installazione, dove UninstallSilent non si può chiamare
+// (errore interno alla fine dell'installazione e voce persa, 30/10/2026).
+procedure SchermataDisinstallazione();
+var
+  Codice: Integer;
+begin
+  if UninstallSilent() then
+    exit;
+  Exec(ExpandConstant('{app}\uninotes.exe'), '--disinstalla', '',
+    SW_SHOWNORMAL, ewWaitUntilTerminated, Codice);
+end;
+
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
   if CurUninstallStep = usUninstall then
+  begin
     ChiudiUniNotes();
+    SchermataDisinstallazione();
+    ChiudiUniNotes();
+  end;
   if CurUninstallStep = usPostUninstall then
   begin
     ChiudiUniNotes();

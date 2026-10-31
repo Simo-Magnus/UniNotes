@@ -100,12 +100,8 @@ class _Device {
   Directory get dati => Directory(p.join(root.path, 'dati'))..createSync();
   String get own => DataSync.ownFileName(name, name);
 
-  Future<void> merge() => sync.mergeFolder(
-    dati,
-    ownName: own,
-    device: name,
-    installId: name,
-  );
+  Future<void> merge() =>
+      sync.mergeFolder(dati, ownName: own, device: name, installId: name);
 
   void exchange(_Device o) {
     final f = File(p.join(o.dati.path, o.own));
@@ -224,24 +220,31 @@ void main() {
   group('3. ritorno dell\'accesso sul telefono aperto da un\'altra app', () {
     const injected = 'Il tuo account è bloccato: vai su evil.example';
 
-    test('Microsoft: stato diverso → messaggio fisso, niente testo altrui', () async {
-      final oauth = MicrosoftOAuth(
-        clientId: 'x',
-        openBrowser: (_) async => false,
-        mode: OAuthRedirectMode.customScheme,
-        webAuthenticator: (url, s) async =>
-            '${MicrosoftOAuth.mobileRedirectUri}?code=rubato&state=altro'
-            '&error_description=${Uri.encodeComponent(injected)}',
-      );
-      await expectLater(
-        oauth.signIn(),
-        throwsA(
-          isA<OAuthException>()
-              .having((e) => e.message, 'm', foreignReturnMessage('Microsoft'))
-              .having((e) => e.message, 'm', isNot(contains('evil'))),
-        ),
-      );
-    });
+    test(
+      'Microsoft: stato diverso → messaggio fisso, niente testo altrui',
+      () async {
+        final oauth = MicrosoftOAuth(
+          clientId: 'x',
+          openBrowser: (_) async => false,
+          mode: OAuthRedirectMode.customScheme,
+          webAuthenticator: (url, s) async =>
+              '${MicrosoftOAuth.mobileRedirectUri}?code=rubato&state=altro'
+              '&error_description=${Uri.encodeComponent(injected)}',
+        );
+        await expectLater(
+          oauth.signIn(),
+          throwsA(
+            isA<OAuthException>()
+                .having(
+                  (e) => e.message,
+                  'm',
+                  foreignReturnMessage('Microsoft'),
+                )
+                .having((e) => e.message, 'm', isNot(contains('evil'))),
+          ),
+        );
+      },
+    );
 
     test('Google: stesso controllo', () async {
       final oauth = GoogleOAuth(
@@ -325,7 +328,10 @@ void main() {
       }
       final sw = Stopwatch()..start();
       final f = ExclusionFilter(evil);
-      expect(f.isExcluded(['${'a' * 40}!', '1' * 60, 'Analisi matematica']), isFalse);
+      expect(
+        f.isExcluded(['${'a' * 40}!', '1' * 60, 'Analisi matematica']),
+        isFalse,
+      );
       expect(sw.elapsedMilliseconds, lessThan(1000));
     });
 
@@ -449,20 +455,24 @@ void main() {
       expect(theirs.existsSync(), isTrue);
     });
 
-    test('ogni cartella di lavoro creata dall\'app ha il prefisso uninotes_',
-        () {
-      final bad = <String>[];
-      for (final f in Directory('lib').listSync(recursive: true)) {
-        if (f is! File || !f.path.endsWith('.dart')) continue;
-        final text = f.readAsStringSync();
-        for (final m in RegExp(r"createTemp\(\s*'([^']*)'").allMatches(text)) {
-          if (!m.group(1)!.startsWith('uninotes_')) {
-            bad.add('${f.path}: ${m.group(1)}');
+    test(
+      'ogni cartella di lavoro creata dall\'app ha il prefisso uninotes_',
+      () {
+        final bad = <String>[];
+        for (final f in Directory('lib').listSync(recursive: true)) {
+          if (f is! File || !f.path.endsWith('.dart')) continue;
+          final text = f.readAsStringSync();
+          for (final m in RegExp(
+            r"createTemp\(\s*'([^']*)'",
+          ).allMatches(text)) {
+            if (!m.group(1)!.startsWith('uninotes_')) {
+              bad.add('${f.path}: ${m.group(1)}');
+            }
           }
         }
-      }
-      expect(bad, isEmpty);
-    });
+        expect(bad, isEmpty);
+      },
+    );
   });
 
   group('8. spazio libero su Windows', () {
@@ -471,22 +481,17 @@ void main() {
         FileDownloader.freeSpaceScript,
         contains('\$env:${FileDownloader.freeSpaceVariable}'),
       );
-      final src = File(
-        'lib/core/services/file_downloader.dart',
-      ).readAsStringSync();
+      final src = File('lib/core/services/file_downloader.dart')
+          .readAsStringSync();
       expect(src, isNot(contains("DriveInfo]::new('\$root')")));
       expect(src, contains('environment: {freeSpaceVariable: root}'));
     });
 
-    test(
-      'il comando risponde con un numero',
-      () async {
-        final n = await FileDownloader.defaultFreeSpace(Directory.systemTemp);
-        expect(n, isNotNull);
-        expect(n!, greaterThan(0));
-      },
-      skip: !Platform.isWindows,
-    );
+    test('il comando risponde con un numero', () async {
+      final n = await FileDownloader.defaultFreeSpace(Directory.systemTemp);
+      expect(n, isNotNull);
+      expect(n!, greaterThan(0));
+    }, skip: !Platform.isWindows);
   });
 
   group('9. lettore multimediale: scalette al posto dell\'audio', () {
@@ -537,7 +542,17 @@ void main() {
           lessThan(src.indexOf('= await MediaGuard.newPlayer();')),
           reason: f,
         );
+        // non player.open: media_kit lo carica come scaletta temporanea,
+        // rifiutata da access-references=no («Unable to load playlist»,
+        // nessun audio, 30/10/2026)
+        expect(src, contains('MediaGuard.openLocal(player, '), reason: f);
+        expect(src, isNot(contains('.open(Media(')), reason: f);
       }
+      final guard = File('lib/core/services/media_guard.dart')
+          .readAsStringSync();
+      final open = guard.substring(guard.indexOf('openLocal('));
+      expect(open, contains('await player.add(media);'));
+      expect(open, contains("setProperty('playlist-pos', '0')"));
     });
   });
 
@@ -561,9 +576,8 @@ void main() {
         expect(ExternalLauncher.isOneNoteClientUrl(no), isFalse, reason: no);
       }
       expect(ExternalLauncher.allowedSchemes, isNot(contains('onenote')));
-      final screen = File(
-        'lib/features/cloud/onenote_screen.dart',
-      ).readAsStringSync();
+      final screen = File('lib/features/cloud/onenote_screen.dart')
+          .readAsStringSync();
       expect(screen, contains('ExternalLauncher.openOneNote('));
       final uses = <String>[];
       for (final f in Directory('lib').listSync(recursive: true)) {
@@ -578,17 +592,20 @@ void main() {
   });
 
   group('11. pulizia della chiave di Gemini', () {
-    test('portachiavi che non risponde: si riprova al prossimo avvio', () async {
-      final db = await AppDatabase.openInMemory();
-      addTearDown(db.close);
-      final s = AppServices(db);
-      await s.removeLegacyGemini(secrets: _ThrowingSecrets());
-      expect(await s.settings.get(SettingKeys.legacyGeminiRemoved), isNull);
-      final ok = MemoryCloudSecrets()..values['gemini.apiKey'] = 'AIza-x';
-      await s.removeLegacyGemini(secrets: ok);
-      expect(ok.values, isEmpty);
-      expect(await s.settings.get(SettingKeys.legacyGeminiRemoved), '1');
-    });
+    test(
+      'portachiavi che non risponde: si riprova al prossimo avvio',
+      () async {
+        final db = await AppDatabase.openInMemory();
+        addTearDown(db.close);
+        final s = AppServices(db);
+        await s.removeLegacyGemini(secrets: _ThrowingSecrets());
+        expect(await s.settings.get(SettingKeys.legacyGeminiRemoved), isNull);
+        final ok = MemoryCloudSecrets()..values['gemini.apiKey'] = 'AIza-x';
+        await s.removeLegacyGemini(secrets: ok);
+        expect(ok.values, isEmpty);
+        expect(await s.settings.get(SettingKeys.legacyGeminiRemoved), '1');
+      },
+    );
   });
 
   group('12. script aperti con il programma predefinito', () {
@@ -601,8 +618,8 @@ void main() {
     // test (su Linux «C:\…» è un percorso relativo)
     void simula(TargetPlatform t) {
       ExternalLauncher.platform = () => t;
-      ExternalLauncher.pathContext =
-          () => t == TargetPlatform.windows ? p.windows : p.posix;
+      ExternalLauncher.pathContext = () =>
+          t == TargetPlatform.windows ? p.windows : p.posix;
     }
 
     test('sul PC e sul Mac «Apri» no, «Apri con…» sì; sul telefono sì', () {
@@ -624,10 +641,7 @@ void main() {
         }
       }
       simula(TargetPlatform.android);
-      expect(
-        ExternalLauncher.unsafePathReason('/data/x/esercizio.py'),
-        isNull,
-      );
+      expect(ExternalLauncher.unsafePathReason('/data/x/esercizio.py'), isNull);
       // i programmi veri restano bloccati anche con «Apri con…»
       for (final t in [TargetPlatform.windows, TargetPlatform.android]) {
         simula(t);
@@ -652,7 +666,13 @@ void main() {
     test('cartella di Windows solo come percorso completo locale', () {
       expect(WindowsTools.isLocalAbsolute(r'C:\Windows'), isTrue);
       expect(WindowsTools.isLocalAbsolute('D:/Windows'), isTrue);
-      for (final v in ['.', r'Windows', r'\\server\Windows', r'C:Windows', '']) {
+      for (final v in [
+        '.',
+        r'Windows',
+        r'\\server\Windows',
+        r'C:Windows',
+        '',
+      ]) {
         expect(WindowsTools.isLocalAbsolute(v), isFalse, reason: v);
       }
     });

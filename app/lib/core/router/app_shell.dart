@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import '../../features/exams/exam_detail.dart';
 import '../../features/exams/exams_screen.dart';
 import '../../features/exams/previous_years_screen.dart' show openPreviousYears;
 import '../../features/links/links_screen.dart';
+import '../../features/links/whisper_card.dart' show WhisperCard;
 import '../../features/notes/notes_screen.dart';
 import '../../features/notes/recorder/overlay_logic.dart';
 import '../../features/perks/perks_screen.dart';
@@ -195,10 +197,20 @@ class _AppShellState extends State<AppShell> {
     _services.openRoute.addListener(_openRequested);
     // richiesta arrivata prima della shell (app aperta da una notifica)
     WidgetsBinding.instance.addPostFrameCallback((_) => _openRequested());
+    // card di Whisper in Collegamenti già pronta alla prima apertura
+    if (AppShell.prefetchSections) {
+      _whisperPrefetch = Timer(
+        const Duration(seconds: 4),
+        () => WhisperCard.prefetch(_services.whisper),
+      );
+    }
   }
+
+  Timer? _whisperPrefetch;
 
   @override
   void dispose() {
+    _whisperPrefetch?.cancel();
     _services.openRoute.removeListener(_openRequested);
     _services.profile.removeListener(_onProfile);
     _services.selectedYear.removeListener(_onProfile);

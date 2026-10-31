@@ -64,6 +64,17 @@ const _auto = 'auto';
 class WhisperCard extends StatefulWidget {
   const WhisperCard({super.key});
 
+  /// Stato della card preparato in anticipo (poco dopo l'avvio, a riposo):
+  /// aprendo Collegamenti la card è già pronta come le altre, senza la
+  /// rotellina mentre si leggono modelli, programma e dispositivo.
+  static Future<void> prefetch(WhisperService w) async {
+    try {
+      _WhisperCardState._last = await _WhisperCardState._loadFor(w);
+    } catch (_) {
+      // la card lo rilegge da sola all'apertura
+    }
+  }
+
   @override
   State<WhisperCard> createState() => _WhisperCardState();
 }
@@ -74,19 +85,29 @@ class _WhisperCardState extends State<WhisperCard>
   WhisperService get _w => _s.whisper;
   late Future<_WhisperState> _future = _load();
 
+  /// Ultimo stato letto (anche da [WhisperCard.prefetch]): mostrato subito
+  /// mentre si rilegge, invece della rotellina.
+  static _WhisperState? _last;
+
   Future<_WhisperState> _load() async {
-    final st = await _w.status();
-    final available = await _w.availableModels(known: st);
+    final d = await _loadFor(_w);
+    _last = d;
+    return d;
+  }
+
+  static Future<_WhisperState> _loadFor(WhisperService w) async {
+    final st = await w.status();
+    final available = await w.availableModels(known: st);
     return _WhisperState(
       st,
-      st.engine == WhisperEngineKind.cli ? await _w.ffmpeg() : null,
-      {for (final m in kWhisperModels) m.id: await _w.partialBytes(m)},
-      await _w.pickModel({for (final m in available) m.id}),
+      st.engine == WhisperEngineKind.cli ? await w.ffmpeg() : null,
+      {for (final m in kWhisperModels) m.id: await w.partialBytes(m)},
+      await w.pickModel({for (final m in available) m.id}),
       available: available,
-      defaultId: await _w.selectedModelId(),
-      recommendation: await _w.recommendation(),
-      device: await _w.deviceProfile(),
-      included: await _w.includedModelFile() != null,
+      defaultId: await w.selectedModelId(),
+      recommendation: await w.recommendation(),
+      device: await w.deviceProfile(),
+      included: await w.includedModelFile() != null,
     );
   }
 
@@ -187,6 +208,7 @@ class _WhisperCardState extends State<WhisperCard>
       listenable: _s.jobs,
       builder: (context, _) => FutureBuilder<_WhisperState>(
         future: _future,
+        initialData: _last,
         builder: (context, snap) {
           final d = snap.data;
           return LinksCard(

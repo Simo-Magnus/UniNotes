@@ -16,11 +16,19 @@ import 'recording_meta.dart';
 ///    un'**ipotesi**, con le parole e i loro tempi ([LiveStep.partialWords]).
 ///    Le parole uguali in due ipotesi di fila diventano subito confermate e
 ///    modificabili (live_agreement.dart), il resto è il testo provvisorio.
-/// 3. A una pausa (o dopo ~18 s di parlato senza pause: il VAD taglia da
-///    solo) il tratto diventa **definitivo**, decodificato una volta sola
-///    con tutto il suo audio e diviso in frasi alla punteggiatura
+/// 3. A una pausa il tratto diventa **definitivo**, decodificato una volta
+///    sola con tutto il suo audio e diviso in frasi alla punteggiatura
 ///    ([splitSentences]), con i tempi della registrazione: sostituisce le
-///    parole confermate (salvo le frasi già corrette a mano).
+///    parole confermate (salvo le frasi già corrette a mano). Dal vivo, dopo
+///    ~12 s di parlato senza pause ([VadLiveSegmenter.softMax]) il tratto si
+///    chiude nel punto più silenzioso degli ultimi secondi invece di
+///    aspettare il taglio forzato del VAD (18 s, anche a metà parola).
+/// 4. Parakeet riceve ogni tratto con 0,25 s di silenzio digitale prima e
+///    dopo ([VadLiveSegmenter.silencePad]): senza, sull'audio vero perde
+///    spesso le prime parole dopo un silenzio o restituisce un testo vuoto
+///    (misure del 30/10/2026 in docs/registratore.md). Se il testo
+///    definitivo è vuoto o molto più corto dell'ultima ipotesi, si riprova
+///    una volta con 1 s di silenzio e si tiene il testo più lungo.
 
 /// Risultato del decodificatore: testo, pezzi (token) e istante d'inizio di
 /// ogni pezzo in secondi dall'inizio dell'audio decodificato.
@@ -129,10 +137,30 @@ class VadLiveSegmenter {
     this.tail = 8000 + 1024,
     this.keep = 40 * _rate,
     this.pad = 4800,
+    this.silencePad = 4000,
+    this.retryPad = _rate,
+    this.softMax = 12 * _rate,
+    this.minCut = 5 * _rate,
   });
 
   /// Audio aggiunto prima di ogni tratto del VAD (~0,3 s).
   final int pad;
+
+  /// Silenzio digitale (zeri) prima e dopo l'audio dato a Parakeet (0,25 s):
+  /// i tempi dei pezzi restano quelli dell'audio vero.
+  final int silencePad;
+
+  /// Silenzio del secondo tentativo, se il testo definitivo è vuoto o molto
+  /// più corto dell'ultima ipotesi (1 s).
+  final int retryPad;
+
+  /// Parlato senza pause oltre il quale, dal vivo, il tratto si chiude nel
+  /// punto più silenzioso (~12 s; 0 = mai): ipotesi su al massimo ~12 s di
+  /// audio (calcolo limitato) e niente taglio forzato a metà parola.
+  final int softMax;
+
+  /// Il punto di taglio è almeno così dopo l'inizio del tratto (~5 s).
+  final int minCut;
 
   final SpeechVad vad;
   final SpeechDecoder decoder;
@@ -184,6 +212,7 @@ class VadLiveSegmenter {
     _append(samples);
     _fed += samples.length;
     final committed = _drain();
+    if (partial && softMax > 0) committed.addAll(_softCut());
     String? text;
     var words = const <HypWord>[];
     if (committed.isNotEmpty) text = '';
@@ -196,19 +225,34 @@ class VadLiveSegmenter {
           _fed - s >= minPartial &&
           _fed - _lastPartialAt >= partialEvery) {
         _lastPartialAt = _fed;
-        final d = decoder.decode(_slice(s, _fed));
-        text = d.text.trim();
-        words = wordsOfDecoded(
-          d,
-          samplesToDuration(s),
-          samplesToDuration(_fed),
+        final d = _decode(_slice(s, _fed), silencePad);
+        final ws = collapseRepeatedWords(
+          wordsOfDecoded(d, samplesToDuration(s), samplesToDuration(_fed)),
         );
-        _hadPartial = text.isNotEmpty;
+        // ipotesi vuota a metà del parlato (Parakeet a volte non dà niente
+        // anche con la voce): il testo provvisorio resta quello di prima.
+        // Prima diventava «fine della frase» e le parole già confermate
+        // restavano accanto al testo definitivo, doppie (30/10/2026)
+        if (ws.isNotEmpty) {
+          words = ws;
+          text = ws.map((w) => w.text).join(' ');
+          _hyp = [
+            for (final w in ws)
+              w.start == null ? s : durationToSamples(w.start!),
+          ];
+          final h = _hypHead;
+          if (ws.length >= 3 && (h == null || _hyp.first < h)) {
+            _hypHead = _hyp.first;
+          }
+          _hadPartial = true;
+        }
       }
     } else {
       _speechStart = null;
       if (_hadPartial && text == null) text = '';
       _hadPartial = false;
+      _hyp = const [];
+      _hypHead = null;
     }
     if (text != null && text.isEmpty) _hadPartial = false;
     _trim();
@@ -253,33 +297,184 @@ class VadLiveSegmenter {
     _speechStart = null;
     _lastPartialAt = start;
     _hadPartial = false;
+    _hyp = const [];
+    _hypHead = null;
     _bufLen = 0;
     _bufStart = start;
   }
+
+  /// Inizio delle parole dell'ultima ipotesi del tratto in corso (campioni
+  /// della registrazione; vuoto = nessuna ipotesi).
+  List<int> _hyp = const [];
+
+  /// Inizio più presto di un'ipotesi di almeno 3 parole dello stesso
+  /// parlato: se il testo definitivo inizia molto dopo, Parakeet ha perso
+  /// le prime parole.
+  int? _hypHead;
 
   List<TranscriptSegment> _drain() {
     final out = <TranscriptSegment>[];
     while (vad.hasSegment) {
       final seg = vad.pop();
       if (seg.samples.isEmpty) continue;
-      var at = _origin + seg.start;
+      final at = _origin + seg.start;
       final end = at + seg.samples.length;
+      // dopo un taglio nel punto più silenzioso ([_softCut]) l'inizio del
+      // tratto è già trascritto: solo l'audio dopo
+      final first = math.max(at, _lastEnd);
       // un po' di audio prima del tratto (se c'è ancora): il VAD a volte
       // taglia l'inizio della prima parola
-      final from = math.max(math.max(at - pad, _lastEnd), _bufStart);
-      final samples = from < at && end <= _bufStart + _bufLen
-          ? _slice(from, end)
-          : seg.samples;
-      if (samples != seg.samples) at = from;
+      final want = first > at ? first : math.max(at - pad, _lastEnd);
+      var from = first;
+      Float32List samples;
+      if (want >= _bufStart && end <= _bufStart + _bufLen) {
+        from = want;
+        samples = _slice(from, end);
+      } else {
+        samples = first >= end
+            ? Float32List(0)
+            : Float32List.sublistView(seg.samples, first - at);
+      }
       if (end > _lastEnd) _lastEnd = end;
       _speechStart = null;
       _lastPartialAt = _fed;
-      final d = decoder.decode(samples);
-      out.addAll(
-        splitSentences(d, samplesToDuration(at), samplesToDuration(end)),
-      );
+      final hyp = _hyp, head = _hypHead;
+      _hyp = const [];
+      _hypHead = null;
+      if (samples.length < 1600) continue;
+      out.addAll(_sentences(_final(samples, from, hyp, head), from, end));
     }
     return out;
+  }
+
+  /// Frasi del testo [d] dell'audio [from]–[to] (campioni della
+  /// registrazione), senza le parole ripetute a ciclo.
+  List<TranscriptSegment> _sentences(DecodedText d, int from, int to) => [
+    for (final s in splitSentences(
+      d,
+      samplesToDuration(from),
+      samplesToDuration(to),
+    ))
+      if (collapseRepeats(s.text) case final t when t.isNotEmpty)
+        s.copyWith(text: t),
+  ];
+
+  /// Testo definitivo di [samples] (dal campione [from] della
+  /// registrazione); [hyp] inizio delle parole dell'ultima ipotesi dello
+  /// stesso parlato, [head] il primo inizio delle ipotesi ([_hypHead]).
+  /// Vuoto, molto più corto dell'ipotesi o senza le prime parole (inizia
+  /// ~0,8 s dopo [head]: Parakeet ha saltato un pezzo): un secondo
+  /// tentativo con più silenzio intorno, si tiene il testo con più
+  /// parole.
+  DecodedText _final(Float32List samples, int from, List<int> hyp, int? head) {
+    final d = _decode(samples, silencePad);
+    final n = _wordCount(d.text);
+    final ts = d.timestamps;
+    final headLost =
+        head != null &&
+        ts.isNotEmpty &&
+        ts.first.isFinite &&
+        from + ts.first * _rate > head + _rate * 0.8;
+    final short =
+        headLost ||
+        (hyp.length >= 4
+            ? n * 2 < hyp.length
+            : n == 0 && samples.length >= _rate);
+    if (!short || retryPad <= 0 || retryPad == silencePad) return d;
+    final r = _decode(samples, retryPad);
+    return _wordCount(r.text) > n ? r : d;
+  }
+
+  /// [samples] decodificati con [silence] campioni di zeri prima e dopo; i
+  /// tempi dei pezzi tornano quelli di [samples].
+  DecodedText _decode(Float32List samples, int silence) {
+    // meno di 0,1 s: niente da riconoscere
+    if (samples.length < 1600) return const DecodedText('');
+    if (silence <= 0) return decoder.decode(samples);
+    final padded = Float32List(samples.length + 2 * silence)
+      ..setRange(silence, silence + samples.length, samples);
+    final d = decoder.decode(padded);
+    final shift = silence / _rate;
+    final max = samples.length / _rate;
+    return DecodedText(
+      d.text,
+      tokens: d.tokens,
+      timestamps: [
+        for (final t in d.timestamps)
+          t.isFinite ? (t - shift).clamp(0.0, max).toDouble() : t,
+      ],
+    );
+  }
+
+  /// Parlato continuo da più di [softMax]: si chiude il tratto nel punto
+  /// più silenzioso fra [minCut] dall'inizio e ~0,4 s fa e il VAD riparte
+  /// da lì (riceve di nuovo l'audio dopo il taglio), così non taglia da
+  /// solo a 18 s, anche a metà parola. Le frasi fino al taglio sono
+  /// definitive.
+  List<TranscriptSegment> _softCut() {
+    final s = _speechStart;
+    if (s == null || !vad.speaking || _fed - s < softMax) return const [];
+    final lo = math.max(s + minCut, _bufStart);
+    final hi = math.min(s + softMax, _fed - 6400);
+    if (hi - lo < 3200) return const [];
+    final cut = _quietest(lo, hi);
+    // le parole dell'ultima ipotesi prima del taglio
+    final hyp = [
+      for (final w in _hyp)
+        if (w < cut) w,
+    ];
+    final head = _hypHead;
+    final out = _sentences(
+      _final(_slice(s, cut), s, hyp, head != null && head < cut ? head : null),
+      s,
+      cut,
+    );
+    _hypHead = null;
+    _lastEnd = cut;
+    _speechStart = cut;
+    _hyp = const [];
+    _hadPartial = false;
+    _lastPartialAt = _fed;
+    // il VAD riparte dal taglio: il suo tratto in corso inizierebbe prima
+    vad.reset();
+    _origin = cut;
+    vad.accept(Float32List.fromList(_slice(cut, _fed)));
+    // un tratto già chiuso nell'audio dato di nuovo (pausa subito dopo)
+    out.addAll(_drain());
+    _speechStart = vad.speaking ? math.max(cut, _lastEnd) : null;
+    return out;
+  }
+
+  /// Centro della finestra di ~0,16 s con meno energia fra [from] e [to].
+  int _quietest(int from, int to) {
+    const frame = 320, win = 8;
+    final a = (from - _bufStart).clamp(0, _bufLen);
+    final b = (to - _bufStart).clamp(a, _bufLen);
+    final n = (b - a) ~/ frame;
+    if (n <= win) return from + (to - from) ~/ 2;
+    final e = Float64List(n);
+    for (var i = 0; i < n; i++) {
+      var sum = 0.0;
+      for (var k = a + i * frame, z = k + frame; k < z; k++) {
+        final x = _buf[k];
+        sum += x * x;
+      }
+      e[i] = sum;
+    }
+    var run = 0.0;
+    for (var i = 0; i < win; i++) {
+      run += e[i];
+    }
+    var best = run, at = 0;
+    for (var i = win; i < n; i++) {
+      run += e[i] - e[i - win];
+      // a parità di energia il punto più avanti (tratto più lungo)
+      if (run <= best) {
+        best = run;
+        at = i - win + 1;
+      }
+    }
+    return _bufStart + a + (at + win ~/ 2) * frame;
   }
 
   void _append(Float32List s) {
@@ -410,6 +605,81 @@ List<HypWord> wordsOfDecoded(DecodedText d, Duration origin, Duration end) {
         start: starts[i],
         end: i + 1 < texts.length ? starts[i + 1] : end,
       ),
+  ];
+}
+
+int _wordCount(String text) =>
+    text.trim().split(_blank).where((w) => w.isNotEmpty).length;
+
+final _edgePunct = RegExp(r'^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$', unicode: true);
+
+/// Parole [keys] da tenere senza le ripetizioni a ciclo di Parakeet sul
+/// rumore («stando stando stando stando stando»): una parola ripetuta di
+/// fila 4 volte o più, o un gruppo di 2–6 parole ripetuto 3 volte o più,
+/// resta una volta sola (l'ultima, con la sua punteggiatura). «piano
+/// piano» e «bene, bene, bene» restano. Per ogni parola tenuta: il suo
+/// indice e quello della parola corrispondente nella prima ripetizione
+/// (per l'inizio).
+List<(int, int)> _withoutLoops(List<String> keys) {
+  final out = <(int, int)>[];
+  bool same(int a, int b, int n) {
+    if (b + n > keys.length) return false;
+    for (var j = 0; j < n; j++) {
+      if (keys[a + j].isEmpty || keys[a + j] != keys[b + j]) return false;
+    }
+    return true;
+  }
+
+  var i = 0;
+  while (i < keys.length) {
+    var done = false;
+    for (var n = 6; n >= 1; n--) {
+      if (i + n > keys.length) continue;
+      var r = 1;
+      while (same(i, i + r * n, n)) {
+        r++;
+      }
+      if (r >= (n == 1 ? 4 : 3)) {
+        for (var j = 0; j < n; j++) {
+          out.add((i + (r - 1) * n + j, i + j));
+        }
+        i += r * n;
+        done = true;
+        break;
+      }
+    }
+    if (!done) {
+      out.add((i, i));
+      i++;
+    }
+  }
+  return out;
+}
+
+String _key(String w) => w.toLowerCase().replaceAll(_edgePunct, '');
+
+/// [text] senza le parole ripetute a ciclo ([_withoutLoops]).
+String collapseRepeats(String text) {
+  final w = text.trim().split(_blank).where((x) => x.isNotEmpty).toList();
+  final keep = _withoutLoops([for (final x in w) _key(x)]);
+  if (keep.length == w.length) return text.trim();
+  return [for (final (k, _) in keep) w[k]].join(' ');
+}
+
+/// Le parole [words] di un'ipotesi senza le ripetizioni a ciclo: con
+/// l'inizio della prima ripetizione e il testo dell'ultima.
+List<HypWord> collapseRepeatedWords(List<HypWord> words) {
+  final keep = _withoutLoops([for (final w in words) _key(w.text)]);
+  if (keep.length == words.length) return words;
+  return [
+    for (final (k, first) in keep)
+      first == k
+          ? words[k]
+          : HypWord(
+              words[k].text,
+              start: words[first].start,
+              end: words[k].end,
+            ),
   ];
 }
 

@@ -262,11 +262,35 @@ void main() {
       // con /VERYSILENT nessuno risponde alla scelta dei dati: il
       // disinstallatore aspettava per sempre (controllo della build in CI,
       // 30/10/2026)
-      final line = iss
-          .split('\n')
-          .firstWhere((l) => l.contains('Parameters: "--disinstalla"'));
-      expect(line, contains('waituntilterminated'));
-      expect(line, contains('Check: not UninstallSilent'));
+      final run = between(
+        iss,
+        'procedure SchermataDisinstallazione();',
+        '\nend;',
+      );
+      expect(run, contains('if UninstallSilent() then'));
+      expect(run, contains("'--disinstalla'"));
+      expect(run, contains('ewWaitUntilTerminated'));
+      final step = between(
+        iss,
+        'procedure CurUninstallStepChanged',
+        '\nend;\n',
+      );
+      expect(step, contains('SchermataDisinstallazione();'));
+    });
+
+    test('nessun «Check:» con funzioni del disinstallatore valutato '
+        'durante l\'installazione', () {
+      // il Check di [UninstallRun] si valuta all'installazione: con
+      // UninstallSilent dava «Errore interno … Cannot call UninstallSilent
+      // during Setup» e la schermata dei dati non partiva più (30/10/2026)
+      expect(
+        RegExp(r'^\[UninstallRun\]', multiLine: true).hasMatch(iss),
+        isFalse,
+      );
+      expect(
+        RegExp(r'Check:[^\n]*Uninstall(Silent|ing)').hasMatch(iss),
+        isFalse,
+      );
     });
   });
 

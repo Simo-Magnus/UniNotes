@@ -2022,7 +2022,8 @@ Future<void> runMonkey(
     // gli oggetti sopra)
     if ((text.contains('overflowed by') ||
             text.contains('consumes the entire tile width') ||
-            text.contains("'hasSize'")) &&
+            text.contains("'hasSize'") ||
+            text.contains('does not meet its constraints')) &&
         staleWindowConstraints(d, monkey.screen)) {
       const why =
           'fotogramma con i vincoli della finestra di prima (flutter_test)';

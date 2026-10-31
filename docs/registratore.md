@@ -610,11 +610,14 @@ pacchetto `sherpa_onnx`).
 (mono 16 kHz) va man mano all'isolate di Parakeet, sempre una richiesta alla
 volta con tutto l'audio arrivato nel frattempo (`PcmBacklog`). Il VAD
 (Silero: pausa di 0,5 s per chiudere una frase, parlato minimo 0,25 s,
-taglio forzato oltre 18 s di parlato continuo) decide dove sono le frasi:
+taglio forzato oltre 18 s di parlato continuo; dal vivo, dal 30/10/2026,
+il tratto si chiude prima, dopo ~12 s, nel punto più silenzioso: vedi
+sotto) decide dove sono le frasi:
 mentre si parla, ogni ~0,75 s di audio nuovo si decodifica la frase in
 corso (un'ipotesi: le parole uguali in due ipotesi di fila si confermano
 subito, vedi sopra); alla pausa la frase si decodifica una volta con tutto
-il suo audio (più 0,3 s prima, per non tagliare la prima parola) e diventa
+il suo audio (più 0,3 s prima, per non tagliare la prima parola, e 0,25 s
+di silenzio digitale prima e dopo) e diventa
 definitiva, divisa in frasi alla punteggiatura con i tempi dei token. I
 silenzi non producono testo e non costano calcolo. Due thread di ONNX
 Runtime, in un isolate a parte: non rubano tempo alla registrazione. Se il
@@ -654,6 +657,96 @@ dell'app):
 - voce sintetica di Windows (Elsa): Parakeet la riconosce male (parole
   storpiate, a tratti in spagnolo), al contrario delle voci vere: per le
   prove servono registrazioni vere, non la sintesi vocale.
+
+### Parakeet dal vivo: doppioni, inizi persi, parlato veloce (30/10/2026)
+
+**Problema** (registrazioni vere del 30/10/2026, video riprodotti davanti al
+microfono del PC, parlato medio-veloce): frasi doppie e sovrapposte nel
+testo salvato («Parlarne.» / «Parlarne. mercoledì Ed è bravissimo…» /
+«è davvero che mercoledì…» con tempi che si accavallano), parole perse dopo
+l'inizio e dopo le pause, un tratto di 13,6 s con 5 parole, ripetizioni
+(«stando stando stando stando stando»), tratti di 20–22 s.
+
+**Cause** (trovate rigiocando l'audio vero a pezzi da 0,1 s, in tempo
+reale, nel percorso intero dell'app: `VadLiveSegmenter` nell'isolate di
+Parakeet, `LiveTranscriber`, `LiveAgreement`):
+
+1. **Ipotesi vuote.** Su questo audio Parakeet restituisce spesso un testo
+   vuoto per un'ipotesi a metà del parlato (anche 2–3 di fila), poi di nuovo
+   il testo. Il testo vuoto valeva come «fine della frase»: la conferma per
+   accordo si chiudeva, le parole già confermate restavano, e il testo
+   definitivo del tratto, che arrivava dopo per tutto l'audio, si
+   aggiungeva accanto: **doppioni e frasi sovrapposte**.
+2. **«Ripartito da capo».** Un'ipotesi molto diversa dalle parole confermate
+   chiudeva la frase (pensato per il riconoscitore del sistema e Whisper, che
+   ripartono davvero). Parakeet invece ridecodifica sempre dallo stesso
+   inizio e su audio difficile l'ipotesi cambia quasi tutta («Fizo! Por
+   que?» → «Fisso! Perché?»): stesso effetto, doppioni.
+3. **Prime parole perse.** Parakeet perde spesso le parole all'inizio di un
+   tratto, o lo restituisce vuoto, se l'audio inizia subito con voce o
+   rumore: decodificando gli stessi tratti del VAD con varianti, 0,25 s di
+   **silenzio digitale prima e dopo** portano l'errore sul file di
+   Psicologia (riferimento: la trascrizione di large-v3-turbo) dal 27,2% al
+   21,2% (0,5 s: 22,0%; 1 s: 21,2%; più audio vero prima: 23,5%); su un
+   tratto mancavano «Voglio fare un fondo, per uno studio di product design»,
+   4 s.
+4. **Parlato continuo.** Senza pause il tratto arrivava a 18–22 s: ogni
+   ipotesi ridecodifica tutto (fino a 2–3 s di calcolo per ipotesi con il PC
+   carico, il testo dal vivo restava indietro di 2–3 s) e il taglio forzato
+   del VAD cadeva a metà frase («seminando piano piano | per un
+   progetto…»: il pezzo dopo usciva in inglese inventato).
+
+**Cosa cambia**:
+
+- `VadLiveSegmenter`: un'ipotesi vuota lascia il testo provvisorio com'era;
+  Parakeet riceve ogni tratto e ogni ipotesi con 0,25 s di zeri prima e dopo
+  (`silencePad`, i tempi dei pezzi restano quelli della registrazione); se
+  il testo definitivo è vuoto, ha meno della metà delle parole dell'ultima
+  ipotesi o inizia ~0,8 s dopo la prima parola delle ipotesi, un secondo
+  tentativo con 1 s di zeri (`retryPad`) e si tiene il testo con più
+  parole; dal vivo, dopo 12 s di parlato senza pause (`softMax`) il tratto
+  si chiude nel punto più silenzioso fra 5 e 12 s (finestra di 0,16 s con
+  meno energia) e il VAD riparte da lì (gli si ridà l'audio dopo il
+  taglio), così il suo taglio forzato a 18 s non arriva più; le parole
+  ripetute a ciclo (una parola 4 volte o più, un gruppo di 2–6 parole 3
+  volte o più) restano una volta (`collapseRepeats`; «piano piano» e «bene,
+  bene, bene» restano). La trascrizione di un file dopo il salvataggio usa
+  silenzio e secondo tentativo, non il taglio a 12 s.
+- `LiveTranscriber`: un'ipotesi vuota mentre si parla non chiude più la
+  frase; con Parakeet `LiveAgreement.hypothesis(restart: false)`.
+- `LiveAgreement`: nessuna frase finisce dopo l'inizio della seguente
+  (`_clampEnds`: si accorcia la fine, l'inizio resta la chiave della frase),
+  anche quando restano le parole confermate di un tratto senza testo
+  definitivo (vuoto o in un'altra lingua).
+
+**Misure** (Intel Core Ultra 5 226V, 2 thread, con un altro lavoro sul PC;
+tre registrazioni del 30/10, 118 s, 148 s e 93 s; percorso intero in tempo
+reale con l'isolate dell'app; «doppioni» = frasi vicine con lo stesso
+testo, contate a mano):
+
+| | prima | dopo |
+|---|---|---|
+| frasi sovrapposte nei tempi (le tre registrazioni) | 1 + 0 + 2 | **0** |
+| frasi doppie | 1 + 1 + 2 | **0** |
+| tratti oltre 18,5 s | 0 + 1 + 0 | **0** |
+| tratti lunghi quasi vuoti (> 8 s, < 1 parola/s) | 1 + 1 + 1 | 1 + 0 + 0 (musica: «Provavelmente.») |
+| Psicologia: parole sbagliate rispetto a large-v3-turbo | 17,5% | **15,1%** |
+| ritardo del testo dal vivo (audio per passo, 95° percentile, Psicologia) | 2,2 s | 1,3 s |
+| audio decodificato per minuto di registrazione (senza attese, stessi file) | 8,0–12 min | 7,4–9,4 min |
+
+Il testo salvato con l'app il 30/10 (Deontologia) aveva 2 frasi
+sovrapposte, 1 doppione, una ripetizione «stando ×5» e un tratto di 22 s.
+Restano gli errori del modello su questo audio (parole storpiate, frasi
+inventate in inglese sulla musica, tolte dal filtro della lingua): con
+l'audio di un video davanti al microfono Parakeet sbaglia ~15% delle parole
+anche così.
+
+Gli strumenti delle misure (rigioco dell'audio vero nel percorso dal vivo,
+rigioco dei passi registrati senza modello, varianti di decodifica) stanno
+fuori dalla repo; i test (`parakeet_live_test.dart`,
+`live_agreement_test.dart`) controllano ipotesi vuote, silenzio digitale,
+secondo tentativo, taglio nel punto più silenzioso, ripetizioni e assenza
+di sovrapposizioni con VAD e decodificatore finti.
 
 ### Whisper small incluso su PC e Mac (24/10/2026)
 
@@ -907,6 +1000,86 @@ Gli strumenti delle misure con i modelli veri stanno fuori dalla repo e si
 usano a mano; i test della repo (`whisper_chunks_test.dart`,
 `live_agreement_test.dart`) controllano pause, cicli, frasi del silenzio e
 lingua senza modelli.
+
+### Giunture dei pezzi e frasi lunghe (30/10/2026)
+
+**Segnalazione**: con large-v3-turbo q5_0 appena scaricato la prima prova
+era «come Parakeet»; nella seconda Whisper a volte univa quello che si dice
+prima con quello che si dice dopo perdendo dei pezzi, e teneva ancora
+blocchi di testo troppo lunghi.
+
+**La prima prova**: nessun modello saltato. Il modello è finito di
+scaricare alle 20:19:42; la registrazione di Deontologia (20:11–20:13) è di
+prima e ha solo il testo dal vivo di Parakeet. In Fondamenti (salvata alle
+20:22) il testo che si vede subito è quello dal vivo di Parakeet (in
+«Eliminati di recente»: «trascrizione dal vivo con Parakeet»); Whisper l'ha
+sostituito un minuto dopo, in background. Il codice della scelta
+(`pickModel`, `availableModels`, `offerBetterTranscription`) legge i
+modelli dal disco a ogni chiamata, senza scelte in memoria; l'impostazione
+`whisper_model` era vuota (automatico).
+
+**Cause trovate** (piano dei pezzi dell'app sui file veri, confronto con
+whisper-cli sul file intero, con il contesto e beam 5):
+
+- **Pausa lunga dentro il pezzo**: in Fondamenti 47,1–65,0 s c'erano 5 s di
+  silenzio (49,3–54,2 s, video in pausa) e Whisper ha scritto un segmento
+  solo di 18 s, «ma mi… / …delle dinamiche» diventato «ma ha delle
+  dinamiche», con una frase persa. Il piano tagliava sempre all'ultima pausa
+  entro 25 s, anche con una pausa lunga in mezzo.
+- **Taglio a metà parola**: senza pause in 25 s il taglio cadeva a 25 s
+  esatti, nel parlato (Psicologia generale, 38,95 s, −20 dB): «super
+  pro|dotti» → «super progetti. prodotti».
+- **Silenzio all'inizio**: i primi 9 s di Psicologia generale sono silenzio
+  digitale; «Stay hungry, stay foolish.» è vero (la citazione all'inizio
+  del video, sentita anche da Parakeet), ma il segmento partiva da 0 s.
+- **Blocchi lunghi**: Whisper chiude un segmento solo con i suoi token di
+  tempo: 14–18 s nell'app, fino a 27 s sul file intero. Nel lettore la frase
+  in ascolto era un blocco di righe. I tempi dei pezzi riportati alla
+  registrazione erano giusti; nessun codice unisce il testo di Whisper a
+  quello dal vivo (dopo Whisper si rifanno solo le maiuscole).
+
+**Cosa cambia** (`whisper_chunks.dart`):
+
+- `planChunks`: una pausa di almeno 3 s (`kWhisperLongPause`) si taglia
+  sempre ai due lati (0,3 s di margine) e diventa un pezzo a sé, che va a
+  Whisper solo se il 10% più forte delle sue finestre sta entro 22 dB dal
+  livello medio del file (una domanda dal fondo dell'aula sì, il fondo della
+  stanza no); senza pause il taglio cade nel punto più basso (150 ms) fra 15
+  e 25 s. Un pezzo sotto 1,5 s (whisper.cpp non trascrive meno di 1 s) si
+  allunga con del silenzio.
+- `splitSentences`: ogni segmento si divide alle fine delle frasi; una frase
+  oltre 10 s alle virgole (in parti uguali), oltre 15 s anche fra le parole.
+  I tempi vengono dai token (`-ojf` di whisper-cli, che non cambia il testo:
+  controllato parola per parola); whisper.cpp nell'app non dà i token e i
+  tempi si stimano dai caratteri.
+- Provati e scartati: pezzi sovrapposti di 0,5 s con le parole doppie tolte
+  alle giunture (i tempi dei token ai bordi sbagliano: parole perse a ogni
+  giuntura, differenza dal riferimento 36,8% e 11,5% contro 25,4% e 10,2%
+  con gli stessi tagli senza sovrapposizione); `-ml 1 -sow` (stesso testo,
+  ma si perdono i segmenti di Whisper).
+
+**Misure** (turbo q5_0, CPU, il codice dell'app con whisper-cli vero;
+differenza in parole dal file intero, che non è la verità ma è più
+accurato). Whisper non dà sempre lo stesso testo per lo stesso pezzo: nello
+stesso processo il campionamento a temperatura più alta riparte dal punto
+lasciato dal pezzo prima, e un rumore di ±1 sui campioni cambia l'uscita.
+Differenze di 2–3 punti sono rumore:
+
+| | Fondamenti (93 s) | Psicologia generale (149 s) | Deontologia (118 s) |
+|---|---|---|---|
+| pezzi di prima | 28,9% (28,1%, 28,1% con ±1) | 9,4% (9,7%, 9,2%) | 24,3% |
+| pezzi nuovi | 24,6% (28,5%, 25,9%) | 10,2% (8,6%, 11,8%) | 25,4% |
+| segmento più lungo, prima → dopo | 18 s (nell'app) → 9,1 s | 13 s → 8,1 s | 17 s → 8,8 s |
+
+Sulle 33 frasi di prova (verità nota, frasi tolte del silenzio come
+nell'app): «lontano» 9,7% → 7,8%, «lontano + rumore» 24,9% → 25,8% (stessi
+pezzi salvo i 3 s di silenzio iniziale: rumore). Le giunture viste nei file
+veri sono sparite («super prodotti», «ma mi… / …delle dinamiche», «Stay
+hungry» a 9,4 s); le frasi perse dentro un pezzo restano possibili (in
+Fondamenti «non lo doveva rilasciare» manca anche nel file intero con il
+contesto). Costo: con le pause lunghe tagliate i pezzi sono un po' di più
+(lezione vera del 29/10, 335 s: 15 → 19; i file del 30/10: +0–1) e ogni
+pezzo costa come 30 s di audio, quindi ~10–25% di tempo in più.
 
 ### Modificare il testo mentre si registra
 

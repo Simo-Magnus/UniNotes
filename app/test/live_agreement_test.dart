@@ -34,6 +34,17 @@ List<HypWord> hyp(String text, {int from = 0}) {
 TranscriptSegment seg(int s, int e, String t) =>
     TranscriptSegment(ms(s), ms(e), t);
 
+/// Nessuna frase inizia prima della fine della precedente.
+void expectNoOverlap(List<TranscriptSegment> segs) {
+  for (var i = 1; i < segs.length; i++) {
+    expect(
+      segs[i].start,
+      greaterThanOrEqualTo(segs[i - 1].end),
+      reason: '«${segs[i - 1].text}» e «${segs[i].text}» si sovrappongono',
+    );
+  }
+}
+
 void main() {
   group('conferma per accordo (LocalAgreement-2)', () {
     late TranscriptMerger merger;
@@ -132,6 +143,61 @@ void main() {
         'prendiamo la funzione',
       ]);
       expect(merger.segments.last.start, ms(2000));
+    });
+
+    test(
+      'Parakeet: un\'ipotesi molto diversa non chiude la frase, il testo '
+      'definitivo sostituisce tutto (niente doppioni né sovrapposizioni)',
+      () {
+        // audio difficile (30/10/2026): Parakeet ridecodifica dallo stesso
+        // inizio e l'ipotesi cambia quasi tutta
+        a.hypothesis(hyp('fizo por que deve'), now: ms(1500), restart: false);
+        a.hypothesis(
+          hyp('fizo por que deve estar'),
+          now: ms(1800),
+          restart: false,
+        );
+        expect(text(), 'fizo por que deve');
+        a.hypothesis(
+          hyp('fisso perché devi stare andare come'),
+          now: ms(2400),
+          restart: false,
+        );
+        a.hypothesis(
+          hyp('fisso perché devi stare andare come serate'),
+          now: ms(2700),
+          restart: false,
+        );
+        expect(a.open, isTrue);
+        a.finish([
+          seg(0, 1500, 'Fisso! Perché?'),
+          seg(1500, 2900, 'Devi stare andare come serate!'),
+        ]);
+        expect(merger.segments.map((s) => s.text), [
+          'Fisso! Perché?',
+          'Devi stare andare come serate!',
+        ]);
+        expectNoOverlap(merger.segments);
+      },
+    );
+
+    test('mai frasi sovrapposte: le parole confermate senza testo definitivo '
+        'finiscono dove inizia la frase dopo', () {
+      a.hypothesis(hyp('nessuno delle micro'), now: ms(1200));
+      a.hypothesis(hyp('nessuno delle micro game'), now: ms(1500));
+      // tratto chiuso senza testo definitivo (vuoto o in un'altra lingua):
+      // le parole confermate restano
+      a.finish(const []);
+      expect(text(), 'nessuno delle micro');
+      expect(merger.segments.single.end, ms(880));
+      // il testo definitivo del tratto dopo inizia prima della loro fine
+      a.finish([seg(700, 3000, 'aiuto le persone a trovare la loro via.')]);
+      expect(merger.segments.map((s) => s.text), [
+        'nessuno delle micro',
+        'aiuto le persone a trovare la loro via.',
+      ]);
+      expectNoOverlap(merger.segments);
+      expect(merger.segments.first.end, ms(700));
     });
 
     test('frase lunghissima senza pause: le parole si confermano man mano, '
@@ -521,6 +587,42 @@ void main() {
       await live.recover(live.finish(const Duration(seconds: 3)), f);
       expect(live.segments, isEmpty);
       expect(live.note, contains('è stata tolta'));
+      await live.close();
+    });
+
+    test('Parakeet: un\'ipotesi vuota mentre si parla non chiude la frase, '
+        'il testo definitivo non si aggiunge alle parole confermate', () async {
+      // registrazione del 30/10/2026: «ciò d'alto, due semplici parole che
+      // ogni» restava accanto alla frase definitiva
+      final eng = _ScriptVad([
+        _partial('ciò d\'alto due semplici', 0),
+        _partial('ciò d\'alto due semplici parole che', 0),
+        const LiveStep(partial: '', speaking: true),
+        _partial('ciò d\'alzardo due semplici parole che ogni giorno', 0),
+        LiveStep(
+          committed: [
+            seg(
+              0,
+              3000,
+              'Ciò c\'azzardo, due semplici parole che ogni giorno '
+              'determinano la vita.',
+            ),
+          ],
+          partial: '',
+          stableUntil: ms(3000),
+        ),
+      ]);
+      final live = LiveTranscriber(service(FakeParakeet(tmp, engine: eng)));
+      await live.begin(await wav(4), sampleRate: 16000, channels: 1);
+      for (var i = 0; i < 5; i++) {
+        live.onPcm(pcm(0.25));
+        await live.settle();
+        expectNoOverlap(live.segments);
+      }
+      expect(live.segments.map((s) => s.text), [
+        'Ciò c\'azzardo, due semplici parole che ogni giorno determinano la '
+            'vita.',
+      ]);
       await live.close();
     });
 

@@ -27,6 +27,19 @@ function Controlla-Cartella([string]$dir) {
   }
 }
 
+# Con /SUPPRESSMSGBOXES gli errori di Inno Setup non si vedono: finiscono
+# solo nel registro (/LOG). Un «Errore interno» dello script (30/10/2026:
+# UninstallSilent chiamato durante l'installazione) fa fallire il controllo.
+function Controlla-Registro([string]$registro, [string]$cosa) {
+  if (-not (Test-Path $registro)) { Errore "manca il registro di $cosa" }
+  $righe = Get-Content $registro
+  $err = $righe | Select-String -Pattern 'Errore interno|Internal error|Runtime error|Expression error|Exception message'
+  if ($err) {
+    $righe | Write-Output
+    Errore "$cosa con errori: $($err[0].Line)"
+  }
+}
+
 function Avvia([string]$exe) {
   Write-Output "== avvio di $exe per 25 s"
   $p = Start-Process -FilePath $exe -PassThru
@@ -51,12 +64,20 @@ Remove-Item -Recurse -Force $z -ErrorAction SilentlyContinue
 
 # installatore (per l'utente, senza amministratore: PrivilegesRequired=lowest)
 $dir = Join-Path $env:RUNNER_TEMP 'uninotes_installata'
-$s = Start-Process -FilePath $Setup -ArgumentList '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-', "/DIR=`"$dir`"" -Wait -PassThru
+$logSetup = Join-Path $env:RUNNER_TEMP 'uninotes_setup.log'
+$s = Start-Process -FilePath $Setup -ArgumentList '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-', "/DIR=`"$dir`"", "/LOG=`"$logSetup`"" -Wait -PassThru
 if ($s.ExitCode -ne 0) { Errore "installatore non riuscito (codice $($s.ExitCode))" }
+Controlla-Registro $logSetup 'installazione'
 Controlla-Cartella $dir
 Avvia (Join-Path $dir 'uninotes.exe')
 $u = Join-Path $dir 'unins000.exe'
 if (-not (Test-Path $u)) { Errore 'manca il disinstallatore unins000.exe' }
-$d = Start-Process -FilePath $u -ArgumentList '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART' -Wait -PassThru
+$logUninst = Join-Path $env:RUNNER_TEMP 'uninotes_disinstallazione.log'
+$d = Start-Process -FilePath $u -ArgumentList '/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', "/LOG=`"$logUninst`"" -Wait -PassThru
 if ($d.ExitCode -ne 0) { Errore "disinstallazione non riuscita (codice $($d.ExitCode))" }
+# il disinstallatore si copia in una cartella temporanea e finisce da lì:
+# si aspetta che la cartella del programma sparisca
+for ($i = 0; $i -lt 30 -and (Test-Path (Join-Path $dir 'uninotes.exe')); $i++) { Start-Sleep -Seconds 1 }
+Controlla-Registro $logUninst 'disinstallazione'
+if (Test-Path (Join-Path $dir 'uninotes.exe')) { Errore 'dopo la disinstallazione uninotes.exe è ancora nella cartella del programma' }
 Write-Output 'Build per Windows controllata: zip e installatore'
