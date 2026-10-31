@@ -8,7 +8,7 @@ Android e iOS**. Tutto resta sul dispositivo; la rete serve solo per il database
 dei corsi e per i collegamenti che attivi tu (OneDrive, Google Drive, Gemini, la tua AI). Nessun account,
 nessun abbonamento, nessuna pubblicità: solo donazioni libere ([SOSTIENI.md](SOSTIENI.md)).
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3P8291ENG)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/uninotes)
 
 | Cartella / file | Contenuto |
 |---|---|
@@ -69,8 +69,8 @@ si disinstalla con il sistema (vedi [INSTALLAZIONE.md](INSTALLAZIONE.md)).
 - **Esami**: un esame per insegnamento con CFU e date d'appello se pubblicate, prove in
   itinere, voti, medie ponderate e base di laurea. Lo stato si cambia toccando l'icona
   della prova (da prenotare → prenotato → sostenuto → superato o non superato); il
-  dettaglio si modifica toccando le singole voci. Dati mancanti: *Segnala* (apre una
-  segnalazione precompilata su GitHub).
+  dettaglio si modifica toccando le singole voci. Dati sbagliati o mancanti: si segnalano
+  su GitHub (issue) o nei canali della community, con il link alla pagina dell'ateneo.
 - **File**: lettore universale con **Ctrl+F** per PDF, Word, PowerPoint, Excel (anche i
   vecchi .doc/.ppt/.xls), OpenDocument, RTF, Markdown, testo e codice, EPUB/MOBI, immagini,
   audio/video con trascrizione, Xournal++, Excalidraw, mappe mentali, Evernote, archivi ZIP…
